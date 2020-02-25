@@ -37,7 +37,6 @@ const ExpandedProfile = (props: any) => {
 
 // Sample Mini Profile component
 const MiniProfile = (props: any) => {
-  console.log(props)
   return (
     <span
       onClick={props.onClick}
@@ -69,6 +68,9 @@ class ProfileSection extends React.Component<PSectionProps, PSectionStates> {
 
   ExpandProfile (i: number) {
     alert(`PROFILE ${i} was clicked`)
+    this.setState({expanded: this.state.minified[i]});
+    this.setState({minified: this.state.minified.slice(i, 1)});
+    console.log(this.state.expanded);
   }
 
   render () {
