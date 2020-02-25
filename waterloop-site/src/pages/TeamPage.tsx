@@ -25,7 +25,11 @@ type Profile = {
 // Sample Expanded (Big) Profile component
 const ExpandedProfile = (props: any) => {
   return (
-    <span style={{display: "flex", border: "thick solid #000000"}}>
+    <span style={
+      {
+        display: "flex",
+        border: "thick solid #000000",
+      }}>
       <p>This is an Expanded profile</p>
     </span>
   )
@@ -33,11 +37,13 @@ const ExpandedProfile = (props: any) => {
 
 // Sample Mini Profile component
 const MiniProfile = (props: any) => {
+  console.log(props)
   return (
     <span
       onClick={props.onClick}
-    >
-      <p>{props.name}</p>
+      style={{paddingLeft: "1em"}}
+      >
+      {props.name}
     </span>
   )
 }
@@ -67,7 +73,7 @@ class ProfileSection extends React.Component<PSectionProps, PSectionStates> {
 
   render () {
     return (
-      <div style={{border: "thick solid #000000"}}>
+      <div style={{border: "thick solid #000000", height: "3em"}}>
         {this.state.minified.map((profile, i) => {
           const { name, position, image } = profile
           return <MiniProfile
