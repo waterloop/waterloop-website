@@ -37,7 +37,6 @@ const ImageCarosel: React.FC = (props) => {
       >
         keyboard_arrow_left
       </i>
-      {/* <FillerImage color={props.images[currentIndex]} /> */}
       <img src={imgs[currentIndex]}  alt="Goose Pick"/>
       <i
         className="material-icons"
@@ -53,6 +52,3 @@ const ImageCarosel: React.FC = (props) => {
 export default ImageCarosel;
 
 
-const FillerImage: React.FC<{color: string}> = (props) => (
-  <div style={{backgroundColor: props.color, width: 200, height: 200}} />
-)
