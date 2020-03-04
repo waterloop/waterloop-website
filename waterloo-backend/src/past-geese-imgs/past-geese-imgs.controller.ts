@@ -3,15 +3,13 @@ import { join } from 'path'
 
 
 
-@Controller('past-geese-imgs/')
+@Controller('imgs')
 export class PastGeeseImgsController {
-  @Get('/:fileName')
+  @Get(':filename')
   get(
     @Res() res,
-    @Param() fileName
+    @Param() params
   ) {
-    if (fileName == 'goose1' || fileName == 'goose2' || fileName == 'goosex'){
-      res.sendFile(join(process.cwd(), `./public/${fileName}.png`));
-    }
+    res.sendFile(join(process.cwd(), `./public/${params.filename}`));
   }
 }
