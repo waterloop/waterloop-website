@@ -1,14 +1,33 @@
 import React from 'react';
+import styled from 'styled-components';
 
 type BackgroundColor = "yellow" | "black";
-type TextColor = "yellow" | "white";
+type TextColor = "yellow" | "white" | "black";
 
-interface Props {
+interface NonVariantProps {
   backgroundColor: BackgroundColor,
   text: string,
   textColor: TextColor,
-  onClick: () => void
+  onClick: () => void,
+  variant: null
 }
+
+interface VariantProps {
+  onClick: () => void,
+  variant: VariantNumber,
+  text: string,
+  backgroundColor: null,
+  textColor: null
+}
+
+type Props = VariantProps | NonVariantProps
+
+interface Variant {
+  backgroundColor: BackgroundColor,
+  textColor: TextColor
+}
+
+type VariantNumber = 1
 
 const ColorMap = {
   yellow: '#FED138',
@@ -16,27 +35,61 @@ const ColorMap = {
   white: '#FFFFFF'
 }
 
+const VariantMap: Record<VariantNumber, Variant> = {
+  1: {
+    backgroundColor: 'yellow',
+    textColor: 'black'
+  }
+}
+
 const Button: React.FC<Props> = (props) => {
 
-  const buttonStyles: React.CSSProperties = {
-    backgroundColor: ColorMap[props.backgroundColor],
-    borderRadius: '15px',
-    width: '155px',
-    height: '34px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center'
+  const {
+    textColor,
+    backgroundColor
+  }: {
+    textColor: TextColor,
+    backgroundColor: BackgroundColor
+  } = {
+    textColor: props.variant ?  VariantMap[props.variant].textColor : props.textColor,
+    backgroundColor:  props.variant ?  VariantMap[props.variant].backgroundColor : props.backgroundColor,
   }
-  const textStyles: React.CSSProperties = {
-    color: ColorMap[props.textColor],
-    fontSize: 'large',
-    fontFamily: 'IBM Plex Sans',
-    fontWeight: "bold"
-  }
+
+  const ButtonDiv = styled.button`
+    background-color: ${ColorMap[backgroundColor]};
+    border-radius: 15px;
+    width: 155px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-color:  ${ColorMap[backgroundColor]};
+    &:hover {
+      background-color: ${ColorMap[textColor]};
+      border-color:  ${ColorMap[textColor]};
+    }
+    &:active {
+      border-color: ${ColorMap.yellow};
+    }
+  }`
+
+  const Text = styled.p`
+    color: ${ColorMap[textColor]};
+    font-size: large;
+    font-family: IBM Plex Sans;
+    font-weight: bold;
+    ${ButtonDiv}:hover & {
+      color: ${ColorMap[backgroundColor]};
+    }
+    ${ButtonDiv}:active & {
+      border-color: ${ColorMap.yellow};
+    }
+  `
+
   return (
-    <div style={buttonStyles} onClick={props.onClick}>
-      <p style={textStyles}>{props.text}</p>
-    </div>
+    <ButtonDiv onClick={props.onClick}>
+      <Text>{props.text}</Text>
+    </ButtonDiv>
   )
 }
 
