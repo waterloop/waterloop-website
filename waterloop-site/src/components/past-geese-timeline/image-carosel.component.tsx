@@ -1,18 +1,15 @@
 import React from 'react';
 
-// To be replaced by an API call. Mock data for now
-// Delete the local files when the API is created
-import Goose1 from './goose1.png'
-import Goose2 from './goose2.png'
-import GooseEx from './goosex.png'
-
 interface Props {
-  images: string[]
+  currentIndex: number;
+  cycleLeft: () => void;
+  cycleRight: () => void;
+  imgs: string[]
 }
 
-const ImageCarosel: React.FC = (props) => {
+const ImageCarosel: React.FC<Props> = ({currentIndex, cycleLeft, cycleRight, imgs}) => {
 
-  const [currentIndex, setCurrentIndex] = React.useState<number>(0);
+
 
   const containerStyles: React.CSSProperties = {
     display: 'flex',
@@ -23,10 +20,7 @@ const ImageCarosel: React.FC = (props) => {
     cursor: 'pointer',
   }
 
-  const imgs = [Goose1, Goose2, GooseEx]
 
-  const cycleRight = () => setCurrentIndex((currentIndex + 1) % imgs.length)
-  const cycleLeft = () => setCurrentIndex((currentIndex - 1) >= 0 ? currentIndex -1 : imgs.length-1 )
 
   return (
     <div style={containerStyles}>
