@@ -7,29 +7,6 @@ type linkProps = {
   title: string;
 };
 
-// class LinkComponent extends React.Component<linkProps> {
-//   render() {
-//     return (
-//       <a
-//         target="_blank"
-//         href={this.props.link}
-//         style={{
-//           fontFamily: "IBM Plex Sans",
-//           fontStyle: "normal",
-//           fontWeight: "normal",
-//           color: "#FFFFFF", //NEED TO CHANGE LATER #FFFFFFF
-//           opacity: "0.7",
-//           textDecoration: "none"
-//         }}
-//       >
-//         {this.props.title}
-//       </a>
-//     );
-//   }
-// }
-
-// export default LinkComponent;
-
 class RouteComponent extends React.Component<linkProps> {
   render() {
     return (
@@ -39,7 +16,7 @@ class RouteComponent extends React.Component<linkProps> {
           fontFamily: "IBM Plex Sans",
           fontStyle: "normal",
           fontWeight: "normal",
-          color: "#FFFFFF", //NEED TO CHANGE LATER #FFFFFFF
+          color: "#FFFFFF",
           opacity: "0.7",
           textDecoration: "none"
         }}
