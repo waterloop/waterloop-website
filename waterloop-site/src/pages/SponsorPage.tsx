@@ -7,11 +7,20 @@ const size = {
   tabletM: "800px",
   tabletL: "1100px"
 };
+const CustomHeading = styled.h1`
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 47px;
+  text-align: center;
+`;
 
 const HypersonicWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
   @media (min-width: ${size.mobile}) {
     position: absolute;
     display: grid;
@@ -25,17 +34,20 @@ const HypersonicWrapper = styled.div`
 
 function HypersonicSponsor() {
   return (
-    <HypersonicWrapper>
-      <SponsorComponent />
-      <SponsorComponent />
-      <SponsorComponent />
-      <SponsorComponent />
-      <SponsorComponent />
-      <SponsorComponent />
-      <SponsorComponent />
-      <SponsorComponent />
-      <SponsorComponent />
-    </HypersonicWrapper>
+    <div>
+      <CustomHeading>Hypersonic Sponsor</CustomHeading>
+      <HypersonicWrapper>
+        <SponsorComponent />
+        <SponsorComponent />
+        <SponsorComponent />
+        <SponsorComponent />
+        <SponsorComponent />
+        <SponsorComponent />
+        <SponsorComponent />
+        <SponsorComponent />
+        <SponsorComponent />
+      </HypersonicWrapper>
+    </div>
   );
 }
 
