@@ -3,9 +3,13 @@ import styled from "styled-components";
 import SponsorComponent from "../components/SponsorComponent";
 
 const HypersonicWrapper = styled.div`
+  position: absolute;
   display: grid;
-  grid-template-columns: 50px 50px;
-  grid-area
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  max-width: 80%;
+  top: 10%;
+  left: 10%;
 `;
 // const StartSponsor = styled(SponsorComponent)`
 //   grid-column-start: 1;
@@ -17,6 +21,7 @@ const HypersonicWrapper = styled.div`
 function HypersonicSponsor() {
   return (
     <HypersonicWrapper>
+      <SponsorComponent />
       <SponsorComponent />
       <SponsorComponent />
       <SponsorComponent />
