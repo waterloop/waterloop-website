@@ -6,8 +6,7 @@ import HypersonicSponsor from "./pages/SponsorPage.tsx";
 function App() {
   return (
     <div className="App">
-      {/* <Test></Test> */}
-      <HypersonicSponsor />
+      <Test></Test>
     </div>
   );
 }
