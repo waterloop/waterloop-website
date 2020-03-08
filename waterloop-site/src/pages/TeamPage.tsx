@@ -1,7 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
-import testData from '../testProfileData'
 
+import testData from '../testProfileData'
 import MemberProfile from '../components/MemberProfile'
 
 type Profile = {
@@ -24,17 +23,9 @@ interface PSectionStates {
   minified: Array<Profile>
 }
 
-// Sample Mini Profile component
-const MiniProfile = styled(MemberProfile)`
-  height: 200px;
-  width: 350m;
-  padding-left: 100px;
-`
-
-const ExpandedProfile = styled(MemberProfile)`
-  height: 400px;
-  width: 100%
-`
+// Sample Profile components
+const MiniProfile = MemberProfile
+const ExpandedProfile = MemberProfile
 
 // Profile Subsection
 class ProfileSection extends React.Component<PSectionProps, PSectionStates> {
