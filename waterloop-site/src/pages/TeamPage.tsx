@@ -31,6 +31,11 @@ const MiniProfile = styled(MemberProfile)`
   padding-left: 100px;
 `
 
+const ExpandedProfile = styled(MemberProfile)`
+  height: 400px;
+  width: 100%
+`
+
 // Profile Subsection
 class ProfileSection extends React.Component<PSectionProps, PSectionStates> {
   constructor(props: PSectionProps) {
@@ -41,26 +46,46 @@ class ProfileSection extends React.Component<PSectionProps, PSectionStates> {
     }
   }
 
+  MinifyProfile () {
+    this.setState({
+      minified: [...this.state.minified, this.state.expanded],
+      expanded: {} as Profile
+    })
+  }
+
   ExpandProfile (i: number) {
-    alert(`PROFILE ${i} was clicked`)
-    this.setState({expanded: this.state.minified.splice(i, 1)[0]})
-    console.log(`expanded: ${this.state.expanded}`);
-    console.log(`minified: ${this.state.minified}`);
+    const target = this.state.minified.splice(i, 1)[0]
+    if (Object.keys(this.state.expanded).length !== 0) this.MinifyProfile()
+    this.setState({expanded: target})
   }
 
   render () {
+    const expanded = this.state.expanded
+    const minified = this.state.minified
+
     return (
-      <div style={{border: "thick solid #000000", height: "3em"}}>
-        {this.state.minified.map((profile, i) => {
-          const { name, position, image } = profile
-          return <MiniProfile
-            key={i}
-            name={name}
-            position={position}
-            image={image}
-            onClick={() => this.ExpandProfile(i)}
-          />
-        })}
+      <div>
+        {
+          Object.keys(expanded).length !== 0 &&
+          <div>
+            <ExpandedProfile
+              name={expanded.name}
+              onClick={() => this.MinifyProfile()}
+            />
+          </div>
+        }
+        <div>
+          {minified.map((profile, i) => {
+            const { name, position, image } = profile
+            return <MiniProfile
+              key={i}
+              name={name}
+              position={position}
+              image={image}
+              onClick={() => this.ExpandProfile(i)}
+            />
+          })}
+        </div>
       </div>
     )
   }
