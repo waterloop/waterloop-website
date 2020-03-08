@@ -1,101 +1,141 @@
+import LeadGooseOne from './images/LeadGoose.png';
+import LeadGithub from './images/BigGithub.png';
+import LeadLinkedIn from './images/BigLinkedIn.png';
+
 export default [
   {
-    "id": 0,
-    "name": "geese 1",
-    "position": "position",
-    "blurb": "blurb",
-    "image": "image",
-    "contact": {
-      "link": "link",
-      "icon": "icon"
-    }
+    name: "A Potentially Very Long Name",
+    blurb: "Papa Goose is the Alpha of V1 Green",
+    portrait: LeadGooseOne,
+    contacts: [
+      {
+        icon: LeadGithub,
+        url: 'http://www.github.com'
+      },
+      {
+        icon: LeadLinkedIn,
+        url: 'http://www.linkedin.com'
+      }
+    ]
   },
   {
-    "id": 1,
-    "name": "geese 2",
-    "position": "position",
-    "blurb": "blurb",
-    "image": "image",
-    "contact": {
-      "link": "link",
-      "icon": "icon"
-    }
+    name: "A Potentially Very Long Name",
+    blurb: "Papa Goose is the Alpha of V1 Green",
+    portrait: LeadGooseOne,
+    contacts: [
+      {
+        icon: LeadGithub,
+        url: 'http://www.github.com'
+      },
+      {
+        icon: LeadLinkedIn,
+        url: 'http://www.linkedin.com'
+      }
+    ]
   },
   {
-    "id": 2,
-    "name": "geese 3",
-    "position": "position",
-    "blurb": "blurb",
-    "image": "image",
-    "contact": {
-      "link": "link",
-      "icon": "icon"
-    }
+    name: "A Potentially Very Long Name",
+    blurb: "Papa Goose is the Alpha of V1 Green",
+    portrait: LeadGooseOne,
+    contacts: [
+      {
+        icon: LeadGithub,
+        url: 'http://www.github.com'
+      },
+      {
+        icon: LeadLinkedIn,
+        url: 'http://www.linkedin.com'
+      }
+    ]
   },
   {
-    "id": 3,
-    "name": "geese 4",
-    "position": "position",
-    "blurb": "blurb",
-    "image": "image",
-    "contact": {
-      "link": "link",
-      "icon": "icon"
-    }
+    name: "A Potentially Very Long Name",
+    blurb: "Papa Goose is the Alpha of V1 Green",
+    portrait: LeadGooseOne,
+    contacts: [
+      {
+        icon: LeadGithub,
+        url: 'http://www.github.com'
+      },
+      {
+        icon: LeadLinkedIn,
+        url: 'http://www.linkedin.com'
+      }
+    ]
   },
   {
-    "id": 4,
-    "name": "geese 5",
-    "position": "position",
-    "blurb": "blurb",
-    "image": "image",
-    "contact": {
-      "link": "link",
-      "icon": "icon"
-    }
+    name: "A Potentially Very Long Name",
+    blurb: "Papa Goose is the Alpha of V1 Green",
+    portrait: LeadGooseOne,
+    contacts: [
+      {
+        icon: LeadGithub,
+        url: 'http://www.github.com'
+      },
+      {
+        icon: LeadLinkedIn,
+        url: 'http://www.linkedin.com'
+      }
+    ]
   },
   {
-    "id": 5,
-    "name": "geese 6",
-    "position": "position",
-    "blurb": "blurb",
-    "image": "image",
-    "contact": {
-      "link": "link",
-      "icon": "icon"
-    }
+    name: "A Potentially Very Long Name",
+    blurb: "Papa Goose is the Alpha of V1 Green",
+    portrait: LeadGooseOne,
+    contacts: [
+      {
+        icon: LeadGithub,
+        url: 'http://www.github.com'
+      },
+      {
+        icon: LeadLinkedIn,
+        url: 'http://www.linkedin.com'
+      }
+    ]
   },
   {
-    "id": 6,
-    "name": "geese 7",
-    "position": "position",
-    "blurb": "blurb",
-    "image": "image",
-    "contact": {
-      "link": "link",
-      "icon": "icon"
-    }
+    name: "A Potentially Very Long Name",
+    blurb: "Papa Goose is the Alpha of V1 Green",
+    portrait: LeadGooseOne,
+    contacts: [
+      {
+        icon: LeadGithub,
+        url: 'http://www.github.com'
+      },
+      {
+        icon: LeadLinkedIn,
+        url: 'http://www.linkedin.com'
+      }
+    ]
   },
   {
-    "id": 7,
-    "name": "geese 8",
-    "position": "position",
-    "blurb": "blurb",
-    "image": "image",
-    "contact": {
-      "link": "link",
-      "icon": "icon"
-    }
+    name: "A Potentially Very Long Name",
+    blurb: "Papa Goose is the Alpha of V1 Green",
+    portrait: LeadGooseOne,
+    contacts: [
+      {
+        icon: LeadGithub,
+        url: 'http://www.github.com'
+      },
+      {
+        icon: LeadLinkedIn,
+        url: 'http://www.linkedin.com'
+      }
+    ]
   },
   {
-    "id": 8,
-    "name": "geese 9",
-    "position": "position",
-    "blurb": "blurb",
-    "image": "image",
-    "contact": {
-      "link": "link",
-      "icon": "icon"
-    }
+    name: "A Potentially Very Long Name",
+    blurb: "Papa Goose is the Alpha of V1 Green",
+    portrait: LeadGooseOne,
+    contacts: [
+      {
+        icon: LeadGithub,
+        url: 'http://www.github.com'
+      },
+      {
+        icon: LeadLinkedIn,
+        url: 'http://www.linkedin.com'
+      }
+    ]
   }
 ]

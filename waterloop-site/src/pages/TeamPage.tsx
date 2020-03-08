@@ -1,17 +1,14 @@
 import React from 'react'
 
 import testData from '../testProfileData'
+import LeadProfile from '../components/LeadProfile'
 import MemberProfile from '../components/MemberProfile'
 
 type Profile = {
   name: string,
-  position: string,
   blurb: string,
-  image: string,
-  contact: {
-    link: string,
-    icon: string
-  }
+  portrait: string,
+  contacts: Array<{icon: string, url: string}>
 }
 
 interface PSectionProps {
@@ -67,12 +64,13 @@ class ProfileSection extends React.Component<PSectionProps, PSectionStates> {
         }
         <div>
           {minified.map((profile, i) => {
-            const { name, position, image } = profile
-            return <MiniProfile
+            const { name, blurb, portrait, contacts } = profile
+            return <LeadProfile
               key={i}
               name={name}
-              position={position}
-              image={image}
+              blurb={blurb}
+              portrait={portrait}
+              contacts={contacts}
               onClick={() => this.ExpandProfile(i)}
             />
           })}
@@ -84,7 +82,9 @@ class ProfileSection extends React.Component<PSectionProps, PSectionStates> {
 
 // TeamPage
 export default class TeamPage extends React.Component {
+
   render () {
+    console.log(testData)
     return (
       <>
         <ProfileSection profiles={testData.slice(0,3)} />
