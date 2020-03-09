@@ -1,28 +1,42 @@
 import React from 'react'
+import styled from 'styled-components'
 
 import LeadProfile from '../components/LeadProfile'
-import MemberProfile from '../components/MemberProfile'
-
 import testData from '../testProfileData'
 
+// Typescript types/interfaces
 type Profile = {
   name: string,
   blurb: string,
   portrait: string,
   contacts: Array<{icon: string, url: string}>
 }
-
 interface PSectionProps {
   profiles: Array<Profile>
 }
-
 interface PSectionStates {
   expanded: Profile,
   minified: Array<Profile>
 }
 
+// Styled components for ProfileSection
+  const ProfileSectionDisplay = styled.div`
+  margin-bottom: 200px;
+  width: 100%
+`
+const MinifiedProfileDisplay = styled.div`
+  margin: 25px auto;
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+`
+const ExpandedProfileDisplay = styled.div`
+  margin: 25px auto;
+  width 90%;
+`
+
 // Profile Subsection
-class ProfileSection extends React.Component<PSectionProps, PSectionStates> {
+class ProfileSection extends React.Component<{profiles: Array<Profile>}, PSectionStates> {
   constructor(props: PSectionProps) {
     super(props)
     this.state = {
@@ -49,10 +63,10 @@ class ProfileSection extends React.Component<PSectionProps, PSectionStates> {
     const minified = this.state.minified
 
     return (
-      <div>
-        {
-          Object.keys(expanded).length !== 0 &&
-          <div>
+      <ProfileSectionDisplay>
+        <ExpandedProfileDisplay>
+          {
+            Object.keys(expanded).length !== 0 &&
             <LeadProfile
               name={expanded.name}
               blurb={expanded.blurb}
@@ -60,9 +74,9 @@ class ProfileSection extends React.Component<PSectionProps, PSectionStates> {
               contacts={expanded.contacts}
               onClick={() => this.MinifyProfile()}
             />
-          </div>
-        }
-        <div>
+          }
+        </ExpandedProfileDisplay>
+        <MinifiedProfileDisplay>
           {minified.map((profile, i) => {
             const { name, blurb, portrait, contacts } = profile
             return <LeadProfile
@@ -74,8 +88,8 @@ class ProfileSection extends React.Component<PSectionProps, PSectionStates> {
               onClick={() => this.ExpandProfile(i)}
             />
           })}
-        </div>
-      </div>
+        </MinifiedProfileDisplay>
+      </ProfileSectionDisplay>
     )
   }
 }
@@ -88,8 +102,7 @@ export default class TeamPage extends React.Component {
     return (
       <>
         <ProfileSection profiles={testData.slice(0,3)} />
-        <ProfileSection profiles={testData.slice(3,6)} />
-        <ProfileSection profiles={testData.slice(6,9)} />
+        <ProfileSection profiles={testData.slice(3,9)} />
       </>
     )
   }

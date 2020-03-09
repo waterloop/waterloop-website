@@ -6,6 +6,7 @@ const Container = styled.div`
   display: flex;
   width: 475px;
   height: 266px;
+  margin-bottom: 100px;
 `
 
 const WrapperProfile = styled.div`
