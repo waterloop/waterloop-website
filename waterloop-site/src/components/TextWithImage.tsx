@@ -1,31 +1,35 @@
-import React from "react"
-import styled from "styled-components"
+import React from "react";
+import styled from "styled-components";
 
 const TextBlock = styled.div`
   text-align: justify;
   width: 50%;
   height: 100%;
   padding-right: 3%;
-  display: inline-block;
-  @media (max-width: 500px){
+  display: flex;
+  flex-direction: column;
+  @media (max-width: 500px) {
     display: inline;
     padding-right: 0;
   }
 `;
 
 const Img = styled.img`
-  width: 30vw;
-  height: 23vw;
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
+  height: auto;
   border-radius: 20pt;
   margin-top: 3%;
-  @media (max-width: 500px){
+  @media (max-width: 500px) {
     display: none;
   }
 `;
 
 const ResponsiveImg = styled.img`
-  display none;
-  @media (max-width: 500px){
+  display: none;
+
+  @media (max-width: 500px) {
     display: inline-block;
     width: 40vw;
     height: 30vw;
@@ -40,14 +44,14 @@ const LearnMoreBtn = styled.a`
   background-color: white;
   padding-left: 0.5%;
   padding-right: 0.5%;
-  color: #A9A9A9;
+  color: #a9a9a9;
   border-radius: 50pt;
-  border: 2px solid #A9A9A9;
+  border: 2px solid #a9a9a9;
   height: 1%;
   width: 20%;
   text-decoration: none;
   font-size: 1.5vw;
-  @media (max-width: 500px){
+  @media (max-width: 500px) {
     margin-left: 35%;
     margin-right: 30%;
     width: 30%;
@@ -58,7 +62,7 @@ const LearnMoreBtn = styled.a`
 const Header = styled.h2`
   font-style: italic;
   font-size: 1.7vw;
-  @media (max-width: 500px){
+  @media (max-width: 500px) {
     margin-left: 25%;
     margin-right: 25%;
     text-align: center;
@@ -67,8 +71,8 @@ const Header = styled.h2`
 `;
 
 const Text = styled.p`
-  font-size: 1.5vw;
-  @media (max-width: 500px){
+  font-size: 18px;
+  @media (max-width: 500px) {
     margin-left: 10%;
     margin-right: 10%;
     text-align: center;
@@ -76,24 +80,32 @@ const Text = styled.p`
   }
 `;
 
-type MyProps = {title: string, text: string, image: string, link: string};
+const Block = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid red;
+  width: 100%;
+`;
 
-class TextWithImage extends React.Component <MyProps> {
+type MyProps = { title: string; text: string; image: string; link: string };
+
+class TextWithImage extends React.Component<MyProps> {
   render() {
     return (
-      <div style={{textAlign: "center"}}>
-        <ResponsiveImg src = {this.props.image} alt = "photo"></ResponsiveImg>
+      <Block>
+        {/* <ResponsiveImg src={this.props.image} alt="photo"></ResponsiveImg> */}
         <TextBlock>
           <Header>{this.props.title}</Header>
           <Text>{this.props.text}</Text>
-          <LearnMoreBtn target="_blank" href={this.props.link}>
+          {/* <LearnMoreBtn target="_blank" href={this.props.link}>
             <Text>Learn More</Text>
-          </LearnMoreBtn>
+          </LearnMoreBtn> */}
         </TextBlock>
-        <Img src = {this.props.image} alt = "photo"></Img>
-      </div>
+        <Img src={this.props.image} alt="photo"></Img>
+      </Block>
     );
   }
 }
 
-export default TextWithImage
+export default TextWithImage;
