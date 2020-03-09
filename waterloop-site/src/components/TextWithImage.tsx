@@ -38,27 +38,6 @@ const ResponsiveImg = styled.img`
   }
 `;
 
-const LearnMoreBtn = styled.a`
-  display: flex;
-  justify-content: center;
-  background-color: white;
-  padding-left: 0.5%;
-  padding-right: 0.5%;
-  color: #a9a9a9;
-  border-radius: 50pt;
-  border: 2px solid #a9a9a9;
-  height: 1%;
-  width: 20%;
-  text-decoration: none;
-  font-size: 1.5vw;
-  @media (max-width: 500px) {
-    margin-left: 35%;
-    margin-right: 30%;
-    width: 30%;
-    font-size: 2vw;
-  }
-`;
-
 const Header = styled.h2`
   font-style: italic;
   font-size: 1.7vw;
@@ -84,7 +63,6 @@ const Block = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid red;
   width: 100%;
 `;
 
