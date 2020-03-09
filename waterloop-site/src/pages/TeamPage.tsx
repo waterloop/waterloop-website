@@ -1,8 +1,9 @@
 import React from 'react'
 
-import testData from '../testProfileData'
 import LeadProfile from '../components/LeadProfile'
 import MemberProfile from '../components/MemberProfile'
+
+import testData from '../testProfileData'
 
 type Profile = {
   name: string,
@@ -19,10 +20,6 @@ interface PSectionStates {
   expanded: Profile,
   minified: Array<Profile>
 }
-
-// Sample Profile components
-const MiniProfile = MemberProfile
-const ExpandedProfile = MemberProfile
 
 // Profile Subsection
 class ProfileSection extends React.Component<PSectionProps, PSectionStates> {
@@ -56,8 +53,11 @@ class ProfileSection extends React.Component<PSectionProps, PSectionStates> {
         {
           Object.keys(expanded).length !== 0 &&
           <div>
-            <ExpandedProfile
+            <LeadProfile
               name={expanded.name}
+              blurb={expanded.blurb}
+              portrait={expanded.portrait}
+              contacts={expanded.contacts}
               onClick={() => this.MinifyProfile()}
             />
           </div>
