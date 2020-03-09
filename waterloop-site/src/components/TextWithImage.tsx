@@ -26,18 +26,6 @@ const Img = styled.img`
   }
 `;
 
-const ResponsiveImg = styled.img`
-  display: none;
-
-  @media (max-width: 500px) {
-    display: inline-block;
-    width: 40vw;
-    height: 30vw;
-    border-radius: 20pt;
-    margin-top: 3%;
-  }
-`;
-
 const Header = styled.h2`
   font-style: italic;
   font-size: 1.7vw;
@@ -72,13 +60,10 @@ class TextWithImage extends React.Component<MyProps> {
   render() {
     return (
       <Block>
-        {/* <ResponsiveImg src={this.props.image} alt="photo"></ResponsiveImg> */}
         <TextBlock>
           <Header>{this.props.title}</Header>
           <Text>{this.props.text}</Text>
-          {/* <LearnMoreBtn target="_blank" href={this.props.link}>
-            <Text>Learn More</Text>
-          </LearnMoreBtn> */}
+          {/* Import button component */}
         </TextBlock>
         <Img src={this.props.image} alt="photo"></Img>
       </Block>
