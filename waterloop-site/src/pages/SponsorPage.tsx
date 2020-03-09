@@ -22,11 +22,15 @@ const HypersonicWrapper = styled.div`
   align-items: center;
 
   @media (min-width: ${size.mobile}) {
-    position: absolute;
+    /* position: absolute;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 30px;
-    max-width: 80%;
+    max-width: 80%; */
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     top: 10%;
     left: 10%;
   }

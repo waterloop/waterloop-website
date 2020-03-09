@@ -9,8 +9,8 @@ const size = {
 
 const SponsorComponent = styled.div`
   position: relative;
-  width: 495px;
-  height: 184px;
+  width: 80%;
+  height: 250px;
   margin-bottom: 10px;
   display: flex;
   align-items: center;
