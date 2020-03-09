@@ -6,12 +6,11 @@ import LeadProfile from '../LeadProfile'
 
 // Styled components for ProfileSection
 const ProfileSectionDisplay = styled.div`
-  width: 100%;
   margin-bottom: 200px;
 `
 const MinifiedLeadDisplay = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
 `
 const ExpandedDisplay = styled.div`
   width: 100%;
@@ -48,13 +47,15 @@ export default class ProfileSection extends React.Component<PSectionProps, PSect
       <ProfileSectionDisplay>
         {
           Object.keys(expanded).length !== 0 &&
-          <ExpandedDisplay><LeadProfile
-            name={expanded.name}
-            position={expanded.position}
-            portrait={expanded.portrait}
-            contacts={expanded.contacts}
-            onClick={() => this.MinifyProfile()}
-          /></ExpandedDisplay>
+          <ExpandedDisplay>
+            <LeadProfile
+              name={expanded.name}
+              position={expanded.position}
+              portrait={expanded.portrait}
+              contacts={expanded.contacts}
+              onClick={() => this.MinifyProfile()}
+            />
+          </ExpandedDisplay>
         }
         {
           this.state.minified.length > 0 &&

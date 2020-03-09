@@ -3,12 +3,11 @@ import ProfileSection from '../components/ProfileSection'
 
 import testData from '../testProfileData'
 
-// TeamPage
 export default class TeamPage extends React.Component {
   render () {
     console.log(testData)
     return (
-      <div className="page">
+      <div>
         <h1>Leads 1</h1>
         <ProfileSection profiles={testData.slice(0,3)} />
 

@@ -11,11 +11,9 @@ const IconContainer = styled.div`
 display: flex;
 flex-direction: row;
 `
-
 const IconWrapper = styled.div`
 padding-right: 7px;
 `
-
 const NameContainer = styled.div`
 font-family: IBM Plex Sans;
 font-style: normal;

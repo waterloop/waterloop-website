@@ -8,7 +8,6 @@ const Container = styled.div`
   height: 266px;
   margin-bottom: 100px;
 `
-
 const WrapperProfile = styled.div`
   border: 1.5px solid #fbc531;
   border-radius: 25px 0px;
