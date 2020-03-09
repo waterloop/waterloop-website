@@ -33,14 +33,14 @@ line-height: 26px;
 color: #000000;
 `
 
-type MyProps = {name: string; blurb: string; contacts: Array<{icon: string, url: string}>};
+type MyProps = {name: string; position: string; contacts: Array<{icon: string, url: string}>};
 
 class Information extends React.Component <MyProps> {
   render() {
     return (
       <InfoContainer >
         <NameContainer>{this.props.name}</NameContainer>
-        <BlurbContainer>{this.props.blurb}</BlurbContainer>
+        <BlurbContainer>{this.props.position}</BlurbContainer>
 
         <IconContainer>
           {this.props.contacts.map((contact, i) => {

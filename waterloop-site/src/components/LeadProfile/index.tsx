@@ -20,7 +20,7 @@ const LeadProfile = (props: any) => {
         <WrapperProfile><img src={props.portrait}/></WrapperProfile>
         <Information
           name={props.name}
-          blurb={props.blurb}
+          position={props.position}
           contacts={props.contacts}
         />
     </Container>

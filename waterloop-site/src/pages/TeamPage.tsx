@@ -7,7 +7,7 @@ import testData from '../testProfileData'
 // Typescript types/interfaces
 type Profile = {
   name: string,
-  blurb: string,
+  position: string,
   portrait: string,
   contacts: Array<{icon: string, url: string}>
 }
@@ -69,7 +69,7 @@ class ProfileSection extends React.Component<{profiles: Array<Profile>}, PSectio
             Object.keys(expanded).length !== 0 &&
             <LeadProfile
               name={expanded.name}
-              blurb={expanded.blurb}
+              position={expanded.position}
               portrait={expanded.portrait}
               contacts={expanded.contacts}
               onClick={() => this.MinifyProfile()}
@@ -78,11 +78,11 @@ class ProfileSection extends React.Component<{profiles: Array<Profile>}, PSectio
         </ExpandedProfileDisplay>
         <MinifiedProfileDisplay>
           {minified.map((profile, i) => {
-            const { name, blurb, portrait, contacts } = profile
+            const { name, position, portrait, contacts } = profile
             return <LeadProfile
               key={i}
               name={name}
-              blurb={blurb}
+              position={position}
               portrait={portrait}
               contacts={contacts}
               onClick={() => this.ExpandProfile(i)}
