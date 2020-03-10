@@ -9,8 +9,8 @@ const ProfileSectionDisplay = styled.div`
   margin-bottom: 200px;
 `
 const MinifiedLeadContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 `
 const ExpandedDisplay = styled.div`
   width: 100%;
