@@ -8,9 +8,7 @@ import LeadProfile from '../LeadProfile'
 const ProfileSectionDisplay = styled.div`
   margin-bottom: 200px;
 `
-const MinifiedLeadDisplay = styled.div`
-  /* display: grid;
-  grid-template-columns: repeat(3, 1fr); */
+const MinifiedLeadContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
 `
@@ -61,7 +59,7 @@ export default class ProfileSection extends React.Component<PSectionProps, PSect
         }
         {
           this.state.minified.length > 0 &&
-          <MinifiedLeadDisplay>
+          <MinifiedLeadContainer>
             {minified.map((profile, i) => {
               const { name, position, portrait, contacts } = profile
               return <LeadProfile
@@ -73,7 +71,7 @@ export default class ProfileSection extends React.Component<PSectionProps, PSect
                 onClick={() => this.ExpandProfile(i)}
               />
             })}
-          </MinifiedLeadDisplay>
+          </MinifiedLeadContainer>
         }
 
       </ProfileSectionDisplay>

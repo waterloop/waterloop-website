@@ -6,7 +6,13 @@ const Container = styled.div`
   display: flex;
   width: 475px;
   height: 266px;
-  margin-bottom: 100px;
+  margin: 0px auto 100px;
+  &:nth-child(3n-2) {
+    margin-left: 0px;
+  }
+  &:nth-child(3n) {
+    margin-right: 0px;
+  }
 `
 const WrapperProfile = styled.div`
   border: 1.5px solid #fbc531;
