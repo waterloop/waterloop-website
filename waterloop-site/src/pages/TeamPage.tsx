@@ -15,7 +15,9 @@ const ProfileSectionTitle = styled.h1`
   margin-bottom: 50px;
 `
 const Page = styled.div`
-  margin: 0 380px;
+  display: block;
+  width: 1080px;
+  margin: 0 auto;
 `
 
 export default class TeamPage extends React.Component {
