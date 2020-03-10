@@ -2,55 +2,70 @@ import React from "react"
 import styled from "styled-components"
 
 const TextBlock = styled.div`
-  text-align: justify;
+  display: flex;
+  flex-direction: column;
   width: 50%;
   height: 100%;
   padding-left: 3%;
-  display: inline-block;
   @media (max-width: 500px){
-    display: block;
+    display: flex;
+    width: 100%;
     text-align: center;
-    margin-left: 25%;
-    padding-left: 0;
-    margin-right: 25%;
+    padding: 0px 30px;
   }
 `;
 
 const Img = styled.img`
-  margin-top: 2%;
-  width: 25%;
-  height: 17vw;
+  display: flex;
+  flex-direction: column;
+  width: 315px;
+  height: 227px;
   @media (max-width: 500px){
-    width: 40%;
-    height: 27vw;
+    display: none;
   }
 `;
 
 const Header = styled.h2`
   font-style: italic;
-  font-size: 1.7vw;
+  font-size: 28px;
+  margin-bottom: 0px !important;
   @media (max-width: 500px){
-    font-size: 2vw;
+    font-size: 25px;
   }
 `;
 
 const Text = styled.p`
-  font-size: 1.5vw;
+  font-size: 18px;
+  margin-top: 14px !important;
+
+  @media (max-width: 500px){
+    font-size: 13px;
+    text-align: left;
+  }
 `;
 
-type MyProps = {subteam: string, description: string, image: string};
 
-class SubteamsOverview extends React.Component <MyProps> {
+const Block = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2%;
+  padding-bottom: 25px;
+`;
+
+type MyProps = { subteam: string, description: string, image: string };
+
+class SubteamsOverview extends React.Component<MyProps> {
 
   render() {
     return (
-      <div id = "div" style={{textAlign: "center"}}>
-        <Img src = {this.props.image} alt = "photo"></Img>
+      <Block>
+        <Img src={this.props.image} alt="photo"></Img>
         <TextBlock>
           <Header>{this.props.subteam}</Header>
           <Text>{this.props.description}</Text>
         </TextBlock>
-      </div>
+      </Block>
     );
   }
 }
