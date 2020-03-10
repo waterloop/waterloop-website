@@ -42,7 +42,12 @@ function HypersonicSponsor() {
       <CustomHeading>Hypersonic Sponsor</CustomHeading>
       <HypersonicWrapper>
         <SponsorComponent variant="Hypersonic" />
-        <SponsorComponent />
+        <SponsorComponent variant="Hypersonic" />
+
+        <SponsorComponent variant="Sonic" />
+        <SponsorComponent variant="Sonic" />
+        <SponsorComponent variant="Sonic" />
+        <SponsorComponent variant="Sonic" />
       </HypersonicWrapper>
     </div>
   );

@@ -32,6 +32,11 @@ const SponsorComponent = styled("div")<SponsorComponentInterface>(
       Hypersonic: {
         width: "80%",
         height: "250px"
+      },
+
+      Sonic: {
+        width: "40%",
+        height: "250px"
       }
     }
   })
