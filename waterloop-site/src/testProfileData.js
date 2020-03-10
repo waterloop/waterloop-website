@@ -88,50 +88,5 @@ export default [
         url: 'http://www.linkedin.com'
       }
     ]
-  },
-  {
-    name: "A Potentially Very Long Name 7",
-    position: "Papa Goose is the Alpha of V1 Green",
-    portrait: "/LeadGoose.png",
-    contacts: [
-      {
-        icon: "/BigGithub.png",
-        url: 'http://www.github.com'
-      },
-      {
-        icon: "/BigLinkedIn.png",
-        url: 'http://www.linkedin.com'
-      }
-    ]
-  },
-  {
-    name: "A Potentially Very Long Name 8",
-    position: "Papa Goose is the Alpha of V1 Green",
-    portrait: "/LeadGoose.png",
-    contacts: [
-      {
-        icon: "/BigGithub.png",
-        url: 'http://www.github.com'
-      },
-      {
-        icon: "/BigLinkedIn.png",
-        url: 'http://www.linkedin.com'
-      }
-    ]
-  },
-  {
-    name: "A Potentially Very Long Name 9",
-    position: "Papa Goose is the Alpha of V1 Green",
-    portrait: "/LeadGoose.png",
-    contacts: [
-      {
-        icon: "/BigGithub.png",
-        url: 'http://www.github.com'
-      },
-      {
-        icon: "/BigLinkedIn.png",
-        url: 'http://www.linkedin.com'
-      }
-    ]
   }
 ]

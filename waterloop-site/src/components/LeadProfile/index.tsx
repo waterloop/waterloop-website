@@ -7,10 +7,10 @@ const Container = styled.div`
   width: 475px;
   height: 266px;
   margin: 0px auto 100px;
-  &:nth-child(3n-2) {
+  &:nth-child(2n-1) {
     margin-left: 0px;
   }
-  &:nth-child(3n) {
+  &:nth-child(2n) {
     margin-right: 0px;
   }
 `

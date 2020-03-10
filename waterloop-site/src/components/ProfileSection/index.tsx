@@ -6,11 +6,11 @@ import LeadProfile from '../LeadProfile'
 
 // Styled components for ProfileSection
 const ProfileSectionDisplay = styled.div`
-  margin-bottom: 200px;
+  margin-bottom: 50px;
 `
 const MinifiedLeadContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 `
 const ExpandedDisplay = styled.div`
   width: 100%;

@@ -14,18 +14,21 @@ const ProfileSectionTitle = styled.h1`
   color: #010101;
   margin-bottom: 50px;
 `
+const Page = styled.div`
+  margin: 0 380px;
+`
 
 export default class TeamPage extends React.Component {
   render () {
     console.log(testData)
     return (
-      <div>
+      <Page>
         <ProfileSectionTitle>Leads 1</ProfileSectionTitle>
-        <ProfileSection profiles={testData.slice(0,3)} />
+        <ProfileSection profiles={testData.slice(0,2)} />
 
         <ProfileSectionTitle>Leads 2</ProfileSectionTitle>
-        <ProfileSection profiles={testData.slice(3,9)} />
-      </div>
+        <ProfileSection profiles={testData.slice(2,6)} />
+      </Page>
     )
   }
 }
