@@ -3,6 +3,7 @@ import styled from "styled-components";
 import TestComponent from "../components/TestComponent"
 import TextWithImage from "../components/TextWithImage"
 import TextWithImageData from "../components/json/TextWithImage.json"
+import Sponsors from "../components/Sponsors"
 
 var title = "";
 var text = "";
@@ -32,6 +33,8 @@ class TestPage extends React.Component {
             image = {image}
             link = {link}
             />
+
+          <Sponsors></Sponsors>
       </div>
     );
   }
