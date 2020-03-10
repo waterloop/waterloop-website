@@ -18,17 +18,35 @@ import Wera from "./sponsorphotos/Wera.png"
 import L3Harris from "./sponsorphotos/L3Harris.png"
 
 const Img = styled.img`
-  flex-direction: column;
-  display: inline-block;
-  width: 23vw;
-  margin: 5%;
+  display: flex;
+  align-content: center;
+  width: 19vw;
+  height: 15vh;
+  margin: 40px;
+  padding: 5px;
+  border: 2px solid #AAB7C4;
+  border-radius: 10px;
 `;
 
 const Header = styled.h2`
   font-style: italic;
-  font-size: 1.7vw;
-  margin-left: 5%;
+  font-size: 28px;
+
 `;
+
+const SponsorsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+`;
+
+const Block = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  margin: 10px 150px;
+`;
+
 
 
 type MyProps = {};
@@ -36,24 +54,26 @@ type MyProps = {};
 class Sponsors extends React.Component<MyProps> {
   render() {
     return (
-      <div>
+      <Block>
         <Header>Our Sponsors</Header>
-          <Img src= {BrentsWeldingAndFab} alt="BrentsWeldingAndFab"></Img>
-          <Img src= {UW_Engineering} alt="UW_Engineering"></Img>
-          <Img src= {UW_Engineering_Endowment} alt="UW_Engineering_Endowment"></Img>
-          <Img src= {UW_Engineering_Society} alt="UW_Engineering_Society"></Img>
-          <Img src= {WCBranham} alt="WCBranham"></Img>
-          <Img src= {ClickUp} alt="ClickUp"></Img>
-          <Img src= {Psim} alt="Psim"></Img>
-          <Img src= {Ansys} alt="Ansys"></Img>
-          <Img src= {AndersonPowerProducts} alt="AndersonPowerProducts"></Img>
-          <Img src= {Mitutoyo} alt="Mitutoyo"></Img>
-          <Img src= {Threedx} alt="Threedx"></Img>
-          <Img src= {StarTechnology} alt="StarTechnology"></Img>
-          <Img src= {WPrint} alt="WPrint"></Img>
-          <Img src= {Wera} alt="Wera"></Img>
-          <Img src= {L3Harris} alt="L3Harris"></Img>
-      </div>
+        <SponsorsContainer>
+          <Img src={BrentsWeldingAndFab} alt="BrentsWeldingAndFab"></Img>
+          <Img src={UW_Engineering} alt="UW_Engineering"></Img>
+          <Img src={UW_Engineering_Endowment} alt="UW_Engineering_Endowment"></Img>
+          <Img src={UW_Engineering_Society} alt="UW_Engineering_Society"></Img>
+          <Img src={WCBranham} alt="WCBranham"></Img>
+          <Img src={ClickUp} alt="ClickUp"></Img>
+          <Img src={Psim} alt="Psim"></Img>
+          <Img src={Ansys} alt="Ansys"></Img>
+          <Img src={AndersonPowerProducts} alt="AndersonPowerProducts"></Img>
+          <Img src={Mitutoyo} alt="Mitutoyo"></Img>
+          <Img src={Threedx} alt="Threedx"></Img>
+          <Img src={StarTechnology} alt="StarTechnology"></Img>
+          <Img src={WPrint} alt="WPrint"></Img>
+          <Img src={Wera} alt="Wera"></Img>
+          <Img src={L3Harris} alt="L3Harris"></Img>
+        </SponsorsContainer>
+      </Block>
     );
   }
 }
