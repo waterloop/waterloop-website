@@ -3,6 +3,7 @@ import styled from "styled-components";
 import TestComponent from "../components/TestComponent"
 import TextWithImage from "../components/TextWithImage"
 import TextWithImageData from "../components/json/TextWithImage.json"
+import Sponsors from "../components/Sponsors"
 import SubteamsOverview from "../components/SubteamsOverview"
 
 var title = "";
