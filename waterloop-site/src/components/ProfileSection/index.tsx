@@ -9,6 +9,8 @@ const ProfileSectionDisplay = styled.div`
   margin-bottom: 200px;
 `
 const MinifiedLeadDisplay = styled.div`
+  /* display: grid;
+  grid-template-columns: repeat(3, 1fr); */
   display: flex;
   flex-wrap: wrap;
 `
