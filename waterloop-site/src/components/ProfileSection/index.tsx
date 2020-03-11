@@ -12,6 +12,14 @@ const MinifiedLeadContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 100px;
+
+  @media (max-width: 1065px){
+    display: flex;
+    flex-direction: column;
+    & > div {
+      margin-bottom: 100px;
+    }
+  }
 `
 const ExpandedContainer = styled.div`
   width: 100%;

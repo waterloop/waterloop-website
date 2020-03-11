@@ -15,8 +15,16 @@ const ProfileSectionTitle = styled.h1`
   margin-bottom: 50px;
 `
 const Page = styled.div`
-  max-width: 1080px;
+  display: block;
+  max-width: 1065px;
   margin: 0 auto;
+
+  @media (max-width: 1065px){
+    display: flex;
+    flex-direction: column;
+    width: 475px;
+    margin: 0 auto;
+  }
 `
 
 export default class TeamPage extends React.Component {
