@@ -14,7 +14,7 @@ const IconContainer = styled.div`
   flex-direction: row;
 `
 const IconWrapper = styled.div`
-padding-right: 7px;
+  padding-right: 7px;
 `
 const NameContainer = styled.div`
   font-family: IBM Plex Sans;
@@ -24,7 +24,7 @@ const NameContainer = styled.div`
   line-height: 31px;
   color: #000000;
 `
-const BlurbContainer = styled.div`
+const PositionContainer = styled.div`
   font-family: IBM Plex Sans;
   font-style: normal;
   font-weight: 200;
@@ -40,12 +40,12 @@ class Information extends React.Component <MyProps> {
     return (
       <InfoContainer >
         <NameContainer>{this.props.name}</NameContainer>
-        <BlurbContainer>{this.props.position}</BlurbContainer>
+        <PositionContainer>{this.props.position}</PositionContainer>
 
         <IconContainer>
           {this.props.contacts.map((contact, i) => {
           return <IconWrapper onClick={(event: any) => {event.stopPropagation()}}>
-              <a href={contact.url} target="_blank"><img src={contact.icon} alt="link"/></a>
+              <a href={contact.url}><img src={contact.icon} alt="link"/></a>
             </IconWrapper>
           })}
         </IconContainer>

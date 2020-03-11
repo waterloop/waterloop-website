@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import { Profile, PSectionProps, PSectionStates } from './interfaces'
 import LeadProfile from '../LeadProfile'
+import SubProfile from '../SubProfile'
 
 // Styled components for ProfileSection
 const ProfileSectionContainer = styled.div`
@@ -12,6 +13,29 @@ const MinifiedLeadContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 100px;
+  &> div:nth-child(2n){
+    margin-left: auto;
+  }
+
+  @media (max-width: 1065px){
+    display: flex;
+    flex-direction: column;
+    & > div {
+      margin-bottom: 100px;
+    }
+  }
+`
+const MinifiedSubContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 100px;
+  &> div:nth-child(3n){
+    margin-left: auto;
+  }
+  &> div:nth-child(3n-1){
+    margin-right: auto;
+    margin-left: auto;
+  }
 
   @media (max-width: 1065px){
     display: flex;
@@ -53,6 +77,14 @@ export default class ProfileSection extends React.Component<PSectionProps, PSect
     const expanded = this.state.expanded
     const minified = this.state.minified
 
+    // Determine which type of profile to display
+    let ProfileContainerTypeTag = MinifiedSubContainer
+    let ProfileTypeTag = SubProfile
+    if (this.props.profileType === 'lead') {
+      ProfileContainerTypeTag = MinifiedLeadContainer
+      ProfileTypeTag = LeadProfile
+    }
+
     return (
       <ProfileSectionContainer>
         {
@@ -69,19 +101,19 @@ export default class ProfileSection extends React.Component<PSectionProps, PSect
         }
         {
           this.state.minified.length > 0 &&
-          <MinifiedLeadContainer>
+          <ProfileContainerTypeTag>
             {minified.map((profile, i) => {
               const { name, position, portrait, contacts } = profile
-              return <LeadProfile
-                key={i}
-                name={name}
-                position={position}
-                portrait={portrait}
-                contacts={contacts}
-                onClick={() => this.ExpandProfile(i)}
-              />
+                return <ProfileTypeTag
+                  key={i}
+                  name={name}
+                  position={position}
+                  portrait={portrait}
+                  contacts={contacts}
+                  onClick={() => this.ExpandProfile(i)}
+                />
             })}
-          </MinifiedLeadContainer>
+          </ProfileContainerTypeTag>
         }
 
       </ProfileSectionContainer>

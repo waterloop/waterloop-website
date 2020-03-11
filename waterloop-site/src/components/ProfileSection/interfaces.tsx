@@ -7,6 +7,7 @@ export type Profile = {
 
 export interface PSectionProps {
   profiles: Array<Profile>
+  profileType: string
 }
 
 export interface PSectionStates {

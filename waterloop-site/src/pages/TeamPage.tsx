@@ -16,7 +16,7 @@ const ProfileSectionTitle = styled.h1`
 `
 const Page = styled.div`
   display: block;
-  max-width: 1065px;
+  max-width: 1080px;
   margin: 0 auto;
 
   @media (max-width: 1065px){
@@ -33,10 +33,13 @@ export default class TeamPage extends React.Component {
     return (
       <Page>
         <ProfileSectionTitle>Leads 1</ProfileSectionTitle>
-        <ProfileSection profiles={testData.slice(0,2)} />
+        <ProfileSection profiles={testData.slice(0,2)} profileType={"lead"} />
 
-        <ProfileSectionTitle>Leads 2</ProfileSectionTitle>
-        <ProfileSection profiles={testData.slice(2,6)} />
+        <ProfileSectionTitle>Subteam 1</ProfileSectionTitle>
+        <ProfileSection profiles={testData.slice(2,8)} profileType={"subteam"}/>
+
+        <ProfileSectionTitle>Subteam 1</ProfileSectionTitle>
+        <ProfileSection profiles={testData.slice(8,14)} profileType={"subteam"}/>
       </Page>
     )
   }
