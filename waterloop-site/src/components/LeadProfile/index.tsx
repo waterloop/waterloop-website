@@ -6,15 +6,11 @@ const Container = styled.div`
   display: flex;
   width: 475px;
   height: 266px;
-  margin: 0px auto 100px;
-  &:nth-child(2n-1) {
-    margin-left: 0px;
-  }
-  &:nth-child(2n) {
-    margin-right: 0px;
-  }
+
 `
 const WrapperProfile = styled.div`
+  width: 67%;
+  height: 100%;
   border: 1.5px solid #fbc531;
   border-radius: 25px 0px;
 `

@@ -5,15 +5,17 @@ import { Profile, PSectionProps, PSectionStates } from './interfaces'
 import LeadProfile from '../LeadProfile'
 
 // Styled components for ProfileSection
-const ProfileSectionDisplay = styled.div`
-  margin-bottom: 50px;
+const ProfileSectionContainer = styled.div`
+  margin-bottom: 150px;
 `
 const MinifiedLeadContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-gap: 100px;
 `
-const ExpandedDisplay = styled.div`
+const ExpandedContainer = styled.div`
   width: 100%;
+  margin-bottom: 100px;
 `
 
 // Profile Subsection
@@ -44,10 +46,10 @@ export default class ProfileSection extends React.Component<PSectionProps, PSect
     const minified = this.state.minified
 
     return (
-      <ProfileSectionDisplay>
+      <ProfileSectionContainer>
         {
           Object.keys(expanded).length !== 0 &&
-          <ExpandedDisplay>
+          <ExpandedContainer>
             <LeadProfile
               name={expanded.name}
               position={expanded.position}
@@ -55,7 +57,7 @@ export default class ProfileSection extends React.Component<PSectionProps, PSect
               contacts={expanded.contacts}
               onClick={() => this.MinifyProfile()}
             />
-          </ExpandedDisplay>
+          </ExpandedContainer>
         }
         {
           this.state.minified.length > 0 &&
@@ -74,7 +76,7 @@ export default class ProfileSection extends React.Component<PSectionProps, PSect
           </MinifiedLeadContainer>
         }
 
-      </ProfileSectionDisplay>
+      </ProfileSectionContainer>
     )
   }
 }

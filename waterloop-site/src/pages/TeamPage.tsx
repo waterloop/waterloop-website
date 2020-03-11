@@ -15,8 +15,7 @@ const ProfileSectionTitle = styled.h1`
   margin-bottom: 50px;
 `
 const Page = styled.div`
-  display: block;
-  width: 1080px;
+  max-width: 1080px;
   margin: 0 auto;
 `
 

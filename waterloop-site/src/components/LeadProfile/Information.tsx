@@ -2,33 +2,35 @@ import React from "react";
 import styled from "styled-components";
 
 const InfoContainer = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-padding-left: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 15px;
+  width: 40%;
+  height: 100%;
 `
 const IconContainer = styled.div`
-display: flex;
-flex-direction: row;
+  display: flex;
+  flex-direction: row;
 `
 const IconWrapper = styled.div`
 padding-right: 7px;
 `
 const NameContainer = styled.div`
-font-family: IBM Plex Sans;
-font-style: normal;
-font-weight: bold;
-font-size: 24px;
-line-height: 31px;
-color: #000000;
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 31px;
+  color: #000000;
 `
 const BlurbContainer = styled.div`
-font-family: IBM Plex Sans;
-font-style: normal;
-font-weight: 200;
-font-size: 20px;
-line-height: 26px;
-color: #000000;
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 20px;
+  line-height: 26px;
+  color: #000000;
 `
 
 type MyProps = {name: string; position: string; contacts: Array<{icon: string, url: string}>};
