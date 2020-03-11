@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import TestComponent from "../components/TestComponent"
+import FeatPage from "../components/SimpleFeatures/FeatPage";
 
 class TestPage extends React.Component {
   render() {
@@ -11,6 +12,7 @@ class TestPage extends React.Component {
           title = "Test Button"
           link = "https://google.com"
           ></TestComponent>
+          <FeatPage></FeatPage>
       </div>
     );
   }
