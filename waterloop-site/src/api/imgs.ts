@@ -9,9 +9,9 @@ export const getGeese = async () => {
     baseUrl = 'http://localhost:3030'
   }
   try{
-    const goose1 = await fetch(`${baseUrl}/imgs/goose1.png`);
-    const goose2 = await fetch(`${baseUrl}/imgs/goose2.png`);
-    const goosex = await fetch(`${baseUrl}/imgs/goosex.png`);
+    const goose1 = await fetch(`${baseUrl}/pgimgs/goose1.png`);
+    const goose2 = await fetch(`${baseUrl}/pgimgs/goose2.png`);
+    const goosex = await fetch(`${baseUrl}/pgimgs/goosex.png`);
     return {goose1: await getImageUrl(goose1), goose2: await getImageUrl(goose2), goosex: await getImageUrl(goosex)}
   } catch(e) {
     //console.warn(e)
