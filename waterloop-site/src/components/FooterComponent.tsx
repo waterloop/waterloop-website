@@ -15,28 +15,29 @@ const size = {
 const FooterWrapper = styled.div`
   display: flex;
   align-items: flex-start;
+  justify-content: space-between;
   position: fixed;
   width: 100%;
-  height: 30%;
+  height: 175px;
   bottom: 0;
   margin-bottom: 0;
   background: #232636;
+
   @media (max-width: ${size.mobile}) {
-    height: 20%;
+    height: 130px;
   }
   @media (min-width: ${size.mobile}) and (max-width: ${size.tabletM}) {
   }
 `;
 
 const LogoWrapper = styled.div`
-  border: 1px;
   align-self: center;
-  margin-left: 20%;
-  transform: scale(2, 2);
+  margin-left: 10%;
+  transform: scale(1.25, 1.25);
+
   @media (max-width: ${size.mobile}) {
-    margin-left: 5%;
-    margin-bottom: 15%;
-    transform: scale(0.5, 0.5);
+    margin: 30px 0 30px 20px;
+    transform: scale(0.75, 0.75);
   }
   @media (min-width: ${size.mobile}) and (max-width: ${size.tabletM}) {
     transform: scale(1, 1);
@@ -53,12 +54,12 @@ const LogoWrapper = styled.div`
 const SocialMediaWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 5% 5% 20% 2%;
-  font-size: 1.5rem;
+  margin: 10% 0% 10% 10%;
+  padding-bottom: 2px;
+  font-size: 18px;
   @media (max-width: ${size.mobile}) {
-    margin: 5% 5% 20% 2%;
-    transform: scale(0.2 0.2);
-    font-size: 1rem;
+    margin: 5px 10px 5px 2px;
+    font-size: 13px;
   }
   @media (min-width: ${size.mobile}) and (max-width: ${size.tabletM}) {
     margin: 10% 6% 20% 2%;
@@ -73,11 +74,12 @@ const SocialMediaWrapper = styled.div`
 const RoutingWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 5% 2% 20% 40%;
-  font-size: 1.5rem;
+  margin: 10% 10% 0% 0%;
+  padding-bottom: 2px;
+  font-size: 18px;
   @media (max-width: ${size.mobile}) {
-    margin: 5% 5% 20% 15%;
-    font-size: 0.9rem;
+    margin: 5px 20px 5px 2px;
+    font-size: 13px;
   }
   @media (min-width: ${size.mobile}) and (max-width: ${size.tabletM}) {
     margin: 10% 10% 20% 30%;
@@ -89,6 +91,23 @@ const RoutingWrapper = styled.div`
   }
 `;
 
+const LinksWrapper = styled.div`
+  display: flex;
+  width: 300px;
+  height: 175px;
+  margin-right: 150px;
+  padding-top: 10px;
+  @media (max-width: ${size.mobile}) {
+    margin: 5% 5% 20% 15%;
+  }
+  @media (min-width: ${size.mobile}) and (max-width: ${size.tabletM}) {
+    margin: 10% 10% 20% 30%;
+  }
+  @media (min-width: ${size.tabletM}) and (max-width: ${size.tabletL}) {
+    margin: 10% 10% 20% 30%;
+  }
+`;
+
 class FooterComponent extends React.Component {
   render() {
     return (
@@ -97,31 +116,33 @@ class FooterComponent extends React.Component {
           <img src={Logo}></img>
         </LogoWrapper>
 
-        <RoutingWrapper>
-          <RouteComponent link="/team" title="Our Team"></RouteComponent>
-          <RouteComponent link="" title="Hyperloop"></RouteComponent>
-          <RouteComponent link="" title="Sponsors"></RouteComponent>
-          <RouteComponent link="" title="Contact Us"></RouteComponent>
-        </RoutingWrapper>
+        <LinksWrapper>
+          <RoutingWrapper>
+            <RouteComponent link="/team" title="Our Team"></RouteComponent>
+            <RouteComponent link="" title="Hyperloop"></RouteComponent>
+            <RouteComponent link="" title="Sponsors"></RouteComponent>
+            <RouteComponent link="" title="Contact Us"></RouteComponent>
+          </RoutingWrapper>
 
-        <SocialMediaWrapper>
-          <LinkComponent
-            link="https://twitter.com/team_waterloop"
-            title="Twitter"
-          ></LinkComponent>
-          <LinkComponent
-            link="https://www.instagram.com/team_waterloop/"
-            title="Instagram"
-          ></LinkComponent>
-          <LinkComponent
-            link="https://www.facebook.com/teamwaterloop"
-            title="Facebook"
-          ></LinkComponent>
-          <LinkComponent
-            link="https://medium.com/waterloop"
-            title="Medium"
-          ></LinkComponent>
-        </SocialMediaWrapper>
+          <SocialMediaWrapper>
+            <LinkComponent
+              link="https://twitter.com/team_waterloop"
+              title="Twitter"
+            ></LinkComponent>
+            <LinkComponent
+              link="https://www.instagram.com/team_waterloop/"
+              title="Instagram"
+            ></LinkComponent>
+            <LinkComponent
+              link="https://www.facebook.com/teamwaterloop"
+              title="Facebook"
+            ></LinkComponent>
+            <LinkComponent
+              link="https://medium.com/waterloop"
+              title="Medium"
+            ></LinkComponent>
+          </SocialMediaWrapper>
+        </LinksWrapper>
       </FooterWrapper>
     );
   }
