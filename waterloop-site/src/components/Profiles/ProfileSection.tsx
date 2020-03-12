@@ -1,9 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Profile, PSectionProps, PSectionStates } from './interfaces'
-import LeadProfile from '../LeadProfile'
-import SubProfile from '../SubProfile'
+import { ProfileType, PSectionProps, PSectionStates } from './interfaces'
+import { SubProfile, LeadProfile } from '../Profiles'
 
 // Styled components for ProfileSection
 const ProfileSectionContainer = styled.div`
@@ -55,7 +54,7 @@ export default class ProfileSection extends React.Component<PSectionProps, PSect
   constructor(props: PSectionProps) {
     super(props)
     this.state = {
-      expanded: {} as Profile,
+      expanded: {} as ProfileType,
       minified: this.props.profiles
     }
   }
@@ -63,7 +62,7 @@ export default class ProfileSection extends React.Component<PSectionProps, PSect
   MinifyProfile () {
     this.setState({
       minified: [...this.state.minified, this.state.expanded],
-      expanded: {} as Profile
+      expanded: {} as ProfileType
     })
   }
 

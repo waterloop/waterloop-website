@@ -1,4 +1,8 @@
-export type Profile = {
+export type ContactsType = {
+ contacts: Array<{icon: string, url: string}>
+}
+
+export type ProfileType = {
   name: string,
   position: string,
   portrait: string,
@@ -6,11 +10,11 @@ export type Profile = {
 }
 
 export interface PSectionProps {
-  profiles: Array<Profile>
+  profiles: Array<ProfileType>
   profileType: string
 }
 
 export interface PSectionStates {
-  expanded: Profile,
-  minified: Array<Profile>
+  expanded: ProfileType,
+  minified: Array<ProfileType>
 }

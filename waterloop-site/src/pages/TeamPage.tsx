@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import ProfileSection from '../components/ProfileSection'
+import { ProfileSection } from '../components/Profiles'
 
 import testData from '../testProfileData'
 
@@ -29,16 +29,15 @@ const Page = styled.div`
 
 export default class TeamPage extends React.Component {
   render () {
-    console.log(testData)
     return (
       <Page>
-        <ProfileSectionTitle>Leads 1</ProfileSectionTitle>
+        <ProfileSectionTitle>Team Leads</ProfileSectionTitle>
         <ProfileSection profiles={testData.slice(0,2)} profileType={"lead"} />
 
         <ProfileSectionTitle>Subteam 1</ProfileSectionTitle>
         <ProfileSection profiles={testData.slice(2,8)} profileType={"subteam"}/>
 
-        <ProfileSectionTitle>Subteam 1</ProfileSectionTitle>
+        <ProfileSectionTitle>Subteam 2</ProfileSectionTitle>
         <ProfileSection profiles={testData.slice(8,14)} profileType={"subteam"}/>
       </Page>
     )
