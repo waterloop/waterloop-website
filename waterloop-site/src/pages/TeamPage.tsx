@@ -19,7 +19,7 @@ const Page = styled.div`
   max-width: 1080px;
   margin: 0 auto;
 
-  @media (max-width: 1065px){
+  @media (max-width: 975px){
     display: flex;
     flex-direction: column;
     width: 475px;

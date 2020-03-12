@@ -8,9 +8,9 @@ const Container = styled.div`
   display: flex;
   flex-direction: columns;
   justify-content: space-between;
-  width: 1080px;
+  max-width: 1080px;
 
-  @media (max-width: 1065px) {
+  @media (max-width: 975px) {
     flex-direction: row;
     flex-wrap: wrap;
     width: 475px;
@@ -18,12 +18,12 @@ const Container = styled.div`
 `
 const PortraitContainer = styled.div`
   display: flex;
-  width: 44%;
+  width: 475px;
   height: 475px;
   border: 1px solid #fbc531;
   border-radius: 25px 0px;
 
-  @media (max-width: 1065px) {
+  @media (max-width: 975px) {
     width: 100%;
     margin-bottom: 40px;
   }
@@ -39,7 +39,7 @@ const InfoContainer = styled.div`
   font-style: normal;
   color: #000000;
 
-  @media (max-width: 1065px) {
+  @media (max-width: 975px) {
     flex-basis: 100%;
   }
 `
@@ -78,7 +78,7 @@ const ContactListContainer = styled.div`
   align-content: flex-end;
   flex-direction: columns;
 
-  @media (min-width: 1065px) {
+  @media (min-width: 975px) {
     position: absolute;
     bottom: 0;
   }

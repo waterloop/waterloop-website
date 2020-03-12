@@ -11,13 +11,13 @@ const ProfileSectionContainer = styled.div`
 const MinifiedLeadContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 100px;
+  grid-row-gap: 100px;
 
   &> div:nth-child(2n){
     margin-left: auto;
   }
 
-  @media (max-width: 1065px){
+  @media (max-width: 975px){
     display: flex;
     flex-direction: column;
 
@@ -38,7 +38,7 @@ const MinifiedSubContainer = styled.div`
     margin-left: 0 auto 0 auto;
   }
 
-  @media (max-width: 1065px){
+  @media (max-width: 975px){
     display: flex;
     flex-direction: column;
 
