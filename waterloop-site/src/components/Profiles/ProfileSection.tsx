@@ -6,12 +6,13 @@ import { SubProfile, LeadProfile, ExpandedProfile } from '../Profiles'
 
 // Styled components for ProfileSection
 const ProfileSectionContainer = styled.div`
-  margin-bottom: 150px;
+  margin-bottom: 100px;
 `
 const MinifiedLeadContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 100px;
+
   &> div:nth-child(2n){
     margin-left: auto;
   }
