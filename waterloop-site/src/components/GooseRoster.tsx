@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import Psim from "./sponsorphotos/Psim.png"
+import Psim from "./sponsorphotos/Psim.png";
+import Ansys from "./sponsorphotos/Ansys.png";
+import Threedx from "./sponsorphotos/Threedx.png"
 
 const RosterWrapper = styled.div`
   display: flex;
@@ -16,7 +18,7 @@ const Heading = styled.h2`
 `;
 
 const Description = styled.div`
-  font-size: 14px;
+  font-size: 16px;
 `;
 
 const ImageThumbnail = styled.div`
@@ -24,6 +26,7 @@ const ImageThumbnail = styled.div`
   flex-direction: row;
   align-items: center;
   align-self: center;
+  height: ;
 `;
 
 const Img = styled.img`
@@ -32,21 +35,15 @@ const Img = styled.img`
   margin: 20px 0;
 `;
 
-const Arrow = styled.div`
-  padding: 5px;
+const Arrow = styled.button`
+  all: unset;
+  cursor: pointer;
+  margin: 4px;
 `;
 
-// const Arrow = (clickFunction: () => void) => (
-//   <div
-//     onClick={ clickFunction }>
-//   </div>
-// );
-
 const imgUrls = [
-  Psim
+  Psim, Ansys, Threedx
 ];
-
-// type Props = {imgUrls: string[], direction: string };
 
 class GooseRoster extends React.Component {
   state = {
@@ -61,6 +58,14 @@ class GooseRoster extends React.Component {
     });
   }
 
+  nextSlide = () => {
+    const { currentImageIndex } = this.state;
+    const nextIndex = currentImageIndex == imgUrls.length - 1 ? 0 : currentImageIndex + 1;
+    this.setState({
+      currentImageIndex: nextIndex
+    });
+  }
+
   render() {
     return (
       <RosterWrapper>
@@ -71,8 +76,8 @@ class GooseRoster extends React.Component {
           <Arrow onClick={ this.previousSlide }>
             &#9664;
           </Arrow>
-          <Img src={Psim}></Img>
-          <Arrow onClick={ this.previousSlide }>
+          <Img src={imgUrls[this.state.currentImageIndex]}></Img>
+          <Arrow onClick={ this.nextSlide }>
             &#9654;
           </Arrow>
         </ImageThumbnail>
