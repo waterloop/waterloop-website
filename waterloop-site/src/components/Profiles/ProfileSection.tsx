@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { ProfileType, PSectionProps, PSectionStates } from './interfaces'
-import { SubProfile, LeadProfile } from '../Profiles'
+import { SubProfile, LeadProfile, ExpandedProfile } from '../Profiles'
 
 // Styled components for ProfileSection
 const ProfileSectionContainer = styled.div`
@@ -19,8 +19,12 @@ const MinifiedLeadContainer = styled.div`
   @media (max-width: 1065px){
     display: flex;
     flex-direction: column;
+
+    & > div:nth-child(1) {
+      margin-top: 0;
+    }
     & > div {
-      margin-bottom: 100px;
+      margin-top: 100px;
     }
   }
 `
@@ -94,7 +98,7 @@ export default class ProfileSection extends React.Component<PSectionProps, PSect
         {
           Object.keys(expanded).length !== 0 &&
           <ExpandedContainer>
-            <LeadProfile
+            <ExpandedProfile
               name={expanded.name}
               position={expanded.position}
               portrait={expanded.portrait}

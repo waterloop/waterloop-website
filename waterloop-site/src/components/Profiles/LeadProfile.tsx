@@ -17,8 +17,8 @@ const PortraitContainer = styled.div`
   border-radius: 25px 0px;
 `
 const Portrait = styled.img`
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
 `
 const InfoContainer = styled.div`
   width: 35%;
