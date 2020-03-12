@@ -28,19 +28,24 @@ const MinifiedSubContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-row-gap: 100px;
-  &> div:nth-child(3n){
-    margin-left: auto;
-  }
-  &> div:nth-child(3n-1){
-    margin-right: auto;
-    margin-left: auto;
+
+  & > div:nth-child(3n-1){
+    margin-left: 0 auto 0 auto;
   }
 
   @media (max-width: 1065px){
     display: flex;
     flex-direction: column;
+
+    & > div:nth-child(1) {
+      margin-top: 0;
+    }
     & > div {
-      margin-bottom: 100px;
+      width: 475px;
+      height: 265px;
+      margin-left: 0;
+      margin-right: auto;
+      margin-top: 100px
     }
   }
 `
