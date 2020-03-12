@@ -69,6 +69,7 @@ export default class ProfileSection extends React.Component<PSectionProps, PSect
     }
   }
 
+  // Return the profile from the Expanded Profile slot back into the minfied list
   MinifyProfile () {
     this.setState({
       minified: [...this.state.minified, this.state.expanded],
@@ -76,6 +77,7 @@ export default class ProfileSection extends React.Component<PSectionProps, PSect
     })
   }
 
+  // Move selected profile from minifie list into the Expansion Profile slot
   ExpandProfile (i: number) {
     const target = this.state.minified.splice(i, 1)[0]
     if (Object.keys(this.state.expanded).length !== 0) this.MinifyProfile()
@@ -86,7 +88,7 @@ export default class ProfileSection extends React.Component<PSectionProps, PSect
     const expanded = this.state.expanded
     const minified = this.state.minified
 
-    // Determine which type of profile to display
+    // Determine to display a Lead Profile or Sub Profile
     let ProfileContainerTypeTag = MinifiedSubContainer
     let ProfileTypeTag = SubProfile
     if (this.props.profileType === 'lead') {
@@ -96,7 +98,7 @@ export default class ProfileSection extends React.Component<PSectionProps, PSect
 
     return (
       <ProfileSectionContainer>
-        {
+        { // Expanded Profile Slot
           Object.keys(expanded).length !== 0 &&
           <ExpandedContainer>
             <ExpandedProfile
@@ -108,7 +110,7 @@ export default class ProfileSection extends React.Component<PSectionProps, PSect
             />
           </ExpandedContainer>
         }
-        {
+        { // Dynamically insert minified profiles
           this.state.minified.length > 0 &&
           <ProfileContainerTypeTag>
             {minified.map((profile, i) => {
@@ -124,7 +126,6 @@ export default class ProfileSection extends React.Component<PSectionProps, PSect
             })}
           </ProfileContainerTypeTag>
         }
-
       </ProfileSectionContainer>
     )
   }

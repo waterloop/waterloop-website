@@ -93,6 +93,7 @@ const Icon = styled.img`
   max-width: 100%;
 `
 
+// List of icons for contact purposes
 const ContactList = (props: ContactsType) => {
   return <ContactListContainer>
     {props.contacts.map((item, i) => {

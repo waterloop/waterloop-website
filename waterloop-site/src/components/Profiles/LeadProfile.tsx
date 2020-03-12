@@ -11,17 +11,17 @@ const Container = styled.div`
   height: 265px;
 `
 const PortraitContainer = styled.div`
-  width: 60%;
+  flex-basis: 60%;
   height: 100%;
   border: 1px solid #fbc531;
   border-radius: 25px 0px;
 `
 const Portrait = styled.img`
-  width: 100%;
+  flex-basis: 100%;
   height: 100%;
 `
 const InfoContainer = styled.div`
-  width: 35%;
+  flex-basis: 35%;
   display: grid;
   grid-row-template: repeat(3, 1fr);
   align-content: space-between;
@@ -52,6 +52,7 @@ const Icon = styled.img`
   max-width: 100%;
 `
 
+// List of icons for contact purposes
 const ContactList = (props: ContactsType) => {
   return <ContactListContainer>
     {props.contacts.map((item, i) => {

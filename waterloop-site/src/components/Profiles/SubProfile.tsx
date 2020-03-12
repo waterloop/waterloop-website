@@ -11,17 +11,17 @@ const Container = styled.div`
   height: 178px;
 `
 const PortraitContainer = styled.div`
-  width: 60%;
+  flex-basis: 60%;
   height: 100%;
   border: 1px solid #fbc531;
   border-radius: 25px 0px;
 `
 const Portrait = styled.img`
-  width: 100%;
+  flex-basis: 100%;
   height: 100%;
 `
 const InfoContainer = styled.div`
-  width: 35%;
+  flex-basis: 35%;
   display: grid;
   grid-row-template: repeat(3, 1fr);
   align-content: space-between;
@@ -51,7 +51,8 @@ const Icon = styled.img`
   max-width: 100%;
 `
 
-const Contacts = (props: ContactsType) => {
+// List of icons for contact purposes
+const ContactList = (props: ContactsType) => {
   return <ContactsContainer>
     {props.contacts.map((item, i) => {
       return <Contact key={i} href={item.url} target="_blank" onClick={(event: any) => {event.stopPropagation()}}>
@@ -68,7 +69,7 @@ const LeadProfile = (props: any) => {
         <InfoContainer>
           <InfoTitle>{props.name}</InfoTitle>
           <InfoPosition>{props.position}</InfoPosition>
-          {props.contacts.length > 0 && <Contacts contacts={props.contacts}/>}
+          {props.contacts.length > 0 && <ContactList contacts={props.contacts}/>}
         </InfoContainer>
     </Container>
   );
