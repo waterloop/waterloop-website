@@ -54,7 +54,7 @@ const Icon = styled.img`
 const Contacts = (props: ContactsType) => {
   return <ContactsContainer>
     {props.contacts.map((item, i) => {
-      return <Contact key={i} href={item.url} onClick={(event: any) => {event.stopPropagation()}}>
+      return <Contact key={i} href={item.url} target="_blank" onClick={(event: any) => {event.stopPropagation()}}>
         <Icon src={item.icon} alt="link"/>
       </Contact>
     })}
