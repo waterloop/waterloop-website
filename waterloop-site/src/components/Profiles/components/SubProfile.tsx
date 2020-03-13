@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { ContactsType } from './interfaces'
+import { ContactsType } from '../interfaces'
 
 const Container = styled.div`
   display: flex;

@@ -1,7 +1,7 @@
-import ExpandedProfile from './ExpandedProfile'
-import LeadProfile from './LeadProfile'
-import SubProfile from './SubProfile'
-import ProfileSection from './ProfileSection'
+import ExpandedProfile from './components/ExpandedProfile'
+import LeadProfile from './components/LeadProfile'
+import SubProfile from './components/SubProfile'
+import ProfileSection from './components/ProfileSection'
 
 export {
   ExpandedProfile,

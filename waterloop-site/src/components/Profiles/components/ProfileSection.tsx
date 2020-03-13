@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { ProfileType, PSectionProps, PSectionStates } from './interfaces'
-import { SubProfile, LeadProfile, ExpandedProfile } from '../Profiles'
+import { ProfileType, PSectionProps, PSectionStates } from '../interfaces'
+import { SubProfile, LeadProfile, ExpandedProfile } from '../../Profiles'
 
 // Styled components for ProfileSection
 const ProfileSectionContainer = styled.div`
