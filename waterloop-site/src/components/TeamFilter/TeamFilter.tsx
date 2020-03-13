@@ -34,7 +34,7 @@ const Filter = (props: any) => {
   return <StyledFilter onClick={() => HandleClick()}>Some Filter</StyledFilter>
 }
 
-export default class TeamProfileFitler extends React.Component <any, any> {
+export default class TeamFitler extends React.Component <any, any> {
   render () {
     return <FitlerContainer>
       <Filter/>

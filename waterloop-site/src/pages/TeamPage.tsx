@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { ProfileSection } from '../components/Profiles'
-import TeamProfileFitler from '../components/TeamProfileFilter'
+import TeamProfileFitler from '../components/TeamFilter'
 
 import testData from '../testProfileData'
 
