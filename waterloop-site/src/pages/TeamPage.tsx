@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { ProfileSection } from '../components/Profiles'
+import TeamProfileFitler from '../components/TeamProfileFilter'
 
 import testData from '../testProfileData'
 
@@ -31,14 +32,16 @@ export default class TeamPage extends React.Component {
   render () {
     return (
       <Page>
+        <TeamProfileFitler />
+
         <ProfileSectionTitle>Team Leads</ProfileSectionTitle>
-        <ProfileSection profiles={testData.slice(0,2)} profileType={"lead"} />
+        <ProfileSection profiles={testData.slice(0, 2)} profileType={"lead"}/>
 
         <ProfileSectionTitle>Subteam 1</ProfileSectionTitle>
-        <ProfileSection profiles={testData.slice(2,8)} profileType={"subteam"}/>
+        <ProfileSection profiles={testData.slice(2, 8)} profileType={"subteam"}/>
 
         <ProfileSectionTitle>Subteam 2</ProfileSectionTitle>
-        <ProfileSection profiles={testData.slice(8,14)} profileType={"subteam"}/>
+        <ProfileSection profiles={testData.slice(8, 14)} profileType={"subteam"}/>
       </Page>
     )
   }
