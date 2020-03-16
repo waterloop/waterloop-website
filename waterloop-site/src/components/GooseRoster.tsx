@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import Psim from "./sponsorphotos/Psim.png";
 import Ansys from "./sponsorphotos/Ansys.png";
-import Threedx from "./sponsorphotos/Threedx.png"
+import Threedx from "./sponsorphotos/Threedx.png";
+import AndersonPowerProducts from "./sponsorphotos/AndersonPowerProducts.png";
 
 const RosterWrapper = styled.div`
   display: flex;
@@ -26,13 +27,14 @@ const ImageThumbnail = styled.div`
   flex-direction: row;
   align-items: center;
   align-self: center;
-  height: ;
+  height: 40vw;
+  overflow: hidden;
+  padding: 5px;
+  margin: 20px 0;
 `;
 
 const Img = styled.img`
-  padding: 5px;
   width: 90vw;
-  margin: 20px 0;
 `;
 
 const Arrow = styled.button`
@@ -42,7 +44,7 @@ const Arrow = styled.button`
 `;
 
 const imgUrls = [
-  Psim, Ansys, Threedx
+  Psim, Ansys, Threedx, AndersonPowerProducts
 ];
 
 class GooseRoster extends React.Component {
