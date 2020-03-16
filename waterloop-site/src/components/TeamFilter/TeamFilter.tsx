@@ -26,21 +26,13 @@ const StyledFilter = styled.button`
   }
 `
 
-export default class TeamFitler extends React.Component <any, any> {
-  constructor(props: any) {
-    super(props)
-    this.state = {
-      filters: this.props.filters
-    }
-  }
-
-  render () {
-    return (
-      <FitlerContainer>
-        {this.state.filters.map((filter: any, i: number) => {
-          return <StyledFilter onClick={() => this.props.SetFilters(i)}>Some Filter</StyledFilter>
-        })}
-      </FitlerContainer>
-    )
-  }
+const TeamFilter = (props: any) => {
+  return (
+    <FitlerContainer>
+      {props.filters.map((filter: any, i: number) => {
+        return <StyledFilter key={i} onClick={() => props.SetFilters(i)}>Some Filter</StyledFilter>
+      })}
+    </FitlerContainer>
+  )
 }
+export default TeamFilter

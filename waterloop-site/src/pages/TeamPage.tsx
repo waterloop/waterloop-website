@@ -28,19 +28,27 @@ const Page = styled.div`
   }
 `
 
-export default class TeamPage extends React.Component {
-  state = {
-    teamfilters: Array(5).fill(false)
+export default class TeamPage extends React.Component<any, any> {
+  constructor(props: any) {
+    super(props)
+    this.state = {
+      teamFilters: Array(5).fill(false),
+      memberData: 1
+    }
   }
 
   SetFilters (id: number) {
-    alert(`Filter ${id} was just clicked`)
+    const newVal = this.state.data + 1
+    this.setState({
+      memberData: newVal
+    })
+    alert(`Filter ${id} was just clicked: data has become: ${this.state.memberData}`)
   }
 
   render () {
     return (
       <Page>
-        <TeamProfileFitler filters={this.state.teamfilters} SetFilters={this.SetFilters}/>
+        <TeamProfileFitler filters={this.state.teamFilters} SetFilters={(id: number) => this.SetFilters(id)}/>
 
         <ProfileSectionTitle>Team Leads</ProfileSectionTitle>
         <ProfileSection profiles={testData.slice(0, 2)} profileType={"lead"}/>
