@@ -1,0 +1,31 @@
+/* Not Actually Used */
+
+.textWithImage{
+  text-align: center;
+}
+.textBlock{
+  text-align: justify;
+  width: 500px;
+  height: 100%;
+  padding-right: 3%;
+  display: inline-block;
+}
+.img{
+  width: 250px;
+  height: 200px;
+  border-radius: 20pt;
+}
+.learnMoreBtn {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    padding-left: 1%;
+    padding-right: 1%;
+    color: #A9A9A9;
+    border-radius: 50pt;
+    border: 2px solid #A9A9A9;
+    height: 1%;
+    width: 15%;
+    text-decoration: none;
+    font-size: 75%;
+}
