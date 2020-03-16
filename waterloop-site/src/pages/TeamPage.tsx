@@ -29,10 +29,18 @@ const Page = styled.div`
 `
 
 export default class TeamPage extends React.Component {
+  state = {
+    teamfilters: Array(5).fill(false)
+  }
+
+  SetFilters (id: number) {
+    alert(`Filter ${id} was just clicked`)
+  }
+
   render () {
     return (
       <Page>
-        <TeamProfileFitler />
+        <TeamProfileFitler filters={this.state.teamfilters} SetFilters={this.SetFilters}/>
 
         <ProfileSectionTitle>Team Leads</ProfileSectionTitle>
         <ProfileSection profiles={testData.slice(0, 2)} profileType={"lead"}/>

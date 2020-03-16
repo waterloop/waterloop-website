@@ -26,22 +26,21 @@ const StyledFilter = styled.button`
   }
 `
 
-const Filter = (props: any) => {
-  const HandleClick = () => {
-    alert("applying new filters")
+export default class TeamFitler extends React.Component <any, any> {
+  constructor(props: any) {
+    super(props)
+    this.state = {
+      filters: this.props.filters
+    }
   }
 
-  return <StyledFilter onClick={() => HandleClick()}>Some Filter</StyledFilter>
-}
-
-export default class TeamFitler extends React.Component <any, any> {
   render () {
-    return <FitlerContainer>
-      <Filter/>
-      <Filter/>
-      <Filter/>
-      <Filter/>
-      <Filter/>
-    </FitlerContainer>
+    return (
+      <FitlerContainer>
+        {this.state.filters.map((filter: any, i: number) => {
+          return <StyledFilter onClick={() => this.props.SetFilters(i)}>Some Filter</StyledFilter>
+        })}
+      </FitlerContainer>
+    )
   }
 }
