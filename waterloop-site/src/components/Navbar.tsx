@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import TestComponent from "../../pages/TestPage";
+import TestComponent from "../pages/TestPage";
 // import Home from "../home/home.tsx";
 // import GooseV from "../gooseV/gooseV.tsx";
 // import Teams from "../teams/teams.tsx";
 // import Sponsors from "../sponsors/sponsors.tsx";
 // import Media from "../media/media.tsx";
 // import Contact from "../contact/contact.tsx";
-import IconYellowImg from "../../Icon_Yellow.png";
+import IconYellowImg from "../images/Icon_Yellow.png";
 
 import { NavLink } from "react-router-dom";
 
