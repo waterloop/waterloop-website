@@ -15,28 +15,32 @@ interface SponsorComponentInterface {
 const SponsorComponent = styled("div")<SponsorComponentInterface>(
   {
     position: "relative",
-    marginBottom: "10px",
+    marginBottom: "20px",
     display: "flex",
     alignItems: "center",
     background: "#f4f4f4",
     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
     borderRadius: "15px",
-    "@media (max-width: ${size.mobile})": {
-      height: "184px",
-      width: "80%",
-      marginBottom: "5%"
-    }
+    overflow: "none"
   },
   variant({
     variants: {
       Hypersonic: {
         width: "80%",
-        height: "250px"
+        height: "250px",
+        "@media screen and (max-width: ${size.mobile})": {
+          height: "184px",
+          width: "80%"
+        }
       },
 
-      Sonic: {
+      Supersonic: {
         width: "40%",
-        height: "250px"
+        height: "250px",
+        "@media screen and (max-width: ${size.mobile})": {
+          height: "184px",
+          width: "80%"
+        }
       }
     }
   })

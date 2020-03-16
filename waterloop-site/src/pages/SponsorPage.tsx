@@ -16,7 +16,7 @@ const CustomHeading = styled.h1`
   text-align: center;
 `;
 
-const HypersonicWrapper = styled.div`
+const TierWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,15 +40,18 @@ function HypersonicSponsor() {
   return (
     <div>
       <CustomHeading>Hypersonic Sponsor</CustomHeading>
-      <HypersonicWrapper>
+      <TierWrapper>
         <SponsorComponent variant="Hypersonic" />
         <SponsorComponent variant="Hypersonic" />
+      </TierWrapper>
 
-        <SponsorComponent variant="Sonic" />
-        <SponsorComponent variant="Sonic" />
-        <SponsorComponent variant="Sonic" />
-        <SponsorComponent variant="Sonic" />
-      </HypersonicWrapper>
+      <CustomHeading>Supersonic Sponsor</CustomHeading>
+      <TierWrapper>
+        <SponsorComponent variant="Supersonic" />
+        <SponsorComponent variant="Supersonic" />
+        <SponsorComponent variant="Supersonic" />
+        <SponsorComponent variant="Supersonic" />
+      </TierWrapper>
     </div>
   );
 }
