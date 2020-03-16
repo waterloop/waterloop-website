@@ -30,7 +30,7 @@ const TeamFilter = (props: any) => {
   return (
     <FitlerContainer>
       {props.filters.map((filter: any, i: number) => {
-        return <StyledFilter key={i} onClick={() => props.SetFilters(i)}>Some Filter</StyledFilter>
+        return <StyledFilter key={i} onClick={() => props.updateFilters(i)}>Some Filter</StyledFilter>
       })}
     </FitlerContainer>
   )

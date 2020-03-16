@@ -70,7 +70,7 @@ export default class ProfileSection extends React.Component<PSectionProps, PSect
   }
 
   // Return the profile from the Expanded Profile slot back into the minfied list
-  MinifyProfile () {
+  minifyProfile () {
     this.setState({
       minified: [...this.state.minified, this.state.expanded],
       expanded: {} as ProfileType
@@ -78,9 +78,9 @@ export default class ProfileSection extends React.Component<PSectionProps, PSect
   }
 
   // Move selected profile from minifie list into the Expansion Profile slot
-  ExpandProfile (i: number) {
+  expandProfile (i: number) {
     const target = this.state.minified.splice(i, 1)[0]
-    if (Object.keys(this.state.expanded).length !== 0) this.MinifyProfile()
+    if (Object.keys(this.state.expanded).length !== 0) this.minifyProfile()
     this.setState({expanded: target})
   }
 
@@ -106,7 +106,7 @@ export default class ProfileSection extends React.Component<PSectionProps, PSect
               position={expanded.position}
               portrait={expanded.portrait}
               contacts={expanded.contacts}
-              onClick={() => this.MinifyProfile()}
+              onClick={() => this.minifyProfile()}
             />
           </ExpandedContainer>
         }
@@ -121,7 +121,7 @@ export default class ProfileSection extends React.Component<PSectionProps, PSect
                   position={position}
                   portrait={portrait}
                   contacts={contacts}
-                  onClick={() => this.ExpandProfile(i)}
+                  onClick={() => this.expandProfile(i)}
                 />
             })}
           </ProfileContainerTypeTag>

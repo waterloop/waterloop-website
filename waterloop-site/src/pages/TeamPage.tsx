@@ -37,8 +37,8 @@ export default class TeamPage extends React.Component<any, any> {
     }
   }
 
-  SetFilters (id: number) {
-    const newVal = this.state.data + 1
+  updateFilters (id: number) {
+    const newVal = this.state.memberData + 1
     this.setState({
       memberData: newVal
     })
@@ -48,7 +48,7 @@ export default class TeamPage extends React.Component<any, any> {
   render () {
     return (
       <Page>
-        <TeamProfileFitler filters={this.state.teamFilters} SetFilters={(id: number) => this.SetFilters(id)}/>
+        <TeamProfileFitler filters={this.state.teamFilters} updateFilters={(id: number) => this.updateFilters(id)}/>
 
         <ProfileSectionTitle>Team Leads</ProfileSectionTitle>
         <ProfileSection profiles={testData.slice(0, 2)} profileType={"lead"}/>
