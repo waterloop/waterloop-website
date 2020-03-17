@@ -19,7 +19,6 @@ const NavbarContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 5vh;
   background-color: #232635;
 `;
 
@@ -32,14 +31,19 @@ const ListContainer = styled.div`
   padding: 0 20px;
 `;
 
-const LinkContainer = styled.div`
+const StyledLink = styled(NavLink)`
   color: white;
   margin: 0 10pt;
+
+  text-decoration: none;
+  &:focus, &:hover, &:visited, &:link, &:active {
+      text-decoration: none;
+  }
 `;
 
 const LogoContainer = styled.div`
   align-items: left;
-  padding: 2px 20px;
+  padding: 0 20px;
 `;
 
 const IconYellow = styled.img`
@@ -54,7 +58,7 @@ const RoundedBorder = styled.div`
   border-style: solid;
   border-color: white;
   border-width: 1px;
-  padding: 2px 5px;
+  padding: 3px 5px;
 `;
 
 type LinkProp = { to: string; title: string; text: string };
@@ -62,14 +66,14 @@ type LinkProp = { to: string; title: string; text: string };
 class Link extends React.Component<LinkProp> {
   render() {
     return (
-      <NavLink
+      <StyledLink
         to={this.props.to}
         title={this.props.title}
         exact
         activeClassName="active"
       >
-        <LinkContainer>{this.props.text}</LinkContainer>
-      </NavLink>
+        {this.props.text}
+      </StyledLink>
     );
   }
 }
