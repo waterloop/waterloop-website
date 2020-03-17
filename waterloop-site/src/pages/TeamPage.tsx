@@ -31,18 +31,40 @@ const Page = styled.div`
 export default class TeamPage extends React.Component<any, any> {
   constructor(props: any) {
     super(props)
+    // const data = [
+    //   {
+    //     type: "lead",
+    //     title: "Team Leads",
+    //     members: testData.slice(0, 2)
+    //   },
+    //   {
+    //     type: "subteam",
+    //     title: "Sub Team 1",
+    //     members: testData.slice(2, 8)
+    //   },
+    //   {
+    //     type: "subteam",
+    //     title: "Sub Team 2",
+    //     members: testData.slice(8, 14)
+    //   }
+    // ]
+
+    const data = 1
+
     this.state = {
       teamFilters: Array(5).fill(false),
-      memberData: 1
+      memberData: data,
+      displayedData: data
     }
   }
 
   updateFilters (id: number) {
-    const newVal = this.state.memberData + 1
+    // Fetch new data if needed otherwise reduce memberDat
+    const newVal = this.state.displayedData + 1
     this.setState({
-      memberData: newVal
+      displayedData: newVal
     })
-    alert(`Filter ${id} was just clicked: data has become: ${this.state.memberData}`)
+    alert(`Filter ${id} was just clicked: data has become: ${this.state.displayedData}`)
   }
 
   render () {
