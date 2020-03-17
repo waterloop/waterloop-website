@@ -54,17 +54,18 @@ export default class TeamPage extends React.Component<any, any> {
     this.state = {
       teamFilters: Array(5).fill(false),
       memberData: data,
-      displayedData: data
     }
   }
 
   updateFilters (id: number) {
-    // Fetch new data if needed otherwise reduce memberDat
-    const newVal = this.state.displayedData + 1
-    this.setState({
-      displayedData: newVal
+    let newFilterStates = this.state.teamFilters
+    newFilterStates[id] = !newFilterStates[id]
+
+    this.setState((state: any, props: any) => {
+      alert(`Filter ${id} set to: ${newFilterStates[id]}. \nFilterStates now: ${newFilterStates}`)
+      return {displayedData: newFilterStates}
     })
-    alert(`Filter ${id} was just clicked: data has become: ${this.state.displayedData}`)
+
   }
 
   render () {
