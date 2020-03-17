@@ -28,15 +28,18 @@ const ListContainer = styled.div`
   flex-direction: row;
   justify-content: left;
   flex-wrap: nowrap;
+  align-items: center;
+  padding: 0 20px;
 `;
 
 const LinkContainer = styled.div`
   color: white;
-  margin: 0 5pt 0 5pt;
+  margin: 0 10pt;
 `;
 
 const LogoContainer = styled.div`
   align-items: left;
+  padding: 2px 20px;
 `;
 
 const IconYellow = styled.img`
@@ -46,7 +49,30 @@ const IconYellow = styled.img`
   transition: 0.2s ease-in-out;
 `;
 
+const RoundedBorder = styled.div`
+  border-radius: 25px;
+  border-style: solid;
+  border-color: white;
+  border-width: 1px;
+  padding: 2px 5px;
+`;
 
+type LinkProp = { to: string; title: string; text: string };
+
+class Link extends React.Component<LinkProp> {
+  render() {
+    return (
+      <NavLink
+        to={this.props.to}
+        title={this.props.title}
+        exact
+        activeClassName="active"
+      >
+        <LinkContainer>{this.props.text}</LinkContainer>
+      </NavLink>
+    );
+  }
+}
 
 class Navbar extends React.Component {
   render() {
@@ -56,56 +82,19 @@ class Navbar extends React.Component {
           <IconYellow src={IconYellowImg}></IconYellow>
         </LogoContainer>
         <ListContainer>
-          <LinkContainer>
-            <NavLink to={"/"} title="home" exact activeClassName="active">
-              HOME
-            </NavLink>
-          </LinkContainer>
+          <Link to="/" title="home" text="HOME" />
 
-          <LinkContainer>
-            <NavLink
-              to={"/gooseV"}
-              title="gooseV"
-              exact
-              activeClassName="active"
-            >
-              GOOSE V
-            </NavLink>
-          </LinkContainer>
+          <Link to="/gooseV" title="gooseV" text="GOOSE V" />
 
-          <LinkContainer>
-            <NavLink to={"/teams"} title="teams" exact activeClassName="active">
-              TEAMS
-            </NavLink>
-          </LinkContainer>
+          <Link to="/teams" title="teams" text="TEAMS" />
 
-          <LinkContainer>
-            <NavLink
-              to={"/sponsors"}
-              title="sponsors"
-              exact
-              activeClassName="active"
-            >
-              SPONSORS
-            </NavLink>
-          </LinkContainer>
+          <Link to="/sponsors" title="sponsors" text="SPONSORS" />
 
-          <LinkContainer>
-            <NavLink to={"/media"} title="media" exact activeClassName="active">
-              MEDIA
-            </NavLink>
-          </LinkContainer>
+          <Link to="/media" title="media" text="MEDIA" />
 
-          <LinkContainer>
-            <NavLink
-              to={"/contact"}
-              title="contact"
-              exact
-              activeClassName="active"
-            >
-              CONTACT
-            </NavLink>
-          </LinkContainer>
+          <RoundedBorder>
+            <Link to="/contact" title="contact" text="CONTACT" />
+          </RoundedBorder>
         </ListContainer>
       </NavbarContainer>
     );
