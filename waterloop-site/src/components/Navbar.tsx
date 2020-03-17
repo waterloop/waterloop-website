@@ -28,7 +28,7 @@ const ListContainer = styled.div`
   justify-content: left;
   flex-wrap: nowrap;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 50px;
 `;
 
 const StyledLink = styled(NavLink)`
@@ -43,7 +43,7 @@ const StyledLink = styled(NavLink)`
 
 const LogoContainer = styled.div`
   align-items: left;
-  padding: 0 20px;
+  padding: 3px 50px;
 `;
 
 const IconYellow = styled.img`
@@ -59,6 +59,7 @@ const RoundedBorder = styled.div`
   border-color: white;
   border-width: 1px;
   padding: 3px 5px;
+  margin: 0 0 0 10px;
 `;
 
 type LinkProp = { to: string; title: string; text: string };
