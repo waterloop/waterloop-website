@@ -1,8 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 
-type MyProps = {role: string, technicalQ: string};
-
 const Block = styled.div`
   padding: 1%;
   width: 35%;
@@ -26,12 +24,15 @@ const InputForm = styled.form`
 
 `;
 
+type MyProps = {role: string, technicalQ: string};
+
 class Form extends React.Component<MyProps> {
 
   render() {
     return (
       <Block>
-
+        <InputForm>
+        </InputForm>
       </Block>
     );
   }
