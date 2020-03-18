@@ -7,7 +7,7 @@ const TextBlock = styled.div`
   flex-direction: column;
   padding-right: 1%;
   padding-left: 2%;
-  @media (max-width: 500px){
+  @media (max-width: 750px){
     display: flex;
     width: 100%;
     padding: 0px 30px;
