@@ -16,12 +16,12 @@ const TextBlock = styled.div`
 
 const Header = styled.h2`
   font-style: italic;
-  font-size: 170%;
+  font-size: 120%;
   margin-bottom: 0px !important;
 `;
 
 const Text = styled.p`
-  font-size: 150%;
+  font-size: 100%;
   margin-top: 14px !important;
   display: inline-block;
   text-align: left;
