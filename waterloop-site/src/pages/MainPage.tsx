@@ -8,9 +8,6 @@ class MainPage extends React.Component {
   render() {
     return (
       <div>
-        <Router>
-          <FooterComponent />;
-        </Router>
 
         <PositionPosting
           role ="Goose Designer"
@@ -27,6 +24,10 @@ class MainPage extends React.Component {
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
           skills = "JavaScript, Goose Handling, Pain Tolerance"
         ></PositionPosting>
+
+        <Router>
+          <FooterComponent />;
+        </Router>
       </div>
     );
   }
