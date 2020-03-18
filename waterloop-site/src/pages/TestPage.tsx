@@ -5,6 +5,7 @@ import TextWithImage from "../components/TextWithImage"
 import TextWithImageData from "../components/json/TextWithImage.json"
 import Sponsors from "../components/Sponsors"
 import SubteamsOverview from "../components/SubteamsOverview"
+import PositionPosting from "../components/recruitment_form_component/PositionPosting"
 
 var title = "";
 var text = "";
@@ -41,6 +42,13 @@ class TestPage extends React.Component {
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
           image="https://www.w3schools.com/w3css/img_lights.jpg"
         ></SubteamsOverview>
+
+        <PositionPosting
+          role ="Mechanical"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          skills="https://www.w3schools.com/w3css/img_lights.jpg"
+        ></PositionPosting>
+
       </div >
     );
   }
