@@ -1,32 +1,23 @@
 import { Controller, Get, Res, Param } from '@nestjs/common';
-import { join } from 'path'
-import {readdir} from 'fs'
 
+import {PImageService} from './past-geese-imgs.service';
 
 
 @Controller('pgimgs')
 export class PastGeeseImgsController {
+
+  constructor(private imgService: PImageService){}
+
   @Get(':filename')
   getImage(
     @Res() res,
     @Param() params
   ) {
-    res.sendFile(join(process.cwd(), `./public/${params.filename}`));
+    res.sendFile(this.imgService.getImage(params.filename));
   }
 
   @Get()
-  async getImageList() {
-    const path = join(process.cwd(), `./public`)
-    console.log(path)
-    const response = {imgs: []}
-    readdir(path, (erro, files) => {
-      console.log(files)
-      files.forEach((file) => {
-        response.imgs.push(file)
-        console.log(file)
-      })
-    })
-    console.log(response)
-    return response
+  async getImageList(): Promise<string[]> {
+    return this.imgService.getImageNames();
   }
 }
