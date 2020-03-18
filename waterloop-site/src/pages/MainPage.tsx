@@ -2,7 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import FooterComponent from "../components/FooterComponent";
 import { BrowserRouter as Router } from "react-router-dom";
-import PositionPosting from "../components/recruitment_form_component/PositionPosting"
+import PositionPosting from "../components/recruitment_form_component/PositionPosting";
+
+const ContentWrapper = styled.div`
+  position: relative;
+`;
 
 class MainPage extends React.Component {
   render() {
