@@ -10,7 +10,6 @@ const TextBlock = styled.div`
   @media (max-width: 500px){
     display: flex;
     width: 100%;
-    text-align: center;
     padding: 0px 30px;
   }
 `;
@@ -19,20 +18,15 @@ const Header = styled.h2`
   font-style: italic;
   font-size: 170%;
   margin-bottom: 0px !important;
-  @media (max-width: 500px){
-    font-size: 25px;
-  }
 `;
 
 const Text = styled.p`
   font-size: 150%;
   margin-top: 14px !important;
   display: inline-block;
+  text-align: left;
 
-  @media (max-width: 500px){
-    font-size: 13px;
-    text-align: left;
-  }
+
 `;
 
 const Block = styled.div`
