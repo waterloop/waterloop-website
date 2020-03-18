@@ -78,6 +78,7 @@ const Button: React.FC<Props> = (props) => {
     font-size: large;
     font-family: IBM Plex Sans;
     font-weight: bold;
+    margin: 0;
     ${ButtonDiv}:hover & {
       color: ${ColorMap[backgroundColor]};
     }
