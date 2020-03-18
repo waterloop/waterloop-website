@@ -16,7 +16,7 @@ const FooterWrapper = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  position: fixed;
+  position: relative;
   width: 100%;
   height: 175px;
   bottom: 0;
