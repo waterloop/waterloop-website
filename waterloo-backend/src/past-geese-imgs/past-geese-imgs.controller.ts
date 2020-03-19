@@ -2,7 +2,9 @@ import { Controller, Get, Res, Param } from '@nestjs/common';
 
 import {PImageService} from './past-geese-imgs.service';
 
-
+interface Geese {
+  geese: string[]
+}
 @Controller('pgimgs')
 export class PastGeeseImgsController {
 
@@ -17,7 +19,7 @@ export class PastGeeseImgsController {
   }
 
   @Get()
-  async getImageList(): Promise<string[]> {
-    return this.imgService.getImageNames();
+  async getImageList(): Promise<Geese> {
+    return {geese: this.imgService.getImageNames()};
   }
 }
