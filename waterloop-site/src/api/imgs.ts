@@ -33,9 +33,7 @@ export const getGeese = async () => {
 
     for (let gooseIndex = 0; gooseIndex < geese.length; ++gooseIndex) {
       response.push({
-        url: await getImageUrl(
-          await fetch(`${baseUrl}/pgimgs/${geese[gooseIndex].filename}`)
-        ),
+        url: `${baseUrl}/pgimgs/${geese[gooseIndex].filename}`,
         name: geese[gooseIndex].name,
         desc: geese[gooseIndex].desc
       })
