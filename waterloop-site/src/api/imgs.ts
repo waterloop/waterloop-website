@@ -45,8 +45,3 @@ export const getGeese = async () => {
   }
   return {geese: []}
 }
-
-const getImageUrl = async (response: Response) => {
-  const blob = await response.blob()
-  return URL.createObjectURL(blob)
-}
