@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { ProfileSection } from '../components/Profiles'
-import TeamProfileFitler from '../components/TeamFilter'
+import TeamProfileFilter from '../components/TeamFilter'
 
 import testData from '../testProfileData'
 
@@ -54,6 +54,7 @@ export default class TeamPage extends React.Component<any, any> {
     this.state = {
       teamFilters: Array(5).fill(false),
       memberData: data,
+      toggleOpen: false,
     }
   }
 
@@ -68,10 +69,17 @@ export default class TeamPage extends React.Component<any, any> {
 
   }
 
+  updateToggle() {
+    this.setState((state: any, props: any) => {
+      let newToggleState = !this.state.toggleOpen
+      return {toggleOpen: newToggleState}
+    })
+  }
+
   render () {
     return (
       <Page>
-        <TeamProfileFitler filters={this.state.teamFilters} updateFilters={(id: number) => this.updateFilters(id)}/>
+        <TeamProfileFilter filters={this.state} updateFilters={(id: number) => this.updateFilters(id)} updateToggle={() => this.updateToggle()}/>
 
         <ProfileSectionTitle>Team Leads</ProfileSectionTitle>
         <ProfileSection profiles={testData.slice(0, 2)} profileType={"lead"}/>
