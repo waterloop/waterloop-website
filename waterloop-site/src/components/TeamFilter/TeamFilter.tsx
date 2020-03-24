@@ -42,6 +42,10 @@ const StyledFilter = styled.button`
     @media (max-width: 975px){
       display: unset;
     }
+
+    @media (min-width: 975px){
+      display: none;
+    }
   }
 
   &.selectTeams {
@@ -74,6 +78,10 @@ const SlideDownContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   height: 400px;
+
+  @media (min-width: 975px){
+    display: none;
+  }
 `
 const StyledToggle = styled.button`
   display: flex;
