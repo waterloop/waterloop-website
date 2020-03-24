@@ -7,11 +7,6 @@ const FitlerContainer = styled.div`
   justify-content: space-between;
   margin-top: 40px;
   margin-bottom: 80px;
-
-  @media (max-width: 975px){
-    justify-content: center;
-  }
-
 `
 const StyledFilter = styled.button`
   width: 150px;
@@ -37,7 +32,12 @@ const StyledFilter = styled.button`
 
   &.mobile {
     text-align: left;
-    padding-left: 15px;
+    padding-left: 30px;
+    font-size: 28pt;
+    border-radius: 50px;
+
+    width: 300px;
+    height: 70px;
 
     @media (max-width: 975px){
       display: unset;
@@ -45,11 +45,14 @@ const StyledFilter = styled.button`
   }
 
   &.selectTeams {
-    width: 200px;
+    width: 375px;
+    height: 70px;
+    font-size: 28pt;
+    border-radius: 50px;
     color: white;
     background-color: #222535;
     text-align: left;
-    padding-left: 15px;
+    padding-left: 30px;
 
     @media (max-width: 975px){
       display: unset;
@@ -70,18 +73,16 @@ const SlideDownContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 200px;
-  margin-right: 50px;
+  height: 400px;
 `
 const StyledToggle = styled.button`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 40px;
-  height: 30px;
-  margin-top: 2.5px;
-  margin-bottom: 2.5px;
-  margin-left: 5px;
+  width: 60px;
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   background: transparent;
   border: none;
   outline: none;
@@ -91,8 +92,8 @@ const StyledToggle = styled.button`
   }
 `
 const ToggleLine = styled.div`
-  width: 35px;
-  height: 5px;
+  width: 55px;
+  height: 8px;
   background-color: #F9D55B;
   border-radius: 10px;
 
@@ -104,23 +105,25 @@ const ToggleLine = styled.div`
 const TeamFilter = (props: any) => {
   let slideDownContainer;
   let toggleLine;
-  let filterButtons = props.filters.teamFilters.map((filter: any, i: number) => {
-    const Button = filter ? SelectedFilter : StyledFilter;
-    return <Button key={i} onClick={() => props.updateFilters(i)}>Some Filter</Button>
-    })
 
   if (props.filters.toggleOpen) {
-    slideDownContainer = <SlideDownContainer >{filterButtons}</SlideDownContainer>
+    slideDownContainer = <SlideDownContainer >{props.filters.teamFilters.map((filter: any, i: number) => {
+      const Button = filter ? SelectedFilter : StyledFilter;
+      return <Button className="mobile" key={i} onClick={() => props.updateFilters(i)}>Some Filter</Button>
+      })}</SlideDownContainer>
     toggleLine = <ToggleLine className="open"/>
   }
   else {
-    slideDownContainer = <StyledFilter className="selectTeams">Select Team</StyledFilter>
+    slideDownContainer = <StyledFilter className="selectTeams" onClick={() => props.updateToggle()}>Select Team</StyledFilter>
     toggleLine = <ToggleLine/>
   }
 
   return (
     <FitlerContainer>
-      {filterButtons}
+      {props.filters.teamFilters.map((filter: any, i: number) => {
+    const Button = filter ? SelectedFilter : StyledFilter;
+    return <Button key={i} onClick={() => props.updateFilters(i)}>Some Filter</Button>
+    })}
       {slideDownContainer}
       <StyledToggle onClick={() => props.updateToggle()}>
         {toggleLine}
