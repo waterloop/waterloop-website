@@ -129,7 +129,7 @@ export default class TeamPage extends React.Component<any, any> {
       <Page>
         <TeamProfileFilter
           filters={this.state}
-          filterLabels={["ALL TEAMS", "SOFTWARE", "HARDWARE", "ELECTRICAL", "BUISINESS"]}
+          filterLabels={["ALL TEAMS", "SOFTWARE", "HARDWARE", "ELECTRICAL", "BUSINESS"]}
           updateFilters={(id: number) => this.updateFilters(id)}
           updateToggle={() => this.updateToggle()}
         />
