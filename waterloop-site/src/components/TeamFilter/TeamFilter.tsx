@@ -128,9 +128,9 @@ const TeamFilter = (props: any) => {
   return (
     <FitlerContainer>
       {props.filters.teamFilters.map((filter: any, i: number) => {
-    const Button = filter ? SelectedFilter : StyledFilter;
-    return <Button key={i} onClick={() => props.updateFilters(i)}>{props.filterLabels[i]}</Button>
-    })}
+        const Button = filter ? SelectedFilter : StyledFilter;
+        return <Button key={i} onClick={() => props.updateFilters(i)}>{props.filterLabels[i]}</Button>
+      })}
       {slideDownContainer}
       <StyledToggle onClick={() => props.updateToggle()}>
         {toggleLine}
