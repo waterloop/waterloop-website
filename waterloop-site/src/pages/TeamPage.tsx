@@ -26,7 +26,7 @@ export default class TeamPage extends React.Component<any, any> {
       toggleOpen: false,
       subteamMap: {} as any
     }
-    this.fetchProfiles();
+    this.fetchProfiles(0);
   }
 
   formatProfiles(data: any) {
@@ -61,8 +61,17 @@ export default class TeamPage extends React.Component<any, any> {
     return formatedArray
   }
 
-  fetchProfiles () {
-    fetch(`https://cors-anywhere.herokuapp.com/https://hub.waterloop.ca/api/members`, {
+  generateQueryParams(id: number) {
+    if (id === 1) return `members/subteams`
+    else if (id === 2) return `subteams/Mechanical`
+    else if (id === 3) return `subteams/Electrical`
+    else if (id === 4) return `subteams/Buisness`
+    else return `members`
+  }
+
+  fetchProfiles (id: number) {
+    const params = this.generateQueryParams(id)
+    fetch(`https://cors-anywhere.herokuapp.com/https://hub.waterloop.ca/api/${params}`, {
       method: "POST",
       headers: {
         authorization:
@@ -72,9 +81,8 @@ export default class TeamPage extends React.Component<any, any> {
     .then(res => res.json())
     .then(
       (res) => {
+        console.log("finished fetching member data")
         const formatedData = this.formatProfiles(res.body) as Array<Array<Object>>
-        // console.log(formatedData)
-        // const formatedData = [testData.slice(0, 2)]
         this.setState({
           memberData: formatedData,
         })
@@ -92,7 +100,7 @@ export default class TeamPage extends React.Component<any, any> {
       return {displayedData: newFilterStates}
     })
 
-    this.fetchProfiles()
+    this.fetchProfiles(id)
   }
 
   updateToggle() {
