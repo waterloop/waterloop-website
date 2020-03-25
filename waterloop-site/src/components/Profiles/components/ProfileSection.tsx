@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import testData from '../../../testProfileData'
 
 // import { ProfileType, PSectionProps, PSectionStates } from '../interfaces'
 import { SubProfile, LeadProfile, ExpandedProfile } from '../../Profiles'
@@ -68,7 +69,8 @@ export default class ProfileSection extends React.Component<any, any> {
       minified: this.props.profiles
     }
   }
-  componentWillReceiveProps(nextProps:  any) {
+
+  UNSAFE_componentWillReceiveProps(nextProps:  any) {
     this.setState({minified: nextProps.profiles})
   }
 
@@ -105,10 +107,13 @@ export default class ProfileSection extends React.Component<any, any> {
           Object.keys(expanded).length !== 0 &&
           <ExpandedContainer>
             <ExpandedProfile
-              name={`${expanded.name.first} + ${expanded.name.last}`}
-              position={expanded.position}
-              portrait={expanded.portrait}
-              contacts={expanded.contacts}
+              name={`${expanded.name.first} ${expanded.name.last}`}
+              position={expanded.memberType.name}
+              programInfo={`${expanded.stream.currentSchoolTerm} ${expanded.program}`}
+              teams={expanded.subteams}
+              bio={expanded.bio}
+              portrait={expanded.imageUrl}
+              contacts={testData[0].contacts}
               onClick={() => this.minifyProfile()}
             />
           </ExpandedContainer>
@@ -117,13 +122,14 @@ export default class ProfileSection extends React.Component<any, any> {
           minified.length > 0 &&
           <ProfileContainerTypeTag>
             {minified.map((profile: any, i: any) => {
-              const { name, position, portrait, contacts } = profile
+              console.log(profile)
+              const { name, memberType, imageUrl, contacts } = profile
                 return <ProfileTypeTag
                   key={i}
-                  name={name}
-                  position={position}
-                  portrait={portrait}
-                  contacts={contacts}
+                  name={`${name.first} ${name.last}`}
+                  position={memberType.name}
+                  portrait={imageUrl}
+                  contacts={testData[0].contacts}
                   onClick={() => this.expandProfile(i)}
                 />
             })}

@@ -19,6 +19,7 @@ const PortraitContainer = styled.div`
 const Portrait = styled.img`
   flex-basis: 100%;
   height: 100%;
+  width: 100%;
 `
 const InfoContainer = styled.div`
   flex-basis: 35%;

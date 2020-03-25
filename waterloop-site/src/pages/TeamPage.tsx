@@ -4,8 +4,6 @@ import styled from 'styled-components'
 import { ProfileSection } from '../components/Profiles'
 import TeamProfileFilter from '../components/TeamFilter'
 
-import testData from '../testProfileData'
-
 const ProfileSectionTitle = styled.h1`
   font-family: IBM Plex Sans;
   font-style: italic;
@@ -35,14 +33,14 @@ export default class TeamPage extends React.Component<any, any> {
       teamFilters: Array(5).fill(false),
       memberData: [[]] as any,
       toggleOpen: false,
-      count: 0 as number
+      subteamMap: {} as any
     }
     this.fetchProfiles();
   }
 
   formatProfiles(data: any) {
     let formatedArray = [[]] as Array<Array<any>>
-    let subteamMap = new Map()
+    let newSubteamMap = new Map()
 
     // Ignore members with missing team and position fields
     data.forEach((member: any, key: number) => {
@@ -57,15 +55,17 @@ export default class TeamPage extends React.Component<any, any> {
       else {
         // Register new subteams
         member.subteams.forEach((team: string) => {
-          if (!subteamMap.has(team)) {
-            subteamMap.set(team, formatedArray.length)
+          if (!newSubteamMap.has(team)) {
+            newSubteamMap.set(team, formatedArray.length)
             formatedArray.push([])
           }
-          if (position === "Subteam Lead") formatedArray[subteamMap.get(team)].unshift(member)
-          else formatedArray[subteamMap.get(team)].push(member)
+          if (position === "Subteam Lead") formatedArray[newSubteamMap.get(team)].unshift(member)
+          else formatedArray[newSubteamMap.get(team)].push(member)
         })
       }
     })
+
+    this.setState({subteamMap: newSubteamMap})
 
     return formatedArray
   }
@@ -81,11 +81,11 @@ export default class TeamPage extends React.Component<any, any> {
     .then(res => res.json())
     .then(
       (res) => {
-        // const formatedData = this.formatProfiles(res.body) as Array<Array<any>>
-        const formatedData = [testData.slice(0, 2)]
+        const formatedData = this.formatProfiles(res.body) as Array<Array<Object>>
+        // console.log(formatedData)
+        // const formatedData = [testData.slice(0, 2)]
         this.setState({
           memberData: formatedData,
-          count: this.state.count + 1
         })
       },
       (err) => alert(`Something just went wrong. Profiles were not fetched.`)
@@ -111,30 +111,37 @@ export default class TeamPage extends React.Component<any, any> {
     })
   }
 
-  render () {
+  getKeyByValue(object: any, value: number) {
+    return Object.keys(object).find(key => object[key] === value);
+  }
 
-    console.log("memberData[0]")
-    console.log(this.state.memberData[0])
-    console.log(this.state.count)
-    console.log("")
+
+  render () {
+    const leads = this.state.memberData[0] || []
+    const subteams = this.state.memberData ? this.state.memberData.slice(1) : [[]]
 
     return (
       <Page>
-        <ProfileSectionTitle>Team Leads</ProfileSectionTitle>
-        <ProfileSection profiles={this.state.memberData[0]} profileType={"lead"}/>
+        <TeamProfileFilter
+          filters={this.state}
+          filterLabels={["ALL TEAMS", "SOFTWARE", "HARDWARE", "ELECTRICAL", "BUISINESS"]}
+          updateFilters={(id: number) => this.updateFilters(id)}
+          updateToggle={() => this.updateToggle()}
+        />
+
+        {leads.length > 0 && <>
+          <ProfileSectionTitle>Team Leads</ProfileSectionTitle>
+          <ProfileSection profiles={leads} profileType={"lead"}/>
+        </>}
+
+        {subteams.length > 0 && subteams.map((subteam: any, key: number) => {
+          const teamName = `${subteam[0].subteams[0]}`
+          return <>
+            <ProfileSectionTitle>{teamName}</ProfileSectionTitle>
+            <ProfileSection profiles={subteam} profileType={"subteam"}/>
+          </>
+        })}
       </Page>
     )
   }
 }
-
-// <TeamProfileFilter
-//   filters={this.state}
-//   filterLabels={["ALL TEAMS", "SOFTWARE", "HARDWARE", "ELECTRICAL", "BUISINESS"]}
-//   updateFilters={(id: number) => this.updateFilters(id)}
-//   updateToggle={() => this.updateToggle()}
-// />
-// <ProfileSectionTitle>Subteam 1</ProfileSectionTitle>
-// <ProfileSection profiles={testData.slice(2, 8)} profileType={"subteam"}/>
-//
-// <ProfileSectionTitle>Subteam 2</ProfileSectionTitle>
-// <ProfileSection profiles={testData.slice(8, 14)} profileType={"subteam"}/>
