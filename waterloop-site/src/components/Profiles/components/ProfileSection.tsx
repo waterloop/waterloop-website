@@ -6,6 +6,15 @@ import testData from '../../../testProfileData'
 import { SubProfile, LeadProfile, ExpandedProfile } from '../../Profiles'
 
 // Styled components for ProfileSection
+const ProfileSectionTitle = styled.h1`
+  font-family: IBM Plex Sans;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 47px;
+  color: #010101;
+  margin-bottom: 50px;
+`
 const ProfileSectionContainer = styled.div`
   margin-bottom: 100px;
 `
@@ -103,6 +112,8 @@ export default class ProfileSection extends React.Component<any, any> {
 
     return (
       <ProfileSectionContainer>
+        {this.props.title && <ProfileSectionTitle>{this.props.title}</ProfileSectionTitle>}
+
         { // Expanded Profile Slot
           Object.keys(expanded).length !== 0 &&
           <ExpandedContainer>
@@ -122,8 +133,7 @@ export default class ProfileSection extends React.Component<any, any> {
           minified.length > 0 &&
           <ProfileContainerTypeTag>
             {minified.map((profile: any, i: any) => {
-              console.log(profile)
-              const { name, memberType, imageUrl, contacts } = profile
+              const { name, memberType, imageUrl } = profile
                 return <ProfileTypeTag
                   key={i}
                   name={`${name.first} ${name.last}`}

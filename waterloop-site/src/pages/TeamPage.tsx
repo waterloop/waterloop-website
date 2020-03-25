@@ -4,15 +4,6 @@ import styled from 'styled-components'
 import { ProfileSection } from '../components/Profiles'
 import TeamProfileFilter from '../components/TeamFilter'
 
-const ProfileSectionTitle = styled.h1`
-  font-family: IBM Plex Sans;
-  font-style: italic;
-  font-weight: 600;
-  font-size: 36px;
-  line-height: 47px;
-  color: #010101;
-  margin-bottom: 50px;
-`
 const Page = styled.div`
   display: block;
   max-width: 1080px;
@@ -130,16 +121,20 @@ export default class TeamPage extends React.Component<any, any> {
         />
 
         {leads.length > 0 && <>
-          <ProfileSectionTitle>Team Leads</ProfileSectionTitle>
-          <ProfileSection profiles={leads} profileType={"lead"}/>
+          <ProfileSection
+            title={"Team Leads"}
+            profiles={leads}
+            profileType={"lead"}/>
         </>}
 
-        {subteams.length > 0 && subteams.map((subteam: any, key: number) => {
+        {subteams.length > 0 && subteams.map((subteam: any, i: number) => {
           const teamName = `${subteam[0].subteams[0]}`
-          return <>
-            <ProfileSectionTitle>{teamName}</ProfileSectionTitle>
-            <ProfileSection profiles={subteam} profileType={"subteam"}/>
-          </>
+          return <ProfileSection
+            key={i}
+            title={teamName}
+            profiles={subteam}
+            profileType={"subteam"}
+          />
         })}
       </Page>
     )
