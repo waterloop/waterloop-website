@@ -31,14 +31,43 @@ const Page = styled.div`
 export default class TeamPage extends React.Component<any, any> {
   constructor(props: any) {
     super(props)
-
     this.state = {
       teamFilters: Array(5).fill(false),
-      memberData: {} as any,
+      memberData: [[]] as any,
       toggleOpen: false,
+      count: 0 as number
     }
-
     this.fetchProfiles();
+  }
+
+  formatProfiles(data: any) {
+    let formatedArray = [[]] as Array<Array<any>>
+    let subteamMap = new Map()
+
+    // Ignore members with missing team and position fields
+    data.forEach((member: any, key: number) => {
+      if (!member.memberType || member.memberType.length === 0 ||
+          !member.subteams || member.subteams.length === 0) {
+          return
+      }
+
+      // Add member to array
+      const position = `${member.memberType.name}`
+      if (position === "Technical Director") formatedArray[0].push(member)
+      else {
+        // Register new subteams
+        member.subteams.forEach((team: string) => {
+          if (!subteamMap.has(team)) {
+            subteamMap.set(team, formatedArray.length)
+            formatedArray.push([])
+          }
+          if (position === "Subteam Lead") formatedArray[subteamMap.get(team)].unshift(member)
+          else formatedArray[subteamMap.get(team)].push(member)
+        })
+      }
+    })
+
+    return formatedArray
   }
 
   fetchProfiles () {
@@ -52,8 +81,12 @@ export default class TeamPage extends React.Component<any, any> {
     .then(res => res.json())
     .then(
       (res) => {
-        this.setState({memberData: res})
-        console.log(res)
+        // const formatedData = this.formatProfiles(res.body) as Array<Array<any>>
+        const formatedData = [testData.slice(0, 2)]
+        this.setState({
+          memberData: formatedData,
+          count: this.state.count + 1
+        })
       },
       (err) => alert(`Something just went wrong. Profiles were not fetched.`)
     )
@@ -79,24 +112,29 @@ export default class TeamPage extends React.Component<any, any> {
   }
 
   render () {
+
+    console.log("memberData[0]")
+    console.log(this.state.memberData[0])
+    console.log(this.state.count)
+    console.log("")
+
     return (
       <Page>
-        <TeamProfileFilter
-          filters={this.state}
-          filterLabels={["ALL TEAMS", "SOFTWARE", "HARDWARE", "ELECTRICAL", "BUISINESS"]}
-          updateFilters={(id: number) => this.updateFilters(id)}
-          updateToggle={() => this.updateToggle()}
-        />
-
         <ProfileSectionTitle>Team Leads</ProfileSectionTitle>
-        <ProfileSection profiles={testData.slice(0, 2)} profileType={"lead"}/>
-
-        <ProfileSectionTitle>Subteam 1</ProfileSectionTitle>
-        <ProfileSection profiles={testData.slice(2, 8)} profileType={"subteam"}/>
-
-        <ProfileSectionTitle>Subteam 2</ProfileSectionTitle>
-        <ProfileSection profiles={testData.slice(8, 14)} profileType={"subteam"}/>
+        <ProfileSection profiles={this.state.memberData[0]} profileType={"lead"}/>
       </Page>
     )
   }
 }
+
+// <TeamProfileFilter
+//   filters={this.state}
+//   filterLabels={["ALL TEAMS", "SOFTWARE", "HARDWARE", "ELECTRICAL", "BUISINESS"]}
+//   updateFilters={(id: number) => this.updateFilters(id)}
+//   updateToggle={() => this.updateToggle()}
+// />
+// <ProfileSectionTitle>Subteam 1</ProfileSectionTitle>
+// <ProfileSection profiles={testData.slice(2, 8)} profileType={"subteam"}/>
+//
+// <ProfileSectionTitle>Subteam 2</ProfileSectionTitle>
+// <ProfileSection profiles={testData.slice(8, 14)} profileType={"subteam"}/>

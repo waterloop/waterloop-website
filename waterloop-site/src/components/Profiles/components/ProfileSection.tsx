@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { ProfileType, PSectionProps, PSectionStates } from '../interfaces'
+// import { ProfileType, PSectionProps, PSectionStates } from '../interfaces'
 import { SubProfile, LeadProfile, ExpandedProfile } from '../../Profiles'
 
 // Styled components for ProfileSection
@@ -60,20 +60,23 @@ const ExpandedContainer = styled.div`
 `
 
 // Profile Subsection
-export default class ProfileSection extends React.Component<PSectionProps, PSectionStates> {
-  constructor(props: PSectionProps) {
+export default class ProfileSection extends React.Component<any, any> {
+  constructor(props: any) {
     super(props)
     this.state = {
-      expanded: {} as ProfileType,
+      expanded: {} as any,
       minified: this.props.profiles
     }
+  }
+  componentWillReceiveProps(nextProps:  any) {
+    this.setState({minified: nextProps.profiles})
   }
 
   // Return the profile from the Expanded Profile slot back into the minfied list
   minifyProfile () {
     this.setState({
       minified: [...this.state.minified, this.state.expanded],
-      expanded: {} as ProfileType
+      expanded: {} as any
     })
   }
 
@@ -102,7 +105,7 @@ export default class ProfileSection extends React.Component<PSectionProps, PSect
           Object.keys(expanded).length !== 0 &&
           <ExpandedContainer>
             <ExpandedProfile
-              name={expanded.name}
+              name={`${expanded.name.first} + ${expanded.name.last}`}
               position={expanded.position}
               portrait={expanded.portrait}
               contacts={expanded.contacts}
@@ -111,9 +114,9 @@ export default class ProfileSection extends React.Component<PSectionProps, PSect
           </ExpandedContainer>
         }
         { // Dynamically insert minified profiles
-          this.state.minified.length > 0 &&
+          minified.length > 0 &&
           <ProfileContainerTypeTag>
-            {minified.map((profile, i) => {
+            {minified.map((profile: any, i: any) => {
               const { name, position, portrait, contacts } = profile
                 return <ProfileTypeTag
                   key={i}
