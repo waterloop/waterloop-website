@@ -14,7 +14,6 @@ class TestPage extends React.Component {
         ></TestComponent>
 
         <ContactUsForm
-          action="google.com"
           desc="Desc"
           title="Send Us A Message"
         ></ContactUsForm>
