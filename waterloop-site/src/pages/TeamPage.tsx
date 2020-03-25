@@ -62,11 +62,12 @@ export default class TeamPage extends React.Component<any, any> {
   }
 
   generateQueryParams(id: number) {
-    if (id === 1) return `members/subteams`
+    if (id === 0) return `members`
+    else if (id === 1) return `members/subteams`
     else if (id === 2) return `subteams/Mechanical`
     else if (id === 3) return `subteams/Electrical`
     else if (id === 4) return `subteams/Buisness`
-    else return `members`
+    else return ``
   }
 
   fetchProfiles (id: number) {
