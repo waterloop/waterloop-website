@@ -29,6 +29,7 @@ export default class TeamPage extends React.Component<any, any> {
     this.fetchProfiles(0);
   }
 
+  // take json data and format it into arrays of team leads of subteams
   formatProfiles(data: any) {
     let formatedArray = [[]] as Array<Array<any>>
     let newSubteamMap = new Map()
@@ -61,6 +62,7 @@ export default class TeamPage extends React.Component<any, any> {
     return formatedArray
   }
 
+  // generate params for teamhub query
   generateQueryParams(id: number) {
     if (id === 0) return `members`
     else if (id === 1) return `members/subteams`
@@ -70,7 +72,8 @@ export default class TeamPage extends React.Component<any, any> {
     else return ``
   }
 
-  fetchProfiles (id: number) {
+  // fetch data from teamhub
+  fetchProfiles(id: number) {
     const params = this.generateQueryParams(id)
     fetch(`https://cors-anywhere.herokuapp.com/https://hub.waterloop.ca/api/${params}`, {
       method: "POST",
@@ -92,7 +95,8 @@ export default class TeamPage extends React.Component<any, any> {
     )
   }
 
-  updateFilters (id: number) {
+  // Update filter states to refine members show on page
+  updateFilters(id: number) {
     let newFilterStates = this.state.teamFilters
     newFilterStates[id] = !newFilterStates[id]
 
@@ -104,6 +108,7 @@ export default class TeamPage extends React.Component<any, any> {
     this.fetchProfiles(id)
   }
 
+  // Update mobile menu toggle status
   updateToggle() {
     this.setState((state: any, props: any) => {
       let newToggleState = !this.state.toggleOpen
@@ -111,12 +116,12 @@ export default class TeamPage extends React.Component<any, any> {
     })
   }
 
+  // Get team name
   getKeyByValue(object: any, value: number) {
     return Object.keys(object).find(key => object[key] === value);
   }
 
-
-  render () {
+  render() {
     const leads = this.state.memberData[0] || []
     const subteams = this.state.memberData ? this.state.memberData.slice(1) : [[]]
 

@@ -79,12 +79,13 @@ export default class ProfileSection extends React.Component<any, any> {
     }
   }
 
+  // Update states upon recieving new props
   UNSAFE_componentWillReceiveProps(nextProps:  any) {
     this.setState({minified: nextProps.profiles})
   }
 
   // Return the profile from the Expanded Profile slot back into the minfied list
-  minifyProfile () {
+  minifyProfile() {
     this.setState({
       minified: [...this.state.minified, this.state.expanded],
       expanded: {} as any
@@ -92,13 +93,13 @@ export default class ProfileSection extends React.Component<any, any> {
   }
 
   // Move selected profile from minifie list into the Expansion Profile slot
-  expandProfile (i: number) {
+  expandProfile(i: number) {
     const target = this.state.minified.splice(i, 1)[0]
     if (Object.keys(this.state.expanded).length !== 0) this.minifyProfile()
     this.setState({expanded: target})
   }
 
-  render () {
+  render() {
     const expanded = this.state.expanded
     const minified = this.state.minified
 

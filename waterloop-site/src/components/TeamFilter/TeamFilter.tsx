@@ -71,7 +71,6 @@ const SelectedFilter = styled(StyledFilter)`
   color: white;
   background-color: #222535;
 `
-
 const SlideDownContainer = styled.div`
   display: flex;
   flex-direction: column;
