@@ -81,7 +81,12 @@ export default class TeamPage extends React.Component<any, any> {
   render () {
     return (
       <Page>
-        <TeamProfileFilter filters={this.state} updateFilters={(id: number) => this.updateFilters(id)} updateToggle={() => this.updateToggle()}/>
+        <TeamProfileFilter
+          filters={this.state}
+          filterLabels={["ALL TEAMS", "SOFTWARE", "HARDWARE", "ELECTRICAL", "BUISINESS"]}
+          updateFilters={(id: number) => this.updateFilters(id)}
+          updateToggle={() => this.updateToggle()}
+        />
 
         <ProfileSectionTitle>Team Leads</ProfileSectionTitle>
         <ProfileSection profiles={testData.slice(0, 2)} profileType={"lead"}/>

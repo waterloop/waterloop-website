@@ -67,7 +67,6 @@ const StyledFilter = styled.button`
     }
   }
 `
-
 const SelectedFilter = styled(StyledFilter)`
   color: white;
   background-color: #222535;
@@ -117,7 +116,7 @@ const TeamFilter = (props: any) => {
   if (props.filters.toggleOpen) {
     slideDownContainer = <SlideDownContainer >{props.filters.teamFilters.map((filter: any, i: number) => {
       const Button = filter ? SelectedFilter : StyledFilter;
-      return <Button className="mobile" key={i} onClick={() => props.updateFilters(i)}>Some Filter</Button>
+      return <Button className="mobile" key={i} onClick={() => props.updateFilters(i)}>{props.filterLabels[i]}</Button>
       })}</SlideDownContainer>
     toggleLine = <ToggleLine className="open"/>
   }
@@ -130,7 +129,7 @@ const TeamFilter = (props: any) => {
     <FitlerContainer>
       {props.filters.teamFilters.map((filter: any, i: number) => {
     const Button = filter ? SelectedFilter : StyledFilter;
-    return <Button key={i} onClick={() => props.updateFilters(i)}>Some Filter</Button>
+    return <Button key={i} onClick={() => props.updateFilters(i)}>{props.filterLabels[i]}</Button>
     })}
       {slideDownContainer}
       <StyledToggle onClick={() => props.updateToggle()}>
