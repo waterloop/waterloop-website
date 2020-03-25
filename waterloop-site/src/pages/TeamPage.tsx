@@ -31,31 +31,32 @@ const Page = styled.div`
 export default class TeamPage extends React.Component<any, any> {
   constructor(props: any) {
     super(props)
-    // const data = [
-    //   {
-    //     type: "lead",
-    //     title: "Team Leads",
-    //     members: testData.slice(0, 2)
-    //   },
-    //   {
-    //     type: "subteam",
-    //     title: "Sub Team 1",
-    //     members: testData.slice(2, 8)
-    //   },
-    //   {
-    //     type: "subteam",
-    //     title: "Sub Team 2",
-    //     members: testData.slice(8, 14)
-    //   }
-    // ]
-
-    const data = 1
 
     this.state = {
       teamFilters: Array(5).fill(false),
-      memberData: data,
+      memberData: {} as any,
       toggleOpen: false,
     }
+
+    this.fetchProfiles();
+  }
+
+  fetchProfiles () {
+    fetch(`https://cors-anywhere.herokuapp.com/https://hub.waterloop.ca/api/members`, {
+      method: "POST",
+      headers: {
+        authorization:
+          "Bearer 16be4713087d2dab1a481b4e76de87ad9945cd31c385036178dee49adbe244648ee715fb60cdf7fdd4789bd1182f0252884e4d4957adeaed0d02ea37a735a8f1"
+      }
+    })
+    .then(res => res.json())
+    .then(
+      (res) => {
+        this.setState({memberData: res})
+        console.log(res)
+      },
+      (err) => alert(`Something just went wrong. Profiles were not fetched.`)
+    )
   }
 
   updateFilters (id: number) {
@@ -63,10 +64,11 @@ export default class TeamPage extends React.Component<any, any> {
     newFilterStates[id] = !newFilterStates[id]
 
     this.setState((state: any, props: any) => {
-      alert(`Filter ${id} set to: ${newFilterStates[id]}. \nFilterStates now: ${newFilterStates}`)
+      console.log(`FilterStates now: ${newFilterStates}`)
       return {displayedData: newFilterStates}
     })
 
+    this.fetchProfiles()
   }
 
   updateToggle() {
