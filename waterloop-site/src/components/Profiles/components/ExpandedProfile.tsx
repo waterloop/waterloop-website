@@ -113,7 +113,7 @@ const ExpandedProfile = (props: any) => {
           <RoleSummaryContainer>
             <InfoPosition>{props.position}</InfoPosition>
             <InfoPosition>{props.programInfo}</InfoPosition>
-            <InfoTeams>{props.teams.join(", ")}</InfoTeams>
+            <InfoTeams>{`Teams: ${props.teams.join(", ")}`}</InfoTeams>
           </RoleSummaryContainer>
           <InfoBlurb>{props.bio}</InfoBlurb>
           {props.contacts.length > 0 && <ContactList contacts={props.contacts}/>}
