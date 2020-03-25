@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import CTAButton from "./CTAButton";
-// import buildings from "../../imgs/buildings.svg";
+import BuildingsImg from "../../imgs/buildings.svg";
 import DownArrowImg from "../../imgs/downArrow.svg";
+import WaterloopImg from "../../imgs/waterloop.svg";
 
 const Container = styled.div`
   display: flex;
@@ -17,22 +18,26 @@ const Container = styled.div`
 const DescriptionContainer = styled.div`
   display: flex;
   justify-content: center;
-
-  > h3 {
-      font-size: 30px;
-      colour: white;
-  } 
 `;
 
 const ArrowContainer = styled.div`
   position: absolute;
   bottom: 75px;
+  z-index: 0;
+`;
+
+const BuildingContainer = styled.div`
+  width: 100%;
+  @media (max-width: 500px) {
+    display: none;
+  }
 `;
 
 const Buildings = styled.img`
-  width: auto;
+  width: 100%;
   height: auto;
-
+  position: absolute;
+  bottom: 30px;
 `;
 
 const DownArrow = styled.img`
@@ -42,27 +47,57 @@ const DownArrow = styled.img`
   transition: 0.2s ease-in-out;
 `;
 
-type MyProps = { description: string; };
+const Content = styled.div`
+  margin-bottom: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 999;
+`;
+
+const WaterloopContainer = styled.div`
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+`;
+
+const Waterloop = styled.img`
+  width: 700px;
+  height: auto;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+
+  @media (max-width: 500px) {
+    width: 300px;
+  }
+`;
+
+type MyProps = { description: string };
 
 class heroComponent extends React.Component<MyProps> {
-    render() {
-        return (
-            <Container>
-                {/* waterloop svg */}
-                <DescriptionContainer>
-                    <h3>{this.props.description}</h3>
-                </DescriptionContainer>
-                <CTAButton
-                    title="JOIN US"
-                    link="https://google.com"
-                ></CTAButton>
-                {/* <buildings></buildings> */}
-                <ArrowContainer>
-                    <DownArrow src={DownArrowImg}></DownArrow>
-                </ArrowContainer>
-            </Container>
-        );
-    }
+  render() {
+    return (
+      <Container>
+        <Content>
+          {/* waterloop svg */}
+          <WaterloopContainer>
+            <Waterloop src={WaterloopImg}></Waterloop>
+          </WaterloopContainer>
+          <DescriptionContainer>
+            <h3>{this.props.description}</h3>
+          </DescriptionContainer>
+          <CTAButton title="JOIN US" link="https://google.com"></CTAButton>
+          {/* <buildings></buildings> */}
+        </Content>
+        <ArrowContainer>
+          <DownArrow src={DownArrowImg}></DownArrow>
+        </ArrowContainer>
+        <BuildingContainer>
+          <Buildings src={BuildingsImg}></Buildings>
+        </BuildingContainer>
+      </Container>
+    );
+  }
 }
 
 export default heroComponent;

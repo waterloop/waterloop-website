@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import DownArrowImg from "../../imgs/downArrow.svg";
+import buildings from "../../imgs/buildings.svg";
+import "./hero.css";
 
 const Container = styled.div`
   display: flex;
@@ -21,6 +23,7 @@ const TitleContainer = styled.div`
 const DescriptionContainer = styled.div`
   display: flex;
   justify-content: center;
+  margin-bottom: 100px;
 `;
 
 const ArrowContainer = styled.div`
