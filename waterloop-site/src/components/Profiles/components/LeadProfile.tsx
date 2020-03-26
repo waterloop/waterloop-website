@@ -19,6 +19,7 @@ const PortraitContainer = styled.div`
 const Portrait = styled.img`
   flex-basis: 100%;
   height: 100%;
+  width: 100%;
 `
 const InfoContainer = styled.div`
   flex-basis: 35%;
@@ -70,7 +71,7 @@ const LeadProfile = (props: any) => {
         <InfoContainer>
           <InfoTitle>{props.name}</InfoTitle>
           <InfoPosition>{props.position}</InfoPosition>
-          {props.contacts.length > 0 && <ContactList contacts={props.contacts}/>}
+          {(props.contacts && props.contacts.length > 0) && <ContactList contacts={props.contacts}/>}
         </InfoContainer>
     </Container>
   );

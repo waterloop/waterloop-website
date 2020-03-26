@@ -133,7 +133,7 @@ const TeamFilter = (props: any) => {
     slideDownContainer = <SlideDownContainer >{props.filters.teamFilters.map((filter: any, i: number) => {
        //checks if filter has been applied and changes style accordingly
       const Button = filter ? SelectedFilter : StyledFilter;
-      return <Button className="mobile" key={i} onClick={() => props.updateFilters(i)}>Some Filter</Button>
+      return <Button className="mobile" key={i} onClick={() => props.updateFilters(i)}>{props.filterLabels[i]}</Button>
       })}</SlideDownContainer>
     toggleLine = <ToggleLine className="open"/>
   }
@@ -145,9 +145,8 @@ const TeamFilter = (props: any) => {
   return (
     <FitlerContainer>
       {props.filters.teamFilters.map((filter: any, i: number) => {
-       //checks if filter has been applied and changes style accordingly
-      const Button = filter ? SelectedFilter : StyledFilter;
-      return <Button key={i} onClick={() => props.updateFilters(i)}>Some Filter</Button>
+        const Button = filter ? SelectedFilter : StyledFilter;
+        return <Button key={i} onClick={() => props.updateFilters(i)}>{props.filterLabels[i]}</Button>
       })}
       {slideDownContainer}
       <StyledToggle onClick={() => props.updateToggle()}>

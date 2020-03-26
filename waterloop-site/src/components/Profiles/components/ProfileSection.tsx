@@ -1,10 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
+import testData from '../../../testProfileData'
 
-import { ProfileType, PSectionProps, PSectionStates } from '../interfaces'
+// import { ProfileType, PSectionProps, PSectionStates } from '../interfaces'
 import { SubProfile, LeadProfile, ExpandedProfile } from '../../Profiles'
 
 // Styled components for ProfileSection
+const ProfileSectionTitle = styled.h1`
+  font-family: IBM Plex Sans;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 47px;
+  color: #010101;
+  margin-bottom: 50px;
+`
 const ProfileSectionContainer = styled.div`
   margin-bottom: 100px;
 `
@@ -60,31 +70,36 @@ const ExpandedContainer = styled.div`
 `
 
 // Profile Subsection
-export default class ProfileSection extends React.Component<PSectionProps, PSectionStates> {
-  constructor(props: PSectionProps) {
+export default class ProfileSection extends React.Component<any, any> {
+  constructor(props: any) {
     super(props)
     this.state = {
-      expanded: {} as ProfileType,
+      expanded: {} as any,
       minified: this.props.profiles
     }
   }
 
+  // Update states upon recieving new props
+  UNSAFE_componentWillReceiveProps(nextProps:  any) {
+    this.setState({minified: nextProps.profiles})
+  }
+
   // Return the profile from the Expanded Profile slot back into the minfied list
-  minifyProfile () {
+  minifyProfile() {
     this.setState({
       minified: [...this.state.minified, this.state.expanded],
-      expanded: {} as ProfileType
+      expanded: {} as any
     })
   }
 
   // Move selected profile from minifie list into the Expansion Profile slot
-  expandProfile (i: number) {
+  expandProfile(i: number) {
     const target = this.state.minified.splice(i, 1)[0]
     if (Object.keys(this.state.expanded).length !== 0) this.minifyProfile()
     this.setState({expanded: target})
   }
 
-  render () {
+  render() {
     const expanded = this.state.expanded
     const minified = this.state.minified
 
@@ -98,29 +113,34 @@ export default class ProfileSection extends React.Component<PSectionProps, PSect
 
     return (
       <ProfileSectionContainer>
+        {this.props.title && <ProfileSectionTitle>{this.props.title}</ProfileSectionTitle>}
+
         { // Expanded Profile Slot
           Object.keys(expanded).length !== 0 &&
           <ExpandedContainer>
             <ExpandedProfile
-              name={expanded.name}
-              position={expanded.position}
-              portrait={expanded.portrait}
-              contacts={expanded.contacts}
+              name={`${expanded.name.first} ${expanded.name.last}`}
+              position={expanded.memberType.name}
+              programInfo={`${expanded.stream.currentSchoolTerm} ${expanded.program}`}
+              teams={expanded.subteams}
+              bio={expanded.bio}
+              portrait={expanded.imageUrl}
+              contacts={testData[0].contacts}
               onClick={() => this.minifyProfile()}
             />
           </ExpandedContainer>
         }
         { // Dynamically insert minified profiles
-          this.state.minified.length > 0 &&
+          minified.length > 0 &&
           <ProfileContainerTypeTag>
-            {minified.map((profile, i) => {
-              const { name, position, portrait, contacts } = profile
+            {minified.map((profile: any, i: any) => {
+              const { name, memberType, imageUrl } = profile
                 return <ProfileTypeTag
                   key={i}
-                  name={name}
-                  position={position}
-                  portrait={portrait}
-                  contacts={contacts}
+                  name={`${name.first} ${name.last}`}
+                  position={memberType.name}
+                  portrait={imageUrl}
+                  contacts={testData[0].contacts}
                   onClick={() => this.expandProfile(i)}
                 />
             })}

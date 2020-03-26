@@ -112,11 +112,10 @@ const ExpandedProfile = (props: any) => {
           <InfoTitle>{props.name}</InfoTitle>
           <RoleSummaryContainer>
             <InfoPosition>{props.position}</InfoPosition>
-            <InfoPosition>4A Mechatronics Engineering</InfoPosition>
-            <InfoTeams>Teams: Finances, Motor, Web</InfoTeams>
+            <InfoPosition>{props.programInfo}</InfoPosition>
+            <InfoTeams>{`Teams: ${props.teams.join(", ")}`}</InfoTeams>
           </RoleSummaryContainer>
-
-          <InfoBlurb>Papa Goose is the supreme ruler and founder of the V1 geese tribe. He is known to be grazing the grasses everyday from 6am to 12am in a mission to make the grasses a goosey experience for all. Papa goose will graduate from University of Waterloo in 2022 with a 4.0 GPA</InfoBlurb>
+          <InfoBlurb>{props.bio}</InfoBlurb>
           {props.contacts.length > 0 && <ContactList contacts={props.contacts}/>}
         </InfoContainer>
     </Container>
