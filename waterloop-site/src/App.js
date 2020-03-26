@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './App.css';
-import TeamPage from "./pages/TeamPage.tsx"
+import TeamPage from "./pages/TeamPage"
 
 function App() {
   return (
