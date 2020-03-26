@@ -1,9 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import {sortProfiles, generateQueryParams} from './utils'
+import { sortProfiles, generateQueryParams } from './utils'
 import getKeyByValue from '../../utils/getKeyByValue'
-
 
 import { ProfileSection } from '../../components/Profiles'
 import TeamProfileFilter from '../../components/TeamFilter'
@@ -30,6 +29,8 @@ export default class TeamPage extends React.Component<any, any> {
       toggleOpen: false,
       subteamMap: {} as any
     }
+
+    // TODO: Replace the arg with a prop once the intro team page is done.
     this.fetchProfiles(0);
   }
 
@@ -37,21 +38,20 @@ export default class TeamPage extends React.Component<any, any> {
   fetchProfiles(id: number) {
     const [query, options] = generateQueryParams(id)
     fetch(query as string, options as object)
-    .then(res => res.json())
-    .then(
-      res => {
-        // Update state variables
-        console.log("finished fetching member data")
-        const [formatedData, newSubteamMap] = sortProfiles(res.body) as any
-        this.setState({
-          memberData: formatedData,
-          subteamMap: newSubteamMap
-        })
-      },
-      err => {
-        // Alert in case of fetch error
-        alert(`Error in fetchiing profiles: ${err}`)
-    })
+      .then(res => res.json())
+      .then(res => {
+          console.log("finished fetching member data")
+          const [formatedData, newSubteamMap] = sortProfiles(res.body) as any
+          
+          this.setState({
+            memberData: formatedData,
+            subteamMap: newSubteamMap
+          })
+      })
+      .catch(err => {
+        alert(`Error in fetching profiles`)
+        console.log(err)
+      })
   }
 
   // Update filter states to refine members show on page
