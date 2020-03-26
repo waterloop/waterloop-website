@@ -3,51 +3,69 @@ const isProfileComplete = (member: any) => {
   return !(!member.memberType || member.memberType.length === 0 || !member.subteams || member.subteams.length === 0)
 }
 
+// Identify any new teams and register them into the Map/Array
+const identifyNewTeams = (member: any, map: any, arr: Array<Array<Object>>) => {
+  // Team Leads will all be in in the first subarray regardless of their subteam
+  // Do not make a new subarray for them since it might remain empty
+  if (member.memberType.name === "Technical Director") return
+
+  // Create a new subarray and register index in map for each new subteam
+  member.subteams.forEach((team: string) => {
+    if (!map.has(team)) {
+      map.set(team, arr.length)
+      arr.push([])
+    }
+  })
+}
+
+// Insert members into the appropriate subarray(s)
+const insertMember = (member: any, map: any, arr: Array<Array<Object>>) => {
+  // Insert all Team Leads into the first subarray
+  if (member.memberType.name === "Technical Director") {
+    arr[0].push(member)
+  }
+  else {
+    // Insert Subteam leads/members into corresonding subarray(s)
+    member.subteams.forEach((team: string) => {
+      // Insert Subteam Lead members to front of subarray
+      if (member.memberType.name === "Subteam Lead") {
+        arr[map.get(team)].unshift(member)
+      } else {
+        arr[map.get(team)].push(member)
+      }
+    })
+  }
+}
+
 // Format 1d array of members into 2d array: [[team leads], [subteam 1 members], ... ]
 const sortProfiles = (members: any) => {
-  let formatedArray = [[]] as Array<Array<any>>
-  let newSubteamMap = new Map()
+  let sortedTeams = [[]] as Array<Array<any>>
+  let subteamIndex = new Map()
 
+  // Insert members into their corresponding subarrays within sortedTeams
   members.forEach((member: any, key: number) => {
-    // Ignore members with missing team and position fields
-    if (!isProfileComplete (member)) return
-
-    // Add all Team Lead members to first subarray
-    if (member.memberType.name === "Technical Director") {
-      formatedArray[0].push(member)
-    } else {
-      // Insert member into subarray for each subteam they belong to
-      member.subteams.forEach((team: string) => {
-        // Keep track of newly found teams
-        // Set {key: team name, value: current array length} and push empty an subarray
-        if (!newSubteamMap.has(team)) {
-          newSubteamMap.set(team, formatedArray.length)
-          formatedArray.push([])
-        }
-
-        // Insert Subteam Lead members to front of subarray
-        if (member.memberType.name === "Subteam Lead") {
-          formatedArray[newSubteamMap.get(team)].unshift(member)
-        } else {
-          formatedArray[newSubteamMap.get(team)].push(member)
-        }
-      })
+    if (isProfileComplete (member)) {
+      identifyNewTeams(member, subteamIndex, sortedTeams)
+      insertMember(member, subteamIndex, sortedTeams)
     }
   })
 
-  return [formatedArray, newSubteamMap]
+  return [sortedTeams, subteamIndex]
 }
 
 // generate params for teamhub query
 const generateQueryParams = (id: number) => {
   const url = `https://cors-anywhere.herokuapp.com/https://hub.waterloop.ca/api`
   let params = ``
+
+  // Determine param for subteam request
   if (id === 0) params = `members`
   else if (id === 1) params = `subteams/Software`
   else if (id === 2) params = `subteams/Mechanical`
   else if (id === 3) params = `subteams/Electrical`
   else if (id === 4) params = `subteams/Business`
   else params = ``
+
   return [
     `${url}/${params}`,
     {
@@ -59,8 +77,6 @@ const generateQueryParams = (id: number) => {
     }
   ]
 }
-
-
 
 export {
   sortProfiles,

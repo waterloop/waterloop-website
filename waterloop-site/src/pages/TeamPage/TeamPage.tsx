@@ -87,12 +87,14 @@ export default class TeamPage extends React.Component<any, any> {
           updateFilters={(id: number) => this.updateFilters(id)}
           updateToggle={() => this.updateToggle()}
         />
+
         {leads.length > 0 && <>
           <ProfileSection
             title={"Team Leads"}
             profiles={leads}
             profileType={"lead"}/>
         </>}
+
         {subteams.length > 0 && subteams.map((subteam: any, i: number) => {
           const teamName = `${getKeyByValue(this.state.subteamMap, i+1)}`
           return <ProfileSection
