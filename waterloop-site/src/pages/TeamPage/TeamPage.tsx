@@ -42,7 +42,7 @@ export default class TeamPage extends React.Component<any, any> {
       .then(res => {
           console.log("finished fetching member data")
           const [formatedData, newSubteamMap] = sortProfiles(res.body) as any
-          
+
           this.setState({
             memberData: formatedData,
             subteamMap: newSubteamMap
@@ -88,12 +88,11 @@ export default class TeamPage extends React.Component<any, any> {
           updateToggle={() => this.updateToggle()}
         />
 
-        {leads.length > 0 && <>
-          <ProfileSection
-            title={"Team Leads"}
-            profiles={leads}
-            profileType={"lead"}/>
-        </>}
+        {leads.length > 0 && <ProfileSection
+          title={"Team Leads"}
+          profiles={leads}
+          profileType={"lead"}
+        />}
 
         {subteams.length > 0 && subteams.map((subteam: any, i: number) => {
           const teamName = `${getKeyByValue(this.state.subteamMap, i+1)}`

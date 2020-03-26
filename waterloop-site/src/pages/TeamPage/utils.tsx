@@ -58,6 +58,7 @@ const generateQueryParams = (id: number) => {
   const url = `https://cors-anywhere.herokuapp.com/https://hub.waterloop.ca/api`
   let params = ``
 
+  // TODO: Replace dummy placeholder params with actual.
   // Determine param for subteam request
   if (id === 0) params = `members`
   else if (id === 1) params = `subteams/Software`
