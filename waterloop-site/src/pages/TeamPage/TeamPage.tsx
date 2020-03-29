@@ -35,10 +35,10 @@ export default class TeamPage extends React.Component<any, any> {
       subteamServerId: new Map() as Map<string, string>
     }
 
-    // TODO: Replace the arg with a prop once the intro team page is done.
-    this.fetchProfiles(0);
     this.fetchSubteams();
 
+    // TODO: Replace the arg with a prop once the intro team page is done.
+    this.fetchProfiles();
   }
 
   // fetch subteams
@@ -61,8 +61,8 @@ export default class TeamPage extends React.Component<any, any> {
   }
 
   // fetch data from teamhub
-  fetchProfiles(id: number) {
-    const [query, options] = generateMembersQuery(id)
+  fetchProfiles() {
+    const [query, options] = generateMembersQuery()
     fetch(query as string, options as object)
       .then(res => res.json())
       .then(res => {
@@ -86,11 +86,9 @@ export default class TeamPage extends React.Component<any, any> {
     newFilterStates[id] = !newFilterStates[id]
 
     this.setState((state: any, props: any) => {
-      console.log(`FilterStates now: ${newFilterStates}`)
-      return {displayedData: newFilterStates}
+      alert(`FilterStates now: ${newFilterStates}`)
+      return {teamFilters: newFilterStates}
     })
-
-    this.fetchProfiles(id)
   }
 
   // Update mobile menu toggle status

@@ -74,20 +74,8 @@ const generateFiltersQuery = () => {
 }
 
 // generate query params for members data
-const generateMembersQuery = (id: number) => {
-  let params = ``
-
-  // TODO: Replace dummy placeholder params with actual.
-  // Determine param for subteam request
-  if (id === 0) params = `members`
-  else if (id === 1) params = `subteams/Software`
-  else if (id === 2) params = `subteams/Mechanical`
-  else if (id === 3) params = `subteams/Electrical`
-  else if (id === 4) params = `subteams/Business`
-  else params = ``
-
-  return [
-    `${teamHubApiEndpoint}/${params}`,
+const generateMembersQuery = () => {return [
+    `${teamHubApiEndpoint}/members`,
     {
       method: "POST",
       headers: teamHubHeader
