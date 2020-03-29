@@ -1,8 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { sortProfiles, generateQueryParams } from './utils'
 import getKeyByValue from '../../utils/getKeyByValue'
+import {
+  sortProfiles,
+  generateMembersQuery,
+  generateFiltersQuery
+} from './utils'
 
 import { ProfileSection } from '../../components/Profiles'
 import TeamProfileFilter from '../../components/TeamFilter'
@@ -27,29 +31,51 @@ export default class TeamPage extends React.Component<any, any> {
       teamFilters: Array(5).fill(false),
       memberData: [[]] as any,
       toggleOpen: false,
-      subteamMap: {} as any
+      subteamMap: {} as any,
+      subteamServerId: new Map() as Map<string, string>
     }
 
     // TODO: Replace the arg with a prop once the intro team page is done.
     this.fetchProfiles(0);
+    this.fetchSubteams();
+
+  }
+
+  // fetch subteams
+  fetchSubteams() {
+    const [ query, options ] = generateFiltersQuery()
+    fetch(query as string, options as object)
+      .then(res => res.json())
+      .then(res => {
+        console.log("finished fetching subteam data", res.body.subteams)
+        res.body.subteams.forEach((team: any) => {
+          let newMap = this.state.subteamServerId
+          newMap.set(team._id, team.name)
+          this.setState({subteamServerId: newMap})
+        })
+      })
+      .catch(err => {
+        alert(`Error in fetching filters`)
+        console.log(err)
+      })
   }
 
   // fetch data from teamhub
   fetchProfiles(id: number) {
-    const [query, options] = generateQueryParams(id)
+    const [query, options] = generateMembersQuery(id)
     fetch(query as string, options as object)
       .then(res => res.json())
       .then(res => {
-          console.log("finished fetching member data")
-          const [formatedData, newSubteamMap] = sortProfiles(res.body) as any
+        console.log("finished fetching member data")
+        const [formatedData, newSubteamMap] = sortProfiles(res.body) as any
 
-          this.setState({
-            memberData: formatedData,
-            subteamMap: newSubteamMap
-          })
+        this.setState({
+          memberData: formatedData,
+          subteamMap: newSubteamMap
+        })
       })
       .catch(err => {
-        alert(`Error in fetching profiles`)
+        alert(`Error in fetching members`)
         console.log(err)
       })
   }
@@ -95,7 +121,7 @@ export default class TeamPage extends React.Component<any, any> {
         />}
 
         {subteams.length > 0 && subteams.map((subteam: any, i: number) => {
-          const teamName = `${getKeyByValue(this.state.subteamMap, i+1)}`
+          const teamName = `${this.state.subteamServerId.get(getKeyByValue(this.state.subteamMap, i+1))}`
           return <ProfileSection
             key={i}
             title={teamName}

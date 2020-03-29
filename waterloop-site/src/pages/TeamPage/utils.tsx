@@ -53,9 +53,28 @@ const sortProfiles = (members: any) => {
   return [sortedTeams, subteamIndex]
 }
 
-// generate params for teamhub query
-const generateQueryParams = (id: number) => {
-  const url = `https://cors-anywhere.herokuapp.com/https://hub.waterloop.ca/api`
+// URL endpoint for teamHubApi
+const teamHubApiEndpoint = `https://cors-anywhere.herokuapp.com/https://hub.waterloop.ca/api`
+
+// Header for teamHub api request s
+const teamHubHeader = {
+  authorization:
+    "Bearer 16be4713087d2dab1a481b4e76de87ad9945cd31c385036178dee49adbe244648ee715fb60cdf7fdd4789bd1182f0252884e4d4957adeaed0d02ea37a735a8f1"
+}
+
+// Generate query params for filters data
+const generateFiltersQuery = () => {
+  return [
+    `${teamHubApiEndpoint}/filters`,
+    {
+      method: "GET",
+      headers: teamHubHeader
+    }
+  ]
+}
+
+// generate query params for members data
+const generateMembersQuery = (id: number) => {
   let params = ``
 
   // TODO: Replace dummy placeholder params with actual.
@@ -68,18 +87,16 @@ const generateQueryParams = (id: number) => {
   else params = ``
 
   return [
-    `${url}/${params}`,
+    `${teamHubApiEndpoint}/${params}`,
     {
       method: "POST",
-      headers: {
-        authorization:
-          "Bearer 16be4713087d2dab1a481b4e76de87ad9945cd31c385036178dee49adbe244648ee715fb60cdf7fdd4789bd1182f0252884e4d4957adeaed0d02ea37a735a8f1"
-      }
+      headers: teamHubHeader
     }
   ]
 }
 
 export {
   sortProfiles,
-  generateQueryParams
+  generateMembersQuery,
+  generateFiltersQuery
 }
