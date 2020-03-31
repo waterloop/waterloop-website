@@ -1,10 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { generateMembersQuery, generateFiltersQuery } from './utils'
-
 import { ProfileSection } from '../../components/Profiles'
 import TeamProfileFilter from '../../components/TeamFilter'
+
+import { generateMembersQuery, generateFiltersQuery } from './utils'
+import testData from '../../testProfileData'
 
 const Page = styled.div`
   display: block;
@@ -28,15 +29,38 @@ const isProfileComplete = (member: any) => {
   )
 }
 
+// Create a profile from member data
+const buildProfile = (member: any, teamType: any) => {
+  const links = member.links.length > 0 ? member.links : testData[0].contacts
+  const teams = member.subteams.map((team: any) => teamType.get(team))
+
+  // Generate program description with missing fields in mind
+  let program = member.program || 'Student'
+  if (member.stream && member.stream.currentSchoolTerm) {
+    program = `${member.stream.currentSchoolTerm} ${program}`
+  }
+
+  return {
+    name: member.name.display,
+    position: member.memberType.name,
+    programInfo: program,
+    portrait: member.imageUrl,
+    teams: teams,
+    blurb: member.bio,
+    contacts: links
+  }
+}
+
 // Insert a profile into correct array position as a map value
 const insertProfile = (teams: any, teamName: string, member: any) => {
   let memberList = [] as Array<any>
+
+  // Add member to array
   if (teams.has(teamName)) {
     memberList = teams.get(teamName)
 
-
     // Insert Subteam leads to front of array
-    if (member.memberType.name === "Subteam Lead") {
+    if (member.position === "Subteam Lead") {
       memberList.unshift(member)
     } else {
       memberList.push(member)
@@ -58,14 +82,18 @@ const groupProfiles = (members: any, teamType: any) => {
   members.forEach((member: any) => {
     // Ignore incomplete profiles
     if (isProfileComplete(member)) {
-      // Group Team Leads by themselves and everyone else according to their teams
+      // create a profile
+      const profile = buildProfile(member, teamType)
+
+      // Group Members by their subteams
+      member.subteams.forEach((team: string) => {
+        const teamName = teamType.get(team)
+        insertProfile(teams, teamName, profile)
+      })
+
+      // Set a side a Team Leads subarray
       if (member.memberType.name === "Technical Director") {
-        insertProfile(teams, "Team Leads", member)
-      } else {
-        member.subteams.forEach((team: string) => {
-          const teamName = teamType.get(team)
-          insertProfile(teams, teamName, member)
-        })
+        insertProfile(teams, "Team Leads", profile)
       }
     }
   })
@@ -146,10 +174,11 @@ export default class TeamPage extends React.Component<any, any> {
 
     if (teams.size > 0) {
       leads = teams.get("Team Leads")
-      teams.delete("Team Leads")
       subteams = []
       teams.forEach((team: Array<any>, name: string) => {
-        subteams.push({title: name, members: team})
+        if (name !== "Team Leads") {
+          subteams.push({title: name, members: team})
+        }
       })
     }
 

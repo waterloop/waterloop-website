@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import testData from '../../../testProfileData'
 
 // import { ProfileType, PSectionProps, PSectionStates } from '../interfaces'
 import { SubProfile, LeadProfile, ExpandedProfile } from '../../Profiles'
@@ -78,7 +77,7 @@ export default class ProfileSection extends React.Component<any, any> {
       minified: this.props.profiles
     }
   }
-  
+
   // Return the profile from the Expanded Profile slot back into the minfied list
   minifyProfile() {
     this.setState({
@@ -114,30 +113,30 @@ export default class ProfileSection extends React.Component<any, any> {
           Object.keys(expanded).length !== 0 &&
           <ExpandedContainer>
             <ExpandedProfile
-              name={`${expanded.name.first} ${expanded.name.last}`}
-              position={expanded.memberType.name}
-              programInfo={`${expanded.stream.currentSchoolTerm} ${expanded.program}`}
-              teams={expanded.subteams}
+              name={expanded.name}
+              position={expanded.position}
+              programInfo={expanded.programInfo}
+              teams={expanded.teams}
               bio={expanded.bio}
-              portrait={expanded.imageUrl}
-              contacts={testData[0].contacts}
+              portrait={expanded.portrait}
+              contacts={expanded.contacts}
               onClick={() => this.minifyProfile()}
             />
           </ExpandedContainer>
         }
+
         { // Dynamically insert minified profiles
           minified.length > 0 &&
           <ProfileContainerTypeTag>
             {minified.map((profile: any, i: any) => {
-              const { name, memberType, imageUrl } = profile
-                return <ProfileTypeTag
-                  key={i}
-                  name={`${name.first} ${name.last}`}
-                  position={memberType.name}
-                  portrait={imageUrl}
-                  contacts={testData[0].contacts}
-                  onClick={() => this.expandProfile(i)}
-                />
+              return <ProfileTypeTag
+                key={i}
+                name={profile.name}
+                position={profile.position}
+                portrait={profile.portrait}
+                contacts={profile.contacts}
+                onClick={() => this.expandProfile(i)}
+              />
             })}
           </ProfileContainerTypeTag>
         }
