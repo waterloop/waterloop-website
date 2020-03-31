@@ -52,7 +52,7 @@ const buildProfile = (member: any, teamType: any) => {
 }
 
 // Insert a profile into correct array position as a map value
-const insertProfile = (teams: any, teamName: string, member: any) => {
+const insertProfileToMap = (teams: any, teamName: string, member: any) => {
   let memberList = [] as Array<any>
 
   // Add member to array
@@ -87,13 +87,13 @@ const groupProfiles = (members: any, teamType: any) => {
 
       // Set a side a Team Leads subarray
       if (member.memberType.name === "Technical Director") {
-        insertProfile(teams, "Team Leads", profile)
+        insertProfileToMap(teams, "Team Leads", profile)
       }
       // Group Members by their subteams
       else {
         member.subteams.forEach((team: string) => {
           const teamName = teamType.get(team)
-          insertProfile(teams, teamName, profile)
+          insertProfileToMap(teams, teamName, profile)
         })
       }
     }
@@ -103,7 +103,7 @@ const groupProfiles = (members: any, teamType: any) => {
 }
 
 // check if filter applies or not
-const withinFilters = (name: any, teamFilters: any) => {
+const checkWithinTeamFilters = (name: any, teamFilters: any) => {
   if (!teamFilters[0]){
     if (!teamFilters[1] && (name === "Software" || name ===  "Infrastructure")) {
       return false
@@ -129,14 +129,14 @@ const applyTeamFilters = (teams: any, teamFilters: any) => {
     if (teamName === "Team Leads") {
       team.forEach((member: any) => {
         for (let i = 0; i < member.teams.length; i++) {
-          if (withinFilters(member.teams[i], teamFilters)) {
-            insertProfile(filteredTeams, teamName, member)
+          if (checkWithinTeamFilters(member.teams[i], teamFilters)) {
+            insertProfileToMap(filteredTeams, teamName, member)
             break
           }
         }
       })
     }
-    else if (withinFilters(teamName, teamFilters)) {
+    else if (checkWithinTeamFilters(teamName, teamFilters)) {
       filteredTeams.set(teamName, team)
     }
   })
