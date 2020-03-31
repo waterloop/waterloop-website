@@ -73,7 +73,7 @@ const insertProfile = (teams: any, teamName: string, member: any) => {
   teams.set(teamName, memberList)
 }
 
-// group an array of profiles into their respective categories
+// Group an array of profiles into their respective categories
 const groupProfiles = (members: any, teamType: any) => {
   let teams = new Map() as any
   teams.set("Team Leads", [])
@@ -85,15 +85,16 @@ const groupProfiles = (members: any, teamType: any) => {
       // create a profile
       const profile = buildProfile(member, teamType)
 
-      // Group Members by their subteams
-      member.subteams.forEach((team: string) => {
-        const teamName = teamType.get(team)
-        insertProfile(teams, teamName, profile)
-      })
-
       // Set a side a Team Leads subarray
       if (member.memberType.name === "Technical Director") {
         insertProfile(teams, "Team Leads", profile)
+      }
+      // Group Members by their subteams
+      else {
+        member.subteams.forEach((team: string) => {
+          const teamName = teamType.get(team)
+          insertProfile(teams, teamName, profile)
+        })
       }
     }
   })
@@ -101,21 +102,68 @@ const groupProfiles = (members: any, teamType: any) => {
   return teams
 }
 
+// check if filter applies or not
+const withinFilters = (name: any, teamFilters: any) => {
+  if (!teamFilters[0]){
+    if (!teamFilters[1] && (name === "Software" || name ===  "Infrastructure")) {
+      return false
+    }
+    if (!teamFilters[2] && name === "Mechanical") {
+      return false
+    }
+    if (!teamFilters[3] && name === "Electrical") {
+      return false
+    }
+    if (!teamFilters[4] && (name === "Admin" || name === "Exec")) {
+      return false
+    }
+  }
+  return true
+}
+
+// Apply team filters to data set
+const applyTeamFilters = (teams: any, teamFilters: any) => {
+  let filteredTeams = new Map() as Map<string, any>
+
+  teams.forEach((team: any, teamName: string) => {
+    if (teamName === "Team Leads") {
+      team.forEach((member: any) => {
+        for (let i = 0; i < member.teams.length; i++) {
+          if (withinFilters(member.teams[i], teamFilters)) {
+            insertProfile(filteredTeams, teamName, member)
+            break
+          }
+        }
+      })
+    }
+    else if (withinFilters(teamName, teamFilters)) {
+      filteredTeams.set(teamName, team)
+    }
+  })
+
+  return filteredTeams
+}
+
 export default class TeamPage extends React.Component<any, any> {
   constructor(props: any) {
     super(props)
     this.state = {
       teamFilters: Array(5).fill(false),
+      teamFilterLabels: ["ALL TEAMS", "SOFTWARE", "HARDWARE", "ELECTRICAL", "BUSINESS"],
       toggleOpen: false,
       memberData: new Map() as Map<string, any>,
       subteamIdMap: new Map() as Map<string, string>,
     }
+  }
 
+  // Initialization
+  componentDidMount() {
     this.fetchSubteams()
+    this.updateFilters(0)
   }
 
   // fetch subteams
-  fetchSubteams () {
+  fetchSubteams() {
     const [ query, options ] = generateFiltersQuery()
     fetch(query as string, options as object)
       .then(res => res.json())
@@ -153,8 +201,23 @@ export default class TeamPage extends React.Component<any, any> {
     let newFilterStates = this.state.teamFilters
     newFilterStates[id] = !newFilterStates[id]
 
+    // Activating all teams removes all filters
+    if (id === 0) {
+      if (newFilterStates[id]){
+        newFilterStates = newFilterStates.map((value: Boolean, i: number) => i === 0)
+      }
+      // All Teams can only be deactivated by activating another filter
+      else {
+        newFilterStates[0] = true
+      }
+    }
+    // Automatically clear All Teams filter if another filter is activated
+    else if (id !== 0 && newFilterStates[id]) {
+      newFilterStates[0] = false
+    }
+
     this.setState((state: any, props: any) => {
-      alert(`FilterStates now: ${newFilterStates}`)
+      // alert(`FilterStates now: ${newFilterStates}`)
       return {teamFilters: newFilterStates}
     })
   }
@@ -168,14 +231,18 @@ export default class TeamPage extends React.Component<any, any> {
   }
 
   render() {
-    const teams = this.state.memberData
-    let leads = null as any
-    let subteams = null as any
+    let teams = this.state.memberData
+    let leads = [] as any
+    let subteams = [] as any
 
+    // Populate teams with profiles after request finishes
     if (teams.size > 0) {
-      leads = teams.get("Team Leads")
-      subteams = []
-      teams.forEach((team: Array<any>, name: string) => {
+      // Apply filters
+      const filteredTeams = applyTeamFilters(teams, this.state.teamFilters)
+      if (filteredTeams.has("Team Leads")) {
+        leads = filteredTeams.get("Team Leads")
+      }
+      filteredTeams.forEach((team: Array<any>, name: string) => {
         if (name !== "Team Leads") {
           subteams.push({title: name, members: team})
         }
@@ -186,18 +253,18 @@ export default class TeamPage extends React.Component<any, any> {
       <Page>
         <TeamProfileFilter
           filters={this.state}
-          filterLabels={["ALL TEAMS", "SOFTWARE", "HARDWARE", "ELECTRICAL", "BUSINESS"]}
+          filterLabels={this.state.teamFilterLabels}
           updateFilters={(id: number) => this.updateFilters(id)}
           updateToggle={() => this.updateToggle()}
         />
 
-        {leads && <ProfileSection
+        {leads.length > 0 && <ProfileSection
           title={"Team Leads"}
           profiles={leads}
           profileType={"lead"}
         />}
 
-        {subteams && subteams.map((team: any, i: number) => {
+        {subteams.length > 0 && subteams.map((team: any, i: number) => {
           return <ProfileSection
             key={i}
             title={team.title}

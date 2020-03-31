@@ -78,6 +78,11 @@ export default class ProfileSection extends React.Component<any, any> {
     }
   }
 
+  // Update states upon recieving new props
+  UNSAFE_componentWillReceiveProps(nextProps:  any) {
+    this.setState({minified: nextProps.profiles})
+  }
+
   // Return the profile from the Expanded Profile slot back into the minfied list
   minifyProfile() {
     this.setState({
