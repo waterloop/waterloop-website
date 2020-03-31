@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-// import { ProfileType, PSectionProps, PSectionStates } from '../interfaces'
+import { ProfileType, PSectionProps, PSectionStates } from '../interfaces'
 import { SubProfile, LeadProfile, ExpandedProfile } from '../../Profiles'
 
 // Styled components for ProfileSection
@@ -69,17 +69,17 @@ const ExpandedContainer = styled.div`
 `
 
 // Profile Subsection
-export default class ProfileSection extends React.Component<any, any> {
-  constructor(props: any) {
+export default class ProfileSection extends React.Component<PSectionProps, PSectionStates> {
+  constructor(props: PSectionProps) {
     super(props)
     this.state = {
-      expanded: {} as any,
+      expanded: {} as ProfileType,
       minified: this.props.profiles
     }
   }
 
   // Update states upon recieving new props
-  UNSAFE_componentWillReceiveProps(nextProps:  any) {
+  UNSAFE_componentWillReceiveProps(nextProps: PSectionProps) {
     this.setState({minified: nextProps.profiles})
   }
 
@@ -87,7 +87,7 @@ export default class ProfileSection extends React.Component<any, any> {
   minifyProfile() {
     this.setState({
       minified: [...this.state.minified, this.state.expanded],
-      expanded: {} as any
+      expanded: {} as ProfileType
     })
   }
 
@@ -133,7 +133,7 @@ export default class ProfileSection extends React.Component<any, any> {
         { // Dynamically insert minified profiles
           minified.length > 0 &&
           <ProfileContainerTypeTag>
-            {minified.map((profile: any, i: any) => {
+            {minified.map((profile: ProfileType, i: number) => {
               return <ProfileTypeTag
                 key={i}
                 name={profile.name}

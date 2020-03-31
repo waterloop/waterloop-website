@@ -93,7 +93,7 @@ const SlideDownContainer = styled.div`
   }
 `
 
-//mobile toggle button 
+//mobile toggle button
 const StyledToggle = styled.button`
   display: flex;
   flex-direction: column;
@@ -130,7 +130,7 @@ const TeamFilter = (props: any) => {
   //toggle is open: slide down container contains the team filter buttons in mobile format and toggle lines become grey
   //toggle is closed: slide down container contains the select team button and toggle lines are yellow
   if (props.filters.toggleOpen) {
-    slideDownContainer = <SlideDownContainer >{props.filters.teamFilters.map((filter: any, i: number) => {
+    slideDownContainer = <SlideDownContainer >{props.filters.teamFilters.map((filter: boolean, i: number) => {
        //checks if filter has been applied and changes style accordingly
       const Button = filter ? SelectedFilter : StyledFilter;
       return <Button className="mobile" key={i} onClick={() => props.updateFilters(i)}>{props.filterLabels[i]}</Button>
@@ -144,7 +144,7 @@ const TeamFilter = (props: any) => {
 
   return (
     <FitlerContainer>
-      {props.filters.teamFilters.map((filter: any, i: number) => {
+      {props.filters.teamFilters.map((filter: boolean, i: number) => {
         const Button = filter ? SelectedFilter : StyledFilter;
         return <Button key={i} onClick={() => props.updateFilters(i)}>{props.filterLabels[i]}</Button>
       })}

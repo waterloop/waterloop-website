@@ -30,7 +30,7 @@ const isProfileComplete = (member: any) => {
 }
 
 // Create a profile from member data
-const buildProfile = (member: any, teamType: any) => {
+const buildProfile = (member: any, teamType: Map<string, string>) => {
   const links = member.links.length > 0 ? member.links : testData[0].contacts
   const teams = member.subteams.map((team: any) => teamType.get(team))
 
@@ -52,12 +52,12 @@ const buildProfile = (member: any, teamType: any) => {
 }
 
 // Insert a profile into correct array position as a map value
-const insertProfileToMap = (teams: any, teamName: string, member: any) => {
+const insertProfileToMap = (teams: Map<string, Array<any>>, teamName: string, member: any) => {
   let memberList = [] as Array<any>
 
   // Add member to array
   if (teams.has(teamName)) {
-    memberList = teams.get(teamName)
+    memberList = teams.get(teamName) as Array<any>
 
     // Insert Subteam leads to front of array
     if (member.position === "Subteam Lead") {
@@ -74,7 +74,7 @@ const insertProfileToMap = (teams: any, teamName: string, member: any) => {
 }
 
 // Group an array of profiles into their respective categories
-const groupProfiles = (members: any, teamType: any) => {
+const groupProfiles = (members: any, teamType: Map<string, string>) => {
   let teams = new Map() as any
   teams.set("Team Leads", [])
 
@@ -92,7 +92,7 @@ const groupProfiles = (members: any, teamType: any) => {
       // Group Members by their subteams
       else {
         member.subteams.forEach((team: string) => {
-          const teamName = teamType.get(team)
+          const teamName = teamType.get(team) as string
           insertProfileToMap(teams, teamName, profile)
         })
       }
@@ -103,7 +103,7 @@ const groupProfiles = (members: any, teamType: any) => {
 }
 
 // check if filter applies or not
-const checkWithinTeamFilters = (name: any, teamFilters: any) => {
+const checkWithinTeamFilters = (name: string, teamFilters: Array<boolean>) => {
   if (!teamFilters[0]){
     if (!teamFilters[1] && (name === "Software" || name ===  "Infrastructure")) {
       return false
@@ -122,7 +122,7 @@ const checkWithinTeamFilters = (name: any, teamFilters: any) => {
 }
 
 // Apply team filters to data set
-const applyTeamFilters = (teams: any, teamFilters: any) => {
+const applyTeamFilters = (teams: Map<string, Array<any>>, teamFilters: Array<boolean>) => {
   let filteredTeams = new Map() as Map<string, any>
 
   teams.forEach((team: any, teamName: string) => {
