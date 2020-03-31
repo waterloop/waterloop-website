@@ -46,7 +46,7 @@ const buildProfile = (member: any, teamType: any) => {
     programInfo: program,
     portrait: member.imageUrl,
     teams: teams,
-    blurb: member.bio,
+    bio: member.bio,
     contacts: links
   }
 }
