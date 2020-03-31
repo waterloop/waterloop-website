@@ -20,6 +20,7 @@ const Portrait = styled.img`
   flex-basis: 100%;
   height: 100%;
   width: 100%;
+  border-radius: 25px 0px;
 `
 const InfoContainer = styled.div`
   flex-basis: 35%;
@@ -41,7 +42,6 @@ const InfoPosition = styled.div`
 `
 const ContactListContainer = styled.div`
   display: flex;
-
 `
 const Contact = styled.a`
   padding-right: 10px;
@@ -55,13 +55,13 @@ const Icon = styled.img`
 
 // List of icons for contact purposes
 const ContactList = (props: ContactsType) => {
-  return <ContactListContainer>
+  return <>
     {props.contacts.map((item, i) => {
       return <Contact key={i} href={item.url} target="_blank" onClick={(event: any) => {event.stopPropagation()}}>
         <Icon src={item.icon} alt="link"/>
       </Contact>
     })}
-  </ContactListContainer>
+  </>
 }
 
 const LeadProfile = (props: any) => {
@@ -71,7 +71,9 @@ const LeadProfile = (props: any) => {
         <InfoContainer>
           <InfoTitle>{props.name}</InfoTitle>
           <InfoPosition>{props.position}</InfoPosition>
-          {(props.contacts && props.contacts.length > 0) && <ContactList contacts={props.contacts}/>}
+          <ContactListContainer>
+            {(props.contacts && props.contacts.length > 0) && <ContactList contacts={props.contacts}/>}
+          </ContactListContainer>
         </InfoContainer>
     </Container>
   );

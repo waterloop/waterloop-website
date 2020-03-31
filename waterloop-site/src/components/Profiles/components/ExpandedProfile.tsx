@@ -31,6 +31,7 @@ const PortraitContainer = styled.div`
 const Portrait = styled.img`
   width: 100%;
   height: 100%;
+  border-radius: 25px 0px;
 `
 const InfoContainer = styled.div`
   display: block;
