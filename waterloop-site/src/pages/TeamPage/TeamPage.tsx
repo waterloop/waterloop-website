@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import getKeyByValue from '../../utils/getKeyByValue'
 import { generateMembersQuery, generateFiltersQuery } from './utils'
 
 import { ProfileSection } from '../../components/Profiles'
@@ -22,57 +21,56 @@ const Page = styled.div`
 
 // Check if member has crucial missing fields
 const isProfileComplete = (member: any) => {
-  return !(!member.memberType || member.memberType.length === 0 || !member.subteams || member.subteams.length === 0)
+  return !(
+    !member.memberType || !member.memberType.name ||
+    !member.subteams || member.subteams.length === 0 ||
+    !member.name || !member.name.display
+  )
 }
 
-// Identify any new teams and register them into the Map/Array
-const identifyNewTeams = (member: any, map: any, arr: Array<Array<Object>>) => {
-  // Team Leads will all be in in the first subarray regardless of their subteam
-  // Do not make a new subarray for them since it might remain empty
-  if (member.memberType.name === "Technical Director") return
+// Insert a profile into correct array position as a map value
+const insertProfile = (teams: any, teamName: string, member: any) => {
+  let memberList = [] as Array<any>
+  if (teams.has(teamName)) {
+    memberList = teams.get(teamName)
 
-  // Create a new subarray and register index in map for each new subteam
-  member.subteams.forEach((team: string) => {
-    if (!map.has(team)) {
-      map.set(team, arr.length)
-      arr.push([])
+
+    // Insert Subteam leads to front of array
+    if (member.memberType.name === "Subteam Lead") {
+      memberList.unshift(member)
+    } else {
+      memberList.push(member)
     }
-  })
+  } else {
+    memberList = [member]
+  }
+
+  // Update map value with new member
+  teams.set(teamName, memberList)
 }
 
-// Insert members into the appropriate subarray(s)
-const insertMember = (member: any, map: any, arr: Array<Array<Object>>) => {
-  // Insert all Team Leads into the first subarray
-  if (member.memberType.name === "Technical Director") {
-    arr[0].push(member)
-  }
-  else {
-    // Insert Subteam leads/members into corresonding subarray(s)
-    member.subteams.forEach((team: string) => {
-      // Insert Subteam Lead members to front of subarray
-      if (member.memberType.name === "Subteam Lead") {
-        arr[map.get(team)].unshift(member)
+// group an array of profiles into their respective categories
+const groupProfiles = (members: any, teamType: any) => {
+  let teams = new Map() as any
+  teams.set("Team Leads", [])
+
+  // Insert profile into correct teams
+  members.forEach((member: any) => {
+    // Ignore incomplete profiles
+    if (isProfileComplete(member)) {
+      // Group Team Leads by themselves and everyone else according to their teams
+      if (member.memberType.name === "Technical Director") {
+        insertProfile(teams, "Team Leads", member)
       } else {
-        arr[map.get(team)].push(member)
+        member.subteams.forEach((team: string) => {
+          const teamName = teamType.get(team)
+          insertProfile(teams, teamName, member)
+        })
       }
-    })
-  }
-}
-
-// Format 1d array of members into 2d array: [[team leads], [subteam 1 members], ... ]
-const sortProfiles = (members: any) => {
-  let sortedTeams = [[]] as Array<Array<any>>
-  let subteamIndex = new Map()
-
-  // Insert members into their corresponding subarrays within sortedTeams
-  members.forEach((member: any, key: number) => {
-    if (isProfileComplete (member)) {
-      identifyNewTeams(member, subteamIndex, sortedTeams)
-      insertMember(member, subteamIndex, sortedTeams)
     }
   })
 
-  return [sortedTeams, subteamIndex]
+  return teams
 }
 
 export default class TeamPage extends React.Component<any, any> {
@@ -81,27 +79,24 @@ export default class TeamPage extends React.Component<any, any> {
     this.state = {
       teamFilters: Array(5).fill(false),
       toggleOpen: false,
-      memberData: [[]] as any,
+      memberData: new Map() as Map<string, any>,
       subteamIdMap: new Map() as Map<string, string>,
-      subteamMap: {} as any
     }
 
-    this.fetchSubteams();
-    this.fetchProfiles();
+    this.fetchSubteams()
   }
 
   // fetch subteams
-  fetchSubteams() {
+  fetchSubteams () {
     const [ query, options ] = generateFiltersQuery()
     fetch(query as string, options as object)
       .then(res => res.json())
       .then(res => {
-        console.log("finished fetching subteam data", res.body.subteams)
-        res.body.subteams.forEach((team: any) => {
-          let newMap = this.state.subteamIdMap
-          newMap.set(team._id, team.name)
-          this.setState({subteamIdMap: newMap})
-        })
+        console.log("finished fetching subteam data")
+        let newMap = this.state.subteamIdMap
+        res.body.subteams.forEach((team: any) => newMap.set(team._id, team.name))
+        this.setState({subteamIdMap: newMap})
+        this.fetchProfiles()
       })
       .catch(err => {
         alert(`Error in fetching filters`)
@@ -116,12 +111,8 @@ export default class TeamPage extends React.Component<any, any> {
       .then(res => res.json())
       .then(res => {
         console.log("finished fetching member data")
-        const [formatedData, newSubteamMap] = sortProfiles(res.body) as any
-
-        this.setState({
-          memberData: formatedData,
-          subteamMap: newSubteamMap
-        })
+        const groupedProfiles = groupProfiles(res.body, this.state.subteamIdMap) as any
+        this.setState({ memberData: groupedProfiles })
       })
       .catch(err => {
         alert(`Error in fetching members`)
@@ -149,8 +140,18 @@ export default class TeamPage extends React.Component<any, any> {
   }
 
   render() {
-    const leads = this.state.memberData[0] || []
-    const subteams = this.state.memberData ? this.state.memberData.slice(1) : [[]]
+    const teams = this.state.memberData
+    let leads = null as any
+    let subteams = null as any
+
+    if (teams.size > 0) {
+      leads = teams.get("Team Leads")
+      teams.delete("Team Leads")
+      subteams = []
+      teams.forEach((team: Array<any>, name: string) => {
+        subteams.push({title: name, members: team})
+      })
+    }
 
     return (
       <Page>
@@ -161,18 +162,17 @@ export default class TeamPage extends React.Component<any, any> {
           updateToggle={() => this.updateToggle()}
         />
 
-        {leads.length > 0 && <ProfileSection
+        {leads && <ProfileSection
           title={"Team Leads"}
           profiles={leads}
           profileType={"lead"}
         />}
 
-        {subteams.length > 0 && subteams.map((subteam: any, i: number) => {
-          const teamName = `${this.state.subteamIdMap.get(getKeyByValue(this.state.subteamMap, i+1))}`
+        {subteams && subteams.map((team: any, i: number) => {
           return <ProfileSection
             key={i}
-            title={teamName}
-            profiles={subteam}
+            title={team.title}
+            profiles={team.members}
             profileType={"subteam"}
           />
         })}
