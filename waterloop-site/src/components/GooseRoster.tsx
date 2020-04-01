@@ -41,6 +41,8 @@ const Arrow = styled.button`
 
 type imgProps = {
   imgUrls: string[];
+  heading: string,
+  description: string
 };
 
 class GooseRoster extends React.Component<imgProps> {
@@ -67,8 +69,8 @@ class GooseRoster extends React.Component<imgProps> {
   render() {
     return (
       <RosterWrapper>
-        <Heading>Goose V</Heading>
-        <Description>Some attractive description about how the goose is a magnificent animal.</Description>
+        <Heading>{ this.props.heading }</Heading>
+        <Description>{ this.props.description }</Description>
         
         <ImageThumbnail>
           <Arrow onClick={ this.previousSlide }>
