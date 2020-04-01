@@ -71,7 +71,7 @@ const Button: React.FC<Props> = (props) => {
     &:active {
       border-color: ${ColorMap.yellow};
     }
-  }`
+  `
 
   const Text = styled.p`
     color: ${ColorMap[textColor]};

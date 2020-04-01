@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import { ContactUsForm } from "../components/contact-form/contact-form";
+import ContactUsForm from "../components/contactform/contactForm";
 import TestComponent from "../components/TestComponent"
 import TextWithImage from "../components/TextWithImage"
 import TextWithImageData from "../components/json/TextWithImage.json"
 import Sponsors from "../components/Sponsors"
 import SubteamsOverview from "../components/SubteamsOverview"
+import Button from "../components/button/button.component";
 
 var title = "";
 var text = "";
