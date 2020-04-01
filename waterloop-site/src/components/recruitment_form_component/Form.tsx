@@ -4,7 +4,7 @@ import styled from "styled-components"
 const Block = styled.div`
   padding: 1%;
   height: 100%;
-  width: 50%;
+  width: 90%;
   border-style: solid;
   display: inline-block;
   margin-bottom: 2%;
@@ -48,7 +48,7 @@ const radioStyle = {
 const InputForm = styled.form`
 `;
 
-type MyProps = {role: string, technicalQ: string, termList: [string, string, string, string, string], ourEmail: string};
+type MyProps = {role: string, technicalQ: string, termList: [string, string, string, string, string]};
 type MyState =  {
       fullName:  string,
       email: string,
@@ -77,20 +77,19 @@ class Form extends React.Component<MyProps, MyState> {
       termCheckedArray: [false, false, false, false, false],
       termTypeCheckedArray: [false, false, false]
     };
-
   }
 
   handleChange(event: React.FormEvent<HTMLInputElement>){
-    if (event.currentTarget.name == "fullName"){
+    if (event.currentTarget.name == "entry.1105765972"){ // fullName
       this.setState({fullName: event.currentTarget.value});
     }
-    else if (event.currentTarget.name =="email"){
+    else if (event.currentTarget.name == "entry.204636100"){ // email
       this.setState({email: event.currentTarget.value});
     }
-    else if (event.currentTarget.name =="program"){
+    else if (event.currentTarget.name =="entry.1369449321"){ // program
       this.setState({program: event.currentTarget.value});
     }
-    else if (event.currentTarget.name =="term"){
+    else if (event.currentTarget.name =="entry.1488954434"){ // term
       this.setState({term: event.currentTarget.value});
     }
     else if (event.currentTarget.name =="applicationTerm" && event.currentTarget.id == "0"){
@@ -129,26 +128,12 @@ class Form extends React.Component<MyProps, MyState> {
   }
 
   handleTextAreaChange(event: React.FormEvent<HTMLTextAreaElement>){
-    if (event.currentTarget.name =="whyJoin"){
+    if (event.currentTarget.name =="entry.288252419"){ // whyJoin
             this.setState({whyJoin: event.currentTarget.value});
     }
-    else if (event.currentTarget.name =="technicalAns"){
+    else if (event.currentTarget.name == "entry.1372043873"){
             this.setState({technicalAns: event.currentTarget.value});
     }
-    return;
-  }
-
-  //submits form
-  handleSubmit(event: React.FormEvent<HTMLFormElement>){
-    alert(this.state.fullName);
-    alert(this.state.email);
-    alert(this.state.program);
-    alert(this.state.term);
-    alert(this.state.applicationTerm);
-    alert(this.state.termType);
-    alert(this.state.whyJoin);
-    alert(this.state.technicalAns);
-
     return;
   }
 
@@ -156,13 +141,18 @@ class Form extends React.Component<MyProps, MyState> {
     return (
       <div style = {{textAlign: 'center'}}>
         <Block>
-          <InputForm onSubmit = {this.handleSubmit.bind(this)}>
+          <InputForm action = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdmZSfD1Hs0D3MLBjAfdUkaCb3GJJxIvKUEVJCBf5hVxZTt4g/formResponse"
+            target="_self" method="POST">
             <Header>Applying for {this.props.role.toUpperCase()}</Header>
-            <ShortInput type="text" name = "fullName" placeholder="Full Name" onChange = {this.handleChange.bind(this)} required/>
-            <ShortInput type="text" name = "email" placeholder="Email" onChange = {this.handleChange.bind(this)} required/>
-            <ShortInput type="text" name = "program" placeholder="Program" onChange = {this.handleChange.bind(this)} required/>
-            <ShortInput type="text" name = "term" placeholder="Term (ex. 2A)" onChange = {this.handleChange.bind(this)} required/>
+            <ShortInput style = {{display: 'none'}} value = {this.props.role} name = "entry.1805132656" placeholder="Position" readOnly/>
 
+            <ShortInput type="text" name = "entry.1105765972" placeholder="Full Name" onChange = {this.handleChange.bind(this)} required/>
+            <ShortInput type="text" name = "entry.204636100" placeholder="Email" onChange = {this.handleChange.bind(this)} required/>
+            <ShortInput type="text" name = "entry.1369449321" placeholder="Program" onChange = {this.handleChange.bind(this)} required/>
+            <ShortInput type="text" name = "entry.1488954434" placeholder="Your Current Term (ex. 2A)" onChange = {this.handleChange.bind(this)} required/>
+
+            <hr/>
+            <label style = {{display: 'block', margin: '1%'}}><b>Term you're applying for:</b></label>
             <label style = {radioStyle}>
               <input type = "radio" checked = {this.state.termCheckedArray[0]} id = "0" onChange = {this.handleChange.bind(this)} name = "applicationTerm" required/>
             {this.props.termList[0]}</label>
@@ -178,9 +168,10 @@ class Form extends React.Component<MyProps, MyState> {
             <label style = {radioStyle} >
               <input type = "radio" checked = {this.state.termCheckedArray[4]} id = "4" onChange = {this.handleChange.bind(this)} name = "applicationTerm" required/>
             {this.props.termList[4]}</label>
+            <ShortInput style = {{display: 'none'}} name = "entry.2092532677" value = {this.state.applicationTerm} readOnly/>
 
             <hr/>
-
+            <label style = {{display: 'block', margin: '1%'}}><b>Term type for the term you're applying for:</b></label>
             <label style = {radioStyle}>
               <input type = "radio" checked = {this.state.termTypeCheckedArray[0]} id = "a" onChange = {this.handleChange.bind(this)} name = "termType" required/>
             School Term</label>
@@ -190,9 +181,12 @@ class Form extends React.Component<MyProps, MyState> {
             <label style = {radioStyle}>
               <input type = "radio" checked = {this.state.termTypeCheckedArray[2]} id = "c" onChange = {this.handleChange.bind(this)} name = "termType" required/>
             Not in Waterloo</label>
+            <ShortInput style = {{display: 'none'}} name = "entry.1337056366" value = {this.state.termType} readOnly/>
+            <hr/>
 
-            <LongInput placeholder="Why do you want to join the team?" onChange = {this.handleTextAreaChange.bind(this)} name = "whyJoin" required/>
-            <LongInput placeholder={this.props.technicalQ} onChange = {this.handleTextAreaChange.bind(this)} name = "technicalAns" required/>
+            <LongInput placeholder="Why do you want to join the team?" onChange = {this.handleTextAreaChange.bind(this)} name = "entry.288252419" required/>
+            <label><b>Please copy this question and include it in your response below: {this.props.technicalQ}</b></label>
+            <LongInput placeholder={this.props.technicalQ} onChange = {this.handleTextAreaChange.bind(this)} name = "entry.1372043873" required/>
             <button type="submit" style = {SubmitBtnStyle}><b>Submit</b></button>
           </InputForm>
         </Block>
