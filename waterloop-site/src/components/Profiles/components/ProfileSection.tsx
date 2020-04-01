@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { ProfileType, PSectionProps, PSectionStates } from '../interfaces'
+import { ProfileType, PSectionProps, PSectionState } from '../interfaces'
 import { SubProfile, LeadProfile, ExpandedProfile } from '../../Profiles'
 
 // Styled components for ProfileSection
@@ -69,7 +69,7 @@ const ExpandedContainer = styled.div`
 `
 
 // Profile Subsection
-export default class ProfileSection extends React.Component<PSectionProps, PSectionStates> {
+export default class ProfileSection extends React.Component<PSectionProps, PSectionState> {
   constructor(props: PSectionProps) {
     super(props)
     this.state = {

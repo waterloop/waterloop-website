@@ -7,6 +7,35 @@ import TeamProfileFilter from '../../components/TeamFilter'
 import { generateMembersQuery, generateFiltersQuery } from './utils'
 import testData from '../../testProfileData'
 
+type ProfileType = {
+  name: string,
+  position: string,
+  programInfo: string,
+  portrait: string,
+  teams: Array<string>,
+  bio: string,
+  contacts: Array<{icon: string, url: string}>
+}
+
+type QueryData = any
+
+interface SubteamProp {
+  title: string,
+  members: Array<ProfileType>
+}
+
+interface TeamPageProps {
+  initFilterSetting: number
+}
+
+interface TeamPageState {
+  teamFilters: Array<boolean>,
+  teamFilterLabels: Array<string>,
+  toggleOpen: boolean,
+  memberData: Map<string, Array<ProfileType>>,
+  subteamIdMap: Map<string, string>
+}
+
 const Page = styled.div`
   display: block;
   max-width: 1080px;
@@ -21,7 +50,7 @@ const Page = styled.div`
 `
 
 // Check if member has crucial missing fields
-const isProfileComplete = (member: any) => {
+const isProfileComplete = (member: QueryData) => {
   return !(
     !member.memberType || !member.memberType.name ||
     !member.subteams || member.subteams.length === 0 ||
@@ -30,9 +59,9 @@ const isProfileComplete = (member: any) => {
 }
 
 // Create a profile from member data
-const buildProfile = (member: any, teamType: Map<string, string>) => {
+const buildProfile = (member: QueryData, teamType: Map<string, string>) => {
   const links = member.links.length > 0 ? member.links : testData[0].contacts
-  const teams = member.subteams.map((team: any) => teamType.get(team))
+  const teams = member.subteams.map((team: string) => teamType.get(team))
 
   // Generate program description with missing fields in mind
   let program = member.program || 'Student'
@@ -52,12 +81,12 @@ const buildProfile = (member: any, teamType: Map<string, string>) => {
 }
 
 // Insert a profile into correct array position as a map value
-const insertProfileToMap = (teams: Map<string, Array<any>>, teamName: string, member: any) => {
-  let memberList = [] as Array<any>
+const insertProfileToMap = (teams: Map<string, Array<ProfileType>>, teamName: string, member: ProfileType) => {
+  let memberList = [] as Array<ProfileType>
 
   // Add member to array
   if (teams.has(teamName)) {
-    memberList = teams.get(teamName) as Array<any>
+    memberList = teams.get(teamName) as Array<ProfileType>
 
     // Insert Subteam leads to front of array
     if (member.position === "Subteam Lead") {
@@ -74,12 +103,12 @@ const insertProfileToMap = (teams: Map<string, Array<any>>, teamName: string, me
 }
 
 // Group an array of profiles into their respective categories
-const groupProfiles = (members: any, teamType: Map<string, string>) => {
-  let teams = new Map() as any
+const groupProfiles = (members: Array<QueryData>, teamType: Map<string, string>) => {
+  let teams = new Map() as Map<string, Array<ProfileType>>
   teams.set("Team Leads", [])
 
   // Insert profile into correct teams
-  members.forEach((member: any) => {
+  members.forEach((member: QueryData) => {
     // Ignore incomplete profiles
     if (isProfileComplete(member)) {
       // create a profile
@@ -122,12 +151,12 @@ const checkWithinTeamFilters = (name: string, teamFilters: Array<boolean>) => {
 }
 
 // Apply team filters to data set
-const applyTeamFilters = (teams: Map<string, Array<any>>, teamFilters: Array<boolean>) => {
-  let filteredTeams = new Map() as Map<string, any>
+const applyTeamFilters = (teams: Map<string, Array<ProfileType>>, teamFilters: Array<boolean>) => {
+  let filteredTeams = new Map() as Map<string, Array<ProfileType>>
 
-  teams.forEach((team: any, teamName: string) => {
+  teams.forEach((team: Array<ProfileType>, teamName: string) => {
     if (teamName === "Team Leads") {
-      team.forEach((member: any) => {
+      team.forEach((member: ProfileType) => {
         for (let i = 0; i < member.teams.length; i++) {
           if (checkWithinTeamFilters(member.teams[i], teamFilters)) {
             insertProfileToMap(filteredTeams, teamName, member)
@@ -144,15 +173,15 @@ const applyTeamFilters = (teams: Map<string, Array<any>>, teamFilters: Array<boo
   return filteredTeams
 }
 
-export default class TeamPage extends React.Component<any, any> {
+export default class TeamPage extends React.Component<any, TeamPageState> {
   constructor(props: any) {
     super(props)
     this.state = {
       teamFilters: Array(5).fill(false),
       teamFilterLabels: ["ALL TEAMS", "SOFTWARE", "HARDWARE", "ELECTRICAL", "BUSINESS"],
       toggleOpen: false,
-      memberData: new Map() as Map<string, any>,
-      subteamIdMap: new Map() as Map<string, string>,
+      memberData: new Map(),
+      subteamIdMap: new Map(),
     }
   }
 
@@ -170,7 +199,7 @@ export default class TeamPage extends React.Component<any, any> {
       .then(res => {
         console.log("finished fetching subteam data")
         let newMap = this.state.subteamIdMap
-        res.body.subteams.forEach((team: any) => newMap.set(team._id, team.name))
+        res.body.subteams.forEach((team: QueryData) => newMap.set(team._id, team.name))
         this.setState({subteamIdMap: newMap})
         this.fetchProfiles()
       })
@@ -187,7 +216,7 @@ export default class TeamPage extends React.Component<any, any> {
       .then(res => res.json())
       .then(res => {
         console.log("finished fetching member data")
-        const groupedProfiles = groupProfiles(res.body, this.state.subteamIdMap) as any
+        const groupedProfiles = groupProfiles(res.body, this.state.subteamIdMap) as Map<string, Array<ProfileType>>
         this.setState({ memberData: groupedProfiles })
       })
       .catch(err => {
@@ -216,15 +245,12 @@ export default class TeamPage extends React.Component<any, any> {
       newFilterStates[0] = false
     }
 
-    this.setState((state: any, props: any) => {
-      // alert(`FilterStates now: ${newFilterStates}`)
-      return {teamFilters: newFilterStates}
-    })
+    this.setState({ teamFilters: newFilterStates })
   }
 
   // Update mobile menu toggle status
   updateToggle() {
-    this.setState((state: any, props: any) => {
+    this.setState((state: TeamPageState) => {
       let newToggleState = !this.state.toggleOpen
       return {toggleOpen: newToggleState}
     })
@@ -232,17 +258,17 @@ export default class TeamPage extends React.Component<any, any> {
 
   render() {
     let teams = this.state.memberData
-    let leads = [] as any
-    let subteams = [] as any
+    let leads = [] as Array<ProfileType>
+    let subteams = [] as Array<SubteamProp>
 
     // Populate teams with profiles after request finishes
     if (teams.size > 0) {
       // Apply filters
       const filteredTeams = applyTeamFilters(teams, this.state.teamFilters)
       if (filteredTeams.has("Team Leads")) {
-        leads = filteredTeams.get("Team Leads")
+        leads = filteredTeams.get("Team Leads") as Array<ProfileType>
       }
-      filteredTeams.forEach((team: Array<any>, name: string) => {
+      filteredTeams.forEach((team: Array<ProfileType>, name: string) => {
         if (name !== "Team Leads") {
           subteams.push({title: name, members: team})
         }
@@ -264,7 +290,7 @@ export default class TeamPage extends React.Component<any, any> {
           profileType={"lead"}
         />}
 
-        {subteams.length > 0 && subteams.map((team: any, i: number) => {
+        {subteams.length > 0 && subteams.map((team: {title: string, members: Array<ProfileType>}, i: number) => {
           return <ProfileSection
             key={i}
             title={team.title}
