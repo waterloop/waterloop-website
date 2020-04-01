@@ -1,7 +1,5 @@
 import React from 'react'
-
-// css
-import '../../styles/page.css'
+import styled from 'styled-components'
 
 // Types and interfaces
 import ProfileType from '../../interfaces'
@@ -14,6 +12,20 @@ import TeamProfileFilter from '../../components/TeamFilter'
 // Utility
 import { sortProfiles, applyTeamFilters } from './utils'
 import { generateMembersQuery, generateFiltersQuery } from './api'
+
+// Styled components for ProfileSection
+const Page = styled.div`
+  display: block;
+  max-width: 1080px;
+  margin: 0 auto;
+
+  @media (max-width: 975px){
+    display: flex;
+    flex-direction: column;
+    width: 475px;
+    margin: 0 auto;
+  }
+`
 
 export default class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
   constructor(props: TeamPageProps) {
@@ -128,7 +140,7 @@ export default class TeamPage extends React.Component<TeamPageProps, TeamPageSta
     }
 
     return (
-      <div className="page">
+      <Page>
         <TeamProfileFilter
           filters={this.state}
           filterLabels={this.state.teamFilterLabels}
@@ -150,7 +162,7 @@ export default class TeamPage extends React.Component<TeamPageProps, TeamPageSta
             profileType={"subteam"}
           />
         })}
-      </div>
+      </Page>
     )
   }
 }
