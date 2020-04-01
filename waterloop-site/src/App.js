@@ -6,7 +6,7 @@ import TeamPage from "./pages/TeamPage"
 function App() {
   return (
     <div className="App">
-      <TeamPage />
+      <TeamPage initFilterSetting={0} />
     </div>
   );
 }

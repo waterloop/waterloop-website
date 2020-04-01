@@ -173,8 +173,8 @@ const applyTeamFilters = (teams: Map<string, Array<ProfileType>>, teamFilters: A
   return filteredTeams
 }
 
-export default class TeamPage extends React.Component<any, TeamPageState> {
-  constructor(props: any) {
+export default class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
+  constructor(props: TeamPageProps) {
     super(props)
     this.state = {
       teamFilters: Array(5).fill(false),
@@ -188,7 +188,7 @@ export default class TeamPage extends React.Component<any, TeamPageState> {
   // Initialization
   componentDidMount() {
     this.fetchSubteams()
-    this.updateFilters(0)
+    this.updateFilters(this.props.initFilterSetting)
   }
 
   // fetch subteams
