@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Button from "../button/button.component"
+import Form from "./Form"
 
 const TextBlock = styled.div`
   display: flex;
@@ -63,11 +64,25 @@ const Line = styled.hr`
 `;
 
 
-type MyProps = { role: string, description: string, skills: string };
+type MyProps = { role: string, description: string, skills: string, technicalQ: string, termList: [string, string, string, string, string]}
+type MyState = {joinClicked: boolean}
 
-class PositionPosting extends React.Component<MyProps> {
+class PositionPosting extends React.Component<MyProps, MyState> {
+
+  constructor(props: MyProps){
+    super(props);
+    this.state = {
+      joinClicked: false
+    };
+  }
 
   onClick(){
+    if (!this.state.joinClicked){
+      this.setState({joinClicked: true});
+    }
+    else{
+      this.setState({joinClicked: false});
+    }
     return;
   }
 
@@ -81,7 +96,7 @@ class PositionPosting extends React.Component<MyProps> {
         </TextBlock>
         <ButtonBlock>
           <Button
-            onClick = {this.onClick}
+            onClick = {this.onClick.bind(this)}
             text = "JOIN"
             backgroundColor = "yellow"
             textColor = "black"
@@ -89,6 +104,13 @@ class PositionPosting extends React.Component<MyProps> {
           ></Button>
         </ButtonBlock>
         <Line></Line>
+        {this.state.joinClicked?
+          <Form
+            role = {this.props.role}
+            technicalQ = {this.props.technicalQ}
+            termList = {this.props.termList}
+          ></Form>
+        : null}
       </Block>
 
 
