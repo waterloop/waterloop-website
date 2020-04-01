@@ -1,5 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
+
+import '../../styles/page.css'
 
 import ProfileType from '../../interfaces'
 import { QueryData, SubteamProps, TeamPageProps, TeamPageState } from './interfaces'
@@ -9,19 +10,6 @@ import TeamProfileFilter from '../../components/TeamFilter'
 
 import { generateMembersQuery, generateFiltersQuery } from './utils'
 import testData from '../../testProfileData'
-
-const Page = styled.div`
-  display: block;
-  max-width: 1080px;
-  margin: 0 auto;
-
-  @media (max-width: 975px){
-    display: flex;
-    flex-direction: column;
-    width: 475px;
-    margin: 0 auto;
-  }
-`
 
 // Check if member has crucial missing fields
 const isProfileComplete = (member: QueryData) => {
@@ -260,7 +248,7 @@ export default class TeamPage extends React.Component<TeamPageProps, TeamPageSta
     }
 
     return (
-      <Page>
+      <div className="page">
         <TeamProfileFilter
           filters={this.state}
           filterLabels={this.state.teamFilterLabels}
@@ -282,7 +270,7 @@ export default class TeamPage extends React.Component<TeamPageProps, TeamPageSta
             profileType={"subteam"}
           />
         })}
-      </Page>
+      </div>
     )
   }
 }
