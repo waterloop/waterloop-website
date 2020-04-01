@@ -1,40 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import ProfileType from '../../interfaces'
+import { QueryData, SubteamProps, TeamPageProps, TeamPageState } from './interfaces'
+
 import { ProfileSection } from '../../components/Profiles'
 import TeamProfileFilter from '../../components/TeamFilter'
 
 import { generateMembersQuery, generateFiltersQuery } from './utils'
 import testData from '../../testProfileData'
-
-type ProfileType = {
-  name: string,
-  position: string,
-  programInfo: string,
-  portrait: string,
-  teams: Array<string>,
-  bio: string,
-  contacts: Array<{icon: string, url: string}>
-}
-
-type QueryData = any
-
-interface SubteamProp {
-  title: string,
-  members: Array<ProfileType>
-}
-
-interface TeamPageProps {
-  initFilterSetting: number
-}
-
-interface TeamPageState {
-  teamFilters: Array<boolean>,
-  teamFilterLabels: Array<string>,
-  toggleOpen: boolean,
-  memberData: Map<string, Array<ProfileType>>,
-  subteamIdMap: Map<string, string>
-}
 
 const Page = styled.div`
   display: block;
@@ -259,7 +233,7 @@ export default class TeamPage extends React.Component<TeamPageProps, TeamPageSta
   render() {
     let teams = this.state.memberData
     let leads = [] as Array<ProfileType>
-    let subteams = [] as Array<SubteamProp>
+    let subteams = [] as Array<SubteamProps>
 
     // Populate teams with profiles after request finishes
     if (teams.size > 0) {
