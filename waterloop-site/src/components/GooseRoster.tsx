@@ -1,9 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Psim from "./sponsorphotos/Psim.png";
-import Ansys from "./sponsorphotos/Ansys.png";
-import Threedx from "./sponsorphotos/Threedx.png";
-import AndersonPowerProducts from "./sponsorphotos/AndersonPowerProducts.png";
 
 const RosterWrapper = styled.div`
   display: flex;
@@ -43,18 +39,18 @@ const Arrow = styled.button`
   margin: 4px;
 `;
 
-const imgUrls = [
-  Psim, Ansys, Threedx, AndersonPowerProducts
-];
+type imgProps = {
+  imgUrls: string[];
+};
 
-class GooseRoster extends React.Component {
+class GooseRoster extends React.Component<imgProps> {
   state = {
     currentImageIndex: 0
   };
 
   previousSlide = () => {
     const { currentImageIndex } = this.state;
-    const lastIndex = currentImageIndex == 0 ? imgUrls.length - 1 : currentImageIndex - 1;
+    const lastIndex = currentImageIndex == 0 ? this.props.imgUrls.length - 1 : currentImageIndex - 1;
     this.setState({
       currentImageIndex: lastIndex
     });
@@ -62,7 +58,7 @@ class GooseRoster extends React.Component {
 
   nextSlide = () => {
     const { currentImageIndex } = this.state;
-    const nextIndex = currentImageIndex == imgUrls.length - 1 ? 0 : currentImageIndex + 1;
+    const nextIndex = currentImageIndex == this.props.imgUrls.length - 1 ? 0 : currentImageIndex + 1;
     this.setState({
       currentImageIndex: nextIndex
     });
@@ -78,7 +74,7 @@ class GooseRoster extends React.Component {
           <Arrow onClick={ this.previousSlide }>
             &#9664;
           </Arrow>
-          <Img src={imgUrls[this.state.currentImageIndex]}></Img>
+          <Img src={ this.props.imgUrls[this.state.currentImageIndex] }></Img>
           <Arrow onClick={ this.nextSlide }>
             &#9654;
           </Arrow>
