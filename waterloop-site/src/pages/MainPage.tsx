@@ -38,6 +38,8 @@ class MainPage extends React.Component {
         <Form
           role = "Goose Designer"
           technicalQ = "How many geese live in Waterloo?"
+          termList = {["F19", "W20", "S20", "F20", "W21"]}
+          ourEmail = "talia6075881@gmail.com"
         ></Form>
 
         <Router>
