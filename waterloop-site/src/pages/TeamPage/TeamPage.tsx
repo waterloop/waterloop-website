@@ -218,6 +218,16 @@ export default class TeamPage extends React.Component<TeamPageProps, TeamPageSta
     else if (id !== 0 && newFilterStates[id]) {
       newFilterStates[0] = false
     }
+    else {
+      let sum = 0
+      newFilterStates.forEach((res: boolean) => {
+        const num = res ? 1 : 0;
+        sum = sum + num
+      })
+      if (sum === 0) {
+        newFilterStates[0] = true
+      }
+    }
 
     this.setState({ teamFilters: newFilterStates })
   }
