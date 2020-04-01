@@ -2,12 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import "./styling/TestComponent.css";
 
-type MyProps = {link: string, title: string};
+type MyProps = { link: string; title: string };
 
-class TestComponent extends React.Component <MyProps> {
+class TestComponent extends React.Component<MyProps> {
   render() {
     return (
-      <a className = "btn" target="_blank" href={this.props.link}>
+      <a className="btn" target="_blank" href={this.props.link}>
         <h2>{this.props.title}</h2>
       </a>
     );

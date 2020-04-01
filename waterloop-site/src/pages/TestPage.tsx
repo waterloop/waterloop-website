@@ -1,7 +1,25 @@
 import React from "react";
 import styled from "styled-components";
-import TestComponent from "../components/TestComponent";
 import { ContactUsForm } from "../components/contact-form/contact-form";
+import TestComponent from "../components/TestComponent"
+import TextWithImage from "../components/TextWithImage"
+import TextWithImageData from "../components/json/TextWithImage.json"
+import Sponsors from "../components/Sponsors"
+import SubteamsOverview from "../components/SubteamsOverview"
+
+var title = "";
+var text = "";
+var image = "";
+var link = "";
+
+{
+  TextWithImageData.map((detail) => {
+    title = detail.title;
+    text = detail.text;
+    image = detail.image;
+    link = detail.link;
+  })
+}
 
 class TestPage extends React.Component {
   render() {
