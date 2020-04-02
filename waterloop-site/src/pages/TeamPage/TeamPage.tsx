@@ -33,7 +33,6 @@ export default class TeamPage extends React.Component<TeamPageProps, TeamPageSta
     this.state = {
       teamFilters: Array(5).fill(false),
       teamFilterLabels: ["ALL TEAMS", "SOFTWARE", "HARDWARE", "ELECTRICAL", "BUSINESS"],
-      toggleOpen: false,
       memberData: new Map(),
       subteamIdMap: new Map(),
     }
@@ -112,14 +111,6 @@ export default class TeamPage extends React.Component<TeamPageProps, TeamPageSta
     this.setState({ teamFilters: newFilterStates })
   }
 
-  // Update mobile menu toggle status
-  updateToggle() {
-    this.setState((state: TeamPageState) => {
-      let newToggleState = !this.state.toggleOpen
-      return {toggleOpen: newToggleState}
-    })
-  }
-
   render() {
     let teams = this.state.memberData
     let leads = [] as Array<ProfileType>
@@ -142,10 +133,9 @@ export default class TeamPage extends React.Component<TeamPageProps, TeamPageSta
     return (
       <Page>
         <TeamProfileFilter
-          filters={this.state}
+          teamFilters={this.state.teamFilters}
           filterLabels={this.state.teamFilterLabels}
           updateFilters={(id: number) => this.updateFilters(id)}
-          updateToggle={() => this.updateToggle()}
         />
 
         {leads.length > 0 && <ProfileSection

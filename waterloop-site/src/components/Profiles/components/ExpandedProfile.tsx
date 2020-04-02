@@ -8,18 +8,17 @@ const Container = styled.div`
   display: flex;
   flex-direction: columns;
   justify-content: space-between;
-  max-width: 1080px;
+  width: 100%;
 
   @media (max-width: 975px) {
     flex-direction: row;
     flex-wrap: wrap;
-    width: 475px;
+    width: 100%;
   }
 `
 const PortraitContainer = styled.div`
   display: flex;
-  width: 475px;
-  height: 475px;
+  width: 44%;
   border: 1px solid #fbc531;
   border-radius: 25px 0px;
 

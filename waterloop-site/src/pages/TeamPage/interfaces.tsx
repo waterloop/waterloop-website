@@ -14,7 +14,6 @@ export interface TeamPageProps {
 export interface TeamPageState {
   teamFilters: Array<boolean>,
   teamFilterLabels: Array<string>,
-  toggleOpen: boolean,
   memberData: Map<string, Array<ProfileType>>,
   subteamIdMap: Map<string, string>
 }

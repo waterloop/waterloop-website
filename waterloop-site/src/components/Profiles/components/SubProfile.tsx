@@ -9,6 +9,13 @@ const Container = styled.div`
   justify-content: space-between;
   width: 320px;
   height: 178px;
+
+  @media (max-width: 975px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 265px;
+  }
 `
 const PortraitContainer = styled.div`
   flex-basis: 60%;
@@ -35,10 +42,20 @@ const InfoTitle = styled.div`
   font-weight: bold;
   font-size: 16px;
   line-height: 21px;
+
+  @media (max-width: 975px) {
+    font-size: 24px;
+    line-height: 31px;
+  }
 `
 const InfoPosition = styled.div`
   font-weight: 200;
   font-size: 14px;
+
+  @media (max-width: 975px) {
+    font-weight: 200;
+    font-size: 20px;
+  }
 `
 const ContactsContainer = styled.div`
   display: flex;
@@ -47,6 +64,12 @@ const Contact = styled.a`
   padding-right: 5px;
   height: 22px;
   width: 22px;
+
+  @media (max-width: 975px) {
+    padding-right: 10px;
+    height: 30px;
+    width: 30px;
+  }
 `
 const Icon = styled.img`
   max-height: 100%;
