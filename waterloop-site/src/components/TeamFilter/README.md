@@ -8,8 +8,5 @@ This is the component for displaying the filter buttons. Five buttons can fit in
 ### ```index.tsx```
 This is where the components of this folder are exported and made available to the rest of the app.
 
-# Bugs/Existing Issues
-1. The ```toggleOpen``` state variable from TeamPage needs to be removed and added here.
-
 ### Reduced View
 In mobile view, there is a "Select Teams" button with a hamburger toggle next to it. When clicked, all the filter buttons show in a column. 
