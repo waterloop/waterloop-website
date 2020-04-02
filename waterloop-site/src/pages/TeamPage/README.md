@@ -9,9 +9,8 @@ This is a manager component for a displaying the members of the Waterloop team
 There are five state variables:
 1. ```teamFilters: array<boolean>```
 2. ```teamFilterLabels: array<string>```
-3. ```toggleOpen: boolean```
-4. ```memberData: map<string, array>```
-5. ```subteamIdMap: map<string, string>```
+3. ```memberData: map<string, array>```
+4. ```subteamIdMap: map<string, string>```
 
 The team filters will be run with the value of ```this.props.initFilterSetting```
 
@@ -37,7 +36,6 @@ This is where the components of this folder are exported and made available to t
 
 # Bugs/Existing Issues
 1. Not using ```http://beta.hub.waterloop.ca/api``` as endpoint
-2. The ```toggleOpen``` state variable is used to for the TeamFilter mobile mode and is not needed here. Should be moved to the TeamFilter component.
 
 # Next Steps
 The following are functionality that should exist or be discussed.

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components'
 
 const FitlerContainer = styled.div`
@@ -127,10 +127,12 @@ const TeamFilter = (props: any) => {
   let slideDownContainer;
   let toggleLine;
 
+  const [ toggleOpen, setToggle ] = useState(false)
+
   //toggle is open: slide down container contains the team filter buttons in mobile format and toggle lines become grey
   //toggle is closed: slide down container contains the select team button and toggle lines are yellow
-  if (props.filters.toggleOpen) {
-    slideDownContainer = <SlideDownContainer >{props.filters.teamFilters.map((filter: boolean, i: number) => {
+  if (toggleOpen) {
+    slideDownContainer = <SlideDownContainer >{props.teamFilters.map((filter: boolean, i: number) => {
        //checks if filter has been applied and changes style accordingly
       const Button = filter ? SelectedFilter : StyledFilter;
       return <Button className="mobile" key={i} onClick={() => props.updateFilters(i)}>{props.filterLabels[i]}</Button>
@@ -138,18 +140,18 @@ const TeamFilter = (props: any) => {
     toggleLine = <ToggleLine className="open"/>
   }
   else {
-    slideDownContainer = <StyledFilter className="selectTeams" onClick={() => props.updateToggle()}>Select Team</StyledFilter>
+    slideDownContainer = <StyledFilter className="selectTeams" onClick={() => setToggle(!toggleOpen)}>Select Team</StyledFilter>
     toggleLine = <ToggleLine/>
   }
 
   return (
     <FitlerContainer>
-      {props.filters.teamFilters.map((filter: boolean, i: number) => {
+      {props.teamFilters.map((filter: boolean, i: number) => {
         const Button = filter ? SelectedFilter : StyledFilter;
         return <Button key={i} onClick={() => props.updateFilters(i)}>{props.filterLabels[i]}</Button>
       })}
       {slideDownContainer}
-      <StyledToggle onClick={() => props.updateToggle()}>
+      <StyledToggle onClick={() => setToggle(!toggleOpen)}>
         {toggleLine}
         {toggleLine}
         {toggleLine}
