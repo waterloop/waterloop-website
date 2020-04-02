@@ -18,14 +18,9 @@ const ProfileSectionTitle = styled.h1`
 const ProfileSectionContainer = styled.div`
   margin-bottom: 100px;
 `
-const MinifiedLeadContainer = styled.div`
+const MinifiedContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   grid-row-gap: 100px;
-
-  &> div:nth-child(2n){
-    margin-left: auto;
-  }
 
   @media (max-width: 975px){
     display: flex;
@@ -34,34 +29,24 @@ const MinifiedLeadContainer = styled.div`
     & > div:nth-child(1) {
       margin-top: 0;
     }
+
     & > div {
       margin-top: 100px;
     }
   }
 `
-const MinifiedSubContainer = styled.div`
-  display: grid;
+const MinifiedLeadContainer = styled(MinifiedContainer)`
+  grid-template-columns: repeat(2, 1fr);
+  
+  &> div:nth-child(2n){
+    margin-left: auto;
+  }
+`
+const MinifiedSubContainer = styled(MinifiedContainer)`
   grid-template-columns: repeat(3, 1fr);
-  grid-row-gap: 100px;
 
   & > div:nth-child(3n-1){
     margin-left: 0 auto 0 auto;
-  }
-
-  @media (max-width: 975px){
-    display: flex;
-    flex-direction: column;
-
-    & > div:nth-child(1) {
-      margin-top: 0;
-    }
-    & > div {
-      width: 475px;
-      height: 265px;
-      margin-left: 0;
-      margin-right: auto;
-      margin-top: 100px
-    }
   }
 `
 const ExpandedContainer = styled.div`

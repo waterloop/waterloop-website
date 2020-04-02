@@ -9,6 +9,13 @@ const Container = styled.div`
   justify-content: space-between;
   width: 475px;
   height: 265px;
+
+  @media (max-width: 975px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 265px;
+  }
 `
 const PortraitContainer = styled.div`
   flex-basis: 60%;
@@ -37,10 +44,10 @@ const InfoTitle = styled.div`
   line-height: 31px;
 `
 const InfoPosition = styled.div`
+  font-weight: 200;
   font-size: 20px;
-  line-height: 26px;
 `
-const ContactListContainer = styled.div`
+const ContactsContainer = styled.div`
   display: flex;
 `
 const Contact = styled.a`
@@ -71,9 +78,9 @@ const LeadProfile = (props: any) => {
         <InfoContainer>
           <InfoTitle>{props.name}</InfoTitle>
           <InfoPosition>{props.position}</InfoPosition>
-          <ContactListContainer>
+          <ContactsContainer>
             {(props.contacts && props.contacts.length > 0) && <ContactList contacts={props.contacts}/>}
-          </ContactListContainer>
+          </ContactsContainer>
         </InfoContainer>
     </Container>
   );
