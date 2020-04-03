@@ -1,6 +1,8 @@
 # TeamPage Component Summary
 TeamPage component which manages a TeamFilter component and mutliple rows of ProfileSection components. Used to display the members of the Waterloop team.
 
+Click [here](https://www.figma.com/file/GlQTjSy81tQlV8cctdV1Ej/waterloop-website-v1-(Copy)?node-id=503%3A0) for figma designs
+
 ## Files and Components
 ### ```TeamPage.tsx```
 This is a manager component for a displaying the members of the Waterloop team
