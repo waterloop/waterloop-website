@@ -37,7 +37,7 @@ const MinifiedContainer = styled.div`
 `
 const MinifiedLeadContainer = styled(MinifiedContainer)`
   grid-template-columns: repeat(2, 1fr);
-  
+
   &> div:nth-child(2n){
     margin-left: auto;
   }
@@ -66,7 +66,10 @@ export default class ProfileSection extends React.Component<PSectionProps, PSect
 
   // Update states upon recieving new props
   UNSAFE_componentWillReceiveProps(nextProps: PSectionProps) {
-    this.setState({minified: nextProps.profiles})
+    this.setState({
+      minified: nextProps.profiles,
+      expanded: {} as ProfileType
+    })
   }
 
   // Return the profile from the Expanded Profile slot back into the minfied list
