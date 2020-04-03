@@ -15,7 +15,8 @@ const generateFiltersQuery = () => {
     }
   ]
 }
-const generateMembersQuery = () => {return [
+const generateMembersQuery = () => {
+  return [
     `${teamHubApiEndpoint}/members`,
     {
       method: "POST",
