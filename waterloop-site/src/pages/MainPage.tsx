@@ -8,6 +8,7 @@ import NavBar from "../components/NavBar/index";
 import Sample from "../static/img/logos/Icon_Yellow.png";
 import Hero from "../components/Hero/Landing"
 import Hero2 from "../components/Hero/General"
+import SimpleFeatures from "../sections/FeaturedComponent/index"
 
 class MainPage extends React.Component {
   render() {
@@ -16,9 +17,7 @@ class MainPage extends React.Component {
         <Router>
           <NavBar></NavBar>
         </Router>
-        <Hero description="test"></Hero>
-        <Hero2 title="test" description="test"></Hero2>
-        <ContactForm desc="Desc" title="Send Us A Message"></ContactForm>
+        <SimpleFeatures></SimpleFeatures>
       </div>
     );
   }

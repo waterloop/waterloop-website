@@ -1,9 +1,9 @@
 // Core modules:
 import React from "react";
 import styled from "styled-components";
-import "./SimpleFeatComp.css";    // For styling
+import "../../theme/styling/SimpleFeatComp.css";    // For styling
 
-export type FeatProps = {imgSrc: string, imgAlt: string, /*header: string,*/ desc: string}    // Type definition for component.
+export type FeatProps = { imgSrc: string, imgAlt: string, /*header: string,*/ desc: string }    // Type definition for component.
 
 /* NOTE: See if you can use PureComponent instead.
  You should go for React.PureComponent when you can satisfy any of the below conditions.
@@ -13,7 +13,7 @@ export type FeatProps = {imgSrc: string, imgAlt: string, /*header: string,*/ des
     You should call forceUpdate when data changes
  */
 
- // Custom styled image component.
+// Custom styled image component.
 const FeatImage = styled.img`
     display: block;
     background: url(${props => props.src} || "nonexistent-link") no-repeat;    
@@ -34,7 +34,7 @@ const FeatPara = styled.p`
     font-family: 'IBM Plex Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 `;
 
-class SimpleFeatComp extends React.Component <FeatProps> {
+class SimpleFeatComp extends React.Component<FeatProps> {
 
     render() {
         return (
