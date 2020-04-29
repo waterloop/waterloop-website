@@ -1,22 +1,22 @@
 import React from "react";
 import styled from "styled-components";
-import LinkComponent from "./LinkComponent";
-import RouteComponent from "./RouteComponent";
-import Logo from "../images/Icon_Yellow.png";
+import LinkComponent from "../../components/Footer/LinkComponent";
+import RouteComponent from "../../components/Footer/RouteComponent";
+import Logo from "../../static/img/logos/Icon_Yellow.png";
 import { findByLabelText } from "@testing-library/react";
 import { Link } from "react-router-dom";
 
 const size = {
   mobile: "420px",
   tabletM: "800px",
-  tabletL: "1100px"
+  tabletL: "1100px",
 };
 
 const FooterWrapper = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  position: fixed;
+  position: relative;
   width: 100%;
   height: 175px;
   bottom: 0;
