@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "../button/CTAButton";
+import Button from "../Button/CTAButton";
 
 type ContactFormProps = {
   title: string;
