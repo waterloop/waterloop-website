@@ -1,13 +1,20 @@
 import React from "react";
 import FooterComponent from "../sections/Footer/index";
 import { BrowserRouter as Router } from "react-router-dom";
-import Sponsors from "../components/Sponsors/Sponsors";
+import Sponsors from "../components/Sponsors/index";
+import Subteams from "../components/Teams";
 import Button from "../components/button/CTAButton";
+import Sample from "../static/img/logos/Icon_Yellow.png";
 
 class MainPage extends React.Component {
   render() {
     return (
       <Router>
+        <Subteams
+          image={Sample}
+          description="gjfdkbfdaf fndjsafjnkd fdsjakfndjksanjk nfjkdsnakf ndskanfjkdsanfjkdsanjfkdsankjfn"
+          subteam="Electrical"
+        ></Subteams>
         <Button
           backgroundColor="yellow"
           textColor="black"
