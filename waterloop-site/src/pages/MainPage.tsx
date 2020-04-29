@@ -5,6 +5,8 @@ import Sponsors from "../components/Sponsors/index";
 import Subteams from "../components/Teams";
 import Button from "../components/button/CTAButton";
 import Sample from "../static/img/logos/Icon_Yellow.png";
+import Hero from "../components/Hero/Landing";
+import Hero2 from "../components/Hero/General";
 
 class MainPage extends React.Component {
   render() {
