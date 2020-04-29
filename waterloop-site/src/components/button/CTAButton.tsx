@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from "react"
+import styled from "styled-components"
 
 type BackgroundColor = "yellow" | "black";
 type TextColor = "yellow" | "white" | "black";
