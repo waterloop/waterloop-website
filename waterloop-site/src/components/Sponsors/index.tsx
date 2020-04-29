@@ -1,21 +1,21 @@
-import React from "react"
-import styled from "styled-components"
+import React from "react";
+import styled from "styled-components";
 
-import BrentsWeldingAndFab from "./sponsorphotos/BrentsWeldingAndFab.png"
-import UW_Engineering from "./sponsorphotos/UW_Engineering.png"
-import UW_Engineering_Endowment from "./sponsorphotos/UW_Engineering_Endowment.png"
-import UW_Engineering_Society from "./sponsorphotos/UW_Engineering_Society.png"
-import ClickUp from "./sponsorphotos/ClickUp.png"
-import WCBranham from "./sponsorphotos/WCBranham.png"
-import Psim from "./sponsorphotos/Psim.png"
-import Ansys from "./sponsorphotos/Ansys.png"
-import AndersonPowerProducts from "./sponsorphotos/AndersonPowerProducts.png"
-import Mitutoyo from "./sponsorphotos/Mitutoyo.png"
-import Threedx from "./sponsorphotos/Threedx.png"
-import StarTechnology from "./sponsorphotos/StarTechnology.png"
-import WPrint from "./sponsorphotos/WPrint.png"
-import Wera from "./sponsorphotos/Wera.png"
-import L3Harris from "./sponsorphotos/L3Harris.png"
+import BrentsWeldingAndFab from "../../static/img/sponsors/BrentsWeldingAndFab.png";
+import UW_Engineering from "../../static/img/sponsors/UW_Engineering.png";
+import UW_Engineering_Endowment from "../../static/img/sponsors/UW_Engineering_Endowment.png";
+import UW_Engineering_Society from "../../static/img/sponsors/UW_Engineering_Society.png";
+import ClickUp from "../../static/img/sponsors/ClickUp.png";
+import WCBranham from "../../static/img/sponsors/WCBranham.png";
+import Psim from "../../static/img/sponsors/Psim.png";
+import Ansys from "../../static/img/sponsors/Ansys.png";
+import AndersonPowerProducts from "../../static/img/sponsors/AndersonPowerProducts.png";
+import Mitutoyo from "../../static/img/sponsors/Mitutoyo.png";
+import Threedx from "../../static/img/sponsors/Threedx.png";
+import StarTechnology from "../../static/img/sponsors/StarTechnology.png";
+import WPrint from "../../static/img/sponsors/WPrint.png";
+import Wera from "../../static/img/sponsors/Wera.png";
+import L3Harris from "../../static/img/sponsors/L3Harris.png";
 
 const Img = styled.img`
   display: flex;
@@ -24,14 +24,13 @@ const Img = styled.img`
   height: 15vh;
   margin: 40px;
   padding: 5px;
-  border: 2px solid #AAB7C4;
+  border: 2px solid #aab7c4;
   border-radius: 10px;
 `;
 
 const Header = styled.h2`
   font-style: italic;
   font-size: 28px;
-
 `;
 
 const SponsorsContainer = styled.div`
@@ -47,8 +46,6 @@ const Block = styled.div`
   margin: 10px 150px;
 `;
 
-
-
 type MyProps = {};
 
 class Sponsors extends React.Component<MyProps> {
@@ -59,7 +56,10 @@ class Sponsors extends React.Component<MyProps> {
         <SponsorsContainer>
           <Img src={BrentsWeldingAndFab} alt="BrentsWeldingAndFab"></Img>
           <Img src={UW_Engineering} alt="UW_Engineering"></Img>
-          <Img src={UW_Engineering_Endowment} alt="UW_Engineering_Endowment"></Img>
+          <Img
+            src={UW_Engineering_Endowment}
+            alt="UW_Engineering_Endowment"
+          ></Img>
           <Img src={UW_Engineering_Society} alt="UW_Engineering_Society"></Img>
           <Img src={WCBranham} alt="WCBranham"></Img>
           <Img src={ClickUp} alt="ClickUp"></Img>

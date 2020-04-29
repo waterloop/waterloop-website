@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "../button/button.component";
+import Button from "../Button/CTAButton";
 
 type ContactFormProps = {
   title: string;
@@ -79,7 +79,7 @@ class ContactUsForm extends React.Component<ContactFormProps> {
             ></input>
           </InputBlockRight>
         </div>
-        <div style={{ width: "100%" , paddingTop: "10px"}}>
+        <div style={{ width: "100%", paddingTop: "10px" }}>
           <label htmlFor="message" style={this.labelStyle}>
             Message
           </label>
