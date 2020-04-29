@@ -1,5 +1,5 @@
-import React from "react"
-import styled from "styled-components"
+import React from "react";
+import styled from "styled-components";
 
 const TextBlock = styled.div`
   display: flex;
@@ -7,7 +7,7 @@ const TextBlock = styled.div`
   width: 50%;
   height: 100%;
   padding-left: 3%;
-  @media (max-width: 500px){
+  @media (max-width: 500px) {
     display: flex;
     width: 100%;
     text-align: center;
@@ -20,7 +20,7 @@ const Img = styled.img`
   flex-direction: column;
   width: 315px;
   height: 227px;
-  @media (max-width: 500px){
+  @media (max-width: 500px) {
     display: none;
   }
 `;
@@ -29,7 +29,7 @@ const Header = styled.h2`
   font-style: italic;
   font-size: 28px;
   margin-bottom: 0px !important;
-  @media (max-width: 500px){
+  @media (max-width: 500px) {
     font-size: 25px;
   }
 `;
@@ -38,12 +38,11 @@ const Text = styled.p`
   font-size: 18px;
   margin-top: 14px !important;
 
-  @media (max-width: 500px){
+  @media (max-width: 500px) {
     font-size: 13px;
     text-align: left;
   }
 `;
-
 
 const Block = styled.div`
   display: flex;
@@ -53,10 +52,9 @@ const Block = styled.div`
   padding-bottom: 25px;
 `;
 
-type MyProps = { subteam: string, description: string, image: string };
+type MyProps = { subteam: string; description: string; image: string };
 
 class SubteamsOverview extends React.Component<MyProps> {
-
   render() {
     return (
       <Block>
