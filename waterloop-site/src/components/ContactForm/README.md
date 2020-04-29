@@ -1,4 +1,4 @@
-Contact Form Component
+# Contact Form Component
 
 Purpose:
 Provide a contact form.
