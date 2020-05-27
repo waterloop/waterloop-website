@@ -1,6 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import {Button} from "../button";
+import React from 'react';
+import styled from 'styled-components';
+import {Button} from '../button';
+import {TextWithImage} from '../';
 
 type ContactFormProps = {
   title: string;
@@ -100,6 +101,12 @@ class ContactUsForm extends React.Component<ContactFormProps> {
           }}
           variant={null}
         ></Button>
+         <TextWithImage
+         title="WHat" 
+         text= "Happened"
+         image= "HERE" 
+         link= "NANI"
+         ></TextWithImage>
         <button
           id="submitBtn"
           type="submit"

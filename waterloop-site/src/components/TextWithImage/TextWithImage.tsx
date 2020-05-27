@@ -56,7 +56,7 @@ const Block = styled.div`
 
 type MyProps = { title: string; text: string; image: string; link: string };
 
-class TextWithImage extends React.Component<MyProps> {
+export class TextWithImage extends React.Component<MyProps> {
   render() {
     return (
       <Block>
@@ -71,4 +71,3 @@ class TextWithImage extends React.Component<MyProps> {
   }
 }
 
-export default TextWithImage;
