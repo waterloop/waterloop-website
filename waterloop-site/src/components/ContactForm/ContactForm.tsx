@@ -1,4 +1,4 @@
-import React, { createRef } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import {Button} from 'components/button/';
 
@@ -62,11 +62,8 @@ class ContactUsForm extends React.Component<ContactFormProps,ContactFormStates> 
       },
       formResponseError: false,
     }
-    this.formRef = React.createRef();
   }
   
-  private formRef: React.RefObject<HTMLFormElement>;
-
   private labelStyle: React.CSSProperties = {
     display: "block",
     fontWeight: "bold",

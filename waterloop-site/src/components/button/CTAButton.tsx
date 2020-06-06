@@ -59,38 +59,37 @@ const Button: React.FC<Props> = (props) => {
   };
 
   const ButtonDiv = styled.button`
-    background-color: ${ColorMap[backgroundColor]};
-    border-radius: 15px;
-    width: 155px;
-    height: 34px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-color: ${ColorMap[backgroundColor]};
+    border-radius: 15px;
+    width: 155px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     align-self: center;
-    border-color:  ${ColorMap[backgroundColor]};
-    &:hover {
-      background-color: ${ColorMap[textColor]};
-      border-color:  ${ColorMap[textColor]};
-    }
-    &:active {
+    border-color:  ${ColorMap[backgroundColor]};
+    &:hover {
+      background-color: ${ColorMap[textColor]};
+      border-color:  ${ColorMap[textColor]};
+    }
+    &:active {
       border-color: ${ColorMap.yellow};
-    }
-  }`;       
+    }
+  }`;
 
   const Text = styled.p`
-    color: ${ColorMap[textColor]};
-    font-size: large;
-    font-family: IBM Plex Sans;
-    font-weight: bold;
-    margin: 0;
-    text-transform: uppercase;
-    ${ButtonDiv}:hover & {
-      color: ${ColorMap[backgroundColor]};
-    }
-    ${ButtonDiv}:active & {
-      border-color: ${ColorMap.yellow};
-    }
-  `;
+    color: ${ColorMap[textColor]};
+    font-size: large;
+    font-family: IBM Plex Sans;
+    font-weight: bold;
+    margin: 0;
+    ${ButtonDiv}:hover & {
+      color: ${ColorMap[backgroundColor]};
+    }
+    ${ButtonDiv}:active & {
+      border-color: ${ColorMap.yellow};
+    }
+  `;
 
   return (
     <ButtonDiv onClick={props.onClick}>

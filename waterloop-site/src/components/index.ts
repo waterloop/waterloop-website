@@ -6,3 +6,6 @@ export * from './NavBar';
 export * from './RecruitmentForm';
 export * from './Sponsors';
 export * from './Teams';
+export * from './GooseRoster';
+export * from './SimpleFeatures';
+export * from './Hero'
