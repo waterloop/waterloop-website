@@ -16,6 +16,7 @@ const SponsorComponent = styled("div")<SponsorComponentInterface>(
   {
     position: "relative",
     marginBottom: "20px",
+    marginLeft:"10px",
     display: "flex",
     alignItems: "center",
     background: "#f4f4f4",
@@ -26,7 +27,7 @@ const SponsorComponent = styled("div")<SponsorComponentInterface>(
   variant({
     variants: {
       Hypersonic: {
-        width: "80%",
+        width: "60%",
         height: "250px",
         "@media screen and (max-width: ${size.mobile})": {
           height: "184px",
@@ -36,6 +37,23 @@ const SponsorComponent = styled("div")<SponsorComponentInterface>(
 
       Supersonic: {
         width: "40%",
+        height: "250px",
+        "@media screen and (max-width: ${size.mobile})": {
+          height: "184px",
+          width: "80%"
+        }
+      },
+
+      Transsonic: {
+        width: "30%",
+        height: "200px",
+        "@media screen and (max-width: ${size.mobile})": {
+          height: "184px",
+          width: "80%"
+        }
+      },
+      Sonic: {
+        width: "20%",
         height: "250px",
         "@media screen and (max-width: ${size.mobile})": {
           height: "184px",

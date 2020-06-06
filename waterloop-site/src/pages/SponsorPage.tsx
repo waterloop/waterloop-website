@@ -20,19 +20,14 @@ const TierWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content:center;
+
 
   @media (min-width: ${size.mobile}) {
-    /* position: absolute;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 30px;
-    max-width: 80%; */
     position: relative;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    top: 10%;
-    left: 10%;
   }
 `;
 
@@ -51,6 +46,28 @@ function HypersonicSponsor() {
         <SponsorComponent variant="Supersonic" />
         <SponsorComponent variant="Supersonic" />
         <SponsorComponent variant="Supersonic" />
+      </TierWrapper>
+      <CustomHeading>Transsonic Sponsor</CustomHeading>
+      <TierWrapper>
+        <SponsorComponent variant="Transsonic" />
+        <SponsorComponent variant="Transsonic" />
+        <SponsorComponent variant="Transsonic" />
+        <SponsorComponent variant="Transsonic" />
+        <SponsorComponent variant="Transsonic" />
+        <SponsorComponent variant="Transsonic" />
+      </TierWrapper>
+      <CustomHeading>Sonic Sponsor</CustomHeading>
+      <TierWrapper>
+        <SponsorComponent variant="Sonic" />
+        <SponsorComponent variant="Sonic" />
+        <SponsorComponent variant="Sonic" />
+        <SponsorComponent variant="Sonic" />
+        <SponsorComponent variant="Sonic" />
+        <SponsorComponent variant="Sonic" />
+        <SponsorComponent variant="Sonic" />
+        <SponsorComponent variant="Sonic" />
+        <SponsorComponent variant="Sonic" />
+        <SponsorComponent variant="Sonic" />
       </TierWrapper>
     </div>
   );
