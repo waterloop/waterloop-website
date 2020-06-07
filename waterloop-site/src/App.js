@@ -1,11 +1,12 @@
 import React from "react";
-import "./App.css";
+import "./theme/App.css";
 import MainPage from "./pages/MainPage.tsx";
+import Recruitment from "./pages/Recruitment.tsx";
 
 function App() {
   return (
     <div className="App">
-      <MainPage />
+      <Recruitment />
     </div>
   );
 }

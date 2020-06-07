@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import Button from "../button/button.component"
+import Button from "../Button/CTAButton"
 import Form from "./Form"
 
 const TextBlock = styled.div`

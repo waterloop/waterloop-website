@@ -1,0 +1,25 @@
+.btn {
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  color: #ffffff;
+  border-radius: 100pt;
+  border: 2px solid white;
+  height: 50px;
+  width: 200px;
+  text-decoration: none;
+  line-height: 10px;
+}
+
+h3 {
+  font-size: 30px;
+  color: #ffffff;
+  margin-top: 0pt;
+  font-weight: 400;
+}
+
+h1 {  font-size: 64pt;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 0pt;
+}

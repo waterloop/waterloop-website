@@ -18,7 +18,7 @@ class LinkComponent extends React.Component<linkProps> {
           fontWeight: "normal",
           color: "#FFFFFF", //NEED TO CHANGE LATER #FFFFFFF
           opacity: "0.7",
-          textDecoration: "none"
+          textDecoration: "none",
         }}
       >
         {this.props.title}
