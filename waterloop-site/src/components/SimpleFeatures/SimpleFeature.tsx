@@ -3,10 +3,11 @@ import React from "react";
 import styled from "styled-components";
 import "theme/styling/SimpleFeatComp.css";    // For styling
 
-export interface FeatProps{ 
-    imgSrc: string, 
+export interface FeatProps {
+    imgSrc: string,
     imgAlt: string, /*header: string,*/
-    desc: string }    // Type definition for component.
+    desc: string
+}    // Type definition for component.
 
 /* NOTE: See if you can use PureComponent instead.
  You should go for React.PureComponent when you can satisfy any of the below conditions.

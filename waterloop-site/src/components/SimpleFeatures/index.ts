@@ -1,1 +1,1 @@
-export {default as SimpleFeatComp} from './SimpleFeature';
+export { default as SimpleFeatComp } from './SimpleFeature';

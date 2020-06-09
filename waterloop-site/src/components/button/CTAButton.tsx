@@ -33,6 +33,7 @@ const ColorMap = {
   yellow: "#FED138",
   black: "#333333",
   white: "#FFFFFF",
+  // blue: "#232635",
 };
 
 const VariantMap: Record<VariantNumber, Variant> = {

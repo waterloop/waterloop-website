@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {Button} from "components/button";
+import { Button } from "components/Button";
 import BuildingsImg from "static/img/background/buildings.svg";
 import DownArrowImg from "static/img/background/downArrow.svg";
 import WaterloopImg from "static/img/background/waterloop.svg";
@@ -89,9 +89,9 @@ class heroComponent extends React.Component<MyProps> {
           </DescriptionContainer>
         </Content>
         <Button
-          backgroundColor="yellow"
-          textColor="black"
-          text="Send"
+          backgroundColor="black"
+          textColor="white"
+          text="Join Us"
           onClick={() => {
             document.getElementById("submitBtn")?.click();
           }}

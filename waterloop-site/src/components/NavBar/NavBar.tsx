@@ -1,16 +1,21 @@
 import React from "react";
 import styled from "styled-components";
-// import Home from "../home/home.tsx";
-// import GooseV from "../gooseV/gooseV.tsx";
-// import Teams from "../teams/teams.tsx";
-// import Sponsors from "../sponsors/sponsors.tsx";
-// import Media from "../media/media.tsx";
-// import Contact from "../contact/contact.tsx";
 import IconYellowImg from "../../static/img/logos/Icon_Yellow.png";
+import Contact from "../../pages/Contact";
+import Home from "../../pages/Home";
+import Flock from "../../pages/Flock";
+import Team from "../../pages/Team";
+import Sponsors from "../../pages/Sponsors";
+import {
+  NavLink,
+  BrowserRouter as Router
+} from "react-router-dom";
 
-import { NavLink } from "react-router-dom";
+const PageContainer = styled.div`
+  width: 100%;
+  height: 100vh;
+`;
 
-type Page = { title: string };
 
 const NavbarContainer = styled.div`
   display: flex;
@@ -61,7 +66,7 @@ const RoundedBorder = styled.div`
   margin: 0 0 0 10px;
 `;
 
-type LinkProp = { to: string; title: string; text: string };
+type LinkProp = { to: string; title: string };
 
 class Link extends React.Component<LinkProp> {
   render() {
@@ -69,10 +74,7 @@ class Link extends React.Component<LinkProp> {
       <StyledLink
         to={this.props.to}
         title={this.props.title}
-        exact
-        activeClassName="active"
       >
-        {this.props.text}
       </StyledLink>
     );
   }
@@ -81,26 +83,30 @@ class Link extends React.Component<LinkProp> {
 class Navbar extends React.Component {
   render() {
     return (
-      <NavbarContainer>
-        <LogoContainer>
-          <IconYellow src={IconYellowImg}></IconYellow>
-        </LogoContainer>
-        <ListContainer>
-          <Link to="/" title="home" text="HOME" />
-
-          <Link to="/gooseV" title="gooseV" text="GOOSE V" />
-
-          <Link to="/teams" title="teams" text="TEAMS" />
-
-          <Link to="/sponsors" title="sponsors" text="SPONSORS" />
-
-          <Link to="/media" title="media" text="MEDIA" />
-
-          <RoundedBorder>
-            <Link to="/contact" title="contact" text="CONTACT" />
-          </RoundedBorder>
-        </ListContainer>
-      </NavbarContainer>
+      <Router>
+        <NavbarContainer>
+          <LogoContainer>
+            <IconYellow src={IconYellowImg}></IconYellow>
+          </LogoContainer>
+          <ListContainer>
+            <Link to="/" title="Home">
+              <Home />
+            </Link>
+            <Link to="/the-flock" title="The Flock">
+              <Flock />
+            </Link>
+            <Link to="/team" title="Team">
+              <Team />
+            </Link>
+            <Link to="/sponsors" title="Sponsors">
+              <Sponsors />
+            </Link>
+            <Link to="/contact" title="Contact">
+              <Contact />
+            </Link>
+          </ListContainer>
+        </NavbarContainer>
+      </Router>
     );
   }
 }

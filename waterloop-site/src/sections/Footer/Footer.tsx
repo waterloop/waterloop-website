@@ -14,13 +14,13 @@ const size = {
 
 const FooterWrapper = styled.div`
   display: flex;
+  position: relative;
+  left:0px;
+  bottom:0px;
   align-items: flex-start;
   justify-content: space-between;
-  position: relative;
   width: 100%;
   height: 175px;
-  bottom: 0;
-  margin-bottom: 0;
   background: #232636;
 
   @media (max-width: ${size.mobile}) {
@@ -119,9 +119,9 @@ class FooterComponent extends React.Component {
         <LinksWrapper>
           <RoutingWrapper>
             <RouteComponent link="/team" title="Our Team"></RouteComponent>
-            <RouteComponent link="" title="Hyperloop"></RouteComponent>
-            <RouteComponent link="" title="Sponsors"></RouteComponent>
-            <RouteComponent link="" title="Contact Us"></RouteComponent>
+            <RouteComponent link="/home" title="Hyperloop"></RouteComponent>
+            <RouteComponent link="/sponsors" title="Sponsors"></RouteComponent>
+            <RouteComponent link="/contact" title="Contact Us"></RouteComponent>
           </RoutingWrapper>
 
           <SocialMediaWrapper>

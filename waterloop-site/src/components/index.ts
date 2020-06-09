@@ -1,4 +1,4 @@
-export * from './button';
+export * from './Button';
 export * from './TextWithImage';
 export * from './ContactForm';
 export * from './Footer';
