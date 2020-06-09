@@ -1,4 +1,5 @@
 import React from "react";
+import styled from 'styled-components';
 import "./theme/App.css";
 import { NavBar } from "components";
 import Contact from "./pages/Contact";
@@ -12,6 +13,7 @@ import {
   Switch,
   BrowserRouter as Router
 } from "react-router-dom";
+import 'typeface-ibm-plex-sans';
 
 function App() {
   return (
@@ -19,19 +21,19 @@ function App() {
       <Router>
         <NavBar />
         <Switch>
-          <Route path="/home">
+          <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/the-flock">
+          <Route path="/the-flock" >
             <Flock />
           </Route>
-          <Route path="/team">
+          <Route path="/team" >
             <Team />
           </Route>
-          <Route path="/sponsors">
+          <Route path="/sponsors" >
             <Sponsors />
           </Route>
-          <Route path="/contact">
+          <Route path="/contact" >
             <Contact />
           </Route>
         </Switch>

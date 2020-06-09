@@ -13,6 +13,7 @@ const Container = styled.div`
   width: 100%;
   height: 100vh;
   background-color: #232635;
+  margin-bottom: 2em;
 `;
 
 const DescriptionContainer = styled.div`
@@ -39,6 +40,7 @@ const Buildings = styled.img`
   height: auto;
   position: absolute;
   bottom: 30px;
+  padding-top: 3em;
 `;
 
 const DownArrow = styled.img`
@@ -87,16 +89,14 @@ class heroComponent extends React.Component<MyProps> {
           <DescriptionContainer>
             <h3>{this.props.description}</h3>
           </DescriptionContainer>
+          <Button
+            backgroundColor="yellow"
+            textColor="black"
+            text="JOIN US"
+            onClick={() => window.open("contact")}
+            variant={null}
+          ></Button>
         </Content>
-        <Button
-          backgroundColor="black"
-          textColor="white"
-          text="Join Us"
-          onClick={() => {
-            document.getElementById("submitBtn")?.click();
-          }}
-          variant={null}
-        ></Button>
 
         <ArrowContainer>
           <DownArrow src={DownArrowImg}></DownArrow>

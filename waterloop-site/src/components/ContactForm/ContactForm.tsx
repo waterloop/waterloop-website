@@ -6,8 +6,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   height: 100vh;
-  width: 100%;
-  border: 1px solid red;
+  width: 80%;
 `;
 
 interface ContactFormProps {
@@ -189,8 +188,8 @@ class ContactUsForm extends React.Component<ContactFormProps, ContactFormStates>
           style={this.formStyle}
           onSubmit={this.onFormSubmit}
         >
-          <h3 style={{ fontStyle: "italic", color: "black" }}>{this.props.title}</h3>
-          <p>{this.props.desc}</p>
+          <h3 style={{ fontStyle: "italic", color: "black", fontWeight: "bold", marginBottom: "40px", fontSize: "36px" }}>{this.props.title}</h3>
+          <p style={{ fontFamily: "IBM Plex Sans", fontSize: "18px", marginTop: "0px", marginBottom: "30px" }}>{this.props.desc}</p>
           {this.renderError()}
           {this.renderServerError()}
           <div>
@@ -201,7 +200,7 @@ class ContactUsForm extends React.Component<ContactFormProps, ContactFormStates>
               <input
                 name="name"
                 id="name"
-                style={this.inputStyle}
+                style={{ marginTop: "20px", width: "100%", height: "30px", backgroundColor: "#F4F4F4", border: "none", fontFamily: "IBM Plex Sans", fontSize: "15px" }}
                 value={this.state.formKey.name}
                 onChange={this.handleChange}
               ></input>
@@ -213,32 +212,34 @@ class ContactUsForm extends React.Component<ContactFormProps, ContactFormStates>
               <input
                 id="email"
                 name="email"
-                style={this.inputStyle}
+                style={{ marginTop: "20px", width: "100%", height: "30px", backgroundColor: "#F4F4F4", border: "none", fontFamily: "IBM Plex Sans", fontSize: "15px" }}
                 value={this.state.formKey.email}
                 onChange={this.handleChange}
               ></input>
             </InputBlockRight>
           </div>
-          <div style={{ width: "100%", paddingTop: "10px", paddingBottom: "30px" }}>
+          <div style={{ width: "100%", paddingTop: "10px", paddingBottom: "30px", marginTop: "35px" }}>
             <label htmlFor="message" style={this.labelStyle}>
               Message
           </label>
             <textarea
               id="message"
               name="message"
-              style={this.inputStyle}
+              style={{ width: "100%", height: "298px", backgroundColor: "#F4F4F4", border: "none", marginTop: "20px", fontFamily: "IBM Plex Sans", fontSize: "15px" }}
               rows={3}
               value={this.state.formKey.message}
               onChange={this.handleChange}
             ></textarea>
           </div>
-          <Button
-            backgroundColor="yellow"
-            textColor="black"
-            text="Send"
-            onClick={() => console.log('am I submitting')}
-            variant={null}
-          ></Button>
+          <div style={{ alignSelf: "center" }}>
+            <Button
+              backgroundColor="yellow"
+              textColor="black"
+              text="SEND"
+              onClick={() => console.log('submitting form')}
+              variant={null}
+            ></Button>
+          </div>
         </form>
       </Container>
     );

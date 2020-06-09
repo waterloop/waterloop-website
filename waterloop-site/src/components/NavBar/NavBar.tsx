@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import IconYellowImg from "../../static/img/logos/Icon_Yellow.png";
+import IconYellowImg from "../../static/img/logos/Logo.svg";
 import Contact from "../../pages/Contact";
 import Home from "../../pages/Home";
 import Flock from "../../pages/Flock";
@@ -11,18 +11,14 @@ import {
   BrowserRouter as Router
 } from "react-router-dom";
 
-const PageContainer = styled.div`
-  width: 100%;
-  height: 100vh;
-`;
-
-
 const NavbarContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  padding-top: 8px;
   width: 100%;
+  height: 55px;
   background-color: #232635;
 `;
 
@@ -38,11 +34,21 @@ const ListContainer = styled.div`
 const StyledLink = styled(NavLink)`
   color: white;
   margin: 0 10pt;
+  font-family: 'IBM Plex Sans';
+  font-size: 18px;
+  text-transform: uppercase;
 
   text-decoration: none;
-  &:focus, &:hover, &:visited, &:link, &:active {
+  &:visited, &:link {
       text-decoration: none;
   }
+
+  &:focus, &:hover, &:active {
+    text-decoration: none;
+    color: #FED138;
+  }
+
+
 `;
 
 const LogoContainer = styled.div`
@@ -62,11 +68,11 @@ const RoundedBorder = styled.div`
   border-style: solid;
   border-color: white;
   border-width: 1px;
-  padding: 3px 5px;
+  padding: 5px 5px;
   margin: 0 0 0 10px;
 `;
 
-type LinkProp = { to: string; title: string };
+type LinkProp = { to: string; title: string; text: string; };
 
 class Link extends React.Component<LinkProp> {
   render() {
@@ -75,6 +81,7 @@ class Link extends React.Component<LinkProp> {
         to={this.props.to}
         title={this.props.title}
       >
+        {this.props.text}
       </StyledLink>
     );
   }
@@ -83,30 +90,32 @@ class Link extends React.Component<LinkProp> {
 class Navbar extends React.Component {
   render() {
     return (
-      <Router>
-        <NavbarContainer>
-          <LogoContainer>
+      <NavbarContainer>
+        <LogoContainer>
+          <NavLink to="/" >
             <IconYellow src={IconYellowImg}></IconYellow>
-          </LogoContainer>
-          <ListContainer>
-            <Link to="/" title="Home">
-              <Home />
-            </Link>
-            <Link to="/the-flock" title="The Flock">
-              <Flock />
-            </Link>
-            <Link to="/team" title="Team">
-              <Team />
-            </Link>
-            <Link to="/sponsors" title="Sponsors">
-              <Sponsors />
-            </Link>
-            <Link to="/contact" title="Contact">
+          </NavLink>
+        </LogoContainer>
+        <ListContainer>
+          <Link to="/" title="Home" text="Home">
+            <Home />
+          </Link>
+          <Link to="/the-flock" title="The Flock" text="The Flock">
+            <Flock />
+          </Link>
+          <Link to="/team" title="Team" text="Team">
+            <Team />
+          </Link>
+          <Link to="/sponsors" title="Sponsors" text="Sponsors">
+            <Sponsors />
+          </Link>
+          <RoundedBorder>
+            <Link to="/contact" title="Contact" text="Contact">
               <Contact />
             </Link>
-          </ListContainer>
-        </NavbarContainer>
-      </Router>
+          </RoundedBorder>
+        </ListContainer>
+      </NavbarContainer>
     );
   }
 }
