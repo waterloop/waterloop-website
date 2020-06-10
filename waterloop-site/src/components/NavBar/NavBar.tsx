@@ -6,10 +6,7 @@ import Home from "../../pages/Home";
 import Flock from "../../pages/Flock";
 import Team from "../../pages/Team";
 import Sponsors from "../../pages/Sponsors";
-import {
-  NavLink,
-  BrowserRouter as Router
-} from "react-router-dom";
+import { NavLink, BrowserRouter as Router } from "react-router-dom";
 
 const NavbarContainer = styled.div`
   display: flex;
@@ -34,21 +31,22 @@ const ListContainer = styled.div`
 const StyledLink = styled(NavLink)`
   color: white;
   margin: 0 10pt;
-  font-family: 'IBM Plex Sans';
+  font-family: "IBM Plex Sans";
   font-size: 18px;
   text-transform: uppercase;
 
   text-decoration: none;
-  &:visited, &:link {
-      text-decoration: none;
-  }
-
-  &:focus, &:hover, &:active {
+  &:visited,
+  &:link {
     text-decoration: none;
-    color: #FED138;
   }
 
-
+  &:focus,
+  &:hover,
+  &:active {
+    text-decoration: none;
+    color: #fed138;
+  }
 `;
 
 const LogoContainer = styled.div`
@@ -72,15 +70,12 @@ const RoundedBorder = styled.div`
   margin: 0 0 0 10px;
 `;
 
-type LinkProp = { to: string; title: string; text: string; };
+type LinkProp = { to: string; title: string; text: string };
 
 class Link extends React.Component<LinkProp> {
   render() {
     return (
-      <StyledLink
-        to={this.props.to}
-        title={this.props.title}
-      >
+      <StyledLink to={this.props.to} title={this.props.title}>
         {this.props.text}
       </StyledLink>
     );
@@ -92,7 +87,7 @@ class Navbar extends React.Component {
     return (
       <NavbarContainer>
         <LogoContainer>
-          <NavLink to="/" >
+          <NavLink to="/">
             <IconYellow src={IconYellowImg}></IconYellow>
           </NavLink>
         </LogoContainer>
@@ -109,11 +104,9 @@ class Navbar extends React.Component {
           <Link to="/sponsors" title="Sponsors" text="Sponsors">
             <Sponsors />
           </Link>
-          <RoundedBorder>
-            <Link to="/contact" title="Contact" text="Contact">
-              <Contact />
-            </Link>
-          </RoundedBorder>
+          <Link to="/contact" title="Contact" text="Contact">
+            <Contact />
+          </Link>
         </ListContainer>
       </NavbarContainer>
     );
