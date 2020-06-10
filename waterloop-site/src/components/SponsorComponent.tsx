@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { variant, space } from "styled-system";
+import { variant } from "styled-system";
 
 const size = {
   mobile: "420px",
   tabletM: "800px",
-  tabletL: "1100px"
+  tabletL: "1100px",
 };
 
 interface SponsorComponentInterface {
@@ -24,21 +24,21 @@ const SponsorComponent = styled("div")<SponsorComponentInterface>(
     "@media (max-width: ${size.mobile})": {
       height: "184px",
       width: "80%",
-      marginBottom: "5%"
-    }
+      marginBottom: "5%",
+    },
   },
   variant({
     variants: {
       Hypersonic: {
         width: "80%",
-        height: "250px"
+        height: "250px",
       },
 
       Sonic: {
         width: "40%",
-        height: "250px"
-      }
-    }
+        height: "250px",
+      },
+    },
   })
 );
 

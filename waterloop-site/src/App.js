@@ -1,13 +1,14 @@
 import React from "react";
-import "./App.css";
-import Test from "./pages/TestPage.tsx";
+import "./theme/App.css";
 import HypersonicSponsor from "./pages/SponsorPage";
+import MainPage from "./pages/MainPage.tsx";
 
 function App() {
   return (
     <div className="App">
       {/* <Test></Test> */}
       <HypersonicSponsor></HypersonicSponsor>
+      <MainPage />
     </div>
   );
 }
