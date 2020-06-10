@@ -3,8 +3,6 @@ import styled from "styled-components";
 import LinkComponent from "../../components/Footer/LinkComponent";
 import RouteComponent from "../../components/Footer/RouteComponent";
 import Logo from "../../static/img/logos/Logo.svg";
-import { findByLabelText } from "@testing-library/react";
-import { Link } from "react-router-dom";
 
 const size = {
   mobile: "420px",
@@ -113,7 +111,7 @@ class FooterComponent extends React.Component {
     return (
       <FooterWrapper>
         <LogoWrapper>
-          <img src={Logo}></img>
+          <img src={Logo} alt="Waterloop Logo" ></img>
         </LogoWrapper>
 
         <LinksWrapper>

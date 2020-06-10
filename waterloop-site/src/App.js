@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import "./theme/App.css";
 import { NavBar } from "components";
 import Contact from "./pages/Contact";

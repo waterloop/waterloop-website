@@ -6,7 +6,7 @@ import Home from "../../pages/Home";
 import Flock from "../../pages/Flock";
 import Team from "../../pages/Team";
 import Sponsors from "../../pages/Sponsors";
-import { NavLink, BrowserRouter as Router } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const NavbarContainer = styled.div`
   display: flex;
@@ -59,15 +59,6 @@ const IconYellow = styled.img`
   height: 50px;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
-`;
-
-const RoundedBorder = styled.div`
-  border-radius: 25px;
-  border-style: solid;
-  border-color: white;
-  border-width: 1px;
-  padding: 5px 5px;
-  margin: 0 0 0 10px;
 `;
 
 type LinkProp = { to: string; title: string; text: string };

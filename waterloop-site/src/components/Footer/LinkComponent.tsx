@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 
 type linkProps = {
   link: string;
@@ -11,6 +10,7 @@ class LinkComponent extends React.Component<linkProps> {
     return (
       <a
         target="_blank"
+        rel="noopener noreferrer"
         href={this.props.link}
         style={{
           fontFamily: "IBM Plex Sans",

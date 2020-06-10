@@ -1,6 +1,5 @@
 import React from "react";
 import Hero from "components/Hero/Landing"
-import styled from "styled-components";
 import { TextWithImage } from "components/TextWithImage";
 import TextWithImageData from "../static/copy/TextWithImage.json"
 import { Sponsors } from "components/Sponsors";
