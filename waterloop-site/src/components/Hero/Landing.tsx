@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "../Button/CTAButton";
-import BuildingsImg from "../../static/img/background/buildings.svg";
-import DownArrowImg from "../../static/img/background/downArrow.svg";
-import WaterloopImg from "../../static/img/background/waterloop.svg";
+import { Button } from "components/Button";
+import BuildingsImg from "static/img/background/buildings.svg";
+import DownArrowImg from "static/img/background/downArrow.svg";
+import WaterloopImg from "static/img/background/waterloop.svg";
 
 const Container = styled.div`
   display: flex;
@@ -13,6 +13,7 @@ const Container = styled.div`
   width: 100%;
   height: 100vh;
   background-color: #232635;
+  margin-bottom: 2em;
 `;
 
 const DescriptionContainer = styled.div`
@@ -39,6 +40,7 @@ const Buildings = styled.img`
   height: auto;
   position: absolute;
   bottom: 30px;
+  padding-top: 3em;
 `;
 
 const DownArrow = styled.img`
@@ -87,16 +89,14 @@ class heroComponent extends React.Component<MyProps> {
           <DescriptionContainer>
             <h3>{this.props.description}</h3>
           </DescriptionContainer>
+          <Button
+            backgroundColor="yellow"
+            textColor="black"
+            text="JOIN US"
+            onClick={() => window.open("contact")}
+            variant={null}
+          ></Button>
         </Content>
-        <Button
-          backgroundColor="yellow"
-          textColor="black"
-          text="Send"
-          onClick={() => {
-            document.getElementById("submitBtn")?.click();
-          }}
-          variant={null}
-        ></Button>
 
         <ArrowContainer>
           <DownArrow src={DownArrowImg}></DownArrow>

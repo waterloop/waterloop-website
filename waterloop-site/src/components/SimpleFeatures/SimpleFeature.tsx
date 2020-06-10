@@ -1,9 +1,13 @@
 // Core modules:
 import React from "react";
 import styled from "styled-components";
-import "../../theme/styling/SimpleFeatComp.css";    // For styling
+import "theme/styling/SimpleFeatComp.css";    // For styling
 
-export type FeatProps = { imgSrc: string, imgAlt: string, /*header: string,*/ desc: string }    // Type definition for component.
+export interface FeatProps {
+    imgSrc: string,
+    imgAlt: string, /*header: string,*/
+    desc: string
+}    // Type definition for component.
 
 /* NOTE: See if you can use PureComponent instead.
  You should go for React.PureComponent when you can satisfy any of the below conditions.
@@ -35,7 +39,6 @@ const FeatPara = styled.p`
 `;
 
 class SimpleFeatComp extends React.Component<FeatProps> {
-
     render() {
         return (
             <div className="featComp">
