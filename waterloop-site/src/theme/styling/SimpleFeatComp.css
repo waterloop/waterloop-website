@@ -1,8 +1,0 @@
-.featComp {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    margin: 30px;
-    min-height: 80px;   /* For some reason this prevents the top image from being an incorrect size.*/
-    max-width: 70%;
-}

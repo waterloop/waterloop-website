@@ -1,52 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-
-const Block = styled.div`
-  padding: 1%;
-  height: 100%;
-  width: 90%;
-  border-style: solid;
-  display: inline-block;
-  margin-bottom: 2%;
-  @media (max-width: 750px){
-
-  }
-`;
-
-const Header = styled.h2`
-  font-size: 170%;
-  margin-bottom: 0px !important;
-  text-align: center;
-`;
-
-const ShortInput = styled.input`
-  text-align: left;
-  display: inline-block;
-  margin: 3%;
-  width: 42%;
-`;
-
-const LongInput = styled.textarea`
-  text-align: left;
-  display: inline-block;
-  margin: 3%;
-  width: 90.7%;
-  overflow: scroll;
-`;
-
-const SubmitBtnStyle = {
-  backgroundColor: '#FED138',
-  fontSize: 'large',
-  fontFamily: 'IBM Plex Sans',
-}
-
-const radioStyle = {
-  marginLeft: '5%',
-  marginRight: '5%',
-}
-
-const InputForm = styled.form`
-`;
+import "../../theme/global.css"
 
 type MyProps = { role: string, technicalQ: string, termList: [string, string, string, string, string] };
 type MyState = {
@@ -62,7 +16,18 @@ type MyState = {
   termTypeCheckedArray: [boolean, boolean, boolean]
 }
 
-class Form extends React.Component<MyProps, MyState> {
+const SubmitBtnStyle = {
+  backgroundColor: '#FED138',
+  fontSize: 'large',
+  fontFamily: 'IBM Plex Sans',
+}
+
+const radioStyle = {
+  marginLeft: '5%',
+  marginRight: '5%',
+}
+
+class Form extends React.Component<MyProps, MyState> { //TODO test if it works after global styling
   constructor(props: MyProps) {
     super(props);
     this.state = {
@@ -140,16 +105,16 @@ class Form extends React.Component<MyProps, MyState> {
   render() {
     return (
       <div style={{ textAlign: 'center' }}>
-        <Block>
-          <InputForm action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdmZSfD1Hs0D3MLBjAfdUkaCb3GJJxIvKUEVJCBf5hVxZTt4g/formResponse"
+        <div className="Block-RecruimentForm">
+          <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdmZSfD1Hs0D3MLBjAfdUkaCb3GJJxIvKUEVJCBf5hVxZTt4g/formResponse"
             target="_self" method="POST">
-            <Header>Applying for {this.props.role.toUpperCase()}</Header>
-            <ShortInput style={{ display: 'none' }} value={this.props.role} name="entry.1805132656" placeholder="Position" readOnly />
+            <h2 className="HeaderRecruimentForm">Applying for {this.props.role.toUpperCase()}</h2>
+            <input className="ShortInput" style={{ display: 'none' }} value={this.props.role} name="entry.1805132656" placeholder="Position" readOnly />
 
-            <ShortInput type="text" name="entry.1105765972" placeholder="Full Name" onChange={this.handleChange.bind(this)} required />
-            <ShortInput type="text" name="entry.204636100" placeholder="Email" onChange={this.handleChange.bind(this)} required />
-            <ShortInput type="text" name="entry.1369449321" placeholder="Program" onChange={this.handleChange.bind(this)} required />
-            <ShortInput type="text" name="entry.1488954434" placeholder="Your Current Term (ex. 2A)" onChange={this.handleChange.bind(this)} required />
+            <input className="ShortInput" type="text" name="entry.1105765972" placeholder="Full Name" onChange={this.handleChange.bind(this)} required />
+            <input className="ShortInput" type="text" name="entry.204636100" placeholder="Email" onChange={this.handleChange.bind(this)} required />
+            <input className="ShortInput" type="text" name="entry.1369449321" placeholder="Program" onChange={this.handleChange.bind(this)} required />
+            <input className="ShortInput" type="text" name="entry.1488954434" placeholder="Your Current Term (ex. 2A)" onChange={this.handleChange.bind(this)} required />
 
             <hr />
             <label style={{ display: 'block', margin: '1%' }}><b>Term you're applying for:</b></label>
@@ -168,7 +133,7 @@ class Form extends React.Component<MyProps, MyState> {
             <label style={radioStyle} >
               <input type="radio" checked={this.state.termCheckedArray[4]} id="4" onChange={this.handleChange.bind(this)} name="applicationTerm" required />
               {this.props.termList[4]}</label>
-            <ShortInput style={{ display: 'none' }} name="entry.2092532677" value={this.state.applicationTerm} readOnly />
+            <input className="ShortInput" style={{ display: 'none' }} name="entry.2092532677" value={this.state.applicationTerm} readOnly />
 
             <hr />
             <label style={{ display: 'block', margin: '1%' }}><b>Term type for the term you're applying for:</b></label>
@@ -181,15 +146,15 @@ class Form extends React.Component<MyProps, MyState> {
             <label style={radioStyle}>
               <input type="radio" checked={this.state.termTypeCheckedArray[2]} id="c" onChange={this.handleChange.bind(this)} name="termType" required />
             Not in Waterloo</label>
-            <ShortInput style={{ display: 'none' }} name="entry.1337056366" value={this.state.termType} readOnly />
+            <input className="ShortInput" style={{ display: 'none' }} name="entry.1337056366" value={this.state.termType} readOnly />
             <hr />
 
-            <LongInput placeholder="Why do you want to join the team?" onChange={this.handleTextAreaChange.bind(this)} name="entry.288252419" required />
+            <textarea className="LongInput" placeholder="Why do you want to join the team?" onChange={this.handleTextAreaChange.bind(this)} name="entry.288252419" required />
             <label><b>Please copy this question and include it in your response below: {this.props.technicalQ}</b></label>
-            <LongInput placeholder={this.props.technicalQ} onChange={this.handleTextAreaChange.bind(this)} name="entry.1372043873" required />
+            <textarea className="LongInput" placeholder={this.props.technicalQ} onChange={this.handleTextAreaChange.bind(this)} name="entry.1372043873" required />
             <button type="submit" style={SubmitBtnStyle}><b>Submit</b></button>
-          </InputForm>
-        </Block>
+          </form>
+        </div>
       </div>
     );
   }

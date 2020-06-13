@@ -1,1 +1,1 @@
-export {TextWithImage} from './TextWithImage'; //This will take all the named exports
+export {TextWithImage } from './TextWithImage'; //This will take all the named exports

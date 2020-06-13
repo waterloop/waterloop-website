@@ -1,15 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import {SimpleFeatComp} from "components/SimpleFeatures";
-import * as data from "static/copy/exFeatsModel.json";
-
-const Header = styled.h2`
-    margin-left: 30px;
-    font-size: 28px;
-    font-weight: bold;
-    font-style: italic;
-    font-family: 'IBM Plex Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-`;
+import { SimpleFeatComp } from "../../components/SimpleFeatures/index";
+import * as data from "../../static/copy/exFeatsModel.json";
+import "../../theme/global.css";
 
 class FeatPage extends React.Component {
     // Use this to assemble the feature sections with proper XML tags for the render area.
@@ -30,7 +23,7 @@ class FeatPage extends React.Component {
     render() {
         return (
             <div>
-                <Header>Features</Header>
+                <h2 className="Header-FeaturedComponent">Features</h2>
                 {this.assembleFeatSections(data.features)}
             </div>
         )

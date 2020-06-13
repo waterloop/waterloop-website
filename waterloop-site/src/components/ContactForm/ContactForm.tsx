@@ -1,13 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Button } from 'components/Button/';
-
-const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-  width: 80%;
-`;
+import "../../theme/global.css";
 
 interface ContactFormProps {
   title: string;
@@ -30,24 +24,6 @@ interface ServerResponse {
   error: boolean,
   msg: string
 }
-
-const InputBlockLeft = styled.div`
-  width: 48%;
-  float: left;
-  @media (max-width: 500px) {
-    display: flex;
-    width: 100%;
-  }
-`;
-
-const InputBlockRight = styled.div`
-  width: 48%;
-  float: right;
-  @media (max-width: 500px) {
-    display: flex;
-    width: 100%;
-  }
-`;
 
 class ContactUsForm extends React.Component<ContactFormProps, ContactFormStates> {
 
@@ -182,7 +158,7 @@ class ContactUsForm extends React.Component<ContactFormProps, ContactFormStates>
 
   render() {
     return (
-      <Container>
+      <div className="contactForm-Container">
         <form
           autoComplete="off"
           style={this.formStyle}
@@ -193,7 +169,7 @@ class ContactUsForm extends React.Component<ContactFormProps, ContactFormStates>
           {this.renderError()}
           {this.renderServerError()}
           <div>
-            <InputBlockLeft>
+            <div className="contactForm-InputBlockLeft">
               <label style={this.labelStyle} htmlFor="name">
                 Name
             </label>
@@ -204,8 +180,8 @@ class ContactUsForm extends React.Component<ContactFormProps, ContactFormStates>
                 value={this.state.formKey.name}
                 onChange={this.handleChange}
               ></input>
-            </InputBlockLeft>
-            <InputBlockRight>
+            </div>
+            <div className="contactForm-InputBlockRight">
               <label htmlFor="email" style={this.labelStyle}>
                 Email
             </label>
@@ -216,7 +192,7 @@ class ContactUsForm extends React.Component<ContactFormProps, ContactFormStates>
                 value={this.state.formKey.email}
                 onChange={this.handleChange}
               ></input>
-            </InputBlockRight>
+            </div>
           </div>
           <div style={{ width: "100%", paddingTop: "10px", paddingBottom: "30px", marginTop: "35px" }}>
             <label htmlFor="message" style={this.labelStyle}>
@@ -241,7 +217,7 @@ class ContactUsForm extends React.Component<ContactFormProps, ContactFormStates>
             ></Button>
           </div>
         </form>
-      </Container>
+      </div>
     );
   }
 }
