@@ -2,15 +2,18 @@ import React from "react"
 import styled from "styled-components"
 
 const Block = styled.div`
+  background: white;
+  z-index: 1;
   padding: 1%;
-  height: 100%;
-  width: 90%;
+  height: 575px;
+  width: 60%;
   border-style: solid;
-  display: inline-block;
-  margin-bottom: 2%;
-  @media (max-width: 750px){
-
-  }
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 4%;
+  left: 19%;
+  align-items: center;
 `;
 
 const Header = styled.h2`
@@ -75,7 +78,7 @@ class Form extends React.Component<MyProps, MyState> {
       whyJoin: "",
       technicalAns: "",
       termCheckedArray: [false, false, false, false, false],
-      termTypeCheckedArray: [false, false, false]
+      termTypeCheckedArray: [false, false, false],
     };
   }
 
@@ -189,7 +192,7 @@ class Form extends React.Component<MyProps, MyState> {
             <LongInput placeholder={this.props.technicalQ} onChange = {this.handleTextAreaChange.bind(this)} name = "entry.1372043873" required/>
             <button type="submit" style = {SubmitBtnStyle}><b>Submit</b></button>
           </InputForm>
-        </Block>
+          </Block>
       </div>
     );
   }

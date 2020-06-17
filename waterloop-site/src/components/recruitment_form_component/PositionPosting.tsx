@@ -63,6 +63,16 @@ const Line = styled.hr`
   }
 `;
 
+const CloseBtn = styled.button`
+  background: #FED138;
+  font-size: large;
+  font-family: 'IBM Plex Sans';
+  position: fixed;
+  top: 5.5%;
+  right: 19.5%;
+  z-index: 2;
+`;
+
 
 type MyProps = { role: string, description: string, skills: string, technicalQ: string, termList: [string, string, string, string, string]}
 type MyState = {joinClicked: boolean}
@@ -104,6 +114,11 @@ class PositionPosting extends React.Component<MyProps, MyState> {
           ></Button>
         </ButtonBlock>
         <Line></Line>
+        {this.state.joinClicked?
+          <CloseBtn
+          onClick = {this.onClick.bind(this)}
+        >X</CloseBtn>
+        : null}
         {this.state.joinClicked?
           <Form
             role = {this.props.role}
