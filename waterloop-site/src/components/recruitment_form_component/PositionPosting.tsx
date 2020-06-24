@@ -50,6 +50,20 @@ const Block = styled.div`
   }
 `;
 
+const Background = styled.div`
+  background-color: rgb(0,0,0,0.25);
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  align-items: center;
+  
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+`;
+
 const ButtonBlock = styled.div`
     font-size: 1.5vw;
     float: right;
@@ -68,9 +82,9 @@ const CloseBtn = styled.button`
   font-size: large;
   font-family: 'IBM Plex Sans';
   position: fixed;
-  top: 5.5%;
+  top: 4%;
   right: 19.5%;
-  z-index: 2;
+  z-index: 3;
 `;
 
 
@@ -114,6 +128,9 @@ class PositionPosting extends React.Component<MyProps, MyState> {
           ></Button>
         </ButtonBlock>
         <Line></Line>
+        {this.state.joinClicked?       
+        <Background></Background>
+        : null}
         {this.state.joinClicked?
           <CloseBtn
           onClick = {this.onClick.bind(this)}
@@ -127,7 +144,6 @@ class PositionPosting extends React.Component<MyProps, MyState> {
           ></Form>
         : null}
       </Block>
-
 
     );
   }
