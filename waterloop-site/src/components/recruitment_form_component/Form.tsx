@@ -3,15 +3,15 @@ import styled from "styled-components"
 
 const Block = styled.div`
   background: white;
-  z-index: 1;
+  z-index: 2;
   padding: 1%;
-  height: 575px;
+  height: 585px;
   width: 60%;
   border-style: solid;
   display: flex;
   justify-content: center;
   position: fixed;
-  top: 4%;
+  top: 2%;
   left: 19%;
   align-items: center;
 `;
