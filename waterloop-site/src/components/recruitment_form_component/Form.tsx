@@ -119,11 +119,11 @@ class Form extends React.Component<MyProps, MyState> {
       this.setState({termTypeCheckedArray: [true, false, false]});
       this.setState({termType: "School Term"});
     }
-    else if (event.currentTarget.name === "termType" && event.currentTarget.id == "b"){
+    else if (event.currentTarget.name === "termType" && event.currentTarget.id === "b"){
       this.setState({termTypeCheckedArray: [false, true, false]});
       this.setState({termType: "Work/Off Term in Waterloo"});
     }
-    else if (event.currentTarget.name === "termType" && event.currentTarget.id == "c"){
+    else if (event.currentTarget.name === "termType" && event.currentTarget.id === "c"){
       this.setState({termTypeCheckedArray: [false, false, true]});
       this.setState({termType: "Not in Waterloo"});
     }
