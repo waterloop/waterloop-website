@@ -1,5 +1,5 @@
 import React from 'react'
-import PositionPosting from "../components/recruitment_form_component";
+import PositionPosting from "../components/RecruitmentForm";
 
 const samplePostingsData = [
     {
