@@ -5,7 +5,6 @@ const Block = styled.div`
   background: white;
   z-index: 2;
   padding: 1%;
-  height: 585px;
   width: 60%;
   border-style: solid;
   display: flex;
