@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 type BackgroundColor = "yellow" | "black";
 type TextColor = "yellow" | "white" | "black";
@@ -60,12 +60,15 @@ const Button: React.FC<Props> = (props) => {
 
   const ButtonDiv = styled.button`
     background-color: ${ColorMap[backgroundColor]};
-    border-radius: 15px;
-    width: 155px;
+    border-radius: 17px;
+    min-width: 50px;
+    max-width: auto;
     height: 34px;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 5px 30px;
+    // align-self: center;
     border-color:  ${ColorMap[backgroundColor]};
     &:hover {
       background-color: ${ColorMap[textColor]};
@@ -80,7 +83,7 @@ const Button: React.FC<Props> = (props) => {
     color: ${ColorMap[textColor]};
     font-size: large;
     font-family: IBM Plex Sans;
-    font-weight: bold;
+    // font-weight: bold;
     margin: 0;
     ${ButtonDiv}:hover & {
       color: ${ColorMap[backgroundColor]};

@@ -2,9 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import LinkComponent from "../../components/Footer/LinkComponent";
 import RouteComponent from "../../components/Footer/RouteComponent";
-import Logo from "../../static/img/logos/Icon_Yellow.png";
-import { findByLabelText } from "@testing-library/react";
-import { Link } from "react-router-dom";
+import Logo from "../../static/img/logos/Logo.svg";
 
 const size = {
   mobile: "420px",
@@ -14,13 +12,11 @@ const size = {
 
 const FooterWrapper = styled.div`
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
   position: relative;
+  bottom:  0;
+  justify-content: space-between;
   width: 100%;
-  height: 175px;
-  bottom: 0;
-  margin-bottom: 0;
+  height: 276px;
   background: #232636;
 
   @media (max-width: ${size.mobile}) {
@@ -32,8 +28,9 @@ const FooterWrapper = styled.div`
 
 const LogoWrapper = styled.div`
   align-self: center;
-  margin-left: 10%;
-  transform: scale(1.25, 1.25);
+  margin-left: 183px;
+  height: 91.11px;
+  widthL 154.32px;
 
   @media (max-width: ${size.mobile}) {
     margin: 30px 0 30px 20px;
@@ -54,9 +51,9 @@ const LogoWrapper = styled.div`
 const SocialMediaWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 10% 0% 10% 10%;
-  padding-bottom: 2px;
+  justify-content: space-evenly;
   font-size: 18px;
+  height: 124px;
   @media (max-width: ${size.mobile}) {
     margin: 5px 10px 5px 2px;
     font-size: 13px;
@@ -74,8 +71,8 @@ const SocialMediaWrapper = styled.div`
 const RoutingWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 10% 10% 0% 0%;
-  padding-bottom: 2px;
+  justify-content: space-evenly;
+  height: 124px;
   font-size: 18px;
   @media (max-width: ${size.mobile}) {
     margin: 5px 20px 5px 2px;
@@ -92,11 +89,12 @@ const RoutingWrapper = styled.div`
 `;
 
 const LinksWrapper = styled.div`
-  display: flex;
+  display: flex;  
+  align-items: center;
+  justify-content: space-evenly;
   width: 300px;
-  height: 175px;
+  height: 276px;
   margin-right: 150px;
-  padding-top: 10px;
   @media (max-width: ${size.mobile}) {
     margin: 5% 5% 20% 15%;
   }
@@ -113,15 +111,15 @@ class FooterComponent extends React.Component {
     return (
       <FooterWrapper>
         <LogoWrapper>
-          <img src={Logo}></img>
+          <img src={Logo} alt="Waterloop Logo" ></img>
         </LogoWrapper>
 
         <LinksWrapper>
           <RoutingWrapper>
             <RouteComponent link="/team" title="Our Team"></RouteComponent>
-            <RouteComponent link="" title="Hyperloop"></RouteComponent>
-            <RouteComponent link="" title="Sponsors"></RouteComponent>
-            <RouteComponent link="" title="Contact Us"></RouteComponent>
+            <RouteComponent link="/" title="Hyperloop"></RouteComponent>
+            <RouteComponent link="/sponsors" title="Sponsors"></RouteComponent>
+            <RouteComponent link="/contact" title="Contact Us"></RouteComponent>
           </RoutingWrapper>
 
           <SocialMediaWrapper>

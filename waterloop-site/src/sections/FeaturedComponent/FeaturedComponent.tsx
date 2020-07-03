@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import SimpleFeatComp from "../../components/SimpleFeatures/index";
-import * as data from "../../static/copy/exFeatsModel.json";
+import {SimpleFeatComp} from "components/SimpleFeatures";
+import * as data from "static/copy/exFeatsModel.json";
 
 const Header = styled.h2`
     margin-left: 30px;
@@ -15,7 +15,7 @@ class FeatPage extends React.Component {
     // Use this to assemble the feature sections with proper XML tags for the render area.
     assembleFeatSections(featInfo: Array<any>) {
         var features: JSX.Element[] = [];
-        let assetDir = "../static/img/assets/"; // NOTE: I dunno how to properly reference the assets directory so this is the workaround + require statements.
+        let assetDir = "static/img/assets/"; // NOTE: I dunno how to properly reference the assets directory so this is the workaround + require statements.
 
         featInfo.forEach((value) => {
             features.push(

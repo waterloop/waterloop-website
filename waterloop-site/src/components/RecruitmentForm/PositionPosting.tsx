@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import Button from "../Button/CTAButton"
+import {Button} from "components/Button"
 import Form from "./Form"
 
 const TextBlock = styled.div`
@@ -58,7 +58,7 @@ const Background = styled.div`
   top: 0%;
   left: 0%;
   align-items: center;
-  
+
   z-index: 1;
   width: 100%;
   height: 100%;
@@ -128,7 +128,7 @@ class PositionPosting extends React.Component<MyProps, MyState> {
           ></Button>
         </ButtonBlock>
         <Line></Line>
-        {this.state.joinClicked?       
+        {this.state.joinClicked?
         <Background></Background>
         : null}
         {this.state.joinClicked?

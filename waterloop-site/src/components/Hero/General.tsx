@@ -9,8 +9,9 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100vh;
+  height: 95vh;
   background-color: #232635;
+  margin-bottom: 2em;
 `;
 
 const TitleContainer = styled.div`
