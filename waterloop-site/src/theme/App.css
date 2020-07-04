@@ -1,0 +1,38 @@
+h1 {
+    font-size: 64px;
+    font-family: 'IBM Plex Sans';
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 12pt;
+}
+
+h3 {
+    font-size: 30px;
+    font-family: 'IBM Plex Sans';
+    font-weight: 500;
+}
+
+h4 {
+    color: black;
+}
+
+h5 {
+    color: black;
+    font-family: 'IBM Plex Sans';
+    font-size: 36px;
+    font-style: italic;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+h6 {
+    color: black;
+    font-family: 'IBM Plex Sans';
+    font-size: 18px;
+    font-weight: normal;
+    margin-top: 1em;
+    margin-bottom: 0;
+}

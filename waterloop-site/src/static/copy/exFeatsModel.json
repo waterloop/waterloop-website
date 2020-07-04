@@ -1,0 +1,18 @@
+{
+    "features": [{
+            "imgSrc": "feat1.png",
+            "imgAlt": "Wireframe structure of Goose 1 Hyperloop body",
+            "desc": "This is the ideal Hyperloop body frame. You may not like it, but this is a Hyperloop at its peak performance. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut."
+        },
+        {
+            "imgSrc": "feat2.png",
+            "imgAlt": "Some brake structure of Goose 1 Hyperloop body",
+            "desc": "Brake structures ;););)"
+        },
+        {
+            "imgSrc": "feat3.png",
+            "imgAlt": "Some other brake structure of Goose 1 Hyperloop body",
+            "desc": "Pray to Mr. Goose that React works."
+        }
+    ]
+}
