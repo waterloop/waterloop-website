@@ -22,7 +22,8 @@ const SponsorComponent = styled("div")<SponsorComponentInterface>(
     background: "#f4f4f4",
     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
     borderRadius: "15px",
-    overflow: "none"
+    overflow: "none",
+    maxWidth:"650px"
   },
   variant({
     variants: {
