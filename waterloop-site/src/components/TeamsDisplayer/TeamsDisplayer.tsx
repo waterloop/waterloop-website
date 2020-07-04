@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 // Types and interfaces
 import ProfileType from '../../interfaces'
-import { QueryData, SubteamProps, TeamPageProps, TeamPageState } from './interfaces'
+import { QueryData, SubteamProps, TeamsDisplayerProps, TeamsDisplayerState } from './interfaces'
 
 // Components
 import { ProfileSection } from '../../components/Profiles'
@@ -27,8 +27,8 @@ const Page = styled.div`
   }
 `
 
-export default class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
-  constructor(props: TeamPageProps) {
+export default class TeamsDisplayer extends React.Component<TeamsDisplayerProps, TeamsDisplayerState> {
+  constructor(props: TeamsDisplayerProps) {
     super(props)
     this.state = {
       teamFilters: Array(5).fill(false),

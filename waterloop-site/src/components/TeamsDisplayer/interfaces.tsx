@@ -7,11 +7,11 @@ export interface SubteamProps {
   members: Array<ProfileType>
 }
 
-export interface TeamPageProps {
+export interface TeamsDisplayerProps {
   initFilterSetting: number
 }
 
-export interface TeamPageState {
+export interface TeamsDisplayerState {
   teamFilters: Array<boolean>,
   teamFilterLabels: Array<string>,
   memberData: Map<string, Array<ProfileType>>,

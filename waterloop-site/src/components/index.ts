@@ -5,7 +5,8 @@ export * from './Footer';
 export * from './NavBar';
 export * from './RecruitmentForm';
 export * from './Sponsors';
-export * from './Teams';
+export * from './SubteamDescriptions';
 export * from './GooseRoster';
 export * from './SimpleFeatures';
-export * from './Hero'
+export * from './Hero';
+export * from './TeamsDisplayer';

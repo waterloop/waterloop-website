@@ -1,13 +1,13 @@
 import React from "react";
 import Hero from "components/Hero/General"
-import TeamPage from "./TeamsPage"
+import TeamsDisplayer from "components/TeamsDisplayer"
 
 class Teams extends React.Component {
     render() {
         return (
             <div>
                 <Hero title="Meet The Team" description="Learn about our geese."></Hero>
-                <TeamPage initFilterSetting={0} />
+                <TeamsDisplayer initFilterSetting={0} />
             </div>
         );
     }
