@@ -11,12 +11,11 @@ const size = {
 
   
 const SuperSonicImg = styled(SponsorImgTemplate)`
-
 width: 40%;
 height:250px;
 @media screen and (max-width:${size.mobile}){
-    width:80%;
-    height:250px;
+    width:40%;
+    height:80px;
 }
 `
 interface MyProps {
