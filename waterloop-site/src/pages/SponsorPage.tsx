@@ -42,8 +42,8 @@ function SponsorList() {
     <div>
       <CustomHeading>Hypersonic Sponsor</CustomHeading>
       <TierWrapper>
-        <Hypersonic/>
-        <Hypersonic/>
+        <Hypersonic src={UW_Engineering}/>
+        <Hypersonic src={UW_Engineering}/>
       </TierWrapper>
 
       <CustomHeading>Supersonic Sponsor</CustomHeading>

@@ -19,11 +19,14 @@ height:250px;
     height:250px;
 }
 `
+interface MyProps {
+    src:any;
+}
 
-class HyperSonic extends React.Component{
+class HyperSonic extends React.Component<MyProps>{
     render(){
         return(
-            <HyperSonicImg src ={UW_Engineering}/>
+            <HyperSonicImg src ={this.props.src}/>
         )
     }
 }
