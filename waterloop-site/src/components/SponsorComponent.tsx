@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { variant, space } from "styled-system";
+import { variant, space, minWidth } from "styled-system";
 
 const size = {
   mobile: "420px",
@@ -23,15 +23,17 @@ const SponsorComponent = styled("div")<SponsorComponentInterface>(
     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
     borderRadius: "15px",
     overflow: "none",
-    maxWidth:"650px"
+    maxWidth:"650px",
+    minWidth:"240px"
   },
   variant({
     variants: {
       Hypersonic: {
         width: "60%",
         height: "250px",
-        "@media screen and (max-width: ${size.mobile})": {
-          height: "184px",
+        "@media screen and (min-width: ${size.mobile})": {
+          height: "10px",
+          backgroundColor:"purple",
           width: "80%"
         }
       },
