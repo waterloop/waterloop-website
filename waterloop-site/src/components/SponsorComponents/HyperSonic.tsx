@@ -1,6 +1,5 @@
 import SponsorImgTemplate from "./SponsorTemplate";
 import styled from "styled-components";
-import UW_Engineering from "./TestingImage/UW_Engineering.png"
 import React from "react";
 
 const size = {
@@ -16,7 +15,7 @@ width: 60%;
 height:250px;
 @media screen and (max-width:${size.mobile}){
     width:80%;
-    height:250px;
+    height:140px;
 }
 `
 interface MyProps {
