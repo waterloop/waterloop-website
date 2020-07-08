@@ -15,8 +15,8 @@ const TransSonicImg = styled(SponsorImgTemplate)`
 width: 30%;
 height:250px;
 @media screen and (max-width:${size.mobile}){
-    width:80%;
-    height:250px;
+    width:30%;
+    height:50px;
 }
 `
 interface MyProps {
