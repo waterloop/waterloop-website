@@ -15,7 +15,7 @@ width: 60%;
 height:250px;
 @media screen and (max-width:${size.mobile}){
     width:80%;
-    height:140px;
+    height:100px;
 }
 `
 interface MyProps {
