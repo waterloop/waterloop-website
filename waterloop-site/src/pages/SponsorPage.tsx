@@ -23,12 +23,13 @@ const CustomHeading = styled.h1`
 
 const TierWrapper = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content:center;
+  flex-wrap:wrap;
 
 
-  @media (max-width: ${size.mobile}) {
+  @media screen and (max-width: ${size.mobile}) {
     position: relative;
     display: flex;
     flex-direction: row;

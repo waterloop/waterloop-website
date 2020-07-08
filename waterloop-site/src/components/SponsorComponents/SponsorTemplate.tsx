@@ -3,10 +3,10 @@ import styled from "styled-components";
 
 
 const size = {
-    mobile: "420px",
-    tabletM: "800px",
-    tabletL: "1100px"
-  };
+  mobile: "420px",
+  tabletM: "800px",
+  tabletL: "1100px"
+};
 
 
 const SponsorImgTemplate = styled.img`
@@ -17,7 +17,11 @@ const SponsorImgTemplate = styled.img`
     align-items: center;
     border-radius: 15px;
     overflow: none;
-    max-width:650px;
+
+@media screen (min-width:${size.mobile}){
+  min-width:240px;
+  max-width:650px;
+ }
 `
 
 export default SponsorImgTemplate;
