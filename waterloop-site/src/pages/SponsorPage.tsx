@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import SponsorComponent from "../components/SponsorComponent";
 import Hypersonic from "../components/SponsorComponents/HyperSonic"
 import TransSonic from "../components/SponsorComponents/TransSonic";
 import SuperSonic from "../components/SponsorComponents/SuperSonic";
@@ -29,7 +28,7 @@ const TierWrapper = styled.div`
   justify-content:center;
 
 
-  @media (min-width: ${size.mobile}) {
+  @media (max-width: ${size.mobile}) {
     position: relative;
     display: flex;
     flex-direction: row;
