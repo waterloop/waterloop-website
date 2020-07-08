@@ -18,7 +18,6 @@ const SponsorImgTemplate = styled.img`
     border-radius: 15px;
     overflow: none;
     max-width:650px;
-    min-width:240px;
 `
 
 export default SponsorImgTemplate;
