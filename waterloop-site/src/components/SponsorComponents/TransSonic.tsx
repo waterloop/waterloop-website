@@ -19,11 +19,14 @@ height:250px;
     height:250px;
 }
 `
+interface MyProps {
+    src: any;
+}
 
-class TransSonic extends React.Component{
+class TransSonic extends React.Component<MyProps>{
     render(){
         return(
-            <TransSonicImg src ={UW_Engineering}/>
+            <TransSonicImg src ={this.props.src}/>
         )
     }
 }

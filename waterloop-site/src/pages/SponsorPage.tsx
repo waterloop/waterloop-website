@@ -55,12 +55,12 @@ function SponsorList() {
     </TierWrapper>
       <CustomHeading>Transsonic Sponsor</CustomHeading>
       <TierWrapper>
-        <TransSonic/>
-        <TransSonic/>
-        <TransSonic/>
-        <TransSonic/>
-        <TransSonic/>
-        <TransSonic/>
+        <TransSonic src = {UW_Engineering}/>
+        <TransSonic src = {UW_Engineering}/>
+        <TransSonic src = {UW_Engineering}/>
+        <TransSonic src = {UW_Engineering}/>
+        <TransSonic src = {UW_Engineering}/>
+        <TransSonic src = {UW_Engineering}/>
       </TierWrapper>
       <CustomHeading>Sonic Sponsor</CustomHeading>
       <TierWrapper>
