@@ -19,11 +19,13 @@ height:250px;
     height:250px;
 }
 `
-
-class SuperSonic extends React.Component{
+interface MyProps {
+    src:any;
+}
+class SuperSonic extends React.Component<MyProps>{
     render(){
         return(
-            <SuperSonicImg src ={UW_Engineering}/>
+            <SuperSonicImg src ={this.props.src}/>
         )
     }
 }

@@ -48,10 +48,10 @@ function SponsorList() {
 
       <CustomHeading>Supersonic Sponsor</CustomHeading>
       <TierWrapper>
-        <SuperSonic/>
-        <SuperSonic/>
-        <SuperSonic/>
-        <SuperSonic/>
+        <SuperSonic src = {UW_Engineering}/>
+        <SuperSonic src = {UW_Engineering}/>
+        <SuperSonic src = {UW_Engineering}/>
+        <SuperSonic src = {UW_Engineering}/>
     </TierWrapper>
       <CustomHeading>Transsonic Sponsor</CustomHeading>
       <TierWrapper>
