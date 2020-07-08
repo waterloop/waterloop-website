@@ -1,6 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import SponsorComponent from "../components/SponsorComponent";
+import Hypersonic from "../components/SponsorComponents/HyperSonic"
+import TransSonic from "../components/SponsorComponents/TransSonic";
+import SuperSonic from "../components/SponsorComponents/SuperSonic";
+import Sonic from "../components/SponsorComponents/Sonic";
+import UW_Engineering from "../components/SponsorComponents/TestingImage/UW_Engineering.png"
+
 
 const size = {
   mobile: "420px",
@@ -31,46 +37,46 @@ const TierWrapper = styled.div`
   }
 `;
 
-function HypersonicSponsor() {
+function SponsorList() {
   return (
     <div>
       <CustomHeading>Hypersonic Sponsor</CustomHeading>
       <TierWrapper>
-        <SponsorComponent variant="Hypersonic" />
-        <SponsorComponent variant="Hypersonic" />
+        <Hypersonic/>
+        <Hypersonic/>
       </TierWrapper>
 
       <CustomHeading>Supersonic Sponsor</CustomHeading>
       <TierWrapper>
-        <SponsorComponent variant="Supersonic" />
-        <SponsorComponent variant="Supersonic" />
-        <SponsorComponent variant="Supersonic" />
-        <SponsorComponent variant="Supersonic" />
-      </TierWrapper>
+        <SuperSonic/>
+        <SuperSonic/>
+        <SuperSonic/>
+        <SuperSonic/>
+    </TierWrapper>
       <CustomHeading>Transsonic Sponsor</CustomHeading>
       <TierWrapper>
-        <SponsorComponent variant="Transsonic" />
-        <SponsorComponent variant="Transsonic" />
-        <SponsorComponent variant="Transsonic" />
-        <SponsorComponent variant="Transsonic" />
-        <SponsorComponent variant="Transsonic" />
-        <SponsorComponent variant="Transsonic" />
+        <TransSonic/>
+        <TransSonic/>
+        <TransSonic/>
+        <TransSonic/>
+        <TransSonic/>
+        <TransSonic/>
       </TierWrapper>
       <CustomHeading>Sonic Sponsor</CustomHeading>
       <TierWrapper>
-        <SponsorComponent variant="Sonic" />
-        <SponsorComponent variant="Sonic" />
-        <SponsorComponent variant="Sonic" />
-        <SponsorComponent variant="Sonic" />
-        <SponsorComponent variant="Sonic" />
-        <SponsorComponent variant="Sonic" />
-        <SponsorComponent variant="Sonic" />
-        <SponsorComponent variant="Sonic" />
-        <SponsorComponent variant="Sonic" />
-        <SponsorComponent variant="Sonic" />
+        <Sonic src = {UW_Engineering}/>
+        <Sonic src = {UW_Engineering}/>
+        <Sonic src = {UW_Engineering}/>
+        <Sonic src = {UW_Engineering}/>
+        <Sonic src = {UW_Engineering}/>
+        <Sonic src = {UW_Engineering}/>
+        <Sonic src = {UW_Engineering}/>
+        <Sonic src = {UW_Engineering}/>
+        <Sonic src = {UW_Engineering}/>
+        <Sonic src = {UW_Engineering}/>
       </TierWrapper>
     </div>
   );
 }
 
-export default HypersonicSponsor;
+export default SponsorList;

@@ -1,6 +1,5 @@
 import SponsorImgTemplate from "./SponsorTemplate";
 import styled from "styled-components";
-import UW_Engineering from "./TestingImage/UW_Engineering.png"
 import React from "react";
 
 const size = {
@@ -10,22 +9,25 @@ const size = {
 };
 
   
-const TransSonicImg = styled(SponsorImgTemplate)`
+const SonicImg = styled(SponsorImgTemplate)`
 
-width: 30%;
+width: 20%;
 height:250px;
 @media screen and (max-width:${size.mobile}){
     width:80%;
     height:250px;
 }
 `
+interface MyProps  {
+    src: any
+}
 
-class TransSonic extends React.Component{
+class Sonic extends React.Component<MyProps>{
     render(){
         return(
-            <TransSonicImg src ={UW_Engineering}/>
+            <SonicImg src ={this.props.src}/>
         )
     }
 }
 
-export default TransSonic;
+export default Sonic;

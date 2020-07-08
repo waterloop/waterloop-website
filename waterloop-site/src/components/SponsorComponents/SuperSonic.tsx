@@ -10,9 +10,9 @@ const size = {
 };
 
   
-const TransSonicImg = styled(SponsorImgTemplate)`
+const SuperSonicImg = styled(SponsorImgTemplate)`
 
-width: 30%;
+width: 40%;
 height:250px;
 @media screen and (max-width:${size.mobile}){
     width:80%;
@@ -20,12 +20,12 @@ height:250px;
 }
 `
 
-class TransSonic extends React.Component{
+class SuperSonic extends React.Component{
     render(){
         return(
-            <TransSonicImg src ={UW_Engineering}/>
+            <SuperSonicImg src ={UW_Engineering}/>
         )
     }
 }
 
-export default TransSonic;
+export default SuperSonic;
