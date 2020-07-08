@@ -14,8 +14,8 @@ const SonicImg = styled(SponsorImgTemplate)`
 width: 20%;
 height:250px;
 @media screen and (max-width:${size.mobile}){
-    width:80%;
-    height:250px;
+    width:20%;
+    height:30px;
 }
 `
 interface MyProps  {
