@@ -2,7 +2,7 @@ import React from "react";
 import Hero from "components/Hero/Landing"
 import { TextWithImage } from "components/TextWithImage";
 import TextWithImageData from "../static/copy/TextWithImage.json"
-import { Sponsors } from "components/Sponsors";
+import { Sponsors } from "components/SponsorsLanding";
 
 var title = "";
 var text = "";
@@ -24,6 +24,7 @@ class Home extends React.Component {
                     text={text}
                     image={image}
                 />
+                <Sponsors></Sponsors>
             </div>
         );
     }

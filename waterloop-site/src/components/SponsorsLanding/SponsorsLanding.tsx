@@ -53,7 +53,7 @@ const Block = styled.div`
 
 type MyProps = {};
 
-class Sponsors extends React.Component<MyProps> {
+class SponsorsLanding extends React.Component<MyProps> {
   render() {
     return (
       <Block>
@@ -83,4 +83,4 @@ class Sponsors extends React.Component<MyProps> {
   }
 }
 
-export default Sponsors;
+export default SponsorsLanding;

@@ -30,7 +30,7 @@ const LogoWrapper = styled.div`
   align-self: center;
   margin-left: 183px;
   height: 91.11px;
-  widthL 154.32px;
+  width: 154.32px;
 
   @media (max-width: ${size.mobile}) {
     margin: 30px 0 30px 20px;
@@ -54,6 +54,7 @@ const SocialMediaWrapper = styled.div`
   justify-content: space-evenly;
   font-size: 18px;
   height: 124px;
+  
   @media (max-width: ${size.mobile}) {
     margin: 5px 10px 5px 2px;
     font-size: 13px;
@@ -74,6 +75,7 @@ const RoutingWrapper = styled.div`
   justify-content: space-evenly;
   height: 124px;
   font-size: 18px;
+  
   @media (max-width: ${size.mobile}) {
     margin: 5px 20px 5px 2px;
     font-size: 13px;

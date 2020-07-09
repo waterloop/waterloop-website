@@ -68,7 +68,6 @@ const Button: React.FC<Props> = (props) => {
     align-items: center;
     justify-content: center;
     padding: 5px 30px;
-    // align-self: center;
     border-color:  ${ColorMap[backgroundColor]};
     &:hover {
       background-color: ${ColorMap[textColor]};

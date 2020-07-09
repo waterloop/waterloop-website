@@ -4,7 +4,7 @@ export * from './ContactForm';
 export * from './Footer';
 export * from './NavBar';
 export * from './RecruitmentForm';
-export * from './Sponsors';
+export * from './SponsorsLanding';
 export * from './Teams';
 export * from './GooseRoster';
 export * from './SimpleFeatures';
