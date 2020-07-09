@@ -10,7 +10,7 @@ import { Button } from "components/Button";
 
 type MyProps = {};
 
-class Sponsors extends React.Component<MyProps> {
+class SponsorsLanding extends React.Component<MyProps> {
   render() {
     return (
       <div className="Block-Sponsors">
@@ -40,4 +40,4 @@ class Sponsors extends React.Component<MyProps> {
   }
 }
 
-export default Sponsors;
+export default SponsorsLanding;
