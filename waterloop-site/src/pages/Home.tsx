@@ -24,7 +24,6 @@ class Home extends React.Component {
                     text={text}
                     image={image}
                 />
-                <Sponsors></Sponsors>
             </div>
         );
     }
