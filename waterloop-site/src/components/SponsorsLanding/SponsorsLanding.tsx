@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import BrentsWeldingAndFab from "../../static/img/sponsors/BrentsWeldingAndFab.png";
 import UW_Engineering from "../../static/img/sponsors/UW_Engineering.png";
 import UW_Engineering_Endowment from "../../static/img/sponsors/UW_Engineering_Endowment.png";

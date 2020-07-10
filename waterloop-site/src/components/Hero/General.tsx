@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import DownArrowImg from "../../static/img/background/downArrow.svg";
 import "../../theme/Global.css";
 
@@ -16,7 +15,7 @@ class heroComponent extends React.Component<MyProps> {
           <h3>{this.props.description}</h3>
         </div>
         <div className="generalArrowContainer">
-          <img className="generalDownArrow" src={DownArrowImg}></img>
+          <img className="generalDownArrow" src={DownArrowImg} alt="navigation arrow"></img>
         </div>
       </div>
     );

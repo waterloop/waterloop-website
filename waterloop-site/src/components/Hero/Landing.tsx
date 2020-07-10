@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import { Button } from "components/Button";
 import BuildingsImg from "static/img/background/buildings.svg";
 import DownArrowImg from "static/img/background/downArrow.svg";
@@ -15,7 +14,7 @@ class heroComponent extends React.Component<MyProps> {
         <div className="landingContent">
           {/* waterloop svg */}
           <div className="landingWaterloopContainer">
-            <img className="landingWaterloop" src={WaterloopImg}></img>
+            <img className="landingWaterloop" src={WaterloopImg} alt="waterloop logo"></img>
           </div>
           <div className="landingDescriptionContainer">
             <h3>{this.props.description}</h3>
@@ -30,10 +29,10 @@ class heroComponent extends React.Component<MyProps> {
         </div>
 
         <div className="landingArrowContainer">
-          <img className="landingDownArrow" src={DownArrowImg}></img>
+          <img className="landingDownArrow" src={DownArrowImg} alt="navigation"></img>
         </div>
         <div className="landingBuildingContainer">
-          <img className="landingBuildings" src={BuildingsImg}></img>
+          <img className="landingBuildings" src={BuildingsImg} alt="buildings"></img>
         </div>
       </div>
     );

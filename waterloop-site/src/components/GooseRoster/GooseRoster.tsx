@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import "../../theme/Global.css";
 
 
@@ -40,7 +39,7 @@ class GooseRoster extends React.Component<imgProps> {
           <button className="GlobalRoster-Arrow" onClick={this.previousSlide}>
             &#9664;
           </button>
-          <img className="GlobalRoster-Img" src={this.props.imgUrls[this.state.currentImageIndex]}></img>
+          <img className="GlobalRoster-Img" src={this.props.imgUrls[this.state.currentImageIndex]} alt="goose rosters"></img>
           <button className="GlobalRoster-Arrow" onClick={this.nextSlide}>
             &#9654;
           </button>

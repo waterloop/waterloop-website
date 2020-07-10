@@ -1,6 +1,5 @@
 import React from "react"
-import styled from "styled-components"
-import "../../theme/global.css"
+import "../../theme/Global.css"
 
 type MyProps = { role: string, technicalQ: string, termList: [string, string, string, string, string] };
 type MyState = {

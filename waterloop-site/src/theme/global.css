@@ -16,21 +16,6 @@ code {
     monospace;
 }
 
-h3 {
-  font-size: 25px;
-  color: #ffffff;
-  margin-top: 0pt;
-  font-weight: 400;
-}
-
-h1 {  
-  font-size: 64pt;
-  color: #ffffff;
-  text-transform: uppercase;
-  margin-bottom: 0pt;
-  font-family: 'IBM Plex Sans';
-  font-weight: 600;
-}
 
 .FooterWrapper{
   display: flex;

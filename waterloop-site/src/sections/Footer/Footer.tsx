@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import LinkComponent from "../../components/Footer/LinkComponent";
 import RouteComponent from "../../components/Footer/RouteComponent";
 import Logo from "../../static/img/logos/Logo.svg";
@@ -16,9 +15,9 @@ class FooterComponent extends React.Component {
         <div className="LinksWrapper">
           <div className="RoutingWrapper">
             <RouteComponent link="/team" title="Our Team"></RouteComponent>
-            <RouteComponent link="" title="Hyperloop"></RouteComponent>
-            <RouteComponent link="" title="Sponsors"></RouteComponent>
-            <RouteComponent link="" title="Contact Us"></RouteComponent>
+            <RouteComponent link="/" title="Hyperloop"></RouteComponent>
+            <RouteComponent link="/sponsors" title="Sponsors"></RouteComponent>
+            <RouteComponent link="/contact" title="Contact Us"></RouteComponent>
           </div>
 
           <div className="SocialMediaWrapper">
