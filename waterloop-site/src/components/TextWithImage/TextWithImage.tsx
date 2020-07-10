@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Button } from 'components/Button/';
-import "../../theme/global.css";
+import "../../theme/Global.css";
 
 type MyProps = { title: string; text: string; image: string; };
 

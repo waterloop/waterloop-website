@@ -17,29 +17,19 @@ code {
 }
 
 h3 {
-  font-size: 30px;
+  font-size: 25px;
   color: #ffffff;
   margin-top: 0pt;
   font-weight: 400;
 }
 
-h1 {  font-size: 64pt;
+h1 {  
+  font-size: 64pt;
   color: #ffffff;
   text-transform: uppercase;
   margin-bottom: 0pt;
-}
-
-.btn {
-  display: flex;
-  justify-content: center;
-  background-color: transparent;
-  color: #ffffff;
-  border-radius: 100pt;
-  border: 2px solid white;
-  height: 50px;
-  width: 200px;
-  text-decoration: none;
-  line-height: 10px;
+  font-family: 'IBM Plex Sans';
+  font-weight: 600;
 }
 
 .FooterWrapper{
@@ -177,14 +167,13 @@ h1 {  font-size: 64pt;
 }
 
 .TextBlock-TextWithImage {
-  text-align: justify;
-  width: 50%;
-  height: 100%;
-  padding-right: 3%;
   display: flex;
   flex-direction: column;
-  margin-bottom: 3em;
-  margin-top: 2em;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 548px;
+  height: 100%;
+  padding-right: 3%;
   @media (max-width: 500px) {
     display: inline;
     padding-right: 0;
@@ -194,10 +183,9 @@ h1 {  font-size: 64pt;
 .Img-TextWithImage { /* type img */
   display: flex;
   flex-direction: column;
-  width: 25vw;
-  height: auto;
-  border-radius: 20pt;
-  margin-top: 3%;
+  width: 525px;
+  height: 408px;
+  border-radius: 15px;
   @media (max-width: 500px) {
     display: none;
   }
@@ -205,7 +193,8 @@ h1 {  font-size: 64pt;
 
 .Header-TextWithImage { /* type h2*/
   font-style: italic;
-  font-size: 1.7vw;
+  font-family: 'IBM Plex Sans';
+  font-size: 36px;
   @media (max-width: 500px) {
     margin-left: 25%;
     margin-right: 25%;
@@ -215,7 +204,9 @@ h1 {  font-size: 64pt;
 }
 
 .Text-TextWithImage { /* type p*/
-  font-size: 18px;
+  font-size: 20px;
+  font-family: 'IBM Plex Sans';
+  line-height: 1.5;
   @media (max-width: 500px) {
     margin-left: 10%;
     margin-right: 10%;
@@ -226,9 +217,12 @@ h1 {  font-size: 64pt;
 
 .Block-TextWithImage {
   display: flex;
-  align-items: center;
+  align-self: center;
   justify-content: center;
   width: 100%;
+  height: 408px;
+  margin-bottom: 3em;
+  margin-top: 2em;
 }
 
 .ButtonBlock-TextWithImage {
@@ -290,31 +284,47 @@ h1 {  font-size: 64pt;
 
 .Img-Sponsors { /* type img */
   display: flex;
-  align-content: center;
-  width: 19vw;
-  height: 15vh;
-  margin: 40px;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  width: 319px;
+  height: 184px;
+  margin-left: 0;
+  margin-right: 40px;
+  margin-top: 10px;
+  margin-bottom: 40px;
   padding: 5px;
   border: 2px solid #aab7c4;
   border-radius: 10px;
+  background-color: #F4F4F4;
 }
 
-.Header-Sponsors { /* type h2 */
+.Header-Sponsors {
+  padding-bottom: 2em;
+}
+
+h2, #Header-Sponsors { /* type h2 */
   font-style: italic;
-  font-size: 28px;
+  font-size: 36px;
+  font-family: 'IBM Plex Sans';
 }
 
 .SponsorsContainer{
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .Block-Sponsors{
   display: flex;
   flex-direction: column;
-  width: auto;
-  margin: 10px 150px;
+  align-items: left;
+  justify-content: center;
+  width: 1200px;
+  margin-bottom: 2em;
+  border: 1px solid red;
 }
 
 .Block-RecruimentForm {
@@ -355,7 +365,9 @@ h1 {  font-size: 64pt;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  padding-top: 8px;
   width: 100%;
+  height: 55px;
   background-color: #232635;
 }
 
@@ -371,7 +383,10 @@ h1 {  font-size: 64pt;
 .StyledLink { /* type StyledLink */
   color: white;
   margin: 0 10pt;
-  text-decoration: none;
+  font-family: "IBM Plex Sans";
+  font-size: 18px;
+  text-transform: uppercase;
+
 }
 
 .LogoContainer {
@@ -401,8 +416,9 @@ h1 {  font-size: 64pt;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100vh;
+  height: 95vh;
   background-color: #232635;
+  margin-bottom: 2em;
 }
 
 .generalTitleContainer {

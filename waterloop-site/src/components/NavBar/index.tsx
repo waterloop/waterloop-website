@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import "../../theme/global.css";
+import "../../theme/Global.css";
 // import Home from "../home/home.tsx";
 // import GooseV from "../gooseV/gooseV.tsx";
 // import Teams from "../teams/teams.tsx";

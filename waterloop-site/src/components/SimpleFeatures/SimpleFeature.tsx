@@ -1,7 +1,7 @@
 // Core modules:
 import React from "react";
 import styled from "styled-components";
-import "../../theme/global.css";    // For styling
+import "../../theme/Global.css";    // For styling
 
 export interface FeatProps {
     imgSrc: string,

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import "../../theme/global.css";
+import "../../theme/Global.css";
 
 
 type imgProps = {
