@@ -69,6 +69,7 @@ const Button: React.FC<Props> = (props) => {
     &:active {
       border-color: ${ColorMap.yellow};
     }
+    border-radius: 17px;
   }`;
 
   const Text = styled.p`
