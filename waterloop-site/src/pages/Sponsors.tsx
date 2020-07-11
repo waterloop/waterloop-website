@@ -1,6 +1,6 @@
 import React from "react";
 import Hero from "components/Hero/General";
-import SponsorList from "components/SponsorComponents/SponsorPage";
+import SponsorList from "components/Sponsor/SponsorPage";
 
 class Sponsors extends React.Component {
   render() {
