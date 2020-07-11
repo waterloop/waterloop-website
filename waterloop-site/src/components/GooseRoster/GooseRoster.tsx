@@ -1,5 +1,5 @@
 import React from "react";
-import "../../theme/global.css";
+import "../../theme/global.scss";
 
 type imgProps = {
   imgUrls: string[];
