@@ -1,9 +1,10 @@
 import React from "react";
-import "../../theme/Global.css";
+import "../../theme/global.css";
 
 type MyProps = { subteam: string; description: string; image: string };
 
-class SubteamsOverview extends React.Component<MyProps> { //TODO test if it works after global styling
+class SubteamsOverview extends React.Component<MyProps> {
+  //TODO test if it works after global styling
   render() {
     return (
       <div className="Block-Teams">

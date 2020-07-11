@@ -5,7 +5,7 @@ import Home from "../../pages/Home";
 import Flock from "../../pages/Flock";
 import Team from "../../pages/Team";
 import Sponsors from "../../pages/Sponsors";
-import "../../theme/Global.css";
+import "../../theme/global.css";
 import IconYellowImg from "../../static/img/logos/Logo.svg";
 
 import { NavLink } from "react-router-dom";
@@ -38,13 +38,13 @@ const IconYellow = styled.img`
   transition: 0.2s ease-in-out;
 `;
 
-
 type LinkProp = { to: string; title: string; text: string };
 
 class Link extends React.Component<LinkProp> {
   render() {
     return (
-      <StyledLink className="StyledLink"
+      <StyledLink
+        className="StyledLink"
         to={this.props.to}
         title={this.props.title}
         exact
@@ -82,7 +82,7 @@ class Navbar extends React.Component {
             <Contact />
           </Link>
         </div>
-      </div >
+      </div>
     );
   }
 }

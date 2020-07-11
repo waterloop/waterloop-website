@@ -13,15 +13,30 @@ class SponsorsLanding extends React.Component<MyProps> {
   render() {
     return (
       <div className="Block-Sponsors">
-        <div className="Header-Sponsors"><h2>Our Sponsors</h2></div>
+        <div className="Header-Sponsors">
+          <h2>Our Sponsors</h2>
+        </div>
         <div className="SponsorsContainer">
-          <img className="Img-Sponsors" src={BrentsWeldingAndFab} alt="BrentsWeldingAndFab"></img>
-          <img className="Img-Sponsors" src={UW_Engineering} alt="UW_Engineering"></img>
-          <img className="Img-Sponsors"
+          <img
+            className="Img-Sponsors"
+            src={BrentsWeldingAndFab}
+            alt="BrentsWeldingAndFab"
+          ></img>
+          <img
+            className="Img-Sponsors"
+            src={UW_Engineering}
+            alt="UW_Engineering"
+          ></img>
+          <img
+            className="Img-Sponsors"
             src={UW_Engineering_Endowment}
             alt="UW_Engineering_Endowment"
           ></img>
-          <img className="Img-Sponsors" src={UW_Engineering_Society} alt="UW_Engineering_Society"></img>
+          <img
+            className="Img-Sponsors"
+            src={UW_Engineering_Society}
+            alt="UW_Engineering_Society"
+          ></img>
           <img className="Img-Sponsors" src={WCBranham} alt="WCBranham"></img>
           <img className="Img-Sponsors" src={ClickUp} alt="ClickUp"></img>
         </div>

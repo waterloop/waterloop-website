@@ -1,8 +1,8 @@
 import React from "react";
-import { Button } from 'components/Button/';
-import "../../theme/Global.css";
+import { Button } from "components/Button";
+import "../../theme/global.css";
 
-type MyProps = { title: string; text: string; image: string; };
+type MyProps = { title: string; text: string; image: string };
 
 export class TextWithImage extends React.Component<MyProps> {
   render() {
@@ -21,7 +21,11 @@ export class TextWithImage extends React.Component<MyProps> {
             ></Button>
           </div>
         </div>
-        <img className="Img-TextWithImage" src={this.props.image} alt="waterloop"></img>
+        <img
+          className="Img-TextWithImage"
+          src={this.props.image}
+          alt="waterloop"
+        ></img>
       </div>
     );
   }
