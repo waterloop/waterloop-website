@@ -18,7 +18,7 @@ class heroComponent extends React.Component<MyProps> {
               className="landingWaterloop"
               src={WaterloopImg}
               alt="waterloop logo"
-            ></img>
+            />
           </div>
           <div className="landingDescriptionContainer">
             <h3>{this.props.description}</h3>
