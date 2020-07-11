@@ -477,6 +477,40 @@ h1 {
   transition: 0.2s ease-in-out;
 }
 
+@media (max-width: 420px) {
+
+  .generalContainer {
+    align-items: center;
+  }
+  
+  .generalTitleContainer {
+    width: 100%;
+
+    > h1 {
+      font-size: 42px;
+    }
+  }
+  
+  .generalDescriptionContainer {
+
+    > h3 {
+      font-size: 24px;
+    }
+  }
+  
+  .generalArrowContainer {
+    align-content: flex-end;
+    bottom: 30px;
+  }
+  
+  .generalDownArrow {
+    /* type img */
+    width: 27px;
+    height: 11px;
+  }
+
+}
+
 .landingContainer {
   display: flex;
   flex-direction: column;
