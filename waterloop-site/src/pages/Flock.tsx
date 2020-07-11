@@ -3,11 +3,9 @@ import Hero from "components/Hero/General"
 import SimpleFeature from "components/SimpleFeatures/SimpleFeature"
 import TextWithImageData from "../static/copy/TextWithImage.json"
 
-var text = "";
 var image = "";
 
-TextWithImageData.map((detail) => {
-    text = detail.text;
+TextWithImageData.forEach((detail) => {
     image = detail.image;
 })
 
