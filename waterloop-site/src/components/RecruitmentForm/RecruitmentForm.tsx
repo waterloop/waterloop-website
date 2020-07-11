@@ -49,63 +49,63 @@ class Form extends React.Component<MyProps, MyState> {
   }
 
   handleChange(event: React.FormEvent<HTMLInputElement>) {
-    if (event.currentTarget.name == "entry.1105765972") {
+    if (event.currentTarget.name === "entry.1105765972") {
       // fullName
       this.setState({ fullName: event.currentTarget.value });
-    } else if (event.currentTarget.name == "entry.204636100") {
+    } else if (event.currentTarget.name === "entry.204636100") {
       // email
       this.setState({ email: event.currentTarget.value });
-    } else if (event.currentTarget.name == "entry.1369449321") {
+    } else if (event.currentTarget.name === "entry.1369449321") {
       // program
       this.setState({ program: event.currentTarget.value });
-    } else if (event.currentTarget.name == "entry.1488954434") {
+    } else if (event.currentTarget.name === "entry.1488954434") {
       // term
       this.setState({ term: event.currentTarget.value });
     } else if (
-      event.currentTarget.name == "applicationTerm" &&
-      event.currentTarget.id == "0"
+      event.currentTarget.name === "applicationTerm" &&
+      event.currentTarget.id === "0"
     ) {
       this.setState({ termCheckedArray: [true, false, false, false, false] });
       this.setState({ applicationTerm: this.props.termList[0] });
     } else if (
-      event.currentTarget.name == "applicationTerm" &&
-      event.currentTarget.id == "1"
+      event.currentTarget.name === "applicationTerm" &&
+      event.currentTarget.id === "1"
     ) {
       this.setState({ termCheckedArray: [false, true, false, false, false] });
       this.setState({ applicationTerm: this.props.termList[1] });
     } else if (
-      event.currentTarget.name == "applicationTerm" &&
-      event.currentTarget.id == "2"
+      event.currentTarget.name === "applicationTerm" &&
+      event.currentTarget.id === "2"
     ) {
       this.setState({ termCheckedArray: [false, false, true, false, false] });
       this.setState({ applicationTerm: this.props.termList[2] });
     } else if (
-      event.currentTarget.name == "applicationTerm" &&
-      event.currentTarget.id == "3"
+      event.currentTarget.name === "applicationTerm" &&
+      event.currentTarget.id === "3"
     ) {
       this.setState({ termCheckedArray: [false, false, false, true, false] });
       this.setState({ applicationTerm: this.props.termList[3] });
     } else if (
-      event.currentTarget.name == "applicationTerm" &&
-      event.currentTarget.id == "4"
+      event.currentTarget.name === "applicationTerm" &&
+      event.currentTarget.id === "4"
     ) {
       this.setState({ termCheckedArray: [false, false, false, false, true] });
       this.setState({ applicationTerm: this.props.termList[4] });
     } else if (
-      event.currentTarget.name == "termType" &&
-      event.currentTarget.id == "a"
+      event.currentTarget.name === "termType" &&
+      event.currentTarget.id === "a"
     ) {
       this.setState({ termTypeCheckedArray: [true, false, false] });
       this.setState({ termType: "School Term" });
     } else if (
-      event.currentTarget.name == "termType" &&
-      event.currentTarget.id == "b"
+      event.currentTarget.name === "termType" &&
+      event.currentTarget.id === "b"
     ) {
       this.setState({ termTypeCheckedArray: [false, true, false] });
       this.setState({ termType: "Work/Off Term in Waterloo" });
     } else if (
-      event.currentTarget.name == "termType" &&
-      event.currentTarget.id == "c"
+      event.currentTarget.name === "termType" &&
+      event.currentTarget.id === "c"
     ) {
       this.setState({ termTypeCheckedArray: [false, false, true] });
       this.setState({ termType: "Not in Waterloo" });
@@ -114,10 +114,10 @@ class Form extends React.Component<MyProps, MyState> {
   }
 
   handleTextAreaChange(event: React.FormEvent<HTMLTextAreaElement>) {
-    if (event.currentTarget.name == "entry.288252419") {
+    if (event.currentTarget.name === "entry.288252419") {
       // whyJoin
       this.setState({ whyJoin: event.currentTarget.value });
-    } else if (event.currentTarget.name == "entry.1372043873") {
+    } else if (event.currentTarget.name === "entry.1372043873") {
       this.setState({ technicalAns: event.currentTarget.value });
     }
     return;
