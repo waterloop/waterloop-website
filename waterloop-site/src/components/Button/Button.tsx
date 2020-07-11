@@ -1,5 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
+import "../../theme/global.css";
 
 type BackgroundColor = "yellow" | "black";
 type TextColor = "yellow" | "white" | "black";
@@ -60,15 +61,6 @@ const Button: React.FC<Props> = (props) => {
 
   const ButtonDiv = styled.button`
     background-color: ${ColorMap[backgroundColor]};
-    border-radius: 17px;
-    min-width: 50px;
-    max-width: auto;
-    height: 34px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px 30px;
-    // align-self: center;
     border-color:  ${ColorMap[backgroundColor]};
     &:hover {
       background-color: ${ColorMap[textColor]};
@@ -82,10 +74,6 @@ const Button: React.FC<Props> = (props) => {
 
   const Text = styled.p`
     color: ${ColorMap[textColor]};
-    font-size: large;
-    font-family: IBM Plex Sans;
-    // font-weight: bold;
-    margin: 0;
     ${ButtonDiv}:hover & {
       color: ${ColorMap[backgroundColor]};
     }
@@ -95,8 +83,8 @@ const Button: React.FC<Props> = (props) => {
   `;
 
   return (
-    <ButtonDiv onClick={props.onClick}>
-      <Text>{props.text}</Text>
+    <ButtonDiv className="ButtonDiv" onClick={props.onClick}>
+      <Text className="ButtonText">{props.text}</Text>
     </ButtonDiv>
   );
 };

@@ -1,56 +1,33 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Button } from 'components/Button/';
-
-const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-  width: 80%;
-`;
+import React from "react";
+import { Button } from "components/Button";
+import "../../theme/global.css";
 
 interface ContactFormProps {
   title: string;
   desc: string;
-};
+}
 
 interface ContactFormStates {
-  formKey: FormKey,
-  serverResponse: ServerResponse,
-  formResponseError: boolean
+  formKey: FormKey;
+  serverResponse: ServerResponse;
+  formResponseError: boolean;
 }
 
 interface FormKey {
-  email: string,
-  name: string,
-  message: string,
+  email: string;
+  name: string;
+  message: string;
 }
 
 interface ServerResponse {
-  error: boolean,
-  msg: string
+  error: boolean;
+  msg: string;
 }
 
-const InputBlockLeft = styled.div`
-  width: 48%;
-  float: left;
-  @media (max-width: 500px) {
-    display: flex;
-    width: 100%;
-  }
-`;
-
-const InputBlockRight = styled.div`
-  width: 48%;
-  float: right;
-  @media (max-width: 500px) {
-    display: flex;
-    width: 100%;
-  }
-`;
-
-class ContactUsForm extends React.Component<ContactFormProps, ContactFormStates> {
-
+class ContactUsForm extends React.Component<
+  ContactFormProps,
+  ContactFormStates
+> {
   constructor(props: ContactFormProps) {
     super(props);
     this.onFormSubmit = this.onFormSubmit.bind(this);
@@ -59,66 +36,73 @@ class ContactUsForm extends React.Component<ContactFormProps, ContactFormStates>
     this.renderServerError = this.renderServerError.bind(this);
     this.state = {
       formKey: {
-        email: '',
-        name: '',
-        message: ''
+        email: "",
+        name: "",
+        message: "",
       },
       serverResponse: {
         error: false,
-        msg: ''
+        msg: "",
       },
       formResponseError: false,
-    }
+    };
   }
 
   private labelStyle: React.CSSProperties = {
     display: "block",
     fontWeight: "bold",
-    paddingRight: "1%"
+    paddingRight: "1%",
   };
   private inputStyle: React.CSSProperties = {
     backgroundColor: "WhiteSmoke",
     width: "100%",
     border: "none",
-    fontSize: "15pt"
+    fontSize: "15pt",
   };
   private formStyle: React.CSSProperties = {
-    display: 'flex',
-    flexDirection: 'column',
-    padding: '12px'
+    display: "flex",
+    flexDirection: "column",
+    padding: "12px",
   };
 
   private errorStyle: React.CSSProperties = {
-    width: '100%',
-    wordWrap: 'break-word',
-    color: 'red'
-  }
+    width: "100%",
+    wordWrap: "break-word",
+    color: "red",
+  };
 
   private regex: RegExp = new RegExp(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
   private validationRules: any = {
-    name: (nameValue: string) => nameValue.length > 0 ? true : false,
+    name: (nameValue: string) => (nameValue.length > 0 ? true : false),
     email: (emailValue: string) => this.regex.test(emailValue),
-    message: (messageValue: string) => messageValue.length > 0 ? true : false
-  }
+    message: (messageValue: string) => (messageValue.length > 0 ? true : false),
+  };
 
   public handleChange(event: any) {
     event.preventDefault();
-    this.setState({ formKey: { ...this.state.formKey, [event.target.name]: event.target.value } });
+    this.setState({
+      formKey: {
+        ...this.state.formKey,
+        [event.target.name]: event.target.value,
+      },
+    });
   }
 
   private handleServerReponse(error: boolean, message: string) {
     var response: ServerResponse = {
       error: error,
-      msg: message
-    }
+      msg: message,
+    };
     this.setState({ serverResponse: response });
   }
 
   public renderError() {
     if (this.state.formResponseError) {
-      return <p style={this.errorStyle}>
-        Please fill out all fields with valid information.
-       </p>;
+      return (
+        <p style={this.errorStyle}>
+          Please fill out all fields with valid information.
+        </p>
+      );
     }
   }
 
@@ -134,7 +118,7 @@ class ContactUsForm extends React.Component<ContactFormProps, ContactFormStates>
     // Go through name and ensure that it is a size > 0
     // Regex the email
     // Message > 0;
-    const stateValue = this.state.formKey! as any as Record<string, string>;
+    const stateValue = (this.state.formKey! as any) as Record<string, string>;
     for (let key of Object.keys(stateValue)) {
       if (!this.validationRules[key](stateValue[key])) {
         this.setState({ formResponseError: true });
@@ -154,78 +138,130 @@ class ContactUsForm extends React.Component<ContactFormProps, ContactFormStates>
     }
     fetch(
       // 'https://formspree.io/xoqkdrzb' //Prod form
-      'https://formspree.io/mgenkdbb' // Dev form
-      , {
-        method: 'POST',
+      "https://formspree.io/mgenkdbb", // Dev form
+      {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(this.state.formKey),
       }
-    ).then(response => {
-      return response.json();
-    }).then(response => {
-      if (response.error) {
-        this.handleServerReponse(true, response.error);
-      } else {
-        this.handleServerReponse(false, 'Sent');
-        this.setState({
-          formKey: {
-            email: '',
-            name: '',
-            message: ''
-          }
-        });
-      }
-    })
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .then((response) => {
+        if (response.error) {
+          this.handleServerReponse(true, response.error);
+        } else {
+          this.handleServerReponse(false, "Sent");
+          this.setState({
+            formKey: {
+              email: "",
+              name: "",
+              message: "",
+            },
+          });
+        }
+      });
   }
 
   render() {
     return (
-      <Container>
+      <div className="contactForm-Container">
         <form
           autoComplete="off"
           style={this.formStyle}
           onSubmit={this.onFormSubmit}
         >
-          <h3 style={{ fontStyle: "italic", color: "black", fontWeight: "bold", marginBottom: "40px", fontSize: "36px" }}>{this.props.title}</h3>
-          <p style={{ fontFamily: "IBM Plex Sans", fontSize: "18px", marginTop: "0px", marginBottom: "30px" }}>{this.props.desc}</p>
+          <h3
+            style={{
+              fontStyle: "italic",
+              color: "black",
+              fontWeight: "bold",
+              marginBottom: "40px",
+              fontSize: "36px",
+            }}
+          >
+            {this.props.title}
+          </h3>
+          <p
+            style={{
+              fontFamily: "IBM Plex Sans",
+              fontSize: "18px",
+              marginTop: "0px",
+              marginBottom: "30px",
+            }}
+          >
+            {this.props.desc}
+          </p>
           {this.renderError()}
           {this.renderServerError()}
           <div>
-            <InputBlockLeft>
+            <div className="contactForm-InputBlockLeft">
               <label style={this.labelStyle} htmlFor="name">
                 Name
-            </label>
+              </label>
               <input
                 name="name"
                 id="name"
-                style={{ marginTop: "20px", width: "100%", height: "30px", backgroundColor: "#F4F4F4", border: "none", fontFamily: "IBM Plex Sans", fontSize: "15px" }}
+                style={{
+                  marginTop: "20px",
+                  width: "100%",
+                  height: "30px",
+                  backgroundColor: "#F4F4F4",
+                  border: "none",
+                  fontFamily: "IBM Plex Sans",
+                  fontSize: "15px",
+                }}
                 value={this.state.formKey.name}
                 onChange={this.handleChange}
               ></input>
-            </InputBlockLeft>
-            <InputBlockRight>
+            </div>
+            <div className="contactForm-InputBlockRight">
               <label htmlFor="email" style={this.labelStyle}>
                 Email
-            </label>
+              </label>
               <input
                 id="email"
                 name="email"
-                style={{ marginTop: "20px", width: "100%", height: "30px", backgroundColor: "#F4F4F4", border: "none", fontFamily: "IBM Plex Sans", fontSize: "15px" }}
+                style={{
+                  marginTop: "20px",
+                  width: "100%",
+                  height: "30px",
+                  backgroundColor: "#F4F4F4",
+                  border: "none",
+                  fontFamily: "IBM Plex Sans",
+                  fontSize: "15px",
+                }}
                 value={this.state.formKey.email}
                 onChange={this.handleChange}
               ></input>
-            </InputBlockRight>
+            </div>
           </div>
-          <div style={{ width: "100%", paddingTop: "10px", paddingBottom: "30px", marginTop: "35px" }}>
+          <div
+            style={{
+              width: "100%",
+              paddingTop: "10px",
+              paddingBottom: "30px",
+              marginTop: "35px",
+            }}
+          >
             <label htmlFor="message" style={this.labelStyle}>
               Message
-          </label>
+            </label>
             <textarea
               id="message"
               name="message"
-              style={{ width: "100%", height: "298px", backgroundColor: "#F4F4F4", border: "none", marginTop: "20px", fontFamily: "IBM Plex Sans", fontSize: "15px" }}
+              style={{
+                width: "100%",
+                height: "298px",
+                backgroundColor: "#F4F4F4",
+                border: "none",
+                marginTop: "20px",
+                fontFamily: "IBM Plex Sans",
+                fontSize: "15px",
+              }}
               rows={3}
               value={this.state.formKey.message}
               onChange={this.handleChange}
@@ -236,12 +272,12 @@ class ContactUsForm extends React.Component<ContactFormProps, ContactFormStates>
               backgroundColor="yellow"
               textColor="black"
               text="SEND"
-              onClick={() => console.log('submitting form')}
+              onClick={() => console.log("submitting form")}
               variant={null}
             ></Button>
           </div>
         </form>
-      </Container>
+      </div>
     );
   }
 }
