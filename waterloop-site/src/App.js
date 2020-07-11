@@ -1,6 +1,5 @@
 import React from "react";
 import "./theme/App.css";
-import SponsorList from "./pages/SponsorPage";
 import { NavBar } from "components";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
