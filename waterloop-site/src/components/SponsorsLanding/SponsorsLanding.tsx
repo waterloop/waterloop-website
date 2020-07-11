@@ -21,24 +21,24 @@ class SponsorsLanding extends React.Component<MyProps> {
             className="Img-Sponsors"
             src={BrentsWeldingAndFab}
             alt="BrentsWeldingAndFab"
-          ></img>
+          />
           <img
             className="Img-Sponsors"
             src={UW_Engineering}
             alt="UW_Engineering"
-          ></img>
+          />
           <img
             className="Img-Sponsors"
             src={UW_Engineering_Endowment}
             alt="UW_Engineering_Endowment"
-          ></img>
+          />
           <img
             className="Img-Sponsors"
             src={UW_Engineering_Society}
             alt="UW_Engineering_Society"
-          ></img>
-          <img className="Img-Sponsors" src={WCBranham} alt="WCBranham"></img>
-          <img className="Img-Sponsors" src={ClickUp} alt="ClickUp"></img>
+          />
+          <img className="Img-Sponsors" src={WCBranham} alt="WCBranham"/>
+          <img className="Img-Sponsors" src={ClickUp} alt="ClickUp"/>
         </div>
         <div style={{ alignSelf: "center" }}>
           <Button

@@ -19,7 +19,7 @@ class heroComponent extends React.Component<MyProps> {
             className="generalDownArrow"
             src={DownArrowImg}
             alt="navigation arrow"
-          ></img>
+          />
         </div>
       </div>
     );
