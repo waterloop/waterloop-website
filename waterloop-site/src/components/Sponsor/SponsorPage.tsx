@@ -7,25 +7,25 @@ function SponsorList() {
     <div className="SponsorPage">
       <h1>Hypersonic</h1>
       <div className="TierWrapper">
-        <Sponsor src={UW_Engineering} tier="hypersonic" />
-        <Sponsor src={UW_Engineering} tier="hypersonic" />
+        <Sponsor src={UW_Engineering} tier="hypersonic" alt="sponsor" />
+        <Sponsor src={UW_Engineering} tier="hypersonic" alt="sponsor" />
       </div>
       <h1>Supersonic</h1>
       <div className="TierWrapper">
-        <Sponsor src={UW_Engineering} tier="supersonic" />
-        <Sponsor src={UW_Engineering} tier="supersonic" />
+        <Sponsor src={UW_Engineering} tier="supersonic" alt="sponsor" />
+        <Sponsor src={UW_Engineering} tier="supersonic" alt="sponsor" />
       </div>
       <h1>Transonic</h1>
       <div className="TierWrapper">
-        <Sponsor src={UW_Engineering} tier="transonic" />
-        <Sponsor src={UW_Engineering} tier="transonic" />
-        <Sponsor src={UW_Engineering} tier="transonic" />
-        <Sponsor src={UW_Engineering} tier="transonic" />
+        <Sponsor src={UW_Engineering} tier="transonic" alt="sponsor" />
+        <Sponsor src={UW_Engineering} tier="transonic" alt="sponsor" />
+        <Sponsor src={UW_Engineering} tier="transonic" alt="sponsor" />
+        <Sponsor src={UW_Engineering} tier="transonic" alt="sponsor" />
       </div>
       <h1>Sonic</h1>
       <div className="TierWrapper">
-        <Sponsor src={UW_Engineering} tier="sonic" />
-        <Sponsor src={UW_Engineering} tier="sonic" />
+        <Sponsor src={UW_Engineering} tier="sonic" alt="sponsor" />
+        <Sponsor src={UW_Engineering} tier="sonic" alt="sponsor" />
       </div>
     </div>
   );

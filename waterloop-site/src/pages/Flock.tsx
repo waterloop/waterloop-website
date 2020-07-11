@@ -3,12 +3,10 @@ import Hero from "components/Hero/General"
 import SimpleFeature from "components/SimpleFeatures/SimpleFeature"
 import TextWithImageData from "../static/copy/TextWithImage.json"
 
-var title = "";
 var text = "";
 var image = "";
 
 TextWithImageData.map((detail) => {
-    title = detail.title;
     text = detail.text;
     image = detail.image;
 })
