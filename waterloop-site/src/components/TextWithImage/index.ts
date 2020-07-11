@@ -1,0 +1,1 @@
+export {TextWithImage } from './TextWithImage'; //This will take all the named exports
