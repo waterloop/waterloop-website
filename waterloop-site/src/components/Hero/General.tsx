@@ -1,6 +1,6 @@
 import React from "react";
 import DownArrowImg from "../../static/img/background/downArrow.svg";
-import "../../theme/global.css";
+import "../../theme/global.scss";
 
 type MyProps = { description: string; title: string };
 

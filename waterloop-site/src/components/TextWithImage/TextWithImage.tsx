@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "components/Button";
-import "../../theme/global.css";
+import "../../theme/global.scss";
 
 type MyProps = { title: string; text: string; image: string };
 
