@@ -1,7 +1,7 @@
 // Core modules:
 import React from "react";
 import styled from "styled-components";
-import "theme/styling/SimpleFeatComp.css";    // For styling
+import "theme/global.css";    // For styling
 
 export interface FeatProps {
     imgSrc: string,
@@ -19,36 +19,15 @@ export interface FeatProps {
 
 // Custom styled image component.
 const FeatImage = styled.img`
-    display: block;
     background: url(${props => props.src} || "nonexistent-link") no-repeat;    
-    object-fit: cover;  /*Centers image and crops instead of scales aspect ratio.*/
-
-    /*200 IQ bug fix (the first image doesn't load in correct size if only using width ;) */
-    min-width: 10em;
-    max-width: 10em;
-
-    height: 10em;
-    margin-right: 20px;
-`;
-
-const FeatPara = styled.p`
-    margin-top: 0px;
-    font-size: 18px;
-    
-    font-family: 'IBM Plex Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 `;
 
 class SimpleFeatComp extends React.Component<FeatProps> {
     render() {
         return (
             <div className="featComp">
-<<<<<<< Updated upstream
-                <FeatImage src={this.props.imgSrc} alt={this.props.imgAlt}></FeatImage>
-                <FeatPara>{this.props.desc}</FeatPara>
-=======
                 <p className="FeatPara">{this.props.desc}</p>
                 <FeatImage className="FeatImage" src={this.props.imgSrc} alt={this.props.imgAlt}></FeatImage>
->>>>>>> Stashed changes
             </div>
         );
     }
