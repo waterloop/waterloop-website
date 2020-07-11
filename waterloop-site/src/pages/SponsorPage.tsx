@@ -1,6 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import SponsorComponent from "../components/SponsorComponent";
+import Hypersonic from "../components/SponsorComponents/HyperSonic"
+import TransSonic from "../components/SponsorComponents/TransSonic";
+import SuperSonic from "../components/SponsorComponents/SuperSonic";
+import Sonic from "../components/SponsorComponents/Sonic";
+import UW_Engineering from "../components/SponsorComponents/TestingImage/UW_Engineering.png"
+
 
 const size = {
   mobile: "420px",
@@ -16,41 +21,62 @@ const CustomHeading = styled.h1`
   text-align: center;
 `;
 
-const HypersonicWrapper = styled.div`
+const TierWrapper = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content:center;
+  flex-wrap:wrap;
 
-  @media (min-width: ${size.mobile}) {
-    /* position: absolute;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 30px;
-    max-width: 80%; */
+
+  @media screen and (max-width: ${size.mobile}) {
     position: relative;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    top: 10%;
-    left: 10%;
   }
 `;
 
-function HypersonicSponsor() {
+function SponsorList() {
   return (
     <div>
       <CustomHeading>Hypersonic Sponsor</CustomHeading>
-      <HypersonicWrapper>
-        <SponsorComponent variant="Hypersonic" />
-        <SponsorComponent variant="Hypersonic" />
+      <TierWrapper>
+        <Hypersonic src={UW_Engineering}/>
+        <Hypersonic src={UW_Engineering}/>
+      </TierWrapper>
 
-        <SponsorComponent variant="Sonic" />
-        <SponsorComponent variant="Sonic" />
-        <SponsorComponent variant="Sonic" />
-        <SponsorComponent variant="Sonic" />
-      </HypersonicWrapper>
+      <CustomHeading>Supersonic Sponsor</CustomHeading>
+      <TierWrapper>
+        <SuperSonic src = {UW_Engineering}/>
+        <SuperSonic src = {UW_Engineering}/>
+        <SuperSonic src = {UW_Engineering}/>
+        <SuperSonic src = {UW_Engineering}/>
+    </TierWrapper>
+      <CustomHeading>Transsonic Sponsor</CustomHeading>
+      <TierWrapper>
+        <TransSonic src = {UW_Engineering}/>
+        <TransSonic src = {UW_Engineering}/>
+        <TransSonic src = {UW_Engineering}/>
+        <TransSonic src = {UW_Engineering}/>
+        <TransSonic src = {UW_Engineering}/>
+        <TransSonic src = {UW_Engineering}/>
+      </TierWrapper>
+      <CustomHeading>Sonic Sponsor</CustomHeading>
+      <TierWrapper>
+        <Sonic src = {UW_Engineering}/>
+        <Sonic src = {UW_Engineering}/>
+        <Sonic src = {UW_Engineering}/>
+        <Sonic src = {UW_Engineering}/>
+        <Sonic src = {UW_Engineering}/>
+        <Sonic src = {UW_Engineering}/>
+        <Sonic src = {UW_Engineering}/>
+        <Sonic src = {UW_Engineering}/>
+        <Sonic src = {UW_Engineering}/>
+        <Sonic src = {UW_Engineering}/>
+      </TierWrapper>
     </div>
   );
 }
 
-export default HypersonicSponsor;
+export default SponsorList;
