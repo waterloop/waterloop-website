@@ -42,8 +42,13 @@ class SimpleFeatComp extends React.Component<FeatProps> {
     render() {
         return (
             <div className="featComp">
+<<<<<<< Updated upstream
                 <FeatImage src={this.props.imgSrc} alt={this.props.imgAlt}></FeatImage>
                 <FeatPara>{this.props.desc}</FeatPara>
+=======
+                <p className="FeatPara">{this.props.desc}</p>
+                <FeatImage className="FeatImage" src={this.props.imgSrc} alt={this.props.imgAlt}></FeatImage>
+>>>>>>> Stashed changes
             </div>
         );
     }
