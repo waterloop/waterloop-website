@@ -16,8 +16,8 @@ class Flock extends React.Component {
         return (
             <div>
                 <Hero title="The Flock" description="Learn about our geese."></Hero>
-                <SimpleFeature imgSrc={image} imgAlt="test" desc="test"></SimpleFeature>
-                <SimpleFeature imgSrc={image} imgAlt="test" desc="test"></SimpleFeature>
+                {/* <SimpleFeature imgSrc={image} imgAlt="test" desc="test"></SimpleFeature>
+                <SimpleFeature imgSrc={image} imgAlt="test" desc="test"></SimpleFeature> */}
             </div>
         );
     }
