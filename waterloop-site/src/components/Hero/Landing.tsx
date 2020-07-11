@@ -3,7 +3,7 @@ import { Button } from "components/Button";
 import BuildingsImg from "static/img/background/buildings.svg";
 import DownArrowImg from "static/img/background/downArrow.svg";
 import WaterloopImg from "static/img/background/waterloop.svg";
-import "../../theme/global.css";
+import "../../theme/global.scss";
 
 type MyProps = { description: string };
 

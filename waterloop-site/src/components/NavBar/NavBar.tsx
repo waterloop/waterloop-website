@@ -5,7 +5,7 @@ import Home from "../../pages/Home";
 import Flock from "../../pages/Flock";
 import Team from "../../pages/Team";
 import Sponsors from "../../pages/Sponsors";
-import "../../theme/global.css";
+import "../../theme/global.scss";
 import IconYellowImg from "../../static/img/logos/Logo.svg";
 
 import { NavLink } from "react-router-dom";
