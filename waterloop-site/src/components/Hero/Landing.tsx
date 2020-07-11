@@ -27,7 +27,7 @@ class heroComponent extends React.Component<MyProps> {
             backgroundColor="yellow"
             textColor="black"
             text="JOIN US"
-            onClick={() => window.open("contact")}
+            onClick={() => window.open("recruitment")}
             variant={null}
           ></Button>
         </div>
