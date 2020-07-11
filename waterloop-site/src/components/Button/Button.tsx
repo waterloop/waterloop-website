@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import "../../theme/Global.css";
+import React from "react";
+import styled from "styled-components";
+import "../../theme/global.css";
 
 type BackgroundColor = "yellow" | "black";
 type TextColor = "yellow" | "white" | "black";

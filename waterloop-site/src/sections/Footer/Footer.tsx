@@ -2,14 +2,14 @@ import React from "react";
 import LinkComponent from "../../components/Footer/LinkComponent";
 import RouteComponent from "../../components/Footer/RouteComponent";
 import Logo from "../../static/img/logos/Logo.svg";
-import "../../theme/Global.css";    // For styling
+import "../../theme/global.css"; // For styling
 
 class FooterComponent extends React.Component {
   render() {
     return (
       <div className="FooterWrapper">
         <div className="LogoWrapper">
-          <img src={Logo} alt="Waterloop Logo" ></img>
+          <img src={Logo} alt="Waterloop Logo"></img>
         </div>
 
         <div className="LinksWrapper">

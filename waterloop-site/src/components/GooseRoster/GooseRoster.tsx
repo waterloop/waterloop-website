@@ -1,33 +1,38 @@
 import React from "react";
-import "../../theme/Global.css";
-
+import "../../theme/global.css";
 
 type imgProps = {
   imgUrls: string[];
-  heading: string,
-  description: string
+  heading: string;
+  description: string;
 };
 
 class GooseRoster extends React.Component<imgProps> {
   state = {
-    currentImageIndex: 0
+    currentImageIndex: 0,
   };
 
   previousSlide = () => {
     const { currentImageIndex } = this.state;
-    const lastIndex = currentImageIndex == 0 ? this.props.imgUrls.length - 1 : currentImageIndex - 1;
+    const lastIndex =
+      currentImageIndex == 0
+        ? this.props.imgUrls.length - 1
+        : currentImageIndex - 1;
     this.setState({
-      currentImageIndex: lastIndex
+      currentImageIndex: lastIndex,
     });
-  }
+  };
 
   nextSlide = () => {
     const { currentImageIndex } = this.state;
-    const nextIndex = currentImageIndex == this.props.imgUrls.length - 1 ? 0 : currentImageIndex + 1;
+    const nextIndex =
+      currentImageIndex == this.props.imgUrls.length - 1
+        ? 0
+        : currentImageIndex + 1;
     this.setState({
-      currentImageIndex: nextIndex
+      currentImageIndex: nextIndex,
     });
-  }
+  };
 
   render() {
     return (
@@ -39,7 +44,11 @@ class GooseRoster extends React.Component<imgProps> {
           <button className="GlobalRoster-Arrow" onClick={this.previousSlide}>
             &#9664;
           </button>
-          <img className="GlobalRoster-Img" src={this.props.imgUrls[this.state.currentImageIndex]} alt="goose rosters"></img>
+          <img
+            className="GlobalRoster-Img"
+            src={this.props.imgUrls[this.state.currentImageIndex]}
+            alt="goose rosters"
+          ></img>
           <button className="GlobalRoster-Arrow" onClick={this.nextSlide}>
             &#9654;
           </button>
