@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "components/Button/";
+import { Button } from "components/Button";
 import "../../theme/global.css";
 
 type MyProps = { title: string; text: string; image: string };
