@@ -2,7 +2,7 @@ import { useCallback, useState, useEffect } from 'react';
 
 import goose1 from '../../../static/img/pgimgs/goose1.png';
 import goose2 from '../../../static/img/pgimgs/goose2.png';
-import goose3 from '../../../static/img/pgimgs/goosex.png';
+import goosex from '../../../static/img/pgimgs/goosex.png';
 
 interface Image {
   imgFile: string;
@@ -22,8 +22,8 @@ const imgs: Image[] = [
     desc: 'A description for a Previous Goose'
   },
   {
-    imgFile: goose3,
-    name: 'Goose 3',
+    imgFile: goosex,
+    name: 'Goose X',
     desc: 'A description for a Previous Goose'
   },
 ];
@@ -38,9 +38,9 @@ const useGeeseImages = () => {
   );
 
   const cycleLeft = useCallback(
-    () => setCurrentIndex((currentIndex - 1) >= 0 ? currentIndex -1 : imgs.length-1 ),
+    () => setCurrentIndex((currentIndex - 1) >= 0 ? currentIndex - 1 : imgs.length - 1),
     [setCurrentIndex, currentIndex, imgs.length],
-    );
+  );
 
   return {
     image: imgs[currentIndex].imgFile,

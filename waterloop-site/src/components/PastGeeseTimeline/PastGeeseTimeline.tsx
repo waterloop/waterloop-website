@@ -14,7 +14,7 @@ const Heading = styled.div`
 `
 
 const Container = styled.div`
-  position: absolute;
+  position: relative;
 `;
 
 interface Props {

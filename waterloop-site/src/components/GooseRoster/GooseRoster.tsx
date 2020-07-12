@@ -15,7 +15,7 @@ class GooseRoster extends React.Component<imgProps> {
   previousSlide = () => {
     const { currentImageIndex } = this.state;
     const lastIndex =
-      currentImageIndex == 0
+      currentImageIndex === 0
         ? this.props.imgUrls.length - 1
         : currentImageIndex - 1;
     this.setState({
@@ -26,7 +26,7 @@ class GooseRoster extends React.Component<imgProps> {
   nextSlide = () => {
     const { currentImageIndex } = this.state;
     const nextIndex =
-      currentImageIndex == this.props.imgUrls.length - 1
+      currentImageIndex === this.props.imgUrls.length - 1
         ? 0
         : currentImageIndex + 1;
     this.setState({

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { ContactForm } from "components/ContactForm";
 import Hero from "components/Hero/General";
 // import MapImg from "../static/img/logos/map.svg";
-import { Map, GoogleApiWrapper } from "google-maps-react";
+// import { Map, GoogleApiWrapper } from "google-maps-react";
 
 const Container = styled.div`
   display: flex;
