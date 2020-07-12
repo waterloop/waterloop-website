@@ -15,6 +15,7 @@ const Heading = styled.div`
 
 const Container = styled.div`
   position: relative;
+  width: 871px;
 `;
 
 interface Props {

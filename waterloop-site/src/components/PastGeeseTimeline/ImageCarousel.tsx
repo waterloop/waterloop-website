@@ -18,7 +18,7 @@ const Description = styled.div`
 font-family: IBM Plex Sans;
 font-style: normal;
 font-weight: normal;
-font-size: 24px;
+font-size: 20px;
 line-height: 31px;
 display: flex;
 align-items: center;
@@ -36,7 +36,7 @@ const ImageCarousel: React.FC = () => {
 
   const containerStyles: React.CSSProperties = {
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
   }
   const arrowStyles: React.CSSProperties = {
     fontSize: 48,
@@ -61,7 +61,7 @@ const ImageCarousel: React.FC = () => {
         >
           keyboard_arrow_left
         </Arrow>
-        <img src={image}  alt="Goose Pick"/>
+        <img src={image} alt="Goose Pick" />
         <Arrow
           className="material-icons"
           onClick={cycleRight}
@@ -69,7 +69,7 @@ const ImageCarousel: React.FC = () => {
           keyboard_arrow_right
         </Arrow>
       </div>
-      <div style={{display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
+      <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
         <Name>{name}</Name>
         <Description>
           {desc}
