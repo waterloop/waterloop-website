@@ -697,10 +697,14 @@ h1 {
     font-family: IBM Plex Sans;
     font-style: normal;
     font-weight: 600;
-    font-size: 36px;
+    font-size: 1.5rem;
     line-height: 47px;
     text-align: center;
     color: #232635;
+
+    @media screen and (max-width:420px){
+      font-size: 1.2rem;
+    }
   }
 }
 
@@ -710,7 +714,8 @@ h1 {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 90px auto;
+  margin: auto auto;
+  margin-bottom: 1vh;
 
   @media screen and (max-width: 420px) {
     position: relative;
@@ -725,7 +730,7 @@ h1 {
   height: auto;
   @media screen and (max-width: 420px) {
     width: 80%;
-    height: 100px;
+    height: auto;
   }
 }
 
@@ -734,7 +739,7 @@ h1 {
   height: auto;
   @media screen and (max-width: 420px) {
     width: 40%;
-    height: 80px;
+    height: auto;
   }
 }
 
@@ -743,15 +748,15 @@ h1 {
   height: auto;
   @media screen and (max-width: 420px) {
     width: 30%;
-    height: 50px;
+    height: auto;
   }
 }
 
 .sonic {
-  width: 20%;
+  width: 30%;
   height: auto;
   @media screen and (max-width: 420px) {
-    width: 20%;
-    height: 30px;
+    width: 30%;
+    height: auto;
   }
 }
