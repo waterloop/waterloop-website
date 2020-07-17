@@ -5,7 +5,7 @@ import Button from "../button/button.component"
 const TextBlock = styled.div`
   display: flex;
   flex-direction: column;
-  padding-right: 2%;
+  padding-right: 1%;
   padding-left: 2%;
   @media (max-width: 500px){
     display: flex;
@@ -27,13 +27,13 @@ const Header = styled.h2`
 const Text = styled.p`
   font-size: 150%;
   margin-top: 14px !important;
+  display: inline-block;
 
   @media (max-width: 500px){
     font-size: 13px;
     text-align: left;
   }
 `;
-
 
 const Block = styled.div`
   padding: 1%;
@@ -46,11 +46,26 @@ const Block = styled.div`
   margin-right: 2%;
   margin-top: 2%;
   margin-bottom: 2%;
+  position: relative;
+  @media (max-width: 750px){
+    display: inline;
+    border-style: none;
+    border-width: none;
+
+  }
 `;
 
 const ButtonBlock = styled.div`
     font-size: 1.5vw;
     float: right;
+    display: inline;
+`;
+
+const Line = styled.hr`
+  display: none;
+  @media (max-width: 750px){
+    display: flex;
+  }
 `;
 
 
@@ -68,6 +83,7 @@ class PositionPosting extends React.Component<MyProps> {
         <TextBlock>
           <Header>{this.props.role}</Header>
           <Text>{this.props.description}</Text>
+          <Text><b>Skills Required: </b>{this.props.skills}</Text>
         </TextBlock>
         <ButtonBlock>
           <Button
@@ -78,7 +94,9 @@ class PositionPosting extends React.Component<MyProps> {
             variant = {null}
           ></Button>
         </ButtonBlock>
+        <Line></Line>
       </Block>
+
 
     );
   }
