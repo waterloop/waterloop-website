@@ -17,8 +17,8 @@ interface VariantProps {
   onClick: () => void;
   variant: VariantNumber;
   text: string;
-  backgroundColor: null;
-  textColor: null;
+  backgroundColor?: null;
+  textColor?: null;
 }
 
 type Props = VariantProps | NonVariantProps;

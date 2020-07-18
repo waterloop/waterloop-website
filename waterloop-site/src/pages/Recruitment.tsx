@@ -1,5 +1,5 @@
 import React from 'react'
-import PositionPosting from "../components/RecruitmentForm";
+import PositionPosting from "../components/RecruitmentForm/PositionPosting";
 
 const samplePostingsData = [
     {
@@ -38,6 +38,7 @@ class Recruitment extends React.Component<any,any> {
       <>
         { samplePostingsData.length > 0 && samplePostingsData.map((item: any) => {
           return <PositionPosting
+            key={item.role}
             role = {item.role}
             description = {item.description}
             skills = {item.skills}

@@ -15,3 +15,10 @@ How to initialize:
   inputs from forms go to this google form: https://docs.google.com/forms/d/e/1FAIpQLSdmZSfD1Hs0D3MLBjAfdUkaCb3GJJxIvKUEVJCBf5hVxZTt4g/viewform
   inputs from forms go to this spreadsheet: https://docs.google.com/spreadsheets/d/1jESjYao0VSQgLAGF2Nkm7z0-47JYmuBbU9OR4DZwnQo/edit?usp=sharing
   BOTH LINKS ARE ON VIEW ONLY
+
+How to update Form:
+  To update field names and  ids go to the `./hooks/recruitment-form`
+  and Look at the UPDATE ME Section
+  Some work will be needed to update the reducer if
+  you choose to change the data interface, but adding and removing fields
+  should not take much effort, so long as the data stays in the same format.

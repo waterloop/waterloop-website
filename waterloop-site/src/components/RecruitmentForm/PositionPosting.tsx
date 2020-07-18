@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import Button from "../button/button.component"
-import Form from "./Form"
+import { Button } from "../Button"
+import Form from "./RecruitmentForm"
 
 const TextBlock = styled.div`
   display: flex;
@@ -58,7 +58,7 @@ const Background = styled.div`
   top: 0%;
   left: 0%;
   align-items: center;
-  
+
   z-index: 1;
   width: 100%;
   height: 100%;
@@ -128,23 +128,22 @@ class PositionPosting extends React.Component<MyProps, MyState> {
           ></Button>
         </ButtonBlock>
         <Line></Line>
-        {this.state.joinClicked?       
-        <Background></Background>
-        : null}
-        {this.state.joinClicked?
+        {this.state.joinClicked &&
+        <Background>
           <CloseBtn
-          onClick = {this.onClick.bind(this)}
-        >X</CloseBtn>
-        : null}
-        {this.state.joinClicked?
+            onClick = {this.onClick.bind(this)}
+          >
+            X
+          </CloseBtn>
           <Form
             role = {this.props.role}
             technicalQ = {this.props.technicalQ}
             termList = {this.props.termList}
-          ></Form>
-        : null}
+            onSuccess={() => this.setState({ joinClicked: false })}
+          />
+        </Background>
+        }
       </Block>
-
     );
   }
 }

@@ -1,14 +1,15 @@
-import React from "react";
-import "./theme/App.css";
-import { NavBar } from "components";
-import Contact from "./pages/Contact";
-import Home from "./pages/Home";
-import Flock from "./pages/Flock";
-import Team from "./pages/Team";
-import Sponsors from "./pages/Sponsors";
-import { Footer } from "sections/Footer";
-import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
-import "typeface-ibm-plex-sans";
+import React from 'react';
+import './theme/App.css';
+import { NavBar } from 'components';
+import Contact from './pages/Contact';
+import Home from './pages/Home';
+import Flock from './pages/Flock';
+import Team from './pages/Team';
+import Recruitment from './pages/Recruitment';
+import Sponsors from './pages/Sponsors';
+import { Footer } from 'sections/Footer';
+import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
+import 'typeface-ibm-plex-sans';
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
           </Route>
           <Route path="/contact">
             <Contact />
+          </Route>
+          <Route path="/recruitment">
+            <Recruitment />
           </Route>
         </Switch>
         <Footer />

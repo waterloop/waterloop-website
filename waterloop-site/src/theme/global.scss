@@ -357,7 +357,7 @@ h1 {
   margin: 10px 150px;
 }
 
-.Block-RecruimentForm {
+.Block-RecruitmentForm {
   padding: 1%;
   height: 100%;
   width: 90%;
@@ -366,7 +366,7 @@ h1 {
   margin-bottom: 2%;
 }
 
-.Header-RecruimentForm {
+.Header-RecruitmentForm {
   /* type h2 */
   font-size: 170%;
   margin-bottom: 0px !important;
@@ -477,7 +477,7 @@ h1 {
   .generalContainer {
     align-items: center;
   }
-  
+
   .generalTitleContainer {
     width: 100%;
 
@@ -485,19 +485,19 @@ h1 {
       font-size: 42px;
     }
   }
-  
+
   .generalDescriptionContainer {
 
     > h3 {
       font-size: 24px;
     }
   }
-  
+
   .generalArrowContainer {
     align-content: flex-end;
     bottom: 50px;
   }
-  
+
   .generalDownArrow {
     /* type img */
     width: 27px;
@@ -574,40 +574,40 @@ h1 {
 
 @media (max-width: 420px) {
 
-  
+
   .landingDescriptionContainer {
     margin-bottom: 28px;
     > h3 {
       font-size: 24px;
     }
   }
-  
+
   .landingArrowContainer {
     position: absolute;
     bottom: 50px;
     z-index: 0;
   }
-  
+
   .landingBuildingContainer {
     display: none;
   }
-  
+
   .landingBuildings {
     display: none;
 
   }
-  
+
   .landingDownArrow {
     /* type img */
     width: 27px;
     height: 11px;
   }
-  
-  
+
+
   .landingWaterloopContainer {
     padding: 17px 0;
   }
-  
+
   .landingWaterloop {
     /* type img */
     width: 335px;
