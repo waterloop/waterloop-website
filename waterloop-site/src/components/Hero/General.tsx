@@ -8,11 +8,14 @@ class heroComponent extends React.Component<MyProps> {
   render() {
     return (
       <div className="generalContainer">
-        <div className="generalTitleContainer">
-          <h1>{this.props.title}</h1>
-        </div>
-        <div className="generalDescriptionContainer">
-          <h3>{this.props.description}</h3>
+        <div className="generalFillerSpace"></div>
+        <div className="generalTextContainer">
+          <div className="generalTitleContainer">
+            <h1>{this.props.title}</h1>
+          </div>
+          <div className="generalDescriptionContainer">
+            <h3>{this.props.description}</h3>
+          </div>
         </div>
         <div className="generalArrowContainer">
           <img
