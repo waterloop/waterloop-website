@@ -1,32 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import IconYellowImg from "../../static/img/logos/Logo.svg";
 import Contact from "../../pages/Contact";
 import Home from "../../pages/Home";
 import Flock from "../../pages/Flock";
 import Team from "../../pages/Team";
 import Sponsors from "../../pages/Sponsors";
+import "../../theme/global.scss";
+import IconYellowImg from "../../static/img/logos/Logo.svg";
+
 import { NavLink } from "react-router-dom";
 
-const NavbarContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 8px;
-  width: 100%;
-  height: 55px;
-  background-color: #232635;
-`;
-
-const ListContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: left;
-  flex-wrap: nowrap;
-  align-items: center;
-  padding: 0 50px;
-`;
+type Page = { title: string };
 
 const StyledLink = styled(NavLink)`
   color: white;
@@ -34,24 +18,17 @@ const StyledLink = styled(NavLink)`
   font-family: "IBM Plex Sans";
   font-size: 18px;
   text-transform: uppercase;
-
   text-decoration: none;
   &:visited,
   &:link {
     text-decoration: none;
   }
-
   &:focus,
   &:hover,
   &:active {
     text-decoration: none;
     color: #fed138;
   }
-`;
-
-const LogoContainer = styled.div`
-  align-items: left;
-  padding: 3px 50px;
 `;
 
 const IconYellow = styled.img`
@@ -66,7 +43,13 @@ type LinkProp = { to: string; title: string; text: string };
 class Link extends React.Component<LinkProp> {
   render() {
     return (
-      <StyledLink to={this.props.to} title={this.props.title}>
+      <StyledLink
+        className="StyledLink"
+        to={this.props.to}
+        title={this.props.title}
+        exact
+        activeClassName="active"
+      >
         {this.props.text}
       </StyledLink>
     );
@@ -76,13 +59,13 @@ class Link extends React.Component<LinkProp> {
 class Navbar extends React.Component {
   render() {
     return (
-      <NavbarContainer>
-        <LogoContainer>
+      <div className="NavbarContainer">
+        <div className="LogoContainer">
           <NavLink to="/">
             <IconYellow src={IconYellowImg}></IconYellow>
           </NavLink>
-        </LogoContainer>
-        <ListContainer>
+        </div>
+        <div className="ListContainer">
           <Link to="/" title="Home" text="Home">
             <Home />
           </Link>
@@ -98,8 +81,8 @@ class Navbar extends React.Component {
           <Link to="/contact" title="Contact" text="Contact">
             <Contact />
           </Link>
-        </ListContainer>
-      </NavbarContainer>
+        </div>
+      </div>
     );
   }
 }
