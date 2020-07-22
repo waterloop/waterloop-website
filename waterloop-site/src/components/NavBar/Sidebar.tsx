@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import styled from "styled-components";
 import BlackLogoImg from "../../static/img/logos/Icon_Yellow.png";
-import WhiteLogoImg from "../../static/img/logos/logo.svg";
-import HamburgerIcon from "../../static/img/assets/bars-solid.svg";
+import WhiteLogoImg from "../../static/img/logos/Logo.svg";
 import IconYellowImg from "../../static/img/logos/Logo.svg";
 import Contact from "../../pages/Contact";
 import Home from "../../pages/Home";
@@ -59,11 +58,6 @@ const StyledLink = styled(NavLink)`
   }
 `;
 
-const LogoContainer = styled.div`
-  padding: 3px 50px;
-  background-color: #232635;
-`;
-
 const IconYellow = styled.img`
   margin-top: 20px;
   margin-left: 10px;
@@ -83,13 +77,14 @@ const IconBlack = styled.img`
 const StyledToggle = styled.button`
   display: flex;
   z-index: 3000;
+  overflow: hidden;
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  width: 42px;
+  width: 52px;
   height: 40px;
   margin-top: 20px;
-  margin-right: 10px;
+  margin-right: 0px;
   margin-bottom: 10px;
   background: transparent;
   border: none;
@@ -104,12 +99,13 @@ const ToggleLine = styled.div`
   height: 4px;
   margin-top: 3px;
   margin-bottom: 3px;
+  margin-right: 10px;
   background-color: #FFFFFF;
   border-radius: 10px;
   -webkit-transition: transform 0.4s ease-in-out, 
                       background-color 0.2s ease-in-out,
                       height 0.2s ease-in-out;
-  transition: transform 0.4s ease-in-out, 
+  transition: transform 0.4s ease-in-out,
               background-color 0.2s ease-in-out,
               height 0.2s ease-in-out;
   &.open1{
@@ -128,30 +124,6 @@ const ToggleLine = styled.div`
     transform: translate(0%, -9px) rotate(-45deg);
   }
   `
-
-const styles = {
-  bmBurgerButton: {
-    position: 'fixed',
-    width: '40px',
-    height: '40px',
-    right: '5%',
-    top: '5%'
-  },
-  bmBurgerBars: {
-    background: '#FFF',
-    "border-radius": '15px'
-  },
-  bmMenu: {
-    background: '#FFFFFF',
-    fontSize: '2em'
-  }, bmItem: {
-    color: "#010101",
-    margin: "0 10pt",
-    "font-family": "IBM Plex Sans",
-    "font-size": "18px",
-    "text-transform": "uppercase"
-  },
-}
 
 type LinkProp = { to: string; title: string; text: string };
 
@@ -185,21 +157,12 @@ const Sidebar = (props: any) => {
       <div>
           <SidebarContainer>
               <IconYellow src={BlackLogoImg}></IconYellow>
-              {toggleOpen ? 
-                <StyledToggle className="open" onClick={() => setToggle(!toggleOpen)}>
-                  <ToggleLine className="open1"/> 
-                  <ToggleLine className="open2"/> 
-                  <ToggleLine className="open3"/> 
+                <StyledToggle className={toggleOpen ? "open" : ""} onClick={() => setToggle(!toggleOpen)}>
+                  <ToggleLine className={toggleOpen ? "open1" : ""}/> 
+                  <ToggleLine className={toggleOpen ? "open2" : ""}/> 
+                  <ToggleLine className={toggleOpen ? "open3" : ""}/> 
                 </StyledToggle>
-              : 
-                <StyledToggle onClick={() => setToggle(!toggleOpen)}>
-                  <ToggleLine/> 
-                  <ToggleLine/> 
-                  <ToggleLine/> 
-                </StyledToggle>
-              }
-              {toggleOpen ?
-                <ListContainer>
+              <ListContainer className={toggleOpen ? "" : "closed"}>
                   <div>
                 <IconBlack src={WhiteLogoImg}></IconBlack>
                 <Link to="/" title="Home" text="Home">
@@ -227,35 +190,6 @@ const Sidebar = (props: any) => {
                 </Link>
                 </div>
                 </ListContainer>
-              :
-              <ListContainer className="closed">
-                  <div>
-                <IconBlack src={WhiteLogoImg}></IconBlack>
-                <Link to="/" title="Home" text="Home">
-                  <Home />
-                </Link>
-                </div>
-                <div>
-                <Link to="/the-flock" title="The Flock" text="The Flock">
-                  <Flock />
-                </Link>
-                </div>
-                <div>
-                <Link to="/team" title="Team" text="Team">
-                  <Team />
-                </Link>
-                </div>
-                <div>
-                <Link to="/sponsors" title="Sponsors" text="Sponsors">
-                  <Sponsors />
-                </Link>
-                </div>
-                <div>
-                <Link to="/contact" title="Contact" text="Contact">
-                  <Contact />
-                </Link>
-                </div></ListContainer>
-              }
           </SidebarContainer>
       </div>
     );
