@@ -6,7 +6,6 @@ class Flock extends React.Component {
         return (
             <div>
                 <Hero title="The Flock" description="Learn about our geese."></Hero>
-                <div style={{marginTop: '500px'}}></div>
             </div>
         );
     }

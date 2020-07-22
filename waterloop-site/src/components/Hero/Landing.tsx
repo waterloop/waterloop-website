@@ -10,41 +10,38 @@ type MyProps = { description: string };
 class heroComponent extends React.Component<MyProps> {
   render() {
     return (
-      <div className="landingContainer">
-        <div className="landingContent">
-          {/* waterloop svg */}
-          <div className="landingWaterloopContainer">
+      // TODO: Nest background image in another div element to provide proper padding between the image and the bottom.
+      <div className="landingAligner">
+        <div className="landingContainer" style={{backgroundImage: `url(${BuildingsImg})`}}>
+          {/* Use flex: 1 on all 3 child divs to centre the title. */}
+          <div className="landingFiller"></div>
+          <div className="landingContent">
+            {/* waterloop svg */}
+            <div className="landingWaterloopContainer">
+              <img
+                className="landingWaterloop"
+                src={WaterloopImg}
+                alt="waterloop logo"
+              />
+            </div>
+            <div className="landingDescriptionContainer">
+              <h3>{this.props.description}</h3>
+            </div>
+            <Button
+              backgroundColor="yellow"
+              textColor="black"
+              text="JOIN US"
+              onClick={() => window.open("recruitment")}
+              variant={null}
+            ></Button>
+          </div>
+          <div className="landingArrowContainer">
             <img
-              className="landingWaterloop"
-              src={WaterloopImg}
-              alt="waterloop logo"
-            />
+              className="landingDownArrow"
+              src={DownArrowImg}
+              alt="navigation"
+            ></img>
           </div>
-          <div className="landingDescriptionContainer">
-            <h3>{this.props.description}</h3>
-          </div>
-          <Button
-            backgroundColor="yellow"
-            textColor="black"
-            text="JOIN US"
-            onClick={() => window.open("recruitment")}
-            variant={null}
-          ></Button>
-        </div>
-
-        <div className="landingArrowContainer">
-          <img
-            className="landingDownArrow"
-            src={DownArrowImg}
-            alt="navigation"
-          ></img>
-        </div>
-        <div className="landingBuildingContainer">
-          <img
-            className="landingBuildings"
-            src={BuildingsImg}
-            alt="buildings"
-          ></img>
         </div>
       </div>
     );

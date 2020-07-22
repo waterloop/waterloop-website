@@ -505,15 +505,31 @@ h1 {
   }
 }
 
+.landingAligner {
+  height: 100vh;
+  min-height: 50vw;
+  margin-bottom: 2em;
+  background-color: #232635;
+}
+
 .landingContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: stretch;
   width: 100%;
-  height: 100vh;
+  height: 95%;
+
   background-color: #232635;
-  margin-bottom: 2em;
+
+  // Settings for background image.
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+}
+
+.landingFiller {
+  flex: 1;
 }
 
 .landingDescriptionContainer {
@@ -523,22 +539,10 @@ h1 {
 }
 
 .landingArrowContainer {
-  position: absolute;
-  bottom: 75px;
-  z-index: 0;
-}
-
-.landingBuildingContainer {
-  width: 100%;
-}
-
-.landingBuildings {
-  /* type img */
-  width: 100%;
-  height: auto;
-  position: absolute;
-  bottom: 30px;
-  padding-top: 3em;
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 .landingDownArrow {
@@ -547,14 +551,14 @@ h1 {
   height: 17px;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
+  padding-bottom: 30px;
 }
 
 .landingContent {
-  margin-bottom: 30vh;
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 999;
 }
 
 .landingWaterloopContainer {
@@ -565,15 +569,22 @@ h1 {
 
 .landingWaterloop {
   /* type img */
-  width: 700px;
+  max-width: 700px;
+  width: 90vw;
   height: auto;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
 }
 
-@media (max-width: 420px) {
+@media (max-width: 500px) {
+  .landingAligner {
+    min-height: 100vw;
+  }
 
-  
+  .landingContainer {
+    background-image: none!important;
+  }
+
   .landingDescriptionContainer {
     margin-bottom: 28px;
     > h3 {
@@ -581,25 +592,11 @@ h1 {
     }
   }
   
-  .landingArrowContainer {
-    position: absolute;
-    bottom: 50px;
-    z-index: 0;
-  }
-  
-  .landingBuildingContainer {
-    display: none;
-  }
-  
-  .landingBuildings {
-    display: none;
-
-  }
-  
   .landingDownArrow {
     /* type img */
     width: 27px;
     height: 11px;
+    padding-bottom: 60px;
   }
   
   
@@ -609,8 +606,8 @@ h1 {
   
   .landingWaterloop {
     /* type img */
-    width: 335px;
-    height: 49px;
+    max-width: 335px;
+    height: auto;
   }
 }
 
