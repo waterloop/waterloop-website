@@ -1,46 +1,32 @@
 import React from "react";
-import BrentsWeldingAndFab from "../../static/img/sponsors/BrentsWeldingAndFab.png";
-import UW_Engineering from "../../static/img/sponsors/UW_Engineering.png";
-import UW_Engineering_Endowment from "../../static/img/sponsors/UW_Engineering_Endowment.png";
-import UW_Engineering_Society from "../../static/img/sponsors/UW_Engineering_Society.png";
-import ClickUp from "../../static/img/sponsors/ClickUp.png";
-import WCBranham from "../../static/img/sponsors/WCBranham.png";
+
 import { Button } from "components/Button";
 
-type MyProps = {};
+export type ImgJSON = {imgSrc: string, imgAlt: string};
 
-class SponsorsLanding extends React.Component<MyProps> {
+class SponsorsLanding extends React.Component<{data: ImgJSON[]}> {
+  renderImages = (data: ImgJSON[]) => {
+    return data.map(entry => {
+        return (
+          <div className="Img-Box-Sponsors">
+            <img
+              className="Img-Sponsors"
+              src={entry.imgSrc}
+              alt={entry.imgAlt}
+            />
+          </div>
+        );
+    });
+  };
+
   render() {
     return (
       <div className="Block-Sponsors">
-        <div className="Header-Sponsors">
-          <h2>Our Sponsors</h2>
-        </div>
+        <h2 className="Header-Sponsors">Our Sponsors</h2>
         <div className="SponsorsContainer">
-          <img
-            className="Img-Sponsors"
-            src={BrentsWeldingAndFab}
-            alt="BrentsWeldingAndFab"
-          />
-          <img
-            className="Img-Sponsors"
-            src={UW_Engineering}
-            alt="UW_Engineering"
-          />
-          <img
-            className="Img-Sponsors"
-            src={UW_Engineering_Endowment}
-            alt="UW_Engineering_Endowment"
-          />
-          <img
-            className="Img-Sponsors"
-            src={UW_Engineering_Society}
-            alt="UW_Engineering_Society"
-          />
-          <img className="Img-Sponsors" src={WCBranham} alt="WCBranham"/>
-          <img className="Img-Sponsors" src={ClickUp} alt="ClickUp"/>
+          {this.renderImages( this.props.data )}
         </div>
-        <div style={{ alignSelf: "center" }}>
+        <div className="Button-Sponsors">
           <Button
             backgroundColor="yellow"
             textColor="black"

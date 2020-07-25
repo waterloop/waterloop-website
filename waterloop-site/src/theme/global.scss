@@ -326,36 +326,54 @@ h1 {
   padding-bottom: 25px;
 }
 
+
+/*Landing Sponsor's component styles: */
+.Img-Box-Sponsors {
+  margin: 40px;
+  width: calc(10vw + 200px);
+  height: calc(5vw + 100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .Img-Sponsors {
   /* type img */
-  display: flex;
-  align-content: center;
-  width: 19vw;
-  height: 15vh;
-  margin: 40px;
-  padding: 5px;
-  border: 2px solid #aab7c4;
-  border-radius: 10px;
+  width: 100%;
 }
 
 .Header-Sponsors {
   /* type h2 */
   font-style: italic;
-  font-size: 28px;
+  font-size: 1.75rem;
 }
 
 .SponsorsContainer {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   width: 100%;
 }
 
-.Block-Sponsors {
+.Button-Sponsors {
   display: flex;
-  flex-direction: column;
-  width: auto;
-  margin: 10px 150px;
+  justify-content: center;
+  margin-top: 20px;
 }
+
+.Block-Sponsors {
+  width: auto;
+  margin: 10px 5vw; // TODO: To be removed when parent container gets universal padding.
+}
+
+@media (max-width: 500px) {
+  .Img-Box-Sponsors {
+    margin: 40px 0;
+    width: 100%;
+  }
+}
+
+
 
 .Block-RecruimentForm {
   padding: 1%;
