@@ -10,7 +10,7 @@ type MyProps = { description: string };
 class heroComponent extends React.Component<MyProps> {
   render() {
     return (
-      // TODO: Nest background image in another div element to provide proper padding between the image and the bottom.
+      // ladningAligner nests background image in another div element to provide proper padding between the image and the bottom.
       <div className="landingAligner">
         <div className="landingContainer" style={{backgroundImage: `url(${BuildingsImg})`}}>
           {/* Use flex: 1 on all 3 child divs to centre the title. */}

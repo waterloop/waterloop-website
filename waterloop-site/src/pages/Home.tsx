@@ -6,6 +6,8 @@ class Home extends React.Component {
         return (
             <div>
                 <Hero description="A faster look on the future."></Hero>
+                {/* Remove bottom div once done with testing */}
+                <div style={{padding: '500px 0'}}></div>    
             </div>
         );
     }
