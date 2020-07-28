@@ -12,10 +12,13 @@ Pass in **list of JSON data** into the prop parameter _**data**_, with each JSON
 {
     "title": "The title to display (optional)",
     "text": "The descriptive text (required)",
-    "image": "Image link starting in the 'public' folder directory (e.g. TxtWImgSamples/joinus.jpg) (required)",
     "link": "Link to redirect user to when they click the 'VIEW MORE' button (optional - button hidden when parameter not provided)"
 }
 ```
+### IMPORTANT NOTE:
+
+Because of the way images are stored, **you also have to manually import the images into the parent component using TextWithImage** from the `static/img` folder and pass them into a `string[]` type variable in the same order as the corresponding JSON entries.
+
 
 Additionally, you can change the layout to only display text on the **left** or on the **right** by passing either value into the prop parameter _**textPos**_. By default, this is set to **alternate** the text position between left and right. 
 

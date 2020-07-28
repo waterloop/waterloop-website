@@ -2,12 +2,12 @@ import React from "react";
 import { Button } from "components/Button";
 import "theme/global.scss";
 
-export type MyProps = { title?: string; text: string; image: string, link?: string };
+export type MyProps = { title?: string; text: string; link?: string };
 
-export class TextWithImage extends React.Component<{data: MyProps[], textPos?: string}> {
+export class TextWithImage extends React.Component<{data: MyProps[], imgData: string[], textPos?: string}> {
   renderChildren = (data: MyProps[]) => {
     var isRightLeft = true; // Alternate between right-left and left-right layout.
-    var key = 0;
+    var key = -1;
     return data.map((entry: MyProps) => {
       isRightLeft = !isRightLeft;
       key += 1;
@@ -38,7 +38,7 @@ export class TextWithImage extends React.Component<{data: MyProps[], textPos?: s
           </div>
           <img
             className="Img-TextWithImage"
-            src={entry.image}
+            src={this.props.imgData[key]}
             alt="waterloop"
           ></img>
         </div>
