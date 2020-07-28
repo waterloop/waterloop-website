@@ -8,7 +8,7 @@ class SponsorsLanding extends React.Component<{data: ImgJSON[]}> {
   renderImages = (data: ImgJSON[]) => {
     return data.map(entry => {
         return (
-          <div className="Img-Box-Sponsors">
+          <div key={entry.imgSrc} className="Img-Box-Sponsors">
             <img
               className="Img-Sponsors"
               src={entry.imgSrc}

@@ -11,6 +11,7 @@ import UW_Engineering_Society from "../static/img/sponsors/UW_Engineering_Societ
 import ClickUp from "../static/img/sponsors/ClickUp.png";
 import WCBranham from "../static/img/sponsors/WCBranham.png";
 
+// Place data here:
 const imgJSON: ImgJSON[] = [
     {imgSrc: BrentsWeldingAndFab, imgAlt: 'Brent\'s Welding and Fabrication Inc.'},
     {imgSrc: UW_Engineering, imgAlt: 'Waterloo Engineering'},
