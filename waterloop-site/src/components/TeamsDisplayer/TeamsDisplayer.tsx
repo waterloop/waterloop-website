@@ -2,12 +2,16 @@ import React from 'react'
 import styled from 'styled-components'
 
 // Types and interfaces
-import ProfileType from '../../interfaces'
-import { QueryData, SubteamProps, TeamsDisplayerProps, TeamsDisplayerState } from './interfaces'
+import {
+  ProfileType,
+  QueryData,
+  SubteamProps,
+  TeamsDisplayerProps,
+  TeamsDisplayerState
+} from './interfaces'
 
 // Components
-import { ProfileSection } from '../../components/Profiles'
-import TeamProfileFilter from '../../components/TeamFilter'
+import { ProfileSection, TeamFilter } from './components'
 
 // Utility
 import { sortProfiles, applyTeamFilters } from './utils'
@@ -132,7 +136,7 @@ export default class TeamsDisplayer extends React.Component<TeamsDisplayerProps,
 
     return (
       <Page>
-        <TeamProfileFilter
+        <TeamFilter
           teamFilters={this.state.teamFilters}
           filterLabels={this.state.teamFilterLabels}
           updateFilters={(id: number) => this.updateFilters(id)}

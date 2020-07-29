@@ -1,9 +1,8 @@
 // Interfaces
-import ProfileType from '../../interfaces'
-import { QueryData } from './interfaces'
+import { ProfileType, QueryData } from './interfaces'
 
 // Test data
-import testData from '../../testProfileData'
+import testData from './testProfileData'
 
 // Check if member has crucial missing fields
 const isProfileComplete = (member: QueryData) => {

@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import ProfileType from '../../../interfaces'
+// Types and interfaces
+import { ProfileType } from '../../interfaces'
 import { PSectionProps, PSectionState } from '../interfaces'
-import { SubProfile, LeadProfile, ExpandedProfile } from '../../Profiles'
+import { SubProfile, LeadProfile, ExpandedProfile } from '../Profiles'
 
 // Styled components for ProfileSection
 const ProfileSectionTitle = styled.h1`

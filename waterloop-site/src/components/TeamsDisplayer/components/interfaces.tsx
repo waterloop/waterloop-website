@@ -1,4 +1,4 @@
-import ProfileType from '../../interfaces'
+import { ProfileType } from '../interfaces'
 
 export type ContactsType = {
  contacts: Array<{icon: string, url: string}>
