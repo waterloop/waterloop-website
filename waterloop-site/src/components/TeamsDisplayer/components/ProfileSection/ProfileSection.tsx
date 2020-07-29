@@ -7,7 +7,7 @@ import { PSectionProps, PSectionState } from '../interfaces'
 import { SubProfile, LeadProfile, ExpandedProfile } from '../Profiles'
 
 // Styled components for ProfileSection
-const ProfileSectionTitle = styled.h1`
+const ProfileSectionTitle = styled.h5`
   font-family: IBM Plex Sans;
   font-style: italic;
   font-weight: 600;
