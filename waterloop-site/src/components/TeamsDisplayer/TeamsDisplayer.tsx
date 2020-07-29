@@ -19,10 +19,6 @@ import { generateMembersQuery, generateFiltersQuery } from './api'
 
 // Styled components for ProfileSection
 const Page = styled.div`
-  display: block;
-  max-width: 1080px;
-  margin: 0 auto;
-
   @media (max-width: 975px){
     display: flex;
     flex-direction: column;

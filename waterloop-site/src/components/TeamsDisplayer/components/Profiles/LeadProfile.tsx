@@ -21,13 +21,13 @@ const PortraitContainer = styled.div`
   flex-basis: 60%;
   height: 100%;
   border: 1px solid #fbc531;
-  border-radius: 25px 0px;
+  border-radius: 50% 50%;
 `
 const Portrait = styled.img`
   flex-basis: 100%;
   height: 100%;
   width: 100%;
-  border-radius: 25px 0px;
+  border-radius: 50% 50%;
 `
 const InfoContainer = styled.div`
   flex-basis: 35%;

@@ -12,7 +12,6 @@ const ProfileSectionTitle = styled.h5`
   font-style: italic;
   font-weight: 600;
   font-size: 36px;
-  line-height: 47px;
   color: #010101;
   margin-bottom: 50px;
 `
@@ -53,6 +52,11 @@ const MinifiedSubContainer = styled(MinifiedContainer)`
 const ExpandedContainer = styled.div`
   width: 100%;
   margin-bottom: 100px;
+`
+const TeamDescription = styled.h6`
+  margin-bottom: 60px;
+  font-family: IBM Plex Sans;
+  font-style: normal;
 `
 
 // Profile Subsection
@@ -103,6 +107,10 @@ export default class ProfileSection extends React.Component<PSectionProps, PSect
     return (
       <ProfileSectionContainer>
         {this.props.title && <ProfileSectionTitle>{this.props.title}</ProfileSectionTitle>}
+
+        <TeamDescription>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.
+        </TeamDescription>
 
         { // Expanded Profile Slot
           Object.keys(expanded).length !== 0 &&
