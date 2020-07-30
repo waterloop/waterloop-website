@@ -82,30 +82,30 @@ const CloseBtn = styled.button`
   font-size: large;
   font-family: 'IBM Plex Sans';
   position: fixed;
-  top: 4%;
-  right: 19.5%;
+  top: 15%;
+  right: 29.5%;
   z-index: 3;
 `;
 
 
-type MyProps = { role: string, description: string, skills: string, technicalQ: string, termList: [string, string, string, string, string]}
-type MyState = {joinClicked: boolean}
+type MyProps = { role: string, description: string, skills: string, technicalQ: string, termList: [string, string, string, string, string] }
+type MyState = { joinClicked: boolean }
 
 class PositionPosting extends React.Component<MyProps, MyState> {
 
-  constructor(props: MyProps){
+  constructor(props: MyProps) {
     super(props);
     this.state = {
       joinClicked: false
     };
   }
 
-  onClick(){
-    if (!this.state.joinClicked){
-      this.setState({joinClicked: true});
+  onClick() {
+    if (!this.state.joinClicked) {
+      this.setState({ joinClicked: true });
     }
-    else{
-      this.setState({joinClicked: false});
+    else {
+      this.setState({ joinClicked: false });
     }
     return;
   }
@@ -120,28 +120,28 @@ class PositionPosting extends React.Component<MyProps, MyState> {
         </TextBlock>
         <ButtonBlock>
           <Button
-            onClick = {this.onClick.bind(this)}
-            text = "JOIN"
-            backgroundColor = "yellow"
-            textColor = "black"
-            variant = {null}
+            onClick={this.onClick.bind(this)}
+            text="JOIN"
+            backgroundColor="yellow"
+            textColor="black"
+            variant={null}
           ></Button>
         </ButtonBlock>
         <Line></Line>
         {this.state.joinClicked &&
-        <Background>
-          <CloseBtn
-            onClick = {this.onClick.bind(this)}
-          >
-            X
+          <Background>
+            <CloseBtn
+              onClick={this.onClick.bind(this)}
+            >
+              X
           </CloseBtn>
-          <Form
-            role = {this.props.role}
-            technicalQ = {this.props.technicalQ}
-            termList = {this.props.termList}
-            onSuccess={() => this.setState({ joinClicked: false })}
-          />
-        </Background>
+            <Form
+              role={this.props.role}
+              technicalQ={this.props.technicalQ}
+              termList={this.props.termList}
+              onSuccess={() => this.setState({ joinClicked: false })}
+            />
+          </Background>
         }
       </Block>
     );
