@@ -473,11 +473,10 @@ h1 {
 }
 
 @media (max-width: 420px) {
-
   .generalContainer {
     align-items: center;
   }
-  
+
   .generalTitleContainer {
     width: 100%;
 
@@ -485,25 +484,23 @@ h1 {
       font-size: 42px;
     }
   }
-  
-  .generalDescriptionContainer {
 
+  .generalDescriptionContainer {
     > h3 {
       font-size: 24px;
     }
   }
-  
+
   .generalArrowContainer {
     align-content: flex-end;
     bottom: 50px;
   }
-  
+
   .generalDownArrow {
     /* type img */
     width: 27px;
     height: 11px;
   }
-
 }
 
 .landingContainer {
@@ -526,11 +523,12 @@ h1 {
 .landingArrowContainer {
   position: absolute;
   bottom: 75px;
-  z-index: 0;
+  z-index: 99;
 }
 
 .landingBuildingContainer {
   width: 100%;
+  z-index: 2;
 }
 
 .landingBuildings {
@@ -573,41 +571,36 @@ h1 {
 }
 
 @media (max-width: 420px) {
-
-  
   .landingDescriptionContainer {
     margin-bottom: 28px;
     > h3 {
       font-size: 24px;
     }
   }
-  
+
   .landingArrowContainer {
     position: absolute;
     bottom: 50px;
-    z-index: 0;
   }
-  
+
   .landingBuildingContainer {
     display: none;
   }
-  
+
   .landingBuildings {
     display: none;
-
   }
-  
+
   .landingDownArrow {
     /* type img */
     width: 27px;
     height: 11px;
   }
-  
-  
+
   .landingWaterloopContainer {
     padding: 17px 0;
   }
-  
+
   .landingWaterloop {
     /* type img */
     width: 335px;
