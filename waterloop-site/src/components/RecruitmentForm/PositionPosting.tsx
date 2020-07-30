@@ -82,8 +82,8 @@ const CloseBtn = styled.button`
   font-size: large;
   font-family: 'IBM Plex Sans';
   position: fixed;
-  top: 4%;
-  right: 19.5%;
+  top: 15%;
+  right: 29.5%;
   z-index: 3;
 `;
 
