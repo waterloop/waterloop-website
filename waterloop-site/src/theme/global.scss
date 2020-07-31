@@ -30,6 +30,11 @@ h1 {
   margin-bottom: 0pt;
 }
 
+textarea {
+  resize: none;
+  padding: 10px;
+}
+
 .btn {
   display: flex;
   justify-content: center;
