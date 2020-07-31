@@ -12,14 +12,19 @@ const Container = styled.div`
 const PastGeeseTimeline = styled(UnstyledPastGeeseTimeline)``;
 
 class Flock extends React.Component {
-    render() {
-        return (
-            <Container>
-                <Hero title="The Flock" description="Learn about our geese."></Hero>
-                <PastGeeseTimeline />
-            </Container>
-        );
-    }
+  render() {
+    return (
+      <div>
+        <Hero
+          title="The Flock"
+          description="Learn about our geese."
+          anchor="#flock"
+        ></Hero>
+        <div id={"#flock"}></div>
+        <PastGeeseTimeline></PastGeeseTimeline>
+      </div>
+    );
+  }
 }
 
 export default Flock;
