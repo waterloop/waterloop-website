@@ -42,7 +42,12 @@ class Contact extends React.Component {
   render() {
     return (
       <div>
-        <Hero title="Contact" description="We'd love to get in touch!"></Hero>
+        <Hero
+          title="Contact"
+          description="We'd love to get in touch!"
+          anchor="#contact-form"
+        ></Hero>
+        <div id={"#contact-form"}></div>
         <Container>
           <ContactForm
             title="Send Us a Message"
