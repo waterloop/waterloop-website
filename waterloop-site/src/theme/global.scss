@@ -46,13 +46,13 @@ h1 {
 @media (max-width: 420px) {
   .GooseRoster-Img {
     /* type img */
-     /* type img */
-  display: block;
-  object-fit: cover; /*Centers image and crops instead of scales aspect ratio.*/
-  border: 10px;
-  max-width: 355px;
-  /*200 IQ bug fix (the first image doesn't load in correct size if only using width ;) */
-  height: 10em;
+    /* type img */
+    display: block;
+    object-fit: cover; /*Centers image and crops instead of scales aspect ratio.*/
+    border: 10px;
+    max-width: 355px;
+    /*200 IQ bug fix (the first image doesn't load in correct size if only using width ;) */
+    height: 10em;
   }
 
   .FooterWrapper {
@@ -104,7 +104,7 @@ h1 {
     /* type img */
     width: 90vw;
   }
-  
+
   .LogoWrapper {
     transform: scale(1.5, 1.5);
     margin-left: 15%;
@@ -347,7 +347,6 @@ h1 {
   padding-bottom: 25px;
 }
 
-
 /*Landing Sponsor's component styles: */
 .Img-Box-Sponsors {
   margin: 40px;
@@ -379,7 +378,7 @@ h1 {
 .Button-Sponsors {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin: 40px 0;
 }
 
 .Block-Sponsors {
@@ -393,8 +392,6 @@ h1 {
     width: 100%;
   }
 }
-
-
 
 .Block-RecruimentForm {
   padding: 1%;
