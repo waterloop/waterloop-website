@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from "styled-components";
 import BlackLogoImg from "../../static/img/logos/Icon_Yellow.png";
-import WhiteLogoImg from "../../static/img/logos/Logo.svg";
-import IconYellowImg from "../../static/img/logos/Logo.svg";
+import WhiteLogoImg from "../../static/img/logos/logo.svg";
+import IconYellowImg from "../../static/img/logos/logo.svg";
 import Contact from "../../pages/Contact";
 import Home from "../../pages/Home";
 import Flock from "../../pages/Flock";
@@ -44,7 +44,7 @@ const ListContainer = styled.div`
   }
 `;
 
-const StyledLink = styled(NavLink)`
+const Link = styled(NavLink)`
   color: #010101;
   font-family: "IBM Plex Sans";
   margin: 1rem;
@@ -102,7 +102,7 @@ const ToggleLine = styled.div`
   margin-right: 10px;
   background-color: #FFFFFF;
   border-radius: 10px;
-  -webkit-transition: transform 0.4s ease-in-out, 
+  -webkit-transition: transform 0.4s ease-in-out,
                       background-color 0.2s ease-in-out,
                       height 0.2s ease-in-out;
   transition: transform 0.4s ease-in-out,
@@ -125,18 +125,6 @@ const ToggleLine = styled.div`
   }
   `
 
-type LinkProp = { to: string; title: string; text: string };
-
-class Link extends React.Component<LinkProp> {
-  render() {
-    return (
-      <StyledLink to={this.props.to} title={this.props.title}>
-        {this.props.text}
-      </StyledLink>
-    );
-  }
-}
-
 enum Page {
   home = "Home",
   flock = "Flock",
@@ -158,35 +146,35 @@ const Sidebar = (props: any) => {
           <SidebarContainer>
               <IconYellow src={BlackLogoImg}></IconYellow>
                 <StyledToggle className={toggleOpen ? "open" : ""} onClick={() => setToggle(!toggleOpen)}>
-                  <ToggleLine className={toggleOpen ? "open1" : ""}/> 
-                  <ToggleLine className={toggleOpen ? "open2" : ""}/> 
-                  <ToggleLine className={toggleOpen ? "open3" : ""}/> 
+                  <ToggleLine className={toggleOpen ? "open1" : ""}/>
+                  <ToggleLine className={toggleOpen ? "open2" : ""}/>
+                  <ToggleLine className={toggleOpen ? "open3" : ""}/>
                 </StyledToggle>
               <ListContainer className={toggleOpen ? "" : "closed"}>
                   <div>
                 <IconBlack src={WhiteLogoImg}></IconBlack>
-                <Link to="/" title="Home" text="Home">
-                  <Home />
+                <Link to="/" onClick={() => setToggle(false)}>
+                  Home
                 </Link>
                 </div>
                 <div>
-                <Link to="/the-flock" title="The Flock" text="The Flock">
-                  <Flock />
+                <Link to="/the-flock" onClick={() => setToggle(false)}>
+                  Flock
                 </Link>
                 </div>
                 <div>
-                <Link to="/team" title="Team" text="Team">
-                  <Team />
+                <Link to="/team" onClick={() => setToggle(false)}>
+                  Team
                 </Link>
                 </div>
                 <div>
-                <Link to="/sponsors" title="Sponsors" text="Sponsors">
-                  <Sponsors />
+                <Link to="/sponsors" onClick={() => setToggle(false)}>
+                  Sponsors
                 </Link>
                 </div>
                 <div>
-                <Link to="/contact" title="Contact" text="Contact">
-                  <Contact />
+                <Link to="/contact" onClick={() => setToggle(false)}>
+                  Contact
                 </Link>
                 </div>
                 </ListContainer>
