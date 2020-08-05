@@ -79,7 +79,7 @@ const applicationFields: Record<string, FormValue> = {
   },
 };
 
-const formSubmissionUrl = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSdmZSfD1Hs0D3MLBjAfdUkaCb3GJJxIvKUEVJCBf5hVxZTt4g/formResponse'
+const formSubmissionUrl = '/forms/u/0/d/e/1FAIpQLSdmZSfD1Hs0D3MLBjAfdUkaCb3GJJxIvKUEVJCBf5hVxZTt4g/formResponse'
 
 // 0-------------------------0
 // |                         |
