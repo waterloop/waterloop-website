@@ -2,8 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { ContactForm } from "components/ContactForm";
 import Hero from "components/Hero/General";
-// import MapImg from "../static/img/logos/map.svg";
-// import { Map, GoogleApiWrapper } from "google-maps-react";
+import GoogleMapReact from 'google-map-react';
 
 const Container = styled.div`
   display: flex;
@@ -27,16 +26,11 @@ const MapContainer = styled.div`
   }
 `;
 
-function createMarkup() {
-  return {
-    __html:
-      '<iframe width="560" height="315" src="https://www.youtube.com/embed/AvfiJOLqlR4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-  };
-}
-
-function EmbeddedMap() {
-  return <div dangerouslySetInnerHTML={createMarkup()} />;
-}
+const MapContainer2 = styled.div`
+  display: flex;
+  height: 50vh;
+  width: 80vw;
+`;
 
 class Contact extends React.Component {
   render() {
@@ -61,11 +55,16 @@ class Contact extends React.Component {
               ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
               tempor incididunt ut labore et dolore magna aliqua.
             </h6>
-            {/* <MapBox src={MapImg}></MapBox> */}
-            <EmbeddedMap></EmbeddedMap>
+            <MapContainer2>
+              <GoogleMapReact
+                bootstrapURLKeys={{ key: "AIzaSyCGLLjvTMb0xjl - I3 - Dyqp9aJGSIvvh4GA" }}
+                defaultCenter={{ lat: 43.4723, lng: -80.5449 }}
+                defaultZoom={17}
+              ></GoogleMapReact>
+            </MapContainer2>
           </MapContainer>
         </Container>
-      </div>
+      </div >
     );
   }
 }
