@@ -14,7 +14,7 @@ const Container = styled.div`
   margin-top: 10em;
 `;
 
-const MapContainer = styled.div`
+const LocationContainer = styled.div`
   display: flex;
   width: 80%;
   flex-direction: column;
@@ -26,7 +26,7 @@ const MapContainer = styled.div`
   }
 `;
 
-const MapContainer2 = styled.div`
+const MapContainer = styled.div`
   display: flex;
   height: 50vh;
   width: 80vw;
@@ -47,7 +47,7 @@ class Contact extends React.Component {
             title="Send Us a Message"
             desc="Lorem ipsum dolor sit amet, partem expetenda mea id, labitur feugiat maiorum ei qui. Et per mucius lucilius, ut brute noster incorrupte nec, eu est alii erat utinam. Et per mucius lucilius, ut brute noster incorrupte nec, eu est alii erat utinam"
           ></ContactForm>
-          <MapContainer>
+          <LocationContainer>
             <h5>Visit Us</h5>
             <h6>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -55,15 +55,15 @@ class Contact extends React.Component {
               ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
               tempor incididunt ut labore et dolore magna aliqua.
             </h6>
-            <MapContainer2>
+            <MapContainer>
               <GoogleMapReact
                 //we will need to hide this API key before we launch 
                 bootstrapURLKeys={{ key: "AIzaSyCGLLjvTMb0xjl - I3 - Dyqp9aJGSIvvh4GA" }}
                 defaultCenter={{ lat: 43.4723, lng: -80.5449 }}
                 defaultZoom={17}
               ></GoogleMapReact>
-            </MapContainer2>
-          </MapContainer>
+            </MapContainer>
+          </LocationContainer>
         </Container>
       </div >
     );
