@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import BlackLogoImg from "../../static/img/logos/Icon_Yellow.png";
 import WhiteLogoImg from "../../static/img/logos/Logo.svg";
+import Waterlooplogo from "../../static/img/logos/Waterloop.svg";
 import IconYellowImg from "../../static/img/logos/logo.svg";
 import Contact from "../../pages/Contact";
 import Home from "../../pages/Home";
@@ -48,7 +49,7 @@ const Link = styled(NavLink)`
   color: #010101;
   font-family: "IBM Plex Sans";
   margin: 1rem;
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 600;
 
   text-decoration: none;
@@ -68,7 +69,7 @@ const IconYellow = styled.img`
 `;
 
 const IconBlack = styled.img`
-  height: 25px;
+  height: 20px;
   margin: 1rem;
   display: flex;
 `;
@@ -134,52 +135,79 @@ enum Page {
 interface Current {
   currpage: Page;
 }
-
-const Sidebar = (props: any) => {
-  const [toggleOpen, setToggle] = useState(false);
-
-  return (
-    <div>
-      <SidebarContainer>
-        <IconYellow src={BlackLogoImg}></IconYellow>
-        <StyledToggle
-          className={toggleOpen ? "open" : ""}
-          onClick={() => setToggle(!toggleOpen)}
-        >
-          <ToggleLine className={toggleOpen ? "open1" : ""} />
-          <ToggleLine className={toggleOpen ? "open2" : ""} />
-          <ToggleLine className={toggleOpen ? "open3" : ""} />
-        </StyledToggle>
-        <ListContainer className={toggleOpen ? "" : "closed"}>
-          <div>
-            <IconBlack src={WhiteLogoImg}></IconBlack>
-            <Link to="/" onClick={() => setToggle(false)}>
-              Home
-            </Link>
-          </div>
-          <div>
-            <Link to="/the-flock" onClick={() => setToggle(false)}>
-              Flock
-            </Link>
-          </div>
-          <div>
-            <Link to="/team" onClick={() => setToggle(false)}>
-              Team
-            </Link>
-          </div>
-          <div>
-            <Link to="/sponsors" onClick={() => setToggle(false)}>
-              Sponsors
-            </Link>
-          </div>
-          <div>
-            <Link to="/contact" onClick={() => setToggle(false)}>
-              Contact
-            </Link>
-          </div>
-        </ListContainer>
-      </SidebarContainer>
-    </div>
-  );
+type MyState = {
+  toggleOpen: boolean;
 };
+
+type MyProps = {};
+
+class Sidebar extends React.Component<MyProps, MyState> {
+  constructor(props: MyProps) {
+    super(props);
+    this.state = {
+      toggleOpen: false,
+    };
+  }
+  render() {
+    return (
+      <div>
+        <SidebarContainer>
+          <IconYellow src={BlackLogoImg}></IconYellow>
+          <StyledToggle
+            className={this.state.toggleOpen ? "open" : ""}
+            onClick={() => {
+              this.state.toggleOpen
+                ? this.setState({ toggleOpen: false })
+                : this.setState({ toggleOpen: true });
+            }}
+          >
+            <ToggleLine className={this.state.toggleOpen ? "open1" : ""} />
+            <ToggleLine className={this.state.toggleOpen ? "open2" : ""} />
+            <ToggleLine className={this.state.toggleOpen ? "open3" : ""} />
+          </StyledToggle>
+          <ListContainer className={this.state.toggleOpen ? "" : "closed"}>
+            <div>
+              <IconBlack src={Waterlooplogo}></IconBlack>
+              <Link to="/" onClick={() => this.setState({ toggleOpen: false })}>
+                Home
+              </Link>
+            </div>
+            <div>
+              <Link
+                to="/the-flock"
+                onClick={() => this.setState({ toggleOpen: false })}
+              >
+                Flock
+              </Link>
+            </div>
+            <div>
+              <Link
+                to="/team"
+                onClick={() => this.setState({ toggleOpen: false })}
+              >
+                Team
+              </Link>
+            </div>
+            <div>
+              <Link
+                to="/sponsors"
+                onClick={() => this.setState({ toggleOpen: false })}
+              >
+                Sponsors
+              </Link>
+            </div>
+            <div>
+              <Link
+                to="/contact"
+                onClick={() => this.setState({ toggleOpen: false })}
+              >
+                Contact
+              </Link>
+            </div>
+          </ListContainer>
+        </SidebarContainer>
+      </div>
+    );
+  }
+}
 export default Sidebar;

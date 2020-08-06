@@ -73,7 +73,7 @@ class Link extends React.Component<LinkProp> {
   }
 }
 
-class NavbarDesktop extends React.Component {
+class NavBar extends React.Component {
   render() {
     return (
       <NavbarContainer>
@@ -104,4 +104,4 @@ class NavbarDesktop extends React.Component {
   }
 }
 
-export default NavbarDesktop;
+export default NavBar;

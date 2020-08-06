@@ -431,6 +431,10 @@ code {
   overflow: scroll;
 }
 
+.sidebar-open {
+  overflow: hidden;
+}
+
 .NavbarContainer {
   display: flex;
   flex-direction: row;
@@ -606,7 +610,7 @@ code {
 
 .landingWaterloop {
   /* type img */
-  width: 700px;
+  width: 80%;
   height: auto;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
@@ -645,8 +649,7 @@ code {
 
   .landingWaterloop {
     /* type img */
-    width: 335px;
-    height: 49px;
+    width: 80%;
   }
 }
 
