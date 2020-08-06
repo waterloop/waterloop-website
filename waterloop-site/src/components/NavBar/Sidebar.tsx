@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import styled from "styled-components";
 import BlackLogoImg from "../../static/img/logos/Icon_Yellow.png";
-import WhiteLogoImg from "../../static/img/logos/logo.svg";
+import WhiteLogoImg from "../../static/img/logos/Logo.svg";
 import IconYellowImg from "../../static/img/logos/logo.svg";
 import Contact from "../../pages/Contact";
 import Home from "../../pages/Home";
@@ -29,11 +29,11 @@ const ListContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-content: center;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   height: 100vh;
   width: 70vw;
-  right:0;
-  top:0;
+  right: 0;
+  top: 0;
   line-height: 300%;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
@@ -89,10 +89,10 @@ const StyledToggle = styled.button`
   background: transparent;
   border: none;
   outline: none;
-  &.open{
+  &.open {
     justify-content: center;
   }
-`
+`;
 //lines of the mobile toggle button
 const ToggleLine = styled.div`
   width: 30px;
@@ -100,86 +100,86 @@ const ToggleLine = styled.div`
   margin-top: 3px;
   margin-bottom: 3px;
   margin-right: 10px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 10px;
   -webkit-transition: transform 0.4s ease-in-out,
-                      background-color 0.2s ease-in-out,
-                      height 0.2s ease-in-out;
-  transition: transform 0.4s ease-in-out,
-              background-color 0.2s ease-in-out,
-              height 0.2s ease-in-out;
-  &.open1{
+    background-color 0.2s ease-in-out, height 0.2s ease-in-out;
+  transition: transform 0.4s ease-in-out, background-color 0.2s ease-in-out,
+    height 0.2s ease-in-out;
+  &.open1 {
     height: 3px !important;
     background-color: #010101;
     transform: translate(0%, 9px) rotate(45deg);
   }
-  &.open2{
+  &.open2 {
     height: 3px !important;
     transform: translate(200%, 0px);
     background-color: #010101;
   }
-  &.open3{
+  &.open3 {
     height: 3px !important;
     background-color: #010101;
     transform: translate(0%, -9px) rotate(-45deg);
   }
-  `
+`;
 
 enum Page {
   home = "Home",
   flock = "Flock",
   team = "Team",
   sponsors = "Sponsors",
-  contact = "Contact"
+  contact = "Contact",
 }
 
 interface Current {
-  currpage: Page
+  currpage: Page;
 }
 
 const Sidebar = (props: any) => {
+  const [toggleOpen, setToggle] = useState(false);
 
-    const [ toggleOpen, setToggle ] = useState(false)
-
-    return (
-      <div>
-          <SidebarContainer>
-              <IconYellow src={BlackLogoImg}></IconYellow>
-                <StyledToggle className={toggleOpen ? "open" : ""} onClick={() => setToggle(!toggleOpen)}>
-                  <ToggleLine className={toggleOpen ? "open1" : ""}/>
-                  <ToggleLine className={toggleOpen ? "open2" : ""}/>
-                  <ToggleLine className={toggleOpen ? "open3" : ""}/>
-                </StyledToggle>
-              <ListContainer className={toggleOpen ? "" : "closed"}>
-                  <div>
-                <IconBlack src={WhiteLogoImg}></IconBlack>
-                <Link to="/" onClick={() => setToggle(false)}>
-                  Home
-                </Link>
-                </div>
-                <div>
-                <Link to="/the-flock" onClick={() => setToggle(false)}>
-                  Flock
-                </Link>
-                </div>
-                <div>
-                <Link to="/team" onClick={() => setToggle(false)}>
-                  Team
-                </Link>
-                </div>
-                <div>
-                <Link to="/sponsors" onClick={() => setToggle(false)}>
-                  Sponsors
-                </Link>
-                </div>
-                <div>
-                <Link to="/contact" onClick={() => setToggle(false)}>
-                  Contact
-                </Link>
-                </div>
-                </ListContainer>
-          </SidebarContainer>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <SidebarContainer>
+        <IconYellow src={BlackLogoImg}></IconYellow>
+        <StyledToggle
+          className={toggleOpen ? "open" : ""}
+          onClick={() => setToggle(!toggleOpen)}
+        >
+          <ToggleLine className={toggleOpen ? "open1" : ""} />
+          <ToggleLine className={toggleOpen ? "open2" : ""} />
+          <ToggleLine className={toggleOpen ? "open3" : ""} />
+        </StyledToggle>
+        <ListContainer className={toggleOpen ? "" : "closed"}>
+          <div>
+            <IconBlack src={WhiteLogoImg}></IconBlack>
+            <Link to="/" onClick={() => setToggle(false)}>
+              Home
+            </Link>
+          </div>
+          <div>
+            <Link to="/the-flock" onClick={() => setToggle(false)}>
+              Flock
+            </Link>
+          </div>
+          <div>
+            <Link to="/team" onClick={() => setToggle(false)}>
+              Team
+            </Link>
+          </div>
+          <div>
+            <Link to="/sponsors" onClick={() => setToggle(false)}>
+              Sponsors
+            </Link>
+          </div>
+          <div>
+            <Link to="/contact" onClick={() => setToggle(false)}>
+              Contact
+            </Link>
+          </div>
+        </ListContainer>
+      </SidebarContainer>
+    </div>
+  );
+};
 export default Sidebar;

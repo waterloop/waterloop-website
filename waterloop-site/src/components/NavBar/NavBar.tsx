@@ -3,20 +3,29 @@ import NavbarDesktop from "./NavbarDesktop";
 import Sidebar from "./Sidebar";
 
 interface View {
-    isDesktop: boolean
+  width: number;
 }
 
 class Navbar extends React.Component<{}, View> {
-    constructor(props = {}) {
-        super(props);
-        this.state = {
-            isDesktop: false
-        };
-      }
-
-    render() {
-        return (this.state.isDesktop ? <NavbarDesktop/> : <Sidebar/>);
+  constructor(props = {}) {
+    super(props);
+    this.state = {
+      width: window.innerWidth,
     };
+  }
+
+  componentWillMount() {
+    window.addEventListener("resize", this.handleWindowSizeChange);
+  }
+  handleWindowSizeChange = () => {
+    this.setState({
+      width: window.innerWidth,
+    });
+  };
+
+  render() {
+    return this.state.width >= 420 ? <NavbarDesktop /> : <Sidebar />;
+  }
 }
 
 export default Navbar;
