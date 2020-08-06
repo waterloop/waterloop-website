@@ -52,6 +52,8 @@ code {
   }
   .LogoWrapper {
     align-self: left;
+    padding-top: 15px;
+    margin-right: 400px;
     margin-left: 0px;
     transform: scale(0.5, 0.5);
   }
@@ -68,41 +70,30 @@ code {
   }
 }
 
-@media (min-width: 420px) and (max-width: 800px) {
+@media (min-width: 420px) and (max-width: 600px) {
+  .FooterWrapper {
+    flex-direction: column;
+    justify-content: flex-start;
+    bottom: 0;
+    height: 316px;
+    width: 100%;
+  }
   .LogoWrapper {
-    transform: scale(1, 1);
-    margin-left: 10%;
-    margin-bottom: 15%;
+    align-self: flex-start;
+    padding-top: 15px;
+    margin-right: 450px;
+    transform: scale(0.5, 0.5);
   }
   .SocialMediaWrapper {
-    margin: 10% 6% 20% 2%;
-    font-size: 1rem;
+    margin: 5px 10px 5px 2px;
+    font-size: 13px;
   }
   .RoutingWrapper {
-    margin: 10% 10% 20% 30%;
-    font-size: 1rem;
+    margin: 5px 20px 5px 2px;
+    font-size: 13px;
   }
   .LinksWrapper {
-    margin: 10% 10% 20% 30%;
-  }
-}
-
-@media (min-width: 800px) and (max-width: 1100px) {
-  .LogoWrapper {
-    transform: scale(1.5, 1.5);
-    margin-left: 15%;
-    margin-bottom: 12%;
-  }
-  .SocialMediaWrapper {
-    margin: 10% 6% 20% 2%;
-    font-size: 1.5rem;
-  }
-  .RoutingWrapper {
-    margin: 10% 10% 20% 30%;
-    font-size: 1.5rem;
-  }
-  .LinksWrapper {
-    margin: 10% 10% 20% 30%;
+    margin: 0;
   }
 }
 
