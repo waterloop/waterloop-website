@@ -14,15 +14,15 @@ const PastGeeseTimeline = styled(UnstyledPastGeeseTimeline)``;
 class Flock extends React.Component {
   render() {
     return (
-      <div>
+      <Container>
         <Hero
           title="The Flock"
           description="Learn about our geese."
           anchor="#flock"
         ></Hero>
         <div id={"#flock"}></div>
-        <PastGeeseTimeline></PastGeeseTimeline>
-      </div>
+        <PastGeeseTimeline />
+      </Container>
     );
   }
 }
