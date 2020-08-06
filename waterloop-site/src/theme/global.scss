@@ -1,3 +1,7 @@
+$yellow: #fed138;
+$navy: #232636;
+$white: #fefefe;
+
 h2 {
   font-size: 12pt;
 }
@@ -18,14 +22,14 @@ code {
 
 h3 {
   font-size: 30px;
-  color: #ffffff;
+  color: $white;
   margin-top: 0pt;
   font-weight: 400;
 }
 
 h1 {
   font-size: 64pt;
-  color: #ffffff;
+  color: $white;
   text-transform: uppercase;
   margin-bottom: 0pt;
 }
@@ -39,7 +43,7 @@ textarea {
   display: flex;
   justify-content: center;
   background-color: transparent;
-  color: #ffffff;
+  color: $white;
   border-radius: 100pt;
   border: 2px solid white;
   height: 50px;
@@ -399,6 +403,33 @@ textarea {
   text-align: center;
 }
 
+.recruitment-modal {
+  text-align: center;
+  background-color: white;
+  padding: 30px;
+  border: 1px solid gray;
+  width: 70%;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  textarea {
+    min-height: 20px;
+  }
+  input {
+    margin: 5px 10px;
+  }
+  hr {
+    // margin: 20px;
+  }
+
+  @media screen and (max-width: 420px) {
+    width: 100%;
+    height: 100vh;
+  }
+}
+
 .ShortInput {
   /* type input */
   text-align: left;
@@ -543,7 +574,7 @@ textarea {
 .landingDescriptionContainer {
   display: flex;
   justify-content: center;
-  color: #fefefe;
+  color: $white;
 }
 
 .landingArrowContainer {
@@ -708,6 +739,15 @@ textarea {
   font-size: large;
   font-family: IBM Plex Sans;
   margin: 0;
+}
+
+.button-yellow {
+  background-color: $yellow;
+  font-family: IBM Plex Sans;
+  font-weight: 600;
+  border-radius: 17px;
+  height: 34px;
+  width: 100px;
 }
 
 .SponsorPage {

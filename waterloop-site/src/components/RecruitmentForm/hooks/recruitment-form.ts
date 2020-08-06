@@ -1,17 +1,17 @@
-import { useReducer, useCallback, useState } from 'react';
+import { useReducer, useCallback, useState } from "react";
 
 interface FormValue {
-  value: string,
-  id: string,
-  valid: boolean | null,
+  value: string;
+  id: string;
+  valid: boolean | null;
 }
 
 interface UserInfoField {
-  value: string,
-  id: string,
-  valid: boolean | null,
-  placeholder: string,
-  name: string
+  value: string;
+  id: string;
+  valid: boolean | null;
+  placeholder: string;
+  name: string;
 }
 
 // 0-------------------------0
@@ -21,65 +21,66 @@ interface UserInfoField {
 // 0-------------------------0
 
 const termTypes = [
-  'Not in Waterloo',
-  'School Term',
-  'Work/Off Term in Waterloo',
+  "Not in Waterloo",
+  "School Term",
+  "Work/Off Term in Waterloo",
 ];
 const userInfoFields: UserInfoField[] = [
   {
-    id: 'entry.1105765972',
-    placeholder: 'Full Name',
-    name: 'full-name',
-    value: '',
+    id: "entry.1105765972",
+    placeholder: "Full Name",
+    name: "full-name",
+    value: "",
     valid: null,
   },
   {
-    id: 'entry.204636100',
-    name: 'email',
-    placeholder: 'Email',
-    value: '',
+    id: "entry.204636100",
+    name: "email",
+    placeholder: "Email",
+    value: "",
     valid: null,
   },
   {
-    id: 'entry.1369449321',
-    name: 'program',
-    placeholder: 'Program',
-    value: '',
+    id: "entry.1369449321",
+    name: "program",
+    placeholder: "Program",
+    value: "",
     valid: null,
   },
   {
-    id: 'entry.1488954434',
-    name: 'term',
-    placeholder: 'Your Current Term (ex. 2A)',
-    value: '',
+    id: "entry.1488954434",
+    name: "term",
+    placeholder: "Your Current Term (ex. 2A)",
+    value: "",
     valid: null,
-  }
+  },
 ];
 
 const applicationFields: Record<string, FormValue> = {
   applicationTerm: {
     value: "",
-    id: 'entry.2092532677',
+    id: "entry.2092532677",
     valid: null,
   },
   termType: {
     value: "",
-    id: 'entry.1337056366',
+    id: "entry.1337056366",
     valid: null,
   },
   whyJoin: {
-    id: 'entry.288252419',
-    value: '',
+    id: "entry.288252419",
+    value: "",
     valid: null,
   },
   technicalAns: {
-    value: '',
-    id: 'entry.1372043873',
+    value: "",
+    id: "entry.1372043873",
     valid: null,
   },
 };
 
-const formSubmissionUrl = '/forms/u/0/d/e/1FAIpQLSdmZSfD1Hs0D3MLBjAfdUkaCb3GJJxIvKUEVJCBf5hVxZTt4g/formResponse'
+const formSubmissionUrl =
+  "/forms/u/0/d/e/1FAIpQLSdmZSfD1Hs0D3MLBjAfdUkaCb3GJJxIvKUEVJCBf5hVxZTt4g/formResponse";
 
 // 0-------------------------0
 // |                         |
@@ -98,61 +99,62 @@ const initialState = {
 };
 
 // Reducer Action Types
-const UPDATE_USER_INFO_FIELD = 'UPDATE_USER_INFO_FIELD';
-const UPDATE_APPLICATION_TERM = 'UPDATE_APPLICATION_TERM';
-const UPDATE_TERM_TYPE = 'UPDATE_TERM_TYPE';
-const UPDATE_WHY = 'UPDATE_WHY';
-const UPDATE_TECHNICAL_ANSWER = 'UPDATE_TECHNICAL_ANSWER';
-const VERIFY_FORM = 'VERIFY_FORM';
+const UPDATE_USER_INFO_FIELD = "UPDATE_USER_INFO_FIELD";
+const UPDATE_APPLICATION_TERM = "UPDATE_APPLICATION_TERM";
+const UPDATE_TERM_TYPE = "UPDATE_TERM_TYPE";
+const UPDATE_WHY = "UPDATE_WHY";
+const UPDATE_TECHNICAL_ANSWER = "UPDATE_TECHNICAL_ANSWER";
+const VERIFY_FORM = "VERIFY_FORM";
 
 // Action Interfaces
 interface UpdateUserInfoFieldAction {
-  type: typeof UPDATE_USER_INFO_FIELD,
+  type: typeof UPDATE_USER_INFO_FIELD;
   payload: {
-    id: string,
-    value: string,
-  },
+    id: string;
+    value: string;
+  };
 }
 
 interface UpdateApplicationTermAction {
-  type: typeof UPDATE_APPLICATION_TERM,
+  type: typeof UPDATE_APPLICATION_TERM;
   payload: {
-    term: string
-  }
+    term: string;
+  };
 }
 
 interface UpdateTermTypeAction {
-  type: typeof UPDATE_TERM_TYPE,
+  type: typeof UPDATE_TERM_TYPE;
   payload: {
-    type: string,
-  }
+    type: string;
+  };
 }
 
 interface UpdateWhyAction {
-  type: typeof UPDATE_WHY,
+  type: typeof UPDATE_WHY;
   payload: {
-    value: string,
-  }
+    value: string;
+  };
 }
 
 interface UpdateTechnicalAnswerAction {
-  type: typeof UPDATE_TECHNICAL_ANSWER,
+  type: typeof UPDATE_TECHNICAL_ANSWER;
   payload: {
-    value: string,
-  }
+    value: string;
+  };
 }
 
 interface VerifyFormAction {
-  type: typeof VERIFY_FORM,
+  type: typeof VERIFY_FORM;
 }
 
 // Combines All action Interfaces into a single type
-type MyAction = UpdateUserInfoFieldAction
-              | UpdateApplicationTermAction
-              | UpdateTermTypeAction
-              | UpdateWhyAction
-              | UpdateTechnicalAnswerAction
-              | VerifyFormAction;
+type MyAction =
+  | UpdateUserInfoFieldAction
+  | UpdateApplicationTermAction
+  | UpdateTermTypeAction
+  | UpdateWhyAction
+  | UpdateTechnicalAnswerAction
+  | VerifyFormAction;
 
 /**
  * Rather than trying to keep initialState inline
@@ -169,14 +171,14 @@ const reducer: React.Reducer<MyState, MyAction> = (state, action) => {
    * be able to dynamically determine the structure of payload
    * using the actionInterfaces above
    */
-  switch(action.type) {
-    case UPDATE_USER_INFO_FIELD:{
+  switch (action.type) {
+    case UPDATE_USER_INFO_FIELD: {
       const { payload } = action;
       return {
         ...state,
-        userInfoFields: state.userInfoFields.map(
-          field => field.id === payload.id
-            ? { ...field, value: payload.value, valid: payload.value !== ''}
+        userInfoFields: state.userInfoFields.map((field) =>
+          field.id === payload.id
+            ? { ...field, value: payload.value, valid: payload.value !== "" }
             : field
         ),
       };
@@ -190,13 +192,15 @@ const reducer: React.Reducer<MyState, MyAction> = (state, action) => {
           applicationTerm: {
             ...state.applicationFields.applicationTerm,
             value: payload.term,
-            valid: payload.term !== ''
+            valid: payload.term !== "",
           },
-        }
+        },
       };
     }
     case UPDATE_TERM_TYPE: {
-      const { payload: { type } } = action;
+      const {
+        payload: { type },
+      } = action;
       return {
         ...state,
         applicationFields: {
@@ -204,13 +208,15 @@ const reducer: React.Reducer<MyState, MyAction> = (state, action) => {
           termType: {
             ...state.applicationFields.termType,
             value: type,
-            valid: type !== ''
+            valid: type !== "",
           },
-        }
+        },
       };
     }
     case UPDATE_WHY: {
-      const { payload: { value } } = action;
+      const {
+        payload: { value },
+      } = action;
       return {
         ...state,
         applicationFields: {
@@ -218,13 +224,15 @@ const reducer: React.Reducer<MyState, MyAction> = (state, action) => {
           whyJoin: {
             ...state.applicationFields.whyJoin,
             value,
-            valid: value !== ''
+            valid: value !== "",
           },
-        }
+        },
       };
     }
     case UPDATE_TECHNICAL_ANSWER: {
-      const { payload: { value } } = action;
+      const {
+        payload: { value },
+      } = action;
       return {
         ...state,
         applicationFields: {
@@ -232,29 +240,29 @@ const reducer: React.Reducer<MyState, MyAction> = (state, action) => {
           technicalAns: {
             ...state.applicationFields.technicalAns,
             value,
-            valid: value !== ''
+            valid: value !== "",
           },
-        }
+        },
       };
     }
     case VERIFY_FORM:
       return {
         ...state,
-        userInfoFields: state.userInfoFields.map(
-          (field) => ({ ...field, valid: field.value !== ''})
+        userInfoFields: state.userInfoFields.map((field) => ({
+          ...field,
+          valid: field.value !== "",
+        })),
+        applicationFields: Object.keys(state.applicationFields).reduce(
+          (acc, key) => ({
+            ...acc,
+            [key]: {
+              ...state.applicationFields[key],
+              valid: state.applicationFields[key].value !== "",
+            },
+          }),
+          {}
         ),
-        applicationFields: Object.keys(state.applicationFields)
-          .reduce(
-            (acc, key) => ({
-              ...acc,
-              [key]: {
-                ...state.applicationFields[key],
-                valid: state.applicationFields[key].value !== ''
-              }
-            }),
-            {}
-          ),
-      }
+      };
     default:
       return {
         ...state,
@@ -271,64 +279,82 @@ const useRecruitmentForm = (role: string, onSuccess: () => void) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const updateUserInfo = useCallback(
-    (id: string, value: string) => !isSubmitting && dispatch({ type: UPDATE_USER_INFO_FIELD, payload: { id, value }}),
-    [dispatch, isSubmitting],
+    (id: string, value: string) =>
+      !isSubmitting &&
+      dispatch({ type: UPDATE_USER_INFO_FIELD, payload: { id, value } }),
+    [dispatch, isSubmitting]
   );
 
   const updateApplicationTerm = useCallback(
-    (term: string) => () => !isSubmitting && dispatch({ type: UPDATE_APPLICATION_TERM, payload: { term }}),
-    [dispatch, isSubmitting],
+    (term: string) => () =>
+      !isSubmitting &&
+      dispatch({ type: UPDATE_APPLICATION_TERM, payload: { term } }),
+    [dispatch, isSubmitting]
   );
 
   const updateTermType = useCallback(
-    (type: string) => () => !isSubmitting && dispatch({ type: UPDATE_TERM_TYPE, payload: { type }}),
-    [dispatch, isSubmitting],
+    (type: string) => () =>
+      !isSubmitting && dispatch({ type: UPDATE_TERM_TYPE, payload: { type } }),
+    [dispatch, isSubmitting]
   );
 
   const updateWhy = useCallback(
-    (event: React.ChangeEvent<HTMLTextAreaElement>) => !isSubmitting && dispatch({ type: UPDATE_WHY, payload: { value: event.target.value } }),
-    [dispatch, isSubmitting],
+    (event: React.ChangeEvent<HTMLTextAreaElement>) =>
+      !isSubmitting &&
+      dispatch({ type: UPDATE_WHY, payload: { value: event.target.value } }),
+    [dispatch, isSubmitting]
   );
 
   const updateTechnicalAnswer = useCallback(
-    (event: React.ChangeEvent<HTMLTextAreaElement>) => !isSubmitting && dispatch({ type: UPDATE_TECHNICAL_ANSWER, payload: { value: event.target.value }}),
-    [dispatch, isSubmitting],
+    (event: React.ChangeEvent<HTMLTextAreaElement>) =>
+      !isSubmitting &&
+      dispatch({
+        type: UPDATE_TECHNICAL_ANSWER,
+        payload: { value: event.target.value },
+      }),
+    [dispatch, isSubmitting]
   );
 
-  const handleSubmit = useCallback(
-    () => {
-      if (isSubmitting) return;
-      setIsSubmitting(true);
+  const handleSubmit = useCallback(() => {
+    if (isSubmitting) return;
+    setIsSubmitting(true);
 
-      // Build Body
-      const { applicationFields, userInfoFields } = state;
-      const presetBody = { 'entry.1805132656': role};
-      const userInfoFieldsBody = userInfoFields.reduce((acc, field) => ({...acc, [field.id]: field.value }), presetBody);
-      const body = Object.keys(applicationFields).reduce(
-        (acc, key) => (
-          ({...acc, [applicationFields[key].id]: applicationFields[key].value })
-        ),
-        userInfoFieldsBody,
-      );
+    // Build Body
+    const { applicationFields, userInfoFields } = state;
+    const presetBody = { "entry.1805132656": role };
+    const userInfoFieldsBody = userInfoFields.reduce(
+      (acc, field) => ({ ...acc, [field.id]: field.value }),
+      presetBody
+    );
+    const body = Object.keys(applicationFields).reduce(
+      (acc, key) => ({
+        ...acc,
+        [applicationFields[key].id]: applicationFields[key].value,
+      }),
+      userInfoFieldsBody
+    );
 
-      // Validate form and Stop if inValid
-      const invalidFields = Object.values(body).filter((fieldValue) => fieldValue === '');
-      if (invalidFields.length > 0) {
-        dispatch({ type: VERIFY_FORM });
-        setIsSubmitting(false);
-        return;
-      }
+    // Validate form and Stop if inValid
+    const invalidFields = Object.values(body).filter(
+      (fieldValue) => fieldValue === ""
+    );
+    if (invalidFields.length > 0) {
+      dispatch({ type: VERIFY_FORM });
+      setIsSubmitting(false);
+      alert("Could not submit: Please fill out all highlighted fields.");
+      return;
+    }
 
-      // Submit Form
-      fetch(formSubmissionUrl, {
-        method: 'POST',
-        body: JSON.stringify(body),
-      }).then(response => {
+    // Submit Form
+    fetch(formSubmissionUrl, {
+      method: "POST",
+      body: JSON.stringify(body),
+    })
+      .then((response) => {
         onSuccess();
-      }).catch(() => setIsSubmitting(false));
-    },
-    [role, state, dispatch, setIsSubmitting, isSubmitting, onSuccess],
-  );
+      })
+      .catch(() => setIsSubmitting(false));
+  }, [role, state, dispatch, setIsSubmitting, isSubmitting, onSuccess]);
   return {
     userInfoFields: state.userInfoFields,
     applicationFields: state.applicationFields,
@@ -338,8 +364,8 @@ const useRecruitmentForm = (role: string, onSuccess: () => void) => {
     handleSubmit,
     handleTermTypeChange: updateTermType,
     handleWhyChange: updateWhy,
-    handleTechnicalAnswerChange: updateTechnicalAnswer
-  }
-}
+    handleTechnicalAnswerChange: updateTechnicalAnswer,
+  };
+};
 
 export default useRecruitmentForm;
