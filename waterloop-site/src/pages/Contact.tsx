@@ -57,6 +57,7 @@ class Contact extends React.Component {
             </h6>
             <MapContainer2>
               <GoogleMapReact
+                //we will need to hide this API key before we launch 
                 bootstrapURLKeys={{ key: "AIzaSyCGLLjvTMb0xjl - I3 - Dyqp9aJGSIvvh4GA" }}
                 defaultCenter={{ lat: 43.4723, lng: -80.5449 }}
                 defaultZoom={17}
