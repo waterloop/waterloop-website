@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import BlackLogoImg from "../../static/img/logos/Icon_Yellow.png";
 import Waterlooplogo from "../../static/img/logos/Waterloop.svg";
