@@ -221,13 +221,64 @@ h1 {
   text-align: justify;
   width: 50%;
   height: 100%;
-  padding-right: 3%;
   display: flex;
   flex-direction: column;
-  margin-bottom: 3em;
+}
+
+.Img-TextWithImage {
+  /* type img */
+  flex: 0 0 auto;
+  max-width: 400px;
+  max-height: 320px;
+  width: 40vw;
+  height: 32vw;
+  border-radius: 10pt;
+}
+
+.Header-TextWithImage {
+  /* type h2*/
+  font-style: italic;
+  font-size: calc(18px + 0.7vw);
+}
+
+.Text-TextWithImage {
+  /* type p*/
+  font-size: calc(12px + 0.5vw);
+}
+
+.Block-TextWithImage {
+  // !NOTE: Workaround until the parent scss selector introduces the padding automatically to align each of its direct children:
+  padding: 3em 0;
+
+  display: flex;
+
+  // Alternate between 2 layouts:
+  // NOTE: I dunno if this can be optimized in any way.
+  &.left-right-variant {
+    flex-direction: row;
+    &>*:nth-child(1) {
+      margin-right: 5vw;
+    }
+  }
+
+  &.right-left-variant {
+    flex-direction: row-reverse;
+    &>*:nth-child(2) {
+      margin-right: 5vw;
+    }
+  }
+
+  align-items: center;
+  justify-content: center;
+}
+
+.ButtonBlock-TextWithImage {
+  display: inline-flex;
+  justify-content: center;
   margin-top: 2em;
 }
 
+// TODO: the screen's width should be declared as a SASS variable and then used to maintain consistency. 
 @media (max-width: 500px) {
   .contactForm-InputBlockRight {
     display: flex;
@@ -238,24 +289,39 @@ h1 {
     width: 100%;
   }
 
+  .Block-TextWithImage {
+    &.left-right-variant, &.right-left-variant {
+      flex-direction: column;
+
+      &>*:nth-child(1), &>*:nth-child(2) {
+        margin-right: 0;
+      }
+    }
+  }
+  .TextBlock-TextWithImage {
+    width: 100%;
+  }
   .TextWithImage {
     display: inline;
     padding-right: 0;
   }
   .Img-TextWithImage {
-    display: none;
+    width: 100vw;
+    height: 80vw;
   }
   .Header-TextWithImage {
-    margin-left: 25%;
-    margin-right: 25%;
-    text-align: center;
-    font-size: 2.3vw;
+    margin: 0;
+    text-align: left;
+    font-size: 9vw;
   }
   .Text-TextWithImage {
-    margin-left: 10%;
-    margin-right: 10%;
-    text-align: center;
-    font-size: 2vw;
+    margin: 20px 0;
+    text-align: justify;
+    font-size: 4vw;
+  }
+  .ButtonBlock-TextWithImage {
+    margin-top: 0px;
+    margin-bottom: 20px;
   }
   .TextBlock-Teams {
     display: flex;
@@ -273,41 +339,6 @@ h1 {
     font-size: 13px;
     text-align: left;
   }
-}
-
-.Img-TextWithImage {
-  /* type img */
-  display: flex;
-  flex-direction: column;
-  width: 25vw;
-  height: auto;
-  border-radius: 20pt;
-  margin-top: 3%;
-}
-
-.Header-TextWithImage {
-  /* type h2*/
-  font-style: italic;
-  font-size: 1.7vw;
-}
-
-.Text-TextWithImage {
-  /* type p*/
-  font-size: 18px;
-}
-
-.Block-TextWithImage {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-
-.ButtonBlock-TextWithImage {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  margin-top: 2em;
 }
 
 .TextBlock-Teams {
