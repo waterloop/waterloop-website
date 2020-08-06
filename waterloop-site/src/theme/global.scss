@@ -49,26 +49,21 @@ code {
     justify-content: flex-start;
     height: 316px;
     width: 100%;
-    border: 1px solid red;
   }
   .LogoWrapper {
     align-self: left;
     margin-left: 0px;
-    border: 1px solid red;
     transform: scale(0.5, 0.5);
   }
   .SocialMediaWrapper {
-    border: 1px solid red;
     margin: 5px 10px 5px 2px;
     font-size: 13px;
   }
   .RoutingWrapper {
-    border: 1px solid red;
     margin: 5px 20px 5px 2px;
     font-size: 13px;
   }
   .LinksWrapper {
-    border: 1px solid red;
     margin: 0;
   }
 }
@@ -123,7 +118,6 @@ code {
 }
 
 .LogoWrapper {
-  border: 1px solid red;
   align-self: center;
   margin-left: 150px;
   height: 91.11px;
