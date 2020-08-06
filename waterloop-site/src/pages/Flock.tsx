@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Hero from "components/Hero/General"
+import Hero from "components/Hero/General";
 import { PastGeeseTimeline as UnstyledPastGeeseTimeline } from "components/PastGeeseTimeline";
 
 const Container = styled.div`
@@ -12,14 +12,19 @@ const Container = styled.div`
 const PastGeeseTimeline = styled(UnstyledPastGeeseTimeline)``;
 
 class Flock extends React.Component {
-    render() {
-        return (
-            <Container>
-                <Hero title="The Flock" description="Learn about our geese."></Hero>
-                <PastGeeseTimeline />
-            </Container>
-        );
-    }
+  render() {
+    return (
+      <div>
+        <Hero
+          title="The Flock"
+          description="Learn about our geese."
+          anchor="#flock"
+        ></Hero>
+        <div id={"#flock"}></div>
+        <PastGeeseTimeline />
+      </div>
+    );
+  }
 }
 
 export default Flock;
