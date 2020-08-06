@@ -1,5 +1,5 @@
 import React from "react";
-import Hero from "components/Hero/Landing"
+import Hero from "components/Hero/Landing";
 import { TextWithImage } from "components/TextWithImage";
 import { MyProps } from "components/TextWithImage";
 import data from 'static/copy/TextWithImage.json';
@@ -14,14 +14,15 @@ const castData: MyProps[] = data;
 const imgData: string[] = [Sunset, Clouds, Meme, Geese];
 
 class Home extends React.Component {
-    render() {
-        return (
-            <div>
-                <Hero description="A faster look on the future."></Hero>
-                <TextWithImage data={castData} textPos={"alternate"} imgData={imgData} />
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div>
+        <Hero description="A faster look on the future." anchor="#home"></Hero>
+        <div id={"#home"}></div>
+        <TextWithImage data={castData} textPos={"alternate"} imgData={imgData} />
+      </div>
+    );
+  }
 }
 
 export default Home;
