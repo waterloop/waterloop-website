@@ -1,16 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import BlackLogoImg from "../../static/img/logos/Icon_Yellow.png";
-import WhiteLogoImg from "../../static/img/logos/Logo.svg";
 import Waterlooplogo from "../../static/img/logos/Waterloop.svg";
-import IconYellowImg from "../../static/img/logos/logo.svg";
-import Contact from "../../pages/Contact";
-import Home from "../../pages/Home";
-import Flock from "../../pages/Flock";
-import Team from "../../pages/Team";
-import Sponsors from "../../pages/Sponsors";
 import { NavLink } from "react-router-dom";
-//import { slide as Menu } from 'react-burger-menu';
 
 const SidebarContainer = styled.div`
   display: flex;
