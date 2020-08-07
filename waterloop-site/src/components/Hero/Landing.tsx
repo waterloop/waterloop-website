@@ -4,8 +4,9 @@ import BuildingsImg from "static/img/background/buildings.svg";
 import DownArrowImg from "static/img/background/downArrow.svg";
 import WaterloopImg from "static/img/background/waterloop.svg";
 import "../../theme/global.scss";
+import { Link } from "react-scroll";
 
-type MyProps = { description: string };
+type MyProps = { description: string; anchor: string };
 
 class heroComponent extends React.Component<MyProps> {
   render() {
@@ -18,7 +19,7 @@ class heroComponent extends React.Component<MyProps> {
               className="landingWaterloop"
               src={WaterloopImg}
               alt="waterloop logo"
-            ></img>
+            />
           </div>
           <div className="landingDescriptionContainer">
             <h3>{this.props.description}</h3>
@@ -27,24 +28,32 @@ class heroComponent extends React.Component<MyProps> {
             backgroundColor="yellow"
             textColor="black"
             text="JOIN US"
-            onClick={() => window.open("contact")}
+            onClick={() => window.open("recruitment")}
             variant={null}
           ></Button>
         </div>
 
-        <div className="landingArrowContainer">
-          <img
-            className="landingDownArrow"
-            src={DownArrowImg}
-            alt="navigation"
-          ></img>
-        </div>
         <div className="landingBuildingContainer">
           <img
             className="landingBuildings"
             src={BuildingsImg}
             alt="buildings"
           ></img>
+        </div>
+
+        <div className="landingArrowContainer">
+          <Link
+            to={this.props.anchor}
+            smooth={true}
+            offset={-80}
+            duration={750}
+          >
+            <img
+              className="landingDownArrow"
+              src={DownArrowImg}
+              alt="navigation"
+            ></img>
+          </Link>
         </div>
       </div>
     );

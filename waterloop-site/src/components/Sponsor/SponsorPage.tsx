@@ -5,6 +5,7 @@ import UW_Engineering from "../../components/Sponsor/TestingImage/UW_Engineering
 function SponsorList() {
   return (
     <div className="SponsorPage">
+      <h1>Our Sponsors</h1>
       <h1>Hypersonic</h1>
       <div className="TierWrapper">
         <Sponsor src={UW_Engineering} tier="hypersonic" alt="sponsor" />

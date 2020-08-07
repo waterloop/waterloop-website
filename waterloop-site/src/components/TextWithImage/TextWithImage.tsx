@@ -1,31 +1,69 @@
 import React from "react";
 import { Button } from "components/Button";
-import "../../theme/global.scss";
+import "theme/global.scss";
 
-type MyProps = { title: string; text: string; image: string };
+export type MyProps = { title?: string; text: string; link?: string };
 
-export class TextWithImage extends React.Component<MyProps> {
+export class TextWithImage extends React.Component<{data: MyProps[], imgData: string[], textPos?: string}> {
+  renderChildren = (data: MyProps[]) => {
+    var isRightLeft = true; // Alternate between right-left and left-right layout.
+    var key = -1;
+    return data.map((entry: MyProps) => {
+      isRightLeft = !isRightLeft;
+      key += 1;
+
+      // Determine if image should be displayed first or after text:
+      let posClass = "";
+      switch (this.props.textPos) {
+        case "left":
+          posClass = "left-right-variant";
+          break;
+        case "right":
+          posClass = "right-left-variant";
+          break;
+
+        default:  // The "alternate" case
+          posClass = (isRightLeft ? "right-left-variant" : "left-right-variant");
+      }
+
+      return (
+        <div key={key} className={"Block-TextWithImage " + posClass}>
+          <div className="TextBlock-TextWithImage">
+            {entry.title !== undefined ? <h2 className="Header-TextWithImage">{entry.title}</h2> : <b></b>}
+            <p className="Text-TextWithImage">{entry.text}</p>
+            <div className="ButtonBlock-TextWithImage">
+              {/* Hide button if no link supplied. */}
+              { this.renderButton(entry.link) }
+            </div>
+          </div>
+          <img
+            className="Img-TextWithImage"
+            src={this.props.imgData[key]}
+            alt="waterloop"
+          ></img>
+        </div>
+      );
+    });
+  }
+
+  renderButton = (link: string | undefined) => {
+    if (link !== undefined) {
+      return (
+        <Button
+          backgroundColor="yellow"
+          textColor="black"
+          text="LEARN MORE"
+          onClick={() => window.open(link,"_self")}
+          variant={null}
+        ></Button>
+      );
+    }
+  }
+
   render() {
     return (
-      <div className="Block-TextWithImage">
-        <div className="TextBlock-TextWithImage">
-          <h2 className="Header-TextWithImage">{this.props.title}</h2>
-          <p className="Text-TextWithImage">{this.props.text}</p>
-          <div className="ButtonBlock-TextWithImage">
-            <Button
-              backgroundColor="yellow"
-              textColor="black"
-              text="LEARN MORE"
-              onClick={() => window.open("the-flock")}
-              variant={null}
-            ></Button>
-          </div>
-        </div>
-        <img
-          className="Img-TextWithImage"
-          src={this.props.image}
-          alt="waterloop"
-        ></img>
+      <div>
+        {this.renderChildren(this.props.data)}
       </div>
     );
   }

@@ -1,5 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 /src/secrets
+/src/config
 # dependencies
 /node_modules
 /.pnp
@@ -18,6 +19,8 @@
 .env.development.local
 .env.test.local
 .env.production.local
+.env
+*.code-workspace
 
 npm-debug.log*
 yarn-debug.log*
