@@ -1,3 +1,7 @@
+$yellow: #fed138;
+$navy: #232636;
+$white: #fefefe;
+
 h2 {
   font-size: 12pt;
 }
@@ -18,23 +22,28 @@ code {
 
 h3 {
   font-size: 30px;
-  color: #ffffff;
+  color: $white;
   margin-top: 0pt;
   font-weight: 400;
 }
 
 h1 {
   font-size: 64pt;
-  color: #ffffff;
+  color: $white;
   text-transform: uppercase;
   margin-bottom: 0pt;
+}
+
+textarea {
+  resize: none;
+  padding: 10px;
 }
 
 .btn {
   display: flex;
   justify-content: center;
   background-color: transparent;
-  color: #ffffff;
+  color: $white;
   border-radius: 100pt;
   border: 2px solid white;
   height: 50px;
@@ -44,6 +53,17 @@ h1 {
 }
 
 @media (max-width: 420px) {
+  .GooseRoster-Img {
+    /* type img */
+    /* type img */
+    display: block;
+    object-fit: cover; /*Centers image and crops instead of scales aspect ratio.*/
+    border: 10px;
+    max-width: 355px;
+    /*200 IQ bug fix (the first image doesn't load in correct size if only using width ;) */
+    height: 10em;
+  }
+
   .FooterWrapper {
     height: 130px;
   }
@@ -65,6 +85,11 @@ h1 {
 }
 
 @media (min-width: 420px) and (max-width: 800px) {
+  .GooseRoster-Img {
+    /* type img */
+    width: 90vw;
+  }
+
   .LogoWrapper {
     transform: scale(1, 1);
     margin-left: 10%;
@@ -84,6 +109,11 @@ h1 {
 }
 
 @media (min-width: 800px) and (max-width: 1100px) {
+  .GooseRoster-Img {
+    /* type img */
+    width: 90vw;
+  }
+
   .LogoWrapper {
     transform: scale(1.5, 1.5);
     margin-left: 15%;
@@ -368,9 +398,38 @@ h1 {
 
 .Header-RecruitmentForm {
   /* type h2 */
+  font-family: "IBM Plex Sans";
   font-size: 170%;
   margin-bottom: 0px !important;
   text-align: center;
+}
+
+.recruitment-modal {
+  text-align: center;
+  background-color: white;
+  padding: 30px;
+  border: 1px solid gray;
+  width: 60%;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  textarea {
+    min-height: 20px;
+  }
+  input {
+    margin: 5px 10px;
+    font-family: "IBM Plex Sans";
+  }
+  hr {
+    // margin: 20px;
+  }
+
+  @media screen and (max-width: 420px) {
+    width: 100%;
+    height: 100vh;
+  }
 }
 
 .ShortInput {
@@ -473,7 +532,6 @@ h1 {
 }
 
 @media (max-width: 420px) {
-
   .generalContainer {
     align-items: center;
   }
@@ -487,7 +545,6 @@ h1 {
   }
 
   .generalDescriptionContainer {
-
     > h3 {
       font-size: 24px;
     }
@@ -503,7 +560,6 @@ h1 {
     width: 27px;
     height: 11px;
   }
-
 }
 
 .landingContainer {
@@ -520,17 +576,18 @@ h1 {
 .landingDescriptionContainer {
   display: flex;
   justify-content: center;
-  color: #fefefe;
+  color: $white;
 }
 
 .landingArrowContainer {
   position: absolute;
   bottom: 75px;
-  z-index: 0;
+  z-index: 99;
 }
 
 .landingBuildingContainer {
   width: 100%;
+  z-index: 2;
 }
 
 .landingBuildings {
@@ -573,8 +630,6 @@ h1 {
 }
 
 @media (max-width: 420px) {
-
-
   .landingDescriptionContainer {
     margin-bottom: 28px;
     > h3 {
@@ -585,7 +640,6 @@ h1 {
   .landingArrowContainer {
     position: absolute;
     bottom: 50px;
-    z-index: 0;
   }
 
   .landingBuildingContainer {
@@ -594,7 +648,6 @@ h1 {
 
   .landingBuildings {
     display: none;
-
   }
 
   .landingDownArrow {
@@ -602,7 +655,6 @@ h1 {
     width: 27px;
     height: 11px;
   }
-
 
   .landingWaterloopContainer {
     padding: 17px 0;
@@ -626,11 +678,12 @@ h1 {
   /* type h2 */
   font-style: italic;
   font-size: 28px;
-  margin: 18px 0;
+  margin: 18px;
 }
 
 .GooseRoster-Description {
   font-size: 16px;
+  margin-left: 18px;
 }
 
 .GooseRoster-ImageThumbnail {
@@ -686,15 +739,24 @@ h1 {
 
 .ButtonText {
   font-size: large;
-  font-family: IBM Plex Sans;
+  font-family: "IBM Plex Sans";
   margin: 0;
+}
+
+.button-yellow {
+  background-color: $yellow;
+  font-family: "IBM Plex Sans";
+  font-weight: 600;
+  border-radius: 17px;
+  height: 34px;
+  width: 100px;
 }
 
 .SponsorPage {
   margin: 100px auto;
 
   > h1 {
-    font-family: IBM Plex Sans;
+    font-family: "IBM Plex Sans";
     font-style: normal;
     font-weight: 600;
     font-size: 36px;
