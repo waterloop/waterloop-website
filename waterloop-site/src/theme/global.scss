@@ -68,6 +68,8 @@ code {
   }
   .LogoWrapper {
     align-self: left;
+    padding-top: 15px;
+    margin-right: 400px;
     margin-left: 0px;
     transform: scale(0.5, 0.5);
   }
@@ -84,7 +86,15 @@ code {
   }
 }
 
-@media (min-width: 420px) and (max-width: 800px) {
+@media (min-width: 420px) and (max-width: 600px) {
+  .FooterWrapper {
+    flex-direction: column;
+    justify-content: flex-start;
+    bottom: 0;
+    height: 316px;
+    width: 100%;
+  }
+
   .GooseRoster-Img {
     /* type img */
     width: 90vw;
@@ -115,20 +125,21 @@ code {
   }
 
   .LogoWrapper {
-    transform: scale(1.5, 1.5);
-    margin-left: 15%;
-    margin-bottom: 12%;
+    align-self: flex-start;
+    padding-top: 15px;
+    margin-right: 450px;
+    transform: scale(0.5, 0.5);
   }
   .SocialMediaWrapper {
-    margin: 10% 6% 20% 2%;
-    font-size: 1.5rem;
+    margin: 5px 10px 5px 2px;
+    font-size: 13px;
   }
   .RoutingWrapper {
-    margin: 10% 10% 20% 30%;
-    font-size: 1.5rem;
+    margin: 5px 20px 5px 2px;
+    font-size: 13px;
   }
   .LinksWrapper {
-    margin: 10% 10% 20% 30%;
+    margin: 0;
   }
 }
 
@@ -266,14 +277,14 @@ code {
   // NOTE: I dunno if this can be optimized in any way.
   &.left-right-variant {
     flex-direction: row;
-    &>*:nth-child(1) {
+    & > *:nth-child(1) {
       margin-right: 5vw;
     }
   }
 
   &.right-left-variant {
     flex-direction: row-reverse;
-    &>*:nth-child(2) {
+    & > *:nth-child(2) {
       margin-right: 5vw;
     }
   }
@@ -288,7 +299,7 @@ code {
   margin-top: 2em;
 }
 
-// TODO: the screen's width should be declared as a SASS variable and then used to maintain consistency. 
+// TODO: the screen's width should be declared as a SASS variable and then used to maintain consistency.
 @media (max-width: 500px) {
   .contactForm-InputBlockRight {
     display: flex;
@@ -300,10 +311,12 @@ code {
   }
 
   .Block-TextWithImage {
-    &.left-right-variant, &.right-left-variant {
+    &.left-right-variant,
+    &.right-left-variant {
       flex-direction: column;
 
-      &>*:nth-child(1), &>*:nth-child(2) {
+      & > *:nth-child(1),
+      & > *:nth-child(2) {
         margin-right: 0;
       }
     }
@@ -777,7 +790,7 @@ code {
     text-align: center;
     color: #232635;
 
-    @media screen and (max-width:420px){
+    @media screen and (max-width: 420px) {
       font-size: 1.2rem;
     }
   }
