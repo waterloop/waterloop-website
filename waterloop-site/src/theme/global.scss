@@ -30,6 +30,11 @@ code {
     monospace;
 }
 
+.app-lock {
+  height: 100vh;
+  overflow-y: hidden;
+}
+
 .btn {
   display: flex;
   justify-content: center;

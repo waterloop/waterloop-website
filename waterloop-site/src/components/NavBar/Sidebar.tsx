@@ -131,7 +131,9 @@ type MyState = {
   toggleOpen: boolean;
 };
 
-type MyProps = {};
+type MyProps = {
+  handleClick: any;
+};
 
 class Sidebar extends React.Component<MyProps, MyState> {
   constructor(props: MyProps) {
@@ -140,6 +142,7 @@ class Sidebar extends React.Component<MyProps, MyState> {
       toggleOpen: false,
     };
   }
+
   render() {
     return (
       <div>
@@ -151,6 +154,8 @@ class Sidebar extends React.Component<MyProps, MyState> {
               this.state.toggleOpen
                 ? this.setState({ toggleOpen: false })
                 : this.setState({ toggleOpen: true });
+
+              this.props.handleClick(this.state.toggleOpen);
             }}
           >
             <ToggleLine className={this.state.toggleOpen ? "open1" : ""} />
@@ -160,14 +165,23 @@ class Sidebar extends React.Component<MyProps, MyState> {
           <ListContainer className={this.state.toggleOpen ? "" : "closed"}>
             <div>
               <IconBlack src={Waterlooplogo}></IconBlack>
-              <Link to="/" onClick={() => this.setState({ toggleOpen: false })}>
+              <Link
+                to="/"
+                onClick={() => {
+                  this.setState({ toggleOpen: false });
+                  this.props.handleClick(this.state.toggleOpen);
+                }}
+              >
                 Home
               </Link>
             </div>
             <div>
               <Link
                 to="/the-flock"
-                onClick={() => this.setState({ toggleOpen: false })}
+                onClick={() => {
+                  this.setState({ toggleOpen: false });
+                  this.props.handleClick(this.state.toggleOpen);
+                }}
               >
                 Flock
               </Link>
@@ -175,7 +189,10 @@ class Sidebar extends React.Component<MyProps, MyState> {
             <div>
               <Link
                 to="/team"
-                onClick={() => this.setState({ toggleOpen: false })}
+                onClick={() => {
+                  this.setState({ toggleOpen: false });
+                  this.props.handleClick(this.state.toggleOpen);
+                }}
               >
                 Team
               </Link>
@@ -183,7 +200,10 @@ class Sidebar extends React.Component<MyProps, MyState> {
             <div>
               <Link
                 to="/sponsors"
-                onClick={() => this.setState({ toggleOpen: false })}
+                onClick={() => {
+                  this.setState({ toggleOpen: false });
+                  this.props.handleClick(this.state.toggleOpen);
+                }}
               >
                 Sponsors
               </Link>
@@ -191,7 +211,10 @@ class Sidebar extends React.Component<MyProps, MyState> {
             <div>
               <Link
                 to="/contact"
-                onClick={() => this.setState({ toggleOpen: false })}
+                onClick={() => {
+                  this.setState({ toggleOpen: false });
+                  this.props.handleClick(this.state.toggleOpen);
+                }}
               >
                 Contact
               </Link>

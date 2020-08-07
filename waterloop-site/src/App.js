@@ -16,10 +16,10 @@ class App extends React.Component {
     super(props);
     this.state = {
       width: window.innerWidth,
+      lock: false,
     };
   }
 
-  toggleLock = () => {};
   componentWillMount() {
     window.addEventListener("resize", this.handleWindowSizeChange);
   }
@@ -29,11 +29,20 @@ class App extends React.Component {
     });
   };
 
+  handleClick(closed) {
+    console.log(closed);
+    closed ? this.setState({ lock: false }) : this.setState({ lock: true });
+  }
+
   render() {
     return (
-      <div className="App">
+      <div className={this.state.lock ? "app-lock" : ""}>
         <Router>
-          {this.state.width >= 420 ? <NavBar /> : <SideBar />}
+          {this.state.width >= 420 ? (
+            <NavBar />
+          ) : (
+            <SideBar handleClick={this.handleClick.bind(this)} />
+          )}
           <Switch>
             <Route exact path="/">
               <Home />
