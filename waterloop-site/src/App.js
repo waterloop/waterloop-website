@@ -30,7 +30,6 @@ class App extends React.Component {
   };
 
   handleClick(closed) {
-    console.log(closed);
     closed ? this.setState({ lock: false }) : this.setState({ lock: true });
   }
 
