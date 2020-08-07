@@ -1,9 +1,9 @@
 import React from "react";
-import styled from "styled-components";
 import { ContactForm } from "components/ContactForm";
 import Hero from "components/Hero/General";
-import GoogleMapReact from 'google-map-react';
+import GoogleMapReact from "google-map-react";
 import "../theme/global.scss";
+import { MAP } from "../config/map";
 
 class Contact extends React.Component {
   render() {
@@ -30,15 +30,16 @@ class Contact extends React.Component {
             </h6>
             <div className="mapContainer">
               <GoogleMapReact
-                //we will need to hide this API key before we launch 
-                bootstrapURLKeys={{ key: "AIzaSyCGLLjvTMb0xjl - I3 - Dyqp9aJGSIvvh4GA" }}
+                bootstrapURLKeys={{
+                  key: MAP,
+                }}
                 defaultCenter={{ lat: 43.4723, lng: -80.5449 }}
                 defaultZoom={17}
               ></GoogleMapReact>
             </div>
           </div>
         </div>
-      </div >
+      </div>
     );
   }
 }
