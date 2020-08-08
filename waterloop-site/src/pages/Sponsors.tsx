@@ -23,14 +23,16 @@ class Sponsors extends React.Component {
         <div id={"#sponsor-list"}></div>
         <div className="pageContainer">
           <TextWithImage data={castData} textPos={"alternate"} imgData={imgData}></TextWithImage>
-          <a className="sponsorLink" href="https://www.google.com/" target="_blank">Download our Sponsorship Package</a>
-          <Button
-            backgroundColor="yellow"
-            textColor="black"
-            text="GET IN TOUCH"
-            onClick={() => window.open("contact")}
-            variant={null}
-          ></Button>
+          <div className="sponsorsButton">
+            <Button
+              backgroundColor="yellow"
+              textColor="black"
+              text="SPONSORSHIP PACKAGE"
+              onClick={() => window.open("contact")}
+              variant={null}
+            ></Button>
+          </div>
+          <div className="break"></div>
           <SponsorList></SponsorList>
         </div>
       </div >

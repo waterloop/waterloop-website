@@ -4,7 +4,7 @@
 
 @media (max-width: 420px) {
   .pageContainer {
-    margin: 2em 2em 2em 5em;
+    margin: 2em 1em 2em 1em;
   }
 }
 
@@ -21,6 +21,10 @@ h2 {
 
 .break {
   padding-bottom: 5em;
+
+  @media screen and (max-width: 420px) {
+    padding-bottom: 2em;
+  }
 }
 
 h3 {
@@ -28,6 +32,21 @@ h3 {
   color: #ffffff;
   margin-top: 0pt;
   font-weight: 400;
+}
+
+h4 {
+  font-family: "IBM Plex Sans";
+  font-size: 28px;
+  color: #010101;
+  font-style: italic;
+  font-weight: bold;
+}
+
+@media (max-width: 420px) {
+  h4 {
+    font-size: 18;
+    margin-left: 0;
+  }
 }
 
 body {
@@ -201,10 +220,46 @@ code {
 }
 
 .featComp {
-  margin: 30px;
+  margin: 30px 30px 30px 0;
   min-height: 80px; /* For some reason this prevents the top image from being an incorrect size.*/
   max-width: 70%;
   height: auto;
+}
+
+.FeatImage {
+  /* type img*/
+  display: block;
+  object-fit: cover; /*Centers image and crops instead of scales aspect ratio.*/
+  border: 10px;
+  max-width: 340px;
+  /*200 IQ bug fix (the first image doesn't load in correct size if only using width ;) */
+  height: 10em;
+
+  @media screen and (max-width: 420px) {
+    display: flex;
+    width: 90vw;
+    height: 30vh;
+  }
+}
+
+.FeatPara {
+  /* type p*/
+  font-size: 18px;
+  font-family: "IBM Plex Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: justify;
+
+  @media screen and (max-width: 420px) {
+    min-width: 90vw;
+  }
+}
+
+.Header-FeaturedComponent {
+  /*type h2*/
+  margin-left: 30px;
+  font-size: 28px;
+  font-weight: bold;
+  font-style: italic;
+  font-family: "IBM Plex Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 @media (min-width: 420px) {
@@ -218,38 +273,16 @@ code {
   .FeatImage {
     position: absolute;
     left: 0;
-    margin: 10px;
+    margin: 10px 10px 10px 0;
   }
+
   .FeatPara {
     position: absolute;
     left: 15em;
     margin: 10px;
+    padding-left: 45px;
+    font-size: 16px;
   }
-}
-
-.FeatImage {
-  /* type img*/
-  display: block;
-  object-fit: cover; /*Centers image and crops instead of scales aspect ratio.*/
-  border: 10px;
-  max-width: 355px;
-  /*200 IQ bug fix (the first image doesn't load in correct size if only using width ;) */
-  height: 10em;
-}
-
-.FeatPara {
-  /* type p*/
-  font-size: 18px;
-  font-family: "IBM Plex Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.Header-FeaturedComponent {
-  /*type h2*/
-  margin-left: 30px;
-  font-size: 28px;
-  font-weight: bold;
-  font-style: italic;
-  font-family: "IBM Plex Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .TextBlock-TextWithImage {
@@ -354,7 +387,7 @@ code {
   .Text-TextWithImage {
     margin: 20px 0;
     text-align: justify;
-    font-size: 4vw;
+    font-size: 16px;
   }
   .ButtonBlock-TextWithImage {
     margin-top: 0px;
@@ -728,11 +761,22 @@ code {
   font-style: italic;
   font-size: 28px;
   margin: 18px;
+
+  @media screen and (max-width: 420px) {
+    margin-left: 0;
+  }
+
 }
 
 .GooseRoster-Description {
   font-size: 16px;
   margin-left: 18px;
+
+  @media screen and (max-width: 420px) {
+    font-size: 18px;
+    margin-left: 0;
+    text-align: justify;
+  }
 }
 
 .GooseRoster-ImageThumbnail {
@@ -748,7 +792,7 @@ code {
 
 .GooseRoster-Img {
   /* type img */
-  width: 90vw;
+  width: 80vw;
 }
 
 .GooseRoster-Arrow {
@@ -778,18 +822,26 @@ code {
 .ButtonDiv {
   border-radius: 17px;
   min-width: 50px;
-  max-width: auto;
-  height: 34px;
+  max-width: 350px;
+  max-height: 34px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 5px 30px;
+
+  @media screen and (max-width: 420px) {
+    max-height: 50px;
+  }
 }
 
 .ButtonText {
   font-size: large;
   font-family: IBM Plex Sans;
   margin: 0;
+
+  @media screen and (max-width: 420px) {
+    font-size: 17px;
+    }
 }
 
 .SponsorPage {
@@ -869,6 +921,12 @@ code {
   font-style: italic, underline;
   color: #010101;
 }
+
+@media (max-width: 420px) {
+  .sponsorLink {
+    font-size: 24px;
+  }
+}
 .contactFormContainer {
   display: flex;
   align-items: center;
@@ -895,4 +953,16 @@ code {
   display: flex;
   height: 50vh;
   width: 80vw;
+}
+
+.sponsorsButton {
+  display: flex;
+  margin-left: 3.5em;
+  margin-top: -4em;
+
+  @media screen and (max-width: 420px) {
+    margin-left: 0;
+    margin-top: 0;
+    justify-content: center;
+  }
 }
