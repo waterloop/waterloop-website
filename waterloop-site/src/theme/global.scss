@@ -342,7 +342,7 @@ code {
 
 .ButtonBlock-TextWithImage {
   display: inline-flex;
-  justify-content: center;
+  justify-content: flex-start;
   margin-top: 2em;
 }
 
@@ -450,8 +450,8 @@ code {
 
 /*Landing Sponsor's component styles: */
 .Img-Box-Sponsors {
-  margin: 40px;
-  width: calc(10vw + 200px);
+  margin: 30px 20px 30px 20px;
+  width: calc(6vw + 200px);
   height: calc(5vw + 100px);
   display: flex;
   flex-direction: column;
