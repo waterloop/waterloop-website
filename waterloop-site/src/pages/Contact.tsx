@@ -3,7 +3,7 @@ import { ContactForm } from "components/ContactForm";
 import Hero from "components/Hero/General";
 import GoogleMapReact from "google-map-react";
 import "../theme/global.scss";
-import { MAP } from "../config/map";
+// import { MAP } from "../config/map";
 
 class Contact extends React.Component {
   render() {
@@ -29,13 +29,13 @@ class Contact extends React.Component {
               tempor incididunt ut labore et dolore magna aliqua.
             </h6>
             <div className="mapContainer">
-              <GoogleMapReact
+              {/* <GoogleMapReact
                 bootstrapURLKeys={{
                   key: MAP,
                 }}
                 defaultCenter={{ lat: 43.4723, lng: -80.5449 }}
                 defaultZoom={17}
-              ></GoogleMapReact>
+              ></GoogleMapReact> */}
             </div>
           </div>
         </div>
