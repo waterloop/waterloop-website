@@ -1,5 +1,19 @@
+.pageContainer {
+  margin: 5em 7em 5em 7em;
+}
+
+@media (max-width: 420px) {
+  .pageContainer {
+    margin: 2em 2em 2em 5em;
+  }
+}
+
 h2 {
   font-size: 12pt;
+}
+
+.break {
+  padding-bottom: 5em;
 }
 
 body {
@@ -820,4 +834,11 @@ h1 {
     width: 30%;
     height: auto;
   }
+}
+
+.sponsorLink {
+  font-family: "IBM Plex Sans";
+  font-size: 24px;
+  font-style: italic, underline;
+  color: #010101;
 }

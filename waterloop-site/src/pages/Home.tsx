@@ -31,8 +31,11 @@ class Home extends React.Component {
       <div>
         <Hero description="A faster look on the future." anchor="#home"></Hero>
         <div id={"#home"}></div>
-        <TextWithImage data={castData} textPos={"alternate"} imgData={imgData}></TextWithImage>
-        <Sponsors data={imgJSON} />
+        <div className="pageContainer">
+          <TextWithImage data={castData} textPos={"alternate"} imgData={imgData}></TextWithImage>
+          <div className="break"></div>
+          <Sponsors data={imgJSON} />
+        </div>
       </div>
     );
   }

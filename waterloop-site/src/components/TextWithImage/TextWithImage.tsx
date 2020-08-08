@@ -4,7 +4,7 @@ import "theme/global.scss";
 
 export type MyProps = { title?: string; text: string; link?: string };
 
-export class TextWithImage extends React.Component<{data: MyProps[], imgData: string[], textPos?: string}> {
+export class TextWithImage extends React.Component<{ data: MyProps[], imgData: string[], textPos?: string }> {
   renderChildren = (data: MyProps[]) => {
     var isRightLeft = true; // Alternate between right-left and left-right layout.
     var key = -1;
@@ -33,7 +33,7 @@ export class TextWithImage extends React.Component<{data: MyProps[], imgData: st
             <p className="Text-TextWithImage">{entry.text}</p>
             <div className="ButtonBlock-TextWithImage">
               {/* Hide button if no link supplied. */}
-              { this.renderButton(entry.link) }
+              {this.renderButton(entry.link)}
             </div>
           </div>
           <img
@@ -53,7 +53,7 @@ export class TextWithImage extends React.Component<{data: MyProps[], imgData: st
           backgroundColor="yellow"
           textColor="black"
           text="LEARN MORE"
-          onClick={() => window.open(link,"_self")}
+          onClick={() => window.open(link, "_self")}
           variant={null}
         ></Button>
       );
