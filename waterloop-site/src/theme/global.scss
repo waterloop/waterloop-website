@@ -524,7 +524,7 @@ h1 {
   justify-content: stretch;
   width: 100%;
   height: calc(100vh - 60px); // To adjust the height position of the background image.
-  min-height: calc(max(40vw, 500px));
+  min-height: calc(100vw * 0.2 + 300px); // Turns out you just need a bit of linear algebra ;)
 
   background-color: #232635;
 
@@ -535,7 +535,7 @@ h1 {
 }
 
 .landingFiller {
-  flex: 1;
+  flex: 0.6 0.6 0;
 }
 
 .landingDescriptionContainer {
