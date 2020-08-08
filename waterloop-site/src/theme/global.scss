@@ -444,12 +444,12 @@ h1 {
   justify-content: stretch;
   width: 100%;
   height: 100vh;
-  min-height: calc(20vw + 20rem);
+  min-height: 15rem;
   background-color: #232635;
 }
 
 .generalFillerSpace {
-  flex: 1;
+  flex: 0.8 0.8 0;
 }
 
 .generalTextContainer {
