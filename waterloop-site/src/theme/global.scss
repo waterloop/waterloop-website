@@ -24,7 +24,7 @@ h3 {
 }
 
 h1 {
-  font-size: 64pt;
+  font-size: 64pt;  /* For incompatible browsers */
   color: #ffffff;
   text-transform: uppercase;
   margin-bottom: 0pt;
@@ -460,6 +460,12 @@ h1 {
   display: flex;
   justify-content: center;
   padding-bottom: 23px;
+
+  > h1 {
+    font-size: 64pt;  /* For incompatible browsers */
+    font-size: #{'max(10vmin, 64pt)'};  // This properly sizes the font using CSS's max function.
+    text-align: center;
+  }
 }
 
 .generalDescriptionContainer {
