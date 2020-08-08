@@ -6,6 +6,11 @@
   .pageContainer {
     margin: 2em 2em 2em 5em;
   }
+h1 {
+  font-size: 64pt;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 0pt;
 }
 
 h2 {
@@ -14,6 +19,12 @@ h2 {
 
 .break {
   padding-bottom: 5em;
+
+h3 {
+  font-size: 30px;
+  color: #ffffff;
+  margin-top: 0pt;
+  font-weight: 400;
 }
 
 body {
@@ -30,18 +41,9 @@ code {
     monospace;
 }
 
-h3 {
-  font-size: 30px;
-  color: #ffffff;
-  margin-top: 0pt;
-  font-weight: 400;
-}
-
-h1 {
-  font-size: 64pt;
-  color: #ffffff;
-  text-transform: uppercase;
-  margin-bottom: 0pt;
+.app-lock {
+  height: 100vh;
+  overflow-y: hidden;
 }
 
 .btn {
@@ -70,11 +72,15 @@ h1 {
   }
 
   .FooterWrapper {
-    height: 130px;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 316px;
+    width: 100%;
   }
   .LogoWrapper {
-    margin: 30px 0 30px 20px;
-    transform: scale(0.75, 0.75);
+    align-self: left;
+    margin-left: 0px;
+    transform: scale(0.5, 0.5);
   }
   .SocialMediaWrapper {
     margin: 5px 10px 5px 2px;
@@ -85,7 +91,7 @@ h1 {
     font-size: 13px;
   }
   .LinksWrapper {
-    margin: 5% 5% 20% 15%;
+    margin: 0;
   }
 }
 
@@ -145,11 +151,12 @@ h1 {
   height: 276px;
   bottom: 0;
   background: #232636;
+  margin-top: 20px;
 }
 
 .LogoWrapper {
   align-self: center;
-  margin-left: 183px;
+  margin-left: 150px;
   height: 91.11px;
   width: 154.32px;
 }
@@ -471,6 +478,10 @@ h1 {
   overflow: scroll;
 }
 
+.sidebar-open {
+  overflow: hidden;
+}
+
 .NavbarContainer {
   display: flex;
   flex-direction: row;
@@ -531,6 +542,7 @@ h1 {
 .generalTitleContainer {
   display: flex;
   justify-content: center;
+  text-align: center;
   padding-bottom: 23px;
 }
 
@@ -645,7 +657,7 @@ h1 {
 
 .landingWaterloop {
   /* type img */
-  width: 700px;
+  width: 80%;
   height: auto;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
@@ -684,8 +696,7 @@ h1 {
 
   .landingWaterloop {
     /* type img */
-    width: 335px;
-    height: 49px;
+    width: 80%;
   }
 }
 
@@ -841,4 +852,31 @@ h1 {
   font-size: 24px;
   font-style: italic, underline;
   color: #010101;
+}
+.contactFormContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  margin-bottom: 2em;
+  margin-top: 10em;
+}
+
+.locationContainer {
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+
+  > div {
+    margin: 5vh 0;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.mapContainer {
+  display: flex;
+  height: 50vh;
+  width: 80vw;
 }
