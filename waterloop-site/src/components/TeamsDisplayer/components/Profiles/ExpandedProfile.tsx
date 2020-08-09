@@ -6,7 +6,6 @@ import { ContactsType } from '../interfaces'
 const Container = styled.div`
   position: relative;
   display: flex;
-  flex-direction: columns;
   justify-content: space-between;
   width: 100%;
 
@@ -17,10 +16,7 @@ const Container = styled.div`
   }
 `
 const PortraitContainer = styled.div`
-  display: flex;
   width: 44%;
-  border: 1px solid #fbc531;
-  border-radius: 25px 0px;
 
   @media (max-width: 975px) {
     width: 100%;
@@ -29,8 +25,10 @@ const PortraitContainer = styled.div`
 `
 const Portrait = styled.img`
   width: 100%;
-  height: 100%;
-  border-radius: 25px 0px;
+  height: auto;
+  border-radius: 50% 50%;
+  border: 4px solid #fbc531;
+  box-sizing: border-box;
 `
 const InfoContainer = styled.div`
   display: block;
@@ -72,6 +70,7 @@ const InfoBlurb = styled.div`
   flex-basis: 100%;
   font-size: 20px;
   margin-bottom: 30px;
+  padding-bottom: 20px;
 `
 const ContactListContainer = styled.div`
   display: flex;

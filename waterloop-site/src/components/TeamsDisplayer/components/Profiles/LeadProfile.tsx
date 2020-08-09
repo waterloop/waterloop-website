@@ -5,7 +5,6 @@ import { ContactsType } from '../interfaces'
 
 const Container = styled.div`
   display: flex;
-  flex-direction: columns;
   justify-content: space-between;
   width: 475px;
   height: 265px;
@@ -20,14 +19,13 @@ const Container = styled.div`
 const PortraitContainer = styled.div`
   flex-basis: 60%;
   height: 100%;
-  border: 1px solid #fbc531;
-  border-radius: 50% 50%;
 `
 const Portrait = styled.img`
   flex-basis: 100%;
+  border: 4px solid #fbc531;
   height: 100%;
-  width: 100%;
   border-radius: 50% 50%;
+  box-sizing: border-box;
 `
 const InfoContainer = styled.div`
   flex-basis: 35%;
