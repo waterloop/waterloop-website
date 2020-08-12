@@ -1,3 +1,4 @@
+$mobile: 425px;
 h1 {
   font-size: 64pt;
   color: #ffffff;
@@ -48,7 +49,7 @@ code {
   line-height: 10px;
 }
 
-@media (max-width: 420px) {
+@media (max-width: $mobile) {
   .GooseRoster-Img {
     /* type img */
     /* type img */
@@ -86,7 +87,7 @@ code {
   }
 }
 
-@media (min-width: 420px) and (max-width: 600px) {
+@media (min-width: $mobile) and (max-width: 600px) {
   .FooterWrapper {
     flex-direction: column;
     justify-content: flex-start;
@@ -193,7 +194,7 @@ code {
   height: auto;
 }
 
-@media (min-width: 420px) {
+@media (min-width: $mobile) {
   .featComp {
     display: flex;
     align-items: right;
@@ -567,7 +568,7 @@ code {
   transition: 0.2s ease-in-out;
 }
 
-@media (max-width: 420px) {
+@media (max-width: $mobile) {
   .generalContainer {
     align-items: center;
   }
@@ -665,7 +666,7 @@ code {
   transition: 0.2s ease-in-out;
 }
 
-@media (max-width: 420px) {
+@media (max-width: $mobile) {
   .landingDescriptionContainer {
     margin-bottom: 28px;
     > h3 {
@@ -747,18 +748,83 @@ code {
 .contactForm-Container {
   display: flex;
   justify-content: center;
-  height: 100vh;
   width: 80%;
+  margin-bottom: 4vh;
+  label {
+    margin: 10px 0 0 0;
+    color: #474747;
+    font-size: 12px;
+  }
+  h3 {
+    font-style: italic;
+    color: #232635 !important;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 36px;
+  }
+
+  > form > p {
+    font-size: 18px;
+    margin: 0 auto 15px;
+  }
+  input {
+    margin-top: 5px;
+    width: calc(98% - 10px);
+    height: 30px;
+    background-color: #f4f4f4;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+    padding: 0 10px;
+    color: #232636;
+  }
 }
 
 .contactForm-InputBlockLeft {
   width: 48%;
   float: left;
+  @media (max-width: $mobile) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
 }
 
 .contactForm-InputBlockRight {
   width: 48%;
   float: right;
+  @media (max-width: $mobile) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.contact-form-row {
+  @media (max-width: $mobile) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.contact-form-message {
+  margin: 10px 0 15px 0;
+  textarea {
+    margin-top: 5px;
+    width: calc(100% - 15px);
+    height: 300px;
+    background-color: #f4f4f4;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+    resize: none;
+    padding: 5px 10px;
+    font-family: IBM Plex Sans;
+    color: #232636;
+  }
+  label {
+    margin: 20px 0;
+  }
 }
 
 .ButtonDiv {
@@ -774,7 +840,7 @@ code {
 
 .ButtonText {
   font-size: large;
-  font-family: IBM Plex Sans;
+
   margin: 0;
 }
 
@@ -790,7 +856,7 @@ code {
     text-align: center;
     color: #232635;
 
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: $mobile) {
       font-size: 1.2rem;
     }
   }
@@ -805,7 +871,7 @@ code {
   margin: auto auto;
   margin-bottom: 1vh;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: $mobile) {
     position: relative;
     display: flex;
     flex-direction: row;
@@ -816,7 +882,7 @@ code {
 .hypersonic {
   width: 60%;
   height: auto;
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: $mobile) {
     width: 80%;
     height: auto;
   }
@@ -825,7 +891,7 @@ code {
 .supersonic {
   width: 40%;
   height: auto;
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: $mobile) {
     width: 40%;
     height: auto;
   }
@@ -834,7 +900,7 @@ code {
 .transonic {
   width: 30%;
   height: auto;
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: $mobile) {
     width: 30%;
     height: auto;
   }
@@ -843,7 +909,7 @@ code {
 .sonic {
   width: 30%;
   height: auto;
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: $mobile) {
     width: 30%;
     height: auto;
   }
@@ -853,10 +919,14 @@ code {
   display: flex;
   align-items: center;
   flex-direction: column;
-  min-height: 100vh;
+  font-family: IBM Plex Sans !important;
   width: 100%;
-  margin-bottom: 2em;
-  margin-top: 10em;
+  margin: 50px 0;
+
+  @media (max-width: $mobile) {
+    margin: 2em 0;
+    min-height: 100vh;
+  }
 }
 
 .locationContainer {

@@ -37,7 +37,7 @@ class App extends React.Component {
     return (
       <div className={this.state.lock ? "app-lock" : ""}>
         <Router>
-          {this.state.width >= 420 ? (
+          {this.state.width > 425 ? (
             <NavBar />
           ) : (
             <SideBar handleClick={this.handleClick.bind(this)} />
