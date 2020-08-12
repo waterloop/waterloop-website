@@ -1,5 +1,5 @@
 import React from "react";
-import "../../theme/global.scss";
+import "../../theme/styles.scss";
 
 type MyProps = { subteam: string; description: string; image: string };
 

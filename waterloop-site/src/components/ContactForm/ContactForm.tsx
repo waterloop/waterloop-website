@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "components/Button";
-import "../../theme/global.scss";
+import "../../theme/styles.scss";
 
 interface ContactFormProps {
   title: string;

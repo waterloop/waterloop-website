@@ -1,5 +1,5 @@
 import React from "react";
-import "../../theme/global.scss";
+import "../../theme/styles.scss";
 
 type MyProps = {
   role: string;

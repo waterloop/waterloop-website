@@ -1,10 +1,14 @@
 import React from "react";
 import { Button } from "components/Button";
-import "theme/global.scss";
+import "theme/styles.scss";
 
 export type MyProps = { title?: string; text: string; link?: string };
 
-export class TextWithImage extends React.Component<{data: MyProps[], imgData: string[], textPos?: string}> {
+export class TextWithImage extends React.Component<{
+  data: MyProps[];
+  imgData: string[];
+  textPos?: string;
+}> {
   renderChildren = (data: MyProps[]) => {
     var isRightLeft = true; // Alternate between right-left and left-right layout.
     var key = -1;
@@ -22,18 +26,23 @@ export class TextWithImage extends React.Component<{data: MyProps[], imgData: st
           posClass = "right-left-variant";
           break;
 
-        default:  // The "alternate" case
-          posClass = (isRightLeft ? "right-left-variant" : "left-right-variant");
+        default:
+          // The "alternate" case
+          posClass = isRightLeft ? "right-left-variant" : "left-right-variant";
       }
 
       return (
         <div key={key} className={"Block-TextWithImage " + posClass}>
           <div className="TextBlock-TextWithImage">
-            {entry.title !== undefined ? <h2 className="Header-TextWithImage">{entry.title}</h2> : <b></b>}
+            {entry.title !== undefined ? (
+              <h2 className="Header-TextWithImage">{entry.title}</h2>
+            ) : (
+              <b></b>
+            )}
             <p className="Text-TextWithImage">{entry.text}</p>
             <div className="ButtonBlock-TextWithImage">
               {/* Hide button if no link supplied. */}
-              { this.renderButton(entry.link) }
+              {this.renderButton(entry.link)}
             </div>
           </div>
           <img
@@ -44,7 +53,7 @@ export class TextWithImage extends React.Component<{data: MyProps[], imgData: st
         </div>
       );
     });
-  }
+  };
 
   renderButton = (link: string | undefined) => {
     if (link !== undefined) {
@@ -53,18 +62,14 @@ export class TextWithImage extends React.Component<{data: MyProps[], imgData: st
           backgroundColor="yellow"
           textColor="black"
           text="LEARN MORE"
-          onClick={() => window.open(link,"_self")}
+          onClick={() => window.open(link, "_self")}
           variant={null}
         ></Button>
       );
     }
-  }
+  };
 
   render() {
-    return (
-      <div>
-        {this.renderChildren(this.props.data)}
-      </div>
-    );
+    return <div>{this.renderChildren(this.props.data)}</div>;
   }
 }

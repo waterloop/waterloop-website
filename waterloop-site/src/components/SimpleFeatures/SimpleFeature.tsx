@@ -1,7 +1,7 @@
 // Core modules:
 import React from "react";
 import styled from "styled-components";
-import "../../theme/global.scss"; // For styling
+import "../../theme/styles.scss"; // For styling
 
 export interface FeatProps {
   imgSrc: string;
@@ -19,18 +19,22 @@ export interface FeatProps {
 
 // Custom styled image component.
 const FeatImage = styled.img`
-    background: url(${props => props.src} || "nonexistent-link") no-repeat;    
+  background: url(${(props) => props.src}||"nonexistent-link") no-repeat;
 `;
 
 class SimpleFeatComp extends React.Component<FeatProps> {
-    render() {
-        return (
-            <div className="featComp">
-                <p className="FeatPara">{this.props.desc}</p>
-                <FeatImage className="FeatImage" src={this.props.imgSrc} alt={this.props.imgAlt}></FeatImage>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div className="featComp">
+        <p className="FeatPara">{this.props.desc}</p>
+        <FeatImage
+          className="FeatImage"
+          src={this.props.imgSrc}
+          alt={this.props.imgAlt}
+        ></FeatImage>
+      </div>
+    );
+  }
 }
 
 // Export so that other code can use this component:
