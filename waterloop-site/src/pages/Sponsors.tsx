@@ -6,7 +6,7 @@ import { TextWithImage } from "components/TextWithImage";
 import { MyProps } from "components/TextWithImage";
 import Text from 'static/copy/Sponsors.json'
 import Goals from '../static/img/landing/textwithimage/goals.png';
-import "../theme/global.scss";
+import "../theme/styles.scss";
 
 const castData: MyProps[] = Text;
 const imgData: string[] = [Goals];

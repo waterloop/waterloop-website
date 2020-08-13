@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "components/Button";
-import "../../theme/global.scss";
+import "../../theme/styles.scss";
 
 interface ContactFormProps {
   title: string;
@@ -27,7 +27,7 @@ interface ServerResponse {
 class ContactUsForm extends React.Component<
   ContactFormProps,
   ContactFormStates
-> {
+  > {
   constructor(props: ContactFormProps) {
     super(props);
     this.onFormSubmit = this.onFormSubmit.bind(this);

@@ -2,7 +2,7 @@ import React from "react";
 import LinkComponent from "../../components/Footer/LinkComponent";
 import RouteComponent from "../../components/Footer/RouteComponent";
 import Logo from "../../static/img/logos/Logo.svg";
-import "../../theme/global.scss"; // For styling
+import "../../theme/styles.scss"; // For styling
 
 class FooterComponent extends React.Component {
   render() {

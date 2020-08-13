@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "components/Button";
-import "theme/global.scss";
+import "theme/styles.scss";
 
 export type MyProps = { title?: string; text: string; link?: string };
 

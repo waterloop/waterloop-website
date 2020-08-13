@@ -2,7 +2,7 @@ import React from "react";
 import { ContactForm } from "components/ContactForm";
 import Hero from "components/Hero/General";
 import GoogleMapReact from "google-map-react";
-import "../theme/global.scss";
+import "../theme/styles.scss";
 // import { MAP } from "../config/map";
 
 class Contact extends React.Component {
