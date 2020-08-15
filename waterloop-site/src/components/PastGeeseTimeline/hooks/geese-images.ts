@@ -1,4 +1,4 @@
-import { useCallback, useState, useEffect } from 'react';
+import { useCallback, useState } from 'react';
 
 import goose1 from '../../../static/img/pgimgs/goose1.png';
 import goose2 from '../../../static/img/pgimgs/goose2.png';
@@ -34,12 +34,12 @@ const useGeeseImages = () => {
 
   const cycleRight = useCallback(
     () => setCurrentIndex((currentIndex + 1) % imgs.length),
-    [setCurrentIndex, currentIndex, imgs.length],
+    [setCurrentIndex, currentIndex],
   );
 
   const cycleLeft = useCallback(
     () => setCurrentIndex((currentIndex - 1) >= 0 ? currentIndex - 1 : imgs.length - 1),
-    [setCurrentIndex, currentIndex, imgs.length],
+    [setCurrentIndex, currentIndex],
   );
 
   return {

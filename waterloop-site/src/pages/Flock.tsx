@@ -1,9 +1,12 @@
 import React from "react";
+import styled from "styled-components";
 import Hero from "components/Hero/General";
 import { GooseRoster } from "components/GooseRoster";
 import { SimpleFeatComp } from "components/SimpleFeatures";
+import { PastGeeseTimeline as UnstyledPastGeeseTimeline } from "components/PastGeeseTimeline";
 import image from "../static/img/goose/feat1.png";
 
+const PastGeeseTimeline = styled(UnstyledPastGeeseTimeline)``;
 var myImgArray = ['https://via.placeholder.com/150', 'https://via.placeholder.com/160', 'https://via.placeholder.com/170'];
 
 class Flock extends React.Component {
@@ -23,8 +26,10 @@ class Flock extends React.Component {
           <SimpleFeatComp imgSrc={image} imgAlt="test" desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut."></SimpleFeatComp>
           <SimpleFeatComp imgSrc={image} imgAlt="test" desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut."></SimpleFeatComp>
           <SimpleFeatComp imgSrc={image} imgAlt="test" desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut."></SimpleFeatComp>
+          <div className="break"></div>
+          <PastGeeseTimeline />
         </div>
-      </div>
+      </div >
     );
   }
 }

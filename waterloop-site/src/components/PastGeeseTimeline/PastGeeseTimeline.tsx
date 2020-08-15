@@ -1,9 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import ImageCarousel from './ImageCarousel'
+import ImageCarousel from "./ImageCarousel";
 
-const Heading = styled.div`
+const Heading = styled.h2`
   font-family: IBM Plex Sans;
   font-style: italic;
   font-weight: 600;
@@ -11,24 +11,26 @@ const Heading = styled.div`
   line-height: 62px;
 
   color: #010101;
-`
+`;
 
 const Container = styled.div`
   position: relative;
-  width: 871px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 `;
 
 interface Props {
-  className: string;
+  className?: string;
 }
 
 const PastGeeseTimeline: React.FC<Props> = ({ className }) => (
-  <Container className={className}>
-    <Heading>
-      Past Geese
-    </Heading>
-    <ImageCarousel />
-  </Container>
+  <>
+    <Heading>Past Geese</Heading>
+    <Container className={className}>
+      <ImageCarousel />
+    </Container>
+  </>
 );
 
 export default PastGeeseTimeline;

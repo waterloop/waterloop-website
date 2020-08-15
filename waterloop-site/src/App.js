@@ -6,8 +6,7 @@ import Home from "./pages/Home";
 import Flock from "./pages/Flock";
 import Team from "./pages/Team";
 import Sponsors from "./pages/Sponsors";
-// import NavBar from "./components/NavBar/NavBar";
-// import Sidebar from "./components/NavBar/Sidebar";
+
 import { Footer } from "sections/Footer";
 import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import "typeface-ibm-plex-sans";

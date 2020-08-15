@@ -27,6 +27,7 @@
     "react-scripts": "3.4.1",
     "react-scroll": "^1.8.0",
     "react-simple-flex-grid": "^1.3.21",
+    "react-swipeable": "^5.5.1",
     "styled-components": "^5.0.1",
     "typeface-ibm-plex-sans": "0.0.75",
     "typescript": "^3.7.5"
