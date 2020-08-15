@@ -26,9 +26,9 @@ class heroComponent extends React.Component<MyProps> {
           </div>
           <button
             onClick={() => window.open("recruitment")}
-            className={"landing-btn"}
+            className={"ButtonDiv landing-btn"}
           >
-            JOIN US
+            <div className={"ButtonText"}>JOIN US</div>
           </button>
         </div>
 
