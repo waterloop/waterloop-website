@@ -25,7 +25,7 @@ h2 {
 }
 
 .break {
-  padding-bottom: 5em;
+  padding-bottom: 4em;
 
   @media screen and (max-width: $mobile) {
     padding-bottom: 2em;
@@ -357,6 +357,7 @@ textarea {
 
 .Header-TextWithImage {
   /* type h2*/
+  font-family: "IBM Plex Sans";
   font-style: italic;
   font-size: calc(18px + 0.7vw);
 }
@@ -364,13 +365,14 @@ textarea {
 .Text-TextWithImage {
   /* type p*/
   font-size: calc(12px + 0.5vw);
+  font-family: "IBM Plex Sans";
 }
 
 .Block-TextWithImage {
   // !NOTE: Workaround until the parent scss selector introduces the padding automatically to align each of its direct children:
 
   display: flex;
-  padding-bottom: 20px;
+  padding-bottom: 5em;
   // Alternate between 2 layouts:
   // NOTE: I dunno if this can be optimized in any way.
   &.left-right-variant {
@@ -1105,7 +1107,7 @@ textarea {
   flex-direction: column;
   font-family: IBM Plex Sans !important;
   width: 100%;
-  margin: 50px 0;
+  // margin: 50px 0;
 
   @media (max-width: $mobile) {
     margin: 2em 0;

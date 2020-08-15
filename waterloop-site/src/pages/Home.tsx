@@ -5,6 +5,7 @@ import { ImgJSON } from "components/SponsorsLanding";
 import { TextWithImage } from "components/TextWithImage";
 import { MyProps } from "components/TextWithImage";
 import Text from "static/copy/Landing.json";
+import "../theme/styles.scss";
 
 // Images for sponsors:
 import UW_Engineering from "../static/img/sponsors/UW_Engineering.png";

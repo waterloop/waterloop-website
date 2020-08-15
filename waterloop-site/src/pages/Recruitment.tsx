@@ -1,6 +1,14 @@
 import React from "react";
 import Hero from "components/Hero/General";
 import PositionPosting from "../components/RecruitmentForm/PositionPosting";
+import { TextWithImage } from "components/TextWithImage";
+import { MyProps } from "components/TextWithImage";
+import Text from "static/copy/Recruitment.json";
+import Competition from "../static/img/landing/textwithimage/competition.png";
+import "../theme/styles.scss";
+
+const castData: MyProps[] = Text;
+const imgData: string[] = [Competition];
 
 const samplePostingsData = [
   {
@@ -46,7 +54,14 @@ class Recruitment extends React.Component<any, any> {
           anchor="#recruitment"
         ></Hero>
         <div id={"#recruitment"}></div>
-        <div className={"pageContainer "}>
+        <div className={"pageContainer"}>
+          <TextWithImage
+            data={castData}
+            textPos={"alternate"}
+            imgData={imgData}
+          ></TextWithImage>
+          <div className="break"></div>
+          <h4>Current Postings</h4>
           <div className={"postings"}>
             {samplePostingsData.length > 0 &&
               samplePostingsData.map((item: any) => {

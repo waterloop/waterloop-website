@@ -27,7 +27,7 @@ const Text = styled.p`
 `;
 
 const Block = styled.div`
-  max-width: 700px;
+  width: 80vw;
   display: flex;
   border-width: 0.15vw;
   align-items: center;

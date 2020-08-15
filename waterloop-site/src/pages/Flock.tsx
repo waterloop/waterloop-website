@@ -5,6 +5,7 @@ import { GooseRoster } from "components/GooseRoster";
 import { SimpleFeatComp } from "components/SimpleFeatures";
 import { PastGeeseTimeline as UnstyledPastGeeseTimeline } from "components/PastGeeseTimeline";
 import image from "../static/img/goose/feat1.png";
+import "../theme/styles.scss";
 
 const PastGeeseTimeline = styled(UnstyledPastGeeseTimeline)``;
 var myImgArray = ['https://via.placeholder.com/150', 'https://via.placeholder.com/160', 'https://via.placeholder.com/170'];
