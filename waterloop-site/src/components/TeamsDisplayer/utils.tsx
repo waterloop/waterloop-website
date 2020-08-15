@@ -87,9 +87,10 @@ const sortProfiles = (members: Array<QueryData>, teamType: Map<string, string>) 
 }
 
 // check if filter applies or not
+// ?TODO: Should this be hardcoded?
 const checkWithinTeamFilters = (name: string, teamFilters: Array<boolean>) => {
   if (!teamFilters[0]){
-    if (!teamFilters[1] && (name === "Software" || name ===  "Infrastructure")) {
+    if (!teamFilters[1] && (name === "Software" || name ===  "Infrastructure" || name === "Web")) {
       return false
     }
     if (!teamFilters[2] && name === "Mechanical") {
