@@ -9,7 +9,9 @@ class Sponsors extends React.Component {
         <Hero
           title="Support Our Team"
           description="Help fund the future."
+          anchor="#sponsor-list"
         ></Hero>
+        <div id={"#sponsor-list"}></div>
         <SponsorList></SponsorList>
       </div>
     );

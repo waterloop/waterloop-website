@@ -14,16 +14,21 @@ class Teams extends React.Component<any, any> {
   render() {
     return (
       <div>
-        <Hero title="Meet The Team" description="Learn about our geese." />
+        <Hero
+          title="Meet The Team"
+          description="Learn about our geese."
+          anchor="#team"
+        ></Hero>
+        <div id={"#team"}>
+          <ContentContainer>
+            <OurTeam/>
 
-        <ContentContainer>
-          <OurTeam/>
-
-          <TeamsDisplayer initFilterSetting={0} />
-        </ContentContainer>
+            <TeamsDisplayer initFilterSetting={0} />
+          </ContentContainer>
+        </div>
       </div>
     );
   }
-}
+};
 
 export default Teams;

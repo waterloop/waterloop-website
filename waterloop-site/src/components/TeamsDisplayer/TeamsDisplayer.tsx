@@ -50,6 +50,7 @@ export default class TeamsDisplayer extends React.Component<TeamsDisplayerProps,
     fetch(query as string, options as object)
       .then(res => res.json())
       .then(res => {
+        // console.log(res);
         console.log("finished fetching subteam data")
         let newMap = this.state.subteamIdMap
         res.body.subteams.forEach((team: QueryData) => newMap.set(team._id, team.name))
@@ -68,6 +69,7 @@ export default class TeamsDisplayer extends React.Component<TeamsDisplayerProps,
     fetch(query as string, options as object)
       .then(res => res.json())
       .then(res => {
+        // console.log(res);
         console.log("finished fetching member data")
         const groupedProfiles = sortProfiles(res.body, this.state.subteamIdMap) as Map<string, Array<ProfileType>>
         this.setState({ memberData: groupedProfiles })
