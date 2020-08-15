@@ -879,10 +879,16 @@ textarea {
   flex-direction: row;
   align-items: center;
   align-self: center;
-  height: 40vw;
+  height: 70vh;
+  width: 70vw;
   overflow: hidden;
   padding: 5px;
   margin: 20px 0;
+
+  @media screen and (max-width: $mobile) {
+    height: 20vh;
+    width: 80vw;
+  }
 }
 
 .GooseRoster-Img {
