@@ -38,6 +38,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "https://docs.google.com",
   "eslintConfig": {
     "extends": "react-app"
   },
