@@ -334,6 +334,7 @@ textarea {
   width: 50%;
   height: 100%;
   display: flex;
+  flex-wrap: wrap-reverse;
   flex-direction: column;
 }
 
@@ -360,7 +361,6 @@ textarea {
 
 .Block-TextWithImage {
   // !NOTE: Workaround until the parent scss selector introduces the padding automatically to align each of its direct children:
-  padding: 3em 0;
 
   display: flex;
 
@@ -388,8 +388,18 @@ textarea {
   display: inline-flex;
   justify-content: flex-start;
   margin-top: 2em;
+  @media (max-width: $mobile) {
+    display: none;
+  }
 }
-
+.text-w-image-btn-mobile {
+  display: none;
+  justify-content: flex-start;
+  padding: 20px;
+  @media (max-width: $mobile) {
+    display: inline-flex;
+  }
+}
 // TODO: the screen's width should be declared as a SASS variable and then used to maintain consistency.
 @media (max-width: 500px) {
   .contactForm-InputBlockRight {
@@ -405,7 +415,6 @@ textarea {
     &.left-right-variant,
     &.right-left-variant {
       flex-direction: column;
-
       & > *:nth-child(1),
       & > *:nth-child(2) {
         margin-right: 0;
@@ -420,8 +429,8 @@ textarea {
     padding-right: 0;
   }
   .Img-TextWithImage {
-    width: 100vw;
-    height: 80vw;
+    width: 90vw;
+    height: auto;
   }
   .Header-TextWithImage {
     margin: 0;

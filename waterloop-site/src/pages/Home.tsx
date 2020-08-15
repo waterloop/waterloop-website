@@ -4,13 +4,13 @@ import { Sponsors } from "components/SponsorsLanding";
 import { ImgJSON } from "components/SponsorsLanding";
 import { TextWithImage } from "components/TextWithImage";
 import { MyProps } from "components/TextWithImage";
-import Text from 'static/copy/Landing.json'
+import Text from "static/copy/Landing.json";
 
 // Images for sponsors:
 import UW_Engineering from "../static/img/sponsors/UW_Engineering.png";
 
-import Goals from '../static/img/landing/textwithimage/goals.png';
-import Competition from '../static/img/landing/textwithimage/competition.png';
+import Goals from "../static/img/landing/textwithimage/goals.png";
+import Competition from "../static/img/landing/textwithimage/competition.png";
 
 const castData: MyProps[] = Text;
 const imgData: string[] = [Goals, Competition];
@@ -32,7 +32,11 @@ class Home extends React.Component {
         <Hero description="A faster look on the future." anchor="#home"></Hero>
         <div id={"#home"}></div>
         <div className="pageContainer">
-          <TextWithImage data={castData} textPos={"alternate"} imgData={imgData}></TextWithImage>
+          <TextWithImage
+            data={castData}
+            textPos={"alternate"}
+            imgData={imgData}
+          ></TextWithImage>
           <div className="break"></div>
           <Sponsors data={imgJSON} />
         </div>
