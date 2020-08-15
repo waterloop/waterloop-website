@@ -5,10 +5,9 @@ import { ContactsType } from '../interfaces'
 
 const Container = styled.div`
   display: flex;
-  flex-direction: columns;
+  flex-direction: column;
   justify-content: space-between;
-  width: 320px;
-  height: 178px;
+  align-items: center;
 
   @media (max-width: 975px) {
     flex-direction: row;
@@ -18,22 +17,21 @@ const Container = styled.div`
   }
 `
 const PortraitContainer = styled.div`
-  flex-basis: 60%;
-  height: 100%;
+  flex-basis: 175px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
 const Portrait = styled.img`
-  flex-basis: 100%;
   height: 100%;
-  width: auto;
   border-radius: 50% 50%;
   border: 4px solid #fbc531;
-  box-sizing: border-box;
 `
 const InfoContainer = styled.div`
-  flex-basis: 35%;
-  display: grid;
-  grid-row-template: repeat(3, 1fr);
-  align-content: space-between;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-family: IBM Plex Sans;
   font-style: normal;
   color: #000000;
@@ -41,11 +39,9 @@ const InfoContainer = styled.div`
 const InfoTitle = styled.div`
   font-weight: bold;
   font-size: 16px;
-  line-height: 21px;
 
   @media (max-width: 975px) {
     font-size: 24px;
-    line-height: 31px;
   }
 `
 const InfoPosition = styled.div`
@@ -87,19 +83,19 @@ const ContactList = (props: ContactsType) => {
   </>
 }
 
-const LeadProfile = (props: any) => {
+const SubProfile = (props: any) => {
   return (
     <Container onClick={props.onClick}>
         <PortraitContainer><Portrait src={props.portrait} alt="portrait"/></PortraitContainer>
         <InfoContainer>
           <InfoTitle>{props.name}</InfoTitle>
           <InfoPosition>{props.position}</InfoPosition>
-          <ContactsContainer>
+          {/* <ContactsContainer>
             {props.contacts.length > 0 && <ContactList contacts={props.contacts}/>}
-          </ContactsContainer>
+          </ContactsContainer> */}
         </InfoContainer>
     </Container>
   );
 }
 
-export default LeadProfile;
+export default SubProfile;

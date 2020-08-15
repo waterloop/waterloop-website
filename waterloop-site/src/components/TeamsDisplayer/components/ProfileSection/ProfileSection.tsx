@@ -43,9 +43,9 @@ const MinifiedLeadContainer = styled(MinifiedContainer)`
   }
 `
 const MinifiedSubContainer = styled(MinifiedContainer)`
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 
-  & > div:nth-child(3n-1){
+  & > div:nth-child(4n-1){
     margin-left: 0 auto 0 auto;
   }
 `
@@ -99,10 +99,10 @@ export default class ProfileSection extends React.Component<PSectionProps, PSect
     // Determine to display a Lead Profile or Sub Profile
     let ProfileContainerTypeTag = MinifiedSubContainer
     let ProfileTypeTag = SubProfile
-    if (this.props.profileType === 'lead') {
-      ProfileContainerTypeTag = MinifiedLeadContainer
-      ProfileTypeTag = LeadProfile
-    }
+    // if (this.props.profileType === 'lead') {
+    //   ProfileContainerTypeTag = MinifiedLeadContainer
+    //   ProfileTypeTag = LeadProfile
+    // }
 
     return (
       <ProfileSectionContainer>
@@ -138,7 +138,7 @@ export default class ProfileSection extends React.Component<PSectionProps, PSect
                 position={profile.position}
                 portrait={profile.portrait}
                 contacts={profile.contacts}
-                onClick={() => this.expandProfile(i)}
+                // onClick={() => this.expandProfile(i)}
               />
             })}
           </ProfileContainerTypeTag>
