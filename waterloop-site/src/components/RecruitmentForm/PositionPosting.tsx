@@ -4,14 +4,13 @@ import { Button } from "../Button";
 import Form from "./RecruitmentForm";
 
 const TextBlock = styled.div`
+  padding-right: 40px;
   display: flex;
   flex-direction: column;
-  padding-right: 1%;
-  padding-left: 2%;
-  @media (max-width: 750px) {
-    display: flex;
-    width: 100%;
-    padding: 0px 30px;
+  justify-content: center;
+  width: 600px;
+  @media (max-width: 425px) {
+    padding-right: 0;
   }
 `;
 
@@ -22,28 +21,23 @@ const Header = styled.h2`
 `;
 
 const Text = styled.p`
-  font-size: 100%;
   margin-top: 14px !important;
   display: inline-block;
   text-align: left;
 `;
 
 const Block = styled.div`
-  padding: 1%;
-  width: 35%;
-  height: 100%;
-  border-style: solid;
-  display: inline-block;
+  max-width: 700px;
+  display: flex;
   border-width: 0.15vw;
-  margin-left: 9.1%;
-  margin-right: 2%;
-  margin-top: 2%;
-  margin-bottom: 2%;
+  align-items: center;
+  justify-content: space-between;
   position: relative;
-  @media (max-width: 750px) {
-    display: inline;
-    border-style: none;
-    border-width: none;
+  padding: 10px 30px;
+  @media (max-width: 425px) {
+    width: 95%;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 `;
 
@@ -55,7 +49,6 @@ const Background = styled.div`
   top: 0%;
   left: 0%;
   align-items: center;
-
   z-index: 1;
   width: 100%;
   height: 100%;
@@ -69,7 +62,7 @@ const ButtonBlock = styled.div`
 
 const Line = styled.hr`
   display: none;
-  @media (max-width: 750px) {
+  @media (max-width: 425px) {
     display: flex;
   }
 `;
@@ -116,21 +109,20 @@ class PositionPosting extends React.Component<MyProps, MyState> {
         <TextBlock>
           <Header>{this.props.role}</Header>
           <Text>{this.props.description}</Text>
-          <Text>
+          {/* <Text>
             <b>Skills Required: </b>
             {this.props.skills}
-          </Text>
+          </Text> */}
         </TextBlock>
         <ButtonBlock>
           <Button
             onClick={this.onClick.bind(this)}
-            text="JOIN"
+            text="APPLY"
             backgroundColor="yellow"
             textColor="black"
             variant={null}
           ></Button>
         </ButtonBlock>
-        <Line></Line>
         {this.state.joinClicked && (
           <Background>
             <CloseBtn onClick={this.onClick.bind(this)}>X</CloseBtn>

@@ -97,7 +97,7 @@ textarea {
   justify-content: center;
   background-color: transparent;
   color: $white;
-  border-radius: 100pt;
+  border-radius: 50%;
   border: 2px solid white;
   height: 50px;
   width: 200px;
@@ -216,6 +216,13 @@ textarea {
   margin-left: 150px;
   height: 91.11px;
   width: 154.32px;
+}
+
+.postings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .SocialMediaWrapper {
@@ -363,7 +370,7 @@ textarea {
   // !NOTE: Workaround until the parent scss selector introduces the padding automatically to align each of its direct children:
 
   display: flex;
-
+  padding-bottom: 20px;
   // Alternate between 2 layouts:
   // NOTE: I dunno if this can be optimized in any way.
   &.left-right-variant {
@@ -795,19 +802,6 @@ textarea {
   transition: 0.2s ease-in-out;
 }
 
-.landing-btn {
-  color: $navy !important;
-  font-size: 18px;
-  transition: all 0.3s;
-  background-color: $yellow !important;
-  border: 0;
-  border-radius: 20px;
-  padding: 10px 20px;
-  &:hover {
-    transform: translateY(-5px);
-  }
-}
-
 @media (max-width: $mobile) {
   .landingDescriptionContainer {
     margin-bottom: 28px;
@@ -979,35 +973,40 @@ textarea {
   }
 }
 
+.landing-btn {
+  color: $navy !important;
+  transition: all 0.3s;
+  background-color: $yellow !important;
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
 .ButtonDiv {
   border: 0;
-  border-radius: 20px;
-  min-width: 50px;
+  border-radius: 50px;
   max-width: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 20px;
+  padding: 10px 25px;
   @media screen and (max-width: $mobile) {
     max-height: 50px;
   }
 }
 
 .ButtonText {
-  font-size: large;
+  font-size: 14px;
+  font-weight: 600;
   font-family: "IBM Plex Sans";
   margin: 0;
-
-  @media screen and (max-width: $mobile) {
-    font-size: 17px;
-  }
 }
 
 .button-yellow {
   background-color: $yellow;
   font-family: "IBM Plex Sans";
   font-weight: 600;
-  border-radius: 17px;
+  border-radius: 30px;
   height: 34px;
   width: 100px;
 }
@@ -1023,7 +1022,6 @@ textarea {
     font-size: 3vw;
     text-align: center;
     color: #232635;
-
     @media screen and (max-width: $mobile) {
       font-size: 1.2rem;
     }
