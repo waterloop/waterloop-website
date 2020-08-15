@@ -7,7 +7,7 @@ const Heading = styled.h2`
   font-family: IBM Plex Sans;
   font-style: italic;
   font-weight: 600;
-  font-size: 48px;
+  font-size: 28px;
   line-height: 62px;
 
   color: #010101;
