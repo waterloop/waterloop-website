@@ -4,8 +4,8 @@ import SponsorList from "components/Sponsor/SponsorPage";
 import { Button } from "components/Button";
 import { TextWithImage } from "components/TextWithImage";
 import { MyProps } from "components/TextWithImage";
-import Text from 'static/copy/Sponsors.json'
-import Goals from '../static/img/landing/textwithimage/goals.png';
+import Text from "static/copy/Sponsors.json";
+import Goals from "../static/img/landing/textwithimage/goals.png";
 import "../theme/styles.scss";
 
 const castData: MyProps[] = Text;
@@ -22,20 +22,16 @@ class Sponsors extends React.Component {
         ></Hero>
         <div id={"#sponsor-list"}></div>
         <div className="pageContainer">
-          <TextWithImage data={castData} textPos={"alternate"} imgData={imgData}></TextWithImage>
-          <div className="sponsorsButton">
-            <Button
-              backgroundColor="yellow"
-              textColor="black"
-              text="SPONSORSHIP PACKAGE"
-              onClick={() => window.open("contact")}
-              variant={null}
-            ></Button>
-          </div>
+          <TextWithImage
+            data={castData}
+            textPos={"alternate"}
+            imgData={imgData}
+          ></TextWithImage>
+
           <div className="break"></div>
           <SponsorList></SponsorList>
         </div>
-      </div >
+      </div>
     );
   }
 }
