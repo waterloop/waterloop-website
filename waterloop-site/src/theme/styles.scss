@@ -734,6 +734,19 @@ code {
   transition: 0.2s ease-in-out;
 }
 
+.landing-btn {
+  color: #333333 !important;
+  font-size: 18px;
+  transition: all 0.3s;
+  background-color: #fed138 !important;
+  border: 0;
+  border-radius: 20px;
+  padding: 10px 20px;
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
 @media (max-width: $mobile) {
   .landingDescriptionContainer {
     margin-bottom: 28px;
@@ -787,7 +800,6 @@ code {
   @media screen and (max-width: 420px) {
     margin-left: 0;
   }
-
 }
 
 .GooseRoster-Description {
@@ -908,15 +920,13 @@ code {
 
 .ButtonDiv {
   border: 0;
-  border-radius: 17px;
+  border-radius: 20px;
   min-width: 50px;
   max-width: 350px;
-  max-height: 34px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5px 30px;
-
+  padding: 10px 20px;
   @media screen and (max-width: 420px) {
     max-height: 50px;
   }
@@ -929,7 +939,7 @@ code {
 
   @media screen and (max-width: 420px) {
     font-size: 17px;
-    }
+  }
 }
 
 .SponsorPage {

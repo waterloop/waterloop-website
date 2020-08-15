@@ -24,13 +24,12 @@ class heroComponent extends React.Component<MyProps> {
           <div className="landingDescriptionContainer">
             <h3>{this.props.description}</h3>
           </div>
-          <Button
-            backgroundColor="yellow"
-            textColor="black"
-            text="JOIN US"
+          <button
             onClick={() => window.open("recruitment")}
-            variant={null}
-          ></Button>
+            className={"landing-btn"}
+          >
+            JOIN US
+          </button>
         </div>
 
         <div className="landingBuildingContainer">
