@@ -1,14 +1,18 @@
+$mobile: 425px;
+$yellow: #fed138;
+$navy: #232636;
+$white: #fefefe;
+
 .pageContainer {
   margin: 5em 7em 5em 7em;
 }
 
-@media (max-width: 420px) {
+@media (max-width: $mobile) {
   .pageContainer {
     margin: 2em 1em 2em 1em;
   }
 }
 
-$mobile: 425px;
 h1 {
   font-size: 64pt;
   color: #ffffff;
@@ -23,7 +27,7 @@ h2 {
 .break {
   padding-bottom: 5em;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: $mobile) {
     padding-bottom: 2em;
   }
 }
@@ -43,7 +47,7 @@ h4 {
   font-weight: bold;
 }
 
-@media (max-width: 420px) {
+@media (max-width: $mobile) {
   h4 {
     font-size: 18;
     margin-left: 0;
@@ -69,11 +73,30 @@ code {
   overflow-y: hidden;
 }
 
+h3 {
+  font-size: 30px;
+  color: $white;
+  margin-top: 0pt;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 64pt;
+  color: $white;
+  text-transform: uppercase;
+  margin-bottom: 0pt;
+}
+
+textarea {
+  resize: none;
+  padding: 10px;
+}
+
 .btn {
   display: flex;
   justify-content: center;
   background-color: transparent;
-  color: #ffffff;
+  color: $white;
   border-radius: 100pt;
   border: 2px solid white;
   height: 50px;
@@ -184,7 +207,7 @@ code {
   width: 100%;
   height: 276px;
   bottom: 0;
-  background: #232636;
+  background: $navy;
   margin-top: 20px;
 }
 
@@ -256,7 +279,7 @@ code {
   /*200 IQ bug fix (the first image doesn't load in correct size if only using width ;) */
   height: 10em;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: $mobile) {
     display: flex;
     width: 90vw;
     height: 30vh;
@@ -269,7 +292,7 @@ code {
   font-family: "IBM Plex Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   text-align: justify;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: $mobile) {
     min-width: 90vw;
   }
 }
@@ -283,7 +306,7 @@ code {
   font-family: "IBM Plex Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-@media (min-width: 420px) {
+@media (min-width: $mobile) {
   .featComp {
     display: flex;
     align-items: right;
@@ -516,7 +539,7 @@ code {
   }
 }
 
-.Block-RecruimentForm {
+.Block-RecruitmentForm {
   padding: 1%;
   height: 100%;
   width: 90%;
@@ -525,11 +548,40 @@ code {
   margin-bottom: 2%;
 }
 
-.Header-RecruimentForm {
+.Header-RecruitmentForm {
   /* type h2 */
+  font-family: "IBM Plex Sans";
   font-size: 170%;
   margin-bottom: 0px !important;
   text-align: center;
+}
+
+.recruitment-modal {
+  text-align: center;
+  background-color: white;
+  padding: 30px;
+  border: 1px solid gray;
+  width: 60%;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  textarea {
+    min-height: 20px;
+  }
+  input {
+    margin: 5px 10px;
+    font-family: "IBM Plex Sans";
+  }
+  hr {
+    // margin: 20px;
+  }
+
+  @media screen and (max-width: $mobile) {
+    width: 100%;
+    height: 100vh;
+  }
 }
 
 .ShortInput {
@@ -681,7 +733,7 @@ code {
 .landingDescriptionContainer {
   display: flex;
   justify-content: center;
-  color: #fefefe;
+  color: $white;
 }
 
 .landingArrowContainer {
@@ -735,10 +787,10 @@ code {
 }
 
 .landing-btn {
-  color: #333333 !important;
+  color: $navy !important;
   font-size: 18px;
   transition: all 0.3s;
-  background-color: #fed138 !important;
+  background-color: $yellow !important;
   border: 0;
   border-radius: 20px;
   padding: 10px 20px;
@@ -797,7 +849,7 @@ code {
   font-size: 28px;
   margin: 18px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: $mobile) {
     margin-left: 0;
   }
 }
@@ -806,7 +858,7 @@ code {
   font-size: 16px;
   margin-left: 18px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: $mobile) {
     font-size: 18px;
     margin-left: 0;
     text-align: justify;
@@ -867,7 +919,7 @@ code {
     border: none;
     border-radius: 5px;
     padding: 0 10px;
-    color: #232636;
+    color: $navy;
   }
 }
 
@@ -911,7 +963,7 @@ code {
     resize: none;
     padding: 5px 10px;
     font-family: IBM Plex Sans;
-    color: #232636;
+    color: $navy;
   }
   label {
     margin: 20px 0;
@@ -927,19 +979,28 @@ code {
   align-items: center;
   justify-content: center;
   padding: 10px 20px;
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: $mobile) {
     max-height: 50px;
   }
 }
 
 .ButtonText {
   font-size: large;
-
+  font-family: "IBM Plex Sans";
   margin: 0;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: $mobile) {
     font-size: 17px;
   }
+}
+
+.button-yellow {
+  background-color: $yellow;
+  font-family: "IBM Plex Sans";
+  font-weight: 600;
+  border-radius: 17px;
+  height: 34px;
+  width: 100px;
 }
 
 .SponsorPage {
@@ -1020,7 +1081,7 @@ code {
   color: #010101;
 }
 
-@media (max-width: 420px) {
+@media (max-width: $mobile) {
   .sponsorLink {
     font-size: 24px;
   }
@@ -1066,7 +1127,7 @@ code {
   margin-left: 3.5em;
   margin-top: -4em;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: $mobile) {
     margin-left: 0;
     margin-top: 0;
     justify-content: center;
