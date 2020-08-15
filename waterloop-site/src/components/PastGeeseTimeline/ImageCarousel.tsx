@@ -1,7 +1,5 @@
 import React from "react";
-
 import { useSwipeable } from "react-swipeable";
-
 import styled from "styled-components";
 import useGeeseImages from "./hooks/geese-images";
 
@@ -63,6 +61,8 @@ const Image = styled.img`
 const ImageCarousel: React.FC = () => {
   const containerStyles: React.CSSProperties = {
     display: "flex",
+    padding: "10px",
+    width: "100%",
     justifyContent: "center",
     alignItems: "center",
   };

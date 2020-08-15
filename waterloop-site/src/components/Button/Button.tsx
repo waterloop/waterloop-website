@@ -62,16 +62,16 @@ const Button: React.FC<Props> = (props) => {
   const ButtonDiv = styled.button`
     background-color: ${ColorMap[backgroundColor]};
     border-color:  ${ColorMap[backgroundColor]};
+    transition: all 0.3s;
     &:hover {
       background-color: ${ColorMap[textColor]};
       border-color:  ${ColorMap[textColor]};
-      transition: all 0.5s;
       transform: translateY(-5px);
     }
     &:active {
       border-color: ${ColorMap.yellow};
     }
-    border-radius: 17px;
+  
   }`;
 
   const Text = styled.p`
