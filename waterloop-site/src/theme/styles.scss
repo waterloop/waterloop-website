@@ -120,9 +120,10 @@ textarea {
   .FooterWrapper {
     flex-direction: column;
     justify-content: flex-start;
-    height: 316px;
+    height: 350px;
     width: 100%;
   }
+  
   .LogoWrapper {
     align-self: left;
     padding-top: 15px;
@@ -709,6 +710,7 @@ textarea {
 @media (max-width: $mobile) {
   .generalContainer {
     align-items: center;
+    height: 90vh;
   }
 
   .generalTitleContainer {
@@ -734,6 +736,10 @@ textarea {
     /* type img */
     width: 27px;
     height: 11px;
+  }
+
+  .landingContainer {
+    height: 90vh;
   }
 }
 
