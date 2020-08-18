@@ -9,6 +9,7 @@ import "../theme/styles.scss";
 
 // Images for sponsors:
 import UW_Engineering from "../static/img/sponsors/UW_Engineering.png";
+import Test from "../static/img/sponsors/test1.jpg";
 
 import Goals from "../static/img/landing/textwithimage/goals.png";
 import Competition from "../static/img/landing/textwithimage/competition.png";
@@ -18,12 +19,12 @@ const imgData: string[] = [Goals, Competition];
 
 // Place data here:
 const imgJSON: ImgJSON[] = [
-  { imgSrc: UW_Engineering, imgAlt: "Placeholder" },
-  { imgSrc: UW_Engineering, imgAlt: "Placeholder" },
-  { imgSrc: UW_Engineering, imgAlt: "Placeholder" },
-  { imgSrc: UW_Engineering, imgAlt: "Placeholder" },
-  { imgSrc: UW_Engineering, imgAlt: "Placeholder" },
-  { imgSrc: UW_Engineering, imgAlt: "Placeholder" },
+  { imgSrc: Test, imgAlt: "Placeholder" },
+  { imgSrc: Test, imgAlt: "Placeholder" },
+  { imgSrc: Test, imgAlt: "Placeholder" },
+  { imgSrc: Test, imgAlt: "Placeholder" },
+  { imgSrc: Test, imgAlt: "Placeholder" },
+  { imgSrc: Test, imgAlt: "Placeholder" },
 ];
 
 class Home extends React.Component {
