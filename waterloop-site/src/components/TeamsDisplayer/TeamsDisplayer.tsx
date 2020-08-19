@@ -69,7 +69,6 @@ export default class TeamsDisplayer extends React.Component<
 
         this.setState({ subteamIdMap: newMap });
         this.fetchProfiles();
-        this.setState({ loading: false });
       })
       .catch((err) => {
         alert(`Error in fetching filters`);
@@ -90,6 +89,7 @@ export default class TeamsDisplayer extends React.Component<
           this.state.subteamIdMap
         ) as Map<string, Array<ProfileType>>;
         this.setState({ memberData: groupedProfiles });
+        this.setState({ loading: false });
       })
       .catch((err) => {
         alert(`Error in fetching members`);
