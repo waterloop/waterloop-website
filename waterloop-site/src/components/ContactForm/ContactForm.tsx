@@ -131,8 +131,8 @@ class ContactUsForm extends React.Component<
       return;
     }
     fetch(
-      // 'https://formspree.io/xoqkdrzb' //Prod form
-      "https://formspree.io/mgenkdbb", // Dev form
+      "https://formspree.io/xpzyedjr", //Prod form
+      // "https://formspree.io/xzbjqraz", // Dev form
       {
         method: "POST",
         headers: {
