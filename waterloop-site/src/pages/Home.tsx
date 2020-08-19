@@ -8,8 +8,12 @@ import Text from "static/copy/Landing.json";
 import "../theme/styles.scss";
 
 // Images for sponsors:
-import UW_Engineering from "../static/img/sponsors/UW_Engineering.png";
-import Test from "../static/img/sponsors/test1.jpg";
+import Brent from "../static/img/official-sponsors/BrentsWeldingAndFab.png"
+import Weef from "../static/img/official-sponsors/weef.jpg";
+import WaterlooEng from "../static/img/official-sponsors/wes.jpg";
+import UW from "../static/img/official-sponsors/foe.jpg";
+import ClickUp from "../static/img/official-sponsors/ClickUp.png";
+import WCBranham from "../static/img/official-sponsors/WCBranham.png";
 
 import Goals from "../static/img/landing/textwithimage/goals.png";
 import Competition from "../static/img/landing/textwithimage/competition.png";
@@ -19,12 +23,12 @@ const imgData: string[] = [Goals, Competition];
 
 // Place data here:
 const imgJSON: ImgJSON[] = [
-  { imgSrc: Test, imgAlt: "Placeholder" },
-  { imgSrc: Test, imgAlt: "Placeholder" },
-  { imgSrc: Test, imgAlt: "Placeholder" },
-  { imgSrc: Test, imgAlt: "Placeholder" },
-  { imgSrc: Test, imgAlt: "Placeholder" },
-  { imgSrc: Test, imgAlt: "Placeholder" },
+  { imgSrc: Brent, imgAlt: "Placeholder" },
+  { imgSrc: Weef, imgAlt: "Placeholder" },
+  { imgSrc: WaterlooEng, imgAlt: "Placeholder" },
+  { imgSrc: UW, imgAlt: "Placeholder" },
+  { imgSrc: ClickUp, imgAlt: "Placeholder" },
+  { imgSrc: WCBranham, imgAlt: "Placeholder" },
 ];
 
 class Home extends React.Component {
