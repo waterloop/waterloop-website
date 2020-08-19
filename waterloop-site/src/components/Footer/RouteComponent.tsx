@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Redirect } from "react-router";
+import { v1 as uuid } from "uuid";
 
 type linkProps = {
   link: string;
@@ -7,21 +8,32 @@ type linkProps = {
 };
 
 class RouteComponent extends React.Component<linkProps> {
+  handleClick() {
+    let linkTarget = {
+      pathname: this.props.link,
+      key: uuid(),
+      state: {
+        applied: true,
+      },
+    };
+    window.location.reload();
+    return <Redirect to={linkTarget} />;
+  }
   render() {
     return (
-      <Link
-        to={this.props.link}
+      <a
         style={{
           fontFamily: "IBM Plex Sans",
           fontStyle: "normal",
           fontWeight: "normal",
           color: "#FFFFFF",
           opacity: "0.7",
-          textDecoration: "none"
+          textDecoration: "none",
         }}
+        onClick={() => this.handleClick}
       >
         {this.props.title}
-      </Link>
+      </a>
     );
   }
 }

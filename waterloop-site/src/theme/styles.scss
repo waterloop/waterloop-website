@@ -25,7 +25,7 @@ h2 {
 }
 
 .break {
-  padding-bottom: 4em;
+  padding-bottom: 5em;
 
   @media screen and (max-width: $mobile) {
     padding-bottom: 2em;
@@ -49,7 +49,7 @@ h4 {
 
 @media (max-width: $mobile) {
   h4 {
-    font-size: 28px;
+    font-size: 18;
     margin-left: 0;
   }
 }
@@ -105,118 +105,110 @@ textarea {
   line-height: 10px;
 }
 
-@media (max-width: $mobile) {
-  .GooseRoster-Img {
-    /* type img */
-    /* type img */
-    display: block;
-    object-fit: cover; /*Centers image and crops instead of scales aspect ratio.*/
-    border: 10px;
-    max-width: 355px;
-    /*200 IQ bug fix (the first image doesn't load in correct size if only using width ;) */
-    height: 10em;
-  }
-
-  .FooterWrapper {
-    flex-direction: column;
-    justify-content: flex-start;
-    height: 350px;
-    width: 100%;
-  }
-  
-  .LogoWrapper {
-    align-self: left;
-    padding-top: 15px;
-    margin-right: 400px;
-    margin-left: 0px;
-    transform: scale(0.5, 0.5);
-  }
-  .SocialMediaWrapper {
-    margin: 5px 10px 5px 2px;
-    font-size: 13px;
-  }
-  .RoutingWrapper {
-    margin: 5px 20px 5px 2px;
-    font-size: 13px;
-  }
-  .LinksWrapper {
-    margin: 0;
-  }
-}
-
-@media (min-width: $mobile) and (max-width: 600px) {
-  .FooterWrapper {
-    flex-direction: column;
-    justify-content: flex-start;
-    bottom: 0;
-    height: 316px;
-    width: 100%;
-  }
-
-  .GooseRoster-Img {
-    /* type img */
-    width: 90vw;
-  }
-
-  .LogoWrapper {
-    transform: scale(1, 1);
-    margin-left: 10%;
-    margin-bottom: 15%;
-  }
-  .SocialMediaWrapper {
-    margin: 10% 6% 20% 2%;
-    font-size: 1rem;
-  }
-  .RoutingWrapper {
-    margin: 10% 10% 20% 30%;
-    font-size: 1rem;
-  }
-  .LinksWrapper {
-    margin: 10% 10% 20% 30%;
-  }
-}
-
-@media (min-width: 800px) and (max-width: 1100px) {
-  .GooseRoster-Img {
-    /* type img */
-    width: 90vw;
-  }
-
-  .LogoWrapper {
-    align-self: flex-start;
-    padding-top: 15px;
-    margin-right: 450px;
-    transform: scale(0.5, 0.5);
-  }
-  .SocialMediaWrapper {
-    margin: 5px 10px 5px 2px;
-    font-size: 13px;
-  }
-  .RoutingWrapper {
-    margin: 5px 20px 5px 2px;
-    font-size: 13px;
-  }
-  .LinksWrapper {
-    margin: 0;
-  }
-}
-
 .FooterWrapper {
   display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
   justify-content: space-between;
-  position: relative;
-  width: 100%;
-  height: 276px;
+  height: 70vh;
   bottom: 0;
   background: $navy;
-  margin-top: 20px;
+  padding: 15vh 15vw 20vh;
+  transition: all 0.3s;
+  font-family: "IBM Plex Sans";
+  h2 {
+    color: $white;
+    font-size: 36px;
+    font-weight: 300;
+    margin: 0;
+  }
+  h3 {
+    font-weight: 600;
+    font-size: 18px;
+    opacity: 0.7;
+  }
 }
-
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.button-yellow {
+  border: 2px solid $yellow;
+  background-color: $navy;
+  color: $yellow;
+  font-family: "IBM Plex Sans";
+  font-weight: 400;
+  font-size: 24px;
+  border-radius: 15px;
+  height: 50px;
+  width: 150px;
+  margin: 0 100px 0 0;
+  transition: all 0.3s;
+  &:hover {
+    background-color: $yellow;
+    color: $navy;
+  }
+}
 .LogoWrapper {
   align-self: center;
-  margin-left: 150px;
   height: 91.11px;
   width: 154.32px;
+}
+
+.LinksWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 250px;
+  > div > a {
+    margin: 6px 0 0 0;
+  }
+}
+
+@media (max-width: $mobile) {
+  .GooseRoster-Img {
+    display: block;
+    object-fit: cover;
+    border: 10px;
+    width: 90vw;
+    max-width: 355px;
+    height: 10em;
+  }
+  .FooterWrapper {
+    padding: 10vh 15vw;
+    height: 75vh;
+    overflow: hidden;
+    h2 {
+      font-size: 28px;
+    }
+  }
+  .footer-row {
+    flex-wrap: wrap;
+    a {
+      font-size: 14px;
+    }
+  }
+  .button-yellow {
+    margin: 30px 0;
+    font-size: 18px;
+    width: 120px;
+    height: 40px;
+  }
+  .LogoWrapper {
+    box-sizing: border-box;
+    align-self: center;
+    > img {
+      width: 90px;
+      margin: 0 0 20px 0;
+    }
+  }
+  .LinksWrapper {
+    justify-content: flex-start;
+    > div {
+      margin-right: 50px;
+    }
+  }
 }
 
 .postings {
@@ -240,15 +232,6 @@ textarea {
   justify-content: space-evenly;
   height: 124px;
   font-size: 18px;
-}
-
-.LinksWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 300px;
-  height: 276px;
-  margin-right: 150px;
 }
 
 .featComp {
@@ -358,7 +341,6 @@ textarea {
 
 .Header-TextWithImage {
   /* type h2*/
-  font-family: "IBM Plex Sans";
   font-style: italic;
   font-size: calc(18px + 0.7vw);
 }
@@ -366,14 +348,13 @@ textarea {
 .Text-TextWithImage {
   /* type p*/
   font-size: calc(12px + 0.5vw);
-  font-family: "IBM Plex Sans";
 }
 
 .Block-TextWithImage {
   // !NOTE: Workaround until the parent scss selector introduces the padding automatically to align each of its direct children:
 
   display: flex;
-  padding-bottom: 5em;
+  padding-bottom: 20px;
   // Alternate between 2 layouts:
   // NOTE: I dunno if this can be optimized in any way.
   &.left-right-variant {
@@ -710,7 +691,6 @@ textarea {
 @media (max-width: $mobile) {
   .generalContainer {
     align-items: center;
-    height: 90vh;
   }
 
   .generalTitleContainer {
@@ -736,10 +716,6 @@ textarea {
     /* type img */
     width: 27px;
     height: 11px;
-  }
-
-  .landingContainer {
-    height: 90vh;
   }
 }
 
@@ -881,16 +857,10 @@ textarea {
   flex-direction: row;
   align-items: center;
   align-self: center;
-  height: 70vh;
-  width: 70vw;
+  height: 40vw;
   overflow: hidden;
   padding: 5px;
   margin: 20px 0;
-
-  @media screen and (max-width: $mobile) {
-    height: 20vh;
-    width: 80vw;
-  }
 }
 
 .GooseRoster-Img {
@@ -1016,15 +986,6 @@ textarea {
   margin: 0;
 }
 
-.button-yellow {
-  background-color: $yellow;
-  font-family: "IBM Plex Sans";
-  font-weight: 600;
-  border-radius: 30px;
-  height: 34px;
-  width: 100px;
-}
-
 .SponsorPage {
   margin: 100px auto;
 
@@ -1113,7 +1074,7 @@ textarea {
   flex-direction: column;
   font-family: IBM Plex Sans !important;
   width: 100%;
-  // margin: 50px 0;
+  margin: 50px 0;
 
   @media (max-width: $mobile) {
     margin: 2em 0;
