@@ -152,11 +152,6 @@ export default class TeamsDisplayer extends React.Component<
 
     return (
       <Page>
-        <TeamFilter
-          teamFilters={this.state.teamFilters}
-          filterLabels={this.state.teamFilterLabels}
-          updateFilters={(id: number) => this.updateFilters(id)}
-        />
         {this.state.loading ? <Preloader /> : <></>}
         {leads.length > 0 && (
           <ProfileSection
