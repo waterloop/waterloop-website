@@ -2,6 +2,7 @@ $mobile: 425px;
 $yellow: #fed138;
 $navy: #232636;
 $white: #fefefe;
+$light-gray: #f4f4f4;
 
 .pageContainer {
   margin: 5em 7em 5em 7em;
@@ -901,7 +902,7 @@ textarea {
     margin-top: 5px;
     width: calc(98% - 10px);
     height: 30px;
-    background-color: #f4f4f4;
+    background-color: $light-gray;
     font-size: 15px;
     border: none;
     border-radius: 5px;
@@ -943,7 +944,7 @@ textarea {
     margin-top: 5px;
     width: calc(100% - 15px);
     height: 300px;
-    background-color: #f4f4f4;
+    background-color: $light-gray;
     font-size: 15px;
     border: none;
     border-radius: 5px;
@@ -1075,7 +1076,6 @@ textarea {
   font-family: IBM Plex Sans !important;
   width: 100%;
   margin: 50px 0;
-
   @media (max-width: $mobile) {
     margin: 2em 0;
     min-height: 100vh;
@@ -1113,5 +1113,31 @@ textarea {
     margin-left: 0;
     margin-top: 0;
     justify-content: center;
+  }
+}
+
+.success-message {
+  height: 60vh;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10vh 10vw;
+  margin: 0 0 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  background-color: $light-gray;
+  h3 {
+    font-style: italic;
+    color: #232635;
+    font-weight: bold;
+    margin-bottom: 0;
+    font-size: 36px;
+    text-align: center;
+  }
+  p {
+    font-size: 18px;
+    text-align: center;
   }
 }
