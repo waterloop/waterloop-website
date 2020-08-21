@@ -1,6 +1,6 @@
 import React from "react";
 import DownArrowImg from "../../static/img/background/downArrow.svg";
-import "../../theme/styles.scss";
+import "../../theme/global.scss";
 import { Link } from "react-scroll";
 
 type MyProps = { description: string; title: string; anchor: string };

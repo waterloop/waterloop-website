@@ -2,28 +2,29 @@ import React from "react";
 import Hero from "components/Hero/Landing";
 import { Sponsors } from "components/SponsorsLanding";
 import { ImgJSON } from "components/SponsorsLanding";
-import { TextWithImage } from "components/TextWithImage";
-import { MyProps } from "components/TextWithImage";
-import Text from "static/copy/Landing.json";
-import "../theme/styles.scss";
 
 // Images for sponsors:
+import BrentsWeldingAndFab from "../static/img/sponsors/BrentsWeldingAndFab.png";
 import UW_Engineering from "../static/img/sponsors/UW_Engineering.png";
-
-import Goals from "../static/img/landing/textwithimage/goals.png";
-import Competition from "../static/img/landing/textwithimage/competition.png";
-
-const castData: MyProps[] = Text;
-const imgData: string[] = [Goals, Competition];
+import UW_Engineering_Endowment from "../static/img/sponsors/UW_Engineering_Endowment.png";
+import UW_Engineering_Society from "../static/img/sponsors/UW_Engineering_Society.png";
+import ClickUp from "../static/img/sponsors/ClickUp.png";
+import WCBranham from "../static/img/sponsors/WCBranham.png";
 
 // Place data here:
 const imgJSON: ImgJSON[] = [
-  { imgSrc: UW_Engineering, imgAlt: "Placeholder" },
-  { imgSrc: UW_Engineering, imgAlt: "Placeholder" },
-  { imgSrc: UW_Engineering, imgAlt: "Placeholder" },
-  { imgSrc: UW_Engineering, imgAlt: "Placeholder" },
-  { imgSrc: UW_Engineering, imgAlt: "Placeholder" },
-  { imgSrc: UW_Engineering, imgAlt: "Placeholder" },
+  {
+    imgSrc: BrentsWeldingAndFab,
+    imgAlt: "Brent's Welding and Fabrication Inc.",
+  },
+  { imgSrc: UW_Engineering, imgAlt: "Waterloo Engineering" },
+  {
+    imgSrc: UW_Engineering_Endowment,
+    imgAlt: "Waterloo Engineering Endowment Fund",
+  },
+  { imgSrc: UW_Engineering_Society, imgAlt: "Waterloo Engineering Society" },
+  { imgSrc: ClickUp, imgAlt: "ClickUp LLC." },
+  { imgSrc: WCBranham, imgAlt: "W.C. Branham Ltd." },
 ];
 
 class Home extends React.Component {
@@ -32,15 +33,7 @@ class Home extends React.Component {
       <div>
         <Hero description="A faster look on the future." anchor="#home"></Hero>
         <div id={"#home"}></div>
-        <div className="pageContainer">
-          <TextWithImage
-            data={castData}
-            textPos={"alternate"}
-            imgData={imgData}
-          ></TextWithImage>
-          <div className="break"></div>
-          <Sponsors data={imgJSON} />
-        </div>
+        <Sponsors data={imgJSON} />
       </div>
     );
   }

@@ -1,30 +1,11 @@
 import React from "react";
-import styled from "styled-components";
-import "../../theme/styles.scss";
+import "../../theme/global.scss";
 
 type imgProps = {
   imgUrls: string[];
   heading: string;
   description: string;
 };
-
-const Arrow = styled.i`
-  font-size: 48px;
-  cursor: pointer;
-  display: none;
-  @media only screen and (min-width: 900px) {
-    display: flex;
-  }
-`;
-
-const ArrowMobile = styled.i`
-  font-size: 48px;
-  cursor: pointer;
-  display: flex;
-  @media only screen and (min-width: 900px) {
-    display: none;
-  }
-`;
 
 class GooseRoster extends React.Component<imgProps> {
   state = {
@@ -60,41 +41,17 @@ class GooseRoster extends React.Component<imgProps> {
         <div className="GooseRoster-Description">{this.props.description}</div>
 
         <div className="GooseRoster-ImageThumbnail">
-          <Arrow className="material-icons" onClick={this.previousSlide}>
-            keyboard_arrow_left
-          </Arrow>
+          <button className="GooseRoster-Arrow" onClick={this.previousSlide}>
+            &#9664;
+          </button>
           <img
             className="GooseRoster-Img"
             src={this.props.imgUrls[this.state.currentImageIndex]}
             alt="goose rosters"
           ></img>
-          <Arrow className="material-icons" onClick={this.nextSlide}>
-            keyboard_arrow_right
-          </Arrow>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            flexDirection: "column",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            <ArrowMobile
-              className="material-icons"
-              onClick={this.previousSlide}
-            >
-              keyboard_arrow_left
-            </ArrowMobile>
-            <ArrowMobile className="material-icons" onClick={this.nextSlide}>
-              keyboard_arrow_right
-            </ArrowMobile>
-          </div>
+          <button className="GooseRoster-Arrow" onClick={this.nextSlide}>
+            &#9654;
+          </button>
         </div>
       </div>
     );
