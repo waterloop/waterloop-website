@@ -10,3 +10,5 @@ export * from "./TeamsLanding";
 export * from "./GooseRoster";
 export * from "./SimpleFeatures";
 export * from "./Hero";
+export * from "./TextWithImage";
+export * from "./ColumnBlock";

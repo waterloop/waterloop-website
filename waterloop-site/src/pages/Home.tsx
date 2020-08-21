@@ -2,13 +2,13 @@ import React from "react";
 import Hero from "components/Hero/Landing";
 import { Sponsors } from "components/SponsorsLanding";
 import { ImgJSON } from "components/SponsorsLanding";
-import { TextWithImage } from "components/TextWithImage";
-import { MyProps } from "components/TextWithImage";
-import Text from "static/copy/Landing.json";
+import { TextWithImage, MyProps } from "components/TextWithImage";
+import { ColumnBlock, Props } from "components/ColumnBlock";
+import Text from "static/copy/Landing/TextWithImage.json";
+import ColText from "static/copy/Landing/ColumnBlock.json";
 import "../theme/styles.scss";
-
 // Images for sponsors:
-import Brent from "../static/img/official-sponsors/BrentsWeldingAndFab.png"
+import Brent from "../static/img/official-sponsors/BrentsWeldingAndFab.png";
 import Weef from "../static/img/official-sponsors/weef.jpg";
 import WaterlooEng from "../static/img/official-sponsors/wes.jpg";
 import UW from "../static/img/official-sponsors/foe.jpg";
@@ -20,7 +20,7 @@ import Competition from "../static/img/landing/textwithimage/competition.png";
 
 const castData: MyProps[] = Text;
 const imgData: string[] = [Goals, Competition];
-
+const ColData: Props[] = ColText;
 // Place data here:
 const imgJSON: ImgJSON[] = [
   { imgSrc: Brent, imgAlt: "Placeholder" },
@@ -43,7 +43,10 @@ class Home extends React.Component {
             textPos={"alternate"}
             imgData={imgData}
           ></TextWithImage>
-          <div className="break"></div>
+        </div>
+        <div className="break"></div>
+        <ColumnBlock data={ColData} imgData={imgData} />
+        <div className="pageContainer">
           <Sponsors data={imgJSON} />
         </div>
       </div>
