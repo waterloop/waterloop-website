@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
 // Types and interfaces
 import { ProfileType } from "../../interfaces";
@@ -14,32 +14,33 @@ const ProfileSectionTitle = styled.h5`
   font-size: 36px;
   color: #010101;
   margin-bottom: 50px;
-`;
+`
 const ProfileSectionContainer = styled.div`
   margin-bottom: 100px;
-`;
+
+  @media (max-width: 975px){
+    margin-bottom: 50px;
+  }
+`
 const MinifiedContainer = styled.div`
   display: grid;
   grid-row-gap: 100px;
 
-  @media (max-width: 975px) {
-    display: flex;
-    flex-direction: column;
-
-    & > div:nth-child(1) {
-      margin-top: 0;
-    }
-
-    & > div {
-      margin-top: 100px;
-    }
+  @media (max-width: 975px){
+    display: grid;
+    grid-row-gap: 50px;
   }
 `;
 
 const MinifiedSubContainer = styled(MinifiedContainer)`
   grid-template-columns: repeat(4, 1fr);
 
-  & > div:nth-child(4n-1) {
+
+  @media (max-width: 975px){
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  & > div:nth-child(4n-1){
     margin-left: 0 auto 0 auto;
   }
 `;
@@ -48,15 +49,12 @@ const TeamDescription = styled.h6`
   margin-bottom: 60px;
   font-family: IBM Plex Sans;
   font-style: normal;
-`;
+`
 
 // Profile Subsection
-export default class ProfileSection extends React.Component<
-  PSectionProps,
-  PSectionState
-  > {
+export default class ProfileSection extends React.Component<PSectionProps, PSectionState> {
   constructor(props: PSectionProps) {
-    super(props);
+    super(props)
     this.state = {
       minified: this.props.profiles,
     };
@@ -77,16 +75,10 @@ export default class ProfileSection extends React.Component<
 
     return (
       <ProfileSectionContainer>
-        {this.props.title && (
-          <ProfileSectionTitle>{this.props.title}</ProfileSectionTitle>
-        )}
+        {this.props.title && <ProfileSectionTitle>{this.props.title}</ProfileSectionTitle>}
 
         <TeamDescription>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.
         </TeamDescription>
 
         {
@@ -106,6 +98,6 @@ export default class ProfileSection extends React.Component<
           </ProfileContainerTypeTag>
         }
       </ProfileSectionContainer>
-    );
+    )
   }
 }

@@ -8,47 +8,45 @@ const Container = styled.div`
   align-items: center;
 
   @media (max-width: 975px) {
-    flex-direction: row;
-    flex-wrap: wrap;
     width: 100%;
-    height: 265px;
+    height: 125px;
   }
-`;
+`
 const PortraitContainer = styled.div`
-  flex-basis: 100px;
+  flex-basis: 175px;
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
+`
 const Portrait = styled.img`
   height: 100%;
   border-radius: 50% 50%;
   border: 4px solid #fbc531;
-`;
+`
 const InfoContainer = styled.div`
-  margin-top: 15px;
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: IBM Plex Sans;
   font-style: normal;
   color: #000000;
-`;
+`
 const InfoTitle = styled.div`
   font-weight: bold;
   font-size: 16px;
-  margin-bottom: 5px;
+
   @media (max-width: 975px) {
-    font-size: 24px;
+    font-size: 14px;
   }
-`;
+`
 const InfoPosition = styled.div`
   font-weight: 200;
   font-size: 14px;
 
   @media (max-width: 975px) {
     font-weight: 200;
-    font-size: 20px;
+    font-size: 12px;
   }
 `;
 
@@ -64,6 +62,6 @@ const SubProfile = (props: any) => {
       </InfoContainer>
     </Container>
   );
-};
+}
 
 export default SubProfile;

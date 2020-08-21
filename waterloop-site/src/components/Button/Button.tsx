@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import "../../theme/styles.scss";
+import "../../theme/global.scss";
 
 type BackgroundColor = "yellow" | "black";
 type TextColor = "yellow" | "white" | "black";
@@ -17,8 +17,8 @@ interface VariantProps {
   onClick: () => void;
   variant: VariantNumber;
   text: string;
-  backgroundColor?: null;
-  textColor?: null;
+  backgroundColor: null;
+  textColor: null;
 }
 
 type Props = VariantProps | NonVariantProps;
@@ -62,16 +62,14 @@ const Button: React.FC<Props> = (props) => {
   const ButtonDiv = styled.button`
     background-color: ${ColorMap[backgroundColor]};
     border-color:  ${ColorMap[backgroundColor]};
-    transition: all 0.3s;
     &:hover {
       background-color: ${ColorMap[textColor]};
       border-color:  ${ColorMap[textColor]};
-      transform: translateY(-5px);
     }
     &:active {
       border-color: ${ColorMap.yellow};
     }
-  
+    border-radius: 17px;
   }`;
 
   const Text = styled.p`

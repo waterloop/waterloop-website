@@ -6,7 +6,8 @@ import Home from "./pages/Home";
 import Flock from "./pages/Flock";
 import Team from "./pages/Team";
 import Sponsors from "./pages/Sponsors";
-import Recruitment from "./pages/Recruitment";
+// import NavBar from "./components/NavBar/NavBar";
+// import Sidebar from "./components/NavBar/Sidebar";
 import { Footer } from "sections/Footer";
 import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import "typeface-ibm-plex-sans";
@@ -36,7 +37,7 @@ class App extends React.Component {
     return (
       <div className={this.state.lock ? "app-lock" : ""}>
         <Router>
-          {this.state.width > 425 ? (
+          {this.state.width >= 420 ? (
             <NavBar />
           ) : (
             <SideBar handleClick={this.handleClick.bind(this)} />
@@ -56,9 +57,6 @@ class App extends React.Component {
             </Route>
             <Route path="/contact">
               <Contact />
-            </Route>
-            <Route path="/recruitment">
-              <Recruitment />
             </Route>
           </Switch>
           <Footer />

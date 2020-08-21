@@ -26,7 +26,7 @@ class SponsorsLanding extends React.Component<{ data: ImgJSON[] }> {
           <Button
             backgroundColor="yellow"
             textColor="black"
-            text="ALL SPONSORS"
+            text="SEE MORE OF OUR SPONSORS"
             onClick={() => window.open("sponsors", "_self")}
             variant={null}
           ></Button>
