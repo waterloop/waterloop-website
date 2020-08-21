@@ -33,7 +33,6 @@ export default class TeamsDisplayer extends React.Component<TeamsDisplayerProps,
   constructor(props: TeamsDisplayerProps) {
     super(props)
     this.state = {
-      loading: true,
       teamFilters: Array(5).fill(false),
       teamFilterLabels: ["All Teams", "Software", "Mechanical", "Electrical", "Business"],
       memberData: new Map(),
