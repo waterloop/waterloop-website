@@ -1,18 +1,3 @@
-$mobile: 425px;
-$yellow: #fed138;
-$navy: #232636;
-$white: #fefefe;
-
-.pageContainer {
-  margin: 5em 7em 5em 7em;
-}
-
-@media (max-width: $mobile) {
-  .pageContainer {
-    margin: 2em 1em 2em 1em;
-  }
-}
-
 h1 {
   font-size: 64pt;
   color: #ffffff;
@@ -24,34 +9,11 @@ h2 {
   font-size: 12pt;
 }
 
-.break {
-  padding-bottom: 4em;
-
-  @media screen and (max-width: $mobile) {
-    padding-bottom: 2em;
-  }
-}
-
 h3 {
   font-size: 30px;
   color: #ffffff;
   margin-top: 0pt;
   font-weight: 400;
-}
-
-h4 {
-  font-family: "IBM Plex Sans";
-  font-size: 28px;
-  color: #010101;
-  font-style: italic;
-  font-weight: bold;
-}
-
-@media (max-width: $mobile) {
-  h4 {
-    font-size: 28px;
-    margin-left: 0;
-  }
 }
 
 body {
@@ -73,31 +35,12 @@ code {
   overflow-y: hidden;
 }
 
-h3 {
-  font-size: 30px;
-  color: $white;
-  margin-top: 0pt;
-  font-weight: 400;
-}
-
-h1 {
-  font-size: 64pt;
-  color: $white;
-  text-transform: uppercase;
-  margin-bottom: 0pt;
-}
-
-textarea {
-  resize: none;
-  padding: 10px;
-}
-
 .btn {
   display: flex;
   justify-content: center;
   background-color: transparent;
-  color: $white;
-  border-radius: 50%;
+  color: #ffffff;
+  border-radius: 100pt;
   border: 2px solid white;
   height: 50px;
   width: 200px;
@@ -105,7 +48,7 @@ textarea {
   line-height: 10px;
 }
 
-@media (max-width: $mobile) {
+@media (max-width: 420px) {
   .GooseRoster-Img {
     /* type img */
     /* type img */
@@ -120,10 +63,9 @@ textarea {
   .FooterWrapper {
     flex-direction: column;
     justify-content: flex-start;
-    height: 350px;
+    height: 316px;
     width: 100%;
   }
-
   .LogoWrapper {
     align-self: left;
     padding-top: 15px;
@@ -144,7 +86,7 @@ textarea {
   }
 }
 
-@media (min-width: $mobile) and (max-width: 600px) {
+@media (min-width: 420px) and (max-width: 600px) {
   .FooterWrapper {
     flex-direction: column;
     justify-content: flex-start;
@@ -208,7 +150,7 @@ textarea {
   width: 100%;
   height: 276px;
   bottom: 0;
-  background: $navy;
+  background: #232636;
   margin-top: 20px;
 }
 
@@ -217,13 +159,6 @@ textarea {
   margin-left: 150px;
   height: 91.11px;
   width: 154.32px;
-}
-
-.postings {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
 
 .SocialMediaWrapper {
@@ -252,13 +187,13 @@ textarea {
 }
 
 .featComp {
-  margin: 30px 30px 30px 0;
+  margin: 30px;
   min-height: 80px; /* For some reason this prevents the top image from being an incorrect size.*/
   max-width: 70%;
   height: auto;
 }
 
-@media (min-width: $mobile) {
+@media (min-width: 420px) {
   .featComp {
     display: flex;
     align-items: right;
@@ -283,26 +218,15 @@ textarea {
   display: block;
   object-fit: cover; /*Centers image and crops instead of scales aspect ratio.*/
   border: 10px;
-  max-width: 340px;
+  max-width: 355px;
   /*200 IQ bug fix (the first image doesn't load in correct size if only using width ;) */
   height: 10em;
-
-  @media screen and (max-width: $mobile) {
-    display: flex;
-    width: 90vw;
-    height: 30vh;
-  }
 }
 
 .FeatPara {
   /* type p*/
   font-size: 18px;
   font-family: "IBM Plex Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  text-align: justify;
-
-  @media screen and (max-width: $mobile) {
-    min-width: 90vw;
-  }
 }
 
 .Header-FeaturedComponent {
@@ -314,35 +238,11 @@ textarea {
   font-family: "IBM Plex Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-@media (min-width: $mobile) {
-  .featComp {
-    display: flex;
-    align-items: right;
-    position: relative;
-    height: 10em;
-  }
-
-  .FeatImage {
-    position: absolute;
-    left: 0;
-    margin: 10px 10px 10px 0;
-  }
-
-  .FeatPara {
-    position: absolute;
-    left: 15em;
-    margin: 10px;
-    padding-left: 45px;
-    font-size: 16px;
-  }
-}
-
 .TextBlock-TextWithImage {
   text-align: justify;
   width: 50%;
   height: 100%;
   display: flex;
-  flex-wrap: wrap-reverse;
   flex-direction: column;
 }
 
@@ -358,7 +258,6 @@ textarea {
 
 .Header-TextWithImage {
   /* type h2*/
-  font-family: "IBM Plex Sans";
   font-style: italic;
   font-size: calc(18px + 0.7vw);
 }
@@ -366,14 +265,14 @@ textarea {
 .Text-TextWithImage {
   /* type p*/
   font-size: calc(12px + 0.5vw);
-  font-family: "IBM Plex Sans";
 }
 
 .Block-TextWithImage {
   // !NOTE: Workaround until the parent scss selector introduces the padding automatically to align each of its direct children:
+  padding: 3em 0;
 
   display: flex;
-  padding-bottom: 5em;
+
   // Alternate between 2 layouts:
   // NOTE: I dunno if this can be optimized in any way.
   &.left-right-variant {
@@ -396,20 +295,10 @@ textarea {
 
 .ButtonBlock-TextWithImage {
   display: inline-flex;
-  justify-content: flex-start;
+  justify-content: center;
   margin-top: 2em;
-  @media (max-width: $mobile) {
-    display: none;
-  }
 }
-.text-w-image-btn-mobile {
-  display: none;
-  justify-content: flex-start;
-  padding: 20px;
-  @media (max-width: $mobile) {
-    display: inline-flex;
-  }
-}
+
 // TODO: the screen's width should be declared as a SASS variable and then used to maintain consistency.
 @media (max-width: 500px) {
   .contactForm-InputBlockRight {
@@ -425,6 +314,7 @@ textarea {
     &.left-right-variant,
     &.right-left-variant {
       flex-direction: column;
+
       & > *:nth-child(1),
       & > *:nth-child(2) {
         margin-right: 0;
@@ -439,8 +329,8 @@ textarea {
     padding-right: 0;
   }
   .Img-TextWithImage {
-    width: 90vw;
-    height: auto;
+    width: 100vw;
+    height: 80vw;
   }
   .Header-TextWithImage {
     margin: 0;
@@ -450,12 +340,11 @@ textarea {
   .Text-TextWithImage {
     margin: 20px 0;
     text-align: justify;
-    font-size: 16px;
+    font-size: 4vw;
   }
   .ButtonBlock-TextWithImage {
     margin-top: 0px;
     margin-bottom: 20px;
-    align-self: center;
   }
   .TextBlock-Teams {
     display: flex;
@@ -514,8 +403,8 @@ textarea {
 
 /*Landing Sponsor's component styles: */
 .Img-Box-Sponsors {
-  margin: 30px 20px;
-  width: calc(6vw + 200px);
+  margin: 40px;
+  width: calc(10vw + 200px);
   height: calc(5vw + 100px);
   display: flex;
   flex-direction: column;
@@ -558,14 +447,7 @@ textarea {
   }
 }
 
-@media (max-width: 500px) {
-  .Img-Box-Sponsors {
-    margin: 40px 0;
-    width: 100%;
-  }
-}
-
-.Block-RecruitmentForm {
+.Block-RecruimentForm {
   padding: 1%;
   height: 100%;
   width: 90%;
@@ -574,40 +456,11 @@ textarea {
   margin-bottom: 2%;
 }
 
-.Header-RecruitmentForm {
+.Header-RecruimentForm {
   /* type h2 */
-  font-family: "IBM Plex Sans";
   font-size: 170%;
   margin-bottom: 0px !important;
   text-align: center;
-}
-
-.recruitment-modal {
-  text-align: center;
-  background-color: white;
-  padding: 30px;
-  border: 1px solid gray;
-  width: 60%;
-  max-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  textarea {
-    min-height: 20px;
-  }
-  input {
-    margin: 5px 10px;
-    font-family: "IBM Plex Sans";
-  }
-  hr {
-    // margin: 20px;
-  }
-
-  @media screen and (max-width: $mobile) {
-    width: 100%;
-    height: 100vh;
-  }
 }
 
 .ShortInput {
@@ -714,10 +567,9 @@ textarea {
   transition: 0.2s ease-in-out;
 }
 
-@media (max-width: $mobile) {
+@media (max-width: 420px) {
   .generalContainer {
     align-items: center;
-    height: 90vh;
   }
 
   .generalTitleContainer {
@@ -744,10 +596,6 @@ textarea {
     width: 27px;
     height: 11px;
   }
-
-  .landingContainer {
-    height: 90vh;
-  }
 }
 
 .landingContainer {
@@ -764,7 +612,7 @@ textarea {
 .landingDescriptionContainer {
   display: flex;
   justify-content: center;
-  color: $white;
+  color: #fefefe;
 }
 
 .landingArrowContainer {
@@ -817,7 +665,7 @@ textarea {
   transition: 0.2s ease-in-out;
 }
 
-@media (max-width: $mobile) {
+@media (max-width: 420px) {
   .landingDescriptionContainer {
     margin-bottom: 28px;
     > h3 {
@@ -866,21 +714,11 @@ textarea {
   font-style: italic;
   font-size: 28px;
   margin: 18px;
-
-  @media screen and (max-width: $mobile) {
-    margin-left: 0;
-  }
 }
 
 .GooseRoster-Description {
   font-size: 16px;
   margin-left: 18px;
-
-  @media screen and (max-width: $mobile) {
-    font-size: 18px;
-    margin-left: 0;
-    text-align: justify;
-  }
 }
 
 .GooseRoster-ImageThumbnail {
@@ -888,21 +726,15 @@ textarea {
   flex-direction: row;
   align-items: center;
   align-self: center;
-  height: 70vh;
-  width: 70vw;
+  height: 40vw;
   overflow: hidden;
   padding: 5px;
   margin: 20px 0;
-
-  @media screen and (max-width: $mobile) {
-    height: 20vh;
-    width: 80vw;
-  }
 }
 
 .GooseRoster-Img {
   /* type img */
-  width: 80vw;
+  width: 90vw;
 }
 
 .GooseRoster-Arrow {
@@ -915,121 +747,35 @@ textarea {
 .contactForm-Container {
   display: flex;
   justify-content: center;
+  height: 100vh;
   width: 80%;
-  margin-bottom: 4vh;
-  label {
-    margin: 10px 0 0 0;
-    color: #474747;
-    font-size: 12px;
-  }
-  h3 {
-    font-style: italic;
-    color: #232635 !important;
-    font-weight: bold;
-    margin-bottom: 20px;
-    font-size: 36px;
-  }
-
-  > form > p {
-    font-size: 18px;
-    margin: 0 auto 15px;
-  }
-  input {
-    margin-top: 5px;
-    width: calc(98% - 10px);
-    height: 30px;
-    background-color: #f4f4f4;
-    font-size: 15px;
-    border: none;
-    border-radius: 5px;
-    padding: 0 10px;
-    color: $navy;
-  }
 }
 
 .contactForm-InputBlockLeft {
   width: 48%;
   float: left;
-  @media (max-width: $mobile) {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
 }
 
 .contactForm-InputBlockRight {
   width: 48%;
   float: right;
-  @media (max-width: $mobile) {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-}
-
-.contact-form-row {
-  @media (max-width: $mobile) {
-    display: flex;
-    flex-wrap: wrap;
-  }
-}
-
-.contact-form-message {
-  margin: 10px 0 15px 0;
-  textarea {
-    margin-top: 5px;
-    width: calc(100% - 15px);
-    height: 300px;
-    background-color: #f4f4f4;
-    font-size: 15px;
-    border: none;
-    border-radius: 5px;
-    resize: none;
-    padding: 5px 10px;
-    font-family: IBM Plex Sans;
-    color: $navy;
-  }
-  label {
-    margin: 20px 0;
-  }
-}
-
-.landing-btn {
-  color: $navy !important;
-  transition: all 0.3s;
-  background-color: $yellow !important;
-  &:hover {
-    transform: translateY(-5px);
-  }
 }
 
 .ButtonDiv {
-  border: 0;
-  border-radius: 50px;
-  max-width: 350px;
+  border-radius: 17px;
+  min-width: 50px;
+  max-width: auto;
+  height: 34px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 25px;
-  @media screen and (max-width: $mobile) {
-    max-height: 50px;
-  }
+  padding: 5px 30px;
 }
 
 .ButtonText {
-  font-size: 14px;
-  font-weight: 600;
-  font-family: "IBM Plex Sans";
+  font-size: large;
+  font-family: IBM Plex Sans;
   margin: 0;
-}
-
-.button-yellow {
-  background-color: $yellow;
-  font-family: "IBM Plex Sans";
-  font-weight: 600;
-  border-radius: 30px;
-  height: 34px;
-  width: 100px;
 }
 
 .SponsorPage {
@@ -1043,7 +789,8 @@ textarea {
     font-size: 3vw;
     text-align: center;
     color: #232635;
-    @media screen and (max-width: $mobile) {
+
+    @media screen and (max-width: 420px) {
       font-size: 1.2rem;
     }
   }
@@ -1058,7 +805,7 @@ textarea {
   margin: auto auto;
   margin-bottom: 1vh;
 
-  @media screen and (max-width: $mobile) {
+  @media screen and (max-width: 420px) {
     position: relative;
     display: flex;
     flex-direction: row;
@@ -1069,7 +816,7 @@ textarea {
 .hypersonic {
   width: 60%;
   height: auto;
-  @media screen and (max-width: $mobile) {
+  @media screen and (max-width: 420px) {
     width: 80%;
     height: auto;
   }
@@ -1078,7 +825,7 @@ textarea {
 .supersonic {
   width: 40%;
   height: auto;
-  @media screen and (max-width: $mobile) {
+  @media screen and (max-width: 420px) {
     width: 40%;
     height: auto;
   }
@@ -1087,7 +834,7 @@ textarea {
 .transonic {
   width: 30%;
   height: auto;
-  @media screen and (max-width: $mobile) {
+  @media screen and (max-width: 420px) {
     width: 30%;
     height: auto;
   }
@@ -1096,69 +843,9 @@ textarea {
 .sonic {
   width: 30%;
   height: auto;
-  @media screen and (max-width: $mobile) {
+  @media screen and (max-width: 420px) {
     width: 30%;
     height: auto;
-  }
-}
-
-.sponsorLink {
-  font-family: "IBM Plex Sans";
-  font-size: 24px;
-  font-style: italic, underline;
-  color: #010101;
-}
-
-@media (max-width: $mobile) {
-  .sponsorLink {
-    font-size: 24px;
-  }
-}
-.contactFormContainer {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  font-family: IBM Plex Sans !important;
-  width: 100%;
-  // margin: 50px 0;
-
-  @media (max-width: $mobile) {
-    margin: 2em 0;
-    min-height: 100vh;
-  }
-}
-
-.locationContainer {
-  display: flex;
-  width: 80%;
-  flex-direction: column;
-
-  > div {
-    margin: 5vh 0;
-    display: flex;
-    justify-content: center;
-  }
-
-  @media (max-width: $mobile) {
-    margin-top: 30px;
-  }
-}
-
-.mapContainer {
-  display: flex;
-  height: 50vh;
-  width: 80vw;
-}
-
-.sponsorsButton {
-  display: flex;
-  margin-left: 3.5em;
-  margin-top: -4em;
-
-  @media screen and (max-width: $mobile) {
-    margin-left: 0;
-    margin-top: 0;
-    justify-content: center;
   }
 }
 

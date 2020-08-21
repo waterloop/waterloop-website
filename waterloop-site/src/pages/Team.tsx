@@ -1,14 +1,14 @@
 import React from "react";
-import Hero from "components/Hero/General";
-import styled from "styled-components";
-import OurTeam from "components/OurTeam";
-import TeamsDisplayer from "components/TeamsDisplayer";
+import Hero from "components/Hero/General"
+import styled from 'styled-components'
+import OurTeam from "components/OurTeam"
+import TeamsDisplayer from "components/TeamsDisplayer"
 
 const ContentContainer = styled.div`
   display: block;
   max-width: 1080px;
   margin: 0 auto;
-`;
+`
 
 class Teams extends React.Component<any, any> {
   render() {
@@ -21,7 +21,7 @@ class Teams extends React.Component<any, any> {
         ></Hero>
         <div id={"#team"}>
           <ContentContainer>
-            <OurTeam />
+            <OurTeam/>
 
             <TeamsDisplayer initFilterSetting={0} />
           </ContentContainer>
@@ -29,6 +29,6 @@ class Teams extends React.Component<any, any> {
       </div>
     );
   }
-}
+};
 
 export default Teams;

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { SimpleFeatComp } from "../../components/SimpleFeatures/index";
 import * as data from "../../static/copy/exFeatsModel.json";
-import "../../theme/styles.scss";
+import "../../theme/global.scss";
 
 class FeatPage extends React.Component {
   // Use this to assemble the feature sections with proper XML tags for the render area.
