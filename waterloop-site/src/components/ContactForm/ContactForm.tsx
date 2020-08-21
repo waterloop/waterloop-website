@@ -39,7 +39,7 @@ const Success = () => {
 class ContactUsForm extends React.Component<
   ContactFormProps,
   ContactFormStates
-> {
+  > {
   constructor(props: ContactFormProps) {
     super(props);
     this.onFormSubmit = this.onFormSubmit.bind(this);
@@ -171,7 +171,7 @@ class ContactUsForm extends React.Component<
   }
 
   render() {
-    if (!this.state.submitted) return <Success />;
+    if (this.state.submitted) return <Success />;
     return (
       <div className="contactForm-Container">
         <form
