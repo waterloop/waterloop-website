@@ -1083,3 +1083,35 @@ textarea {
     text-align: center;
   }
 }
+
+.banner {
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $navy;
+  h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 36px;
+  }
+}
+.col-block {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  h2 {
+    color: $navy;
+    font-size: 24px;
+  }
+  div:nth-child(2) {
+    margin: 0 80px;
+    @media (max-width: $mobile) {
+      margin: 20px 0;
+    }
+  }
+  @media (max-width: $mobile) {
+    flex-wrap: wrap;
+  }
+}
