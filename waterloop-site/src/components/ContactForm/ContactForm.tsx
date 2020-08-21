@@ -29,7 +29,7 @@ interface ServerResponse {
 const Success = () => {
   return (
     <div className={"success-message"}>
-      <img src={Check} />
+      <img src={Check} alt="success" />
       <h3>Thanks for reaching out! </h3>
       <p>Your message was submitted successfully.</p>
     </div>

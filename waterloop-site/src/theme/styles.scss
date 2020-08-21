@@ -769,7 +769,7 @@ textarea {
   margin-left: 18px;
 
   @media screen and (max-width: $mobile) {
-    font-size: 18px;
+    font-size: 14px;
     margin-left: 0;
     text-align: justify;
   }
@@ -1046,6 +1046,11 @@ textarea {
   display: flex;
   height: 50vh;
   width: 64vw;
+
+  @media (max-width: $mobile) {
+      display: flex;
+      width: 100%;
+  }
 }
 
 .sponsorsButton {

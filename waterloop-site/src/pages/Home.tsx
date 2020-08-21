@@ -47,6 +47,7 @@ class Home extends React.Component {
         <div className="break"></div>
         <ColumnBlock data={ColData} imgData={imgData} />
         <div className="pageContainer">
+          <div className="break"></div>
           <Sponsors data={imgJSON} />
         </div>
       </div>

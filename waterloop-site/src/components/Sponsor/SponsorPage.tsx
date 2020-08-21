@@ -1,7 +1,5 @@
 import React from "react";
 import Sponsor from "./Sponsor";
-import UW_Engineering from "../../components/Sponsor/TestingImage/UW_Engineering.png";
-import Test from "../../static/img/sponsors/test1.jpg";
 import Brent from "../../static/img/official-sponsors/BrentsWeldingAndFab.png"
 import Weef from "../../static/img/official-sponsors/weef.jpg";
 import WaterlooEng from "../../static/img/official-sponsors/wes.jpg";
