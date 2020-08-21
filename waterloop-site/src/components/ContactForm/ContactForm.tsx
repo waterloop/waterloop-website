@@ -180,7 +180,9 @@ class ContactUsForm extends React.Component<
           onSubmit={this.onFormSubmit}
         >
           <h3>{this.props.title}</h3>
-          <p>{this.props.desc}</p>
+          <div className="contactFormDesc">
+            <p>{this.props.desc}</p>
+          </div>
           {this.renderError()}
           {this.renderServerError()}
           <div className="contact-form-row">

@@ -787,7 +787,7 @@ textarea {
 }
 
 .GooseRoster-Img {
-  width: 80vw;
+  width: 77vw;
 
   @media screen and (max-width: $mobile) {
     display: block;
@@ -1045,7 +1045,7 @@ textarea {
 .mapContainer {
   display: flex;
   height: 50vh;
-  width: 80vw;
+  width: 64vw;
 }
 
 .sponsorsButton {
@@ -1116,4 +1116,9 @@ textarea {
   @media (max-width: $mobile) {
     flex-wrap: wrap;
   }
+}
+
+.contactFormDesc {
+  display: flex;
+  align-self: flex-start !important;
 }

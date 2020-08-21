@@ -18,6 +18,8 @@ import WPrint from "../../static/img/official-sponsors/WPrint.png";
 import Wera from "../../static/img/official-sponsors/Wera.png";
 import Overleaf from "../../static/img/official-sponsors/overleaf_wide_colour_light_bg.png"
 import Altium from "../../static/img/official-sponsors/altium.jpg";
+import L3harris from "../../static/img/official-sponsors/l3harris.png";
+import Mitutoyo from "../../static/img/official-sponsors/mitutoyo.png";
 
 
 function SponsorList() {
@@ -51,6 +53,8 @@ function SponsorList() {
         <Sponsor src={Wera} tier="sonic" alt="sponsor" />
         <Sponsor src={Overleaf} tier="sonic" alt="sponsor" />
         <Sponsor src={Altium} tier="sonic" alt="sponsor" />
+        <Sponsor src={L3harris} tier="sonic" alt="sponsor" />
+        <Sponsor src={Mitutoyo} tier="sonic" alt="sponsor" />
       </div>
     </div>
   );
