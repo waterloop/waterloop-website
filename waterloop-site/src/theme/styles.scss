@@ -809,6 +809,7 @@ textarea {
 .contactForm-Container {
   display: flex;
   justify-content: center;
+  align-self: center;
   width: 80%;
   margin-bottom: 4vh;
   label {
@@ -1025,6 +1026,7 @@ textarea {
   display: flex;
   width: 80%;
   flex-direction: column;
+  align-self: center;
 
   > div {
     margin: 5vh 0;
