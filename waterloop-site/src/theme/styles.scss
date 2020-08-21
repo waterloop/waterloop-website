@@ -208,32 +208,30 @@ textarea {
 }
 
 .featComp {
-  margin: 30px 30px 30px 0;
-  min-height: 80px; /* For some reason this prevents the top image from being an incorrect size.*/
-  max-width: 70%;
+  display: flex;
+  width: 100%;
   height: auto;
+  padding-bottom: 40px;
+  flex-direction: row-reverse;
 
-  @media screen and (min-width: $mobile) {
+  @media screen and (max-width: $mobile) {
     display: flex;
-    align-items: right;
-    position: relative;
-    height: 10em;
+    flex-direction: column;
+    padding-bottom: 25px;
   }
 }
 
 .FeatImage {
-  /* type img*/
-  display: block;
-  object-fit: cover; /*Centers image and crops instead of scales aspect ratio.*/
   border: 10px;
   max-width: 340px;
   /*200 IQ bug fix (the first image doesn't load in correct size if only using width ;) */
   height: 10em;
+  padding-right: 30px;
 
   @media screen and (max-width: $mobile) {
     display: flex;
-    width: 90vw;
-    height: 30vh;
+    width: 85vw;
+    height: 25vh;
   }
 }
 
@@ -244,7 +242,7 @@ textarea {
   text-align: justify;
 
   @media screen and (max-width: $mobile) {
-    min-width: 90vw;
+    min-width: 85vw;
   }
 }
 
