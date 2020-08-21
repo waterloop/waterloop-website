@@ -11,6 +11,5 @@ export interface PSectionProps {
 }
 
 export interface PSectionState {
-  expanded: ProfileType,
   minified: Array<ProfileType>
 }
