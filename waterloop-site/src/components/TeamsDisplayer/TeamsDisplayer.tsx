@@ -17,6 +17,7 @@ import { ProfileSection, TeamFilter } from './components'
 import { sortProfiles, applyTeamFilters } from './utils'
 import { generateMembersQuery, generateFiltersQuery } from './api'
 import { Preloader } from 'components/Preloader'
+import { toUnicode } from 'punycode'
 
 // Styled components for ProfileSection
 const Page = styled.div`
@@ -33,6 +34,7 @@ export default class TeamsDisplayer extends React.Component<TeamsDisplayerProps,
   constructor(props: TeamsDisplayerProps) {
     super(props)
     this.state = {
+      loading: true,
       teamFilters: Array(5).fill(false),
       teamFilterLabels: ["All Teams", "Software", "Mechanical", "Electrical", "Business"],
       memberData: new Map(),
