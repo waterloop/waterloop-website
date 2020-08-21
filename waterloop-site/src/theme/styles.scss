@@ -14,10 +14,10 @@ $darknavy: #010101;
 }
 
 .break {
-  padding-bottom: 5em;
+  padding-bottom: 60px;
 
   @media screen and (max-width: $mobile) {
-    padding-bottom: 2em;
+    padding-bottom: 32px;
   }
 }
 
@@ -311,7 +311,7 @@ textarea {
   // !NOTE: Workaround until the parent scss selector introduces the padding automatically to align each of its direct children:
 
   display: flex;
-  padding-bottom: 50px;
+  padding-bottom: 60px;
   // Alternate between 2 layouts:
   // NOTE: I dunno if this can be optimized in any way.
   &.left-right-variant {
