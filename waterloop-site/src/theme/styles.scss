@@ -311,7 +311,7 @@ textarea {
   // !NOTE: Workaround until the parent scss selector introduces the padding automatically to align each of its direct children:
 
   display: flex;
-  padding-bottom: 20px;
+  padding-bottom: 50px;
   // Alternate between 2 layouts:
   // NOTE: I dunno if this can be optimized in any way.
   &.left-right-variant {
