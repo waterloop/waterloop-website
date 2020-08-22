@@ -8,7 +8,7 @@ import { SubProfile } from "../Profiles";
 
 // Styled components for ProfileSection
 const ProfileSectionTitle = styled.h5`
-  font-family: IBM Plex Sans;s
+  font-family: IBM Plex Sans;
   font-style: italic;
   font-weight: 600;
   font-size: 36px;
