@@ -1,27 +1,30 @@
 // Interfaces
-import { ProfileType, QueryData } from './interfaces'
+import { ProfileType, QueryData } from "./interfaces";
 
 // Test data
-import testData from './testProfileData'
+import testData from "./testProfileData";
 
 // Check if member has crucial missing fields
 const isProfileComplete = (member: QueryData) => {
   return !(
-    !member.memberType || !member.memberType.name ||
-    !member.subteams || member.subteams.length === 0 ||
-    !member.name || !member.name.display
-  )
-}
+    !member.memberType ||
+    !member.memberType.name ||
+    !member.subteams ||
+    member.subteams.length === 0 ||
+    !member.name ||
+    !member.name.display
+  );
+};
 
 // Create a profile from member data
 const buildProfile = (member: QueryData, teamType: Map<string, string>) => {
-  const links = member.links.length > 0 ? member.links : testData[0].contacts
-  const teams = member.subteams.map((team: string) => teamType.get(team))
+  const links = member.links.length > 0 ? member.links : testData[0].contacts;
+  const teams = member.subteams.map((team: string) => teamType.get(team));
 
   // Generate program description with missing fields in mind
-  let program = member.program || 'Student'
+  let program = member.program || "Student";
   if (member.stream && member.stream.currentSchoolTerm) {
-    program = `${member.stream.currentSchoolTerm} ${program}`
+    program = `${member.stream.currentSchoolTerm} ${program}`;
   }
 
   return {
@@ -31,105 +34,126 @@ const buildProfile = (member: QueryData, teamType: Map<string, string>) => {
     portrait: member.imageUrl,
     teams: teams,
     bio: member.bio,
-    contacts: links
-  }
-}
+    contacts: links,
+  };
+};
 
 // Insert a profile into correct array position as a map value
-const insertProfileToMap = (teams: Map<string, Array<ProfileType>>, teamName: string, member: ProfileType) => {
-  let memberList = [] as Array<ProfileType>
+const insertProfileToMap = (
+  teams: Map<string, Array<ProfileType>>,
+  teamName: string,
+  member: ProfileType
+) => {
+  let memberList = [] as Array<ProfileType>;
 
   // Add member to array
   if (teams.has(teamName)) {
-    memberList = teams.get(teamName) as Array<ProfileType>
+    memberList = teams.get(teamName) as Array<ProfileType>;
 
     // Insert Subteam leads to front of array
     if (member.position === "Subteam Lead") {
-      memberList.unshift(member)
+      memberList.unshift(member);
     } else {
-      memberList.push(member)
+      memberList.push(member);
     }
   } else {
-    memberList = [member]
+    memberList = [member];
   }
 
   // Update map value with new member
-  teams.set(teamName, memberList)
-}
+  teams.set(teamName, memberList);
+};
 
 // Group an array of profiles into their respective categories
-const sortProfiles = (members: Array<QueryData>, teamType: Map<string, string>) => {
-  let teams = new Map() as Map<string, Array<ProfileType>>
-  teams.set("Team Leads", [])
+const sortProfiles = (
+  members: Array<QueryData>,
+  teamType: Map<string, string>
+) => {
+  let teams = new Map() as Map<string, Array<ProfileType>>;
+  teams.set("Team Leads", []);
 
   // Insert profile into correct teams
   members.forEach((member: QueryData) => {
     // Ignore incomplete profiles
     if (isProfileComplete(member)) {
       // create a profile
-      const profile = buildProfile(member, teamType)
+      const profile = buildProfile(member, teamType);
 
       // Set a side a Team Leads subarray
       if (member.memberType.name === "Technical Director") {
-        insertProfileToMap(teams, "Team Leads", profile)
+        insertProfileToMap(teams, "Team Leads", profile);
       }
       // Group Members by their subteams
       else {
         member.subteams.forEach((team: string) => {
-          const teamName = teamType.get(team) as string
-          insertProfileToMap(teams, teamName, profile)
-        })
+          const teamName = teamType.get(team) as string;
+          insertProfileToMap(teams, teamName, profile);
+        });
       }
     }
-  })
+  });
 
-  return teams
-}
+  return teams;
+};
 
 // check if filter applies or not
 // ?TODO: Should this be hardcoded?
 const checkWithinTeamFilters = (name: string, teamFilters: Array<boolean>) => {
-  if (!teamFilters[0]){
-    if (!teamFilters[1] && (name === "Software" || name ===  "Infrastructure" || name === "Web")) {
-      return false
+  if (!teamFilters[0]) {
+    if (
+      !teamFilters[1] &&
+      (name === "Software" ||
+        name === "Web" ||
+        name === "5f31fa187c68ea281c540228" ||
+        name === "5e62f41ef0a94e3bb2b48638")
+    ) {
+      return false;
     }
-    if (!teamFilters[2] && name === "Mechanical") {
-      return false
+    if (
+      !teamFilters[2] &&
+      (name === "Mechanical" || name === "5e62f42ef0a94e3bb2b4863a")
+    ) {
+      return false;
     }
-    if (!teamFilters[3] && name === "Electrical") {
-      return false
+    if (
+      !teamFilters[3] &&
+      (name === "Electrical" || name === "5e62f428f0a94e3bb2b48639")
+    ) {
+      return false;
     }
     if (!teamFilters[4] && (name === "Admin" || name === "Exec")) {
-      return false
+      return false;
+    }
+    if (!teamFilters[5] && name === "Infrastructure") {
+      return false;
     }
   }
-  return true
-}
+  return true;
+};
 
 // Apply team filters to data set
-const applyTeamFilters = (teams: Map<string, Array<ProfileType>>, teamFilters: Array<boolean>) => {
-  let filteredTeams = new Map() as Map<string, Array<ProfileType>>
+const applyTeamFilters = (
+  teams: Map<string, Array<ProfileType>>,
+  teamFilters: Array<boolean>
+) => {
+  let filteredTeams = new Map() as Map<string, Array<ProfileType>>;
 
   teams.forEach((team: Array<ProfileType>, teamName: string) => {
     if (teamName === "Team Leads") {
       team.forEach((member: ProfileType) => {
         for (let i = 0; i < member.teams.length; i++) {
           if (checkWithinTeamFilters(member.teams[i], teamFilters)) {
-            insertProfileToMap(filteredTeams, teamName, member)
-            break
+            insertProfileToMap(filteredTeams, teamName, member);
+            break;
           }
         }
-      })
+      });
+    } else if (checkWithinTeamFilters(teamName, teamFilters)) {
+      filteredTeams.set(teamName, team);
     }
-    else if (checkWithinTeamFilters(teamName, teamFilters)) {
-      filteredTeams.set(teamName, team)
-    }
-  })
+  });
 
-  return filteredTeams
-}
+  return filteredTeams;
+};
 
-export {
-  sortProfiles,
-  applyTeamFilters
-}
+export { sortProfiles, applyTeamFilters };

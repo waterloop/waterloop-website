@@ -19,10 +19,10 @@ class Teams extends React.Component<any, any> {
           description="Learn about our geese."
           anchor="#team"
         ></Hero>
-        <div id={"#team"}>
+        <div id={"#team"}></div>
+        <div className="pageContainer">
           <ContentContainer>
             <OurTeam />
-
             <TeamsDisplayer initFilterSetting={0} />
           </ContentContainer>
         </div>
