@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-import { ContactsType } from '../interfaces'
-
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -50,48 +48,18 @@ const InfoPosition = styled.div`
     font-weight: 200;
     font-size: 12px;
   }
-`
-const ContactsContainer = styled.div`
-  display: flex;
-`
-const Contact = styled.a`
-  padding-right: 5px;
-  height: 22px;
-  width: 22px;
-
-  @media (max-width: 975px) {
-    padding-right: 10px;
-    height: 30px;
-    width: 30px;
-  }
-`
-const Icon = styled.img`
-  max-height: 100%;
-  max-width: 100%;
-`
-
-// List of icons for contact purposes
-const ContactList = (props: ContactsType) => {
-  return <>
-    {props.contacts.map((item, i) => {
-      return <Contact key={i} href={item.url} target="_blank" onClick={(event: any) => {event.stopPropagation()}}>
-        <Icon src={item.icon} alt="link"/>
-      </Contact>
-    })}
-  </>
-}
+`;
 
 const SubProfile = (props: any) => {
   return (
-    <Container>
-        <PortraitContainer><Portrait src={props.portrait} alt="portrait"/></PortraitContainer>
-        <InfoContainer>
-          <InfoTitle>{props.name}</InfoTitle>
-          <InfoPosition>{props.position}</InfoPosition>
-          {/* <ContactsContainer>
-            {props.contacts.length > 0 && <ContactList contacts={props.contacts}/>}
-          </ContactsContainer> */}
-        </InfoContainer>
+    <Container onClick={props.onClick}>
+      <PortraitContainer>
+        <Portrait src={props.portrait} alt="portrait" />
+      </PortraitContainer>
+      <InfoContainer>
+        <InfoTitle>{props.name}</InfoTitle>
+        <InfoPosition>{props.position}</InfoPosition>
+      </InfoContainer>
     </Container>
   );
 }
