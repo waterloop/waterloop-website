@@ -1,13 +1,30 @@
 import React, { useState } from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
+import FilterImg from "../../../../static/img/assets/filter_active.svg";
+import Checkbox from "./Checkbox"
 
 const FitlerContainer = styled.div`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 40px;
   margin-bottom: 80px;
+  align-items: center;
 `
+
+const StyledHeader = styled.h5`
+  font-family: IBM Plex Sans;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 36px;
+  color: #010101;
+
+  @media (min-width: 975px){
+    display: none;
+}
+`
+
 const StyledFilter = styled.button`
   width: 150px;
   height: 35px;
@@ -26,10 +43,10 @@ const StyledFilter = styled.button`
     background-color: #222535;
   }
 
-  //web buttons disappear when the width is less than 975px
-  @media (max-width: 975px){
-    display: none;
-  }
+  //diasppears when width is more than 975px
+    @media (max-width: 975px){
+      display: none;
+    }
 
   // mobile buttons
   &.mobile {
@@ -42,13 +59,8 @@ const StyledFilter = styled.button`
     height: 70px;
 
     //displays when width is less than 975px
-    @media (max-width: 975px){
-      display: unset;
-    }
-
-    //diasppears when width is more than 975px
     @media (min-width: 975px){
-      display: none;
+      display: unset;
     }
   }
 
@@ -75,7 +87,7 @@ const StyledFilter = styled.button`
   }
 `
 
-//button colours when selected
+// //button colours when selected
 const SelectedFilter = styled(StyledFilter)`
   color: white;
   background-color: #222535;
@@ -83,44 +95,55 @@ const SelectedFilter = styled(StyledFilter)`
 
 //container for buttons in mobile
 const SlideDownContainer = styled.div`
-  display: flex;
+  grid-template-columns: repeat(2, 1fr);
+
+  display: grid;
   flex-direction: column;
-  justify-content: space-between;
-  height: 400px;
+  width: 100%;
+  flex-basis: 100%;
+  margin-top: 0.5rem;
+  border: 1.3px solid #dbdbdb;
+  justify-items: space-evenly;
+  border-radius: 4px;
 
   @media (min-width: 975px){
     display: none;
   }
+
+  &> div:first-child{
+    grid-column: 1 / -1;
+  }
+
+  font-family: IBM Plex Sans;
+  font-weight: 600;
+  font-size: 18px;
+  color: #010101;
+  padding-top: 30px;
+  padding-left: 15px;
 `
 
-//mobile toggle button
-const StyledToggle = styled.button`
+const StyledButton = styled.button`
   display: flex;
-  flex-direction: column;
+  padding: 8px;
   justify-content: space-between;
-  width: 60px;
-  height: 50px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  align-items: center;
+  flex-direction: row;
+  border: 1.3px solid #dbdbdb;
+  font-size: 12pt;
+  font-family: IBM Plex Sans;
+  font-weight: 500;
+  border-radius: 4px;
+  outline: grey;
   background: transparent;
-  border: none;
-  outline: none;
+  width: 85px;
+  height: 35px;
 
   @media (min-width: 975px){
     display: none;
   }
 `
-//lines of the mobile toggle button
-const ToggleLine = styled.div`
-  width: 55px;
-  height: 8px;
-  background-color: #F9D55B;
-  border-radius: 10px;
-
-  //toggle line color when toggle button is selected
-  &.open{
-    background-color: #808080;
-  }
+const StyledImage = styled.img`
+  margin-bottom: 0.1rem;
 `
 
 const TeamFilter = (props: any) => {
@@ -129,33 +152,30 @@ const TeamFilter = (props: any) => {
 
   const [ toggleOpen, setToggle ] = useState(false)
 
-  //toggle is open: slide down container contains the team filter buttons in mobile format and toggle lines become grey
-  //toggle is closed: slide down container contains the select team button and toggle lines are yellow
-  if (toggleOpen) {
-    slideDownContainer = <SlideDownContainer >{props.teamFilters.map((filter: boolean, i: number) => {
-       //checks if filter has been applied and changes style accordingly
-      const Button = filter ? SelectedFilter : StyledFilter;
-      return <Button className="mobile" key={i} onClick={() => props.updateFilters(i)}>{props.filterLabels[i]}</Button>
-      })}</SlideDownContainer>
-    toggleLine = <ToggleLine className="open"/>
-  }
-  else {
-    slideDownContainer = <StyledFilter className="selectTeams" onClick={() => setToggle(!toggleOpen)}>Select Team</StyledFilter>
-    toggleLine = <ToggleLine/>
-  }
-
   return (
     <FitlerContainer>
-      {props.teamFilters.map((filter: boolean, i: number) => {
+      <StyledHeader>Team Roster</StyledHeader>
+      <StyledButton onClick={() => setToggle(!toggleOpen)}>
+        <StyledImage src={FilterImg}></StyledImage>
+        Filter
+      </StyledButton>
+      {/* {props.teamFilters.map((filter: boolean, i: number) => {
         const Button = filter ? SelectedFilter : StyledFilter;
         return <Button key={i} onClick={() => props.updateFilters(i)}>{props.filterLabels[i]}</Button>
-      })}
-      {slideDownContainer}
-      <StyledToggle onClick={() => setToggle(!toggleOpen)}>
-        {toggleLine}
-        {toggleLine}
-        {toggleLine}
-      </StyledToggle>
+      })} */}
+      {toggleOpen && 
+        <SlideDownContainer>
+          Subteam (4)
+          {props.teamFilters.map((filter: boolean, i: number) => {
+          //checks if filter has been applied and changes style accordingly
+          //const Button = filter ? SelectedFilter : StyledFilter;
+          return <div>
+            <Checkbox checked={filter} key={i} onClick={() => props.updateFilters(i) }>{props.filterLabels[i]}</Checkbox>
+            </div>
+          })}
+        
+        </SlideDownContainer>
+      }
     </FitlerContainer>
   )
 }
