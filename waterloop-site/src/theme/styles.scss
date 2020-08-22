@@ -52,10 +52,9 @@ h4 {
 
   @media screen and (max-width: $mobile) {
     font-size: 18;
-    margin-left: 0;  
+    margin-left: 0;
   }
 }
-
 
 body {
   margin: 0;
@@ -113,7 +112,6 @@ textarea {
       font-size: 28px;
     }
   }
-  
 }
 .footer-row {
   display: flex;
@@ -269,7 +267,6 @@ textarea {
   @media (max-width: $mobile) {
     width: 100%;
   }
-
 }
 
 .Img-TextWithImage {
@@ -428,7 +425,7 @@ textarea {
 
 /*Landing Sponsor's component styles: */
 .Img-Box-Sponsors {
-  margin: 30px 20px 30px 20px;
+  margin: 30px 20px;
   width: calc(6vw + 200px);
   height: calc(5vw + 100px);
   display: flex;
@@ -469,6 +466,13 @@ textarea {
   width: 100%;
 }
 
+@media (max-width: 500px) {
+  .Img-Box-Sponsors {
+    margin: 40px 0;
+    width: 100%;
+  }
+}
+
 .Block-RecruitmentForm {
   padding: 1%;
   height: 100%;
@@ -504,7 +508,7 @@ textarea {
     margin: 5px 10px;
     font-family: "IBM Plex Sans";
   }
-  
+
   hr {
     // margin: 20px;
   }
@@ -645,7 +649,6 @@ textarea {
     width: 27px;
     height: 11px;
   }
-
 }
 
 .landingContainer {
@@ -1007,7 +1010,7 @@ textarea {
   color: #010101;
 
   @media screen and (max-width: $mobile) {
-    font-size: 24px;  
+    font-size: 24px;
   }
 }
 
@@ -1038,9 +1041,9 @@ textarea {
 
   @media (max-width: $mobile) {
     margin-top: 30px;
-      display: flex;
-      flex-direction: column;
-      width: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
   }
 }
 
@@ -1050,8 +1053,8 @@ textarea {
   width: 64vw;
 
   @media (max-width: $mobile) {
-      display: flex;
-      width: 100%;
+    display: flex;
+    width: 100%;
   }
 }
 
