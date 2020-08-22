@@ -46,6 +46,7 @@ export class TextWithImage extends React.Component<{
             )}
             <p className="Text-TextWithImage">{entry.text}</p>
             <div className="ButtonBlock-TextWithImage">
+              {/* Hide button if no link supplied. */}
               {this.renderButton(entry.link, entry.linkText)}
             </div>
           </div>
@@ -54,9 +55,6 @@ export class TextWithImage extends React.Component<{
             src={this.props.imgData[key]}
             alt="waterloop"
           ></img>
-          <div className="text-w-image-btn-mobile">
-            {this.renderButton(entry.link, entry.linkText)}
-          </div>
         </div>
       );
     });
