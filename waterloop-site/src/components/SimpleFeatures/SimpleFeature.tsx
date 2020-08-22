@@ -1,12 +1,12 @@
 // Core modules:
 import React from "react";
 import styled from "styled-components";
-import "../../theme/global.scss"; // For styling
+import "../../theme/styles.scss"; // For styling
 
 export interface FeatProps {
-  imgSrc: string;
-  imgAlt: string /*header: string,*/;
-  desc: string;
+    imgSrc: string;
+    imgAlt: string /*header: string,*/;
+    desc: string;
 } // Type definition for component.
 
 /* NOTE: See if you can use PureComponent instead.

@@ -16,6 +16,8 @@ import { ProfileSection, TeamFilter } from './components'
 // Utility
 import { sortProfiles, applyTeamFilters } from './utils'
 import { generateMembersQuery, generateFiltersQuery } from './api'
+import { Preloader } from 'components/Preloader'
+import { toUnicode } from 'punycode'
 
 // Styled components for ProfileSection
 const Page = styled.div`
@@ -32,6 +34,7 @@ export default class TeamsDisplayer extends React.Component<TeamsDisplayerProps,
   constructor(props: TeamsDisplayerProps) {
     super(props)
     this.state = {
+      loading: true,
       teamFilters: Array(5).fill(false),
       teamFilterLabels: ["All Teams", "Software", "Mechanical", "Electrical", "Business"],
       memberData: new Map(),
@@ -74,6 +77,7 @@ export default class TeamsDisplayer extends React.Component<TeamsDisplayerProps,
         console.log("finished fetching member data")
         const groupedProfiles = sortProfiles(res.body, this.state.subteamIdMap) as Map<string, Array<ProfileType>>
         this.setState({ memberData: groupedProfiles })
+        this.setState({ loading: false });
       })
       .catch(err => {
         alert(`Error in fetching members`)
@@ -135,6 +139,7 @@ export default class TeamsDisplayer extends React.Component<TeamsDisplayerProps,
 
     return (
       <Page>
+        {this.state.loading ? <Preloader /> : <></>}
         <TeamFilter
           teamFilters={this.state.teamFilters}
           filterLabels={this.state.teamFilterLabels}

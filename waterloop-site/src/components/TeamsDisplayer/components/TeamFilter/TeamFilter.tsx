@@ -159,10 +159,10 @@ const TeamFilter = (props: any) => {
         <StyledImage src={FilterImg}></StyledImage>
         Filter
       </StyledButton>
-      {props.teamFilters.map((filter: boolean, i: number) => {
+      {/* {props.teamFilters.map((filter: boolean, i: number) => {
         const Button = filter ? SelectedFilter : StyledFilter;
         return <Button key={i} onClick={() => props.updateFilters(i)}>{props.filterLabels[i]}</Button>
-      })}
+      })} */}
       {toggleOpen && 
         <SlideDownContainer>
           Subteam (4)

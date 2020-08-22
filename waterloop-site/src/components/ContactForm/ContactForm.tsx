@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "components/Button";
-import "../../theme/global.scss";
+import "../../theme/styles.scss";
 
 interface ContactFormProps {
   title: string;
@@ -27,7 +27,7 @@ interface ServerResponse {
 class ContactUsForm extends React.Component<
   ContactFormProps,
   ContactFormStates
-> {
+  > {
   constructor(props: ContactFormProps) {
     super(props);
     this.onFormSubmit = this.onFormSubmit.bind(this);
@@ -48,11 +48,6 @@ class ContactUsForm extends React.Component<
     };
   }
 
-  private labelStyle: React.CSSProperties = {
-    display: "block",
-    fontWeight: "bold",
-    paddingRight: "1%",
-  };
   private inputStyle: React.CSSProperties = {
     backgroundColor: "WhiteSmoke",
     width: "100%",
@@ -62,7 +57,6 @@ class ContactUsForm extends React.Component<
   private formStyle: React.CSSProperties = {
     display: "flex",
     flexDirection: "column",
-    padding: "12px",
   };
 
   private errorStyle: React.CSSProperties = {
@@ -174,94 +168,35 @@ class ContactUsForm extends React.Component<
           style={this.formStyle}
           onSubmit={this.onFormSubmit}
         >
-          <h3
-            style={{
-              fontStyle: "italic",
-              color: "black",
-              fontWeight: "bold",
-              marginBottom: "40px",
-              fontSize: "36px",
-            }}
-          >
-            {this.props.title}
-          </h3>
-          <p
-            style={{
-              fontFamily: "IBM Plex Sans",
-              fontSize: "18px",
-              marginTop: "0px",
-              marginBottom: "30px",
-            }}
-          >
-            {this.props.desc}
-          </p>
+          <h3>{this.props.title}</h3>
+          <p>{this.props.desc}</p>
           {this.renderError()}
           {this.renderServerError()}
-          <div>
+          <div className="contact-form-row">
             <div className="contactForm-InputBlockLeft">
-              <label style={this.labelStyle} htmlFor="name">
-                Name
-              </label>
+              <label htmlFor="name">Name</label>
               <input
                 name="name"
                 id="name"
-                style={{
-                  marginTop: "20px",
-                  width: "100%",
-                  height: "30px",
-                  backgroundColor: "#F4F4F4",
-                  border: "none",
-                  fontFamily: "IBM Plex Sans",
-                  fontSize: "15px",
-                }}
                 value={this.state.formKey.name}
                 onChange={this.handleChange}
               ></input>
             </div>
             <div className="contactForm-InputBlockRight">
-              <label htmlFor="email" style={this.labelStyle}>
-                Email
-              </label>
+              <label htmlFor="email">Email</label>
               <input
                 id="email"
                 name="email"
-                style={{
-                  marginTop: "20px",
-                  width: "100%",
-                  height: "30px",
-                  backgroundColor: "#F4F4F4",
-                  border: "none",
-                  fontFamily: "IBM Plex Sans",
-                  fontSize: "15px",
-                }}
                 value={this.state.formKey.email}
                 onChange={this.handleChange}
               ></input>
             </div>
           </div>
-          <div
-            style={{
-              width: "100%",
-              paddingTop: "10px",
-              paddingBottom: "30px",
-              marginTop: "35px",
-            }}
-          >
-            <label htmlFor="message" style={this.labelStyle}>
-              Message
-            </label>
+          <div className="contact-form-message">
+            <label htmlFor="message">Message</label>
             <textarea
               id="message"
               name="message"
-              style={{
-                width: "100%",
-                height: "298px",
-                backgroundColor: "#F4F4F4",
-                border: "none",
-                marginTop: "20px",
-                fontFamily: "IBM Plex Sans",
-                fontSize: "15px",
-              }}
               rows={3}
               value={this.state.formKey.message}
               onChange={this.handleChange}
