@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Hero from "components/Hero/General";
 import { GooseRoster } from "components/GooseRoster";
-import { SimpleFeatComp } from "components/SimpleFeatures";
+import { SimpleFeatures } from "sections/FeaturedComponent";
 import { PastGeeseTimeline as UnstyledPastGeeseTimeline } from "components/PastGeeseTimeline";
 import image from "../static/img/goose/feat1.png";
 import "../theme/styles.scss";
@@ -27,28 +27,14 @@ class Flock extends React.Component {
         <div className="pageContainer">
           <GooseRoster
             heading="Goose V"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit."
+            description="Linear Induction Motor - To scale to Hyperloop speeds, we need contactless propulsion. LIMs provide a way to levitate, stabilize, and propel, all in the same package, and they require a simple metal track with no magnets - perfect for minimizing infrastructure cost."
             imgUrls={myImgArray}
           >
             {" "}
           </GooseRoster>
           <div className="break"></div>
           <h4> Features </h4>
-          <SimpleFeatComp
-            imgSrc={image}
-            imgAlt="test"
-            desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut."
-          ></SimpleFeatComp>
-          <SimpleFeatComp
-            imgSrc={image}
-            imgAlt="test"
-            desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut."
-          ></SimpleFeatComp>
-          <SimpleFeatComp
-            imgSrc={image}
-            imgAlt="test"
-            desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut."
-          ></SimpleFeatComp>
+          <SimpleFeatures></SimpleFeatures>
           <div className="break"></div>
           <PastGeeseTimeline />
         </div>

@@ -2,39 +2,43 @@ $mobile: 425px;
 $yellow: #fed138;
 $navy: #232636;
 $white: #fefefe;
+$light-gray: #f4f4f4;
+$darknavy: #010101;
 
 .pageContainer {
-  margin: 5em 7em 5em 7em;
+  margin: 80px 140px 80px 140px;
+
+  @media screen and (max-width: $mobile) {
+    margin: 32px 25px 32px 25px;
+  }
 }
 
-@media (max-width: $mobile) {
-  .pageContainer {
-    margin: 2em 1em 2em 1em;
+.break {
+  padding-bottom: 60px;
+
+  @media screen and (max-width: $mobile) {
+    padding-bottom: 32px;
   }
 }
 
 h1 {
   font-size: 64pt;
-  color: #ffffff;
+  color: $white;
   text-transform: uppercase;
   margin-bottom: 0pt;
+  font-family: "IBM Plex Sans";
 }
 
 h2 {
   font-size: 12pt;
-}
-
-.break {
-  padding-bottom: 4em;
-
-  @media screen and (max-width: $mobile) {
-    padding-bottom: 2em;
-  }
+  font-family: "IBM Plex Sans";
+  color: $darknavy;
 }
 
 h3 {
+  font-family: "IBM Plex Sans";
   font-size: 30px;
-  color: #ffffff;
+  color: $white;
   margin-top: 0pt;
   font-weight: 400;
 }
@@ -42,14 +46,12 @@ h3 {
 h4 {
   font-family: "IBM Plex Sans";
   font-size: 28px;
-  color: #010101;
+  color: $darknavy;
   font-style: italic;
   font-weight: bold;
-}
 
-@media (max-width: $mobile) {
-  h4 {
-    font-size: 28px;
+  @media screen and (max-width: $mobile) {
+    font-size: 18;
     margin-left: 0;
   }
 }
@@ -73,150 +75,111 @@ code {
   overflow-y: hidden;
 }
 
-h3 {
-  font-size: 30px;
-  color: $white;
-  margin-top: 0pt;
-  font-weight: 400;
-}
-
-h1 {
-  font-size: 64pt;
-  color: $white;
-  text-transform: uppercase;
-  margin-bottom: 0pt;
-}
-
 textarea {
   resize: none;
   padding: 10px;
 }
 
-.btn {
-  display: flex;
-  justify-content: center;
-  background-color: transparent;
-  color: $white;
-  border-radius: 50%;
-  border: 2px solid white;
-  height: 50px;
-  width: 200px;
-  text-decoration: none;
-  line-height: 10px;
-}
-
-@media (max-width: $mobile) {
-  .GooseRoster-Img {
-    /* type img */
-    /* type img */
-    display: block;
-    object-fit: cover; /*Centers image and crops instead of scales aspect ratio.*/
-    border: 10px;
-    max-width: 355px;
-    /*200 IQ bug fix (the first image doesn't load in correct size if only using width ;) */
-    height: 10em;
-  }
-
-  .FooterWrapper {
-    flex-direction: column;
-    justify-content: flex-start;
-    height: 350px;
-    width: 100%;
-  }
-
-  .LogoWrapper {
-    align-self: left;
-    padding-top: 15px;
-    margin-right: 400px;
-    margin-left: 0px;
-    transform: scale(0.5, 0.5);
-  }
-  .SocialMediaWrapper {
-    margin: 5px 10px 5px 2px;
-    font-size: 13px;
-  }
-  .RoutingWrapper {
-    margin: 5px 20px 5px 2px;
-    font-size: 13px;
-  }
-  .LinksWrapper {
-    margin: 0;
-  }
-}
-
-@media (min-width: $mobile) and (max-width: 600px) {
-  .FooterWrapper {
-    flex-direction: column;
-    justify-content: flex-start;
-    bottom: 0;
-    height: 316px;
-    width: 100%;
-  }
-
-  .GooseRoster-Img {
-    /* type img */
-    width: 90vw;
-  }
-
-  .LogoWrapper {
-    transform: scale(1, 1);
-    margin-left: 10%;
-    margin-bottom: 15%;
-  }
-  .SocialMediaWrapper {
-    margin: 10% 6% 20% 2%;
-    font-size: 1rem;
-  }
-  .RoutingWrapper {
-    margin: 10% 10% 20% 30%;
-    font-size: 1rem;
-  }
-  .LinksWrapper {
-    margin: 10% 10% 20% 30%;
-  }
-}
-
-@media (min-width: 800px) and (max-width: 1100px) {
-  .GooseRoster-Img {
-    /* type img */
-    width: 90vw;
-  }
-
-  .LogoWrapper {
-    align-self: flex-start;
-    padding-top: 15px;
-    margin-right: 450px;
-    transform: scale(0.5, 0.5);
-  }
-  .SocialMediaWrapper {
-    margin: 5px 10px 5px 2px;
-    font-size: 13px;
-  }
-  .RoutingWrapper {
-    margin: 5px 20px 5px 2px;
-    font-size: 13px;
-  }
-  .LinksWrapper {
-    margin: 0;
-  }
-}
-
 .FooterWrapper {
   display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
   justify-content: space-between;
-  position: relative;
-  width: 100%;
-  height: 276px;
+  height: 70vh;
   bottom: 0;
   background: $navy;
-  margin-top: 20px;
+  padding: 15vh 15vw 20vh;
+  transition: all 0.3s;
+  font-family: "IBM Plex Sans";
+  h2 {
+    color: $white;
+    font-size: 36px;
+    font-weight: 300;
+    margin: 0;
+  }
+  h3 {
+    font-weight: 600;
+    font-size: 18px;
+    opacity: 0.7;
+  }
+
+  @media screen and (max-width: $mobile) {
+    padding: 10vh 15vw;
+    height: 75vh;
+    overflow: hidden;
+
+    h2 {
+      font-size: 28px;
+    }
+  }
+}
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  @media screen and (max-width: $mobile) {
+    flex-wrap: wrap;
+    a {
+      font-size: 14px;
+    }
+  }
+}
+.button-yellow {
+  border: 2px solid $yellow;
+  background-color: $navy;
+  color: $yellow;
+  font-family: "IBM Plex Sans";
+  font-weight: 400;
+  font-size: 24px;
+  border-radius: 15px;
+  height: 50px;
+  width: 150px;
+  margin: 0 100px 0 0;
+  transition: all 0.3s;
+  &:hover {
+    background-color: $yellow;
+    color: $navy;
+  }
+
+  @media screen and (max-width: $mobile) {
+    margin: 30px 0;
+    font-size: 18px;
+    width: 120px;
+    height: 40px;
+  }
 }
 
 .LogoWrapper {
   align-self: center;
-  margin-left: 150px;
   height: 91.11px;
   width: 154.32px;
+
+  @media screen and (max-width: $mobile) {
+    box-sizing: border-box;
+    align-self: center;
+    > img {
+      width: 90px;
+      margin: 0 0 20px 0;
+    }
+  }
+}
+
+.LinksWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 250px;
+  > div > a {
+    margin: 6px 0 0 0;
+  }
+
+  @media screen and (max-width: $mobile) {
+    justify-content: flex-start;
+    > div {
+      margin-right: 50px;
+    }
+  }
 }
 
 .postings {
@@ -242,55 +205,32 @@ textarea {
   font-size: 18px;
 }
 
-.LinksWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 300px;
-  height: 276px;
-  margin-right: 150px;
-}
-
 .featComp {
-  margin: 30px 30px 30px 0;
-  min-height: 80px; /* For some reason this prevents the top image from being an incorrect size.*/
-  max-width: 70%;
+  display: flex;
+  width: 100%;
   height: auto;
-}
+  padding-bottom: 40px;
+  flex-direction: row-reverse;
+  align-content: center;
 
-@media (min-width: $mobile) {
-  .featComp {
+  @media screen and (max-width: $mobile) {
     display: flex;
-    align-items: right;
-    position: relative;
-    height: 10em;
-  }
-
-  .FeatImage {
-    position: absolute;
-    left: 0;
-    margin: 10px;
-  }
-  .FeatPara {
-    position: absolute;
-    left: 15em;
-    margin: 10px;
+    flex-direction: column;
+    padding-bottom: 25px;
   }
 }
 
 .FeatImage {
-  /* type img*/
-  display: block;
-  object-fit: cover; /*Centers image and crops instead of scales aspect ratio.*/
   border: 10px;
   max-width: 340px;
   /*200 IQ bug fix (the first image doesn't load in correct size if only using width ;) */
   height: 10em;
+  padding-right: 30px;
 
   @media screen and (max-width: $mobile) {
     display: flex;
-    width: 90vw;
-    height: 30vh;
+    width: 85vw;
+    height: 25vh;
   }
 }
 
@@ -301,39 +241,18 @@ textarea {
   text-align: justify;
 
   @media screen and (max-width: $mobile) {
-    min-width: 90vw;
+    min-width: 85vw;
   }
 }
 
-.Header-FeaturedComponent {
-  /*type h2*/
-  margin-left: 30px;
-  font-size: 28px;
-  font-weight: bold;
-  font-style: italic;
-  font-family: "IBM Plex Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
+.FeatCol {
+  display: flex;
+  flex-direction: column;
 
-@media (min-width: $mobile) {
-  .featComp {
-    display: flex;
-    align-items: right;
-    position: relative;
-    height: 10em;
-  }
-
-  .FeatImage {
-    position: absolute;
-    left: 0;
-    margin: 10px 10px 10px 0;
-  }
-
-  .FeatPara {
-    position: absolute;
-    left: 15em;
-    margin: 10px;
-    padding-left: 45px;
-    font-size: 16px;
+  h2 {
+    font-size: 20px;
+    margin-bottom: 0;
+    margin-top: 0;
   }
 }
 
@@ -344,6 +263,10 @@ textarea {
   display: flex;
   flex-wrap: wrap-reverse;
   flex-direction: column;
+
+  @media (max-width: $mobile) {
+    width: 100%;
+  }
 }
 
 .Img-TextWithImage {
@@ -354,26 +277,41 @@ textarea {
   width: 40vw;
   height: 32vw;
   border-radius: 10pt;
+
+  @media (max-width: $mobile) {
+    width: 90vw;
+    height: auto;
+  }
 }
 
 .Header-TextWithImage {
   /* type h2*/
-  font-family: "IBM Plex Sans";
   font-style: italic;
   font-size: calc(18px + 0.7vw);
+
+  @media (max-width: $mobile) {
+    margin: 0;
+    text-align: left;
+    font-size: 9vw;
+  }
 }
 
 .Text-TextWithImage {
   /* type p*/
   font-size: calc(12px + 0.5vw);
-  font-family: "IBM Plex Sans";
+
+  @media (max-width: $mobile) {
+    margin: 20px 0;
+    text-align: justify;
+    font-size: 16px;
+  }
 }
 
 .Block-TextWithImage {
   // !NOTE: Workaround until the parent scss selector introduces the padding automatically to align each of its direct children:
 
   display: flex;
-  padding-bottom: 5em;
+  padding-bottom: 60px;
   // Alternate between 2 layouts:
   // NOTE: I dunno if this can be optimized in any way.
   &.left-right-variant {
@@ -398,10 +336,12 @@ textarea {
   display: inline-flex;
   justify-content: flex-start;
   margin-top: 2em;
+
   @media (max-width: $mobile) {
     display: none;
   }
 }
+
 .text-w-image-btn-mobile {
   display: none;
   justify-content: flex-start;
@@ -410,17 +350,9 @@ textarea {
     display: inline-flex;
   }
 }
+
 // TODO: the screen's width should be declared as a SASS variable and then used to maintain consistency.
 @media (max-width: 500px) {
-  .contactForm-InputBlockRight {
-    display: flex;
-    width: 100%;
-  }
-  .contactForm-InputBlockLeft {
-    display: flex;
-    width: 100%;
-  }
-
   .Block-TextWithImage {
     &.left-right-variant,
     &.right-left-variant {
@@ -431,48 +363,6 @@ textarea {
       }
     }
   }
-  .TextBlock-TextWithImage {
-    width: 100%;
-  }
-  .TextWithImage {
-    display: inline;
-    padding-right: 0;
-  }
-  .Img-TextWithImage {
-    width: 90vw;
-    height: auto;
-  }
-  .Header-TextWithImage {
-    margin: 0;
-    text-align: left;
-    font-size: 9vw;
-  }
-  .Text-TextWithImage {
-    margin: 20px 0;
-    text-align: justify;
-    font-size: 16px;
-  }
-  .ButtonBlock-TextWithImage {
-    margin-top: 0px;
-    margin-bottom: 20px;
-    align-self: center;
-  }
-  .TextBlock-Teams {
-    display: flex;
-    width: 100%;
-    text-align: center;
-    padding: 0px 30px;
-  }
-  .Img-Teams {
-    display: none;
-  }
-  .Header-Teams {
-    font-size: 25px;
-  }
-  .Text-Teams {
-    font-size: 13px;
-    text-align: left;
-  }
 }
 
 .TextBlock-Teams {
@@ -481,6 +371,13 @@ textarea {
   width: 50%;
   height: 100%;
   padding-left: 3%;
+
+  @media (max-width: $mobile) {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    padding: 0px 30px;
+  }
 }
 
 .Img-Teams {
@@ -489,6 +386,10 @@ textarea {
   flex-direction: column;
   width: 315px;
   height: 227px;
+
+  @media (max-width: $mobile) {
+    display: none;
+  }
 }
 
 .Header-Teams {
@@ -496,12 +397,22 @@ textarea {
   font-style: italic;
   font-size: 28px;
   margin-bottom: 0px !important;
+  font-family: "IBM Plex Sans";
+
+  @media (max-width: $mobile) {
+    font-size: 25px;
+  }
 }
 
 .Text-Teams {
   /* type p*/
   font-size: 18px;
   margin-top: 14px !important;
+
+  @media (max-width: $mobile) {
+    font-size: 13px;
+    text-align: left;
+  }
 }
 
 .Block-Teams {
@@ -520,6 +431,11 @@ textarea {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media (max-width: $mobile) {
+    margin: 40px 0;
+    width: 100%;
+  }
 }
 
 .Img-Sponsors {
@@ -547,15 +463,7 @@ textarea {
 }
 
 .Block-Sponsors {
-  width: auto;
-  margin: 10px 5vw; // TODO: To be removed when parent container gets universal padding.
-}
-
-@media (max-width: 500px) {
-  .Img-Box-Sponsors {
-    margin: 40px 0;
-    width: 100%;
-  }
+  width: 100%;
 }
 
 @media (max-width: 500px) {
@@ -600,6 +508,7 @@ textarea {
     margin: 5px 10px;
     font-family: "IBM Plex Sans";
   }
+
   hr {
     // margin: 20px;
   }
@@ -686,6 +595,10 @@ textarea {
   width: 100%;
   height: 100vh;
   background-color: #232635;
+
+  @media screen and (max-width: $mobile) {
+    align-items: center;
+  }
 }
 
 .generalTitleContainer {
@@ -693,17 +606,36 @@ textarea {
   justify-content: center;
   text-align: center;
   padding-bottom: 23px;
+
+  @media screen and (max-width: $mobile) {
+    width: 100%;
+
+    > h1 {
+      font-size: 42px;
+    }
+  }
 }
 
 .generalDescriptionContainer {
   display: flex;
   justify-content: center;
   margin-bottom: 100px;
+
+  @media screen and (max-width: $mobile) {
+    > h3 {
+      font-size: 24px;
+    }
+  }
 }
 
 .generalArrowContainer {
   position: absolute;
   bottom: 75px;
+
+  @media screen and (max-width: $mobile) {
+    align-content: flex-end;
+    bottom: 50px;
+  }
 }
 
 .generalDownArrow {
@@ -712,41 +644,10 @@ textarea {
   height: 17px;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
-}
 
-@media (max-width: $mobile) {
-  .generalContainer {
-    align-items: center;
-    height: 90vh;
-  }
-
-  .generalTitleContainer {
-    width: 100%;
-
-    > h1 {
-      font-size: 42px;
-    }
-  }
-
-  .generalDescriptionContainer {
-    > h3 {
-      font-size: 24px;
-    }
-  }
-
-  .generalArrowContainer {
-    align-content: flex-end;
-    bottom: 50px;
-  }
-
-  .generalDownArrow {
-    /* type img */
+  @media screen and (max-width: $mobile) {
     width: 27px;
     height: 11px;
-  }
-
-  .landingContainer {
-    height: 90vh;
   }
 }
 
@@ -765,17 +666,33 @@ textarea {
   display: flex;
   justify-content: center;
   color: $white;
+
+  @media screen and (max-width: $mobile) {
+    margin-bottom: 28px;
+    > h3 {
+      font-size: 24px;
+    }
+  }
 }
 
 .landingArrowContainer {
   position: absolute;
   bottom: 75px;
   z-index: 99;
+
+  @media screen and (max-width: $mobile) {
+    position: absolute;
+    bottom: 50px;
+  }
 }
 
 .landingBuildingContainer {
   width: 100%;
   z-index: 2;
+
+  @media screen and (max-width: $mobile) {
+    display: none;
+  }
 }
 
 .landingBuildings {
@@ -785,6 +702,10 @@ textarea {
   position: absolute;
   bottom: 30px;
   padding-top: 3em;
+
+  @media screen and (max-width: $mobile) {
+    display: none;
+  }
 }
 
 .landingDownArrow {
@@ -793,6 +714,11 @@ textarea {
   height: 17px;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
+
+  @media screen and (max-width: $mobile) {
+    width: 27px;
+    height: 11px;
+  }
 }
 
 .landingContent {
@@ -801,6 +727,10 @@ textarea {
   flex-direction: column;
   align-items: center;
   z-index: 999;
+
+  @media screen and (max-width: $mobile) {
+    padding: 17px 0;
+  }
 }
 
 .landingWaterloopContainer {
@@ -815,41 +745,8 @@ textarea {
   height: auto;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
-}
 
-@media (max-width: $mobile) {
-  .landingDescriptionContainer {
-    margin-bottom: 28px;
-    > h3 {
-      font-size: 24px;
-    }
-  }
-
-  .landingArrowContainer {
-    position: absolute;
-    bottom: 50px;
-  }
-
-  .landingBuildingContainer {
-    display: none;
-  }
-
-  .landingBuildings {
-    display: none;
-  }
-
-  .landingDownArrow {
-    /* type img */
-    width: 27px;
-    height: 11px;
-  }
-
-  .landingWaterloopContainer {
-    padding: 17px 0;
-  }
-
-  .landingWaterloop {
-    /* type img */
+  @media screen and (max-width: $mobile) {
     width: 80%;
   }
 }
@@ -877,7 +774,7 @@ textarea {
   margin-left: 18px;
 
   @media screen and (max-width: $mobile) {
-    font-size: 18px;
+    font-size: 14px;
     margin-left: 0;
     text-align: justify;
   }
@@ -888,21 +785,23 @@ textarea {
   flex-direction: row;
   align-items: center;
   align-self: center;
-  height: 70vh;
-  width: 70vw;
+  height: 40vw;
   overflow: hidden;
   padding: 5px;
   margin: 20px 0;
-
-  @media screen and (max-width: $mobile) {
-    height: 20vh;
-    width: 80vw;
-  }
 }
 
 .GooseRoster-Img {
-  /* type img */
-  width: 80vw;
+  width: 77vw;
+
+  @media screen and (max-width: $mobile) {
+    display: block;
+    object-fit: cover;
+    border: 10px;
+    width: 90vw;
+    max-width: 355px;
+    height: 10em;
+  }
 }
 
 .GooseRoster-Arrow {
@@ -915,6 +814,7 @@ textarea {
 .contactForm-Container {
   display: flex;
   justify-content: center;
+  align-self: center;
   width: 80%;
   margin-bottom: 4vh;
   label {
@@ -930,6 +830,10 @@ textarea {
     font-size: 36px;
   }
 
+  > form {
+    width: 100%;
+  }
+
   > form > p {
     font-size: 18px;
     margin: 0 auto 15px;
@@ -938,12 +842,18 @@ textarea {
     margin-top: 5px;
     width: calc(98% - 10px);
     height: 30px;
-    background-color: #f4f4f4;
+    background-color: $light-gray;
     font-size: 15px;
     border: none;
     border-radius: 5px;
     padding: 0 10px;
     color: $navy;
+  }
+
+  @media (max-width: $mobile) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
   }
 }
 
@@ -980,7 +890,7 @@ textarea {
     margin-top: 5px;
     width: calc(100% - 15px);
     height: 300px;
-    background-color: #f4f4f4;
+    background-color: $light-gray;
     font-size: 15px;
     border: none;
     border-radius: 5px;
@@ -1021,15 +931,6 @@ textarea {
   font-weight: 600;
   font-family: "IBM Plex Sans";
   margin: 0;
-}
-
-.button-yellow {
-  background-color: $yellow;
-  font-family: "IBM Plex Sans";
-  font-weight: 600;
-  border-radius: 30px;
-  height: 34px;
-  width: 100px;
 }
 
 .SponsorPage {
@@ -1107,21 +1008,19 @@ textarea {
   font-size: 24px;
   font-style: italic, underline;
   color: #010101;
-}
 
-@media (max-width: $mobile) {
-  .sponsorLink {
+  @media screen and (max-width: $mobile) {
     font-size: 24px;
   }
 }
+
 .contactFormContainer {
   display: flex;
-  align-items: center;
+  // align-items: center;
   flex-direction: column;
   font-family: IBM Plex Sans !important;
   width: 100%;
-  // margin: 50px 0;
-
+  margin: 50px 0;
   @media (max-width: $mobile) {
     margin: 2em 0;
     min-height: 100vh;
@@ -1132,6 +1031,7 @@ textarea {
   display: flex;
   width: 80%;
   flex-direction: column;
+  align-self: center;
 
   > div {
     margin: 5vh 0;
@@ -1141,13 +1041,21 @@ textarea {
 
   @media (max-width: $mobile) {
     margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
   }
 }
 
 .mapContainer {
   display: flex;
   height: 50vh;
-  width: 80vw;
+  width: 64vw;
+
+  @media (max-width: $mobile) {
+    display: flex;
+    width: 100%;
+  }
 }
 
 .sponsorsButton {
@@ -1162,30 +1070,65 @@ textarea {
   }
 }
 
-.contactFormContainer {
+.success-message {
+  height: 60vh;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10vh 10vw;
+  margin: 0 0 50px 0;
   display: flex;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
-  min-height: 100vh;
-  width: 100%;
-  margin-bottom: 2em;
-  margin-top: 10em;
-}
-
-.locationContainer {
-  display: flex;
-  width: 80%;
-  flex-direction: column;
-
-  > div {
-    margin: 5vh 0;
-    display: flex;
-    justify-content: center;
+  border-radius: 10px;
+  background-color: $light-gray;
+  h3 {
+    font-style: italic;
+    color: #232635;
+    font-weight: bold;
+    margin-bottom: 0;
+    font-size: 36px;
+    text-align: center;
+  }
+  p {
+    font-size: 18px;
+    text-align: center;
   }
 }
 
-.mapContainer {
+.banner {
+  width: 100%;
+  height: 40vh;
   display: flex;
-  height: 50vh;
-  width: 80vw;
+  align-items: center;
+  justify-content: center;
+  background-color: $navy;
+  h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 36px;
+  }
+}
+.col-block {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  h2 {
+    color: $navy;
+    font-size: 24px;
+  }
+  div:nth-child(2) {
+    margin: 0 80px;
+    @media (max-width: $mobile) {
+      margin: 20px 0;
+    }
+  }
+  @media (max-width: $mobile) {
+    flex-wrap: wrap;
+  }
+}
+
+.contactFormDesc {
+  display: flex;
+  align-self: flex-start !important;
 }

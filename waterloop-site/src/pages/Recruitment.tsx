@@ -3,7 +3,7 @@ import Hero from "components/Hero/General";
 import PositionPosting from "../components/RecruitmentForm/PositionPosting";
 import { TextWithImage } from "components/TextWithImage";
 import { MyProps } from "components/TextWithImage";
-import Text from "static/copy/Recruitment.json";
+import Text from "static/copy/Recruitment/Recruitment.json";
 import Competition from "../static/img/landing/textwithimage/competition.png";
 import "../theme/styles.scss";
 

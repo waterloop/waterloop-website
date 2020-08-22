@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "components/Button";
 import "../../theme/styles.scss";
+import Check from "../../static/img/assets/mdi_check_circle.svg";
 
 interface ContactFormProps {
   title: string;
@@ -11,6 +12,7 @@ interface ContactFormStates {
   formKey: FormKey;
   serverResponse: ServerResponse;
   formResponseError: boolean;
+  submitted: boolean;
 }
 
 interface FormKey {
@@ -24,6 +26,16 @@ interface ServerResponse {
   msg: string;
 }
 
+const Success = () => {
+  return (
+    <div className={"success-message"}>
+      <img src={Check} alt="success" />
+      <h3>Thanks for reaching out! </h3>
+      <p>Your message was submitted successfully.</p>
+    </div>
+  );
+};
+
 class ContactUsForm extends React.Component<
   ContactFormProps,
   ContactFormStates
@@ -35,6 +47,7 @@ class ContactUsForm extends React.Component<
     this.renderError = this.renderError.bind(this);
     this.renderServerError = this.renderServerError.bind(this);
     this.state = {
+      submitted: false,
       formKey: {
         email: "",
         name: "",
@@ -108,10 +121,6 @@ class ContactUsForm extends React.Component<
   }
 
   private validate(): boolean {
-    // Will need to check if everything is ok.
-    // Go through name and ensure that it is a size > 0
-    // Regex the email
-    // Message > 0;
     const stateValue = (this.state.formKey! as any) as Record<string, string>;
     for (let key of Object.keys(stateValue)) {
       if (!this.validationRules[key](stateValue[key])) {
@@ -131,8 +140,8 @@ class ContactUsForm extends React.Component<
       return;
     }
     fetch(
-      // 'https://formspree.io/xoqkdrzb' //Prod form
-      "https://formspree.io/mgenkdbb", // Dev form
+      "https://formspree.io/xpzyedjr", //Prod form
+      // "https://formspree.io/xzbjqraz", // Dev form
       {
         method: "POST",
         headers: {
@@ -150,6 +159,7 @@ class ContactUsForm extends React.Component<
         } else {
           this.handleServerReponse(false, "Sent");
           this.setState({
+            submitted: true,
             formKey: {
               email: "",
               name: "",
@@ -161,6 +171,7 @@ class ContactUsForm extends React.Component<
   }
 
   render() {
+    if (this.state.submitted) return <Success />;
     return (
       <div className="contactForm-Container">
         <form
@@ -169,7 +180,9 @@ class ContactUsForm extends React.Component<
           onSubmit={this.onFormSubmit}
         >
           <h3>{this.props.title}</h3>
-          <p>{this.props.desc}</p>
+          <div className="contactFormDesc">
+            <p>{this.props.desc}</p>
+          </div>
           {this.renderError()}
           {this.renderServerError()}
           <div className="contact-form-row">

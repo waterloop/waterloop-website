@@ -2,28 +2,33 @@ import React from "react";
 import Hero from "components/Hero/Landing";
 import { Sponsors } from "components/SponsorsLanding";
 import { ImgJSON } from "components/SponsorsLanding";
-import { TextWithImage } from "components/TextWithImage";
-import { MyProps } from "components/TextWithImage";
-import Text from "static/copy/Landing.json";
+import { TextWithImage, MyProps } from "components/TextWithImage";
+import { ColumnBlock, Props } from "components/ColumnBlock";
+import Text from "static/copy/Landing/TextWithImage.json";
+import ColText from "static/copy/Landing/ColumnBlock.json";
 import "../theme/styles.scss";
-
 // Images for sponsors:
-import UW_Engineering from "../static/img/sponsors/UW_Engineering.png";
+import Brent from "../static/img/official-sponsors/BrentsWeldingAndFab.png";
+import Weef from "../static/img/official-sponsors/weef.jpg";
+import WaterlooEng from "../static/img/official-sponsors/wes.jpg";
+import UW from "../static/img/official-sponsors/foe.jpg";
+import ClickUp from "../static/img/official-sponsors/ClickUp.png";
+import WCBranham from "../static/img/official-sponsors/WCBranham.png";
 
 import Goals from "../static/img/landing/textwithimage/goals.png";
 import Competition from "../static/img/landing/textwithimage/competition.png";
 
 const castData: MyProps[] = Text;
 const imgData: string[] = [Goals, Competition];
-
+const ColData: Props[] = ColText;
 // Place data here:
 const imgJSON: ImgJSON[] = [
-  { imgSrc: UW_Engineering, imgAlt: "Placeholder" },
-  { imgSrc: UW_Engineering, imgAlt: "Placeholder" },
-  { imgSrc: UW_Engineering, imgAlt: "Placeholder" },
-  { imgSrc: UW_Engineering, imgAlt: "Placeholder" },
-  { imgSrc: UW_Engineering, imgAlt: "Placeholder" },
-  { imgSrc: UW_Engineering, imgAlt: "Placeholder" },
+  { imgSrc: Brent, imgAlt: "Placeholder" },
+  { imgSrc: Weef, imgAlt: "Placeholder" },
+  { imgSrc: WaterlooEng, imgAlt: "Placeholder" },
+  { imgSrc: UW, imgAlt: "Placeholder" },
+  { imgSrc: ClickUp, imgAlt: "Placeholder" },
+  { imgSrc: WCBranham, imgAlt: "Placeholder" },
 ];
 
 class Home extends React.Component {
@@ -38,6 +43,10 @@ class Home extends React.Component {
             textPos={"alternate"}
             imgData={imgData}
           ></TextWithImage>
+        </div>
+        <div className="break"></div>
+        <ColumnBlock data={ColData} imgData={imgData} />
+        <div className="pageContainer">
           <div className="break"></div>
           <Sponsors data={imgJSON} />
         </div>
