@@ -8,7 +8,9 @@ class FooterComponent extends React.Component {
       <div className="FooterWrapper">
         <div className="footer-row">
           <h2>Let's get in touch.</h2>
-          <button className="button-yellow">Contact Us</button>
+          <button className="button-yellow" onClick={() => window.open("/contact", "_self")}>
+            Contact Us
+          </button>
         </div>
         <div className="footer-row">
           <div className="LogoWrapper">
