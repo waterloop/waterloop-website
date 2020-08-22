@@ -19,9 +19,9 @@ export interface FeatProps {
  */
 
 // Custom styled image component.
-const FeatImage = styled.img`
-    background: url(${props => props.src} || "nonexistent-link") no-repeat;    
-`;
+// const FeatImage = styled.img`
+//     background: url(${props => props.src} || "nonexistent-link") no-repeat;    
+// `;
 
 class SimpleFeatComp extends React.Component<FeatProps> {
     render() {
@@ -31,7 +31,7 @@ class SimpleFeatComp extends React.Component<FeatProps> {
                     <h2>{this.props.header}</h2>
                     <p className="FeatPara">{this.props.desc}</p>
                 </div>
-                <FeatImage className="FeatImage" src={this.props.imgSrc} alt={this.props.imgAlt}></FeatImage>
+                <img className="FeatImage" src={this.props.imgSrc} alt={this.props.imgAlt} />
             </div>
         );
     }
