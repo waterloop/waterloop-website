@@ -6,6 +6,7 @@ import "../../theme/styles.scss"; // For styling
 export interface FeatProps {
     imgSrc: string;
     imgAlt: string /*header: string,*/;
+    header: string;
     desc: string;
 } // Type definition for component.
 
@@ -26,7 +27,10 @@ class SimpleFeatComp extends React.Component<FeatProps> {
     render() {
         return (
             <div className="featComp">
-                <p className="FeatPara">{this.props.desc}</p>
+                <div className="FeatCol">
+                    <h2>{this.props.header}</h2>
+                    <p className="FeatPara">{this.props.desc}</p>
+                </div>
                 <FeatImage className="FeatImage" src={this.props.imgSrc} alt={this.props.imgAlt}></FeatImage>
             </div>
         );

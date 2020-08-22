@@ -16,6 +16,7 @@ class FeatPage extends React.Component {
         <SimpleFeatComp
           imgSrc={assetDir + value.imgSrc}
           imgAlt={value.imgAlt}
+          header={value.header}
           desc={value.desc}
         ></SimpleFeatComp>
       );
@@ -27,7 +28,6 @@ class FeatPage extends React.Component {
   render() {
     return (
       <div>
-        <h2 className="Header-FeaturedComponent">Features</h2>
         {this.assembleFeatSections(data.features)}
       </div>
     );

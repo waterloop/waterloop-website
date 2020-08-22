@@ -213,6 +213,7 @@ textarea {
   height: auto;
   padding-bottom: 40px;
   flex-direction: row-reverse;
+  align-content: center;
 
   @media screen and (max-width: $mobile) {
     display: flex;
@@ -246,13 +247,14 @@ textarea {
   }
 }
 
-.Header-FeaturedComponent {
-  /*type h2*/
-  margin-left: 30px;
-  font-size: 28px;
-  font-weight: bold;
-  font-style: italic;
-  font-family: "IBM Plex Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+.FeatCol {
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    font-size: 20px;
+    margin-bottom: 0;
+  }
 }
 
 .TextBlock-TextWithImage {
