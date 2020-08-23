@@ -1,4 +1,5 @@
 import React from "react";
+import styled from 'styled-components';
 import { Button } from "components/Button";
 import BuildingsImg from "static/img/background/buildings.svg";
 import DownArrowImg from "static/img/background/downArrow.svg";
@@ -7,12 +8,20 @@ import "../../theme/global.scss";
 
 type MyProps = { description: string };
 
+const LandingContainer = styled.div`
+  background-image: url(${BuildingsImg});
+
+  @media (max-width: 500px) {
+    background-image: none;
+  }
+`;
+
 class heroComponent extends React.Component<MyProps> {
   render() {
     return (
-      // ladningAligner nests background image in another div element to provide proper padding between the image and the bottom.
+      // landingAligner nests background image in another div element to provide proper padding between the image and the bottom.
       <div className="landingAligner">
-        <div className="landingContainer" style={{backgroundImage: `url(${BuildingsImg})`}}>
+        <LandingContainer className="landingContainer">
           {/* Use flex: 1 on all 3 child divs to centre the title. */}
           <div className="landingFiller"></div>
           <div className="landingContent">
@@ -42,7 +51,7 @@ class heroComponent extends React.Component<MyProps> {
               alt="navigation"
             ></img>
           </div>
-        </div>
+        </LandingContainer>
       </div>
     );
   }

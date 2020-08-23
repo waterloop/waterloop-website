@@ -512,7 +512,6 @@ h1 {
 }
 
 .landingAligner {
-  // height: 100vh;
   margin-bottom: 2em;
   background-color: #232635;
 }
@@ -524,7 +523,7 @@ h1 {
   justify-content: stretch;
   width: 100%;
   height: calc(100vh - 60px); // To adjust the height position of the background image.
-  min-height: calc(100vw * 0.2 + 300px); // Turns out you just need a bit of linear algebra ;)
+  min-height: calc(20vw + 300px); // Turns out you just need a bit of linear algebra ;)
 
   background-color: #232635;
 
@@ -584,10 +583,6 @@ h1 {
 @media (max-width: 500px) {
   .landingAligner {
     min-height: 100vw;
-  }
-
-  .landingContainer {
-    background-image: none!important;
   }
 
   .landingDescriptionContainer {
