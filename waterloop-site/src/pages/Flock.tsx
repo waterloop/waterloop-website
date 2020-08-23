@@ -27,10 +27,9 @@ class Flock extends React.Component {
         <div className="pageContainer">
           <GooseRoster
             heading="Goose V"
-            description="Goose V expands upon the LIM design from Goose IV by incorporating it alongside a conservative, scalable and cost-effective subsystem design approach. We also use a DLIM which involves 2 LIMs on either side of the I-beam track to allow for a stronger magnetic field to be maintained. The frame is made of square aluminum tubing and welded in a truss structure, weighing 10 kg in total. Our brakes, manufactured by W.C. Branham, use coiled springs to apply friction to the rail, causing the pod to come to a stop. The battery management system is used to monitor and balance the cell array used to power the LIM and low voltage systems. Our user interface was developed using QT Designer, QML, and C++; it displays sensor data about the pod’s performance, and provides a platform to control the pod remotely."
+            description="Our 'flock' of Hyperloop pods has developed in sophistication over 5 iterations of research and development. Take a look at the major features of our pod and the history of its development!"
             imgUrls={myImgArray}
           >
-            {" "}
           </GooseRoster>
           <div className="break"></div>
           <h4> Features </h4>
