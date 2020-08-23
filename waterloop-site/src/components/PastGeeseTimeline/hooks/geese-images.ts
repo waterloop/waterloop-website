@@ -24,7 +24,7 @@ const imgs: Image[] = [
   {
     imgFile: goosex,
     name: 'Goose III',
-    desc: 'With Goose III, we incorporated our first full-fledged propulsion system with a simple wheeled-motor design, along with a smaller streamlined frame and shell, while maintaining many previous design elements for simplicity and reliability. A new software system provided redundant control mechanisms across the pod. @Jimmy I actually completely forget what was on this pod halp'
+    desc: 'With Goose III, we incorporated our first full-fledged propulsion system with a simple wheeled-motor design, along with a smaller streamlined frame and shell, while maintaining many previous design elements for simplicity and reliability. A new software system provided redundant control mechanisms across the pod.'
   },
   {
     imgFile: goosex,
