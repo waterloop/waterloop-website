@@ -23,7 +23,6 @@ import Mitutoyo from "../../static/img/official-sponsors/mitutoyo.png";
 function SponsorList() {
   return (
     <div className="SponsorPage">
-      <h1>Our Sponsors</h1>
       <h1>Hypersonic</h1>
       <div className="TierWrapper">
         <Sponsor src={UW} tier="hypersonic" alt="sponsor" />
