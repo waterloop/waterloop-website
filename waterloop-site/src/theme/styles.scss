@@ -1,20 +1,59 @@
 $mobile: 425px;
+$yellow: #fed138;
+$navy: #232636;
+$white: #fefefe;
+$light-gray: #f4f4f4;
+$darknavy: #010101;
+
+.pageContainer {
+  margin: 80px 140px 80px 140px;
+
+  @media screen and (max-width: $mobile) {
+    margin: 32px 25px 32px 25px;
+  }
+}
+
+.break {
+  padding-bottom: 60px;
+
+  @media screen and (max-width: $mobile) {
+    padding-bottom: 32px;
+  }
+}
+
 h1 {
   font-size: 64pt;
-  color: #ffffff;
+  color: $white;
   text-transform: uppercase;
   margin-bottom: 0pt;
+  font-family: "IBM Plex Sans";
 }
 
 h2 {
   font-size: 12pt;
+  font-family: "IBM Plex Sans";
+  color: $darknavy;
 }
 
 h3 {
+  font-family: "IBM Plex Sans";
   font-size: 30px;
-  color: #ffffff;
+  color: $white;
   margin-top: 0pt;
   font-weight: 400;
+}
+
+h4 {
+  font-family: "IBM Plex Sans";
+  font-size: 28px;
+  color: $darknavy;
+  font-style: italic;
+  font-weight: bold;
+
+  @media screen and (max-width: $mobile) {
+    font-size: 18;
+    margin-left: 0;
+  }
 }
 
 body {
@@ -36,130 +75,118 @@ code {
   overflow-y: hidden;
 }
 
-.btn {
-  display: flex;
-  justify-content: center;
-  background-color: transparent;
-  color: #ffffff;
-  border-radius: 100pt;
-  border: 2px solid white;
-  height: 50px;
-  width: 200px;
-  text-decoration: none;
-  line-height: 10px;
-}
-
-@media (max-width: $mobile) {
-  .GooseRoster-Img {
-    /* type img */
-    /* type img */
-    display: block;
-    object-fit: cover; /*Centers image and crops instead of scales aspect ratio.*/
-    border: 10px;
-    max-width: 355px;
-    /*200 IQ bug fix (the first image doesn't load in correct size if only using width ;) */
-    height: 10em;
-  }
-
-  .FooterWrapper {
-    flex-direction: column;
-    justify-content: flex-start;
-    height: 316px;
-    width: 100%;
-  }
-  .LogoWrapper {
-    align-self: left;
-    padding-top: 15px;
-    margin-right: 400px;
-    margin-left: 0px;
-    transform: scale(0.5, 0.5);
-  }
-  .SocialMediaWrapper {
-    margin: 5px 10px 5px 2px;
-    font-size: 13px;
-  }
-  .RoutingWrapper {
-    margin: 5px 20px 5px 2px;
-    font-size: 13px;
-  }
-  .LinksWrapper {
-    margin: 0;
-  }
-}
-
-@media (min-width: $mobile) and (max-width: 600px) {
-  .FooterWrapper {
-    flex-direction: column;
-    justify-content: flex-start;
-    bottom: 0;
-    height: 316px;
-    width: 100%;
-  }
-
-  .GooseRoster-Img {
-    /* type img */
-    width: 90vw;
-  }
-
-  .LogoWrapper {
-    transform: scale(1, 1);
-    margin-left: 10%;
-    margin-bottom: 15%;
-  }
-  .SocialMediaWrapper {
-    margin: 10% 6% 20% 2%;
-    font-size: 1rem;
-  }
-  .RoutingWrapper {
-    margin: 10% 10% 20% 30%;
-    font-size: 1rem;
-  }
-  .LinksWrapper {
-    margin: 10% 10% 20% 30%;
-  }
-}
-
-@media (min-width: 800px) and (max-width: 1100px) {
-  .GooseRoster-Img {
-    /* type img */
-    width: 90vw;
-  }
-
-  .LogoWrapper {
-    align-self: flex-start;
-    padding-top: 15px;
-    margin-right: 450px;
-    transform: scale(0.5, 0.5);
-  }
-  .SocialMediaWrapper {
-    margin: 5px 10px 5px 2px;
-    font-size: 13px;
-  }
-  .RoutingWrapper {
-    margin: 5px 20px 5px 2px;
-    font-size: 13px;
-  }
-  .LinksWrapper {
-    margin: 0;
-  }
+textarea {
+  resize: none;
+  padding: 10px;
 }
 
 .FooterWrapper {
   display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
   justify-content: space-between;
-  position: relative;
-  width: 100%;
-  height: 276px;
+  height: 70vh;
   bottom: 0;
-  background: #232636;
-  margin-top: 20px;
+  background: $navy;
+  padding: 15vh 15vw 20vh;
+  transition: all 0.3s;
+  font-family: "IBM Plex Sans";
+  h2 {
+    color: $white;
+    font-size: 36px;
+    font-weight: 300;
+    margin: 0;
+  }
+  h3 {
+    font-weight: 600;
+    font-size: 18px;
+    opacity: 0.7;
+  }
+
+  @media screen and (max-width: $mobile) {
+    padding: 10vh 15vw;
+    height: 75vh;
+    overflow: hidden;
+
+    h2 {
+      font-size: 28px;
+    }
+  }
+}
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  @media screen and (max-width: $mobile) {
+    flex-wrap: wrap;
+    a {
+      font-size: 14px;
+    }
+  }
+}
+.button-yellow {
+  border: 2px solid $yellow;
+  background-color: $navy;
+  color: $yellow;
+  font-family: "IBM Plex Sans";
+  font-weight: 400;
+  font-size: 24px;
+  border-radius: 15px;
+  height: 50px;
+  width: 150px;
+  margin: 0 100px 0 0;
+  transition: all 0.3s;
+  &:hover {
+    background-color: $yellow;
+    color: $navy;
+  }
+
+  @media screen and (max-width: $mobile) {
+    margin: 30px 0;
+    font-size: 18px;
+    width: 130px;
+    height: 40px;
+  }
 }
 
 .LogoWrapper {
   align-self: center;
-  margin-left: 150px;
   height: 91.11px;
   width: 154.32px;
+
+  @media screen and (max-width: $mobile) {
+    box-sizing: border-box;
+    align-self: center;
+    > img {
+      width: 90px;
+      margin: 0 0 20px 0;
+    }
+  }
+}
+
+.LinksWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 250px;
+  > div > a {
+    margin: 6px 0 0 0;
+  }
+
+  @media screen and (max-width: $mobile) {
+    justify-content: flex-start;
+    > div {
+      margin-right: 50px;
+    }
+  }
+}
+
+.postings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .SocialMediaWrapper {
@@ -178,65 +205,55 @@ code {
   font-size: 18px;
 }
 
-.LinksWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 300px;
-  height: 276px;
-  margin-right: 150px;
-}
-
 .featComp {
-  margin: 30px;
-  min-height: 80px; /* For some reason this prevents the top image from being an incorrect size.*/
-  max-width: 70%;
+  display: flex;
+  width: 100%;
   height: auto;
-}
+  padding-bottom: 40px;
+  flex-direction: row-reverse;
+  align-content: center;
 
-@media (min-width: $mobile) {
-  .featComp {
+  @media screen and (max-width: $mobile) {
     display: flex;
-    align-items: right;
-    position: relative;
-    height: 10em;
-  }
-
-  .FeatImage {
-    position: absolute;
-    left: 0;
-    margin: 10px;
-  }
-  .FeatPara {
-    position: absolute;
-    left: 15em;
-    margin: 10px;
+    flex-direction: column;
+    padding-bottom: 25px;
   }
 }
 
 .FeatImage {
-  /* type img*/
-  display: block;
-  object-fit: cover; /*Centers image and crops instead of scales aspect ratio.*/
   border: 10px;
-  max-width: 355px;
+  max-width: 340px;
   /*200 IQ bug fix (the first image doesn't load in correct size if only using width ;) */
   height: 10em;
+  padding-right: 30px;
+
+  @media screen and (max-width: $mobile) {
+    display: flex;
+    width: 85vw;
+    height: 25vh;
+  }
 }
 
 .FeatPara {
   /* type p*/
   font-size: 18px;
   font-family: "IBM Plex Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: justify;
+
+  @media screen and (max-width: $mobile) {
+    min-width: 85vw;
+  }
 }
 
-.Header-FeaturedComponent {
-  /*type h2*/
-  margin-left: 30px;
-  font-size: 28px;
-  font-weight: bold;
-  font-style: italic;
-  font-family: "IBM Plex Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+.FeatCol {
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    font-size: 20px;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
 }
 
 .TextBlock-TextWithImage {
@@ -244,7 +261,12 @@ code {
   width: 50%;
   height: 100%;
   display: flex;
+  flex-wrap: wrap-reverse;
   flex-direction: column;
+
+  @media (max-width: $mobile) {
+    width: 100%;
+  }
 }
 
 .Img-TextWithImage {
@@ -255,25 +277,41 @@ code {
   width: 40vw;
   height: 32vw;
   border-radius: 10pt;
+
+  @media (max-width: $mobile) {
+    width: 90vw;
+    height: auto;
+  }
 }
 
 .Header-TextWithImage {
   /* type h2*/
   font-style: italic;
   font-size: calc(18px + 0.7vw);
+
+  @media (max-width: $mobile) {
+    margin: 0;
+    text-align: left;
+    font-size: 9vw;
+  }
 }
 
 .Text-TextWithImage {
   /* type p*/
   font-size: calc(12px + 0.5vw);
+
+  @media (max-width: $mobile) {
+    margin: 20px 0;
+    text-align: justify;
+    font-size: 16px;
+  }
 }
 
 .Block-TextWithImage {
   // !NOTE: Workaround until the parent scss selector introduces the padding automatically to align each of its direct children:
-  padding: 3em 0;
 
   display: flex;
-
+  padding-bottom: 60px;
   // Alternate between 2 layouts:
   // NOTE: I dunno if this can be optimized in any way.
   &.left-right-variant {
@@ -296,72 +334,34 @@ code {
 
 .ButtonBlock-TextWithImage {
   display: inline-flex;
-  justify-content: center;
+  justify-content: flex-start;
   margin-top: 2em;
+
+  @media (max-width: $mobile) {
+    display: none;
+  }
+}
+
+.text-w-image-btn-mobile {
+  display: none;
+  justify-content: flex-start;
+  padding: 20px;
+  @media (max-width: $mobile) {
+    display: inline-flex;
+  }
 }
 
 // TODO: the screen's width should be declared as a SASS variable and then used to maintain consistency.
 @media (max-width: 500px) {
-  .contactForm-InputBlockRight {
-    display: flex;
-    width: 100%;
-  }
-  .contactForm-InputBlockLeft {
-    display: flex;
-    width: 100%;
-  }
-
   .Block-TextWithImage {
     &.left-right-variant,
     &.right-left-variant {
       flex-direction: column;
-
       & > *:nth-child(1),
       & > *:nth-child(2) {
         margin-right: 0;
       }
     }
-  }
-  .TextBlock-TextWithImage {
-    width: 100%;
-  }
-  .TextWithImage {
-    display: inline;
-    padding-right: 0;
-  }
-  .Img-TextWithImage {
-    width: 100vw;
-    height: 80vw;
-  }
-  .Header-TextWithImage {
-    margin: 0;
-    text-align: left;
-    font-size: 9vw;
-  }
-  .Text-TextWithImage {
-    margin: 20px 0;
-    text-align: justify;
-    font-size: 4vw;
-  }
-  .ButtonBlock-TextWithImage {
-    margin-top: 0px;
-    margin-bottom: 20px;
-  }
-  .TextBlock-Teams {
-    display: flex;
-    width: 100%;
-    text-align: center;
-    padding: 0px 30px;
-  }
-  .Img-Teams {
-    display: none;
-  }
-  .Header-Teams {
-    font-size: 25px;
-  }
-  .Text-Teams {
-    font-size: 13px;
-    text-align: left;
   }
 }
 
@@ -371,6 +371,13 @@ code {
   width: 50%;
   height: 100%;
   padding-left: 3%;
+
+  @media (max-width: $mobile) {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    padding: 0px 30px;
+  }
 }
 
 .Img-Teams {
@@ -379,6 +386,10 @@ code {
   flex-direction: column;
   width: 315px;
   height: 227px;
+
+  @media (max-width: $mobile) {
+    display: none;
+  }
 }
 
 .Header-Teams {
@@ -386,12 +397,22 @@ code {
   font-style: italic;
   font-size: 28px;
   margin-bottom: 0px !important;
+  font-family: "IBM Plex Sans";
+
+  @media (max-width: $mobile) {
+    font-size: 25px;
+  }
 }
 
 .Text-Teams {
   /* type p*/
   font-size: 18px;
   margin-top: 14px !important;
+
+  @media (max-width: $mobile) {
+    font-size: 13px;
+    text-align: left;
+  }
 }
 
 .Block-Teams {
@@ -404,12 +425,17 @@ code {
 
 /*Landing Sponsor's component styles: */
 .Img-Box-Sponsors {
-  margin: 40px;
-  width: calc(10vw + 200px);
+  margin: 30px 20px;
+  width: calc(6vw + 200px);
   height: calc(5vw + 100px);
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media (max-width: $mobile) {
+    margin: 40px 0;
+    width: 100%;
+  }
 }
 
 .Img-Sponsors {
@@ -437,8 +463,7 @@ code {
 }
 
 .Block-Sponsors {
-  width: auto;
-  margin: 10px 5vw; // TODO: To be removed when parent container gets universal padding.
+  width: 100%;
 }
 
 @media (max-width: 500px) {
@@ -448,7 +473,7 @@ code {
   }
 }
 
-.Block-RecruimentForm {
+.Block-RecruitmentForm {
   padding: 1%;
   height: 100%;
   width: 90%;
@@ -457,11 +482,41 @@ code {
   margin-bottom: 2%;
 }
 
-.Header-RecruimentForm {
+.Header-RecruitmentForm {
   /* type h2 */
+  font-family: "IBM Plex Sans";
   font-size: 170%;
   margin-bottom: 0px !important;
   text-align: center;
+}
+
+.recruitment-modal {
+  text-align: center;
+  background-color: white;
+  padding: 30px;
+  border: 1px solid gray;
+  width: 60%;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  textarea {
+    min-height: 20px;
+  }
+  input {
+    margin: 5px 10px;
+    font-family: "IBM Plex Sans";
+  }
+
+  hr {
+    // margin: 20px;
+  }
+
+  @media screen and (max-width: $mobile) {
+    width: 100%;
+    height: 100vh;
+  }
 }
 
 .ShortInput {
@@ -541,6 +596,10 @@ code {
   height: 100vh;
   min-height: 30rem;
   background-color: #232635;
+
+  @media screen and (max-width: $mobile) {
+    align-items: center;
+  }
 }
 
 .generalFillerSpace {
@@ -556,11 +615,15 @@ code {
   justify-content: center;
   text-align: center;
   padding-bottom: 23px;
+  font-size: 64px;
 
-  > h1 {
-    font-size: 64pt;  /* For incompatible browsers */
-    font-size: #{'max(10vmin, 64pt)'};  // This properly sizes the font using CSS's max function.
-    text-align: center;
+  @media screen and (max-width: $mobile) {
+    width: 100%;
+
+    > h1 {
+      font-size: 42px;
+      text-align: center;
+    }
   }
 }
 
@@ -568,12 +631,25 @@ code {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+  font-size: 24px;
+
+  @media screen and (max-width: $mobile) {
+    > h3 {
+      font-size: 20px;
+    }
+  }
 }
 
 .generalArrowContainer {
   flex: 1;
   display: flex;
   align-items: flex-end;
+  margin-bottom: 100px;
+
+  @media screen and (max-width: $mobile) {
+    align-content: flex-end;
+    bottom: 50px;
+  }
 }
 
 .generalDownArrow {
@@ -582,35 +658,8 @@ code {
   height: 17px;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
-  padding-bottom: 100px;
-}
 
-@media (max-width: $mobile) {
-  .generalContainer {
-    align-items: center;
-  }
-
-  .generalTitleContainer {
-    width: 100%;
-
-    > h1 {
-      font-size: 42px;
-    }
-  }
-
-  .generalDescriptionContainer {
-    > h3 {
-      font-size: 24px;
-    }
-  }
-
-  .generalArrowContainer {
-    align-content: flex-end;
-    bottom: 50px;
-  }
-
-  .generalDownArrow {
-    /* type img */
+  @media screen and (max-width: $mobile) {
     width: 27px;
     height: 11px;
   }
@@ -619,6 +668,10 @@ code {
 .landingAligner {
   margin-bottom: 2em;
   background-color: #232635;
+
+  @media screen and (max-width: $mobile) {
+    min-height: 100vw;
+  }
 }
 
 .landingContainer {
@@ -645,7 +698,14 @@ code {
 .landingDescriptionContainer {
   display: flex;
   justify-content: center;
-  color: #fefefe;
+  color: $white;
+
+  @media screen and (max-width: $mobile) {
+    margin-bottom: 28px;
+    > h3 {
+      font-size: 24px;
+    }
+  }
 }
 
 .landingArrowContainer {
@@ -662,6 +722,13 @@ code {
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   padding-bottom: 2vw;
+
+  
+  @media screen and (max-width: $mobile) {
+    width: 27px;
+    height: 11px;
+    padding-bottom: 60px;
+  }
 }
 
 .landingContent {
@@ -671,9 +738,13 @@ code {
 }
 
 .landingWaterloopContainer {
-  padding: 30px 0;
+  padding: 0 0 30px 0;
   display: flex;
   justify-content: center;
+
+  @media screen and (max-width: $mobile) {
+    padding: 17px 0;
+  }
 }
 
 .landingWaterloop {
@@ -683,38 +754,14 @@ code {
   height: auto;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
-}
 
-
-@media (max-width: $mobile) {
-  .landingAligner {
-    min-height: 100vw;
-  }
-
-  .landingDescriptionContainer {
-    margin-bottom: 28px;
-    > h3 {
-      font-size: 24px;
-    }
-  }
-  
-  .landingDownArrow {
-    /* type img */
-    width: 27px;
-    height: 11px;
-    padding-bottom: 60px;
-  }
-
-  .landingWaterloopContainer {
-    padding: 17px 0;
-  }
-
-  .landingWaterloop {
+  @media screen and (max-width: $mobile) {
     /* type img */
     max-width: 335px;
     height: auto;
   }
 }
+
 
 .GooseRoster-RosterWrapper {
   display: flex;
@@ -728,11 +775,21 @@ code {
   font-style: italic;
   font-size: 28px;
   margin: 18px;
+
+  @media screen and (max-width: $mobile) {
+    margin-left: 0;
+  }
 }
 
 .GooseRoster-Description {
   font-size: 16px;
   margin-left: 18px;
+
+  @media screen and (max-width: $mobile) {
+    font-size: 14px;
+    margin-left: 0;
+    text-align: justify;
+  }
 }
 
 .GooseRoster-ImageThumbnail {
@@ -747,8 +804,16 @@ code {
 }
 
 .GooseRoster-Img {
-  /* type img */
-  width: 90vw;
+  width: 77vw;
+
+  @media screen and (max-width: $mobile) {
+    display: block;
+    object-fit: cover;
+    border: 10px;
+    width: 90vw;
+    max-width: 355px;
+    height: 10em;
+  }
 }
 
 .GooseRoster-Arrow {
@@ -761,6 +826,7 @@ code {
 .contactForm-Container {
   display: flex;
   justify-content: center;
+  align-self: center;
   width: 80%;
   margin-bottom: 4vh;
   label {
@@ -776,6 +842,10 @@ code {
     font-size: 36px;
   }
 
+  > form {
+    width: 100%;
+  }
+
   > form > p {
     font-size: 18px;
     margin: 0 auto 15px;
@@ -784,12 +854,18 @@ code {
     margin-top: 5px;
     width: calc(98% - 10px);
     height: 30px;
-    background-color: #f4f4f4;
+    background-color: $light-gray;
     font-size: 15px;
     border: none;
     border-radius: 5px;
     padding: 0 10px;
-    color: #232636;
+    color: $navy;
+  }
+
+  @media (max-width: $mobile) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
   }
 }
 
@@ -826,34 +902,46 @@ code {
     margin-top: 5px;
     width: calc(100% - 15px);
     height: 300px;
-    background-color: #f4f4f4;
+    background-color: $light-gray;
     font-size: 15px;
     border: none;
     border-radius: 5px;
     resize: none;
     padding: 5px 10px;
     font-family: IBM Plex Sans;
-    color: #232636;
+    color: $navy;
   }
   label {
     margin: 20px 0;
   }
 }
 
+.landing-btn {
+  color: $navy !important;
+  transition: all 0.3s;
+  background-color: $yellow !important;
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
 .ButtonDiv {
-  border-radius: 17px;
-  min-width: 50px;
-  max-width: auto;
-  height: 34px;
+  border: 0;
+  border-radius: 50px;
+  max-width: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5px 30px;
+  padding: 10px 25px;
+  @media screen and (max-width: $mobile) {
+    max-height: 50px;
+  }
 }
 
 .ButtonText {
-  font-size: large;
-
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "IBM Plex Sans";
   margin: 0;
 }
 
@@ -868,7 +956,6 @@ code {
     font-size: 3vw;
     text-align: center;
     color: #232635;
-
     @media screen and (max-width: $mobile) {
       font-size: 1.2rem;
     }
@@ -928,14 +1015,24 @@ code {
   }
 }
 
+.sponsorLink {
+  font-family: "IBM Plex Sans";
+  font-size: 24px;
+  font-style: italic, underline;
+  color: #010101;
+
+  @media screen and (max-width: $mobile) {
+    font-size: 24px;
+  }
+}
+
 .contactFormContainer {
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
   font-family: IBM Plex Sans !important;
   width: 100%;
   margin: 50px 0;
-
   @media (max-width: $mobile) {
     margin: 2em 0;
     min-height: 100vh;
@@ -946,6 +1043,7 @@ code {
   display: flex;
   width: 80%;
   flex-direction: column;
+  align-self: center;
 
   > div {
     margin: 5vh 0;
@@ -955,11 +1053,110 @@ code {
 
   @media (max-width: $mobile) {
     margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
   }
 }
 
 .mapContainer {
   display: flex;
   height: 50vh;
-  width: 80vw;
+  width: 64vw;
+
+  @media (max-width: $mobile) {
+    display: flex;
+    width: 100%;
+  }
+}
+
+.sponsorsButton {
+  display: flex;
+  margin-left: 3.5em;
+  margin-top: -4em;
+
+  @media screen and (max-width: $mobile) {
+    margin-left: 0;
+    margin-top: 0;
+    justify-content: center;
+  }
+}
+
+.success-message {
+  height: 60vh;
+  box-sizing: border-box;
+  width: 80%;
+  padding: 10vh 10vw;
+  margin: 0 0 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  background-color: $light-gray;
+  h3 {
+    font-style: italic;
+    color: #232635;
+    font-weight: bold;
+    margin-bottom: 0;
+    font-size: 36px;
+    text-align: center;
+  }
+  p {
+    font-size: 18px;
+    text-align: center;
+  }
+  > a {
+    border: none;
+    background-color: none;
+    font-style: italic;
+    text-decoration: underline;
+  }
+  @media screen and (max-width: $mobile) {
+    width: 100%;
+  }
+}
+
+.success-modal-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.banner {
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $navy;
+  h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 36px;
+  }
+}
+.col-block {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  h2 {
+    color: $navy;
+    font-size: 24px;
+  }
+  div:nth-child(2) {
+    margin: 0 80px;
+    @media (max-width: $mobile) {
+      margin: 20px 0;
+    }
+  }
+  @media (max-width: $mobile) {
+    flex-wrap: wrap;
+  }
+}
+
+.contactFormDesc {
+  display: flex;
+  align-self: flex-start !important;
 }

@@ -1,12 +1,13 @@
 // Core modules:
 import React from "react";
 import styled from "styled-components";
-import "../../theme/global.scss"; // For styling
+import "../../theme/styles.scss"; // For styling
 
 export interface FeatProps {
-  imgSrc: string;
-  imgAlt: string /*header: string,*/;
-  desc: string;
+    imgSrc: string;
+    imgAlt: string /*header: string,*/;
+    header: string;
+    desc: string;
 } // Type definition for component.
 
 /* NOTE: See if you can use PureComponent instead.
@@ -18,16 +19,19 @@ export interface FeatProps {
  */
 
 // Custom styled image component.
-const FeatImage = styled.img`
-    background: url(${props => props.src} || "nonexistent-link") no-repeat;    
-`;
+// const FeatImage = styled.img`
+//     background: url(${props => props.src} || "nonexistent-link") no-repeat;    
+// `;
 
 class SimpleFeatComp extends React.Component<FeatProps> {
     render() {
         return (
             <div className="featComp">
-                <p className="FeatPara">{this.props.desc}</p>
-                <FeatImage className="FeatImage" src={this.props.imgSrc} alt={this.props.imgAlt}></FeatImage>
+                <div className="FeatCol">
+                    <h2>{this.props.header}</h2>
+                    <p className="FeatPara">{this.props.desc}</p>
+                </div>
+                <img className="FeatImage" src={this.props.imgSrc} alt={this.props.imgAlt} />
             </div>
         );
     }

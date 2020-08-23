@@ -1,9 +1,8 @@
 import React from "react";
-
 import { useSwipeable } from "react-swipeable";
-
 import styled from "styled-components";
 import useGeeseImages from "./hooks/geese-images";
+import "../../theme/styles.scss";
 
 const Name = styled.div`
   font-family: IBM Plex Sans;
@@ -13,6 +12,7 @@ const Name = styled.div`
   line-height: 47px;
   text-align: center;
   color: #c4c4c4;
+  padding-bottom: 10px;
 
   @media only screen and (min-width: 900px) {
     display: flex;
@@ -28,8 +28,15 @@ const Description = styled.div`
   display: flex;
   align-items: center;
   text-align: justify;
+  width: 80%;
 
   color: #010101;
+
+  @media only screen and (max-width: 425px) {
+    font-size: 14px !important;
+    width: 90%;
+    padding-bottom: 20px;
+  }
 `;
 
 const Arrow = styled.i`
@@ -53,7 +60,7 @@ const ArrowMobile = styled.i`
 const Image = styled.img`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  width: 90%;
+  width: 80%;
   @media only screen and (max-width: 900px) {
     width: 100%;
     box-shadow: none;
@@ -63,6 +70,8 @@ const Image = styled.img`
 const ImageCarousel: React.FC = () => {
   const containerStyles: React.CSSProperties = {
     display: "flex",
+    padding: "10px",
+    width: "100%",
     justifyContent: "center",
     alignItems: "center",
   };
