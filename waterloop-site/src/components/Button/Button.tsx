@@ -64,6 +64,7 @@ const Button: React.FC<Props> = (props) => {
     border-color:  ${ColorMap[backgroundColor]};
     transition: all 0.3s;
     &:hover {
+      cursor: pointer;
       background-color: ${ColorMap[textColor]};
       border-color:  ${ColorMap[textColor]};
       transform: translateY(-5px);

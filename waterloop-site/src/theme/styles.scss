@@ -151,6 +151,7 @@ textarea {
   &:hover {
     background-color: $yellow;
     color: $navy;
+    cursor: pointer;
   }
 
   @media screen and (max-width: $mobile) {
@@ -662,6 +663,10 @@ textarea {
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   @media screen and (max-width: $mobile) {
     width: 27px;
     height: 11px;
@@ -930,6 +935,7 @@ textarea {
   transition: all 0.3s;
   background-color: $yellow !important;
   &:hover {
+    cursor: pointer;
     transform: translateY(-5px);
   }
 }
@@ -1139,6 +1145,11 @@ textarea {
     background-color: none;
     font-style: italic;
     text-decoration: underline;
+
+    &:hover {
+      cursor: pointer;
+    }
+
   }
   @media screen and (max-width: $mobile) {
     width: 100%;
