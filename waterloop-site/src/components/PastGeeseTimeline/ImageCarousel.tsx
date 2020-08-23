@@ -24,7 +24,7 @@ const Description = styled.div`
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
-  line-height: 31px;
+  line-height: 30px;
   display: flex;
   align-items: center;
   text-align: justify;
@@ -36,6 +36,7 @@ const Description = styled.div`
     font-size: 14px !important;
     width: 90%;
     padding-bottom: 20px;
+    line-height: 20px;
   }
 `;
 

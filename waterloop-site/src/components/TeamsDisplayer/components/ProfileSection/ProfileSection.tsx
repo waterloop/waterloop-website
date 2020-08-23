@@ -48,6 +48,7 @@ const TeamDescription = styled.h6`
   margin-bottom: 60px;
   font-family: IBM Plex Sans;
   font-style: normal;
+  text-align: justify;
 `;
 
 // Profile Subsection

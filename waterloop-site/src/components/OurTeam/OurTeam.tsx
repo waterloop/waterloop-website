@@ -9,6 +9,7 @@ const OurTeamContainer = styled.div`
 `
 const TeamDescriptionContainer = styled.h6`
   margin-bottom: 60px;
+  text-align: justify;
 `
 const TeamPhoto = styled.img`
 display: flex;

@@ -784,6 +784,7 @@ textarea {
 .GooseRoster-Description {
   font-size: 16px;
   margin-left: 18px;
+  font-family: "IBM Plex Sans";
 
   @media screen and (max-width: $mobile) {
     font-size: 14px;
@@ -1141,6 +1142,9 @@ textarea {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+  p {
+    text-align: justify;
+  }
   h2 {
     color: $navy;
     font-size: 24px;
