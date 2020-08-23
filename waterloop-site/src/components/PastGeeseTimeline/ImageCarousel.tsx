@@ -33,8 +33,8 @@ const Description = styled.div`
   color: #010101;
 
   @media only screen and (max-width: 425px) {
-    font-size: 14px !important;
-    width: 90%;
+    font-size: 16px !important;
+    width: 100%;
     padding-bottom: 20px;
     line-height: 20px;
   }

@@ -27,7 +27,7 @@ class Flock extends React.Component {
         <div className="pageContainer">
           <GooseRoster
             heading="Goose V"
-            description="Linear Induction Motor - To scale to Hyperloop speeds, we need contactless propulsion. LIMs provide a way to levitate, stabilize, and propel, all in the same package, and they require a simple metal track with no magnets - perfect for minimizing infrastructure cost."
+            description="Goose V expands upon the LIM design from Goose IV by incorporating it alongside a conservative, scalable and cost-effective subsystem design approach. We also use a DLIM which involves 2 LIMs on either side of the I-beam track to allow for a stronger magnetic field to be maintained. The frame is made of square aluminum tubing and welded in a truss structure, weighing 10 kg in total. Our brakes, manufactured by W.C. Branham, use coiled springs to apply friction to the rail, causing the pod to come to a stop. The battery management system is used to monitor and balance the cell array used to power the LIM and low voltage systems. Our user interface was developed using QT Designer, QML, and C++; it displays sensor data about the pod’s performance, and provides a platform to control the pod remotely."
             imgUrls={myImgArray}
           >
             {" "}

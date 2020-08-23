@@ -16,7 +16,7 @@ class Teams extends React.Component<any, any> {
       <div>
         <Hero
           title="Meet The Team"
-          description="Learn about our geese."
+          description="Den of the Waterloop Geese."
           anchor="#team"
         ></Hero>
         <div id={"#team"}></div>

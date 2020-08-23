@@ -253,6 +253,7 @@ textarea {
 
   @media screen and (max-width: $mobile) {
     min-width: 85vw;
+    font-size: 16px;
   }
 }
 
@@ -787,7 +788,7 @@ textarea {
   font-family: "IBM Plex Sans";
 
   @media screen and (max-width: $mobile) {
-    font-size: 14px;
+    font-size: 16px;
     margin-left: 0;
     text-align: justify;
   }
