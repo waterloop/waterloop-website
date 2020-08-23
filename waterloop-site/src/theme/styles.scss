@@ -798,6 +798,7 @@ textarea {
   font-size: 18px;
   margin-left: 18px;
   font-family: "IBM Plex Sans";
+  text-align: justify;
 
   @media screen and (max-width: $mobile) {
     font-size: 16px;
