@@ -1016,8 +1016,8 @@ textarea {
 
 .contactFormContainer {
   display: flex;
-  // align-items: center;
   flex-direction: column;
+  align-items: center;
   font-family: IBM Plex Sans !important;
   width: 100%;
   margin: 50px 0;
@@ -1073,7 +1073,7 @@ textarea {
 .success-message {
   height: 60vh;
   box-sizing: border-box;
-  width: 100%;
+  width: 80%;
   padding: 10vh 10vw;
   margin: 0 0 50px 0;
   display: flex;
@@ -1094,6 +1094,22 @@ textarea {
     font-size: 18px;
     text-align: center;
   }
+  > a {
+    border: none;
+    background-color: none;
+    font-style: italic;
+    text-decoration: underline;
+  }
+  @media screen and (max-width: $mobile) {
+    width: 100%;
+  }
+}
+
+.success-modal-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
 }
 
 .banner {

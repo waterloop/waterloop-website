@@ -26,24 +26,15 @@ interface ServerResponse {
   msg: string;
 }
 
-const Success = () => {
-  return (
-    <div className={"success-message"}>
-      <img src={Check} alt="success" />
-      <h3>Thanks for reaching out! </h3>
-      <p>Your message was submitted successfully.</p>
-    </div>
-  );
-};
-
 class ContactUsForm extends React.Component<
   ContactFormProps,
   ContactFormStates
-  > {
+> {
   constructor(props: ContactFormProps) {
     super(props);
     this.onFormSubmit = this.onFormSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.showForm = this.showForm.bind(this);
     this.renderError = this.renderError.bind(this);
     this.renderServerError = this.renderServerError.bind(this);
     this.state = {
@@ -113,6 +104,14 @@ class ContactUsForm extends React.Component<
     }
   }
 
+  public showForm() {
+    {
+      this.setState({
+        submitted: false,
+      });
+    }
+  }
+
   public renderServerError() {
     if (this.state.serverResponse && this.state.serverResponse.error) {
       return <p style={this.errorStyle}>{this.state.serverResponse.msg}</p>;
@@ -171,7 +170,19 @@ class ContactUsForm extends React.Component<
   }
 
   render() {
-    if (this.state.submitted) return <Success />;
+    if (this.state.submitted)
+      return (
+        <div className="success-modal-container">
+          <div className={"success-message"}>
+            <img src={Check} alt="success" />
+            <h3>Thanks for reaching out! </h3>
+            <p>Your message was submitted successfully.</p>
+            <a onClick={() => this.setState({ submitted: false })}>
+              Submit another message
+            </a>
+          </div>
+        </div>
+      );
     return (
       <div className="contactForm-Container">
         <form

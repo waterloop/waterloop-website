@@ -139,7 +139,7 @@ const TeamFilter = (props: any) => {
       })} */}
       {toggleOpen && (
         <SlideDownContainer>
-          Subteam (4)
+          Subteams
           {props.teamFilters.map((filter: boolean, i: number) => {
             //checks if filter has been applied and changes style accordingly
             //const Button = filter ? SelectedFilter : StyledFilter;
