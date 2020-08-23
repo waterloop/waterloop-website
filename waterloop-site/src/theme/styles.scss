@@ -56,6 +56,17 @@ h4 {
   }
 }
 
+h6 {
+  font-family: "IBM Plex Sans";
+  font-size: 16px;
+  color: $darknavy;
+
+  @media screen and (max-width: $mobile) {
+    font-size: 18;
+    margin-left: 0;
+  }
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
