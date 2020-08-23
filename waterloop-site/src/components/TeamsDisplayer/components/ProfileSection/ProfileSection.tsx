@@ -22,6 +22,7 @@ const ProfileSectionContainer = styled.div`
     margin-bottom: 50px;
   }
 `;
+
 const MinifiedContainer = styled.div`
   display: grid;
   grid-row-gap: 100px;
@@ -31,6 +32,7 @@ const MinifiedContainer = styled.div`
     grid-row-gap: 50px;
   }
 `;
+
 const MinifiedSubContainer = styled(MinifiedContainer)`
   grid-template-columns: repeat(4, 1fr);
 
@@ -52,7 +54,7 @@ const TeamDescription = styled.h6`
 export default class ProfileSection extends React.Component<
   PSectionProps,
   PSectionState
-> {
+  > {
   constructor(props: PSectionProps) {
     super(props);
     this.state = {

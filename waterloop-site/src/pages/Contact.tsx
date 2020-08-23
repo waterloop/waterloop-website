@@ -19,10 +19,13 @@ class Contact extends React.Component {
           <div className="contactFormContainer">
             <ContactForm
               title="Send Us a Message"
-              desc="Want to get in touch? Submit this form or drop us a message at hello@waterloop.ca."
+              desc="Want to get in touch? Submit this form or drop us a message at join@waterloop.ca"
             ></ContactForm>
             <div className="locationContainer">
               <h5>Visit Us</h5>
+              <h6>
+                Our workbay is located in the Sedra Student Design Centre, in Engineering 5 at the University of Waterloo. Come visit us and we’ll be happy to show you around!
+              </h6>
               <div className="mapContainer">
                 <GoogleMapReact
                   bootstrapURLKeys={{
