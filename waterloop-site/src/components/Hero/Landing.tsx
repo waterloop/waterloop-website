@@ -5,8 +5,9 @@ import BuildingsImg from "static/img/background/buildings.svg";
 import DownArrowImg from "static/img/background/downArrow.svg";
 import WaterloopImg from "static/img/background/waterloop.svg";
 import "../../theme/global.scss";
+import { Link } from "react-scroll";
 
-type MyProps = { description: string };
+type MyProps = { description: string; anchor: string };
 
 const LandingContainer = styled.div`
   background-image: url(${BuildingsImg});
@@ -45,11 +46,18 @@ class heroComponent extends React.Component<MyProps> {
             ></Button>
           </div>
           <div className="landingArrowContainer">
-            <img
-              className="landingDownArrow"
-              src={DownArrowImg}
-              alt="navigation"
-            ></img>
+            <Link
+              to={this.props.anchor}
+              smooth={true}
+              offset={-80}
+              duration={750}
+            >
+              <img
+                className="landingDownArrow"
+                src={DownArrowImg}
+                alt="navigation"
+              ></img>
+            </Link>
           </div>
         </LandingContainer>
       </div>
