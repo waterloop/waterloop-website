@@ -24,8 +24,8 @@ const PortraitContainer = styled.div`
   }
 `;
 const Portrait = styled.img`
-  height: 104px;
-  width: 104px;
+  height: 105px;
+  width: 105px;
   border-radius: 50% 50%;
   border: 4px solid #fbc531;
 `;
