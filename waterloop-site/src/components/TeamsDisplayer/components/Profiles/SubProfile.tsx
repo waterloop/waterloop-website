@@ -15,6 +15,7 @@ const Container = styled.div`
   }
 `;
 const PortraitContainer = styled.div`
+  height: 100%;
   flex-basis: 16px;
   display: flex;
   flex-direction: column;
