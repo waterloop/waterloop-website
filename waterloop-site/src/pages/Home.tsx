@@ -36,8 +36,9 @@ class Home extends React.Component {
     return (
       <div>
         <Hero description="A faster look on the future." anchor="#home"></Hero>
-        <div id={"#home"}></div>
+
         <div className="pageContainer">
+          <div id={"#home"}></div>
           <TextWithImage
             data={castData}
             textPos={"alternate"}
