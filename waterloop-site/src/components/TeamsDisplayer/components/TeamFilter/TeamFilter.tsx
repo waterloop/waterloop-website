@@ -16,9 +16,9 @@ const FitlerContainer = styled.div`
 const StyledHeader = styled.h5`
   font-family: IBM Plex Sans;
   font-style: italic;
-  font-weight: 600;
+  font-weight: bold;
   font-size: 36px;
-  color: #010101;
+  color: #232636;
 `;
 
 const StyledFilter = styled.button`

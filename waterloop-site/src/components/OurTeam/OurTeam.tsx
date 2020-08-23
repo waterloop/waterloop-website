@@ -8,6 +8,7 @@ const OurTeamContainer = styled.div`
   margin: 80px auto 80px auto;
 `
 const TeamDescriptionContainer = styled.h6`
+  color: #010101;
   margin-bottom: 60px;
   text-align: justify;
 `
@@ -26,6 +27,7 @@ width: 100%;
 `
 const SectionTitle = styled.h5`
   margin-bottom: 50px;
+  color: #232636;
 `
 
 const OurTeam = () => {

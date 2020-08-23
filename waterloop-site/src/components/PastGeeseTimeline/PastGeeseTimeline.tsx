@@ -6,11 +6,11 @@ import ImageCarousel from "./ImageCarousel";
 const Heading = styled.h2`
   font-family: IBM Plex Sans;
   font-style: italic;
-  font-weight: 600;
+  font-weight: bold;
   font-size: 28px;
   line-height: 62px;
 
-  color: #010101;
+  color: #232636;
 `;
 
 const Container = styled.div`

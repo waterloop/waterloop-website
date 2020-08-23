@@ -12,7 +12,7 @@ const ProfileSectionTitle = styled.h5`
   font-style: italic;
   font-weight: 600;
   font-size: 36px;
-  color: #010101;
+  color: #232636;
   margin-bottom: 50px;
 `;
 const ProfileSectionContainer = styled.div`
@@ -49,6 +49,7 @@ const TeamDescription = styled.h6`
   font-family: IBM Plex Sans;
   font-style: normal;
   text-align: justify;
+  color: #010101;
 `;
 
 // Profile Subsection

@@ -46,7 +46,7 @@ h3 {
 h4 {
   font-family: "IBM Plex Sans";
   font-size: 28px;
-  color: $darknavy;
+  color: $navy !important;
   font-style: italic;
   font-weight: bold;
 
@@ -62,7 +62,7 @@ h6 {
   color: $darknavy;
 
   @media screen and (max-width: $mobile) {
-    font-size: 18;
+    font-size: 16px;
     margin-left: 0;
   }
 }
@@ -247,6 +247,7 @@ textarea {
 
 .FeatPara {
   /* type p*/
+  color: $darknavy;
   font-size: 18px;
   font-family: "IBM Plex Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   text-align: justify;
@@ -262,6 +263,7 @@ textarea {
   flex-direction: column;
 
   h2 {
+    color: $navy;
     font-size: 20px;
     margin-bottom: 0;
     margin-top: 0;
@@ -270,6 +272,7 @@ textarea {
 
 .TextBlock-TextWithImage {
   text-align: justify;
+  color: $darknavy;
   width: 50%;
   height: 100%;
   display: flex;
@@ -298,6 +301,7 @@ textarea {
 
 .Header-TextWithImage {
   /* type h2*/
+  color: $navy;
   font-style: italic;
   font-size: calc(18px + 0.7vw);
 
@@ -457,6 +461,7 @@ textarea {
 
 .Header-Sponsors {
   /* type h2 */
+  color: $navy;
   font-style: italic;
   font-size: 1.75rem;
 }
@@ -773,6 +778,7 @@ textarea {
 
 .GooseRoster-Heading {
   /* type h2 */
+  color: $navy;
   font-style: italic;
   font-size: 28px;
   margin: 18px;
@@ -783,7 +789,8 @@ textarea {
 }
 
 .GooseRoster-Description {
-  font-size: 16px;
+  color: $darknavy;
+  font-size: 18px;
   margin-left: 18px;
   font-family: "IBM Plex Sans";
 
@@ -838,9 +845,9 @@ textarea {
   }
   h3 {
     font-style: italic;
-    color: #232635 !important;
+    color: $navy !important;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 0;
     font-size: 36px;
   }
 
@@ -1046,11 +1053,30 @@ textarea {
   width: 80%;
   flex-direction: column;
   align-self: center;
+  text-align: justify;
 
   > div {
     margin: 5vh 0;
     display: flex;
     justify-content: center;
+  }
+
+  h6 {
+    font-size: 18px;
+    color: $darknavy;
+
+    @media (max-width: $mobile) {
+      font-size: 16px  
+    }
+  }
+
+  h5 {
+    font-size: 36px;
+    color: $navy;
+
+    @media (max-width: $mobile) {
+      font-size: 36px  
+    }
   }
 
   @media (max-width: $mobile) {
@@ -1098,7 +1124,7 @@ textarea {
   background-color: $light-gray;
   h3 {
     font-style: italic;
-    color: #232635;
+    color: $darknavy;
     font-weight: bold;
     margin-bottom: 0;
     font-size: 36px;
@@ -1140,6 +1166,7 @@ textarea {
   }
 }
 .col-block {
+  color: $darknavy;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -1163,5 +1190,12 @@ textarea {
 
 .contactFormDesc {
   display: flex;
+  color: $darknavy;
+  font-size: 18px;
+  text-align: justify;
   align-self: flex-start !important;
+
+  @media (max-width: $mobile) {
+  font-size: 16px  
+  }
 }
