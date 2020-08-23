@@ -19,7 +19,7 @@ class Contact extends React.Component {
           <div className="contactFormContainer">
             <ContactForm
               title="Send Us a Message"
-              desc="Want to get in touch? Submit this form or drop us a message at join@waterloop.ca"
+              desc="Want to get in touch? Submit this form or drop us a message at contact@waterloop.ca"
             ></ContactForm>
             <div className="locationContainer">
               <h5>Visit Us</h5>
