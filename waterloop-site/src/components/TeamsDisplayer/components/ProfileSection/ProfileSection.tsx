@@ -22,6 +22,7 @@ const ProfileSectionContainer = styled.div`
     margin-bottom: 50px;
   }
 `;
+
 const MinifiedContainer = styled.div`
   display: grid;
   grid-row-gap: 100px;
@@ -31,6 +32,7 @@ const MinifiedContainer = styled.div`
     grid-row-gap: 50px;
   }
 `;
+
 const MinifiedSubContainer = styled(MinifiedContainer)`
   grid-template-columns: repeat(4, 1fr);
 
@@ -52,7 +54,7 @@ const TeamDescription = styled.h6`
 export default class ProfileSection extends React.Component<
   PSectionProps,
   PSectionState
-> {
+  > {
   constructor(props: PSectionProps) {
     super(props);
     this.state = {
@@ -80,11 +82,7 @@ export default class ProfileSection extends React.Component<
         )}
 
         <TeamDescription>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit.
+          Leads are experienced members of the team responsible for mentoring younger members, reviewing designs, doing high-level planning and scoping tasks for each term, and ensuring work is completed in time to meet schedule milestones. This group consists of all the subteam leads as well as a few executive members who manage the overall team.
         </TeamDescription>
 
         {
