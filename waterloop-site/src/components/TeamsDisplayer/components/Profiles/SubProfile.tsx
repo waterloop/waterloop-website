@@ -1,29 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-import { ContactsType } from "../interfaces";
-
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+`;
 
-  @media (max-width: 975px) {
-    width: 100%;
-    height: 150px;
-  }
-`;
-const PortraitContainer = styled.div`
-  height: 100%;
-  flex-basis: 16px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  @media (max-width: 975px) {
-    /* margin: 16px 0; */
-  }
-`;
 const Portrait = styled.img`
   height: 108px;
   width: 108px;
@@ -61,9 +45,8 @@ const InfoPosition = styled.div`
 const SubProfile = (props: any) => {
   return (
     <Container onClick={props.onClick}>
-      <PortraitContainer>
-        <Portrait src={props.portrait} alt="portrait" />
-      </PortraitContainer>
+      <Portrait src={props.portrait} alt="portrait" />
+
       <InfoContainer>
         <InfoTitle>{props.name}</InfoTitle>
         <InfoPosition>{props.position}</InfoPosition>
