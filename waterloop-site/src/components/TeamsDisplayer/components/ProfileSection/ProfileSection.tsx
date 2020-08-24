@@ -48,7 +48,7 @@ const TeamDescription = styled.h6`
   margin-bottom: 60px;
   font-family: IBM Plex Sans;
   font-style: normal;
-  text-align: justify;
+  text-align: left;
   color: #010101;
 `;
 
@@ -56,7 +56,7 @@ const TeamDescription = styled.h6`
 export default class ProfileSection extends React.Component<
   PSectionProps,
   PSectionState
-  > {
+> {
   constructor(props: PSectionProps) {
     super(props);
     this.state = {
@@ -84,7 +84,11 @@ export default class ProfileSection extends React.Component<
         )}
 
         <TeamDescription>
-          Leads are experienced members of the team responsible for mentoring younger members, reviewing designs, doing high-level planning and scoping tasks for each term, and ensuring work is completed in time to meet schedule milestones. This group consists of all the subteam leads as well as a few executive members who manage the overall team.
+          Leads are experienced members of the team responsible for mentoring
+          younger members, reviewing designs, doing high-level planning and
+          scoping tasks for each term, and ensuring work is completed in time to
+          meet schedule milestones. This group consists of all the subteam leads
+          as well as a few executive members who manage the overall team.
         </TeamDescription>
 
         {

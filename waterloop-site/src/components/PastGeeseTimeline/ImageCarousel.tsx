@@ -27,7 +27,7 @@ const Description = styled.div`
   line-height: 30px;
   display: flex;
   align-items: center;
-  text-align: justify;
+  text-align: left;
   width: 80%;
 
   color: #010101;
