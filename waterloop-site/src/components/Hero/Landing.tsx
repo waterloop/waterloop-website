@@ -1,9 +1,8 @@
 import React from "react";
-import { Button } from "components/Button";
 import BuildingsImg from "static/img/background/buildings.svg";
 import DownArrowImg from "static/img/background/downArrow.svg";
 import WaterloopImg from "static/img/background/waterloop.svg";
-import "../../theme/global.scss";
+import "../../theme/styles.scss";
 import { Link } from "react-scroll";
 
 type MyProps = { description: string; anchor: string };
@@ -13,7 +12,6 @@ class heroComponent extends React.Component<MyProps> {
     return (
       <div className="landingContainer">
         <div className="landingContent">
-          {/* waterloop svg */}
           <div className="landingWaterloopContainer">
             <img
               className="landingWaterloop"
@@ -24,13 +22,23 @@ class heroComponent extends React.Component<MyProps> {
           <div className="landingDescriptionContainer">
             <h3>{this.props.description}</h3>
           </div>
-          <Button
-            backgroundColor="yellow"
-            textColor="black"
-            text="JOIN US"
-            onClick={() => window.open("recruitment")}
-            variant={null}
-          ></Button>
+          {/* UNCOMMENT BELOW ONCE POSTINGS ARE UP */}
+          {/* <button
+            onClick={() => window.open("/recruitment", "_self")}
+            className={"ButtonDiv landing-btn"}
+          >
+            <div className={"ButtonText"}>JOIN US</div>
+          </button> */}
+          <Link
+            to={this.props.anchor}
+            smooth={true}
+            offset={-80}
+            duration={750}
+          >
+            <button className={"ButtonDiv landing-btn"}>
+              <div className={"ButtonText"}>EXPLORE</div>
+            </button>
+          </Link>
         </div>
 
         <div className="landingBuildingContainer">
@@ -39,21 +47,6 @@ class heroComponent extends React.Component<MyProps> {
             src={BuildingsImg}
             alt="buildings"
           ></img>
-        </div>
-
-        <div className="landingArrowContainer">
-          <Link
-            to={this.props.anchor}
-            smooth={true}
-            offset={-80}
-            duration={750}
-          >
-            <img
-              className="landingDownArrow"
-              src={DownArrowImg}
-              alt="navigation"
-            ></img>
-          </Link>
         </div>
       </div>
     );

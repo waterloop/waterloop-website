@@ -2,29 +2,33 @@ import React from "react";
 import Hero from "components/Hero/Landing";
 import { Sponsors } from "components/SponsorsLanding";
 import { ImgJSON } from "components/SponsorsLanding";
-
+import { TextWithImage, MyProps } from "components/TextWithImage";
+import { ColumnBlock, Props } from "components/ColumnBlock";
+import Text from "static/copy/Landing/TextWithImage.json";
+import ColText from "static/copy/Landing/ColumnBlock.json";
+import "../theme/styles.scss";
 // Images for sponsors:
-import BrentsWeldingAndFab from "../static/img/sponsors/BrentsWeldingAndFab.png";
-import UW_Engineering from "../static/img/sponsors/UW_Engineering.png";
-import UW_Engineering_Endowment from "../static/img/sponsors/UW_Engineering_Endowment.png";
-import UW_Engineering_Society from "../static/img/sponsors/UW_Engineering_Society.png";
-import ClickUp from "../static/img/sponsors/ClickUp.png";
-import WCBranham from "../static/img/sponsors/WCBranham.png";
+import Brent from "../static/img/official-sponsors/BrentsWeldingAndFab.png";
+import Weef from "../static/img/official-sponsors/weef.jpg";
+import WaterlooEng from "../static/img/official-sponsors/wes.jpg";
+import UW from "../static/img/official-sponsors/foe.jpg";
+import ClickUp from "../static/img/official-sponsors/ClickUp.png";
+import WCBranham from "../static/img/official-sponsors/WCBranham.png";
 
+import Goals from "../static/img/landing/textwithimage/goals.png";
+import Competition from "../static/img/landing/textwithimage/competition.png";
+
+const castData: MyProps[] = Text;
+const imgData: string[] = [Goals, Competition];
+const ColData: Props[] = ColText;
 // Place data here:
 const imgJSON: ImgJSON[] = [
-  {
-    imgSrc: BrentsWeldingAndFab,
-    imgAlt: "Brent's Welding and Fabrication Inc.",
-  },
-  { imgSrc: UW_Engineering, imgAlt: "Waterloo Engineering" },
-  {
-    imgSrc: UW_Engineering_Endowment,
-    imgAlt: "Waterloo Engineering Endowment Fund",
-  },
-  { imgSrc: UW_Engineering_Society, imgAlt: "Waterloo Engineering Society" },
-  { imgSrc: ClickUp, imgAlt: "ClickUp LLC." },
-  { imgSrc: WCBranham, imgAlt: "W.C. Branham Ltd." },
+  { imgSrc: Brent, imgAlt: "Placeholder" },
+  { imgSrc: Weef, imgAlt: "Placeholder" },
+  { imgSrc: WaterlooEng, imgAlt: "Placeholder" },
+  { imgSrc: UW, imgAlt: "Placeholder" },
+  { imgSrc: ClickUp, imgAlt: "Placeholder" },
+  { imgSrc: WCBranham, imgAlt: "Placeholder" },
 ];
 
 class Home extends React.Component {
@@ -32,8 +36,21 @@ class Home extends React.Component {
     return (
       <div>
         <Hero description="A faster look on the future." anchor="#home"></Hero>
-        <div id={"#home"}></div>
-        <Sponsors data={imgJSON} />
+
+        <div className="pageContainer">
+          <div id={"#home"}></div>
+          <TextWithImage
+            data={castData}
+            textPos={"alternate"}
+            imgData={imgData}
+          ></TextWithImage>
+        </div>
+        <div className="break"></div>
+        <ColumnBlock data={ColData} imgData={imgData} />
+        <div className="pageContainer">
+          <div className="break"></div>
+          <Sponsors data={imgJSON} />
+        </div>
       </div>
     );
   }

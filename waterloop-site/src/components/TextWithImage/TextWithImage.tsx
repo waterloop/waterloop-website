@@ -1,10 +1,19 @@
 import React from "react";
 import { Button } from "components/Button";
-import "theme/global.scss";
+import "theme/styles.scss";
 
-export type MyProps = { title?: string; text: string; link?: string };
+export type MyProps = {
+  title?: string;
+  text: string;
+  link?: string;
+  linkText?: string;
+};
 
-export class TextWithImage extends React.Component<{data: MyProps[], imgData: string[], textPos?: string}> {
+export class TextWithImage extends React.Component<{
+  data: MyProps[];
+  imgData: string[];
+  textPos?: string;
+}> {
   renderChildren = (data: MyProps[]) => {
     var isRightLeft = true; // Alternate between right-left and left-right layout.
     var key = -1;
@@ -22,18 +31,23 @@ export class TextWithImage extends React.Component<{data: MyProps[], imgData: st
           posClass = "right-left-variant";
           break;
 
-        default:  // The "alternate" case
-          posClass = (isRightLeft ? "right-left-variant" : "left-right-variant");
+        default:
+          // The "alternate" case
+          posClass = isRightLeft ? "right-left-variant" : "left-right-variant";
       }
 
       return (
         <div key={key} className={"Block-TextWithImage " + posClass}>
           <div className="TextBlock-TextWithImage">
-            {entry.title !== undefined ? <h2 className="Header-TextWithImage">{entry.title}</h2> : <b></b>}
+            {entry.title !== undefined ? (
+              <h2 className="Header-TextWithImage">{entry.title}</h2>
+            ) : (
+              <b></b>
+            )}
             <p className="Text-TextWithImage">{entry.text}</p>
             <div className="ButtonBlock-TextWithImage">
               {/* Hide button if no link supplied. */}
-              { this.renderButton(entry.link) }
+              {this.renderButton(entry.link, entry.linkText)}
             </div>
           </div>
           <img
@@ -44,27 +58,23 @@ export class TextWithImage extends React.Component<{data: MyProps[], imgData: st
         </div>
       );
     });
-  }
+  };
 
-  renderButton = (link: string | undefined) => {
-    if (link !== undefined) {
+  renderButton = (link: string | undefined, linkText: string | undefined) => {
+    if (link !== undefined && linkText !== undefined) {
       return (
         <Button
           backgroundColor="yellow"
           textColor="black"
-          text="LEARN MORE"
-          onClick={() => window.open(link,"_self")}
+          text={linkText}
+          onClick={() => window.open(link, "_self")}
           variant={null}
         ></Button>
       );
     }
-  }
+  };
 
   render() {
-    return (
-      <div>
-        {this.renderChildren(this.props.data)}
-      </div>
-    );
+    return <div>{this.renderChildren(this.props.data)}</div>;
   }
 }
