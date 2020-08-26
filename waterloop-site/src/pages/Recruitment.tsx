@@ -6,7 +6,7 @@ import { MyProps } from "components/TextWithImage";
 import Text from "static/copy/Recruitment/Recruitment.json";
 import Competition from "../static/img/landing/textwithimage/competition.png";
 import "../theme/styles.scss";
-
+import { Route, Switch, Router, BrowserRouter } from "react-router-dom";
 const castData: MyProps[] = Text;
 const imgData: string[] = [Competition];
 
@@ -44,7 +44,7 @@ const samplePostingsData = [
   },
 ];
 
-class Recruitment extends React.Component<any, any> {
+export class Recruitment extends React.Component<any, any> {
   render() {
     return (
       <>
@@ -63,24 +63,29 @@ class Recruitment extends React.Component<any, any> {
           <div className="break"></div>
           <h4>Current Postings</h4>
           <div className={"postings"}>
-            {samplePostingsData.length > 0 &&
-              samplePostingsData.map((item: any) => {
-                return (
-                  <PositionPosting
-                    key={item.role}
-                    role={item.role}
-                    description={item.description}
-                    skills={item.skills}
-                    technicalQ={item.technicalQ}
-                    termList={item.termList}
-                  ></PositionPosting>
-                );
-              })}
+            <BrowserRouter>
+              {samplePostingsData.length > 0 &&
+                samplePostingsData.map((item: any) => {
+                  return (
+                    // <Switch>
+                    //   <Route path="/recruitment/:">
+                        <PositionPosting
+                          key={item.role}
+                          role={item.role}
+                          description={item.description}
+                          skills={item.skills}
+                          technicalQ={item.technicalQ}
+                          termList={item.termList}
+                        ></PositionPosting>
+                    //   </Route>
+                    // </Switch>
+                  );
+                })}
+            </BrowserRouter>
           </div>
-        </div>
+          </div>
       </>
     );
   }
 }
 
-export default Recruitment;
