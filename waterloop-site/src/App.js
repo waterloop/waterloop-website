@@ -62,7 +62,7 @@ class App extends React.Component {
             <Route path="/recruitment">
               <Recruitment />
             </Route>
-            <Route path="/posting">
+            <Route path="/recruitment/:id">
               <JobPostingPage />
             </Route>
           </Switch>

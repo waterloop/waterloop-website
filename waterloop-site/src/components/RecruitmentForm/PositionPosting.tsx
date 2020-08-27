@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Button } from "../Button";
 import Form from "./RecruitmentForm";
 import { useParams } from "react-router";
+import { BrowserRouter, Link } from "react-router-dom";
 
 const TextBlock = styled.div`
   padding-right: 40px;
@@ -25,6 +26,7 @@ const Text = styled.p`
   margin-top: 14px !important;
   display: inline-blimport PositionPosting from './PositionPosting';
 ock;import { MyProps } from 'components/TextWithImage';
+import { BrowserRouter } from 'react-router-dom';
 
   text-align: left;
 `;
@@ -90,49 +92,46 @@ type MyProps = {
 type MyState = { joinClicked: boolean };
 
 
-const PositionPosting: FunctionComponent<MyProps> = ({role, description, skills, technicalQ, termList}) => {
+const PositionPosting: FunctionComponent<MyProps> = ({ role, description, skills, technicalQ, termList }) => {
 
-  const [isJoinClicked,setJoinClicked] = useState(false)
-  
-  const onClick = () => {
-  if (!isJoinClicked) {
-    setJoinClicked(true);
-  } else {
-    setJoinClicked(false);
-  }
-  return;
-}
+  const [isJoinClicked, setJoinClicked] = useState(false)
+
+  let { id } = useParams()
 
   return (
     <Block>
       <TextBlock>
-        <Header>{role}</Header>
+        <BrowserRouter>
+          <Link to="/postingNumber">
+            <Header>{role}</Header>
+          </Link>
+        </BrowserRouter>
         <Text>{description}</Text>
-        {/* <Text>
-            <b>Skills Required: </b>
-            {this.props.skills}
-          </Text> */}
+        <Text>
+          <b>Skills Required: </b>
+          {skills}
+        </Text>
       </TextBlock>
       <ButtonBlock>
-        {/* <Button
-          onClick={this.onClick.bind(this)}
+        <Button
+          onClick={() => setJoinClicked(!isJoinClicked)}
           text="APPLY"
           backgroundColor="yellow"
           textColor="black"
           variant={null}
-        ></Button> */}
+        ></Button>
       </ButtonBlock>
-      {/* {this.state.joinClicked && (
+      {isJoinClicked && (
         <Background>
-          <CloseBtn onClick={this.onClick.bind(this)}>X</CloseBtn>
+          <CloseBtn onClick={() => setJoinClicked(!isJoinClicked)}>X</CloseBtn>
           <Form
-            role={this.props.role}
-            technicalQ={this.props.technicalQ}
-            termList={this.props.termList}
-            onSuccess={() => this.setState({ joinClicked: false })}
+            role={role}
+            technicalQ={technicalQ}
+            termList={termList}
+            onSuccess={() => setJoinClicked(false)}
           />
         </Background>
-      )} */}
+      )}
     </Block>
   )
 }
