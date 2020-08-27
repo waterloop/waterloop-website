@@ -79,17 +79,11 @@ const sortProfiles = (
       // create a profile
       const profile = buildProfile(member, teamType);
 
-      // Set a side a Team Leads subarray
-      if (member.memberType.name === "Technical Director") {
-        insertProfileToMap(teams, "Team Leads", profile);
-      }
       // Group Members by their subteams
-      else {
-        member.subteams.forEach((team: string) => {
-          const teamName = teamType.get(team) as string;
-          insertProfileToMap(teams, teamName, profile);
-        });
-      }
+      member.subteams.forEach((team: string) => {
+        const teamName = teamType.get(team) as string; 
+        insertProfileToMap(teams, teamName, profile);
+      });
     }
   });
 
