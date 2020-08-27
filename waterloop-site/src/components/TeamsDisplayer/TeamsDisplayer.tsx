@@ -44,8 +44,8 @@ export default class TeamsDisplayer extends React.Component<
         "Software",
         "Mechanical",
         "Electrical",
-        "Business",
-        "Infrastructure",
+        "Web",
+        "Admin",
       ],
       memberData: new Map(),
       subteamIdMap: new Map(),
@@ -56,6 +56,32 @@ export default class TeamsDisplayer extends React.Component<
   componentDidMount() {
     this.fetchSubteams();
     this.updateFilters(this.props.initFilterSetting);
+  }
+
+  sortSubteams(subteams: SubteamProps[]) {
+    let newTeams = [] as Array<SubteamProps>;
+    subteams.map(
+      (team: { title: string; members: Array<ProfileType> }, i: number) => {
+        if (team.title === "Exec") {
+          newTeams[0] = team;
+        } else if (team.title === "Team Leads") {
+          newTeams[1] = team;
+        } else if (team.title === "Mechanical") {
+          newTeams[2] = team;
+        } else if (team.title === "Electrical") {
+          newTeams[3] = team;
+        } else if (team.title === "Software") {
+          newTeams[4] = team;
+        } else if (team.title === "Web") {
+          newTeams[5] = team;
+        } else if (team.title === "Infrastructure") {
+          newTeams[6] = team;
+        } else if (team.title === "Admin") {
+          newTeams[7] = team;
+        }
+      }
+    );
+    return newTeams;
   }
 
   // fetch subteams
@@ -145,6 +171,7 @@ export default class TeamsDisplayer extends React.Component<
       filteredTeams.forEach((team: Array<ProfileType>, name: string) => {
         if (name !== "Team Leads") {
           subteams.push({ title: name, members: team });
+          subteams = this.sortSubteams(subteams);
         }
       });
     }
