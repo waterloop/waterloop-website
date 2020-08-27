@@ -46,7 +46,6 @@ const SubProfile = (props: any) => {
   return (
     <Container onClick={props.onClick}>
       <Portrait src={props.portrait} alt="portrait" />
-
       <InfoContainer>
         <InfoTitle>{props.name}</InfoTitle>
         <InfoPosition>{props.position}</InfoPosition>

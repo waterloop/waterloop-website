@@ -100,22 +100,22 @@ const sortProfiles = (
 // ?TODO: Should this be hardcoded?
 const checkWithinTeamFilters = (name: string, teamFilters: Array<boolean>) => {
   if (!teamFilters[0]) {
-    if (!teamFilters[1] && name === "Software") {
+    if (!teamFilters[1] && name === "Exec") {
       return false;
     }
-    if (!teamFilters[2] && name === "Mechanical") {
+    if (!teamFilters[2] && name === "Software") {
       return false;
     }
-    if (!teamFilters[3] && name === "Electrical") {
+    if (!teamFilters[3] && name === "Mechanical") {
       return false;
     }
-    if (!teamFilters[4] && name === "Web") {
+    if (!teamFilters[4] && name === "Electrical") {
       return false;
     }
-    if (
-      !teamFilters[5] &&
-      (name === "Infrastructure" || name === "Admin" || name === "Exec")
-    ) {
+    if (!teamFilters[5] && name === "Web") {
+      return false;
+    }
+    if (!teamFilters[6] && (name === "Infrastructure" || name === "Admin")) {
       return false;
     }
   }
