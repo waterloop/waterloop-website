@@ -21,12 +21,17 @@ $darknavy: #010101;
   }
 }
 
+p {
+  font-family: "IBM Plex Sans";
+}
+
 h1 {
   font-size: 64pt;
   color: $white;
   text-transform: uppercase;
   margin-bottom: 0pt;
   font-family: "IBM Plex Sans";
+  font-weight: 600 !important;
 }
 
 h2 {
@@ -1076,6 +1081,9 @@ textarea {
   h6 {
     font-size: 18px;
     color: $darknavy;
+    font-family: 'IBM Plex Sans';
+    font-weight: normal;
+    margin: 18px 0;
 
     @media (max-width: $mobile) {
       font-size: 16px;
