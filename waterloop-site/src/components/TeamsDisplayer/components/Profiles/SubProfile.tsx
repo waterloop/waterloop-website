@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Default from "../../../../static/img/team/default-headshot1.png";
 
 import { ContactsType } from "../interfaces";
 
@@ -62,7 +63,7 @@ const SubProfile = (props: any) => {
   return (
     <Container onClick={props.onClick}>
       <PortraitContainer>
-        <Portrait src={props.portrait} alt="portrait" />
+        <Portrait src={props.portrait || Default} alt="portrait" />
       </PortraitContainer>
       <InfoContainer>
         <InfoTitle>{props.name}</InfoTitle>

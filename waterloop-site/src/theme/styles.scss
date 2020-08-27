@@ -30,9 +30,14 @@ h1 {
 }
 
 h2 {
-  font-size: 12pt;
+  font-size: 36px;
+  font-style: italic;
   font-family: "IBM Plex Sans";
-  color: $darknavy;
+  color: $navy;
+
+  @media screen and (max-width: $mobile) {
+    font-size: 28px;
+  }
 }
 
 h3 {
@@ -107,6 +112,7 @@ textarea {
     font-size: 36px;
     font-weight: 300;
     margin: 0;
+    font-style: normal;
   }
   h3 {
     font-weight: 600;
@@ -460,13 +466,6 @@ textarea {
   width: 100%;
 }
 
-.Header-Sponsors {
-  /* type h2 */
-  color: $navy;
-  font-style: italic;
-  font-size: 1.75rem;
-}
-
 .SponsorsContainer {
   display: flex;
   flex-wrap: wrap;
@@ -638,6 +637,7 @@ textarea {
   display: flex;
   justify-content: center;
   margin-bottom: 100px;
+  text-align: center;
 
   @media screen and (max-width: $mobile) {
     > h3 {
@@ -687,6 +687,7 @@ textarea {
 .landingDescriptionContainer {
   display: flex;
   justify-content: center;
+  text-align: center;
   color: $white;
 
   @media screen and (max-width: $mobile) {
@@ -796,7 +797,6 @@ textarea {
 .GooseRoster-Description {
   color: $darknavy;
   font-size: 18px;
-  margin-left: 18px;
   font-family: "IBM Plex Sans";
   text-align: justify;
 

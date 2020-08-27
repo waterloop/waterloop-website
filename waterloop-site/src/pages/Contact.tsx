@@ -22,7 +22,7 @@ class Contact extends React.Component {
               desc="Want to get in touch? Submit this form or drop us a message at contact@waterloop.ca"
             ></ContactForm>
             <div className="locationContainer">
-              <h5>Visit Us</h5>
+              <h2>Visit Us</h2>
               <h6>
                 Our workbay is located in the Sedra Student Design Centre, in Engineering 5 at the University of Waterloo. Come visit us and we’ll be happy to show you around!
               </h6>

@@ -32,7 +32,7 @@ class Flock extends React.Component {
           >
           </GooseRoster>
           <div className="break"></div>
-          <h4> Features </h4>
+          <h2> Features </h2>
           <SimpleFeatures></SimpleFeatures>
           <div className="break"></div>
           <PastGeeseTimeline />
