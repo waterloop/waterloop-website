@@ -41,11 +41,12 @@ export default class TeamsDisplayer extends React.Component<
       teamFilters: Array(6).fill(false),
       teamFilterLabels: [
         "All Teams",
+        "Exec",
         "Software",
         "Mechanical",
         "Electrical",
-        "Business",
-        "Infrastructure",
+        "Web",
+        "Admin",
       ],
       memberData: new Map(),
       subteamIdMap: new Map(),
@@ -56,6 +57,30 @@ export default class TeamsDisplayer extends React.Component<
   componentDidMount() {
     this.fetchSubteams();
     this.updateFilters(this.props.initFilterSetting);
+  }
+
+  sortSubteams(subteams: SubteamProps[]) {
+    let newTeams = [] as Array<SubteamProps>;
+    subteams.map(
+      (team: { title: string; members: Array<ProfileType> }, i: number) => {
+        if (team.title === "Exec") {
+          newTeams[0] = team;
+        } else if (team.title === "Mechanical") {
+          newTeams[1] = team;
+        } else if (team.title === "Electrical") {
+          newTeams[2] = team;
+        } else if (team.title === "Software") {
+          newTeams[3] = team;
+        } else if (team.title === "Web") {
+          newTeams[4] = team;
+        } else if (team.title === "Infrastructure") {
+          newTeams[5] = team;
+        } else if (team.title === "Admin") {
+          newTeams[6] = team;
+        }
+      }
+    );
+    return newTeams;
   }
 
   // fetch subteams
@@ -139,13 +164,12 @@ export default class TeamsDisplayer extends React.Component<
     if (teams.size > 0) {
       // Apply filters
       const filteredTeams = applyTeamFilters(teams, this.state.teamFilters);
-      if (filteredTeams.has("Team Leads")) {
-        leads = filteredTeams.get("Team Leads") as Array<ProfileType>;
-      }
+      // if (filteredTeams.has("Team Leads")) {
+      //   leads = filteredTeams.get("Team Leads") as Array<ProfileType>;
+      // }
       filteredTeams.forEach((team: Array<ProfileType>, name: string) => {
-        if (name !== "Team Leads") {
-          subteams.push({ title: name, members: team });
-        }
+        subteams.push({ title: name, members: team });
+        subteams = this.sortSubteams(subteams);
       });
     }
 
@@ -157,14 +181,6 @@ export default class TeamsDisplayer extends React.Component<
           updateFilters={(id: number) => this.updateFilters(id)}
         />
         {this.state.loading ? <Preloader /> : <></>}
-
-        {leads.length > 0 && (
-          <ProfileSection
-            title={"Team Leads"}
-            profiles={leads}
-            profileType={"lead"}
-          />
-        )}
 
         {subteams.length > 0 &&
           subteams.map(
