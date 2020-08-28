@@ -25,11 +25,13 @@ const InfoContainer = styled.div`
 `;
 const InfoTitle = styled.div`
   margin: 8px 0;
+  text-align: center;
 
   @media (max-width: 975px) {
   }
 `;
 const InfoPosition = styled.div`
+  text-align: center;
   @media (max-width: 975px) {
   }
 `;
