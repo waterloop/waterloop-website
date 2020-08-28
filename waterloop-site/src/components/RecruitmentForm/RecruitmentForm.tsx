@@ -5,8 +5,6 @@ import useRecruitmentForm from "./hooks/recruitment-form";
 import RadioButton from "./RadioButton";
 
 const Label = styled.label`
-  font-family: "IBM Plex Sans";
-  font-weight: bold;
   display: block;
   margin: 1%;
   margin-bottom: 7px;
@@ -15,14 +13,6 @@ const Label = styled.label`
 const RadioWrapper = styled.form`
   display: flex;
   justify-content: center;
-`;
-
-const Header = styled.h2.attrs({
-  className: "Header-RecruitmentForm",
-})`
-  font-size: 170%;
-  margin: 0 0 25px 15px !important;
-  text-align: center;
 `;
 
 const Input = styled(({ valid, ...props }) => <input {...props} />)`
@@ -37,7 +27,6 @@ const Input = styled(({ valid, ...props }) => <input {...props} />)`
 
 const TextArea = styled(({ valid, ...props }) => <textarea {...props} />)`
   text-align: left;
-  font-family: "IBM Plex Sans";
   display: inline-block;
   margin: 3%;
   width: 75%;
@@ -101,7 +90,7 @@ const Form: React.FC<MyProps> = ({ role, technicalQ, termList, onSuccess }) => {
 
   return (
     <div className="recruitment-modal">
-      <Header>Applying for {role.toUpperCase()}</Header>
+      <h2>Applying for {role.toUpperCase()}</h2>
       <div>{userInfoInputs}</div>
       <hr />
       <Label>Term you're applying for:</Label>

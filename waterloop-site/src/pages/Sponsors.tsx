@@ -15,7 +15,7 @@ class Sponsors extends React.Component {
     return (
       <div>
         <Hero
-          title="Support Our Team"
+          title="SUPPORT OUR TEAM"
           description="Help fund the future."
           anchor="#sponsor-list"
         ></Hero>
@@ -28,7 +28,7 @@ class Sponsors extends React.Component {
           ></TextWithImage>
 
           <div className="break"></div>
-          <SponsorList></SponsorList>
+          <SponsorList />
         </div>
       </div>
     );

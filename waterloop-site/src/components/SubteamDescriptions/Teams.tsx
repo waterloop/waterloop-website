@@ -25,21 +25,10 @@ const Img = styled.img`
   }
 `;
 
-const Header = styled.h2`
-  font-style: italic;
-  font-size: 28px;
-  margin-bottom: 0px !important;
-  @media (max-width: 500px) {
-    font-size: 25px;
-  }
-`;
-
 const Text = styled.p`
-  font-size: 18px;
   margin-top: 14px !important;
 
   @media (max-width: 500px) {
-    font-size: 13px;
     text-align: left;
   }
 `;
@@ -60,7 +49,7 @@ class SubteamsOverview extends React.Component<MyProps> {
       <Block>
         <Img src={this.props.image} alt="photo"></Img>
         <TextBlock>
-          <Header>{this.props.subteam}</Header>
+          <h2>{this.props.subteam}</h2>
           <Text>{this.props.description}</Text>
         </TextBlock>
       </Block>

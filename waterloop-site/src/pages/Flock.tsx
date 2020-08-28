@@ -20,7 +20,7 @@ class Flock extends React.Component {
     return (
       <div>
         <Hero
-          title="The Flock"
+          title="THE FLOCK"
           description="Learn about our geese."
           anchor="#flock"
         ></Hero>
@@ -34,7 +34,7 @@ class Flock extends React.Component {
           </GooseRoster>
           <div className="break"></div>
           <h2> Features </h2>
-          <SimpleFeatures></SimpleFeatures>
+          <SimpleFeatures />
           <div className="break"></div>
           <PastGeeseTimeline />
         </div>

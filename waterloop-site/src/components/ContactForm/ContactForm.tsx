@@ -29,7 +29,7 @@ interface ServerResponse {
 class ContactUsForm extends React.Component<
   ContactFormProps,
   ContactFormStates
-  > {
+> {
   constructor(props: ContactFormProps) {
     super(props);
     this.onFormSubmit = this.onFormSubmit.bind(this);
@@ -175,7 +175,7 @@ class ContactUsForm extends React.Component<
         <div className="success-modal-container">
           <div className={"success-message"}>
             <img src={Check} alt="success" />
-            <h3>Thanks for reaching out! </h3>
+            <h2>Thanks for reaching out! </h2>
             <p>Your message was submitted successfully.</p>
             <a onClick={() => this.setState({ submitted: false })}>
               Submit another message
@@ -190,8 +190,8 @@ class ContactUsForm extends React.Component<
           style={this.formStyle}
           onSubmit={this.onFormSubmit}
         >
-          <h2>{this.props.title}</h2>
-          <div className="contactFormDesc">
+          <h3>{this.props.title}</h3>
+          <div>
             <p>{this.props.desc}</p>
           </div>
           {this.renderError()}

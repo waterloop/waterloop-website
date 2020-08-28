@@ -15,7 +15,7 @@ class Teams extends React.Component<any, any> {
     return (
       <div>
         <Hero
-          title="Meet The Team"
+          title="MEET THE TEAM"
           description="Den of the Waterloop Geese."
           anchor="#team"
         ></Hero>
