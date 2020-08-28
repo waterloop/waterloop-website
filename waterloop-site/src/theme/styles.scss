@@ -186,8 +186,9 @@ textarea {
 
 .postings {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: left;
+  align-items: left;
+  text-decoration: none;
   flex-direction: column;
 }
 
@@ -622,6 +623,8 @@ textarea {
     }
   }
 }
+
+
 
 .generalArrowContainer {
   position: absolute;
@@ -1127,4 +1130,18 @@ textarea {
 .contactFormDesc {
   display: flex;
   align-self: flex-start !important;
+}
+
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
 }
