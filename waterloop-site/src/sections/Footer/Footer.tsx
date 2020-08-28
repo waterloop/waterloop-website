@@ -5,10 +5,15 @@ import "../../theme/styles.scss"; // For styling
 class FooterComponent extends React.Component {
   render() {
     return (
-      <div className="FooterWrapper">
+      <div className="FooterWrapper footer-text">
         <div className="footer-row">
-          <h2>Let's get in touch.</h2>
-          <button className="button-yellow">Contact Us</button>
+          <h3>Let's get in touch.</h3>
+          <button
+            className="button-yellow"
+            onClick={() => window.open("/contact", "_self")}
+          >
+            Contact Us
+          </button>
         </div>
         <div className="footer-row">
           <div className="LogoWrapper">
@@ -17,7 +22,7 @@ class FooterComponent extends React.Component {
 
           <div className="LinksWrapper">
             <div className="RoutingWrapper">
-              <h3>Explore</h3>
+              <p>Explore</p>
               <LinkComponent link="/team" title="Our Team" external={false} />
               <LinkComponent link="/" title="Hyperloop" external={false} />
               <LinkComponent
@@ -33,7 +38,7 @@ class FooterComponent extends React.Component {
             </div>
 
             <div className="SocialMediaWrapper">
-              <h3>Social</h3>
+              <p>Social</p>
               <LinkComponent
                 link="https://twitter.com/team_waterloop"
                 title="Twitter"

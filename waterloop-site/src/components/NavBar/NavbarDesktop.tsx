@@ -13,10 +13,10 @@ const NavbarContainer = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding-top: 8px;
   width: 100%;
-  height: 55px;
+  height: 64px;
   background-color: #232635;
+  position: absolute;
 `;
 
 const ListContainer = styled.div`

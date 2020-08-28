@@ -4,18 +4,18 @@ import SponsorList from "components/Sponsor/SponsorPage";
 import { TextWithImage } from "components/TextWithImage";
 import { MyProps } from "components/TextWithImage";
 import Text from "static/copy/Sponsors/Sponsors.json";
-import Goals from "../static/img/landing/textwithimage/goals.png";
+import SponsorsImg from "../static/img/team/sponsors.png";
 import "../theme/styles.scss";
 
 const castData: MyProps[] = Text;
-const imgData: string[] = [Goals];
+const imgData: string[] = [SponsorsImg];
 
 class Sponsors extends React.Component {
   render() {
     return (
       <div>
         <Hero
-          title="Support Our Team"
+          title="SUPPORT OUR TEAM"
           description="Help fund the future."
           anchor="#sponsor-list"
         ></Hero>
@@ -28,7 +28,7 @@ class Sponsors extends React.Component {
           ></TextWithImage>
 
           <div className="break"></div>
-          <SponsorList></SponsorList>
+          <SponsorList />
         </div>
       </div>
     );

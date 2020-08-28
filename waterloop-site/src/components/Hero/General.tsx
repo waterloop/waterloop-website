@@ -10,10 +10,10 @@ class heroComponent extends React.Component<MyProps> {
     return (
       <div className="generalContainer">
         <div className="generalTitleContainer">
-          <h1>{this.props.title}</h1>
+          <h1 className="center-text">{this.props.title}</h1>
         </div>
-        <div className="generalDescriptionContainer">
-          <h3>{this.props.description}</h3>
+        <div className="generalDescriptionContainer ">
+          <h3 className="white-text center-text">{this.props.description}</h3>
         </div>
         <Link to={this.props.anchor} smooth={true} duration={750}>
           <img

@@ -44,7 +44,7 @@ export class Recruitment extends React.Component<any, any> {
     return (
       <>
         <Hero
-          title="Join Us"
+          title="JOIN US"
           description="Join our team."
           anchor="#recruitment"
         ></Hero>

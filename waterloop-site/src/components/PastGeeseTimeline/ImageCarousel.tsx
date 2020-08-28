@@ -5,36 +5,24 @@ import useGeeseImages from "./hooks/geese-images";
 import "../../theme/styles.scss";
 
 const Name = styled.div`
-  font-family: IBM Plex Sans;
-  font-style: italic;
-  font-weight: 500;
-  font-size: 36px;
-  line-height: 47px;
   text-align: center;
   color: #c4c4c4;
   padding-bottom: 10px;
-
   @media only screen and (min-width: 900px) {
     display: flex;
   }
 `;
 
 const Description = styled.div`
-  font-family: IBM Plex Sans;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 31px;
   display: flex;
   align-items: center;
-  text-align: justify;
+  text-align: left;
   width: 80%;
 
   color: #010101;
 
   @media only screen and (max-width: 425px) {
-    font-size: 14px !important;
-    width: 90%;
+    width: 100%;
     padding-bottom: 20px;
   }
 `;
@@ -102,7 +90,9 @@ const ImageCarousel: React.FC = () => {
         }}
       >
         <Name>{name}</Name>
-        <Description>{desc}</Description>
+        <Description>
+          <p>{desc}</p>
+        </Description>
         <div
           style={{
             display: "flex",

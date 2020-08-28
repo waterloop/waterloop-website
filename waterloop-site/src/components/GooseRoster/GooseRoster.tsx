@@ -56,8 +56,8 @@ class GooseRoster extends React.Component<imgProps> {
   render() {
     return (
       <div className="GooseRoster-RosterWrapper">
-        <h2 className="GooseRoster-Heading">{this.props.heading}</h2>
-        <div className="GooseRoster-Description">{this.props.description}</div>
+        <h2>{this.props.heading}</h2>
+        <p> {this.props.description}</p>
 
         <div className="GooseRoster-ImageThumbnail">
           <Arrow className="material-icons" onClick={this.previousSlide}>
@@ -85,12 +85,15 @@ class GooseRoster extends React.Component<imgProps> {
               alignItems: "center",
             }}
           >
-            <ArrowMobile className="material-icons" onClick={this.previousSlide}>
+            <ArrowMobile
+              className="material-icons"
+              onClick={this.previousSlide}
+            >
               keyboard_arrow_left
-          </ArrowMobile>
+            </ArrowMobile>
             <ArrowMobile className="material-icons" onClick={this.nextSlide}>
               keyboard_arrow_right
-          </ArrowMobile>
+            </ArrowMobile>
           </div>
         </div>
       </div>
