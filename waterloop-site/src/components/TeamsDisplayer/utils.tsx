@@ -79,17 +79,11 @@ const sortProfiles = (
       // create a profile
       const profile = buildProfile(member, teamType);
 
-      // Set a side a Team Leads subarray
-      if (member.memberType.name === "Technical Director") {
-        insertProfileToMap(teams, "Team Leads", profile);
-      }
       // Group Members by their subteams
-      else {
-        member.subteams.forEach((team: string) => {
-          const teamName = teamType.get(team) as string;
-          insertProfileToMap(teams, teamName, profile);
-        });
-      }
+      member.subteams.forEach((team: string) => {
+        const teamName = teamType.get(team) as string; 
+        insertProfileToMap(teams, teamName, profile);
+      });
     }
   });
 
@@ -100,31 +94,22 @@ const sortProfiles = (
 // ?TODO: Should this be hardcoded?
 const checkWithinTeamFilters = (name: string, teamFilters: Array<boolean>) => {
   if (!teamFilters[0]) {
-    if (
-      !teamFilters[1] &&
-      (name === "Software" ||
-        name === "Web" ||
-        name === "5f31fa187c68ea281c540228" ||
-        name === "5e62f41ef0a94e3bb2b48638")
-    ) {
+    if (!teamFilters[1] && name === "Exec") {
       return false;
     }
-    if (
-      !teamFilters[2] &&
-      (name === "Mechanical" || name === "5e62f42ef0a94e3bb2b4863a")
-    ) {
+    if (!teamFilters[2] && name === "Software") {
       return false;
     }
-    if (
-      !teamFilters[3] &&
-      (name === "Electrical" || name === "5e62f428f0a94e3bb2b48639")
-    ) {
+    if (!teamFilters[3] && name === "Mechanical") {
       return false;
     }
-    if (!teamFilters[4] && (name === "Admin" || name === "Exec")) {
+    if (!teamFilters[4] && name === "Electrical") {
       return false;
     }
-    if (!teamFilters[5] && name === "Infrastructure") {
+    if (!teamFilters[5] && name === "Web") {
+      return false;
+    }
+    if (!teamFilters[6] && (name === "Infrastructure" || name === "Admin")) {
       return false;
     }
   }

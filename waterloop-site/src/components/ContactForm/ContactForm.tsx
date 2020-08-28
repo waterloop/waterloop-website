@@ -29,7 +29,7 @@ interface ServerResponse {
 class ContactUsForm extends React.Component<
   ContactFormProps,
   ContactFormStates
-> {
+  > {
   constructor(props: ContactFormProps) {
     super(props);
     this.onFormSubmit = this.onFormSubmit.bind(this);
@@ -190,7 +190,7 @@ class ContactUsForm extends React.Component<
           style={this.formStyle}
           onSubmit={this.onFormSubmit}
         >
-          <h3>{this.props.title}</h3>
+          <h2>{this.props.title}</h2>
           <div className="contactFormDesc">
             <p>{this.props.desc}</p>
           </div>

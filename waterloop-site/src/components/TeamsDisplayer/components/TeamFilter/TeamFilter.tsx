@@ -3,13 +3,13 @@ import styled from "styled-components";
 import FilterImg from "../../../../static/img/assets/filter_active.svg";
 import Checkbox from "./Checkbox";
 
-const FitlerContainer = styled.div`
+const FilterContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-top: 40px;
-  margin-bottom: 80px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   align-items: center;
 `;
 
@@ -84,7 +84,6 @@ const SlideDownContainer = styled.div`
   flex-direction: column;
   width: 100%;
   flex-basis: 100%;
-  margin-top: 0.5rem;
   border: 1.3px solid #dbdbdb;
   justify-items: space-evenly;
   border-radius: 4px;
@@ -127,22 +126,16 @@ const TeamFilter = (props: any) => {
   const [toggleOpen, setToggle] = useState(false);
 
   return (
-    <FitlerContainer>
+    <FilterContainer>
       <StyledHeader>Team Roster</StyledHeader>
       <StyledButton onClick={() => setToggle(!toggleOpen)}>
         <StyledImage src={FilterImg}></StyledImage>
         Filter
       </StyledButton>
-      {/* {props.teamFilters.map((filter: boolean, i: number) => {
-        const Button = filter ? SelectedFilter : StyledFilter;
-        return <Button key={i} onClick={() => props.updateFilters(i)}>{props.filterLabels[i]}</Button>
-      })} */}
       {toggleOpen && (
         <SlideDownContainer>
           Subteams
           {props.teamFilters.map((filter: boolean, i: number) => {
-            //checks if filter has been applied and changes style accordingly
-            //const Button = filter ? SelectedFilter : StyledFilter;
             return (
               <div>
                 <Checkbox
@@ -157,7 +150,7 @@ const TeamFilter = (props: any) => {
           })}
         </SlideDownContainer>
       )}
-    </FitlerContainer>
+    </FilterContainer>
   );
 };
 

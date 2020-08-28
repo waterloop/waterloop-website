@@ -3,10 +3,12 @@ import styled from "styled-components";
 
 // Types and interfaces
 import { ProfileType } from "../../interfaces";
-import { PSectionProps, PSectionState } from "../interfaces";
+import { PSectionProps, PSectionState, Descriptions } from "../interfaces";
 import { SubProfile } from "../Profiles";
 
-// Styled components for ProfileSection
+// Copy for team descriptions
+import Text from "static/copy/Team/descriptions.json";
+
 const ProfileSectionTitle = styled.h5`
   font-family: IBM Plex Sans;
   font-style: italic;
@@ -44,8 +46,9 @@ const MinifiedSubContainer = styled(MinifiedContainer)`
     margin-left: 0 auto 0 auto;
   }
 `;
-const TeamDescription = styled.h6`
+const TeamDescription = styled.h3`
   margin-bottom: 60px;
+  font-size: 18px;
   font-family: IBM Plex Sans;
   font-style: normal;
   text-align: left;
@@ -56,7 +59,7 @@ const TeamDescription = styled.h6`
 export default class ProfileSection extends React.Component<
   PSectionProps,
   PSectionState
-> {
+  > {
   constructor(props: PSectionProps) {
     super(props);
     this.state = {
@@ -73,7 +76,7 @@ export default class ProfileSection extends React.Component<
 
   render() {
     const minified = this.state.minified;
-
+    var team = this.props.title;
     let ProfileContainerTypeTag = MinifiedSubContainer;
     let ProfileTypeTag = SubProfile;
 
@@ -84,15 +87,18 @@ export default class ProfileSection extends React.Component<
         )}
 
         <TeamDescription>
-          Leads are experienced members of the team responsible for mentoring
-          younger members, reviewing designs, doing high-level planning and
-          scoping tasks for each term, and ensuring work is completed in time to
-          meet schedule milestones. This group consists of all the subteam leads
-          as well as a few executive members who manage the overall team.
+          {/* TODO: Clean this up :) */}
+          {this.props.title === "Web" ? Text.Web : ""}
+          {this.props.title === "Electrical" ? Text.Electrical : ""}
+          {this.props.title === "TeamLeads" ? Text.TeamLeads : ""}
+          {this.props.title === "Admin" ? Text.Admin : ""}
+          {this.props.title === "Software" ? Text.Software : ""}
+          {this.props.title === "Exec" ? Text.Exec : ""}
+          {this.props.title === "Mechanical" ? Text.Mechanical : ""}
+          {this.props.title === "Infrastructure" ? Text.Infrastructure : ""}
         </TeamDescription>
 
         {
-          // Dynamically insert minified profiles
           <ProfileContainerTypeTag>
             {minified.map((profile: ProfileType, i: number) => {
               return (

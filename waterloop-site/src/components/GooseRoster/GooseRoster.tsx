@@ -56,7 +56,7 @@ class GooseRoster extends React.Component<imgProps> {
   render() {
     return (
       <div className="GooseRoster-RosterWrapper">
-        <h2 className="GooseRoster-Heading">{this.props.heading}</h2>
+        <h2>{this.props.heading}</h2>
         <div className="GooseRoster-Description">{this.props.description}</div>
 
         <div className="GooseRoster-ImageThumbnail">

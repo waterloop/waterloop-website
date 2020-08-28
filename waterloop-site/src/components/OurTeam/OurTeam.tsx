@@ -7,10 +7,11 @@ const OurTeamContainer = styled.div`
   max-width: 1080px;
   margin: 80px auto 80px auto;
 `;
-const TeamDescriptionContainer = styled.h6`
+const TeamDescriptionContainer = styled.h3`
   color: #010101;
   margin-bottom: 60px;
   text-align: left;
+  font-size: 18px;
 `;
 const TeamPhoto = styled.img`
   display: flex;
@@ -24,7 +25,7 @@ const TeamPhoto = styled.img`
     padding-bottom: 20px;
   }
 `;
-const SectionTitle = styled.h5`
+const SectionTitle = styled.h2`
   margin-bottom: 50px;
   color: #232636;
 `;
