@@ -4,12 +4,12 @@ import PositionPosting from "../components/RecruitmentForm/PositionPosting";
 import { TextWithImage } from "components/TextWithImage";
 import { MyProps } from "components/TextWithImage";
 import Text from "static/copy/Recruitment/Recruitment.json";
-import Competition from "../static/img/landing/textwithimage/competition.png";
+import JoinUs from "../static/img/team/joinus.png";
 import "../theme/styles.scss";
 import { Route, Switch, Router, BrowserRouter, Link, NavLink } from "react-router-dom";
 import JobPostingPage from "components/RecruitmentForm/JobPostingPage";
 const castData: MyProps[] = Text;
-const imgData: string[] = [Competition];
+const imgData: string[] = [JoinUs];
 
 export const samplePostingsData = [
   {
@@ -57,14 +57,15 @@ export class Recruitment extends React.Component<any, any> {
             imgData={imgData}
           ></TextWithImage>
           <div className="break"></div>
-          <h4>Current Postings</h4>
+          <h2>Current Postings</h2>
           <div className={"postings"}>
             {samplePostingsData.length > 0 &&
               samplePostingsData.map((item: any, index: number) => {
                 return (
-                    <a href={`/posting/${index + 1}`} style={{textDecoration:"none", color:"black"}}>
-                      <h2>{item.role}</h2>
-                    </a>
+                  <a href={`/posting/${index + 1}`} style={{ textDecoration: "none", color: "black", padding: "30px 0" }}>
+                    <h3>{item.role}</h3>
+                    <div className="break"></div>
+                  </a>
 
                 );
               })}

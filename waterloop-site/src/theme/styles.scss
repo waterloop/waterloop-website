@@ -1133,3 +1133,19 @@ textarea {
     font-size: 14px;
   }
 }
+
+.centerDiv {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.HeaderButtonWrapper {
+  display:flex;
+  justify-content:space-between;
+
+  @media (max-width: $mobile) {
+  flex-direction: column;
+  padding-bottom: 30px;
+  }
+}

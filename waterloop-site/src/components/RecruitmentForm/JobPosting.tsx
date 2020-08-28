@@ -25,11 +25,7 @@ const LightHeader = styled.h6`
     margin-top: 0;
 
 `;
-const HeaderButtonWrapper = styled.div`
-    display:flex;
-    justify-content:space-between;
 
-`;
 class JobPosting extends React.Component<JobPostingProps> {
     constructor(props: JobPostingProps) {
         super(props);
@@ -39,10 +35,10 @@ class JobPosting extends React.Component<JobPostingProps> {
         return (
             <div>
                 <a href={`/recruitment`} style={{ textDecoration: "none", color: "black" }}>
-                    <p><i className="arrow left"></i> Back</p>
+                    <h6 style={{ margin: "0" }}><i className="arrow left"></i> Back</h6>
                 </a>
                 <br />
-                <HeaderButtonWrapper>
+                <div className="HeaderButtonWrapper">
                     <h2 style={{ color: "black" }}>{this.props.role}</h2>
                     <div>
                         <Button
@@ -52,7 +48,7 @@ class JobPosting extends React.Component<JobPostingProps> {
                             onClick={() => window.open(`${this.props.applicationForm}`)}
                             variant={null} />
                     </div>
-                </HeaderButtonWrapper>
+                </div>
                 <LightHeader>WATERLOO, ON/{this.props.subteam}/{this.props.term}</LightHeader>
                 <h6 style={{ color: "black", fontWeight: "normal" }}>Deadline: {this.props.deadline}</h6>
                 <p>{this.props.description}</p>
@@ -83,6 +79,15 @@ class JobPosting extends React.Component<JobPostingProps> {
                         )
                     })}
                 </ul>
+                <div className="break" />
+                <div className="centerDiv">
+                    <Button
+                        backgroundColor="yellow"
+                        textColor="black"
+                        text="APPLY"
+                        onClick={() => window.open(`${this.props.applicationForm}`)}
+                        variant={null} />
+                </div>
 
             </div>
         );
