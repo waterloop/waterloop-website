@@ -77,7 +77,7 @@ const SlideDownContainer = styled.div`
   & > div:first-child {
     grid-column: 1 / -1;
   }
-  padding: 5px 15px;
+  padding: 5px 13px;
 `;
 
 const StyledButton = styled.button`

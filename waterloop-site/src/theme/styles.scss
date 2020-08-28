@@ -37,6 +37,7 @@ p {
 h1 {
   font-family: $font-family-primary;
   font-size: 64pt;
+  font-weight: 600;
   color: $white;
   text-align: center;
   margin-bottom: 0;
@@ -112,6 +113,10 @@ code {
     color: $white;
     margin: 0;
     font-weight: 300;
+
+    @media screen and (max-width: $mobile) {
+      font-size: 28pt;
+    }
   }
   p {
     font-size: 18px;
@@ -1052,6 +1057,13 @@ textarea {
   }
   @media screen and (max-width: $mobile) {
     width: 100%;
+
+    > h2 {
+      text-align: center;
+    }
+    > p {
+      text-align: center;
+    }
   }
 }
 

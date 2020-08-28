@@ -23,12 +23,12 @@ const imgData: string[] = [Goals, Competition];
 const ColData: Props[] = ColText;
 // Place data here:
 const imgJSON: ImgJSON[] = [
-  { imgSrc: Brent, imgAlt: "Placeholder" },
-  { imgSrc: Weef, imgAlt: "Placeholder" },
-  { imgSrc: WaterlooEng, imgAlt: "Placeholder" },
-  { imgSrc: UW, imgAlt: "Placeholder" },
-  { imgSrc: ClickUp, imgAlt: "Placeholder" },
-  { imgSrc: WCBranham, imgAlt: "Placeholder" },
+  { imgSrc: Brent, imgAlt: "Brent" },
+  { imgSrc: Weef, imgAlt: "Weef" },
+  { imgSrc: WaterlooEng, imgAlt: "WaterlooEng" },
+  { imgSrc: UW, imgAlt: "UW" },
+  { imgSrc: ClickUp, imgAlt: "ClickUp" },
+  { imgSrc: WCBranham, imgAlt: "WCBranham" },
 ];
 
 class Home extends React.Component {

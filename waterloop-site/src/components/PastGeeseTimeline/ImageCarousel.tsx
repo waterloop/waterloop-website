@@ -28,6 +28,7 @@ const Description = styled.div`
 `;
 
 const Arrow = styled.i`
+  font-size: 48px;
   cursor: pointer;
   display: none;
   @media only screen and (min-width: 900px) {
@@ -36,6 +37,7 @@ const Arrow = styled.i`
 `;
 
 const ArrowMobile = styled.i`
+  font-size: 48px;
   cursor: pointer;
   display: flex;
   @media only screen and (min-width: 900px) {

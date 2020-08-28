@@ -1,27 +1,27 @@
 {
     "features": [
         {
-            "imgAlt": "feat1.png",
+            "imgAlt": "LIM.png",
             "header": "Linear Induction Motor",
             "desc": "To scale to Hyperloop speeds, we need contactless propulsion. LIMs provide a way to levitate, stabilize, and propel, all in the same package, and they require a simple metal track with no magnets - perfect for minimizing infrastructure cost."
         },
         {
-            "imgAlt": "feat2.png",
+            "imgAlt": "frame.png",
             "header": "Frame & Shell",
             "desc": "The frame and shell provide structures to support the motor, battery, and everything else onboard the pod. It needs to withstand hundreds of pounds of force in any direction and yet be extremely lightweight, reliable, and expandable."
         },
         {
-            "imgAlt": "feat3.png",
+            "imgAlt": "guidance.png",
             "header": "Guidance & Braking",
             "desc": "Guidance and braking are failsafe mechanisms to control the pod's position and speed. Guidance wheels hold the LIM at a distance from the track measured in mere millimeters, and the mechanical brakes automatically actuate in the unlikely scenarios of loss of communications, electrical power, or pneumatic pressure."
         },
         {
-            "imgAlt": "feat4.png",
+            "imgAlt": "battery.png",
             "header": "Motor Controller & Battery",
             "desc": "Our high voltage power systems convert kilowatts of power from a carefully monitored lithium battery into three-phase power carefully modulated to maximize the linear induction motor's thrust."
         },
         {
-            "imgAlt": "feat5.png",
+            "imgAlt": "embedded.png",
             "header": "Embedded Systems",
             "desc": "The distributed flight computer aboard the pod implements realtime control algorithms for the power signals supplied to the LIM to allow efficient control at all speeds, and numerous sensors to analyze the performance and health of all subsystems. Our dashboard additionally gives us fine-grained, fail-safe control over everything the pod does during a test run."
         }
