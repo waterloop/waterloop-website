@@ -24,10 +24,7 @@ const Header = styled.h2`
 
 const Text = styled.p`
   margin-top: 14px !important;
-  display: inline-blimport PositionPosting from './PositionPosting';
-ock;import { MyProps } from 'components/TextWithImage';
-import { BrowserRouter } from 'react-router-dom';
-
+  display: inline-block;
   text-align: left;
 `;
 
@@ -89,14 +86,10 @@ type MyProps = {
   technicalQ: string;
   termList: [string, string, string, string, string];
 };
-type MyState = { joinClicked: boolean };
-
 
 const PositionPosting: FunctionComponent<MyProps> = ({ role, description, skills, technicalQ, termList }) => {
 
   const [isJoinClicked, setJoinClicked] = useState(false)
-
-  let { id } = useParams()
 
   return (
     <Block>
@@ -135,59 +128,5 @@ const PositionPosting: FunctionComponent<MyProps> = ({ role, description, skills
     </Block>
   )
 }
-
-// class PositionPosting extends React.Component<MyProps, MyState> {
-//   constructor(props: MyProps) {
-//     super(props);
-//     this.state = {
-//       joinClicked: false,
-//     };
-//   }
-
-
-// onClick() {
-//   if (!this.state.joinClicked) {
-//     this.setState({ joinClicked: true });
-//   } else {
-//     this.setState({ joinClicked: false });
-//   }
-//   return;
-// }
-
-// render() {
-//   return (
-//     <Block>
-//       <TextBlock>
-//         <Header>{this.props.role}</Header>
-//         <Text>{this.props.description}</Text>
-//         {/* <Text>
-//             <b>Skills Required: </b>
-//             {this.props.skills}
-//           </Text> */}
-//       </TextBlock>
-//       <ButtonBlock>
-//         <Button
-//           onClick={this.onClick.bind(this)}
-//           text="APPLY"
-//           backgroundColor="yellow"
-//           textColor="black"
-//           variant={null}
-//         ></Button>
-//       </ButtonBlock>
-//       {this.state.joinClicked && (
-//         <Background>
-//           <CloseBtn onClick={this.onClick.bind(this)}>X</CloseBtn>
-//           <Form
-//             role={this.props.role}
-//             technicalQ={this.props.technicalQ}
-//             termList={this.props.termList}
-//             onSuccess={() => this.setState({ joinClicked: false })}
-//           />
-//         </Background>
-//       )}
-//     </Block>
-//   );
-// }
-// }
 
 export default PositionPosting;
