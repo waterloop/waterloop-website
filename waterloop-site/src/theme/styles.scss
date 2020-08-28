@@ -30,8 +30,9 @@ p {
   font-size: 18px;
 }
 
-p {
-  font-family: "IBM Plex Sans";
+ul {
+  font-size: 18px;
+  font-family: $font-family-primary;
 }
 
 h1 {

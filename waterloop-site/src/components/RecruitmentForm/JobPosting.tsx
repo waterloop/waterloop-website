@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Button } from 'components';
 import styled from 'styled-components';
 import { BrowserRouter, Link } from 'react-router-dom';
-
-
+import { fontWeight } from 'styled-system';
+import "../../theme/styles.scss";
 
 type JobPostingProps = {
     role: string;
@@ -19,13 +19,15 @@ type JobPostingProps = {
 
 }
 
-const LightHeader = styled.h2`
-font-weight:normal;
-color: #C4C4C4;
+const LightHeader = styled.h6`
+    font-weight:600;
+    color: #C4C4C4;
+    margin-top: 0;
+
 `;
 const HeaderButtonWrapper = styled.div`
-display:flex;
-justify-content:space-between
+    display:flex;
+    justify-content:space-between;
 
 `;
 class JobPosting extends React.Component<JobPostingProps> {
@@ -36,12 +38,12 @@ class JobPosting extends React.Component<JobPostingProps> {
     render() {
         return (
             <div>
-                <a href={`/recruitment`} style={{textDecoration:"none", color:"black"}}>
-                <p><i className="arrow left"></i> Back</p>
+                <a href={`/recruitment`} style={{ textDecoration: "none", color: "black" }}>
+                    <p><i className="arrow left"></i> Back</p>
                 </a>
                 <br />
                 <HeaderButtonWrapper>
-                    <h3 style={{ color: "black" }}>{this.props.role}</h3>
+                    <h2 style={{ color: "black" }}>{this.props.role}</h2>
                     <div>
                         <Button
                             backgroundColor="yellow"
@@ -52,9 +54,10 @@ class JobPosting extends React.Component<JobPostingProps> {
                     </div>
                 </HeaderButtonWrapper>
                 <LightHeader>WATERLOO, ON/{this.props.subteam}/{this.props.term}</LightHeader>
-                <h4 style={{ color: "black" }}>{this.props.deadline}</h4>
+                <h6 style={{ color: "black", fontWeight: "normal" }}>Deadline: {this.props.deadline}</h6>
                 <p>{this.props.description}</p>
-                <h2>What you'll do:</h2>
+                <div className="break" />
+                <h3>What you'll do:</h3>
                 <ul>
                     {this.props.tasks.map((task: any) => {
                         return (
@@ -62,7 +65,8 @@ class JobPosting extends React.Component<JobPostingProps> {
                         )
                     })}
                 </ul>
-                <h2>What we're looking for:</h2>
+                <div className="break" />
+                <h3>What we're looking for:</h3>
                 <ul>
                     {this.props.requirements.map((task: any) => {
                         return (
@@ -70,7 +74,8 @@ class JobPosting extends React.Component<JobPostingProps> {
                         )
                     })}
                 </ul>
-                <h2>Areas of Interest</h2>
+                <div className="break" />
+                <h3>Areas of Interest</h3>
                 <ul>
                     {this.props.interest.map((task: any) => {
                         return (

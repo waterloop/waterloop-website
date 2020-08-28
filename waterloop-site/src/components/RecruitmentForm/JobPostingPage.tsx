@@ -18,8 +18,8 @@ export default function JobPostingPage() {
         <div className="pageContainer">
             <JobPosting
                 role={samplePostingsData[id].role}
-                subteam = {samplePostingsData[id].subteam}
-                term = {samplePostingsData[id].term}
+                subteam={samplePostingsData[id].subteam}
+                term={samplePostingsData[id].term}
                 applicationForm={samplePostingsData[id].applicationForm}
                 deadline={samplePostingsData[id].deadline}
                 description={samplePostingsData[id].description}
