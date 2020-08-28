@@ -4,14 +4,17 @@ import Hero from "components/Hero/General";
 import { GooseRoster } from "components/GooseRoster";
 import { SimpleFeatures } from "sections/FeaturedComponent";
 import { PastGeeseTimeline as UnstyledPastGeeseTimeline } from "components/PastGeeseTimeline";
-import image from "../static/img/goose/feat1.png";
+import Feat1 from "../static/img/pgimgs/goose5.png";
+import Feat2 from "../static/img/pgimgs/goose1.png";
+import Feat3 from "../static/img/pgimgs/goose3.png";
 import "../theme/styles.scss";
 
 const PastGeeseTimeline = styled(UnstyledPastGeeseTimeline)``;
-var myImgArray = [
-  "https://via.placeholder.com/150",
-  "https://via.placeholder.com/160",
-  "https://via.placeholder.com/170",
+
+var Goose5 = [
+  Feat1,
+  Feat2,
+  Feat2,
 ];
 
 class Flock extends React.Component {
@@ -28,7 +31,7 @@ class Flock extends React.Component {
           <GooseRoster
             heading="Goose V"
             description="Our 'flock' of Hyperloop pods has developed in sophistication over 5 iterations of research and development. Take a look at the major features of our pod and the history of its development!"
-            imgUrls={myImgArray}
+            imgUrls={Goose5}
           >
           </GooseRoster>
           <div className="break"></div>

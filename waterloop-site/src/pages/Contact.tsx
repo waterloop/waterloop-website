@@ -32,13 +32,17 @@ class Contact extends React.Component {
                     key: MAP,
                   }}
                   defaultCenter={{ lat: 43.4723, lng: -80.5449 }}
+                  styles: {
+                  featureType: 'poi.business',
+                    elementType: 'labels',
+                  }
                   defaultZoom={17}
                 ></GoogleMapReact>
-              </div>
             </div>
           </div>
         </div>
       </div>
+      </div >
     );
   }
 }
