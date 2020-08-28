@@ -39,14 +39,9 @@ export class TextWithImage extends React.Component<{
       return (
         <div key={key} className={"Block-TextWithImage " + posClass}>
           <div className="TextBlock-TextWithImage">
-            {entry.title !== undefined ? (
-              <h2 className="Header-TextWithImage">{entry.title}</h2>
-            ) : (
-              <b></b>
-            )}
-            <p className="Text-TextWithImage">{entry.text}</p>
+            {entry.title !== undefined ? <h3>{entry.title}</h3> : <b></b>}
+            <p>{entry.text}</p>
             <div className="ButtonBlock-TextWithImage">
-              {/* Hide button if no link supplied. */}
               {this.renderButton(entry.link, entry.linkText)}
             </div>
           </div>

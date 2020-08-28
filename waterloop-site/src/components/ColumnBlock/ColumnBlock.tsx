@@ -22,20 +22,20 @@ export class ColumnBlock extends React.Component<{
     return (
       <>
         <div className="banner">
-          <h1>{this.props.data[0].title}</h1>
+          <h2 className="white-text">{this.props.data[0].title}</h2>
         </div>
         <div className="pageContainer">
           <div className="col-block">
             <div>
-              <h2>{this.props.data[0].body.heading1}</h2>
+              <h3>{this.props.data[0].body.heading1}</h3>
               <p> {this.props.data[0].body.text1}</p>
             </div>
             <div>
-              <h2>{this.props.data[0].body.heading2}</h2>
+              <h3>{this.props.data[0].body.heading2}</h3>
               <p> {this.props.data[0].body.text2}</p>
             </div>
             <div>
-              <h2>{this.props.data[0].body.heading3}</h2>
+              <h3>{this.props.data[0].body.heading3}</h3>
               <p> {this.props.data[0].body.text3}</p>
             </div>
           </div>

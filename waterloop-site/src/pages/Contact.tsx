@@ -10,7 +10,7 @@ class Contact extends React.Component {
     return (
       <div>
         <Hero
-          title="Contact"
+          title="CONTACT"
           description="We'd love to get in touch!"
           anchor="#contact-form"
         ></Hero>
@@ -22,10 +22,12 @@ class Contact extends React.Component {
               desc="Want to get in touch? Submit this form or drop us a message at contact@waterloop.ca"
             ></ContactForm>
             <div className="locationContainer">
-              <h5>Visit Us</h5>
-              <h6>
-                Our workbay is located in the Sedra Student Design Centre, in Engineering 5 at the University of Waterloo. Come visit us and we’ll be happy to show you around!
-              </h6>
+              <h3>Visit Us</h3>
+              <p>
+                Our workbay is located in the Sedra Student Design Centre, in
+                Engineering 5 at the University of Waterloo. Come visit us and
+                we’ll be happy to show you around!
+              </p>
               <div className="mapContainer">
                 <GoogleMapReact
                   bootstrapURLKeys={{

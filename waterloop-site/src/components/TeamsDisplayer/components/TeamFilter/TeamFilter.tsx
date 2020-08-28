@@ -21,9 +21,6 @@ const StyledFilter = styled.button`
   border: none;
   outline: none;
   text-align: center;
-  font-family: IBM Plex Sans;
-  font-size: 14pt;
-  font-weight: 600;
   &:hover {
     color: white;
     background-color: #222535;
@@ -36,7 +33,6 @@ const StyledFilter = styled.button`
   &.mobile {
     text-align: left;
     padding-left: 30px;
-    font-size: 28pt;
     border-radius: 50px;
     width: 300px;
     height: 70px;
@@ -49,7 +45,6 @@ const StyledFilter = styled.button`
   &.selectTeams {
     width: 375px;
     height: 70px;
-    font-size: 28pt;
     border-radius: 50px;
     color: white;
     background-color: #222535;
@@ -79,16 +74,10 @@ const SlideDownContainer = styled.div`
   border: 1.3px solid #dbdbdb;
   justify-items: space-evenly;
   border-radius: 4px;
-
   & > div:first-child {
     grid-column: 1 / -1;
   }
-  font-family: IBM Plex Sans;
-  font-weight: 600;
-  font-size: 18px;
-  color: #010101;
-  padding-top: 30px;
-  padding-left: 15px;
+  padding: 5px 15px;
 `;
 
 const StyledButton = styled.button`
@@ -98,14 +87,12 @@ const StyledButton = styled.button`
   align-items: center;
   flex-direction: row;
   border: 1.3px solid #dbdbdb;
-  font-size: 12pt;
-  font-family: IBM Plex Sans;
-  font-weight: 500;
   border-radius: 4px;
   outline: grey;
   background: transparent;
   width: 85px;
   height: 35px;
+  margin: 6px 0;
 `;
 const StyledImage = styled.img`
   margin-bottom: 0.1rem;
@@ -119,14 +106,16 @@ const TeamFilter = (props: any) => {
 
   return (
     <FilterContainer>
-      <h3>Team Roster</h3>
+      <h2>Team Roster</h2>
       <StyledButton onClick={() => setToggle(!toggleOpen)}>
         <StyledImage src={FilterImg}></StyledImage>
         Filter
       </StyledButton>
       {toggleOpen && (
         <SlideDownContainer>
-          Subteams
+          <div>
+            <p>Subteams</p>
+          </div>
           {props.teamFilters.map((filter: boolean, i: number) => {
             return (
               <div>

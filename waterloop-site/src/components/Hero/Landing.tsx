@@ -20,7 +20,7 @@ class heroComponent extends React.Component<MyProps> {
             />
           </div>
           <div className="landingDescriptionContainer">
-            <h3>{this.props.description}</h3>
+            <h3 className="white-text center-text">{this.props.description}</h3>
           </div>
           {/* UNCOMMENT BELOW ONCE POSTINGS ARE UP */}
           {/* <button

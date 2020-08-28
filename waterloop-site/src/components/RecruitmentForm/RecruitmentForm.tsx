@@ -5,8 +5,6 @@ import useRecruitmentForm from "./hooks/recruitment-form";
 import RadioButton from "./RadioButton";
 
 const Label = styled.label`
-  font-family: "IBM Plex Sans";
-  font-weight: bold;
   display: block;
   margin: 1%;
   margin-bottom: 7px;
@@ -29,7 +27,6 @@ const Input = styled(({ valid, ...props }) => <input {...props} />)`
 
 const TextArea = styled(({ valid, ...props }) => <textarea {...props} />)`
   text-align: left;
-  font-family: "IBM Plex Sans";
   display: inline-block;
   margin: 3%;
   width: 75%;

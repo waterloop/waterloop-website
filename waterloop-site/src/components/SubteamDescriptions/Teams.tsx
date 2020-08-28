@@ -26,11 +26,9 @@ const Img = styled.img`
 `;
 
 const Text = styled.p`
-  font-size: 18px;
   margin-top: 14px !important;
 
   @media (max-width: 500px) {
-    font-size: 13px;
     text-align: left;
   }
 `;

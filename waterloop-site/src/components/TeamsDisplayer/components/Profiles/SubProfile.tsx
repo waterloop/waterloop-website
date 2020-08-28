@@ -6,6 +6,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  margin: 20px 0 0 0;
 `;
 
 const Portrait = styled.img`
@@ -19,26 +20,16 @@ const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: IBM Plex Sans;
-  font-style: normal;
   color: #000000;
 `;
 const InfoTitle = styled.div`
-  font-weight: bold;
   margin: 8px 0;
-  font-size: 16px;
 
   @media (max-width: 975px) {
-    font-size: 14px;
   }
 `;
 const InfoPosition = styled.div`
-  font-weight: 200;
-  font-size: 14px;
-
   @media (max-width: 975px) {
-    font-weight: 200;
-    font-size: 12px;
   }
 `;
 
@@ -47,7 +38,9 @@ const SubProfile = (props: any) => {
     <Container onClick={props.onClick}>
       <Portrait src={props.portrait} alt="portrait" />
       <InfoContainer>
-        <InfoTitle>{props.name}</InfoTitle>
+        <InfoTitle>
+          <strong>{props.name}</strong>
+        </InfoTitle>
         <InfoPosition>{props.position}</InfoPosition>
       </InfoContainer>
     </Container>

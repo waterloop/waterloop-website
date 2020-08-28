@@ -18,7 +18,7 @@ class SponsorsLanding extends React.Component<{ data: ImgJSON[] }> {
   render() {
     return (
       <div className="Block-Sponsors">
-        <h2 className="Header-Sponsors">Our Sponsors</h2>
+        <h2>Our Sponsors</h2>
         <div className="SponsorsContainer">
           {this.renderImages(this.props.data)}
         </div>

@@ -175,7 +175,7 @@ class ContactUsForm extends React.Component<
         <div className="success-modal-container">
           <div className={"success-message"}>
             <img src={Check} alt="success" />
-            <h3>Thanks for reaching out! </h3>
+            <h2>Thanks for reaching out! </h2>
             <p>Your message was submitted successfully.</p>
             <a onClick={() => this.setState({ submitted: false })}>
               Submit another message
@@ -191,7 +191,7 @@ class ContactUsForm extends React.Component<
           onSubmit={this.onFormSubmit}
         >
           <h3>{this.props.title}</h3>
-          <div className="contactFormDesc">
+          <div>
             <p>{this.props.desc}</p>
           </div>
           {this.renderError()}

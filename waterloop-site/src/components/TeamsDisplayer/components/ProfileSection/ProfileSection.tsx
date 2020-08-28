@@ -61,12 +61,12 @@ export default class ProfileSection extends React.Component<
   render() {
     const minified = this.state.minified;
     var team = this.props.title;
-    let ProfileContainerTypeTag = MinifiedSubContainer;
+
     let ProfileTypeTag = SubProfile;
 
     return (
       <ProfileSectionContainer>
-        {this.props.title && <h4>{this.props.title}</h4>}
+        {this.props.title && <h3>{this.props.title}</h3>}
 
         <p>
           {/* TODO: Clean this up :) */}
@@ -81,7 +81,7 @@ export default class ProfileSection extends React.Component<
         </p>
 
         {
-          <ProfileContainerTypeTag>
+          <MinifiedSubContainer>
             {minified.map((profile: ProfileType, i: number) => {
               return (
                 <ProfileTypeTag
@@ -93,7 +93,7 @@ export default class ProfileSection extends React.Component<
                 />
               );
             })}
-          </ProfileContainerTypeTag>
+          </MinifiedSubContainer>
         }
       </ProfileSectionContainer>
     );

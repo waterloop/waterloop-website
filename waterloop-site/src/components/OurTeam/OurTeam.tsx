@@ -24,7 +24,7 @@ const TeamPhoto = styled.img`
 const OurTeam = () => {
   return (
     <OurTeamContainer>
-      <h3>Our Team</h3>
+      <h2>Our Team</h2>
       <p>
         Our team is a diverse group of student volunteers from all faculties.
         Whether it’s laying out a test board design to evaluate a high power

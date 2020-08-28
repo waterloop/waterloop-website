@@ -49,7 +49,6 @@ const Background = styled.div`
 `;
 
 const ButtonBlock = styled.div`
-  font-size: 1.5vw;
   float: left;
   display: inline;
 `;
@@ -63,8 +62,6 @@ const Line = styled.hr`
 
 const CloseBtn = styled.button`
   background: #fed138;
-  font-size: large;
-  font-family: "IBM Plex Sans";
   position: fixed;
   top: 10%;
   right: 20.5%;
