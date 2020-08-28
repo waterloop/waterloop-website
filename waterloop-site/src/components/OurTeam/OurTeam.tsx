@@ -7,11 +7,7 @@ const OurTeamContainer = styled.div`
   max-width: 1080px;
   margin: 80px auto 80px auto;
 `;
-const TeamDescriptionContainer = styled.h6`
-  color: #010101;
-  margin-bottom: 60px;
-  text-align: left;
-`;
+
 const TeamPhoto = styled.img`
   display: flex;
   justify-content: center;
@@ -24,16 +20,12 @@ const TeamPhoto = styled.img`
     padding-bottom: 20px;
   }
 `;
-const SectionTitle = styled.h5`
-  margin-bottom: 50px;
-  color: #232636;
-`;
 
 const OurTeam = () => {
   return (
     <OurTeamContainer>
-      <SectionTitle>Our Team</SectionTitle>
-      <TeamDescriptionContainer>
+      <h3>Our Team</h3>
+      <p>
         Our team is a diverse group of student volunteers from all faculties.
         Whether it’s laying out a test board design to evaluate a high power
         electrical component, simulating the magnetic effects of a change in
@@ -45,7 +37,7 @@ const OurTeam = () => {
         Interested in joining? We’re always looking for dedicated team members
         to help us make the vision of Hyperloop a reality, and we work hard to
         provide an effective mentorship experience for all new team members.
-      </TeamDescriptionContainer>
+      </p>
       <TeamPhoto src={Team} alt="some team photo" />
     </OurTeamContainer>
   );

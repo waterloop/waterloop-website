@@ -13,14 +13,6 @@ const FilterContainer = styled.div`
   align-items: center;
 `;
 
-const StyledHeader = styled.h5`
-  font-family: IBM Plex Sans;
-  font-style: italic;
-  font-weight: bold;
-  font-size: 36px;
-  color: #232636;
-`;
-
 const StyledFilter = styled.button`
   width: 150px;
   height: 35px;
@@ -127,7 +119,7 @@ const TeamFilter = (props: any) => {
 
   return (
     <FilterContainer>
-      <StyledHeader>Team Roster</StyledHeader>
+      <h3>Team Roster</h3>
       <StyledButton onClick={() => setToggle(!toggleOpen)}>
         <StyledImage src={FilterImg}></StyledImage>
         Filter

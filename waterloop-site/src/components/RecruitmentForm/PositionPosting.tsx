@@ -14,12 +14,6 @@ const TextBlock = styled.div`
   }
 `;
 
-const Header = styled.h2`
-  font-style: italic;
-  font-size: 120%;
-  margin-bottom: 0px !important;
-`;
-
 const Text = styled.p`
   margin-top: 14px !important;
   display: inline-block;
@@ -107,7 +101,7 @@ class PositionPosting extends React.Component<MyProps, MyState> {
     return (
       <Block>
         <TextBlock>
-          <Header>{this.props.role}</Header>
+          <h2>{this.props.role}</h2>
           <Text>{this.props.description}</Text>
           {/* <Text>
             <b>Skills Required: </b>

@@ -17,14 +17,6 @@ const RadioWrapper = styled.form`
   justify-content: center;
 `;
 
-const Header = styled.h2.attrs({
-  className: "Header-RecruitmentForm",
-})`
-  font-size: 170%;
-  margin: 0 0 25px 15px !important;
-  text-align: center;
-`;
-
 const Input = styled(({ valid, ...props }) => <input {...props} />)`
   text-align: left;
   display: inline-block;
@@ -101,7 +93,7 @@ const Form: React.FC<MyProps> = ({ role, technicalQ, termList, onSuccess }) => {
 
   return (
     <div className="recruitment-modal">
-      <Header>Applying for {role.toUpperCase()}</Header>
+      <h2>Applying for {role.toUpperCase()}</h2>
       <div>{userInfoInputs}</div>
       <hr />
       <Label>Term you're applying for:</Label>

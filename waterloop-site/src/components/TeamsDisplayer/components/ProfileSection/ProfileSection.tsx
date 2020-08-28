@@ -9,14 +9,6 @@ import { SubProfile } from "../Profiles";
 // Copy for team descriptions
 import Text from "static/copy/Team/descriptions.json";
 
-const ProfileSectionTitle = styled.h5`
-  font-family: IBM Plex Sans;
-  font-style: italic;
-  font-weight: 600;
-  font-size: 36px;
-  color: #232636;
-  margin-bottom: 50px;
-`;
 const ProfileSectionContainer = styled.div`
   margin-bottom: 100px;
 
@@ -46,13 +38,6 @@ const MinifiedSubContainer = styled(MinifiedContainer)`
     margin-left: 0 auto 0 auto;
   }
 `;
-const TeamDescription = styled.h6`
-  margin-bottom: 60px;
-  font-family: IBM Plex Sans;
-  font-style: normal;
-  text-align: left;
-  color: #010101;
-`;
 
 // Profile Subsection
 export default class ProfileSection extends React.Component<
@@ -81,11 +66,9 @@ export default class ProfileSection extends React.Component<
 
     return (
       <ProfileSectionContainer>
-        {this.props.title && (
-          <ProfileSectionTitle>{this.props.title}</ProfileSectionTitle>
-        )}
+        {this.props.title && <h4>{this.props.title}</h4>}
 
-        <TeamDescription>
+        <p>
           {/* TODO: Clean this up :) */}
           {this.props.title === "Web" ? Text.Web : ""}
           {this.props.title === "Electrical" ? Text.Electrical : ""}
@@ -95,7 +78,7 @@ export default class ProfileSection extends React.Component<
           {this.props.title === "Exec" ? Text.Exec : ""}
           {this.props.title === "Mechanical" ? Text.Mechanical : ""}
           {this.props.title === "Infrastructure" ? Text.Infrastructure : ""}
-        </TeamDescription>
+        </p>
 
         {
           <ProfileContainerTypeTag>
