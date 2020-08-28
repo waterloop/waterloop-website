@@ -10,7 +10,7 @@ import Feat1 from "../../static/img/goose/LIM.png";
 import Feat2 from "../../static/img/goose/frame.png";
 import Feat3 from "../../static/img/goose/guidance.png";
 import Feat4 from "../../static/img/goose/battery.png";
-import Feat5 from "../../static/img/goose/embed.png";
+import Feat5 from "../../static/img/goose/embedded.png";
 
 const imgs: string[] = [Feat1, Feat2, Feat3, Feat4, Feat5];
 
