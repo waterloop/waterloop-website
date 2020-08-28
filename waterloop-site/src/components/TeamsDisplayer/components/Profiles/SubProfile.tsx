@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Default from "../../../../static/img/team/default-headshot1.png";
 
 const Container = styled.div`
   display: flex;
@@ -36,14 +37,14 @@ const InfoPosition = styled.div`
 const SubProfile = (props: any) => {
   return (
     <Container onClick={props.onClick}>
-      <Portrait src={props.portrait} alt="portrait" />
+      <Portrait src={props.portrait || Default} alt="portrait" />
       <InfoContainer>
         <InfoTitle>
           <strong>{props.name}</strong>
         </InfoTitle>
         <InfoPosition>{props.position}</InfoPosition>
       </InfoContainer>
-    </Container>
+    </Container >
   );
 };
 

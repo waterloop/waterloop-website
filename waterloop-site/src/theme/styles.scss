@@ -722,7 +722,7 @@ textarea {
 }
 
 .landingWaterloopContainer {
-  padding: 0 0 30px 0;
+  padding: 60px 0 30px;
   display: flex;
   justify-content: center;
 }
@@ -864,6 +864,7 @@ textarea {
 }
 
 .landing-btn {
+  margin: 20px;
   color: $navy !important;
   transition: all 0.3s;
   background-color: $yellow !important;

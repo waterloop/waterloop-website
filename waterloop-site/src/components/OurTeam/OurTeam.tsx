@@ -7,7 +7,6 @@ const OurTeamContainer = styled.div`
   max-width: 1080px;
   margin: 80px auto 80px auto;
 `;
-
 const TeamPhoto = styled.img`
   display: flex;
   justify-content: center;
