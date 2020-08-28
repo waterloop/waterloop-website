@@ -4,8 +4,8 @@ import Hero from "components/Hero/General";
 import { GooseRoster } from "components/GooseRoster";
 import { SimpleFeatures } from "sections/FeaturedComponent";
 import { PastGeeseTimeline as UnstyledPastGeeseTimeline } from "components/PastGeeseTimeline";
-import Goose1 from "../static/img/goose/Goose1.png";
-import Goose2 from "../static/img/goose/Goose2.png";
+import Goose1 from "../static/img/goose/Goose.png";
+import Goose2 from "../static/img/goose/Goose1.png";
 import "../theme/styles.scss";
 
 const PastGeeseTimeline = styled(UnstyledPastGeeseTimeline)``;

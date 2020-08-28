@@ -21,7 +21,7 @@
             "desc": "Our high voltage power systems convert kilowatts of power from a carefully monitored lithium battery into three-phase power carefully modulated to maximize the linear induction motor's thrust."
         },
         {
-            "imgAlt": "feat5.png",
+            "imgAlt": "embedded.png",
             "header": "Embedded Systems",
             "desc": "The distributed flight computer aboard the pod implements realtime control algorithms for the power signals supplied to the LIM to allow efficient control at all speeds, and numerous sensors to analyze the performance and health of all subsystems. Our dashboard additionally gives us fine-grained, fail-safe control over everything the pod does during a test run."
         }
