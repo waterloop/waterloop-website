@@ -81,6 +81,7 @@ const SlideDownContainer = styled.div`
 `;
 
 const StyledButton = styled.button`
+  font-family: "IBM Plex Sans";
   display: flex;
   padding: 8px;
   justify-content: space-between;
