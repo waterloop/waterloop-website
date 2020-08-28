@@ -112,6 +112,10 @@ code {
     color: $white;
     margin: 0;
     font-weight: 300;
+
+    @media screen and (max-width: $mobile) {
+      font-size: 32px;
+    }
   }
   p {
     font-size: 18px;
