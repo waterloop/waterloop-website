@@ -1,6 +1,6 @@
 import React from "react";
 import Sponsor from "./Sponsor";
-import Brent from "../../static/img/official-sponsors/BrentsWeldingAndFab.png"
+import Brent from "../../static/img/official-sponsors/BrentsWeldingAndFab.png";
 import Weef from "../../static/img/official-sponsors/weef.jpg";
 import WaterlooEng from "../../static/img/official-sponsors/wes.jpg";
 import UW from "../../static/img/official-sponsors/foe.jpg";
@@ -14,33 +14,32 @@ import StarTechnology from "../../static/img/official-sponsors/StarTechnology.pn
 import Sony from "../../static/img/official-sponsors/sony.png";
 import WPrint from "../../static/img/official-sponsors/WPrint.png";
 import Wera from "../../static/img/official-sponsors/Wera.png";
-import Overleaf from "../../static/img/official-sponsors/overleaf_wide_colour_light_bg.png"
+import Overleaf from "../../static/img/official-sponsors/overleaf_wide_colour_light_bg.png";
 import Altium from "../../static/img/official-sponsors/altium.jpg";
 import L3harris from "../../static/img/official-sponsors/l3harris.png";
 import Mitutoyo from "../../static/img/official-sponsors/mitutoyo.png";
 
-
 function SponsorList() {
   return (
     <div className="SponsorPage">
-      <h1>Hypersonic</h1>
+      <h2>Hypersonic</h2>
       <div className="TierWrapper">
         <Sponsor src={UW} tier="hypersonic" alt="sponsor" />
         <Sponsor src={WaterlooEng} tier="hypersonic" alt="sponsor" />
         <Sponsor src={Weef} tier="hypersonic" alt="sponsor" />
         <Sponsor src={Brent} tier="hypersonic" alt="sponsor" />
       </div>
-      <h1>Supersonic</h1>
+      <h2>Supersonic</h2>
       <div className="TierWrapper">
         <Sponsor src={ClickUp} tier="supersonic" alt="sponsor" />
         <Sponsor src={WCBranham} tier="supersonic" alt="sponsor" />
       </div>
-      <h1>Transonic</h1>
+      <h2>Transonic</h2>
       <div className="TierWrapper">
         <Sponsor src={Ansys} tier="transonic" alt="sponsor" />
         <Sponsor src={PSIM} tier="transonic" alt="sponsor" />
       </div>
-      <h1>Sonic</h1>
+      <h2>Sonic</h2>
       <div className="TierWrapper">
         <Sponsor src={APP} tier="sonic" alt="sponsor" />
         <Sponsor src={Connexion} tier="sonic" alt="sponsor" />

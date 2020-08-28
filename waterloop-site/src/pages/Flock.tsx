@@ -19,7 +19,7 @@ class Flock extends React.Component {
     return (
       <div>
         <Hero
-          title="The Flock"
+          title="THE FLOCK"
           description="Learn about our geese."
           anchor="#flock"
         ></Hero>
@@ -29,11 +29,10 @@ class Flock extends React.Component {
             heading="Goose V"
             description="Our 'flock' of Hyperloop pods has developed in sophistication over 5 iterations of research and development. Take a look at the major features of our pod and the history of its development!"
             imgUrls={myImgArray}
-          >
-          </GooseRoster>
+          ></GooseRoster>
           <div className="break"></div>
           <h2> Features </h2>
-          <SimpleFeatures></SimpleFeatures>
+          <SimpleFeatures />
           <div className="break"></div>
           <PastGeeseTimeline />
         </div>

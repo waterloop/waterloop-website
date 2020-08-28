@@ -57,7 +57,7 @@ class GooseRoster extends React.Component<imgProps> {
     return (
       <div className="GooseRoster-RosterWrapper">
         <h2>{this.props.heading}</h2>
-        <div className="GooseRoster-Description">{this.props.description}</div>
+        <p> {this.props.description}</p>
 
         <div className="GooseRoster-ImageThumbnail">
           <Arrow className="material-icons" onClick={this.previousSlide}>

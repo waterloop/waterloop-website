@@ -14,12 +14,6 @@ const TextBlock = styled.div`
   }
 `;
 
-const Header = styled.h2`
-  font-style: italic;
-  font-size: 120%;
-  margin-bottom: 0px !important;
-`;
-
 const Text = styled.p`
   margin-top: 14px !important;
   display: inline-block;
@@ -55,7 +49,6 @@ const Background = styled.div`
 `;
 
 const ButtonBlock = styled.div`
-  font-size: 1.5vw;
   float: left;
   display: inline;
 `;
@@ -69,8 +62,6 @@ const Line = styled.hr`
 
 const CloseBtn = styled.button`
   background: #fed138;
-  font-size: large;
-  font-family: "IBM Plex Sans";
   position: fixed;
   top: 10%;
   right: 20.5%;
@@ -107,7 +98,7 @@ class PositionPosting extends React.Component<MyProps, MyState> {
     return (
       <Block>
         <TextBlock>
-          <Header>{this.props.role}</Header>
+          <h2>{this.props.role}</h2>
           <Text>{this.props.description}</Text>
           {/* <Text>
             <b>Skills Required: </b>
