@@ -19,7 +19,7 @@ type JobPostingProps = {
 
 }
 
-const TemporaryHeader = styled.h2`
+const LightHeader = styled.h2`
 font-weight:normal;
 color: #C4C4C4;
 `;
@@ -51,7 +51,7 @@ class JobPosting extends React.Component<JobPostingProps> {
                             variant={null} />
                     </div>
                 </HeaderButtonWrapper>
-                <TemporaryHeader>WATERLOO, ON/{this.props.subteam}/{this.props.term}</TemporaryHeader>
+                <LightHeader>WATERLOO, ON/{this.props.subteam}/{this.props.term}</LightHeader>
                 <h4 style={{ color: "black" }}>{this.props.deadline}</h4>
                 <p>{this.props.description}</p>
                 <h2>What you'll do:</h2>

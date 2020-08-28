@@ -10,7 +10,6 @@ import {Recruitment} from "./pages/Recruitment";
 import { Footer } from "sections/Footer";
 import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import "typeface-ibm-plex-sans";
-import JobPosting from './components/RecruitmentForm/JobPosting';
 import JobPostingPage from './components/RecruitmentForm/JobPostingPage';
 class App extends React.Component {
   constructor(props = {}) {
