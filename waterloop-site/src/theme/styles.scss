@@ -1171,5 +1171,13 @@ textarea {
   @media (max-width: $mobile) {
     flex-direction: column;
     padding-bottom: 30px;
+    align-content: left;
   }
+}
+
+.ButtonWrap {
+  display: flex;
+  max-width: 100px;
+  flex-direction: column;
+  justify-content: center;
 }
