@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState, FunctionComponent } from "react";
 import styled from "styled-components";
 import { Button } from "../Button";
 import Form from "./RecruitmentForm";
+import { useParams } from "react-router";
+import { BrowserRouter, Link } from "react-router-dom";
 
 const TextBlock = styled.div`
   padding-right: 40px;
@@ -53,13 +55,6 @@ const ButtonBlock = styled.div`
   display: inline;
 `;
 
-const Line = styled.hr`
-  display: none;
-  @media (max-width: 425px) {
-    display: flex;
-  }
-`;
-
 const CloseBtn = styled.button`
   background: #fed138;
   position: fixed;
@@ -75,59 +70,47 @@ type MyProps = {
   technicalQ: string;
   termList: [string, string, string, string, string];
 };
-type MyState = { joinClicked: boolean };
 
-class PositionPosting extends React.Component<MyProps, MyState> {
-  constructor(props: MyProps) {
-    super(props);
-    this.state = {
-      joinClicked: false,
-    };
-  }
+const PositionPosting: FunctionComponent<MyProps> = ({ role, description, skills, technicalQ, termList }) => {
 
-  onClick() {
-    if (!this.state.joinClicked) {
-      this.setState({ joinClicked: true });
-    } else {
-      this.setState({ joinClicked: false });
-    }
-    return;
-  }
+  const [isJoinClicked, setJoinClicked] = useState(false)
 
-  render() {
-    return (
-      <Block>
-        <TextBlock>
-          <h2>{this.props.role}</h2>
-          <Text>{this.props.description}</Text>
-          {/* <Text>
-            <b>Skills Required: </b>
-            {this.props.skills}
-          </Text> */}
-        </TextBlock>
-        <ButtonBlock>
-          <Button
-            onClick={this.onClick.bind(this)}
-            text="APPLY"
-            backgroundColor="yellow"
-            textColor="black"
-            variant={null}
-          ></Button>
-        </ButtonBlock>
-        {this.state.joinClicked && (
-          <Background>
-            <CloseBtn onClick={this.onClick.bind(this)}>X</CloseBtn>
-            <Form
-              role={this.props.role}
-              technicalQ={this.props.technicalQ}
-              termList={this.props.termList}
-              onSuccess={() => this.setState({ joinClicked: false })}
-            />
-          </Background>
-        )}
-      </Block>
-    );
-  }
+  return (
+    <Block>
+      <TextBlock>
+        <BrowserRouter>
+          <Link to="/postingNumber">
+            <h2>{role}</h2>
+          </Link>
+        </BrowserRouter>
+        <Text>{description}</Text>
+        <Text>
+          <b>Skills Required: </b>
+          {skills}
+        </Text>
+      </TextBlock>
+      <ButtonBlock>
+        <Button
+          onClick={() => setJoinClicked(!isJoinClicked)}
+          text="APPLY"
+          backgroundColor="yellow"
+          textColor="black"
+          variant={null}
+        ></Button>
+      </ButtonBlock>
+      {isJoinClicked && (
+        <Background>
+          <CloseBtn onClick={() => setJoinClicked(!isJoinClicked)}>X</CloseBtn>
+          <Form
+            role={role}
+            technicalQ={technicalQ}
+            termList={termList}
+            onSuccess={() => setJoinClicked(false)}
+          />
+        </Background>
+      )}
+    </Block>
+  )
 }
 
 export default PositionPosting;

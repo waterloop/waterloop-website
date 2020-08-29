@@ -3,15 +3,14 @@ import styled from "styled-components";
 
 // Types and interfaces
 import { ProfileType } from "../../interfaces";
-import { PSectionProps, PSectionState, Descriptions } from "../interfaces";
+import { PSectionProps, PSectionState } from "../interfaces";
 import { SubProfile } from "../Profiles";
 
 // Copy for team descriptions
 import Text from "static/copy/Team/descriptions.json";
 
 const ProfileSectionContainer = styled.div`
-  margin-bottom: 100px;
-
+  margin-bottom: 75px;
   @media (max-width: 975px) {
     margin-bottom: 50px;
   }
@@ -19,11 +18,10 @@ const ProfileSectionContainer = styled.div`
 
 const MinifiedContainer = styled.div`
   display: grid;
-  grid-row-gap: 100px;
-
+  grid-row-gap: 30px;
   @media (max-width: 975px) {
     display: grid;
-    grid-row-gap: 50px;
+    grid-row-gap: 20px;
   }
 `;
 
@@ -43,7 +41,7 @@ const MinifiedSubContainer = styled(MinifiedContainer)`
 export default class ProfileSection extends React.Component<
   PSectionProps,
   PSectionState
-> {
+  > {
   constructor(props: PSectionProps) {
     super(props);
     this.state = {
@@ -60,7 +58,6 @@ export default class ProfileSection extends React.Component<
 
   render() {
     const minified = this.state.minified;
-    var team = this.props.title;
 
     let ProfileTypeTag = SubProfile;
 

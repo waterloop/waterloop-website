@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import { SimpleFeatComp } from "../../components/SimpleFeatures/index";
 import * as data from "../../static/copy/Flock/exFeatsModel.json";
 import "../../theme/styles.scss";

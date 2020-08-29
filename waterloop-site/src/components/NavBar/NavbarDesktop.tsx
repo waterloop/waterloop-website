@@ -16,7 +16,7 @@ const NavbarContainer = styled.div`
   width: 100%;
   height: 64px;
   background-color: #232635;
-  position: absolute;
+  // position: absolute; //commenting out for now
 `;
 
 const ListContainer = styled.div`

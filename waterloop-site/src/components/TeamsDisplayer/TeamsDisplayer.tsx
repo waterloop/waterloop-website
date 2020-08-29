@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import { Button } from "components";
 // Types and interfaces
 import {
   ProfileType,
@@ -17,7 +17,6 @@ import { ProfileSection, TeamFilter } from "./components";
 import { sortProfiles, applyTeamFilters } from "./utils";
 import { generateMembersQuery, generateFiltersQuery } from "./api";
 import { Preloader } from "components/Preloader";
-import { toUnicode } from "punycode";
 
 // Styled components for ProfileSection
 const Page = styled.div`
@@ -33,7 +32,7 @@ const Page = styled.div`
 export default class TeamsDisplayer extends React.Component<
   TeamsDisplayerProps,
   TeamsDisplayerState
-> {
+  > {
   constructor(props: TeamsDisplayerProps) {
     super(props);
     this.state = {
@@ -157,16 +156,13 @@ export default class TeamsDisplayer extends React.Component<
 
   render() {
     let teams = this.state.memberData;
-    let leads = [] as Array<ProfileType>;
     let subteams = [] as Array<SubteamProps>;
 
     // Populate teams with profiles after request finishes
     if (teams.size > 0) {
       // Apply filters
       const filteredTeams = applyTeamFilters(teams, this.state.teamFilters);
-      // if (filteredTeams.has("Team Leads")) {
-      //   leads = filteredTeams.get("Team Leads") as Array<ProfileType>;
-      // }
+
       filteredTeams.forEach((team: Array<ProfileType>, name: string) => {
         subteams.push({ title: name, members: team });
         subteams = this.sortSubteams(subteams);
@@ -198,6 +194,15 @@ export default class TeamsDisplayer extends React.Component<
               );
             }
           )}
+        <div className="justify-center">
+          <Button
+            backgroundColor="yellow"
+            textColor="black"
+            text={"JOIN THE TEAM"}
+            onClick={() => window.open("/recruitment", "_self")}
+            variant={null}
+          />
+        </div>
       </Page>
     );
   }

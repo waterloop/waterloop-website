@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Button } from "components";
 import Team from "../../static/img/team/team.png";
 
 const OurTeamContainer = styled.div`
@@ -11,12 +12,12 @@ const TeamPhoto = styled.img`
   display: flex;
   justify-content: center;
   width: 100%;
+  padding: 36px 0 0;
 
   @media screen and (max-width: $mobile) {
     display: flex;
     justify-content: center;
     width: 100%;
-    padding-bottom: 20px;
   }
 `;
 
@@ -32,11 +33,19 @@ const OurTeam = () => {
         creating media and content to increase adoption of the Hyperloop
         concept, we’re united in the pursuit of building and learning amazing
         things together.
-        <br /> <br />
+      </p>
+      <p>
         Interested in joining? We’re always looking for dedicated team members
         to help us make the vision of Hyperloop a reality, and we work hard to
         provide an effective mentorship experience for all new team members.
       </p>
+      <Button
+        backgroundColor="yellow"
+        textColor="black"
+        text={"SEE OPENINGS"}
+        onClick={() => window.open("/recruitment", "_self")}
+        variant={null}
+      />
       <TeamPhoto src={Team} alt="some team photo" />
     </OurTeamContainer>
   );
