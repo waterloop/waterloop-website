@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 // Types and interfaces
 import { ProfileType } from "../../interfaces";
-import { PSectionProps, PSectionState, Descriptions } from "../interfaces";
+import { PSectionProps, PSectionState } from "../interfaces";
 import { SubProfile } from "../Profiles";
 
 // Copy for team descriptions
@@ -43,7 +43,7 @@ const MinifiedSubContainer = styled(MinifiedContainer)`
 export default class ProfileSection extends React.Component<
   PSectionProps,
   PSectionState
-> {
+  > {
   constructor(props: PSectionProps) {
     super(props);
     this.state = {
@@ -60,7 +60,6 @@ export default class ProfileSection extends React.Component<
 
   render() {
     const minified = this.state.minified;
-    var team = this.props.title;
 
     let ProfileTypeTag = SubProfile;
 

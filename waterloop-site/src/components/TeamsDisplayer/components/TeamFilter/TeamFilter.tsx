@@ -13,57 +13,6 @@ const FilterContainer = styled.div`
   align-items: center;
 `;
 
-const StyledFilter = styled.button`
-  width: 150px;
-  height: 35px;
-  background-color: #f9d55b;
-  border-radius: 25px;
-  border: none;
-  outline: none;
-  text-align: center;
-  &:hover {
-    color: white;
-    background-color: #222535;
-  }
-  //diasppears when width is more than 975px
-  @media (max-width: 975px) {
-    display: none;
-  }
-  // mobile buttons
-  &.mobile {
-    text-align: left;
-    padding-left: 30px;
-    border-radius: 50px;
-    width: 300px;
-    height: 70px;
-    //displays when width is less than 975px
-    @media (min-width: 975px) {
-      display: unset;
-    }
-  }
-  //select team button when mobile toggle is closed
-  &.selectTeams {
-    width: 375px;
-    height: 70px;
-    border-radius: 50px;
-    color: white;
-    background-color: #222535;
-    text-align: left;
-    padding-left: 30px;
-    //displays when width is less than 975px
-    @media (max-width: 975px) {
-      display: unset;
-    }
-    //diasppears when width is more than 975px
-  }
-`;
-
-// //button colours when selected
-const SelectedFilter = styled(StyledFilter)`
-  color: white;
-  background-color: #222535;
-`;
-
 //container for buttons in mobile
 const SlideDownContainer = styled.div`
   grid-template-columns: repeat(2, 1fr);
@@ -99,8 +48,6 @@ const StyledImage = styled.img`
 `;
 
 const TeamFilter = (props: any) => {
-  let slideDownContainer;
-  let toggleLine;
 
   const [toggleOpen, setToggle] = useState(false);
 

@@ -1,6 +1,5 @@
 // Core modules:
 import React from "react";
-import styled from "styled-components";
 import "../../theme/styles.scss"; // For styling
 
 export interface FeatProps {

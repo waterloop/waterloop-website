@@ -173,13 +173,11 @@ class ContactUsForm extends React.Component<
         <div className="success-modal-container">
           <div className={"success-message"}>
             <img src={Check} alt="success" />
-            <div className="center-text">
-              <h2>Thanks for reaching out! </h2>
-              <p>Your message was submitted successfully.</p>
-              <a onClick={() => this.setState({ submitted: false })}>
-                Submit another message
+            <h2 className="center-text">Thanks for reaching out! </h2>
+            <p className="center-text">Your message was submitted successfully.</p>
+            <a className="center-text" onClick={() => this.setState({ submitted: false })}>
+              Submit another message
             </a>
-            </div>
           </div>
         </div>
       );
