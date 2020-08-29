@@ -6,10 +6,11 @@ import Home from "./pages/Home";
 import Flock from "./pages/Flock";
 import Team from "./pages/Team";
 import Sponsors from "./pages/Sponsors";
-import Recruitment from "./pages/Recruitment";
+import {Recruitment} from "./pages/Recruitment";
 import { Footer } from "sections/Footer";
 import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import "typeface-ibm-plex-sans";
+import JobPostingPage from './components/RecruitmentForm/JobPostingPage';
 class App extends React.Component {
   constructor(props = {}) {
     super(props);
@@ -59,6 +60,9 @@ class App extends React.Component {
             </Route>
             <Route path="/recruitment">
               <Recruitment />
+            </Route>
+            <Route path="/posting/:id">
+              <JobPostingPage />
             </Route>
           </Switch>
           <Footer />
