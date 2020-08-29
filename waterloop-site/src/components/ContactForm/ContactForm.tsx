@@ -105,11 +105,9 @@ class ContactUsForm extends React.Component<
   }
 
   public showForm() {
-    {
-      this.setState({
-        submitted: false,
-      });
-    }
+    this.setState({
+      submitted: false,
+    });
   }
 
   public renderServerError() {
