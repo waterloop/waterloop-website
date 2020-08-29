@@ -39,7 +39,7 @@ class JobPosting extends React.Component<JobPostingProps> {
                 <br />
                 <div className="HeaderButtonWrapper">
                     <h2>{this.props.role}</h2>
-                    <div>
+                    <div className="ButtonWrap">
                         <Button
                             backgroundColor="yellow"
                             textColor="black"
