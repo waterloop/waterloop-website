@@ -12,7 +12,7 @@ const TeamPhoto = styled.img`
   display: flex;
   justify-content: center;
   width: 100%;
-  padding: 36px 0 0;
+  padding: 36px 0 36px;
 
   @media screen and (max-width: $mobile) {
     display: flex;
@@ -39,14 +39,16 @@ const OurTeam = () => {
         to help us make the vision of Hyperloop a reality, and we work hard to
         provide an effective mentorship experience for all new team members.
       </p>
-      <Button
-        backgroundColor="yellow"
-        textColor="black"
-        text={"SEE OPENINGS"}
-        onClick={() => window.open("/recruitment", "_self")}
-        variant={null}
-      />
       <TeamPhoto src={Team} alt="some team photo" />
+      <div className="centerDiv">
+        <Button
+          backgroundColor="yellow"
+          textColor="black"
+          text={"SEE OPENINGS"}
+          onClick={() => window.open("/recruitment", "_self")}
+          variant={null}
+        />
+      </div>
     </OurTeamContainer>
   );
 };

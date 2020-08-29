@@ -95,7 +95,7 @@ class NavBar extends React.Component {
           <Link to="/sponsors" title="Sponsors" text="Sponsors">
             <Sponsors />
           </Link>
-          <Link to="/contact" title="Contact" text="Contact">
+          <Link to="/recruitment" title="Join Us" text="Join Us">
             <Contact />
           </Link>
         </ListContainer>

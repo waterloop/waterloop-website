@@ -121,7 +121,7 @@ enum Page {
   flock = "Flock",
   team = "Team",
   sponsors = "Sponsors",
-  contact = "Contact",
+  recruitment = "Join Us",
 }
 
 interface Current {
@@ -210,13 +210,13 @@ class Sidebar extends React.Component<MyProps, MyState> {
             </div>
             <div>
               <Link
-                to="/contact"
+                to="/recruitment"
                 onClick={() => {
                   this.setState({ toggleOpen: false });
                   this.props.handleClick(this.state.toggleOpen);
                 }}
               >
-                Contact
+                Join Us
               </Link>
             </div>
           </ListContainer>
