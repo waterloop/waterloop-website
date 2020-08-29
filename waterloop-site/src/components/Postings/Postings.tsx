@@ -1,17 +1,6 @@
 import React from "react";
-import PositionPosting from "../RecruitmentForm/PositionPosting";
-import JobPostingPage from "components/RecruitmentForm/JobPostingPage";
-import JobPostings from "components/Postings/Postings";
-import Text from "static/copy/Recruitment/Recruitment.json";
+import { Button } from "components";
 import { samplePostingsData } from "../../static/consts/postings";
-import {
-  Route,
-  Switch,
-  Router,
-  BrowserRouter,
-  Link,
-  NavLink,
-} from "react-router-dom";
 
 export default class Postings extends React.Component<any, any> {
   render() {
@@ -20,7 +9,7 @@ export default class Postings extends React.Component<any, any> {
         {samplePostingsData.length > 0 &&
           samplePostingsData.map((item: any, index: number) => {
             return (
-              <div className={"postings"}>
+              <div className={"posting"}>
                 <h3>
                   <a
                     href={`/posting/${index + 1}`}
@@ -32,6 +21,13 @@ export default class Postings extends React.Component<any, any> {
                     {item.role}
                   </a>
                 </h3>
+                <Button
+                  backgroundColor="yellow"
+                  textColor="black"
+                  text={"APPLY"}
+                  onClick={() => window.open(`/posting/${index + 1}`, "_self")}
+                  variant={null}
+                />
               </div>
             );
           })}

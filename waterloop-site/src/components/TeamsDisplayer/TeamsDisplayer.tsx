@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import { Button } from "components";
 // Types and interfaces
 import {
   ProfileType,
@@ -198,6 +198,15 @@ export default class TeamsDisplayer extends React.Component<
               );
             }
           )}
+        <div className="justify-center">
+          <Button
+            backgroundColor="yellow"
+            textColor="black"
+            text={"JOIN THE TEAM"}
+            onClick={() => window.open("/recruitment", "_self")}
+            variant={null}
+          />
+        </div>
       </Page>
     );
   }

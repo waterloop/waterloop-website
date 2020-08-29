@@ -139,6 +139,12 @@ code {
   }
 }
 
+.justify-center {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
 .break {
   padding-bottom: 60px;
   @media screen and (max-width: $mobile) {
@@ -247,6 +253,22 @@ textarea {
   align-items: left;
   text-decoration: none;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.posting {
+  display: flex;
+  padding: 20px 0;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: space-between;
+  button {
+    margin: 0 50px;
+    @media screen and (max-width: $mobile) {
+      margin: 0 0 0 30px;
+    }
+  }
 }
 
 .SocialMediaWrapper {
@@ -627,8 +649,6 @@ textarea {
   }
 }
 
-
-
 .generalArrowContainer {
   position: absolute;
   bottom: 75px;
@@ -894,12 +914,13 @@ textarea {
   border: 0;
   border-radius: 50px;
   max-width: 350px;
+  max-height: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px 25px;
   @media screen and (max-width: $mobile) {
-    max-height: 50px;
+    max-height: 38px;
   }
 }
 
@@ -1115,7 +1136,6 @@ textarea {
   }
 }
 
-
 .arrow {
   border: solid black;
   border-width: 0 3px 3px 0;
@@ -1141,11 +1161,11 @@ textarea {
 }
 
 .HeaderButtonWrapper {
-  display:flex;
-  justify-content:space-between;
+  display: flex;
+  justify-content: space-between;
 
   @media (max-width: $mobile) {
-  flex-direction: column;
-  padding-bottom: 30px;
+    flex-direction: column;
+    padding-bottom: 30px;
   }
 }
