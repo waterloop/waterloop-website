@@ -4,7 +4,7 @@ export const samplePostingsData = [
     deadline: "September 26, 2020",
     term: "FALL 2020",
     applicationForm: "https://teamwaterloop.ca",
-    subteam: "SOFTWARE",
+    subteam: "Electrical",
     description:
       "Laboris incididunt officia culpa consequat dolor adipisicing ullamco ipsum ex. Sit ullamco anim fugiat sint velit. Sit tempor magna adipisicing aliqua anim veniam commodo. Nisi do cupidatat ut laborum commodo eu sunt ut sint. In non irure aliquip in culpa officia ex voluptate commodo sit nostrud cupidatat. Magna pariatur qui deserunt commodo. Ad aliqua proident do duis nisi est labore amet reprehenderit amet consectetur est nulla.",
     tasks: [
@@ -25,7 +25,7 @@ export const samplePostingsData = [
     deadline: "September 26, 2020",
     term: "FALL 2020",
     applicationForm: "https://teamwaterloop.ca",
-    subteam: "MECHANICAL",
+    subteam: "Software",
     description:
       "Laboris incididunt officia culpa consequat dolor adipisicing ullamco ipsum ex. Sit ullamco anim fugiat sint velit. Sit tempor magna adipisicing aliqua anim veniam commodo. Nisi do cupidatat ut laborum commodo eu sunt ut sint. In non irure aliquip in culpa officia ex voluptate commodo sit nostrud cupidatat. Magna pariatur qui deserunt commodo. Ad aliqua proident do duis nisi est labore amet reprehenderit amet consectetur est nulla.",
     tasks: [
@@ -46,7 +46,7 @@ export const samplePostingsData = [
     deadline: "September 26, 2020",
     term: "FALL 2020",
     applicationForm: "https://teamwaterloop.ca",
-    subteam: "MECHANICAL",
+    subteam: "Other",
     description:
       "Laboris incididunt officia culpa consequat dolor adipisicing ullamco ipsum ex. Sit ullamco anim fugiat sint velit. Sit tempor magna adipisicing aliqua anim veniam commodo. Nisi do cupidatat ut laborum commodo eu sunt ut sint. In non irure aliquip in culpa officia ex voluptate commodo sit nostrud cupidatat. Magna pariatur qui deserunt commodo. Ad aliqua proident do duis nisi est labore amet reprehenderit amet consectetur est nulla.",
     tasks: [
@@ -67,7 +67,7 @@ export const samplePostingsData = [
     deadline: "September 26, 2020",
     term: "FALL 2020",
     applicationForm: "https://teamwaterloop.ca",
-    subteam: "MECHANICAL",
+    subteam: "Mechanical",
     description:
       "Laboris incididunt officia culpa consequat dolor adipisicing ullamco ipsum ex. Sit ullamco anim fugiat sint velit. Sit tempor magna adipisicing aliqua anim veniam commodo. Nisi do cupidatat ut laborum commodo eu sunt ut sint. In non irure aliquip in culpa officia ex voluptate commodo sit nostrud cupidatat. Magna pariatur qui deserunt commodo. Ad aliqua proident do duis nisi est labore amet reprehenderit amet consectetur est nulla.",
     tasks: [
@@ -88,7 +88,7 @@ export const samplePostingsData = [
     deadline: "September 26, 2020",
     term: "FALL 2020",
     applicationForm: "https://teamwaterloop.ca",
-    subteam: "MECHANICAL",
+    subteam: "Mechanical",
     description:
       "Laboris incididunt officia culpa consequat dolor adipisicing ullamco ipsum ex. Sit ullamco anim fugiat sint velit. Sit tempor magna adipisicing aliqua anim veniam commodo. Nisi do cupidatat ut laborum commodo eu sunt ut sint. In non irure aliquip in culpa officia ex voluptate commodo sit nostrud cupidatat. Magna pariatur qui deserunt commodo. Ad aliqua proident do duis nisi est labore amet reprehenderit amet consectetur est nulla.",
     tasks: [

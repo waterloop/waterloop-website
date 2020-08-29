@@ -28,7 +28,7 @@ export class Recruitment extends React.Component<any, any> {
             imgData={imgData}
           ></TextWithImage>
           <div className="break"></div>
-          <h2>Current Postings</h2>
+          <h2 className={"center-text"}>Current Postings</h2>
           <JobPostings />
         </div>
       </>

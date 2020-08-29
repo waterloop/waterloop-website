@@ -2,35 +2,56 @@ import React from "react";
 import { Button } from "components";
 import { samplePostingsData } from "../../static/consts/postings";
 
-export default class Postings extends React.Component<any, any> {
+class Subteam extends React.Component<any, any> {
   render() {
     return (
       <div className={"postings"}>
-        {samplePostingsData.length > 0 &&
-          samplePostingsData.map((item: any, index: number) => {
-            return (
-              <div className={"posting"}>
-                <h3>
-                  <a
-                    href={`/posting/${index + 1}`}
-                    style={{
-                      textDecoration: "none",
-                      color: "black",
-                    }}
-                  >
-                    {item.role}
-                  </a>
-                </h3>
-                <Button
-                  backgroundColor="yellow"
-                  textColor="black"
-                  text={"APPLY"}
-                  onClick={() => window.open(`/posting/${index + 1}`, "_self")}
-                  variant={null}
-                />
-              </div>
-            );
+        <h3>
+          <strong>{this.props.team}</strong>
+        </h3>
+        {this.props.postings.length > 0 &&
+          this.props.postings.map((item: any, index: number) => {
+            if (item.subteam == this.props.team)
+              return (
+                <div className={"posting"}>
+                  <h3>
+                    <a
+                      href={`/posting/${index + 1}`}
+                      style={{
+                        textDecoration: "none",
+                        color: "black",
+                      }}
+                    >
+                      {item.role}
+                    </a>
+                  </h3>
+                  <Button
+                    backgroundColor="yellow"
+                    textColor="black"
+                    text={"APPLY"}
+                    onClick={() =>
+                      window.open(`/posting/${index + 1}`, "_self")
+                    }
+                    variant={null}
+                  />
+                </div>
+              );
           })}
+      </div>
+    );
+  }
+}
+
+export default class Postings extends React.Component<any, any> {
+  render() {
+    const TEAMS = ["Software", "Mechanical", "Electrical", "Other"];
+    return (
+      <div>
+        {TEAMS.map((team: any, index: number) => {
+          return (
+            <Subteam postings={samplePostingsData} team={team} key={index} />
+          );
+        })}
       </div>
     );
   }

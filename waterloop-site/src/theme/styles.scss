@@ -249,12 +249,18 @@ textarea {
 
 .postings {
   display: flex;
-  justify-content: left;
-  align-items: left;
-  text-decoration: none;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  margin: 0 48px;
+  > div {
+    display: flex;
+    text-decoration: none;
+    justify-content: space-between;
+    align-items: center;
+  }
+  > h3 {
+    margin: 32px 0 0 0;
+  }
 }
 
 .posting {
@@ -263,6 +269,7 @@ textarea {
   width: 100%;
   box-sizing: border-box;
   justify-content: space-between;
+  align-items: center;
   button {
     margin: 0 50px;
     @media screen and (max-width: $mobile) {
