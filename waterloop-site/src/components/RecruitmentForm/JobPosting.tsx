@@ -18,6 +18,7 @@ type JobPostingProps = {
 }
 
 const LightHeader = styled.h6`
+    text-transform: uppercase;
     font-weight:600;
     color: #C4C4C4;
     margin-top: 0;

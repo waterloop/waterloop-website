@@ -2,7 +2,6 @@ import React from 'react'
 import JobPosting from './JobPosting'
 import { samplePostingsData } from '../../static/consts/postings';
 import { useParams } from 'react-router';
-import styled from 'styled-components';
 
 
 interface RouteParams {
