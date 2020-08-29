@@ -7,7 +7,6 @@ import JoinUs from "../static/img/team/joinus.png";
 import "../theme/styles.scss";
 
 import JobPostings from "components/Postings/Postings";
-import { samplePostingsData } from "../static/consts/postings";
 const castData: MyProps[] = Text;
 const imgData: string[] = [JoinUs];
 
