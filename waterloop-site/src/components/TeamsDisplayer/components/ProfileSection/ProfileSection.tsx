@@ -10,8 +10,7 @@ import { SubProfile } from "../Profiles";
 import Text from "static/copy/Team/descriptions.json";
 
 const ProfileSectionContainer = styled.div`
-  margin-bottom: 100px;
-
+  margin-bottom: 75px;
   @media (max-width: 975px) {
     margin-bottom: 50px;
   }
@@ -19,11 +18,10 @@ const ProfileSectionContainer = styled.div`
 
 const MinifiedContainer = styled.div`
   display: grid;
-  grid-row-gap: 100px;
-
+  grid-row-gap: 30px;
   @media (max-width: 975px) {
     display: grid;
-    grid-row-gap: 50px;
+    grid-row-gap: 20px;
   }
 `;
 
