@@ -50,6 +50,9 @@ export class TextWithImage extends React.Component<{
             src={this.props.imgData[key]}
             alt="waterloop"
           ></img>
+          <div className="text-w-image-btn-mobile">
+            {this.renderButton(entry.link, entry.linkText)}
+          </div>
         </div>
       );
     });
