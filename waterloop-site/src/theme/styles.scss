@@ -115,7 +115,7 @@ code {
     font-weight: 300;
 
     @media screen and (max-width: $mobile) {
-      font-size: 28pt;
+      font-size: 32pt;
     }
   }
   p {
@@ -1057,13 +1057,6 @@ textarea {
   }
   @media screen and (max-width: $mobile) {
     width: 100%;
-
-    > h2 {
-      text-align: center;
-    }
-    > p {
-      text-align: center;
-    }
   }
 }
 
