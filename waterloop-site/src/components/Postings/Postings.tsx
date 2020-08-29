@@ -6,25 +6,22 @@ class Subteam extends React.Component<any, any> {
   render() {
     return (
       <div className={"postings"}>
-        <h3>
-          <strong>{this.props.team}</strong>
-        </h3>
+        <h3>{this.props.team}</h3>
         {this.props.postings.length > 0 &&
           this.props.postings.map((item: any, index: number) => {
             if (item.subteam == this.props.team)
               return (
                 <div className={"posting"}>
-                  <h3>
-                    <a
-                      href={`/posting/${index + 1}`}
-                      style={{
-                        textDecoration: "none",
-                        color: "black",
-                      }}
-                    >
-                      {item.role}
-                    </a>
-                  </h3>
+                  <a
+                    href={`/posting/${index + 1}`}
+                    style={{
+                      fontSize: "24px",
+                      textDecoration: "none",
+                      color: "black",
+                    }}
+                  >
+                    {item.role}
+                  </a>
                   <Button
                     backgroundColor="yellow"
                     textColor="black"
