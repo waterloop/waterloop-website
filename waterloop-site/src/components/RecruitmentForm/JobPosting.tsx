@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Button } from 'components';
 import styled from 'styled-components';
-import { BrowserRouter, Link } from 'react-router-dom';
-import { fontWeight } from 'styled-system';
 import "../../theme/styles.scss";
 
 type JobPostingProps = {
@@ -34,12 +32,12 @@ class JobPosting extends React.Component<JobPostingProps> {
     render() {
         return (
             <div>
-                <a href={`/recruitment`} style={{ textDecoration: "none", color: "black" }}>
+                <a href={`/recruitment`} style={{ textDecoration: "none", color: "#010101" }}>
                     <h6 style={{ margin: "0" }}><i className="arrow left"></i> Back</h6>
                 </a>
                 <br />
                 <div className="HeaderButtonWrapper">
-                    <h2 style={{ color: "black" }}>{this.props.role}</h2>
+                    <h2>{this.props.role}</h2>
                     <div>
                         <Button
                             backgroundColor="yellow"
@@ -50,7 +48,7 @@ class JobPosting extends React.Component<JobPostingProps> {
                     </div>
                 </div>
                 <LightHeader>WATERLOO, ON/{this.props.subteam}/{this.props.term}</LightHeader>
-                <h6 style={{ color: "black", fontWeight: "normal" }}>Deadline: {this.props.deadline}</h6>
+                <h6 style={{ color: "#010101", fontWeight: "normal" }}>Deadline: {this.props.deadline}</h6>
                 <p>{this.props.description}</p>
                 <div className="break" />
                 <h3>What you'll do:</h3>

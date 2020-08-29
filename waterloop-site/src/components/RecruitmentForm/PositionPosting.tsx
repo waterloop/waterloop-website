@@ -16,12 +16,6 @@ const TextBlock = styled.div`
   }
 `;
 
-const Header = styled.h2`
-  font-style: italic;
-  font-size: 120%;
-  margin-bottom: 0px !important;
-`;
-
 const Text = styled.p`
   margin-top: 14px !important;
   display: inline-block;
@@ -61,13 +55,6 @@ const ButtonBlock = styled.div`
   display: inline;
 `;
 
-const Line = styled.hr`
-  display: none;
-  @media (max-width: 425px) {
-    display: flex;
-  }
-`;
-
 const CloseBtn = styled.button`
   background: #fed138;
   position: fixed;
@@ -93,7 +80,7 @@ const PositionPosting: FunctionComponent<MyProps> = ({ role, description, skills
       <TextBlock>
         <BrowserRouter>
           <Link to="/postingNumber">
-            <Header>{role}</Header>
+            <h2>{role}</h2>
           </Link>
         </BrowserRouter>
         <Text>{description}</Text>
