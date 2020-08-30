@@ -6,7 +6,14 @@ class Subteam extends React.Component<any, any> {
   render() {
     return (
       <div className={"postings"}>
-        <h3>{this.props.team}</h3>
+        <h3
+          style={{
+            fontSize: "18px",
+            color: "black",
+          }}
+        >
+          <strong>{this.props.team}</strong>
+        </h3>
         {this.props.postings.length > 0 &&
           this.props.postings.map((item: any, index: number) => {
             if (item.subteam == this.props.team)
@@ -41,7 +48,16 @@ class Subteam extends React.Component<any, any> {
 
 export default class Postings extends React.Component<any, any> {
   render() {
-    const TEAMS = ["Software", "Mechanical", "Electrical", "Business", "LIM", "Team Hub", "Infrastructure", "Other"];
+    const TEAMS = [
+      "Software",
+      "Mechanical",
+      "Electrical",
+      "Business",
+      "LIM",
+      "Team Hub",
+      "Infrastructure",
+      "Other",
+    ];
     return (
       <div>
         {TEAMS.map((team: any, index: number) => {
