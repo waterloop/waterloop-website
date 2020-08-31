@@ -1070,6 +1070,7 @@ textarea {
 
 .success-message {
   height: 60vh;
+  min-height: 500px;
   box-sizing: border-box;
   width: 80%;
   padding: 10vh 10vw;
@@ -1117,7 +1118,12 @@ textarea {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-
+  div {
+    width: 30%;
+    @media (max-width: $mobile) {
+      width: 100%;
+    }
+  }
   div:nth-child(2) {
     margin: 0 80px;
     @media (max-width: $mobile) {
