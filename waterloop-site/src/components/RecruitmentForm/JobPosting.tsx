@@ -48,7 +48,7 @@ class JobPosting extends React.Component<JobPostingProps> {
                             variant={null} />
                     </div>
                 </div>
-                <LightHeader>WATERLOO, ON/{this.props.subteam}/{this.props.term}</LightHeader>
+                <LightHeader>WATERLOO, ON/ {this.props.subteam}/ {this.props.term}</LightHeader>
                 <h6 style={{ color: "#010101", fontWeight: "normal" }}>Deadline: {this.props.deadline}</h6>
                 <p>{this.props.description}</p>
                 <div className="break" />
