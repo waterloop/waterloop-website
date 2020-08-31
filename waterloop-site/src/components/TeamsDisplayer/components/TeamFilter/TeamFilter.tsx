@@ -43,6 +43,10 @@ const StyledButton = styled.button`
   width: 85px;
   height: 35px;
   margin: 6px 0;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 const StyledImage = styled.img`
   margin-bottom: 0.1rem;
