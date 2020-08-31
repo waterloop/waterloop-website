@@ -32,7 +32,7 @@ class Subteam extends React.Component<any, any> {
                   <Button
                     backgroundColor="yellow"
                     textColor="black"
-                    text={"APPLY"}
+                    text={"VIEW"}
                     onClick={() =>
                       window.open(`/posting/${index + 1}`, "_self")
                     }
