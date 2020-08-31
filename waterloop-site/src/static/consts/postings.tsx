@@ -70,7 +70,7 @@ export const samplePostingsData = [
     ],
   },
   {
-    role: "Photographer/Videographer",
+    role: "Photographer/ Videographer",
     deadline: "September 17, 2020",
     term: "FALL 2020",
     applicationForm: "https://forms.gle/8uq54fDQohq33D166",
