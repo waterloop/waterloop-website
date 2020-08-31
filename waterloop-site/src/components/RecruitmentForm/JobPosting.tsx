@@ -12,7 +12,7 @@ type JobPostingProps = {
     description: string;
     tasks: string[];
     requirements: string[];
-    interest: string[];
+    additional: string[];
     // termList: [string, string, string, string, string];
 
 }
@@ -61,7 +61,7 @@ class JobPosting extends React.Component<JobPostingProps> {
                     })}
                 </ul>
                 <div className="break" />
-                <h3>What we're looking for:</h3>
+                <h3>Required Skills:</h3>
                 <ul>
                     {this.props.requirements.map((task: any) => {
                         return (
@@ -70,9 +70,9 @@ class JobPosting extends React.Component<JobPostingProps> {
                     })}
                 </ul>
                 <div className="break" />
-                <h3>Areas of Interest</h3>
+                <h3>What we're looking for:</h3>
                 <ul>
-                    {this.props.interest.map((task: any) => {
+                    {this.props.additional.map((task: any) => {
                         return (
                             <li>{task}</li>
                         )

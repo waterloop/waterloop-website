@@ -24,7 +24,7 @@ export default function JobPostingPage() {
                 description={samplePostingsData[id].description}
                 tasks={samplePostingsData[id].tasks}
                 requirements={samplePostingsData[id].requirements}
-                interest={samplePostingsData[id].interest}
+                additional={samplePostingsData[id].additional}
             >
             </JobPosting>
         </div>

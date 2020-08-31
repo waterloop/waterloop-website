@@ -17,7 +17,7 @@ export const samplePostingsData = [
       "Experience/familiarity with Node JS",
       "Experience/familiarity with MongoDB",
     ],
-    interest: [
+    additional: [
       "Fullstack Web Development",
       "Estimated 5 hr/week time commitment",
     ],
@@ -42,7 +42,7 @@ export const samplePostingsData = [
       "Experience/familiarity with Styled Components",
       "Experience/familiarity with Styled Systems",
     ],
-    interest: [
+    additional: [
       "Front End Web Development",
       "Estimated 5 hr/week time commitment",
     ],
@@ -65,7 +65,7 @@ export const samplePostingsData = [
       "Experience/familiarity with Adobe XD, Illustrator, InVision, Figma or equivalent",
       "Prior graphic design experience",
     ],
-    interest: [
+    additional: [
       "Estimated 6 hr/week time commitment",
     ],
   },
@@ -89,7 +89,7 @@ export const samplePostingsData = [
       "Prior experience with content creation for teams/clubs",
       "Will be living in Waterloo for the Fall term/willing to come to Waterloop to take photos and videos in our bay",
     ],
-    interest: [
+    additional: [
       "Estimated 6 hr/week time commitment",
     ],
   },
@@ -117,7 +117,7 @@ export const samplePostingsData = [
       "Experience/interest in mechanical design",
       "Experience/interest in industry networking",
     ],
-    interest: [
+    additional: [
       "Estimated 5 hr/week time commitment",
     ],
   },
@@ -140,7 +140,7 @@ export const samplePostingsData = [
       "Interest in learning Machine Shop skills",
       "Interest in mechanical design experience",
     ],
-    interest: [
+    additional: [
       "Estimated 10 hr/week time commitment",
 
     ],
@@ -169,7 +169,7 @@ export const samplePostingsData = [
       "Experience/interest in how to use machine shop tools",
 
     ],
-    interest: [
+    additional: [
       "Estimated 10 hr/week time commitment",
     ],
   },
@@ -193,7 +193,7 @@ export const samplePostingsData = [
       "Experience/Interest in learning Machine Shop skills",
       "Experience/Interest in mechanical design",
     ],
-    interest: [
+    additional: [
       "Estimated 10 hr/week time commitment",
     ],
   },
@@ -217,7 +217,7 @@ export const samplePostingsData = [
       "Experience/Interest in learning machine shop skills",
       "Experience/Interest in learning design",
     ],
-    interest: [
+    additional: [
       "Full time position 40 hr/week time commitment",
     ],
   },
