@@ -65,9 +65,7 @@ export const samplePostingsData = [
       "Experience/familiarity with Adobe XD, Illustrator, InVision, Figma or equivalent",
       "Prior graphic design experience",
     ],
-    additional: [
-      "Estimated 6 hr/week time commitment",
-    ],
+    additional: ["Estimated 6 hr/week time commitment"],
   },
   {
     role: "Photographer/ Videographer",
@@ -89,9 +87,7 @@ export const samplePostingsData = [
       "Prior experience with content creation for teams/clubs",
       "Will be living in Waterloo for the Fall term/willing to come to Waterloop to take photos and videos in our bay",
     ],
-    additional: [
-      "Estimated 6 hr/week time commitment",
-    ],
+    additional: ["Estimated 6 hr/week time commitment"],
   },
   {
     role: "Infrastructure Team Member",
@@ -117,9 +113,7 @@ export const samplePostingsData = [
       "Experience/interest in mechanical design",
       "Experience/interest in industry networking",
     ],
-    additional: [
-      "Estimated 5 hr/week time commitment",
-    ],
+    additional: ["Estimated 5 hr/week time commitment"],
   },
   {
     role: "Braking Team Member",
@@ -140,10 +134,7 @@ export const samplePostingsData = [
       "Interest in learning Machine Shop skills",
       "Interest in mechanical design experience",
     ],
-    additional: [
-      "Estimated 10 hr/week time commitment",
-
-    ],
+    additional: ["Estimated 10 hr/week time commitment"],
   },
   {
     role: "Composites Manufacturing Team Member",
@@ -167,11 +158,8 @@ export const samplePostingsData = [
       "Experience/interest in learning Basic aerodynamics",
       "Experience/interest in learning about FEA",
       "Experience/interest in how to use machine shop tools",
-
     ],
-    additional: [
-      "Estimated 10 hr/week time commitment",
-    ],
+    additional: ["Estimated 10 hr/week time commitment"],
   },
   {
     role: "Mechanical Designer",
@@ -193,9 +181,7 @@ export const samplePostingsData = [
       "Experience/Interest in learning Machine Shop skills",
       "Experience/Interest in mechanical design",
     ],
-    additional: [
-      "Estimated 10 hr/week time commitment",
-    ],
+    additional: ["Estimated 10 hr/week time commitment"],
   },
   {
     role: "Mech Co-op",
@@ -217,8 +203,142 @@ export const samplePostingsData = [
       "Experience/Interest in learning machine shop skills",
       "Experience/Interest in learning design",
     ],
-    additional: [
-      "Full time position 40 hr/week time commitment",
+    additional: ["Full time position 40 hr/week time commitment"],
+  },
+  {
+    role: "E&M / CAE Analyst",
+    deadline: "September 17, 2020",
+    term: "FALL 2020",
+    applicationForm: "https://forms.gle/8uq54fDQohq33D166",
+    subteam: "LIM",
+    description:
+      "The Linear Induction Motor (LIM) is the propulsion system for the pod. It is similar in principle to a rotary induction motor, but makes use of a different geometry. The LIM team is responsible for the design, manufacturing, and testing of LIMs. Waterloop has been iteratively improving our LIMs, but much of the optimization remains to be done.",
+    tasks: [
+      "The E&M/CAE analysis team will be responsible for researching various factors of the LIM, and developing simulations. The team will be preparing designs for the motor development team to prototype and test to verify simulation results.",
     ],
+    requirements: [
+      "A deep interest in E&M and motor design",
+      "Basic CAD skills",
+      "At least 1 year commitment to the team",
+      "Willingness to read textbooks in spare time",
+      "Prior knowledge in induction motors",
+      "Recommended: having taken any relevant courses such as ME269, MTE120, etc.",
+      "To be learned: Motor design",
+      "To be learned: FEA and simulations",
+    ],
+    additional: ["10 hr/week time commitment"],
+  },
+  {
+    role: "Motor Development / Test Stand Engineering",
+    deadline: "September 17, 2020",
+    term: "FALL 2020",
+    applicationForm: "https://forms.gle/8uq54fDQohq33D166",
+    subteam: "LIM",
+    description:
+      "The Linear Induction Motor (LIM) is the propulsion system for the pod. It is similar in principle to a rotary induction motor, but makes use of a different geometry. The LIM team is responsible for the design, manufacturing, and testing of LIMs. Waterloop has been iteratively improving our LIMs, but much of the optimization remains to be done.",
+    tasks: [
+      "The motor development team will be responsible for manufacturing various prototype LIMs to test and verify simulation results. ",
+    ],
+    requirements: [
+      "A deep interest in E&M and motor design",
+      "At least 1 year commitment to the team",
+      "Willingness to read textbooks in spare time",
+      "Living in Waterloo over the Fall term and willing to participate in in-person work",
+      "Recommended: prior knowledge and/or experience with electric motors",
+      "Recommended: having taken any relevant courses such as ME269, MTE120, etc.",
+      "Recommended: Basic embedded programming",
+      "To be learned: Motor design",
+      "To be learned: FEA and simulations",
+      "To be learned: Rapid Prototyping",
+    ],
+    additional: ["10 hr/week time commitment"],
+  },
+  {
+    role: "Embedded",
+    deadline: "September 17, 2020",
+    term: "FALL 2020",
+    applicationForm: "https://forms.gle/8uq54fDQohq33D166",
+    subteam: "Electrical",
+    description:
+      "The electrical team works on powering and controlling the Hyperloop pod while providing sensor feedback. The team has a strong focus on both HV and LV development in battery management, motor control and embedded sensing. \n The embedded electrical team is developing a comprehensive sensor system to ensure accurate measurements can be taken from our pod. These sensors may measure temperature, pressure, current, optical, voltage and more.",
+    tasks: [
+      "Design, build and test sensor boards",
+      "Develop low-level firmware for sensors (depending on your interest) ",
+      "Assemble and test sensor boards in-person",
+    ],
+    requirements: [
+      "Experience creating and conducting test plans (verifying sensors, power output, etc)",
+      "Recommended: Living in Waterloo or willing to come to Waterloo to participate in in-person work",
+      "To be learned: Circuit design (sensors, analog design, MCUs)",
+      "To be learned: FEA and simulations",
+      "To be learned: Schematic capture and PCB layout (Altium preferred, KiCAD also welcome)",
+      "To be learned: Electrical assembly skills (SMT solder and reflow preferred)",
+      "To be learned: Electrical measurement tools (multimeter, oscilloscope)",
+      "To be learned: Embedded development (STM32, Arduino preferred)",
+    ],
+    additional: ["10 hr/week time commitment"],
+  },
+  {
+    role: "Motor Control",
+    deadline: "September 17, 2020",
+    term: "FALL 2020",
+    applicationForm: "https://forms.gle/8uq54fDQohq33D166",
+    subteam: "Electrical",
+    description:
+      "The electrical team works on powering and controlling the Hyperloop pod while providing sensor feedback. The team has a strong focus on both HV and LV development in battery management, motor control and embedded sensing. \nWaterloop is developing a controller for our propulsion system. Controls are primarily implemented in software, however the control algorithm will be verified in PSIM. Hardware is being designed to drive high power switches and provide sensor feedback.",
+    tasks: [
+      "Design, build and test sensor boards",
+      "Develop low-level firmware for sensors (depending on your interest) ",
+      "Assemble and test sensor boards in-person",
+    ],
+    requirements: [
+      "Know/be willing to learn ECE463/ECE420",
+      "Recommended: Prior experience with power electronics",
+    ],
+    additional: ["10 hr/week time commitment"],
+  },
+  {
+    role: "Battery Management System (BMS)",
+    deadline: "September 17, 2020",
+    term: "FALL 2020",
+    applicationForm: "https://forms.gle/8uq54fDQohq33D166",
+    subteam: "Electrical",
+    description:
+      "The electrical team works on powering and controlling the Hyperloop pod while providing sensor feedback. The team has a strong focus on both HV and LV development in battery management, motor control and embedded sensing. The battery management system team is developing an in-house BMS to monitor properties of individual cells, and provide cell balancing where needed.",
+    tasks: [
+      "Design, build and test sensor boards that measure battery cells to ensure optimal conditions/that measure power to components such as the motor controller",
+      "Assemble and test sensor boards in-person",
+    ],
+    requirements: [
+      "To be learned: Circuit design (MCUs, power electronics)",
+      "To be learned: Schematic capture and PCB layout (Altium preferred, KiCAD also welcome)",
+      "To be learned: Electrical assembly skills (SMT solder and reflow experience)",
+      "To be learned: Electrical measurement tools (multimeter, oscilloscope)",
+      "To be learned: Experience creating and conducting test plans (verifying sensors, power output, etc)",
+      "Recommended: Living in Waterloo or willing to come to Waterloo to participate in in-person work",
+    ],
+    additional: ["10 hr/week time commitment"],
+  },
+  {
+    role: "Electrical Co-op",
+    deadline: "September 17, 2020",
+    term: "FALL 2020",
+    applicationForm: "https://forms.gle/8uq54fDQohq33D166",
+    subteam: "Electrical",
+    description:
+      "The electrical team works on powering and controlling the Hyperloop pod while providing sensor feedback. The team has a strong focus on both HV and LV development in battery management, motor control and embedded sensing. As the electrical co-op, you will be working on developing and testing our embedded sensors and in-house battery management system. This position is mainly in-person, but also involves some remote work. This position will count towards your co-op credit.",
+    tasks: [
+      "Design, build and test sensor boards; including LV sensor boards for embedded systems and HV power distribution boards for our BMS",
+      "Working closely with the software team to provide electrical support and assist in testing where necessary",
+    ],
+    requirements: [
+      "Living in Waterloo for the Fall term and willing to do in-person work at our bay",
+      "Recommended: Circuit design (sensors, MCUs, power electronics are all applicable)",
+      "Recommended: Schematic capture and PCB layout (Altium preferred, KiCAD also welcome)",
+      "Recommended: Electrical assembly skills (SMT solder and reflow experience)",
+      "Recommended: Electrical measurement tools (multimeter, oscilloscope)",
+      "Recommended: Experience creating and conducting test plans (verifying sensors, power output, etc)",
+    ],
+    additional: ["Full time position"],
   },
 ];
