@@ -12,14 +12,13 @@ export const samplePostingsData = [
       "Front-end webpage development using React JS, Styled Components and Styled System",
     ],
     requirements: [
-      "Experience/familiarity with React JS",
-      "Experience/familiarity with CSS",
-      "Experience/familiarity with Node JS",
-      "Experience/familiarity with MongoDB",
+      "Recommended: Prior experience with React JS",
+      "Recommended: Prior experience with CSS",
+      "Recommended: Prior experience with Node JS",
+      "Recommended: Prior experience with MongoDB",
     ],
     additional: [
-      "Fullstack Web Development",
-      "Estimated 5 hr/week time commitment",
+      "5 hr/week time commitment",
     ],
   },
   {
@@ -35,16 +34,15 @@ export const samplePostingsData = [
       "Wireframing and UI/webpage design using Adobe XD and Figma",
     ],
     requirements: [
-      "Experience/familiarity with React JS",
-      "Experience/familiarity with Redux",
-      "Experience/familiarity with UI/UX Design",
-      "Experience/familiarity with CSS",
-      "Experience/familiarity with Styled Components",
-      "Experience/familiarity with Styled Systems",
+      "Recommended: Prior experience with React JS",
+      "Recommended: Prior experience with Redux",
+      "Recommended: Prior experience with UI/UX Design",
+      "Recommended: Prior experience with CSS",
+      "Recommended: Prior experience with Styled Components",
+      "Recommended: Prior experience with Styled Systems",
     ],
     additional: [
-      "Front End Web Development",
-      "Estimated 5 hr/week time commitment",
+      "5 hr/week time commitment",
     ],
   },
   {
@@ -62,10 +60,10 @@ export const samplePostingsData = [
       "Helping establish the Waterloop brand",
     ],
     requirements: [
-      "Experience/familiarity with Adobe XD, Illustrator, InVision, Figma or equivalent",
-      "Prior graphic design experience",
+      "Experience with Adobe XD, Illustrator, InVision, Figma or equivalent",
+      "Recommended: Prior graphic design experience",
     ],
-    additional: ["Estimated 6 hr/week time commitment"],
+    additional: ["6 hr/week time commitment"],
   },
   {
     role: "Photographer/ Videographer",
@@ -82,12 +80,15 @@ export const samplePostingsData = [
       "Launching Waterloop's YouTube channel",
     ],
     requirements: [
-      "Experience/familiarity with Final Cut Pro or equivalent",
-      "Experience/familiarity with Adobe Lightroom or equivalent",
-      "Prior experience with content creation for teams/clubs",
-      "Will be living in Waterloo for the Fall term/willing to come to Waterloop to take photos and videos in our bay",
+      "Experience with Final Cut Pro or equivalent",
+      "Experience with Adobe Lightroom or equivalent",
+      "Recommended: Prior experience with content creation for teams/clubs",
+      "Recommended: Will be living in Waterloo for the Fall term/willing to come to Waterloop to take photos and videos in our bay",
     ],
-    additional: ["Estimated 6 hr/week time commitment"],
+    additional: [
+      "Estimated 6 hr/week time commitment",
+      "Flexible schedule to meet members during testing/work sessions"
+    ],
   },
   {
     role: "Infrastructure Team Member",
@@ -106,14 +107,13 @@ export const samplePostingsData = [
       "Project management",
     ],
     requirements: [
-      "Enthusiastic to learn a various number of skills",
-      "Interest in civil/transportation engineering",
-      "Interest in project management",
-      "Experience/interest in event planning",
-      "Experience/interest in mechanical design",
-      "Experience/interest in industry networking",
+      "To be learned: Civil/transportation engineering",
+      "To be learned: Project management",
+      "To be learned: Event planning",
+      "To be learned: Mechanical design",
+      "To be learned: Industry networking",
     ],
-    additional: ["Estimated 5 hr/week time commitment"],
+    additional: ["5 hr/week time commitment"],
   },
   {
     role: "Braking Team Member",
@@ -130,11 +130,11 @@ export const samplePostingsData = [
     ],
     requirements: [
       "Basic CAD skills",
-      "Interest in learning FEA",
-      "Interest in learning Machine Shop skills",
-      "Interest in mechanical design experience",
+      "To be learned: FEA",
+      "To be learned: Machine Shop skills",
+      "To be learned: Mechnical design experience",
     ],
-    additional: ["Estimated 10 hr/week time commitment"],
+    additional: ["10 hr/week time commitment"],
   },
   {
     role: "Composites Manufacturing Team Member",
@@ -153,13 +153,13 @@ export const samplePostingsData = [
     ],
     requirements: [
       "Must be living in Waterloo in the Fall term, or willing to come to Waterloo to participate in in-person work",
-      "Experience/interest in design for composite materials",
-      "Experience/interest in the manufacturing process of composite materials",
-      "Experience/interest in learning Basic aerodynamics",
-      "Experience/interest in learning about FEA",
-      "Experience/interest in how to use machine shop tools",
+      "To be learned: Design for composite materials",
+      "To be learned: Manufacturing process of composite materials",
+      "To be learned: Basic aerodynamics",
+      "To be learned: FEA",
+      "To be learned: Use of Machine Shop tools",
     ],
-    additional: ["Estimated 10 hr/week time commitment"],
+    additional: ["10 hr/week time commitment"],
   },
   {
     role: "Mechanical Designer",
@@ -177,11 +177,11 @@ export const samplePostingsData = [
     ],
     requirements: [
       "Basic CAD skills",
-      "Experience/Interest in learning FEA",
-      "Experience/Interest in learning Machine Shop skills",
-      "Experience/Interest in mechanical design",
+      "To be learned: FEA",
+      "To be learned: Machine Shop skills",
+      "To be learned: Mechnical design experience",
     ],
-    additional: ["Estimated 10 hr/week time commitment"],
+    additional: ["10 hr/week time commitment"],
   },
   {
     role: "Mech Co-op",
@@ -195,15 +195,17 @@ export const samplePostingsData = [
       "Projects may vary depending on the student's interest and skills. Preferably, the focus will lie in manufacturing/assembly of pod sytems. Some options include manufacturing and assembly of remaining pod components, carbon fiber shell manufacturing, and LIM testing.",
     ],
     requirements: [
-      "This position is mainly in-person but also involves some remote work. This position will count towards your co-op credit",
       "Basic CAD skills",
       "Report writing experience",
       "Living in Waterloo for the Fall term and willing to do in-person work at our bay",
-      "Experience/Interest in learning FEA",
-      "Experience/Interest in learning machine shop skills",
-      "Experience/Interest in learning design",
+      "Recommended: Prior experience with FEA",
+      "Recommended: Prior experience with machine shop skills",
+      "Recommended: Design experience",
     ],
-    additional: ["Full time position 40 hr/week time commitment"],
+    additional: [
+      "This position is mainly in-person but also involves some remote work. This position will count towards your co-op credit",
+      "Full time position"
+    ],
   },
   {
     role: "E&M / CAE Analyst",
@@ -212,7 +214,7 @@ export const samplePostingsData = [
     applicationForm: "https://forms.gle/8uq54fDQohq33D166",
     subteam: "LIM",
     description:
-      "The Linear Induction Motor (LIM) is the propulsion system for the pod. It is similar in principle to a rotary induction motor, but makes use of a different geometry. The LIM team is responsible for the design, manufacturing, and testing of LIMs. Waterloop has been iteratively improving our LIMs, but much of the optimization remains to be done.",
+      "The Linear Induction Motor (LIM) is the propulsion system for the pod. It is similar in principle to a rotary induction motor, but makes use of a different geometry. The LIM team is responsible for the design, manufacturing, and testing of LIMs. Waterloop has been iteratively improving our LIMs, but much of the optimization remains to be done. Waterloop will be accepting members on a rolling basis.",
     tasks: [
       "The E&M/CAE analysis team will be responsible for researching various factors of the LIM, and developing simulations. The team will be preparing designs for the motor development team to prototype and test to verify simulation results.",
     ],
@@ -235,7 +237,7 @@ export const samplePostingsData = [
     applicationForm: "https://forms.gle/8uq54fDQohq33D166",
     subteam: "LIM",
     description:
-      "The Linear Induction Motor (LIM) is the propulsion system for the pod. It is similar in principle to a rotary induction motor, but makes use of a different geometry. The LIM team is responsible for the design, manufacturing, and testing of LIMs. Waterloop has been iteratively improving our LIMs, but much of the optimization remains to be done.",
+      "The Linear Induction Motor (LIM) is the propulsion system for the pod. It is similar in principle to a rotary induction motor, but makes use of a different geometry. The LIM team is responsible for the design, manufacturing, and testing of LIMs. Waterloop has been iteratively improving our LIMs, but much of the optimization remains to be done. Waterloop will be accepting members on a rolling basis.",
     tasks: [
       "The motor development team will be responsible for manufacturing various prototype LIMs to test and verify simulation results. ",
     ],
@@ -260,7 +262,7 @@ export const samplePostingsData = [
     applicationForm: "https://forms.gle/8uq54fDQohq33D166",
     subteam: "Electrical",
     description:
-      "The electrical team works on powering and controlling the Hyperloop pod while providing sensor feedback. The team has a strong focus on both HV and LV development in battery management, motor control and embedded sensing. \n The embedded electrical team is developing a comprehensive sensor system to ensure accurate measurements can be taken from our pod. These sensors may measure temperature, pressure, current, optical, voltage and more.",
+      "The electrical team works on powering and controlling the Hyperloop pod while providing sensor feedback. The team has a strong focus on both HV and LV development in battery management, motor control and embedded sensing. The embedded electrical team is developing a comprehensive sensor system to ensure accurate measurements can be taken from our pod. These sensors may measure temperature, pressure, current, optical, voltage and more. Waterloop will be accepting members on a rolling basis.",
     tasks: [
       "Design, build and test sensor boards",
       "Develop low-level firmware for sensors (depending on your interest) ",
@@ -304,7 +306,7 @@ export const samplePostingsData = [
     applicationForm: "https://forms.gle/8uq54fDQohq33D166",
     subteam: "Electrical",
     description:
-      "The electrical team works on powering and controlling the Hyperloop pod while providing sensor feedback. The team has a strong focus on both HV and LV development in battery management, motor control and embedded sensing. The battery management system team is developing an in-house BMS to monitor properties of individual cells, and provide cell balancing where needed.",
+      "The electrical team works on powering and controlling the Hyperloop pod while providing sensor feedback. The team has a strong focus on both HV and LV development in battery management, motor control and embedded sensing. The battery management system team is developing an in-house BMS to monitor properties of individual cells, and provide cell balancing where needed. Waterloop will be accepting members on a rolling basis.",
     tasks: [
       "Design, build and test sensor boards that measure battery cells to ensure optimal conditions/that measure power to components such as the motor controller",
       "Assemble and test sensor boards in-person",
@@ -339,6 +341,9 @@ export const samplePostingsData = [
       "Recommended: Electrical measurement tools (multimeter, oscilloscope)",
       "Recommended: Experience creating and conducting test plans (verifying sensors, power output, etc)",
     ],
-    additional: ["Full time position"],
+    additional: [
+      "This position is mainly in-person but also involves some remote work. This position will count towards your co-op credit",
+      "Full time position"
+    ],
   },
 ];

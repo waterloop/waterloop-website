@@ -20,7 +20,7 @@ const imgs: Image[] = [
   {
     imgFile: goose2,
     name: 'Goose II',
-    desc: 'With Goose II, we demonstrated a variation on magnetic propulsion, with permanent magnets arranged in a ring around a rapidly spinning wheel. Shock absorbers and eddy current brakes allowed us to run at higher speeds and propel ourselves under our own power. The fiberglass shell was our first venture into composites, with a smoothly curved design shaped by nylon stretched over wood.'
+    desc: 'With Goose II, we demonstrated a variation on magnetic propulsion, with permanent magnets arranged in a ring around a rapidly spinning wheel. Shock absorbers and Eddy current brakes allowed us to run at higher speeds and propel ourselves under our own power. The fiberglass shell was our first venture into composites, with a smoothly curved design shaped by nylon stretched over wood.'
   },
   {
     imgFile: goose3,

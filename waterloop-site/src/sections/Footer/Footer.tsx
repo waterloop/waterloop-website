@@ -55,8 +55,8 @@ class FooterComponent extends React.Component {
                 external={true}
               />
               <LinkComponent
-                link="https://medium.com/waterloop"
-                title="Medium"
+                link="https://www.linkedin.com/company/wloop"
+                title="Linkedin"
                 external={true}
               />
             </div>
