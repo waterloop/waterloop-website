@@ -1,4 +1,5 @@
 import React from "react";
+import { ReactElement } from "react";
 
 type linkProps = {
   link: string;
@@ -7,7 +8,7 @@ type linkProps = {
 };
 
 class LinkComponent extends React.Component<linkProps> {
-  render() {
+  render(): ReactElement {
     return (
       <a
         target={this.props.external ? "_blank" : "_self"}
@@ -17,7 +18,7 @@ class LinkComponent extends React.Component<linkProps> {
           fontFamily: "IBM Plex Sans",
           fontStyle: "normal",
           fontWeight: "normal",
-          color: "#FFFFFF", //NEED TO CHANGE LATER #FFFFFFF
+          color: "#FFFFFF", // NEED TO CHANGE LATER #FFFFFFF
           opacity: "0.7",
           textDecoration: "none",
         }}

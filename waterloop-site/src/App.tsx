@@ -14,7 +14,12 @@ import Recruitment from './pages/Recruitment';
 
 import 'typeface-ibm-plex-sans';
 
-class App extends React.Component {
+interface State {
+  width: number;
+  lock: boolean;
+};
+
+class App extends React.Component<{}, State> {
   constructor(props = {}) {
     super(props);
     this.state = {
@@ -24,25 +29,25 @@ class App extends React.Component {
     this.handleWindowSizeChange = this.handleWindowSizeChange.bind(this);
   }
 
-  componentWillMount() {
+  componentWillMount(): void {
     window.addEventListener('resize', this.handleWindowSizeChange);
   }
 
-  componentWillUnmount() {
+  componentWillUnmount(): void {
     window.removeEventListener('resize', this.handleWindowSizeChange);
   }
 
-  handleWindowSizeChange() {
+  handleWindowSizeChange(): void {
     this.setState({
       width: window.innerWidth,
     });
   }
 
-  handleClick(closed) {
+  handleClick(closed: boolean): void {
     this.setState({ lock: !closed });
   }
 
-  render() {
+  render(): React.ReactElement {
     return (
       <div className={this.state.lock ? 'app-lock' : ''}>
         <Router>

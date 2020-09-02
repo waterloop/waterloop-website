@@ -1,7 +1,8 @@
 import React from 'react';
 import { Button } from 'components/Button';
 import '../../theme/styles.scss';
-import Check from '../../static/img/assets/mdi_check_circle.svg';
+import { ReactComponent as CheckSVG} from '../../static/img/assets/mdi_check_circle.svg';
+import hasKey from '../../utils/hasKey';
 
 interface ContactFormProps {
   title: string;
@@ -63,14 +64,15 @@ class ContactUsForm extends React.Component<
     color: 'red',
   };
 
-  private regex: RegExp = new RegExp(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+  private regex = new RegExp(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+
   private validationRules = {
-    name: (nameValue: string) => (nameValue.length > 0 ? true : false),
-    email: (emailValue: string) => this.regex.test(emailValue),
-    message: (messageValue: string) => (messageValue.length > 0 ? true : false),
+    name: (nameValue: string): boolean => (nameValue.length > 0),
+    email: (emailValue: string): boolean => this.regex.test(emailValue),
+    message: (messageValue: string): boolean => messageValue.length > 0,
   };
 
-  public handleChange(event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
+  public handleChange(event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void {
     event.preventDefault();
     this.setState({
       formKey: {
@@ -80,15 +82,15 @@ class ContactUsForm extends React.Component<
     });
   }
 
-  private handleServerResponse(error: boolean, message: string) {
-    var response: ServerResponse = {
-      error: error,
+  private handleServerResponse(error: boolean, message: string): void {
+    const response: ServerResponse = {
+      error,
       msg: message,
     };
     this.setState({ serverResponse: response });
   }
 
-  public renderError() {
+  public renderError(): React.ReactElement {
     if (this.state.formResponseError) {
       return (
         <p style={this.errorStyle}>
@@ -96,40 +98,38 @@ class ContactUsForm extends React.Component<
         </p>
       );
     }
+    return <></>;
   }
 
-  public showForm() {
+  public showForm(): void {
     this.setState({
       submitted: false,
     });
   }
 
-  public renderServerError() {
+  public renderServerError(): React.ReactElement {
     if (this.state.serverResponse && this.state.serverResponse.error) {
       return <p style={this.errorStyle}>{this.state.serverResponse.msg}</p>;
     }
-    return;
-  }
-
-  private hasKey<O>(obj: O, key: keyof any): key is keyof O {
-    return key in obj
+    return<></>;
   }
 
   private validate(): boolean {
     const stateValue = this.state.formKey;
-    for (let key of Object.keys(stateValue)) {
-      if (this.hasKey(this.validationRules, key) && !this.validationRules[key](stateValue[key])) {
+    let valid = true;
+    Object.keys(stateValue).forEach((key) => {
+      if (hasKey(this.validationRules, key) && !this.validationRules[key](stateValue[key])) {
         this.setState({ formResponseError: true });
-        return false;
+        valid = false;
       }
-    }
+    });
     if (this.state.formResponseError) {
-      this.setState({ formResponseError: false });
+      this.setState({ formResponseError: !valid });
     }
-    return true;
+    return valid;
   }
 
-  public onFormSubmit(event: React.FormEvent<HTMLFormElement>) {
+  public onFormSubmit(event: React.FormEvent<HTMLFormElement>): void {
     event.preventDefault();
     if (!this.validate()) {
       return;
@@ -137,7 +137,7 @@ class ContactUsForm extends React.Component<
     fetch(
       process.env.NODE_ENV === 'development' ?
         "https://formspree.io/xzbjqraz" // Dev form
-        : 'https://formspree.io/xpzyedjr', //Prod form
+        : 'https://formspree.io/xpzyedjr', // Prod form
       {
         method: 'POST',
         headers: {
@@ -166,25 +166,26 @@ class ContactUsForm extends React.Component<
       });
   }
 
-  render() {
-    if (this.state.submitted)
+  render(): React.ReactElement {
+    if (this.state.submitted) {
       return (
         <div className="success-modal-container">
           <div className={'success-message'}>
-            <img src={Check} alt="success" />
+            <CheckSVG />
             <h2 className="center-text">Thanks for reaching out! </h2>
             <p className="center-text">
               Your message was submitted successfully.
             </p>
-            <div
+            <button
               className="center-text submit-again"
-              onClick={() => this.setState({ submitted: false })}
+              onClick={(): void => this.setState({ submitted: false })}
             >
               Submit another message
-            </div>
+            </button>
           </div>
         </div>
       );
+    }
     return (
       <div className="contactForm-Container">
         <form
@@ -206,7 +207,7 @@ class ContactUsForm extends React.Component<
                 id="name"
                 value={this.state.formKey.name}
                 onChange={this.handleChange}
-              ></input>
+              />
             </div>
             <div className="contactForm-InputBlockRight">
               <label htmlFor="email">Email</label>
@@ -215,7 +216,7 @@ class ContactUsForm extends React.Component<
                 name="email"
                 value={this.state.formKey.email}
                 onChange={this.handleChange}
-              ></input>
+              />
             </div>
           </div>
           <div className="contact-form-message">
@@ -233,8 +234,8 @@ class ContactUsForm extends React.Component<
               backgroundColor="yellow"
               textColor="black"
               text="SEND"
-              onClick={() => console.log('submitting form')}
-            ></Button>
+              onClick={(): void => console.log('submitting form')}
+            />
           </div>
         </form>
       </div>

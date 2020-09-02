@@ -3,6 +3,7 @@ import styled from "styled-components";
 import BlackLogoImg from "../../static/img/logos/Icon_Yellow.png";
 import Waterlooplogo from "../../static/img/logos/Waterloop.svg";
 import { NavLink } from "react-router-dom";
+import { ReactElement } from "react";
 
 const SidebarContainer = styled.div`
   display: flex;
@@ -66,7 +67,7 @@ const IconBlack = styled.img`
   display: flex;
 `;
 
-//mobile toggle button
+// mobile toggle button
 const StyledToggle = styled.button`
   display: flex;
   z-index: 3000;
@@ -86,7 +87,8 @@ const StyledToggle = styled.button`
     justify-content: center;
   }
 `;
-//lines of the mobile toggle button
+
+// lines of the mobile toggle button
 const ToggleLine = styled.div`
   width: 30px;
   height: 4px;
@@ -132,7 +134,7 @@ type MyState = {
 };
 
 type MyProps = {
-  handleClick: any;
+  handleClick: (arg1: boolean) => void;
 };
 
 class Sidebar extends React.Component<MyProps, MyState> {
@@ -143,18 +145,15 @@ class Sidebar extends React.Component<MyProps, MyState> {
     };
   }
 
-  render() {
+  render(): ReactElement {
     return (
       <div>
         <SidebarContainer>
           <IconYellow src={BlackLogoImg}></IconYellow>
           <StyledToggle
             className={this.state.toggleOpen ? "open" : ""}
-            onClick={() => {
-              this.state.toggleOpen
-                ? this.setState({ toggleOpen: false })
-                : this.setState({ toggleOpen: true });
-
+            onClick={(): void => {
+              this.setState({ toggleOpen: !this.state.toggleOpen })
               this.props.handleClick(this.state.toggleOpen);
             }}
           >
@@ -167,7 +166,7 @@ class Sidebar extends React.Component<MyProps, MyState> {
               <IconBlack src={Waterlooplogo}></IconBlack>
               <Link
                 to="/"
-                onClick={() => {
+                onClick={(): void => {
                   this.setState({ toggleOpen: false });
                   this.props.handleClick(this.state.toggleOpen);
                 }}
@@ -178,7 +177,7 @@ class Sidebar extends React.Component<MyProps, MyState> {
             <div>
               <Link
                 to="/the-flock"
-                onClick={() => {
+                onClick={(): void => {
                   this.setState({ toggleOpen: false });
                   this.props.handleClick(this.state.toggleOpen);
                 }}
@@ -189,7 +188,7 @@ class Sidebar extends React.Component<MyProps, MyState> {
             <div>
               <Link
                 to="/team"
-                onClick={() => {
+                onClick={(): void => {
                   this.setState({ toggleOpen: false });
                   this.props.handleClick(this.state.toggleOpen);
                 }}
@@ -200,7 +199,7 @@ class Sidebar extends React.Component<MyProps, MyState> {
             <div>
               <Link
                 to="/sponsors"
-                onClick={() => {
+                onClick={(): void => {
                   this.setState({ toggleOpen: false });
                   this.props.handleClick(this.state.toggleOpen);
                 }}
@@ -211,7 +210,7 @@ class Sidebar extends React.Component<MyProps, MyState> {
             <div>
               <Link
                 to="/recruitment"
-                onClick={() => {
+                onClick={(): void => {
                   this.setState({ toggleOpen: false });
                   this.props.handleClick(this.state.toggleOpen);
                 }}
