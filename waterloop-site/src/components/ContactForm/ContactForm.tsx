@@ -86,7 +86,7 @@ class ContactUsForm extends React.Component<
     });
   }
 
-  private handleServerReponse(error: boolean, message: string) {
+  private handleServerResponse(error: boolean, message: string) {
     var response: ServerResponse = {
       error: error,
       msg: message,
@@ -152,9 +152,9 @@ class ContactUsForm extends React.Component<
       })
       .then((response) => {
         if (response.error) {
-          this.handleServerReponse(true, response.error);
+          this.handleServerResponse(true, response.error);
         } else {
-          this.handleServerReponse(false, "Sent");
+          this.handleServerResponse(false, "Sent");
           this.setState({
             submitted: true,
             formKey: {
