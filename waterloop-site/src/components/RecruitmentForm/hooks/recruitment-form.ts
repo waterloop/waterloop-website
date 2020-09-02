@@ -1,4 +1,4 @@
-import { useReducer, useCallback, useState } from "react";
+import { useReducer, useCallback, useState } from 'react';
 
 interface FormValue {
   value: string;
@@ -21,66 +21,65 @@ interface UserInfoField {
 // 0-------------------------0
 
 const termTypes = [
-  "Not in Waterloo",
-  "School Term",
-  "Work/Off Term in Waterloo",
+  'Not in Waterloo',
+  'School Term',
+  'Work/Off Term in Waterloo',
 ];
 const userInfoFields: UserInfoField[] = [
   {
-    id: "entry.1105765972",
-    placeholder: "Full Name",
-    name: "full-name",
-    value: "",
+    id: 'entry.1105765972',
+    placeholder: 'Full Name',
+    name: 'full-name',
+    value: '',
     valid: null,
   },
   {
-    id: "entry.204636100",
-    name: "email",
-    placeholder: "Email",
-    value: "",
+    id: 'entry.204636100',
+    name: 'email',
+    placeholder: 'Email',
+    value: '',
     valid: null,
   },
   {
-    id: "entry.1369449321",
-    name: "program",
-    placeholder: "Program",
-    value: "",
+    id: 'entry.1369449321',
+    name: 'program',
+    placeholder: 'Program',
+    value: '',
     valid: null,
   },
   {
-    id: "entry.1488954434",
-    name: "term",
-    placeholder: "Your Current Term (ex. 2A)",
-    value: "",
+    id: 'entry.1488954434',
+    name: 'term',
+    placeholder: 'Your Current Term (ex. 2A)',
+    value: '',
     valid: null,
   },
 ];
 
 const applicationFields: Record<string, FormValue> = {
   applicationTerm: {
-    value: "",
-    id: "entry.2092532677",
+    value: '',
+    id: 'entry.2092532677',
     valid: null,
   },
   termType: {
-    value: "",
-    id: "entry.1337056366",
+    value: '',
+    id: 'entry.1337056366',
     valid: null,
   },
   whyJoin: {
-    id: "entry.288252419",
-    value: "",
+    id: 'entry.288252419',
+    value: '',
     valid: null,
   },
   technicalAns: {
-    value: "",
-    id: "entry.1372043873",
+    value: '',
+    id: 'entry.1372043873',
     valid: null,
   },
 };
 
-const formSubmissionUrl =
-  "/forms/u/0/d/e/1FAIpQLSdmZSfD1Hs0D3MLBjAfdUkaCb3GJJxIvKUEVJCBf5hVxZTt4g/formResponse";
+const formSubmissionUrl = '/forms/u/0/d/e/1FAIpQLSdmZSfD1Hs0D3MLBjAfdUkaCb3GJJxIvKUEVJCBf5hVxZTt4g/formResponse';
 
 // 0-------------------------0
 // |                         |
@@ -99,12 +98,12 @@ const initialState = {
 };
 
 // Reducer Action Types
-const UPDATE_USER_INFO_FIELD = "UPDATE_USER_INFO_FIELD";
-const UPDATE_APPLICATION_TERM = "UPDATE_APPLICATION_TERM";
-const UPDATE_TERM_TYPE = "UPDATE_TERM_TYPE";
-const UPDATE_WHY = "UPDATE_WHY";
-const UPDATE_TECHNICAL_ANSWER = "UPDATE_TECHNICAL_ANSWER";
-const VERIFY_FORM = "VERIFY_FORM";
+const UPDATE_USER_INFO_FIELD = 'UPDATE_USER_INFO_FIELD';
+const UPDATE_APPLICATION_TERM = 'UPDATE_APPLICATION_TERM';
+const UPDATE_TERM_TYPE = 'UPDATE_TERM_TYPE';
+const UPDATE_WHY = 'UPDATE_WHY';
+const UPDATE_TECHNICAL_ANSWER = 'UPDATE_TECHNICAL_ANSWER';
+const VERIFY_FORM = 'VERIFY_FORM';
 
 // Action Interfaces
 interface UpdateUserInfoFieldAction {
@@ -176,11 +175,9 @@ const reducer: React.Reducer<MyState, MyAction> = (state, action) => {
       const { payload } = action;
       return {
         ...state,
-        userInfoFields: state.userInfoFields.map((field) =>
-          field.id === payload.id
-            ? { ...field, value: payload.value, valid: payload.value !== "" }
-            : field
-        ),
+        userInfoFields: state.userInfoFields.map((field) => (field.id === payload.id
+          ? { ...field, value: payload.value, valid: payload.value !== '' }
+          : field)),
       };
     }
     case UPDATE_APPLICATION_TERM: {
@@ -192,7 +189,7 @@ const reducer: React.Reducer<MyState, MyAction> = (state, action) => {
           applicationTerm: {
             ...state.applicationFields.applicationTerm,
             value: payload.term,
-            valid: payload.term !== "",
+            valid: payload.term !== '',
           },
         },
       };
@@ -208,7 +205,7 @@ const reducer: React.Reducer<MyState, MyAction> = (state, action) => {
           termType: {
             ...state.applicationFields.termType,
             value: type,
-            valid: type !== "",
+            valid: type !== '',
           },
         },
       };
@@ -224,7 +221,7 @@ const reducer: React.Reducer<MyState, MyAction> = (state, action) => {
           whyJoin: {
             ...state.applicationFields.whyJoin,
             value,
-            valid: value !== "",
+            valid: value !== '',
           },
         },
       };
@@ -240,7 +237,7 @@ const reducer: React.Reducer<MyState, MyAction> = (state, action) => {
           technicalAns: {
             ...state.applicationFields.technicalAns,
             value,
-            valid: value !== "",
+            valid: value !== '',
           },
         },
       };
@@ -250,17 +247,17 @@ const reducer: React.Reducer<MyState, MyAction> = (state, action) => {
         ...state,
         userInfoFields: state.userInfoFields.map((field) => ({
           ...field,
-          valid: field.value !== "",
+          valid: field.value !== '',
         })),
         applicationFields: Object.keys(state.applicationFields).reduce(
           (acc, key) => ({
             ...acc,
             [key]: {
               ...state.applicationFields[key],
-              valid: state.applicationFields[key].value !== "",
+              valid: state.applicationFields[key].value !== '',
             },
           }),
-          {}
+          {},
         ),
       };
     default:
@@ -274,45 +271,55 @@ const reducer: React.Reducer<MyState, MyAction> = (state, action) => {
 //   END OF Reducer Hook Logic
 // 0---------------------------0
 
-const useRecruitmentForm = (role: string, onSuccess: () => void) => {
+interface RecruitmentForm {
+  userInfoFields: UserInfoField[],
+  applicationFields: typeof applicationFields,
+  termTypes: string[],
+  updateUserInfo: (id: string, value: string) => void,
+  handleApplicationTermChange: (term: string) => () => void,
+  handleSubmit: React.EffectCallback,
+  handleTermTypeChange: (type: string) => () => void,
+  handleWhyChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void,
+  handleTechnicalAnswerChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void,
+};
+
+type RecruitmentFormHook = (role: string, onSuccess: () => void) => RecruitmentForm;
+
+const useRecruitmentForm: RecruitmentFormHook = (role, onSuccess) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const updateUserInfo = useCallback(
-    (id: string, value: string) =>
-      !isSubmitting &&
-      dispatch({ type: UPDATE_USER_INFO_FIELD, payload: { id, value } }),
-    [dispatch, isSubmitting]
+    (id: string, value: string) => !isSubmitting
+      && dispatch({ type: UPDATE_USER_INFO_FIELD, payload: { id, value } }),
+    [dispatch, isSubmitting],
   );
 
   const updateApplicationTerm = useCallback(
-    (term: string) => () =>
-      !isSubmitting &&
-      dispatch({ type: UPDATE_APPLICATION_TERM, payload: { term } }),
-    [dispatch, isSubmitting]
+    (term: string) => () => !isSubmitting
+      && dispatch({ type: UPDATE_APPLICATION_TERM, payload: { term } }),
+    [dispatch, isSubmitting],
   );
 
   const updateTermType = useCallback(
-    (type: string) => () =>
-      !isSubmitting && dispatch({ type: UPDATE_TERM_TYPE, payload: { type } }),
-    [dispatch, isSubmitting]
+    (type: string) => () => !isSubmitting
+      && dispatch({ type: UPDATE_TERM_TYPE, payload: { type } }),
+    [dispatch, isSubmitting],
   );
 
   const updateWhy = useCallback(
-    (event: React.ChangeEvent<HTMLTextAreaElement>) =>
-      !isSubmitting &&
-      dispatch({ type: UPDATE_WHY, payload: { value: event.target.value } }),
-    [dispatch, isSubmitting]
+    (event: React.ChangeEvent<HTMLTextAreaElement>) => !isSubmitting
+      && dispatch({ type: UPDATE_WHY, payload: { value: event.target.value } }),
+    [dispatch, isSubmitting],
   );
 
   const updateTechnicalAnswer = useCallback(
-    (event: React.ChangeEvent<HTMLTextAreaElement>) =>
-      !isSubmitting &&
-      dispatch({
+    (event: React.ChangeEvent<HTMLTextAreaElement>) => !isSubmitting
+      && dispatch({
         type: UPDATE_TECHNICAL_ANSWER,
         payload: { value: event.target.value },
       }),
-    [dispatch, isSubmitting]
+    [dispatch, isSubmitting],
   );
 
   const handleSubmit = useCallback(() => {
@@ -321,40 +328,43 @@ const useRecruitmentForm = (role: string, onSuccess: () => void) => {
 
     // Build Body
     const { applicationFields, userInfoFields } = state;
-    const presetBody = { "entry.1805132656": role };
+    const presetBody = { 'entry.1805132656': role };
     const userInfoFieldsBody = userInfoFields.reduce(
       (acc, field) => ({ ...acc, [field.id]: field.value }),
-      presetBody
+      presetBody,
     );
     const body = Object.keys(applicationFields).reduce(
       (acc, key) => ({
         ...acc,
         [applicationFields[key].id]: applicationFields[key].value,
       }),
-      userInfoFieldsBody
+      userInfoFieldsBody,
     );
 
     // Validate form and Stop if inValid
     const invalidFields = Object.values(body).filter(
-      (fieldValue) => fieldValue === ""
+      (fieldValue) => fieldValue === '',
     );
     if (invalidFields.length > 0) {
       dispatch({ type: VERIFY_FORM });
       setIsSubmitting(false);
-      alert("Could not submit: Please fill out all highlighted fields.");
+      // TODO implement a better alert system
+      // eslint-disable-next-line no-alert
+      alert('Could not submit: Please fill out all highlighted fields.');
       return;
     }
 
     // Submit Form
     fetch(formSubmissionUrl, {
-      method: "POST",
+      method: 'POST',
       body: JSON.stringify(body),
     })
-      .then((response) => {
+      .then(() => {
         onSuccess();
       })
       .catch(() => setIsSubmitting(false));
   }, [role, state, dispatch, setIsSubmitting, isSubmitting, onSuccess]);
+
   return {
     userInfoFields: state.userInfoFields,
     applicationFields: state.applicationFields,

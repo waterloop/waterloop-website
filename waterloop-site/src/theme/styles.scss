@@ -8,7 +8,7 @@ $font-family-primary: "IBM Plex Sans";
 
 /*-----------------------------
 
-              APP 
+              APP
 
  -----------------------------*/
 
@@ -21,7 +21,7 @@ body {
 
 /*-----------------------------
 
-              TYPE 
+              TYPE
 
  -----------------------------*/
 
@@ -127,9 +127,16 @@ code {
 
 /*-----------------------------
 
-        CUSTOM CLASSES 
+        CUSTOM CLASSES
 
  -----------------------------*/
+
+.submit-again {
+  border: none;
+  background-color: none;
+  font-style: italic;
+  text-decoration: underline;
+}
 
 .pageContainer {
   margin: 80px 140px 80px 140px;

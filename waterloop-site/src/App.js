@@ -1,16 +1,19 @@
-import React from "react";
-import "./theme/App.css";
-import { NavBar, SideBar } from "components";
-import Contact from "./pages/Contact";
-import Home from "./pages/Home";
-import Flock from "./pages/Flock";
-import Team from "./pages/Team";
-import Sponsors from "./pages/Sponsors";
-import {Recruitment} from "./pages/Recruitment";
-import { Footer } from "sections/Footer";
-import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
-import "typeface-ibm-plex-sans";
+import React from 'react';
+import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
+
+import { NavBar, SideBar } from './components';
 import JobPostingPage from './components/RecruitmentForm/JobPostingPage';
+
+import { Footer } from './sections/Footer';
+import Contact from './pages/Contact';
+import Home from './pages/Home';
+import Flock from './pages/Flock';
+import Team from './pages/Team';
+import Sponsors from './pages/Sponsors';
+import Recruitment from './pages/Recruitment';
+
+import 'typeface-ibm-plex-sans';
+
 class App extends React.Component {
   constructor(props = {}) {
     super(props);
@@ -18,30 +21,36 @@ class App extends React.Component {
       width: window.innerWidth,
       lock: false,
     };
+    this.handleWindowSizeChange = this.handleWindowSizeChange.bind(this);
   }
 
   componentWillMount() {
-    window.addEventListener("resize", this.handleWindowSizeChange);
+    window.addEventListener('resize', this.handleWindowSizeChange);
   }
-  handleWindowSizeChange = () => {
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleWindowSizeChange);
+  }
+
+  handleWindowSizeChange() {
     this.setState({
       width: window.innerWidth,
     });
-  };
+  }
 
   handleClick(closed) {
-    closed ? this.setState({ lock: false }) : this.setState({ lock: true });
+    this.setState({ lock: !closed });
   }
 
   render() {
     return (
-      <div className={this.state.lock ? "app-lock" : ""}>
+      <div className={this.state.lock ? 'app-lock' : ''}>
         <Router>
           {this.state.width > 425 ? (
             <NavBar />
           ) : (
-            <SideBar handleClick={this.handleClick.bind(this)} />
-          )}
+              <SideBar handleClick={this.handleClick.bind(this)} />
+            )}
           <Switch>
             <Route exact path="/">
               <Home />

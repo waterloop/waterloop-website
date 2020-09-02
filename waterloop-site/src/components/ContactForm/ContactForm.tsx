@@ -38,7 +38,7 @@ class ContactUsForm extends React.Component<
     this.renderError = this.renderError.bind(this);
     this.renderServerError = this.renderServerError.bind(this);
     this.state = {
-      submitted: false,
+      submitted: true, // changeback
       formKey: {
         email: "",
         name: "",
@@ -175,9 +175,9 @@ class ContactUsForm extends React.Component<
             <img src={Check} alt="success" />
             <h2 className="center-text">Thanks for reaching out! </h2>
             <p className="center-text">Your message was submitted successfully.</p>
-            <a className="center-text" onClick={() => this.setState({ submitted: false })}>
+            <div className="center-text submit-again" onClick={() => this.setState({ submitted: false })}>
               Submit another message
-            </a>
+            </div>
           </div>
         </div>
       );
@@ -230,7 +230,6 @@ class ContactUsForm extends React.Component<
               textColor="black"
               text="SEND"
               onClick={() => console.log("submitting form")}
-              variant={null}
             ></Button>
           </div>
         </form>

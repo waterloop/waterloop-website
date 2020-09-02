@@ -66,8 +66,7 @@ export class TextWithImage extends React.Component<{
           textColor="black"
           text={linkText}
           onClick={() => window.open(link, "_self")}
-          variant={null}
-        ></Button>
+        />
       );
     }
   };

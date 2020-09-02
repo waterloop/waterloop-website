@@ -15,32 +15,29 @@ class Subteam extends React.Component<any, any> {
           <strong>{this.props.team}</strong>
         </h3>
         {this.props.postings.length > 0 &&
-          this.props.postings.map((item: any, index: number) => {
-            if (item.subteam === this.props.team)
-              return (
-                <div className={"posting"}>
-                  <a
-                    href={`/posting/${index + 1}`}
-                    style={{
-                      fontSize: "24px",
-                      textDecoration: "none",
-                      color: "black",
-                    }}
-                  >
-                    {item.role}
-                  </a>
-                  <Button
-                    backgroundColor="yellow"
-                    textColor="black"
-                    text={"VIEW"}
-                    onClick={() =>
-                      window.open(`/posting/${index + 1}`, "_self")
-                    }
-                    variant={null}
-                  />
-                </div>
-              );
-          })}
+          this.props.postings.map((item: any, index: number) => (item.subteam === this.props.team) && (
+            <div className={"posting"}>
+              <a
+                href={`/posting/${index + 1}`}
+                style={{
+                  fontSize: "24px",
+                  textDecoration: "none",
+                  color: "black",
+                }}
+              >
+                {item.role}
+              </a>
+              <Button
+                backgroundColor="yellow"
+                textColor="black"
+                text={"VIEW"}
+                onClick={() =>
+                  window.open(`/posting/${index + 1}`, "_self")
+                }
+                variant={null}
+              />
+            </div>
+          ))}
       </div>
     );
   }

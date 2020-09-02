@@ -7,13 +7,13 @@ export default [
     contacts: [
       {
         icon: "/GithubIcon.png",
-        url: 'http://www.github.com'
+        url: 'http://www.github.com',
       },
       {
         icon: "/LinkedInIcon.png",
-        url: 'http://www.linkedin.com'
-      }
-    ]
+        url: 'http://www.linkedin.com',
+      },
+    ],
   },
   {
     name: "A Potentially Very Long Name 2",
@@ -22,13 +22,13 @@ export default [
     contacts: [
       {
         icon: "/GithubIcon.png",
-        url: 'http://www.github.com'
+        url: 'http://www.github.com',
       },
       {
         icon: "/LinkedInIcon.png",
-        url: 'http://www.linkedin.com'
-      }
-    ]
+        url: 'http://www.linkedin.com',
+      },
+    ],
   },
   {
     name: "A Potentially Very Long Name 3",
@@ -37,13 +37,13 @@ export default [
     contacts: [
       {
         icon: "/GithubIcon.png",
-        url: 'http://www.github.com'
+        url: 'http://www.github.com',
       },
       {
         icon: "/LinkedInIcon.png",
-        url: 'http://www.linkedin.com'
-      }
-    ]
+        url: 'http://www.linkedin.com',
+      },
+    ],
   },
   {
     name: "A Potentially Very Long Name 4",
@@ -52,13 +52,13 @@ export default [
     contacts: [
       {
         icon: "/GithubIcon.png",
-        url: 'http://www.github.com'
+        url: 'http://www.github.com',
       },
       {
         icon: "/LinkedInIcon.png",
-        url: 'http://www.linkedin.com'
-      }
-    ]
+        url: 'http://www.linkedin.com',
+      },
+    ],
   },
   {
     name: "A Potentially Very Long Name 5",
@@ -67,13 +67,13 @@ export default [
     contacts: [
       {
         icon: "/GithubIcon.png",
-        url: 'http://www.github.com'
+        url: 'http://www.github.com',
       },
       {
         icon: "/LinkedInIcon.png",
-        url: 'http://www.linkedin.com'
-      }
-    ]
+        url: 'http://www.linkedin.com',
+      },
+    ],
   },
   {
     name: "A Potentially Very Long Name 6",
@@ -82,13 +82,13 @@ export default [
     contacts: [
       {
         icon: "/GithubIcon.png",
-        url: 'http://www.github.com'
+        url: 'http://www.github.com',
       },
       {
         icon: "/LinkedInIcon.png",
-        url: 'http://www.linkedin.com'
-      }
-    ]
+        url: 'http://www.linkedin.com',
+      },
+    ],
   },
   {
     name: "A Potentially Very Long Name 7",
@@ -97,13 +97,13 @@ export default [
     contacts: [
       {
         icon: "/GithubIcon.png",
-        url: 'http://www.github.com'
+        url: 'http://www.github.com',
       },
       {
         icon: "/LinkedInIcon.png",
-        url: 'http://www.linkedin.com'
-      }
-    ]
+        url: 'http://www.linkedin.com',
+      },
+    ],
   },
   {
     name: "A Potentially Very Long Name 8",
@@ -112,13 +112,13 @@ export default [
     contacts: [
       {
         icon: "/GithubIcon.png",
-        url: 'http://www.github.com'
+        url: 'http://www.github.com',
       },
       {
         icon: "/LinkedInIcon.png",
-        url: 'http://www.linkedin.com'
-      }
-    ]
+        url: 'http://www.linkedin.com',
+      },
+    ],
   },
   {
     name: "A Potentially Very Long Name 9",
@@ -127,13 +127,13 @@ export default [
     contacts: [
       {
         icon: "/GithubIcon.png",
-        url: 'http://www.github.com'
+        url: 'http://www.github.com',
       },
       {
         icon: "/LinkedInIcon.png",
-        url: 'http://www.linkedin.com'
-      }
-    ]
+        url: 'http://www.linkedin.com',
+      },
+    ],
   },
   {
     name: "A Potentially Very Long Name 10",
@@ -142,13 +142,13 @@ export default [
     contacts: [
       {
         icon: "/GithubIcon.png",
-        url: 'http://www.github.com'
+        url: 'http://www.github.com',
       },
       {
         icon: "/LinkedInIcon.png",
-        url: 'http://www.linkedin.com'
-      }
-    ]
+        url: 'http://www.linkedin.com',
+      },
+    ],
   },
   {
     name: "A Potentially Very Long Name 11",
@@ -157,13 +157,13 @@ export default [
     contacts: [
       {
         icon: "/GithubIcon.png",
-        url: 'http://www.github.com'
+        url: 'http://www.github.com',
       },
       {
         icon: "/LinkedInIcon.png",
-        url: 'http://www.linkedin.com'
-      }
-    ]
+        url: 'http://www.linkedin.com',
+      },
+    ],
   },
   {
     name: "A Potentially Very Long Name 12",
@@ -172,13 +172,13 @@ export default [
     contacts: [
       {
         icon: "/GithubIcon.png",
-        url: 'http://www.github.com'
+        url: 'http://www.github.com',
       },
       {
         icon: "/LinkedInIcon.png",
-        url: 'http://www.linkedin.com'
-      }
-    ]
+        url: 'http://www.linkedin.com',
+      },
+    ],
   },
   {
     name: "A Potentially Very Long Name 13",
@@ -187,13 +187,13 @@ export default [
     contacts: [
       {
         icon: "/GithubIcon.png",
-        url: 'http://www.github.com'
+        url: 'http://www.github.com',
       },
       {
         icon: "/LinkedInIcon.png",
-        url: 'http://www.linkedin.com'
-      }
-    ]
+        url: 'http://www.linkedin.com',
+      },
+    ],
   },
   {
     name: "A Potentially Very Long Name 14",
@@ -202,12 +202,12 @@ export default [
     contacts: [
       {
         icon: "/GithubIcon.png",
-        url: 'http://www.github.com'
+        url: 'http://www.github.com',
       },
       {
         icon: "/LinkedInIcon.png",
-        url: 'http://www.linkedin.com'
-      }
-    ]
-  }
+        url: 'http://www.linkedin.com',
+      },
+    ],
+  },
 ]

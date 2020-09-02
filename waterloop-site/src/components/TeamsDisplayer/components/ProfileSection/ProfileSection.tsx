@@ -4,7 +4,7 @@ import styled from "styled-components";
 // Types and interfaces
 import { ProfileType } from "../../interfaces";
 import { PSectionProps, PSectionState } from "../interfaces";
-import { SubProfile } from "../Profiles";
+import SubProfile from "../Profiles";
 
 // Copy for team descriptions
 import Text from "static/copy/Team/descriptions.json";

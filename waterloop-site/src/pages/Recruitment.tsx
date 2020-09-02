@@ -10,7 +10,7 @@ import JobPostings from "components/Postings/Postings";
 const castData: MyProps[] = Text;
 const imgData: string[] = [JoinUs];
 
-export class Recruitment extends React.Component<any, any> {
+class Recruitment extends React.Component<any, any> {
   render() {
     return (
       <>
@@ -34,3 +34,5 @@ export class Recruitment extends React.Component<any, any> {
     );
   }
 }
+
+export default Recruitment;

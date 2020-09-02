@@ -60,7 +60,7 @@ export default class TeamsDisplayer extends React.Component<
 
   sortSubteams(subteams: SubteamProps[]) {
     let newTeams = [] as Array<SubteamProps>;
-    subteams.map(
+    subteams.forEach(
       (team: { title: string; members: Array<ProfileType> }, i: number) => {
         if (team.title === "Exec") {
           newTeams[0] = team;
@@ -200,7 +200,6 @@ export default class TeamsDisplayer extends React.Component<
             textColor="black"
             text={"JOIN THE TEAM"}
             onClick={() => window.open("/recruitment", "_self")}
-            variant={null}
           />
         </div>
       </Page>

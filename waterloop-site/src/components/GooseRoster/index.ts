@@ -1,1 +1,1 @@
-export {default as GooseRoster} from './GooseRoster';
+export { default as GooseRoster } from './GooseRoster';

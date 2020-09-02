@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import { Button } from "components";
-import Team from "../../static/img/team/team.png";
+import React from 'react';
+import styled from 'styled-components';
+import { Button } from 'components';
+import Team from '../../static/img/team/team.png';
 
 const OurTeamContainer = styled.div`
   display: block;
@@ -44,9 +44,8 @@ const OurTeam = () => {
         <Button
           backgroundColor="yellow"
           textColor="black"
-          text={"SEE OPENINGS"}
-          onClick={() => window.open("/recruitment", "_self")}
-          variant={null}
+          text={'SEE OPENINGS'}
+          onClick={() => window.open('/recruitment', '_self')}
         />
       </div>
     </OurTeamContainer>
