@@ -41,7 +41,7 @@ const MinifiedSubContainer = styled(MinifiedContainer)`
 export default class ProfileSection extends React.Component<
   PSectionProps,
   PSectionState
-  > {
+> {
   constructor(props: PSectionProps) {
     super(props);
     this.state = {
@@ -63,7 +63,11 @@ export default class ProfileSection extends React.Component<
 
     return (
       <ProfileSectionContainer>
-        {this.props.title && <h3>{this.props.title}</h3>}
+        {
+          <h3>
+            {this.props.title === "Admin" ? "Business" : this.props.title}
+          </h3>
+        }
 
         <p>
           {/* TODO: Clean this up :) */}

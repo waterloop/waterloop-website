@@ -18,7 +18,7 @@
         {
             "imgAlt": "battery.png",
             "header": "Motor Controller & Battery",
-            "desc": "Our high voltage power systems convert kilowatts of power from a carefully monitored lithium battery into three-phase power carefully modulated to maximize the linear induction motor's thrust."
+            "desc": "Our high voltage power systems convert kilowatts of power from a carefully monitored lithium battery into three-phase power precisely modulated to maximize the linear induction motor's thrust."
         },
         {
             "imgAlt": "embedded.png",
