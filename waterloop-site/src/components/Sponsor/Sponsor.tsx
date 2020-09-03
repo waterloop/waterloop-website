@@ -10,7 +10,9 @@ type Props = {
 class Sponsor extends React.Component<Props> {
   render() {
     return (
-      <img className={this.props.tier} src={this.props.src} alt={this.props.alt} />
+      <div className={this.props.tier}>
+        <img src={this.props.src} alt={this.props.alt} />
+      </div >
     );
   }
 }

@@ -965,39 +965,67 @@ textarea {
   }
 }
 
+.hypersonic, .supersonic, .transonic, .sonic {
+  display: inline-block;
+}
+
 .hypersonic {
   width: 60%;
   height: auto;
+  img {
+    width: 80%;
+  }
   @media screen and (max-width: $mobile) {
     width: 80%;
     height: auto;
+    img {
+      width: 100%;
+    }
   }
 }
 
 .supersonic {
-  width: 40%;
+  width: 50%;
   height: auto;
+  img {
+    width: 80%;
+  }
   @media screen and (max-width: $mobile) {
     width: 40%;
     height: auto;
+    img {
+      width: 100%;
+    }
   }
 }
 
 .transonic {
-  width: 30%;
+  width: 50%;
   height: auto;
+  img {
+    width: 80%;
+  }
   @media screen and (max-width: $mobile) {
     width: 30%;
     height: auto;
+    img {
+      width: 100%;
+    }
   }
 }
 
 .sonic {
   width: 30%;
   height: auto;
+  img {
+    width: 80%;
+  }
   @media screen and (max-width: $mobile) {
     width: 30%;
     height: auto;
+    img {
+      width: 100%;
+    }
   }
 }
 

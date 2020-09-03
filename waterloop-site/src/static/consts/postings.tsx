@@ -1,7 +1,7 @@
 export const samplePostingsData = [
   {
     role: "Full-Stack Developer",
-    deadline: "September 17, 2020",
+    deadline: "September 17, 2020 (rolling basis)",
     term: "FALL 2020",
     applicationForm: "https://forms.gle/8uq54fDQohq33D166",
     subteam: "Team Hub",
@@ -23,7 +23,7 @@ export const samplePostingsData = [
   },
   {
     role: "Front-End Developer",
-    deadline: "September 17, 2020",
+    deadline: "September 17, 2020 (rolling basis)",
     term: "FALL 2020",
     applicationForm: "https://forms.gle/8uq54fDQohq33D166",
     subteam: "Team Hub",
@@ -47,7 +47,7 @@ export const samplePostingsData = [
   },
   {
     role: "Graphic Designer",
-    deadline: "September 17, 2020",
+    deadline: "September 17, 2020 (rolling basis)",
     term: "FALL 2020",
     applicationForm: "https://forms.gle/8uq54fDQohq33D166",
     subteam: "Business",
@@ -67,7 +67,7 @@ export const samplePostingsData = [
   },
   {
     role: "Photographer/ Videographer",
-    deadline: "September 17, 2020",
+    deadline: "September 17, 2020 (rolling basis)",
     term: "FALL 2020",
     applicationForm: "https://forms.gle/8uq54fDQohq33D166",
     subteam: "Business",
@@ -92,7 +92,7 @@ export const samplePostingsData = [
   },
   {
     role: "Infrastructure Team Member",
-    deadline: "September 17, 2020",
+    deadline: "September 17, 2020 (rolling basis)",
     term: "FALL 2020",
     applicationForm: "https://forms.gle/8uq54fDQohq33D166",
     subteam: "Infrastructure",
@@ -117,7 +117,7 @@ export const samplePostingsData = [
   },
   {
     role: "Braking Team Member",
-    deadline: "September 17, 2020",
+    deadline: "September 17, 2020 (rolling basis)",
     term: "FALL 2020",
     applicationForm: "https://forms.gle/8uq54fDQohq33D166",
     subteam: "Mechnical",
@@ -138,7 +138,7 @@ export const samplePostingsData = [
   },
   {
     role: "Composites Manufacturing Team Member",
-    deadline: "September 17, 2020",
+    deadline: "September 17, 2020 (rolling basis)",
     term: "FALL 2020",
     applicationForm: "https://forms.gle/8uq54fDQohq33D166",
     subteam: "Mechanical",
@@ -163,7 +163,7 @@ export const samplePostingsData = [
   },
   {
     role: "Mechanical Designer",
-    deadline: "September 17, 2020",
+    deadline: "September 17, 2020 (rolling basis)",
     term: "FALL 2020",
     applicationForm: "https://forms.gle/8uq54fDQohq33D166",
     subteam: "Mechanical",
@@ -185,7 +185,7 @@ export const samplePostingsData = [
   },
   {
     role: "Mech Co-op",
-    deadline: "September 17, 2020",
+    deadline: "Rolling basis, see WaterlooWorks",
     term: "FALL 2020",
     applicationForm: "https://forms.gle/8uq54fDQohq33D166",
     subteam: "Mechanical",
@@ -209,7 +209,7 @@ export const samplePostingsData = [
   },
   {
     role: "E&M / CAE Analyst",
-    deadline: "September 17, 2020",
+    deadline: "September 17, 2020 (rolling basis)",
     term: "FALL 2020",
     applicationForm: "https://forms.gle/8uq54fDQohq33D166",
     subteam: "LIM",
@@ -232,7 +232,7 @@ export const samplePostingsData = [
   },
   {
     role: "Motor Development / Test Stand Engineering",
-    deadline: "September 17, 2020",
+    deadline: "September 17, 2020 (rolling basis)",
     term: "FALL 2020",
     applicationForm: "https://forms.gle/8uq54fDQohq33D166",
     subteam: "LIM",
@@ -257,7 +257,7 @@ export const samplePostingsData = [
   },
   {
     role: "Embedded",
-    deadline: "September 17, 2020",
+    deadline: "September 17, 2020 (rolling basis)",
     term: "FALL 2020",
     applicationForm: "https://forms.gle/8uq54fDQohq33D166",
     subteam: "Electrical",
@@ -282,7 +282,7 @@ export const samplePostingsData = [
   },
   {
     role: "Motor Control",
-    deadline: "September 17, 2020",
+    deadline: "September 17, 2020 (rolling basis)",
     term: "FALL 2020",
     applicationForm: "https://forms.gle/8uq54fDQohq33D166",
     subteam: "Electrical",
@@ -301,7 +301,7 @@ export const samplePostingsData = [
   },
   {
     role: "Battery Management System (BMS)",
-    deadline: "September 17, 2020",
+    deadline: "September 17, 2020 (rolling basis)",
     term: "FALL 2020",
     applicationForm: "https://forms.gle/8uq54fDQohq33D166",
     subteam: "Electrical",
@@ -323,7 +323,7 @@ export const samplePostingsData = [
   },
   {
     role: "Electrical Co-op",
-    deadline: "September 17, 2020",
+    deadline: "Rolling basis, see WaterlooWorks",
     term: "FALL 2020",
     applicationForm: "https://forms.gle/8uq54fDQohq33D166",
     subteam: "Electrical",
