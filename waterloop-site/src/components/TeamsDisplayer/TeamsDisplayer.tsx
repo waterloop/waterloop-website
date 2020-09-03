@@ -32,12 +32,12 @@ const Page = styled.div`
 export default class TeamsDisplayer extends React.Component<
   TeamsDisplayerProps,
   TeamsDisplayerState
-  > {
+> {
   constructor(props: TeamsDisplayerProps) {
     super(props);
     this.state = {
       loading: true,
-      teamFilters: Array(6).fill(false),
+      teamFilters: Array(7).fill(false),
       teamFilterLabels: [
         "All Teams",
         "Exec",
@@ -45,7 +45,7 @@ export default class TeamsDisplayer extends React.Component<
         "Mechanical",
         "Electrical",
         "Web",
-        "Admin",
+        "Business",
       ],
       memberData: new Map(),
       subteamIdMap: new Map(),
