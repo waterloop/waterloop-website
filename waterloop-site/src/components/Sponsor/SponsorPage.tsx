@@ -19,41 +19,39 @@ import Altium from "../../static/img/official-sponsors/altium.jpg";
 import L3harris from "../../static/img/official-sponsors/l3harris.png";
 import Mitutoyo from "../../static/img/official-sponsors/mitutoyo.png";
 
-function SponsorList() {
-  return (
-    <div className="SponsorPage">
-      <h2>Hypersonic</h2>
-      <div className="TierWrapper">
-        <Sponsor src={UW} tier="hypersonic" alt="sponsor" />
-        <Sponsor src={WaterlooEng} tier="hypersonic" alt="sponsor" />
-        <Sponsor src={Weef} tier="hypersonic" alt="sponsor" />
-        <Sponsor src={Brent} tier="hypersonic" alt="sponsor" />
-      </div>
-      <h2>Supersonic</h2>
-      <div className="TierWrapper">
-        <Sponsor src={ClickUp} tier="supersonic" alt="sponsor" />
-        <Sponsor src={WCBranham} tier="supersonic" alt="sponsor" />
-      </div>
-      <h2>Transonic</h2>
-      <div className="TierWrapper">
-        <Sponsor src={Ansys} tier="transonic" alt="sponsor" />
-        <Sponsor src={PSIM} tier="transonic" alt="sponsor" />
-      </div>
-      <h2>Sonic</h2>
-      <div className="TierWrapper">
-        <Sponsor src={APP} tier="sonic" alt="sponsor" />
-        <Sponsor src={Connexion} tier="sonic" alt="sponsor" />
-        <Sponsor src={StarTechnology} tier="sonic" alt="sponsor" />
-        <Sponsor src={Sony} tier="sonic" alt="sponsor" />
-        <Sponsor src={WPrint} tier="sonic" alt="sponsor" />
-        <Sponsor src={Wera} tier="sonic" alt="sponsor" />
-        <Sponsor src={Overleaf} tier="sonic" alt="sponsor" />
-        <Sponsor src={Altium} tier="sonic" alt="sponsor" />
-        <Sponsor src={L3harris} tier="sonic" alt="sponsor" />
-        <Sponsor src={Mitutoyo} tier="sonic" alt="sponsor" />
-      </div>
+const SponsorList: React.FC = () => (
+  <div className="SponsorPage">
+    <h2>Hypersonic</h2>
+    <div className="TierWrapper">
+      <Sponsor src={UW} tier="hypersonic" alt="sponsor" />
+      <Sponsor src={WaterlooEng} tier="hypersonic" alt="sponsor" />
+      <Sponsor src={Weef} tier="hypersonic" alt="sponsor" />
+      <Sponsor src={Brent} tier="hypersonic" alt="sponsor" />
     </div>
-  );
-}
+    <h2>Supersonic</h2>
+    <div className="TierWrapper">
+      <Sponsor src={ClickUp} tier="supersonic" alt="sponsor" />
+      <Sponsor src={WCBranham} tier="supersonic" alt="sponsor" />
+    </div>
+    <h2>Transonic</h2>
+    <div className="TierWrapper">
+      <Sponsor src={Ansys} tier="transonic" alt="sponsor" />
+      <Sponsor src={PSIM} tier="transonic" alt="sponsor" />
+    </div>
+    <h2>Sonic</h2>
+    <div className="TierWrapper">
+      <Sponsor src={APP} tier="sonic" alt="sponsor" />
+      <Sponsor src={Connexion} tier="sonic" alt="sponsor" />
+      <Sponsor src={StarTechnology} tier="sonic" alt="sponsor" />
+      <Sponsor src={Sony} tier="sonic" alt="sponsor" />
+      <Sponsor src={WPrint} tier="sonic" alt="sponsor" />
+      <Sponsor src={Wera} tier="sonic" alt="sponsor" />
+      <Sponsor src={Overleaf} tier="sonic" alt="sponsor" />
+      <Sponsor src={Altium} tier="sonic" alt="sponsor" />
+      <Sponsor src={L3harris} tier="sonic" alt="sponsor" />
+      <Sponsor src={Mitutoyo} tier="sonic" alt="sponsor" />
+    </div>
+  </div>
+);
 
 export default SponsorList;

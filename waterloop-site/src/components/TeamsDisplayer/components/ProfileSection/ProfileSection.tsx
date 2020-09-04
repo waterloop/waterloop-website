@@ -1,13 +1,13 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 // Types and interfaces
-import { ProfileType } from "../../interfaces";
-import { PSectionProps, PSectionState } from "../interfaces";
-import SubProfile from "../Profiles";
+import { ProfileType } from '../../interfaces';
+import { PSectionProps } from '../interfaces';
+import SubProfile from '../Profiles';
 
 // Copy for team descriptions
-import Text from "static/copy/Team/descriptions.json";
+import Text from 'static/copy/Team/descriptions.json';
 
 const ProfileSectionContainer = styled.div`
   margin-bottom: 75px;
@@ -37,66 +37,50 @@ const MinifiedSubContainer = styled(MinifiedContainer)`
   }
 `;
 
+const getBodyFromTitle = (title: string): string => {
+  switch (title) {
+    case 'Web':
+      return Text.Web;
+    case 'Electrical':
+      return Text.Electrical;
+    case 'TeamLeads':
+      return Text.TeamLeads;
+    case 'Admin':
+      return Text.Admin;
+    case 'Software':
+      return Text.Software;
+    case 'Exec':
+      return Text.Exec;
+    case 'Mechanical':
+      return Text.Mechanical;
+    case 'Infrastructure':
+      return Text.Infrastructure;
+    default:
+      return '';
+  }
+};
+
 // Profile Subsection
-export default class ProfileSection extends React.Component<
-  PSectionProps,
-  PSectionState
-> {
-  constructor(props: PSectionProps) {
-    super(props);
-    this.state = {
-      minified: this.props.profiles,
-    };
-  }
+const ProfileSection: React.FC<PSectionProps> = props => {
+  const ProfileTypeTag = SubProfile;
+  return (
+    <ProfileSectionContainer>
+       <h3>
+        {props.title === "Admin" ? "Business" : props.title}
+      </h3>
+      <p>{getBodyFromTitle(props.title)}</p>
+      <MinifiedSubContainer>
+        {props.profiles.map((profile: ProfileType, i: number) => (
+          <ProfileTypeTag
+            key={i}
+            name={profile.name}
+            position={profile.position}
+            portrait={profile.portrait}
+          />
+        ))}
+      </MinifiedSubContainer>
+    </ProfileSectionContainer>
+  );
+};
 
-  // Update states upon recieving new props
-  UNSAFE_componentWillReceiveProps(nextProps: PSectionProps) {
-    this.setState({
-      minified: nextProps.profiles,
-    });
-  }
-
-  render() {
-    const minified = this.state.minified;
-
-    let ProfileTypeTag = SubProfile;
-
-    return (
-      <ProfileSectionContainer>
-        {
-          <h3>
-            {this.props.title === "Admin" ? "Business" : this.props.title}
-          </h3>
-        }
-
-        <p>
-          {/* TODO: Clean this up :) */}
-          {this.props.title === "Web" ? Text.Web : ""}
-          {this.props.title === "Electrical" ? Text.Electrical : ""}
-          {this.props.title === "TeamLeads" ? Text.TeamLeads : ""}
-          {this.props.title === "Admin" ? Text.Admin : ""}
-          {this.props.title === "Software" ? Text.Software : ""}
-          {this.props.title === "Exec" ? Text.Exec : ""}
-          {this.props.title === "Mechanical" ? Text.Mechanical : ""}
-          {this.props.title === "Infrastructure" ? Text.Infrastructure : ""}
-        </p>
-
-        {
-          <MinifiedSubContainer>
-            {minified.map((profile: ProfileType, i: number) => {
-              return (
-                <ProfileTypeTag
-                  key={i}
-                  name={profile.name}
-                  position={profile.position}
-                  portrait={profile.portrait}
-                  contacts={profile.contacts}
-                />
-              );
-            })}
-          </MinifiedSubContainer>
-        }
-      </ProfileSectionContainer>
-    );
-  }
-}
+export default ProfileSection;

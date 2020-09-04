@@ -272,15 +272,15 @@ const reducer: React.Reducer<MyState, MyAction> = (state, action) => {
 // 0---------------------------0
 
 interface RecruitmentForm {
-  userInfoFields: UserInfoField[],
-  applicationFields: typeof applicationFields,
-  termTypes: string[],
-  updateUserInfo: (id: string, value: string) => void,
-  handleApplicationTermChange: (term: string) => () => void,
-  handleSubmit: React.EffectCallback,
-  handleTermTypeChange: (type: string) => () => void,
-  handleWhyChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void,
-  handleTechnicalAnswerChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void,
+  userInfoFields: UserInfoField[];
+  applicationFields: typeof applicationFields;
+  termTypes: string[];
+  updateUserInfo: (id: string, value: string) => void;
+  handleApplicationTermChange: (term: string) => () => void;
+  handleSubmit: React.EffectCallback;
+  handleTermTypeChange: (type: string) => () => void;
+  handleWhyChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  handleTechnicalAnswerChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
 };
 
 type RecruitmentFormHook = (role: string, onSuccess: () => void) => RecruitmentForm;

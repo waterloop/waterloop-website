@@ -1,6 +1,5 @@
 import React, { useState, FunctionComponent } from 'react';
 import styled from 'styled-components';
-import { useParams } from 'react-router';
 import { BrowserRouter, Link } from 'react-router-dom';
 import { Button } from '../Button';
 import Form from './RecruitmentForm';
@@ -96,7 +95,7 @@ const PositionPosting: FunctionComponent<MyProps> = ({
       </TextBlock>
       <ButtonBlock>
         <Button
-          onClick={() => setJoinClicked(!isJoinClicked)}
+          onClick={(): void => setJoinClicked(!isJoinClicked)}
           text="APPLY"
           backgroundColor="yellow"
           textColor="black"
@@ -104,12 +103,12 @@ const PositionPosting: FunctionComponent<MyProps> = ({
       </ButtonBlock>
       {isJoinClicked && (
         <Background>
-          <CloseBtn onClick={() => setJoinClicked(!isJoinClicked)}>X</CloseBtn>
+          <CloseBtn onClick={(): void => setJoinClicked(!isJoinClicked)}>X</CloseBtn>
           <Form
             role={role}
             technicalQ={technicalQ}
             termList={termList}
-            onSuccess={() => setJoinClicked(false)}
+            onSuccess={(): void => setJoinClicked(false)}
           />
         </Background>
       )}

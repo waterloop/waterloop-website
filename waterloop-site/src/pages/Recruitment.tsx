@@ -10,29 +10,25 @@ import JobPostings from "components/Postings/Postings";
 const castData: MyProps[] = Text;
 const imgData: string[] = [JoinUs];
 
-class Recruitment extends React.Component<any, any> {
-  render() {
-    return (
-      <>
-        <Hero
-          title="JOIN US"
-          description="Join our team."
-          anchor="#recruitment"
-        ></Hero>
-        <div id={"#recruitment"}></div>
-        <div className={"pageContainer"}>
-          <TextWithImage
-            data={castData}
-            textPos={"alternate"}
-            imgData={imgData}
-          ></TextWithImage>
-          <div className="break"></div>
-          <h2 className={"center-text"}>Current Postings</h2>
-          <JobPostings />
-        </div>
-      </>
-    );
-  }
-}
+const Recruitment: React.FC = () => (
+  <>
+    <Hero
+      title="JOIN US"
+      description="Join our team."
+      anchor="#recruitment"
+    ></Hero>
+    <div id={"#recruitment"}></div>
+    <div className={"pageContainer"}>
+      <TextWithImage
+        data={castData}
+        textPos={"alternate"}
+        imgData={imgData}
+      ></TextWithImage>
+      <div className="break"></div>
+      <h2 className={"center-text"}>Current Postings</h2>
+      <JobPostings />
+    </div>
+  </>
+);
 
 export default Recruitment;

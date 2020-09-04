@@ -43,18 +43,14 @@ const Block = styled.div`
 
 type MyProps = { subteam: string; description: string; image: string };
 
-class SubteamsOverview extends React.Component<MyProps> {
-  render() {
-    return (
-      <Block>
-        <Img src={this.props.image} alt="photo"></Img>
-        <TextBlock>
-          <h2>{this.props.subteam}</h2>
-          <Text>{this.props.description}</Text>
-        </TextBlock>
-      </Block>
-    );
-  }
-}
+const SubteamsOverview: React.FC<MyProps> = (props) => (
+  <Block>
+    <Img src={props.image} alt="photo"></Img>
+    <TextBlock>
+      <h2>{props.subteam}</h2>
+      <Text>{props.description}</Text>
+    </TextBlock>
+  </Block>
+);
 
 export default SubteamsOverview;

@@ -10,29 +10,24 @@ import "../theme/styles.scss";
 const castData: MyProps[] = Text;
 const imgData: string[] = [SponsorsImg];
 
-class Sponsors extends React.Component {
-  render() {
-    return (
-      <div>
-        <Hero
-          title="SUPPORT OUR TEAM"
-          description="Help fund the future."
-          anchor="#sponsor-list"
-        ></Hero>
-        <div id={"#sponsor-list"}></div>
-        <div className="pageContainer">
-          <TextWithImage
-            data={castData}
-            textPos={"alternate"}
-            imgData={imgData}
-          ></TextWithImage>
-
-          <div className="break"></div>
-          <SponsorList />
-        </div>
-      </div>
-    );
-  }
-}
+const Sponsors: React.FC = () => (
+  <div>
+    <Hero
+      title="SUPPORT OUR TEAM"
+      description="Help fund the future."
+      anchor="#sponsor-list"
+    ></Hero>
+    <div id="#sponsor-list"></div>
+    <div className="pageContainer">
+      <TextWithImage
+        data={castData}
+        textPos="alternate"
+        imgData={imgData}
+      ></TextWithImage>
+      <div className="break"></div>
+      <SponsorList />
+    </div>
+  </div>
+);
 
 export default Sponsors;

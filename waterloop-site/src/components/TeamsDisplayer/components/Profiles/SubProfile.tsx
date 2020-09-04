@@ -36,18 +36,24 @@ const InfoPosition = styled.div`
   }
 `;
 
-const SubProfile = (props: any) => {
-  return (
-    <Container onClick={props.onClick}>
-      <Portrait src={props.portrait || Default} alt="portrait" />
-      <InfoContainer>
-        <InfoTitle>
-          <strong className="center-text subprofile">{props.name}</strong>
-        </InfoTitle>
-        <InfoPosition>{props.position}</InfoPosition>
-      </InfoContainer>
-    </Container>
-  );
+interface Props {
+  portrait?: string;
+  name: string;
+  position: string;
+  onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 };
+
+const SubProfile: React.FC<Props> = (props) => (
+  <Container onClick={props.onClick}>
+    <Portrait src={props.portrait || Default} alt="portrait" />
+    <InfoContainer>
+      <InfoTitle>
+        <strong className="center-text subprofile">{props.name}</strong>
+      </InfoTitle>
+      <InfoPosition>{props.position}</InfoPosition>
+    </InfoContainer>
+  </Container>
+);
+
 
 export default SubProfile;

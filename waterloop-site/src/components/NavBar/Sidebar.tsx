@@ -118,17 +118,6 @@ const ToggleLine = styled.div`
   }
 `;
 
-enum Page {
-  home = "Home",
-  flock = "Flock",
-  team = "Team",
-  sponsors = "Sponsors",
-  recruitment = "Join Us",
-}
-
-interface Current {
-  currpage: Page;
-}
 type MyState = {
   toggleOpen: boolean;
 };

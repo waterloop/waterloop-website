@@ -21,6 +21,7 @@ import Competition from "../static/img/landing/textwithimage/competition.png";
 const castData: MyProps[] = Text;
 const imgData: string[] = [Goals, Competition];
 const ColData: Props[] = ColText;
+
 // Place data here:
 const imgJSON: ImgJSON[] = [
   { imgSrc: Brent, imgAlt: "Brent" },
@@ -31,29 +32,25 @@ const imgJSON: ImgJSON[] = [
   { imgSrc: WCBranham, imgAlt: "WCBranham" },
 ];
 
-class Home extends React.Component {
-  render() {
-    return (
-      <div>
-        <Hero description="A faster look on the future." anchor="#home"></Hero>
+const Home: React.FC = () => (
+  <div>
+    <Hero description="A faster look on the future." anchor="#home"></Hero>
 
-        <div className="pageContainer">
-          <div id={"#home"}></div>
-          <TextWithImage
-            data={castData}
-            textPos={"alternate"}
-            imgData={imgData}
-          ></TextWithImage>
-        </div>
-        <div className="break"></div>
-        <ColumnBlock data={ColData} imgData={imgData} />
-        <div className="pageContainer">
-          <div className="break"></div>
-          <Sponsors data={imgJSON} />
-        </div>
-      </div>
-    );
-  }
-}
+    <div className="pageContainer">
+      <div id={"#home"}></div>
+      <TextWithImage
+        data={castData}
+        textPos={"alternate"}
+        imgData={imgData}
+      ></TextWithImage>
+    </div>
+    <div className="break"></div>
+    <ColumnBlock data={ColData} imgData={imgData} />
+    <div className="pageContainer">
+      <div className="break"></div>
+      <Sponsors data={imgJSON} />
+    </div>
+  </div>
+);
 
 export default Home;

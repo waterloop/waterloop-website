@@ -24,5 +24,5 @@ export interface TeamsDisplayerState {
   teamFilterLabels: Array<string>;
   memberData: Map<string, Array<ProfileType>>;
   subteamIdMap: Map<string, string>;
-  loading: Boolean;
+  loading: boolean;
 }

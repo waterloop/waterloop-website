@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 interface RadioButtonProps {
-  checked: boolean,
-  onChange: () => void,
-  name: string,
+  checked: boolean;
+  onChange: () => void;
+  name: string;
 }
 
 const RadioContainer = styled.div`

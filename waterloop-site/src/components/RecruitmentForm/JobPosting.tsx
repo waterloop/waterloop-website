@@ -41,7 +41,7 @@ const JobPosting: React.FC<JobPostingProps> = props => (
           backgroundColor="yellow"
           textColor="black"
           text="APPLY"
-          onClick={() => window.open(`${props.applicationForm}`)}
+          onClick={(): Window | null => window.open(`${props.applicationForm}`)}
         />
       </div>
     </div>
@@ -55,23 +55,23 @@ const JobPosting: React.FC<JobPostingProps> = props => (
     <div className="break" />
     <h3>What you'll do:</h3>
     <ul>
-      {props.tasks.map((task: string) => {
-        return <li>{task}</li>;
-      })}
+      {props.tasks.map((task: string) => (
+        <li>{task}</li>
+      ))}
     </ul>
     <div className="break" />
     <h3>Requirements:</h3>
     <ul>
-      {props.requirements.map((task: string) => {
-        return <li>{task}</li>;
-      })}
+      {props.requirements.map((task: string) => (
+        <li>{task}</li>
+      ))}
     </ul>
     <div className="break" />
     <h3>Additional info:</h3>
     <ul>
-      {props.additional.map((task: string) => {
-        return <li>{task}</li>;
-      })}
+      {props.additional.map((task: string) => (
+        <li>{task}</li>
+      ))}
     </ul>
     <div className="break" />
     <div className="centerDiv">
@@ -79,7 +79,7 @@ const JobPosting: React.FC<JobPostingProps> = props => (
         backgroundColor="yellow"
         textColor="black"
         text="APPLY"
-        onClick={() => window.open(`${props.applicationForm}`)}
+        onClick={(): Window | null => window.open(`${props.applicationForm}`)}
       />
     </div>
   </div>
