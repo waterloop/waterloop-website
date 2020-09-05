@@ -1,18 +1,23 @@
+export interface Contact {
+  icon: string;
+  url: string;
+}
+
 export type ProfileType = {
   name: string;
   position: string;
   programInfo: string;
   portrait: string;
-  teams: Array<string>;
+  teams: string[];
   bio: string;
-  contacts: Array<{ icon: string; url: string }>;
+  contacts: Contact[];
 };
 
 export type QueryData = any;
 
 export interface SubteamProps {
   title: string;
-  members: Array<ProfileType>;
+  members: ProfileType[];
 }
 
 export interface TeamsDisplayerProps {
@@ -20,9 +25,9 @@ export interface TeamsDisplayerProps {
 }
 
 export interface TeamsDisplayerState {
-  teamFilters: Array<boolean>;
-  teamFilterLabels: Array<string>;
-  memberData: Map<string, Array<ProfileType>>;
+  teamFilters: boolean[];
+  teamFilterLabels: string[];
+  memberData: Map<string, ProfileType[]>;
   subteamIdMap: Map<string, string>;
   loading: boolean;
 }

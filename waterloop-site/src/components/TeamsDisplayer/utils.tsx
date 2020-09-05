@@ -40,15 +40,15 @@ const buildProfile = (member: QueryData, teamType: Map<string, string>): Profile
 
 // Insert a profile into correct array position as a map value
 const insertProfileToMap = (
-  teams: Map<string, Array<ProfileType>>,
+  teams: Map<string, ProfileType[]>,
   teamName: string,
   member: ProfileType
 ): void => {
-  let memberList = [] as Array<ProfileType>;
+  let memberList = [] as ProfileType[];
 
   // Add member to array
   if (teams.has(teamName)) {
-    memberList = teams.get(teamName) as Array<ProfileType>;
+    memberList = teams.get(teamName) as ProfileType[];
 
     // Insert Subteam leads to front of array
     if (member.position === "Subteam Lead") {
@@ -118,12 +118,12 @@ const checkWithinTeamFilters = (name: string, teamFilters: boolean[]): boolean =
 
 // Apply team filters to data set
 const applyTeamFilters = (
-  teams: Map<string, Array<ProfileType>>,
-  teamFilters: Array<boolean>
+  teams: Map<string, ProfileType[]>,
+  teamFilters: boolean[]
 ): Map<string, ProfileType[]> => {
   const filteredTeams = new Map() as Map<string, ProfileType[]>;
 
-  teams.forEach((team: Array<ProfileType>, teamName: string) => {
+  teams.forEach((team: ProfileType[], teamName: string) => {
     if (teamName === "Team Leads") {
       team.forEach((member: ProfileType) => {
         for (let i = 0; i < member.teams.length; i += 1) {

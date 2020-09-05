@@ -32,7 +32,7 @@ const Page = styled.div`
 const sortSubteams = (subteams: SubteamProps[]): SubteamProps[] => {
   const newTeams = [] as SubteamProps[];
   subteams.forEach(
-    (team: { title: string; members: Array<ProfileType> }, i: number) => {
+    (team: { title: string; members: ProfileType[] }, i: number) => {
       if (team.title === "Exec") {
         newTeams[0] = team;
       } else if (team.title === "Mechanical") {
@@ -163,7 +163,7 @@ export default class TeamsDisplayer extends React.Component<
       // Apply filters
       const filteredTeams = applyTeamFilters(teams, this.state.teamFilters);
 
-      filteredTeams.forEach((team: Array<ProfileType>, name: string) => {
+      filteredTeams.forEach((team: ProfileType[], name: string) => {
         subteams.push({ title: name, members: team });
         subteams = sortSubteams(subteams);
       });
@@ -181,7 +181,7 @@ export default class TeamsDisplayer extends React.Component<
         {subteams.length > 0 &&
           subteams.map(
             (
-              team: { title: string; members: Array<ProfileType> },
+              team: { title: string; members: ProfileType[] },
               i: number
             ) => {
               return (
