@@ -51,6 +51,7 @@ export default class Postings extends React.Component<any, any> {
     const TEAMS = [
       "Mechanical",
       "Electrical",
+      "Software",
       "Business",
       "LIM",
       "Team Hub",

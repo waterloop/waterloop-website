@@ -17,9 +17,7 @@ export const samplePostingsData = [
       "Recommended: Prior experience with Node JS",
       "Recommended: Prior experience with MongoDB",
     ],
-    additional: [
-      "5 hr/week time commitment",
-    ],
+    additional: ["5 hr/week time commitment"],
   },
   {
     role: "Front-End Developer",
@@ -41,9 +39,7 @@ export const samplePostingsData = [
       "Recommended: Prior experience with Styled Components",
       "Recommended: Prior experience with Styled Systems",
     ],
-    additional: [
-      "5 hr/week time commitment",
-    ],
+    additional: ["5 hr/week time commitment"],
   },
   {
     role: "Graphic Designer",
@@ -87,7 +83,7 @@ export const samplePostingsData = [
     ],
     additional: [
       "Estimated 6 hr/week time commitment",
-      "Flexible schedule to meet members during testing/work sessions"
+      "Flexible schedule to meet members during testing/work sessions",
     ],
   },
   {
@@ -204,7 +200,7 @@ export const samplePostingsData = [
     ],
     additional: [
       "This position is mainly in-person but also involves some remote work. This position will count towards your co-op credit",
-      "Full time position"
+      "Full time position",
     ],
   },
   {
@@ -343,7 +339,28 @@ export const samplePostingsData = [
     ],
     additional: [
       "This position is mainly in-person but also involves some remote work. This position will count towards your co-op credit",
-      "Full time position"
+      "Full time position",
     ],
+  },
+  {
+    role: "Software Developer - Embedded",
+    deadline: "September 17, 2020 (rolling basis)",
+    term: "FALL 2020",
+    applicationForm: "https://forms.gle/8uq54fDQohq33D166",
+    subteam: "Software",
+    description:
+      "The software team works on all software components related to the pod. We are responsible for developing and testing all the sensors, embedded boards, and testing rigs. Currently the team is working on the motor controller, battery management system (BMS), coding new sensor boards, remote flashing rig and testing rig. Waterloop will be accepting members on a rolling basis.",
+    tasks: [
+      "Working with low-level languages (C/C++) to code embedded boards",
+      "Create and work through different tests for sensors",
+    ],
+    requirements: [
+      "A solid foundation in C/C++",
+      "Understanding of common communication protocols (I2C, SPI, USB)",
+      "Experience working with Arduino",
+      "Recommended: Prior experience with STM32 boards",
+      "Recommended: Living in Waterloo",
+    ],
+    additional: ["10 hr/week time commitment"],
   },
 ];
