@@ -2,11 +2,12 @@ import React from "react";
 import DownArrowImg from "../../static/img/background/downArrow.svg";
 import "../../theme/styles.scss";
 import { Link } from "react-scroll";
+import { ReactElement } from "react";
 
 type MyProps = { description: string; title: string; anchor: string };
 
-class heroComponent extends React.Component<MyProps> {
-  render() {
+class General extends React.Component<MyProps> {
+  render(): ReactElement {
     return (
       <div className="generalContainer">
         <div className="generalTitleContainer">
@@ -27,4 +28,4 @@ class heroComponent extends React.Component<MyProps> {
   }
 }
 
-export default heroComponent;
+export default General;

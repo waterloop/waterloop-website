@@ -55,15 +55,30 @@ const Image = styled.img`
   }
 `;
 
-const ImageCarousel: React.FC = () => {
-  const containerStyles: React.CSSProperties = {
-    display: "flex",
-    padding: "10px",
-    width: "100%",
-    justifyContent: "center",
-    alignItems: "center",
-  };
+const Container = styled.div`
+  display: flex;
+  padding: 10px;
+  width: 100%;
+  justifyContent: center;
+  alignItems: center;
+`;
 
+const DescriptionWrapper = styled.div`
+  display: flex;
+  alignItems: center;
+  flexDirection: column;
+`;
+
+const MobileContainer = styled.div`
+  display: "flex",
+  alignItems: "center",
+  @media only screen and (max-width: 900px) {
+    width: 100%;
+    box-shadow: none;
+  }
+`;
+
+const ImageCarousel: React.FC = () => {
   const { image, name, desc, cycleLeft, cycleRight } = useGeeseImages();
 
   const swipeHandlers = useSwipeable({
@@ -73,7 +88,7 @@ const ImageCarousel: React.FC = () => {
 
   return (
     <div>
-      <div style={containerStyles}>
+      <Container>
         <Arrow className="material-icons" onClick={cycleLeft}>
           keyboard_arrow_left
         </Arrow>
@@ -81,32 +96,21 @@ const ImageCarousel: React.FC = () => {
         <Arrow className="material-icons" onClick={cycleRight}>
           keyboard_arrow_right
         </Arrow>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          flexDirection: "column",
-        }}
-      >
+      </Container>
+      <DescriptionWrapper>
         <Name>{name}</Name>
         <Description>
           <p>{desc}</p>
         </Description>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
+        <MobileContainer>
           <ArrowMobile className="material-icons" onClick={cycleLeft}>
             keyboard_arrow_left
           </ArrowMobile>
           <ArrowMobile className="material-icons" onClick={cycleRight}>
             keyboard_arrow_right
           </ArrowMobile>
-        </div>
-      </div>
+        </MobileContainer>
+      </DescriptionWrapper>
     </div>
   );
 };

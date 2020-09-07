@@ -29,6 +29,30 @@ const Page = styled.div`
   }
 `;
 
+const sortSubteams = (subteams: SubteamProps[]): SubteamProps[] => {
+  const newTeams = [] as SubteamProps[];
+  subteams.forEach(
+    (team: { title: string; members: ProfileType[] }, i: number) => {
+      if (team.title === "Exec") {
+        newTeams[0] = team;
+      } else if (team.title === "Mechanical") {
+        newTeams[1] = team;
+      } else if (team.title === "Electrical") {
+        newTeams[2] = team;
+      } else if (team.title === "Software") {
+        newTeams[3] = team;
+      } else if (team.title === "Web") {
+        newTeams[4] = team;
+      } else if (team.title === "Infrastructure") {
+        newTeams[5] = team;
+      } else if (team.title === "Admin") {
+        newTeams[6] = team;
+      }
+    }
+  );
+  return newTeams;
+}
+
 export default class TeamsDisplayer extends React.Component<
   TeamsDisplayerProps,
   TeamsDisplayerState
@@ -53,43 +77,20 @@ export default class TeamsDisplayer extends React.Component<
   }
 
   // Initialization
-  componentDidMount() {
+  componentDidMount(): void {
     this.fetchSubteams();
     this.updateFilters(this.props.initFilterSetting);
   }
 
-  sortSubteams(subteams: SubteamProps[]) {
-    let newTeams = [] as Array<SubteamProps>;
-    subteams.map(
-      (team: { title: string; members: Array<ProfileType> }, i: number) => {
-        if (team.title === "Exec") {
-          newTeams[0] = team;
-        } else if (team.title === "Mechanical") {
-          newTeams[1] = team;
-        } else if (team.title === "Electrical") {
-          newTeams[2] = team;
-        } else if (team.title === "Software") {
-          newTeams[3] = team;
-        } else if (team.title === "Web") {
-          newTeams[4] = team;
-        } else if (team.title === "Infrastructure") {
-          newTeams[5] = team;
-        } else if (team.title === "Admin") {
-          newTeams[6] = team;
-        }
-      }
-    );
-    return newTeams;
-  }
-
   // fetch subteams
-  fetchSubteams() {
+  fetchSubteams(): void {
     const [query, options] = generateFiltersQuery();
     fetch(query as string, options as object)
       .then((res) => res.json())
       .then((res) => {
-        let newMap = this.state.subteamIdMap;
+        const newMap = this.state.subteamIdMap;
         res.body.subteams.forEach((team: QueryData) =>
+          // eslint-disable-next-line no-underscore-dangle
           newMap.set(team._id, team.name)
         );
         this.setState({ subteamIdMap: newMap });
@@ -101,9 +102,9 @@ export default class TeamsDisplayer extends React.Component<
   }
 
   // fetch data from teamhub
-  fetchProfiles() {
+  fetchProfiles(): void {
     const [query, options] = generateMembersQuery();
-    fetch(query as string, options as object)
+    fetch(query, options)
       .then((res) => res.json())
       .then((res) => {
         // console.log(res);
@@ -111,7 +112,7 @@ export default class TeamsDisplayer extends React.Component<
         const groupedProfiles = sortProfiles(
           res.body,
           this.state.subteamIdMap
-        ) as Map<string, Array<ProfileType>>;
+        ) as Map<string, ProfileType[]>;
         this.setState({ memberData: groupedProfiles });
         this.setState({ loading: false });
       })
@@ -121,7 +122,7 @@ export default class TeamsDisplayer extends React.Component<
   }
 
   // Update filter states to refine members show on page
-  updateFilters(id: number) {
+  updateFilters(id: number): void {
     let newFilterStates = this.state.teamFilters;
     newFilterStates[id] = !newFilterStates[id];
 
@@ -129,7 +130,7 @@ export default class TeamsDisplayer extends React.Component<
     if (id === 0) {
       if (newFilterStates[id]) {
         newFilterStates = newFilterStates.map(
-          (value: Boolean, i: number) => i === 0
+          (value: boolean, i: number) => i === 0
         );
       }
       // All Teams can only be deactivated by activating another filter
@@ -144,28 +145,27 @@ export default class TeamsDisplayer extends React.Component<
       let sum = 0;
       newFilterStates.forEach((res: boolean) => {
         const num = res ? 1 : 0;
-        sum = sum + num;
+        sum += num;
       });
       if (sum === 0) {
         newFilterStates[0] = true;
       }
     }
-
     this.setState({ teamFilters: newFilterStates });
   }
 
-  render() {
-    let teams = this.state.memberData;
-    let subteams = [] as Array<SubteamProps>;
+  render(): React.ReactElement {
+    const teams = this.state.memberData;
+    let subteams = [] as SubteamProps[];
 
     // Populate teams with profiles after request finishes
     if (teams.size > 0) {
       // Apply filters
       const filteredTeams = applyTeamFilters(teams, this.state.teamFilters);
 
-      filteredTeams.forEach((team: Array<ProfileType>, name: string) => {
+      filteredTeams.forEach((team: ProfileType[], name: string) => {
         subteams.push({ title: name, members: team });
-        subteams = this.sortSubteams(subteams);
+        subteams = sortSubteams(subteams);
       });
     }
 
@@ -174,14 +174,14 @@ export default class TeamsDisplayer extends React.Component<
         <TeamFilter
           teamFilters={this.state.teamFilters}
           filterLabels={this.state.teamFilterLabels}
-          updateFilters={(id: number) => this.updateFilters(id)}
+          updateFilters={(id: number): void => this.updateFilters(id)}
         />
         {this.state.loading ? <Preloader /> : <></>}
 
         {subteams.length > 0 &&
           subteams.map(
             (
-              team: { title: string; members: Array<ProfileType> },
+              team: { title: string; members: ProfileType[] },
               i: number
             ) => {
               return (
@@ -199,8 +199,7 @@ export default class TeamsDisplayer extends React.Component<
             backgroundColor="yellow"
             textColor="black"
             text={"JOIN THE TEAM"}
-            onClick={() => window.open("/recruitment", "_self")}
-            variant={null}
+            onClick={(): Window | null => window.open("/recruitment", "_self")}
           />
         </div>
       </Page>

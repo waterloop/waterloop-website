@@ -1,21 +1,20 @@
 import React from "react";
 import "../../theme/styles.scss";
 
-type MyProps = { subteam: string; description: string; image: string };
+interface Props {
+  subteam: string;
+  description: string;
+  image: string;
+};
 
-class SubteamsOverview extends React.Component<MyProps> {
-  //TODO test if it works after global styling
-  render() {
-    return (
-      <div className="Block-Teams">
-        <img className="Img-Teams" src={this.props.image} alt="teams"></img>
-        <div className="TextBlock-Teams">
-          <h2 className="Header-Teams">{this.props.subteam}</h2>
-          <p className="Text-Teams">{this.props.description}</p>
-        </div>
-      </div>
-    );
-  }
-}
+const SubteamsOverview: React.FC<Props> =  (props) => (
+  <div className="Block-Teams">
+    <img className="Img-Teams" src={props.image} alt="teams"></img>
+    <div className="TextBlock-Teams">
+      <h2 className="Header-Teams">{props.subteam}</h2>
+      <p className="Text-Teams">{props.description}</p>
+    </div>
+  </div>
+);
 
 export default SubteamsOverview;

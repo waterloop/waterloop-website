@@ -1,8 +1,8 @@
-import { ProfileType } from "../interfaces";
+import { ProfileType, Contact } from "../interfaces";
 import Text from "static/copy/Team/descriptions.json";
 
 export type ContactsType = {
-  contacts: Array<{ icon: string; url: string }>;
+  contacts: Contact[];
 };
 
 export type Descriptions = {
@@ -17,10 +17,6 @@ export type Descriptions = {
 };
 export interface PSectionProps {
   title: string | keyof typeof Text;
-  profiles: Array<ProfileType>;
+  profiles: ProfileType[];
   profileType: string;
-}
-
-export interface PSectionState {
-  minified: Array<ProfileType>;
 }

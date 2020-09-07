@@ -1,1 +1,1 @@
-export {default as SubTeam} from './Teams';
+export { default as SubTeam } from './Teams';

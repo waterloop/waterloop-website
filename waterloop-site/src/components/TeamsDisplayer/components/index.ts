@@ -1,7 +1,2 @@
-import ProfileSection from './ProfileSection'
-import TeamFilter from './TeamFilter'
-
-export {
-  ProfileSection,
-  TeamFilter
-}
+export { default as  ProfileSection } from './ProfileSection';
+export { default as TeamFilter } from './TeamFilter';

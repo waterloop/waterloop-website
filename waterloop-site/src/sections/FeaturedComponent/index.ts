@@ -1,1 +1,1 @@
-export {default as SimpleFeatures} from './FeaturedComponent';
+export { default as SimpleFeatures } from './FeaturedComponent';

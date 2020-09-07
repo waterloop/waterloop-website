@@ -10,9 +10,17 @@ interface NonVariantProps {
   text: string;
   textColor: TextColor;
   onClick: () => void;
-  variant: null;
 }
 
+function isVariantProps(object: any): object is VariantProps {
+  return (
+    'onClick' in object
+    && 'variant' in object
+    && 'text' in object
+    && 'backgroundColor?' in object
+    && 'textColor?' in object
+  )
+};
 interface VariantProps {
   onClick: () => void;
   variant: VariantNumber;
@@ -51,10 +59,10 @@ const Button: React.FC<Props> = (props) => {
     textColor: TextColor;
     backgroundColor: BackgroundColor;
   } = {
-    textColor: props.variant
+    textColor: isVariantProps(props)
       ? VariantMap[props.variant].textColor
       : props.textColor,
-    backgroundColor: props.variant
+    backgroundColor: isVariantProps(props)
       ? VariantMap[props.variant].backgroundColor
       : props.backgroundColor,
   };
@@ -72,7 +80,7 @@ const Button: React.FC<Props> = (props) => {
     &:active {
       border-color: ${ColorMap.yellow};
     }
-  
+
   }`;
 
   const Text = styled.p`

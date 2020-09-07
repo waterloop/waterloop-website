@@ -1,5 +1,3 @@
-import SubProfile from './SubProfile'
+import SubProfile from './SubProfile';
 
-export {
-  SubProfile
-}
+export default SubProfile;

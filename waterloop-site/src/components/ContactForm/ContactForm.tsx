@@ -1,7 +1,8 @@
-import React from "react";
-import { Button } from "components/Button";
-import "../../theme/styles.scss";
-import Check from "../../static/img/assets/mdi_check_circle.svg";
+import React from 'react';
+import { Button } from 'components/Button';
+import '../../theme/styles.scss';
+import { ReactComponent as CheckSVG} from '../../static/img/assets/mdi_check_circle.svg';
+import hasKey from '../../utils/hasKey';
 
 interface ContactFormProps {
   title: string;
@@ -29,7 +30,7 @@ interface ServerResponse {
 class ContactUsForm extends React.Component<
   ContactFormProps,
   ContactFormStates
-  > {
+> {
   constructor(props: ContactFormProps) {
     super(props);
     this.onFormSubmit = this.onFormSubmit.bind(this);
@@ -40,43 +41,38 @@ class ContactUsForm extends React.Component<
     this.state = {
       submitted: false,
       formKey: {
-        email: "",
-        name: "",
-        message: "",
+        email: '',
+        name: '',
+        message: '',
       },
       serverResponse: {
         error: false,
-        msg: "",
+        msg: '',
       },
       formResponseError: false,
     };
   }
 
-  private inputStyle: React.CSSProperties = {
-    backgroundColor: "WhiteSmoke",
-    width: "100%",
-    border: "none",
-    fontSize: "15pt",
-  };
   private formStyle: React.CSSProperties = {
-    display: "flex",
-    flexDirection: "column",
+    display: 'flex',
+    flexDirection: 'column',
   };
 
   private errorStyle: React.CSSProperties = {
-    width: "100%",
-    wordWrap: "break-word",
-    color: "red",
+    width: '100%',
+    wordWrap: 'break-word',
+    color: 'red',
   };
 
-  private regex: RegExp = new RegExp(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
-  private validationRules: any = {
-    name: (nameValue: string) => (nameValue.length > 0 ? true : false),
-    email: (emailValue: string) => this.regex.test(emailValue),
-    message: (messageValue: string) => (messageValue.length > 0 ? true : false),
+  private regex = new RegExp(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+
+  private validationRules = {
+    name: (nameValue: string): boolean => (nameValue.length > 0),
+    email: (emailValue: string): boolean => this.regex.test(emailValue),
+    message: (messageValue: string): boolean => messageValue.length > 0,
   };
 
-  public handleChange(event: any) {
+  public handleChange(event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void {
     event.preventDefault();
     this.setState({
       formKey: {
@@ -86,15 +82,15 @@ class ContactUsForm extends React.Component<
     });
   }
 
-  private handleServerReponse(error: boolean, message: string) {
-    var response: ServerResponse = {
-      error: error,
+  private handleServerResponse(error: boolean, message: string): void {
+    const response: ServerResponse = {
+      error,
       msg: message,
     };
     this.setState({ serverResponse: response });
   }
 
-  public renderError() {
+  public renderError(): React.ReactElement {
     if (this.state.formResponseError) {
       return (
         <p style={this.errorStyle}>
@@ -102,85 +98,94 @@ class ContactUsForm extends React.Component<
         </p>
       );
     }
+    return <></>;
   }
 
-  public showForm() {
+  public showForm(): void {
     this.setState({
       submitted: false,
     });
   }
 
-  public renderServerError() {
+  public renderServerError(): React.ReactElement {
     if (this.state.serverResponse && this.state.serverResponse.error) {
       return <p style={this.errorStyle}>{this.state.serverResponse.msg}</p>;
     }
-    return;
+    return<></>;
   }
 
   private validate(): boolean {
-    const stateValue = (this.state.formKey! as any) as Record<string, string>;
-    for (let key of Object.keys(stateValue)) {
-      if (!this.validationRules[key](stateValue[key])) {
+    const stateValue = this.state.formKey;
+    let valid = true;
+    Object.keys(stateValue).forEach((key) => {
+      if (hasKey(this.validationRules, key) && !this.validationRules[key](stateValue[key])) {
         this.setState({ formResponseError: true });
-        return false;
+        valid = false;
       }
-    }
+    });
     if (this.state.formResponseError) {
-      this.setState({ formResponseError: false });
+      this.setState({ formResponseError: !valid });
     }
-    return true;
+    return valid;
   }
 
-  public onFormSubmit(event: any) {
+  public onFormSubmit(event: React.FormEvent<HTMLFormElement>): void {
     event.preventDefault();
     if (!this.validate()) {
       return;
     }
     fetch(
-      "https://formspree.io/xpzyedjr", //Prod form
-      // "https://formspree.io/xzbjqraz", // Dev form
+      process.env.NODE_ENV === 'development' ?
+        "https://formspree.io/xzbjqraz" // Dev form
+        : 'https://formspree.io/xpzyedjr', // Prod form
       {
-        method: "POST",
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(this.state.formKey),
       }
     )
-      .then((response) => {
+      .then(response => {
         return response.json();
       })
-      .then((response) => {
+      .then(response => {
         if (response.error) {
-          this.handleServerReponse(true, response.error);
+          this.handleServerResponse(true, response.error);
         } else {
-          this.handleServerReponse(false, "Sent");
+          this.handleServerResponse(false, 'Sent');
           this.setState({
             submitted: true,
             formKey: {
-              email: "",
-              name: "",
-              message: "",
+              email: '',
+              name: '',
+              message: '',
             },
           });
         }
       });
   }
 
-  render() {
-    if (this.state.submitted)
+  render(): React.ReactElement {
+    if (this.state.submitted) {
       return (
         <div className="success-modal-container">
-          <div className={"success-message"}>
-            <img src={Check} alt="success" />
+          <div className={'success-message'}>
+            <CheckSVG />
             <h2 className="center-text">Thanks for reaching out! </h2>
-            <p className="center-text">Your message was submitted successfully.</p>
-            <a className="center-text" onClick={() => this.setState({ submitted: false })}>
+            <p className="center-text">
+              Your message was submitted successfully.
+            </p>
+            <button
+              className="center-text submit-again"
+              onClick={(): void => this.setState({ submitted: false })}
+            >
               Submit another message
-            </a>
+            </button>
           </div>
         </div>
       );
+    }
     return (
       <div className="contactForm-Container">
         <form
@@ -202,7 +207,7 @@ class ContactUsForm extends React.Component<
                 id="name"
                 value={this.state.formKey.name}
                 onChange={this.handleChange}
-              ></input>
+              />
             </div>
             <div className="contactForm-InputBlockRight">
               <label htmlFor="email">Email</label>
@@ -211,7 +216,7 @@ class ContactUsForm extends React.Component<
                 name="email"
                 value={this.state.formKey.email}
                 onChange={this.handleChange}
-              ></input>
+              />
             </div>
           </div>
           <div className="contact-form-message">
@@ -222,16 +227,15 @@ class ContactUsForm extends React.Component<
               rows={3}
               value={this.state.formKey.message}
               onChange={this.handleChange}
-            ></textarea>
+            />
           </div>
-          <div style={{ alignSelf: "center" }}>
+          <div style={{ alignSelf: 'center' }}>
             <Button
               backgroundColor="yellow"
               textColor="black"
               text="SEND"
-              onClick={() => console.log("submitting form")}
-              variant={null}
-            ></Button>
+              onClick={(): void => console.log('submitting form')}
+            />
           </div>
         </form>
       </div>

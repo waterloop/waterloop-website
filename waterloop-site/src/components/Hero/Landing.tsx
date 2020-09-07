@@ -6,8 +6,8 @@ import { Link } from "react-scroll";
 
 type MyProps = { description: string; anchor: string };
 
-class heroComponent extends React.Component<MyProps> {
-  render() {
+class Landing extends React.Component<MyProps> {
+  render(): React.ReactElement {
     return (
       <div className="landingContainer">
         <div className="landingContent">
@@ -23,7 +23,7 @@ class heroComponent extends React.Component<MyProps> {
           </div>
           {/* COMMENT BELOW ONCE POSTINGS ARE UP */}
           <button
-            onClick={() => window.open("/recruitment", "_self")}
+            onClick={(): Window | null => window.open("/recruitment", "_self")}
             className={"ButtonDiv landing-btn"}
           >
             <div className={"ButtonText"}>JOIN US</div>
@@ -54,4 +54,4 @@ class heroComponent extends React.Component<MyProps> {
   }
 }
 
-export default heroComponent;
+export default Landing;

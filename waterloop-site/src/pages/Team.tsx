@@ -10,25 +10,21 @@ const ContentContainer = styled.div`
   margin: 0 auto;
 `;
 
-class Teams extends React.Component<any, any> {
-  render() {
-    return (
-      <div>
-        <Hero
-          title="MEET THE TEAM"
-          description="Den of the Waterloop Geese."
-          anchor="#team"
-        ></Hero>
-        <div id={"#team"}></div>
-        <div className="pageContainer">
-          <ContentContainer>
-            <OurTeam />
-            <TeamsDisplayer initFilterSetting={0} />
-          </ContentContainer>
-        </div>
-      </div>
-    );
-  }
-}
+const Teams: React.FC = () => (
+  <div>
+    <Hero
+      title="MEET THE TEAM"
+      description="Den of the Waterloop Geese."
+      anchor="#team"
+    ></Hero>
+    <div id="#team"></div>
+    <div className="pageContainer">
+      <ContentContainer>
+        <OurTeam />
+        <TeamsDisplayer initFilterSetting={0} />
+      </ContentContainer>
+    </div>
+  </div>
+);
 
 export default Teams;

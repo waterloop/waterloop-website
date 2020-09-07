@@ -1,64 +1,52 @@
-import React from 'react'
-import IconCheck from './IconCheck'
-import IconUnchecked from './IconUnchecked'
-import CSS from 'csstype'
+import React from 'react';
+import styled from 'styled-components';
+import IconCheck from './IconCheck';
+import IconUnchecked from './IconUnchecked';
 
-interface IProps{
+const StyledButton = styled.button`
+  background: transparent;
+  border: none;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  outline: none;
+  color: black;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  text-align: left;
+`;
+
+const CheckContainer = styled.div`
+  margin-right: 1rem;
+`;
+
+const ChildContainer = styled.div`
+  padding-top: 0.2rem;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: IBM Plex Sans;
+`;
+
+interface Props {
   checked?: boolean;
-  onClick?: any;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
-interface IState {
-}
+const Checkbox: React.FC<Props> = (props) => {
+  const Icon = props.checked ? IconCheck : IconUnchecked;
 
-export default class Button extends React.Component<IProps, IState> {
-  constructor(props: IProps) {
-    super(props)
+  return (
+    <StyledButton
+      onClick={props.onClick}>
+      <CheckContainer>
+        <Icon />
+      </CheckContainer>
 
-    this.icon = this.icon.bind(this)
-  }
+      <ChildContainer>
+        { props.children }
+      </ChildContainer>
+    </StyledButton>
+  );
+};
 
-  icon() {
-    return this.props.checked ? <IconCheck /> : <IconUnchecked />
-  }
-
-  render() {
-    return (
-      <button 
-        style={ StyleButton} 
-        onClick={this.props.onClick}>
-        <div style={ StyleCheck }>
-          { this.icon() }
-        </div>
-        
-        <div style={ StyleContent }>
-          { this.props.children }
-        </div>
-      </button>
-    )
-  }
-}
-
-const StyleButton: CSS.Properties = {
-  background: 'transparent',
-  border: 'none',
-  marginTop: '0.5rem',
-  marginBottom: '0.5rem',
-  display: 'flex',
-  outline: 'none',
-  color: 'black',
-  marginRight: '0.5rem',
-  cursor: 'pointer',
-  textAlign: 'left',
-}
-  
-const StyleCheck: CSS.Properties = {
-  marginRight: '1rem',
-}
-  
-const StyleContent: CSS.Properties ={
-  paddingTop: '0.2rem',
-  fontSize: '1rem',
-  fontWeight: 400,
-  fontFamily: 'IBM Plex Sans',
-}
+export default Checkbox;

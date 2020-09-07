@@ -1,1 +1,1 @@
-export { default as Sponsor } from "./Sponsor";
+export { default as Sponsor } from './Sponsor';

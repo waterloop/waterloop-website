@@ -22,7 +22,7 @@ const Input = styled(({ valid, ...props }) => <input {...props} />)`
   width: 42%;
   height: 24px;
   padding: 5px;
-  border: 0.5 px solid ${({ valid }) => (valid === false ? "red" : "black")};
+  border: 0.5 px solid ${({ valid }): string => (valid === false ? "red" : "black")};
 `;
 
 const TextArea = styled(({ valid, ...props }) => <textarea {...props} />)`
@@ -31,7 +31,7 @@ const TextArea = styled(({ valid, ...props }) => <textarea {...props} />)`
   margin: 3%;
   width: 75%;
   overflow: scroll;
-  border-color: ${({ valid }) => (valid === false ? "red" : "black")};
+  border-color: ${({ valid }): string => (valid === false ? "red" : "black")};
 `;
 
 interface MyProps {
@@ -56,7 +56,7 @@ const Form: React.FC<MyProps> = ({ role, technicalQ, termList, onSuccess }) => {
 
   const handleUserInfoChange = (id: string) => (
     event: React.ChangeEvent<HTMLInputElement>
-  ) => updateUserInfo(id, event.target.value);
+  ): void => updateUserInfo(id, event.target.value);
 
   const userInfoInputs = userInfoFields.map((field) => (
     <Input

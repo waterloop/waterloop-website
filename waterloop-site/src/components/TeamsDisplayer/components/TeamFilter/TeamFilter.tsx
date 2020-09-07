@@ -13,7 +13,7 @@ const FilterContainer = styled.div`
   align-items: center;
 `;
 
-//container for buttons in mobile
+// container for buttons in mobile
 const SlideDownContainer = styled.div`
   grid-template-columns: repeat(2, 1fr);
   display: grid;
@@ -52,14 +52,19 @@ const StyledImage = styled.img`
   margin-bottom: 0.1rem;
 `;
 
-const TeamFilter = (props: any) => {
+interface Props {
+  teamFilters: boolean[];
+  updateFilters: (id: number) => void;
+  filterLabels: string[];
+}
 
-  const [toggleOpen, setToggle] = useState(false);
+const TeamFilter: React.FC<Props> = (props) => {
+  const [toggleOpen, setToggleOpen] = useState(false);
 
   return (
     <FilterContainer>
       <h2>Team Roster</h2>
-      <StyledButton onClick={() => setToggle(!toggleOpen)}>
+      <StyledButton onClick={(): void => setToggleOpen(!toggleOpen)}>
         <StyledImage src={FilterImg}></StyledImage>
         Filter
       </StyledButton>
@@ -74,7 +79,7 @@ const TeamFilter = (props: any) => {
                 <Checkbox
                   checked={filter}
                   key={i}
-                  onClick={() => props.updateFilters(i)}
+                  onClick={(): void => props.updateFilters(i)}
                 >
                   {props.filterLabels[i]}
                 </Checkbox>

@@ -5,7 +5,7 @@ import { ProfileType, QueryData } from "./interfaces";
 import testData from "./testProfileData";
 
 // Check if member has crucial missing fields
-const isProfileComplete = (member: QueryData) => {
+const isProfileComplete = (member: QueryData): boolean => {
   return !(
     !member.memberType ||
     !member.memberType.name ||
@@ -17,7 +17,7 @@ const isProfileComplete = (member: QueryData) => {
 };
 
 // Create a profile from member data
-const buildProfile = (member: QueryData, teamType: Map<string, string>) => {
+const buildProfile = (member: QueryData, teamType: Map<string, string>): ProfileType => {
   const links = member.links.length > 0 ? member.links : testData[0].contacts;
   const teams = member.subteams.map((team: string) => teamType.get(team));
 
@@ -32,7 +32,7 @@ const buildProfile = (member: QueryData, teamType: Map<string, string>) => {
     position: member.memberType.name,
     programInfo: program,
     portrait: member.imageUrl,
-    teams: teams,
+    teams,
     bio: member.bio,
     contacts: links,
   };
@@ -40,15 +40,15 @@ const buildProfile = (member: QueryData, teamType: Map<string, string>) => {
 
 // Insert a profile into correct array position as a map value
 const insertProfileToMap = (
-  teams: Map<string, Array<ProfileType>>,
+  teams: Map<string, ProfileType[]>,
   teamName: string,
   member: ProfileType
-) => {
-  let memberList = [] as Array<ProfileType>;
+): void => {
+  let memberList = [] as ProfileType[];
 
   // Add member to array
   if (teams.has(teamName)) {
-    memberList = teams.get(teamName) as Array<ProfileType>;
+    memberList = teams.get(teamName) as ProfileType[];
 
     // Insert Subteam leads to front of array
     if (member.position === "Subteam Lead") {
@@ -66,10 +66,10 @@ const insertProfileToMap = (
 
 // Group an array of profiles into their respective categories
 const sortProfiles = (
-  members: Array<QueryData>,
+  members: QueryData[],
   teamType: Map<string, string>
-) => {
-  let teams = new Map() as Map<string, Array<ProfileType>>;
+): Map<string, ProfileType[]> => {
+  const teams = new Map() as Map<string, ProfileType[]>;
   teams.set("Team Leads", []);
 
   // Insert profile into correct teams
@@ -81,7 +81,7 @@ const sortProfiles = (
 
       // Group Members by their subteams
       member.subteams.forEach((team: string) => {
-        const teamName = teamType.get(team) as string; 
+        const teamName = teamType.get(team) as string;
         insertProfileToMap(teams, teamName, profile);
       });
     }
@@ -92,7 +92,7 @@ const sortProfiles = (
 
 // check if filter applies or not
 // ?TODO: Should this be hardcoded?
-const checkWithinTeamFilters = (name: string, teamFilters: Array<boolean>) => {
+const checkWithinTeamFilters = (name: string, teamFilters: boolean[]): boolean => {
   if (!teamFilters[0]) {
     if (!teamFilters[1] && name === "Exec") {
       return false;
@@ -118,15 +118,15 @@ const checkWithinTeamFilters = (name: string, teamFilters: Array<boolean>) => {
 
 // Apply team filters to data set
 const applyTeamFilters = (
-  teams: Map<string, Array<ProfileType>>,
-  teamFilters: Array<boolean>
-) => {
-  let filteredTeams = new Map() as Map<string, Array<ProfileType>>;
+  teams: Map<string, ProfileType[]>,
+  teamFilters: boolean[]
+): Map<string, ProfileType[]> => {
+  const filteredTeams = new Map() as Map<string, ProfileType[]>;
 
-  teams.forEach((team: Array<ProfileType>, teamName: string) => {
+  teams.forEach((team: ProfileType[], teamName: string) => {
     if (teamName === "Team Leads") {
       team.forEach((member: ProfileType) => {
-        for (let i = 0; i < member.teams.length; i++) {
+        for (let i = 0; i < member.teams.length; i += 1) {
           if (checkWithinTeamFilters(member.teams[i], teamFilters)) {
             insertProfileToMap(filteredTeams, teamName, member);
             break;

@@ -13,35 +13,26 @@ import Feat5 from "../../static/img/goose/embedded.png";
 
 const imgs: string[] = [Feat1, Feat2, Feat3, Feat4, Feat5];
 
-class FeatPage extends React.Component {
-  // Use this to assemble the feature sections with proper XML tags for the render area.
-  assembleFeatSections(featInfo: Array<any>) {
-    var features: JSX.Element[] = [];
-
-    var key = 0;
-    featInfo.forEach((value) => {
-      features.push(
-        // Define styled component here:
-        <SimpleFeatComp
-          key={key}
-          imgSrc={imgs[key]}
-          imgAlt={value.imgAlt}
-          header={value.header}
-          desc={value.desc}
-        ></SimpleFeatComp>
-      );
-      key += 1;
-    });
-
-    return features;
-  }
-  // Render feature data passed from the model section
-  render() {
-    return (
-      <div>
-        {this.assembleFeatSections(data.features)}
-      </div>
-    );
-  }
+interface Feature {
+  imgAlt: string;
+  header: string;
+  desc: string;
 }
+
+const assembleFeatSections = (featInfo: Feature[]): React.ReactElement[] => featInfo.map((value, key) =>
+  <SimpleFeatComp
+    key={key}
+    imgSrc={imgs[key]}
+    imgAlt={value.imgAlt}
+    header={value.header}
+    desc={value.desc}
+  />
+);
+
+const FeatPage: React.FC = () => (
+  <div>
+    {assembleFeatSections(data.features)}
+  </div>
+);
+
 export default FeatPage;

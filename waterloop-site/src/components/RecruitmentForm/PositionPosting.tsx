@@ -1,9 +1,8 @@
-import React, { useState, FunctionComponent } from "react";
-import styled from "styled-components";
-import { Button } from "../Button";
-import Form from "./RecruitmentForm";
-import { useParams } from "react-router";
-import { BrowserRouter, Link } from "react-router-dom";
+import React, { useState, FunctionComponent } from 'react';
+import styled from 'styled-components';
+import { BrowserRouter, Link } from 'react-router-dom';
+import { Button } from '../Button';
+import Form from './RecruitmentForm';
 
 const TextBlock = styled.div`
   padding-right: 40px;
@@ -71,9 +70,14 @@ type MyProps = {
   termList: [string, string, string, string, string];
 };
 
-const PositionPosting: FunctionComponent<MyProps> = ({ role, description, skills, technicalQ, termList }) => {
-
-  const [isJoinClicked, setJoinClicked] = useState(false)
+const PositionPosting: FunctionComponent<MyProps> = ({
+  role,
+  description,
+  skills,
+  technicalQ,
+  termList,
+}) => {
+  const [isJoinClicked, setJoinClicked] = useState(false);
 
   return (
     <Block>
@@ -91,26 +95,25 @@ const PositionPosting: FunctionComponent<MyProps> = ({ role, description, skills
       </TextBlock>
       <ButtonBlock>
         <Button
-          onClick={() => setJoinClicked(!isJoinClicked)}
+          onClick={(): void => setJoinClicked(!isJoinClicked)}
           text="APPLY"
           backgroundColor="yellow"
           textColor="black"
-          variant={null}
-        ></Button>
+        />
       </ButtonBlock>
       {isJoinClicked && (
         <Background>
-          <CloseBtn onClick={() => setJoinClicked(!isJoinClicked)}>X</CloseBtn>
+          <CloseBtn onClick={(): void => setJoinClicked(!isJoinClicked)}>X</CloseBtn>
           <Form
             role={role}
             technicalQ={technicalQ}
             termList={termList}
-            onSuccess={() => setJoinClicked(false)}
+            onSuccess={(): void => setJoinClicked(false)}
           />
         </Background>
       )}
     </Block>
-  )
-}
+  );
+};
 
 export default PositionPosting;
