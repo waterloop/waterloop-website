@@ -8,7 +8,6 @@ const TEAMS = [
   'Software',
   'Business',
   'LIM',
-  'Team Hub',
   'Infrastructure',
 ];
 
