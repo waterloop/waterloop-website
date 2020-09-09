@@ -120,7 +120,7 @@ export const samplePostingsData = [
     deadline: "September 17, 2020 (rolling basis)",
     term: "FALL 2020",
     applicationForm: "https://forms.gle/8uq54fDQohq33D166",
-    subteam: "Mechnical",
+    subteam: "Mechanical",
     description:
       "The mechanical team is in charge of the design, fabrication, and testing of all physical mechanisms for structures, guidance, and propulsion subsystems on the Hyperloop pod. The team uses skills in CAD, drafting, as well as analysis through simulations. The braking team is responsible for the pod's braking system. This includes mechanical design, pneumatic circuit design, fabrication and physical assembly of the system. Kinematic calculations and experimental validation are also a part of the role. Waterloop will be accepting members on a rolling basis.",
     tasks: [
