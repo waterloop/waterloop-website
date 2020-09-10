@@ -1,47 +1,5 @@
 export const samplePostingsData = [
   {
-    role: "Full-Stack Developer",
-    deadline: "September 17, 2020 (rolling basis)",
-    term: "FALL 2020",
-    applicationForm: "https://forms.gle/8uq54fDQohq33D166",
-    subteam: "Team Hub",
-    description:
-      "Are you a Web/Full-Stack Developer looking to get involved in a cool project? Come check out Team Hub, a web application we are building to make member tracking and onboarding easy for Waterloop. You will gain valuable experience with frontend and backend web technologies, doing anything from Web API development to responsive webpage design. Waterloop will be accepting members on a rolling basis.",
-    tasks: [
-      "Web API development and testing using Node JS and MongoDB",
-      "Front-end webpage development using React JS, Styled Components and Styled System",
-    ],
-    requirements: [
-      "Recommended: Prior experience with React JS",
-      "Recommended: Prior experience with CSS",
-      "Recommended: Prior experience with Node JS",
-      "Recommended: Prior experience with MongoDB",
-    ],
-    additional: ["5 hr/week time commitment"],
-  },
-  {
-    role: "Front-End Developer",
-    deadline: "September 17, 2020 (rolling basis)",
-    term: "FALL 2020",
-    applicationForm: "https://forms.gle/8uq54fDQohq33D166",
-    subteam: "Team Hub",
-    description:
-      "Are you a Web/Full-Stack Developer looking to get involved in a cool project? Come check out Team Hub, a web application we are building to make member tracking and onboarding easy for Waterloop. You will gain valuable experience with frontend technologies like React JS, Javascript, and CSS. Design responsive webpages and create amazing user experiences using wireframing tools like Adobe XD. Waterloop will be accepting members on a rolling basis.",
-    tasks: [
-      "Developing cool webpage features using the latest front-end technologies like React JS, Styled Components and Styled System",
-      "Wireframing and UI/webpage design using Adobe XD and Figma",
-    ],
-    requirements: [
-      "Recommended: Prior experience with React JS",
-      "Recommended: Prior experience with Redux",
-      "Recommended: Prior experience with UI/UX Design",
-      "Recommended: Prior experience with CSS",
-      "Recommended: Prior experience with Styled Components",
-      "Recommended: Prior experience with Styled Systems",
-    ],
-    additional: ["5 hr/week time commitment"],
-  },
-  {
     role: "Graphic Designer",
     deadline: "September 17, 2020 (rolling basis)",
     term: "FALL 2020",
