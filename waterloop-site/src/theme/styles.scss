@@ -322,8 +322,9 @@ textarea {
 
   @media screen and (max-width: $mobile) {
     display: flex;
-    width: 85vw;
-    height: 25vh;
+    width: 90%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
