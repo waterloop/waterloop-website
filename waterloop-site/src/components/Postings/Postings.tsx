@@ -49,6 +49,7 @@ class Subteam extends React.Component<any, any> {
 export default class Postings extends React.Component<any, any> {
   render() {
     const TEAMS = [
+      "Software",
       "Mechanical",
       "Electrical",
       "Business",

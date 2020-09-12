@@ -219,7 +219,7 @@ export const samplePostingsData = [
     applicationForm: "https://forms.gle/8uq54fDQohq33D166",
     subteam: "Electrical",
     description:
-      "The electrical team works on powering and controlling the Hyperloop pod while providing sensor feedback. The team has a strong focus on both HV and LV development in battery management, motor control and embedded sensing. \nWaterloop is developing a controller for our propulsion system. Controls are primarily implemented in software, however the control algorithm will be verified in PSIM. Hardware is being designed to drive high power switches and provide sensor feedback.",
+      "The electrical team works on powering and controlling the Hyperloop pod while providing sensor feedback. The team has a strong focus on both HV and LV development in battery management, motor control and embedded sensing. \nWaterloop is developing a controller for our propulsion system. Controls are primarily implemented in software, however the control algorithm will be verified in PSIM. Hardware is being designed to drive high power switches and provide sensor feedback. Waterloop will be accepting members on a rolling basis.",
     tasks: [
       "Design, build and test sensor boards",
       "Develop low-level firmware for sensors (depending on your interest) ",
@@ -277,5 +277,27 @@ export const samplePostingsData = [
       "This position is mainly in-person but also involves some remote work. This position will count towards your co-op credit",
       "Full time position"
     ],
+  },
+  {
+    role: "Software Developer - Embedded",
+    deadline: "September 17, 2020 (rolling basis)",
+    term: "FALL 2020",
+    applicationForm: "https://forms.gle/8uq54fDQohq33D166",
+    subteam: "Software",
+    description:
+      "The software team works on all software components related to the pod. We are responsible for developing and testing all the sensors, embedded boards, and testing rigs. Currently the team is working on the motor controller, battery management system (BMS), coding new sensor boards, remote flashing rig and testing rig. Waterloop will be accepting members on a rolling basis.",
+    tasks: [
+      "Work with low-level languages (C/C++) to code Embedded boards",
+      "Create and work through different tests for sensors",
+    ],
+    requirements: [
+      "Have a solid foundation in C/C++",
+      "Understanding of common communication protocols (I2C, SPI, USB)",
+      "Have experience working with Arduino",
+      "Recommended: Have prior experience with STM32 boards",
+      "Recommended: Electrical measurement tools (multimeter, oscilloscope)",
+      "Recommended: Living in Waterloo",
+    ],
+    additional: ["10 hr/week time commitment"],
   },
 ];
