@@ -6,7 +6,6 @@ const TEAMS = [
   'Mechanical',
   'Electrical',
   'Software',
-  'Business',
   'LIM',
   'Infrastructure',
 ];

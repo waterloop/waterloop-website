@@ -1,50 +1,5 @@
 export const samplePostingsData = [
   {
-    role: "Graphic Designer",
-    deadline: "September 17, 2020 (rolling basis)",
-    term: "FALL 2020",
-    applicationForm: "https://forms.gle/8uq54fDQohq33D166",
-    subteam: "Business",
-    description:
-      "The business team is responsible for the marketing, sponsorship, and finance side of things at Waterloop. From posting social media campaigns to filling out funding applications and communicating with sponsors, the business team works hard to promote the Waterloop brand and support it financially. The team works to increase the adoption of hyperloop technology as the future of transportation. The graphics team helps create a cohesive public presence for the team. Graphics team members establishes the Waterloop brand, and ensures we are represented professionally. Waterloop will be accepting members on a rolling basis.",
-    tasks: [
-      "Design social media posts (Twitter, Instagram, Facebook, LinkedIn)",
-      "Designing and coordinating team merch",
-      "Refining the team sponsorship package",
-      "Helping establish the Waterloop brand",
-    ],
-    requirements: [
-      "Experience with Adobe XD, Illustrator, InVision, Figma or equivalent",
-      "Recommended: Prior graphic design experience",
-    ],
-    additional: ["6 hr/week time commitment"],
-  },
-  {
-    role: "Photographer/ Videographer",
-    deadline: "September 17, 2020 (rolling basis)",
-    term: "FALL 2020",
-    applicationForm: "https://forms.gle/8uq54fDQohq33D166",
-    subteam: "Business",
-    description:
-      "The business team is responsible for the marketing, sponsorship, and finance side of things at Waterloop. From posting social media campaigns to filling out funding applications and communicating with sponsors, the business team works hard to promote the Waterloop brand and support it financially. The team works to increase the adoption of hyperloop technology as the future of transportation. We are looking for someone to function as a team photographer and videographer. Preference will be given to individuals who will be available to take photos and videos in-person. Additionally looking for someone interested in helping Waterloo create video content and launch a team YouTube channel. Waterloop will be accepting members on a rolling basis.",
-    tasks: [
-      "Create video and photo content for our social medias, sponsorship packages and website",
-      "Video and photo editing",
-      "Storyboard creation and planning videos to promote the team",
-      "Launching Waterloop's YouTube channel",
-    ],
-    requirements: [
-      "Experience with Final Cut Pro or equivalent",
-      "Experience with Adobe Lightroom or equivalent",
-      "Recommended: Prior experience with content creation for teams/clubs",
-      "Recommended: Will be living in Waterloo for the Fall term/willing to come to Waterloop to take photos and videos in our bay",
-    ],
-    additional: [
-      "Estimated 6 hr/week time commitment",
-      "Flexible schedule to meet members during testing/work sessions",
-    ],
-  },
-  {
     role: "Infrastructure Team Member",
     deadline: "September 17, 2020 (rolling basis)",
     term: "FALL 2020",
