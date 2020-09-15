@@ -97,31 +97,6 @@ export const samplePostingsData = [
     additional: ["10 hr/week time commitment"],
   },
   {
-    role: "Embedded",
-    deadline: "September 17, 2020 (rolling basis)",
-    term: "FALL 2020",
-    applicationForm: "https://forms.gle/8uq54fDQohq33D166",
-    subteam: "Electrical",
-    description:
-      "The electrical team works on powering and controlling the Hyperloop pod while providing sensor feedback. The team has a strong focus on both HV and LV development in battery management, motor control and embedded sensing. The embedded electrical team is developing a comprehensive sensor system to ensure accurate measurements can be taken from our pod. These sensors may measure temperature, pressure, current, optical, voltage and more. Waterloop will be accepting members on a rolling basis.",
-    tasks: [
-      "Design, build and test sensor boards",
-      "Develop low-level firmware for sensors (depending on your interest) ",
-      "Assemble and test sensor boards in-person",
-    ],
-    requirements: [
-      "Experience creating and conducting test plans (verifying sensors, power output, etc)",
-      "Recommended: Living in Waterloo or willing to come to Waterloo to participate in in-person work",
-      "To be learned: Circuit design (sensors, analog design, MCUs)",
-      "To be learned: FEA and simulations",
-      "To be learned: Schematic capture and PCB layout (Altium preferred, KiCAD also welcome)",
-      "To be learned: Electrical assembly skills (SMT solder and reflow preferred)",
-      "To be learned: Electrical measurement tools (multimeter, oscilloscope)",
-      "To be learned: Embedded development (STM32, Arduino preferred)",
-    ],
-    additional: ["10 hr/week time commitment"],
-  },
-  {
     role: "Motor Control",
     deadline: "September 17, 2020 (rolling basis)",
     term: "FALL 2020",
