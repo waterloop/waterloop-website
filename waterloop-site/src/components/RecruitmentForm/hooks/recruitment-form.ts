@@ -296,13 +296,13 @@ const useRecruitmentForm: RecruitmentFormHook = (role, onSuccess) => {
   );
 
   const updateApplicationTerm = useCallback(
-    (term: string) => () => !isSubmitting
+    (term: string) => (): void | boolean => !isSubmitting
       && dispatch({ type: UPDATE_APPLICATION_TERM, payload: { term } }),
     [dispatch, isSubmitting],
   );
 
   const updateTermType = useCallback(
-    (type: string) => () => !isSubmitting
+    (type: string) => (): void | boolean => !isSubmitting
       && dispatch({ type: UPDATE_TERM_TYPE, payload: { type } }),
     [dispatch, isSubmitting],
   );
