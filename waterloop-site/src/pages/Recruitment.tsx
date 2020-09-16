@@ -10,13 +10,15 @@ import JobPostings from "components/Postings/Postings";
 const castData: MyProps[] = Text;
 const imgData: string[] = [JoinUs];
 
+const currentlyRecruiting = false;
+
 const Recruitment: React.FC = () => (
   <>
     <Hero
       title="JOIN US"
       description="Join our team."
       anchor="#recruitment"
-    ></Hero>
+    />
     <div id={"#recruitment"}></div>
     <div className={"pageContainer"}>
       <TextWithImage
@@ -25,8 +27,14 @@ const Recruitment: React.FC = () => (
         imgData={imgData}
       ></TextWithImage>
       <div className="break"></div>
-      <h2 className={"center-text"}>Current Postings</h2>
-      <JobPostings />
+      {currentlyRecruiting ? (
+        <>
+          <h2 className={"center-text"}>Current Postings</h2>
+          <JobPostings />
+        </>
+      ) : (
+        <h2 className={"center-text"}>We are not Currently Recruiting. Please Check back at the start of the winter 2021 term.</h2>
+      )}
     </div>
   </>
 );
