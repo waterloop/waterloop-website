@@ -40,9 +40,9 @@ const Recruitment: React.FC = () => (
         </>
       ) : (
         <FlexContainer>
-          <h3>Our winter member recruitment is now <b>closed</b> for the Fall term.</h3>
+          <h3>Our new member recruitment is now <b>closed</b> for the Fall term.</h3>
           <p>
-            Thanks for visiting and be sure to check back in the Winter! :)Do you have prior expertise in linear induction motors, high power PCB design, or other relevant technical topics? We'd love to learn from you as an advisor; reach out to us at <a href = "mailto: contact@waterloop.ca">contact@waterloop.ca</a> if you're interested!
+            Thanks for visiting and be sure to check back in the Winter! :) Do you have prior expertise in linear induction motors, high power PCB design, or other relevant technical topics? We'd love to learn from you as an advisor; reach out to us at <a href = "mailto: contact@waterloop.ca">contact@waterloop.ca</a> if you're interested!
           </p>
         </FlexContainer>
       )}
