@@ -14,7 +14,7 @@ const Sponsors: React.FC = () => (
   <div>
     <Hero
       title="SUPPORT OUR TEAM"
-      description="Help fund the future."
+      description="Help fund the future"
       anchor="#sponsor-list"
     ></Hero>
     <div id="#sponsor-list"></div>
@@ -24,7 +24,6 @@ const Sponsors: React.FC = () => (
         textPos="alternate"
         imgData={imgData}
       ></TextWithImage>
-      <div className="break"></div>
       <SponsorList />
     </div>
   </div>
