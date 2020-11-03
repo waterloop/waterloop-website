@@ -242,7 +242,7 @@ const SponsorList: React.FC = () => {
         {sponsors
           .filter(sponsor => sponsor.level === 'Hypersonic')
           .map(sponsor => (
-            <Grid key={sponsor.name} container item xs={6} justify="center">
+            <Grid key={sponsor.name} container item md={6} justify="center">
               <Sponsor
                 {...sponsor.image}
                 tier={sponsor.level}
@@ -262,7 +262,7 @@ const SponsorList: React.FC = () => {
         {sponsors
           .filter(sponsor => sponsor.level === 'Supersonic')
           .map(sponsor => (
-            <Grid key={sponsor.name} container item xs={4} justify="center">
+            <Grid key={sponsor.name} container item md={4} xs={6} justify="center">
               <Sponsor
                 {...sponsor.image}
                 tier={sponsor.level}
@@ -282,7 +282,7 @@ const SponsorList: React.FC = () => {
         {sponsors
           .filter(sponsor => sponsor.level === 'Transonic')
           .map(sponsor => (
-            <Grid key={sponsor.name} container item xs={3} justify="center">
+            <Grid key={sponsor.name} container item md={3} xs={4} justify="center">
               <Sponsor
                 {...sponsor.image}
                 tier={sponsor.level}
@@ -302,7 +302,7 @@ const SponsorList: React.FC = () => {
         {sponsors
           .filter(sponsor => sponsor.level === 'Sonic')
           .map(sponsor => (
-            <Grid key={sponsor.name} container item xs={2} justify="center">
+            <Grid key={sponsor.name} container item md={2} xs={4} justify="center">
               <Sponsor
                 {...sponsor.image}
                 tier={sponsor.level}
