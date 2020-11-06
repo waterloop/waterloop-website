@@ -92,7 +92,7 @@ const SponsorModal: React.FC<Props> = ({
       <DialogContent>
         <SponsorImage {...image} />
         <SponsorTitle>{name}</SponsorTitle>
-        <SponsorLink href={link}>{link}</SponsorLink>
+        <SponsorLink href={link} target="_blank">{link}</SponsorLink>
         <SponsorDetail>
           <b>Sponsor Level: </b>
           {level}
