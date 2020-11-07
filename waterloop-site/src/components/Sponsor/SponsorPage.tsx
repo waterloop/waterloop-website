@@ -83,8 +83,8 @@ const sponsors: ISponsor[] = [
     name: "Brent's Welding and Fabrication Inc",
     level: 'Hypersonic',
     dateJoined: 'Fall 2019',
-    collaboration: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies ut ut proin enim a. Ut facilisis blandit neque purus mollis purus eu. Arcu semper netus ut cursus egestas est. Lacus mauris consectetur ut phasellus feugiat laoreet dignissim maecenas. In amet a, ut quis mi. Tortor neque vitae, gravida magna eget. Eros, vitae auctor venenatis, in ac posuere morbi. Nam est nec pharetra commodo ut.
-    Phasellus ipsum egestas ullamcorper sem commodo. Convallis fermentum nullam augue eget mattis. Pharetra ultrices quam dignissim massa in eleifend cras ut euismod. Convallis mauris, interdum dictumst cursus tortor quis quis urna. Pharetra sit ut quis nam nam adipiscing purus elementum.
+    collaboration: `
+    Thank you so much Brent for helping our team weld the frame for our pod. We appreciate your help and support so much, and hope to continue working with you in the future.
     `,
     video: 'https://www.youtube.com/embed/XyoX9HxxYrM',
   },
@@ -94,9 +94,7 @@ const sponsors: ISponsor[] = [
     name: 'ClickUp',
     level: 'Supersonic',
     dateJoined: 'Fall 2019',
-    collaboration: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies ut ut proin enim a. Ut facilisis blandit neque purus mollis purus eu. Arcu semper netus ut cursus egestas est. Lacus mauris consectetur ut phasellus feugiat laoreet dignissim maecenas. In amet a, ut quis mi. Tortor neque vitae, gravida magna eget. Eros, vitae auctor venenatis, in ac posuere morbi. Nam est nec pharetra commodo ut.
-    Phasellus ipsum egestas ullamcorper sem commodo. Convallis fermentum nullam augue eget mattis. Pharetra ultrices quam dignissim massa in eleifend cras ut euismod. Convallis mauris, interdum dictumst cursus tortor quis quis urna. Pharetra sit ut quis nam nam adipiscing purus elementum.
-    `,
+    collaboration: `ClickUp has been such a great addition to our team! It has not only allowed us to be more productive, but it has also made it easier for leads to communicate with their members when assigning tasks. We use ClickUp to check up on the statuses of our tasks everyday!`,
   },
   {
     image: { src: WCBranham, alt: 'sponsor' },
@@ -104,8 +102,8 @@ const sponsors: ISponsor[] = [
     name: 'WC Brandham',
     level: 'Supersonic',
     dateJoined: 'Fall 2019',
-    collaboration: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies ut ut proin enim a. Ut facilisis blandit neque purus mollis purus eu. Arcu semper netus ut cursus egestas est. Lacus mauris consectetur ut phasellus feugiat laoreet dignissim maecenas. In amet a, ut quis mi. Tortor neque vitae, gravida magna eget. Eros, vitae auctor venenatis, in ac posuere morbi. Nam est nec pharetra commodo ut.
-    Phasellus ipsum egestas ullamcorper sem commodo. Convallis fermentum nullam augue eget mattis. Pharetra ultrices quam dignissim massa in eleifend cras ut euismod. Convallis mauris, interdum dictumst cursus tortor quis quis urna. Pharetra sit ut quis nam nam adipiscing purus elementum.
+    collaboration: `
+    Thanks WC Branham for providing us with the brake calipers for our Goose 5 pod. They have performed excellently in our tests, and we are excited to mount them into our pod soon.
     `,
   },
   {
@@ -114,8 +112,8 @@ const sponsors: ISponsor[] = [
     name: 'Ansys',
     level: 'Transonic',
     dateJoined: 'Fall 2019',
-    collaboration: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies ut ut proin enim a. Ut facilisis blandit neque purus mollis purus eu. Arcu semper netus ut cursus egestas est. Lacus mauris consectetur ut phasellus feugiat laoreet dignissim maecenas. In amet a, ut quis mi. Tortor neque vitae, gravida magna eget. Eros, vitae auctor venenatis, in ac posuere morbi. Nam est nec pharetra commodo ut.
-    Phasellus ipsum egestas ullamcorper sem commodo. Convallis fermentum nullam augue eget mattis. Pharetra ultrices quam dignissim massa in eleifend cras ut euismod. Convallis mauris, interdum dictumst cursus tortor quis quis urna. Pharetra sit ut quis nam nam adipiscing purus elementum.
+    collaboration: `
+    Thank you ANSYS for providing us with access to ANSYS R2 2020. We’ve used your software to model our linear induction motor - and we’ve learned a lot!
     `,
   },
   {
@@ -124,8 +122,8 @@ const sponsors: ISponsor[] = [
     name: 'PSIM',
     level: 'Transonic',
     dateJoined: 'Fall 2019',
-    collaboration: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies ut ut proin enim a. Ut facilisis blandit neque purus mollis purus eu. Arcu semper netus ut cursus egestas est. Lacus mauris consectetur ut phasellus feugiat laoreet dignissim maecenas. In amet a, ut quis mi. Tortor neque vitae, gravida magna eget. Eros, vitae auctor venenatis, in ac posuere morbi. Nam est nec pharetra commodo ut.
-    Phasellus ipsum egestas ullamcorper sem commodo. Convallis fermentum nullam augue eget mattis. Pharetra ultrices quam dignissim massa in eleifend cras ut euismod. Convallis mauris, interdum dictumst cursus tortor quis quis urna. Pharetra sit ut quis nam nam adipiscing purus elementum.
+    collaboration: `
+    Thank you PSIM for providing our team with licenses! PSIM has given us great insight into the behaviour of our designs, and allowed us to continue developing our electrical system remotely. We look forward to continuing this relationship into the future.
     `,
   },
   {
@@ -134,8 +132,8 @@ const sponsors: ISponsor[] = [
     name: '3D Connexion',
     level: 'Sonic',
     dateJoined: 'Fall 2019',
-    collaboration: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies ut ut proin enim a. Ut facilisis blandit neque purus mollis purus eu. Arcu semper netus ut cursus egestas est. Lacus mauris consectetur ut phasellus feugiat laoreet dignissim maecenas. In amet a, ut quis mi. Tortor neque vitae, gravida magna eget. Eros, vitae auctor venenatis, in ac posuere morbi. Nam est nec pharetra commodo ut.
-    Phasellus ipsum egestas ullamcorper sem commodo. Convallis fermentum nullam augue eget mattis. Pharetra ultrices quam dignissim massa in eleifend cras ut euismod. Convallis mauris, interdum dictumst cursus tortor quis quis urna. Pharetra sit ut quis nam nam adipiscing purus elementum.
+    collaboration: `
+    Thank you 3dconnexion for your donation of several SpaceMouse and SpaceMouse Pro engineering mice. These are an indispensable tool and have been used daily in our team workflow when modelling our components.
     `,
   },
   {
@@ -154,8 +152,8 @@ const sponsors: ISponsor[] = [
     name: 'Sony',
     level: 'Sonic',
     dateJoined: 'Fall 2019',
-    collaboration: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies ut ut proin enim a. Ut facilisis blandit neque purus mollis purus eu. Arcu semper netus ut cursus egestas est. Lacus mauris consectetur ut phasellus feugiat laoreet dignissim maecenas. In amet a, ut quis mi. Tortor neque vitae, gravida magna eget. Eros, vitae auctor venenatis, in ac posuere morbi. Nam est nec pharetra commodo ut.
-    Phasellus ipsum egestas ullamcorper sem commodo. Convallis fermentum nullam augue eget mattis. Pharetra ultrices quam dignissim massa in eleifend cras ut euismod. Convallis mauris, interdum dictumst cursus tortor quis quis urna. Pharetra sit ut quis nam nam adipiscing purus elementum.
+    collaboration: `
+    Thank you so much Sony for donating an amazing camera to us! This has come in super handy for taking high quality pictures to post on our social media, and has allowed us to start producing videos!
     `,
   },
   {
@@ -174,9 +172,7 @@ const sponsors: ISponsor[] = [
     name: 'Wera Tools',
     level: 'Sonic',
     dateJoined: 'Fall 2019',
-    collaboration: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies ut ut proin enim a. Ut facilisis blandit neque purus mollis purus eu. Arcu semper netus ut cursus egestas est. Lacus mauris consectetur ut phasellus feugiat laoreet dignissim maecenas. In amet a, ut quis mi. Tortor neque vitae, gravida magna eget. Eros, vitae auctor venenatis, in ac posuere morbi. Nam est nec pharetra commodo ut.
-    Phasellus ipsum egestas ullamcorper sem commodo. Convallis fermentum nullam augue eget mattis. Pharetra ultrices quam dignissim massa in eleifend cras ut euismod. Convallis mauris, interdum dictumst cursus tortor quis quis urna. Pharetra sit ut quis nam nam adipiscing purus elementum.
-    `,
+    collaboration: `Our team is so grateful for the tools Wera Tools has donated. We keep the wrenches, screwdrivers, and Allen keys in a special drawer in our workbay so as not to mix them with our “regular” tools. The Wera tools have been fantastic to use for assembling our test rigs and pod systems. In terms of quality, they are clearly a cut above the other tools we have.`,
   },
   {
     image: { src: Overleaf, alt: 'sponsor' },
@@ -184,8 +180,8 @@ const sponsors: ISponsor[] = [
     name: 'Overleaf',
     level: 'Sonic',
     dateJoined: 'Fall 2019',
-    collaboration: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies ut ut proin enim a. Ut facilisis blandit neque purus mollis purus eu. Arcu semper netus ut cursus egestas est. Lacus mauris consectetur ut phasellus feugiat laoreet dignissim maecenas. In amet a, ut quis mi. Tortor neque vitae, gravida magna eget. Eros, vitae auctor venenatis, in ac posuere morbi. Nam est nec pharetra commodo ut.
-    Phasellus ipsum egestas ullamcorper sem commodo. Convallis fermentum nullam augue eget mattis. Pharetra ultrices quam dignissim massa in eleifend cras ut euismod. Convallis mauris, interdum dictumst cursus tortor quis quis urna. Pharetra sit ut quis nam nam adipiscing purus elementum.
+    collaboration: `
+    Thank you for providing the team with an Overleaf Professional account. This has helped us put together professional and consistent documentation for our pod subsystems. For the past 3 years, we have used Overleaf to typeset our Final Design Plans which were evaluated by SpaceX engineers to qualify our team for competition.
     `,
   },
   {
@@ -194,9 +190,7 @@ const sponsors: ISponsor[] = [
     name: 'Altium',
     level: 'Sonic',
     dateJoined: 'Fall 2019',
-    collaboration: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies ut ut proin enim a. Ut facilisis blandit neque purus mollis purus eu. Arcu semper netus ut cursus egestas est. Lacus mauris consectetur ut phasellus feugiat laoreet dignissim maecenas. In amet a, ut quis mi. Tortor neque vitae, gravida magna eget. Eros, vitae auctor venenatis, in ac posuere morbi. Nam est nec pharetra commodo ut.
-    Phasellus ipsum egestas ullamcorper sem commodo. Convallis fermentum nullam augue eget mattis. Pharetra ultrices quam dignissim massa in eleifend cras ut euismod. Convallis mauris, interdum dictumst cursus tortor quis quis urna. Pharetra sit ut quis nam nam adipiscing purus elementum.
-    `,
+    collaboration: `Thank you for providing our team with Altium licenses. Developing our boards in Altium has greatly improved our productivity and the quality of our designs.`,
   },
   {
     image: { src: L3harris, alt: 'sponsor' },
@@ -204,9 +198,7 @@ const sponsors: ISponsor[] = [
     name: 'L3 Harris',
     level: 'Sonic',
     dateJoined: 'Fall 2019',
-    collaboration: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies ut ut proin enim a. Ut facilisis blandit neque purus mollis purus eu. Arcu semper netus ut cursus egestas est. Lacus mauris consectetur ut phasellus feugiat laoreet dignissim maecenas. In amet a, ut quis mi. Tortor neque vitae, gravida magna eget. Eros, vitae auctor venenatis, in ac posuere morbi. Nam est nec pharetra commodo ut.
-    Phasellus ipsum egestas ullamcorper sem commodo. Convallis fermentum nullam augue eget mattis. Pharetra ultrices quam dignissim massa in eleifend cras ut euismod. Convallis mauris, interdum dictumst cursus tortor quis quis urna. Pharetra sit ut quis nam nam adipiscing purus elementum.
-    `,
+    collaboration: `Thanks L3Harris for your donation of the three HP workstations! We’ve gotten great use out of accessing them remotely during the lockdown period. These systems have also been very useful as file and license servers for our CAD software.`,
   },
   {
     image: { src: Mitutoyo, alt: 'sponsor' },
@@ -214,8 +206,8 @@ const sponsors: ISponsor[] = [
     name: 'Mitutoyo',
     level: 'Sonic',
     dateJoined: 'Fall 2019',
-    collaboration: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies ut ut proin enim a. Ut facilisis blandit neque purus mollis purus eu. Arcu semper netus ut cursus egestas est. Lacus mauris consectetur ut phasellus feugiat laoreet dignissim maecenas. In amet a, ut quis mi. Tortor neque vitae, gravida magna eget. Eros, vitae auctor venenatis, in ac posuere morbi. Nam est nec pharetra commodo ut.
-    Phasellus ipsum egestas ullamcorper sem commodo. Convallis fermentum nullam augue eget mattis. Pharetra ultrices quam dignissim massa in eleifend cras ut euismod. Convallis mauris, interdum dictumst cursus tortor quis quis urna. Pharetra sit ut quis nam nam adipiscing purus elementum.
+    collaboration: `
+    Thanks Mitutoyo for your donation of three state-of-the-art calipers. These tools are used all the time in our workbay and we heavily rely on them for precise measurements.
     `,
   },
   {
@@ -223,8 +215,28 @@ const sponsors: ISponsor[] = [
     link: 'https://www.stickermule.com/ca',
     name: 'Stickermule',
     dateJoined: 'Winter 2020',
-    collaboration: '',
+    collaboration: ,
     level: 'Sonic',
+  },
+  {
+    name: 'Keysight',
+    collaboration: 'Thank you Keysight for your donation of the LCR meter and handheld digital multimeter. These tools have proven indispensable when testing our linear induction motor prototypes, and have helped us validate simulations and detect faults.',
+  },
+  {
+    name: 'Dassult Systems',
+    collaboration: 'Thank you for providing our team with 90 Solidworks 2020/2021 licenses. The mechanical team relies heavily on Solidworks (and Solidworks PDM) to design and simulate each and every component in the pod. This also provides an opportunity for our members to gain highly industry-relevant experience in CAD, FEA, and GD&T.',
+  },
+  {
+    name: 'Metal Pros',
+    collaboration: 'Thank you MetalPros for providing us with your generous discount. We used this to purchase our aluminum tubing for our current pod’s frame.',
+  },
+  {
+    name: 'Crosslink Technology',
+    collaboration: 'Thank you Crosslink Technology for providing our team with your XRD 1014 and XHD 1015 resin and hardener. For the very first time, our team is manufacturing the pod aeroshell out of carbon fiber, and we could not do it without your generous support. We were very sad to have to delay our shell manufacturing plans due to the pandemic, but small-scale prototyping is under development with plans to continue into the Winter.',
+  },
+  {
+    name: 'OpenBOM',
+    collaboration: 'Thank you OpenBOM for giving us a license!',
   }
 ];
 
