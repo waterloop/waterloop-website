@@ -20,6 +20,7 @@ import Altium from '../../static/img/official-sponsors/altium.jpg';
 import L3harris from '../../static/img/official-sponsors/l3harris.png';
 import Mitutoyo from '../../static/img/official-sponsors/mitutoyo.png';
 import StickerMule from '../../static/img/official-sponsors/Stickermule.png';
+import Keysight from '../../static/img/official-sponsors/keysight.png';
 import SponsorModal from './SponsorModal';
 
 interface ISponsor {
@@ -43,9 +44,7 @@ const sponsors: ISponsor[] = [
     name: 'Anderson Power Products',
     level: 'Sonic',
     dateJoined: 'Fall 2019',
-    collaboration: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies ut ut proin enim a. Ut facilisis blandit neque purus mollis purus eu. Arcu semper netus ut cursus egestas est. Lacus mauris consectetur ut phasellus feugiat laoreet dignissim maecenas. In amet a, ut quis mi. Tortor neque vitae, gravida magna eget. Eros, vitae auctor venenatis, in ac posuere morbi. Nam est nec pharetra commodo ut.
-    Phasellus ipsum egestas ullamcorper sem commodo. Convallis fermentum nullam augue eget mattis. Pharetra ultrices quam dignissim massa in eleifend cras ut euismod. Convallis mauris, interdum dictumst cursus tortor quis quis urna. Pharetra sit ut quis nam nam adipiscing purus elementum.
-    `,
+    collaboration: 'Anderson Power Products has provided us with high power Anderson Powerpole electrical connectors! These have greatly improved our high power electrical system and allowed us to safely deal with the extremely high currents and voltages our linear induction motor requires.',
   },
   {
     image: { src: UW, alt: 'sponsor' },
@@ -53,9 +52,7 @@ const sponsors: ISponsor[] = [
     name: 'University of Waterloo',
     level: 'Hypersonic',
     dateJoined: 'Fall 2019',
-    collaboration: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies ut ut proin enim a. Ut facilisis blandit neque purus mollis purus eu. Arcu semper netus ut cursus egestas est. Lacus mauris consectetur ut phasellus feugiat laoreet dignissim maecenas. In amet a, ut quis mi. Tortor neque vitae, gravida magna eget. Eros, vitae auctor venenatis, in ac posuere morbi. Nam est nec pharetra commodo ut.
-    Phasellus ipsum egestas ullamcorper sem commodo. Convallis fermentum nullam augue eget mattis. Pharetra ultrices quam dignissim massa in eleifend cras ut euismod. Convallis mauris, interdum dictumst cursus tortor quis quis urna. Pharetra sit ut quis nam nam adipiscing purus elementum.
-    `,
+    collaboration: 'The University of Waterloo hosts our student Garage in the Sedra Student Design Center.',
   },
   {
     image: { src: Weef, alt: 'sponsor' },
@@ -63,9 +60,7 @@ const sponsors: ISponsor[] = [
     name: 'Waterloo Engineering Endowment Fund',
     level: 'Hypersonic',
     dateJoined: 'Fall 2019',
-    collaboration: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies ut ut proin enim a. Ut facilisis blandit neque purus mollis purus eu. Arcu semper netus ut cursus egestas est. Lacus mauris consectetur ut phasellus feugiat laoreet dignissim maecenas. In amet a, ut quis mi. Tortor neque vitae, gravida magna eget. Eros, vitae auctor venenatis, in ac posuere morbi. Nam est nec pharetra commodo ut.
-    Phasellus ipsum egestas ullamcorper sem commodo. Convallis fermentum nullam augue eget mattis. Pharetra ultrices quam dignissim massa in eleifend cras ut euismod. Convallis mauris, interdum dictumst cursus tortor quis quis urna. Pharetra sit ut quis nam nam adipiscing purus elementum.
-    `,
+    collaboration: 'Thank you WEEF for the continued support for our project over the past several years! Because of your support, we’ve been able to fund many parts of our latest pod, including batteries, power electronics, brakes, the linear induction motor, and many other components.',
   },
   {
     image: { src: WaterlooEng, alt: 'sponsor' },
@@ -73,9 +68,7 @@ const sponsors: ISponsor[] = [
     name: 'Waterloo Engineering Society',
     level: 'Hypersonic',
     dateJoined: 'Fall 2019',
-    collaboration: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies ut ut proin enim a. Ut facilisis blandit neque purus mollis purus eu. Arcu semper netus ut cursus egestas est. Lacus mauris consectetur ut phasellus feugiat laoreet dignissim maecenas. In amet a, ut quis mi. Tortor neque vitae, gravida magna eget. Eros, vitae auctor venenatis, in ac posuere morbi. Nam est nec pharetra commodo ut.
-    Phasellus ipsum egestas ullamcorper sem commodo. Convallis fermentum nullam augue eget mattis. Pharetra ultrices quam dignissim massa in eleifend cras ut euismod. Convallis mauris, interdum dictumst cursus tortor quis quis urna. Pharetra sit ut quis nam nam adipiscing purus elementum.
-    `,
+    collaboration: 'Thank you EngSoc for the continued support for our project over the past several years! Because of your support we’ve been able to fund many parts of our latest pod, including brakes, the linear induction motor, and the Waterloo test track.',
   },
   {
     image: { src: Brent, alt: 'sponsor' },
@@ -83,9 +76,7 @@ const sponsors: ISponsor[] = [
     name: "Brent's Welding and Fabrication Inc",
     level: 'Hypersonic',
     dateJoined: 'Fall 2019',
-    collaboration: `
-    Thank you so much Brent for helping our team weld the frame for our pod. We appreciate your help and support so much, and hope to continue working with you in the future.
-    `,
+    collaboration: `Brent's Welding and Fabrication helped us fabricate our pod, providing us with design guidance to help make fabrication smoother.`,
     video: 'https://www.youtube.com/embed/XyoX9HxxYrM',
   },
   {
@@ -142,9 +133,7 @@ const sponsors: ISponsor[] = [
     name: 'Star Technology',
     level: 'Sonic',
     dateJoined: 'Fall 2019',
-    collaboration: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies ut ut proin enim a. Ut facilisis blandit neque purus mollis purus eu. Arcu semper netus ut cursus egestas est. Lacus mauris consectetur ut phasellus feugiat laoreet dignissim maecenas. In amet a, ut quis mi. Tortor neque vitae, gravida magna eget. Eros, vitae auctor venenatis, in ac posuere morbi. Nam est nec pharetra commodo ut.
-    Phasellus ipsum egestas ullamcorper sem commodo. Convallis fermentum nullam augue eget mattis. Pharetra ultrices quam dignissim massa in eleifend cras ut euismod. Convallis mauris, interdum dictumst cursus tortor quis quis urna. Pharetra sit ut quis nam nam adipiscing purus elementum.
-    `,
+    collaboration: 'Thanks Star Technology for your donation of epoxy for our linear induction motor! We’ve been able to manufacture a LIM entirely from scratch at much lower cost than using external contractors, which is an amazing capability to have, and our in-house manufacturing process will be critical as we explore novel variations on the motor geometry.',
   },
   {
     image: { src: Sony, alt: 'sponsor' },
@@ -162,9 +151,7 @@ const sponsors: ISponsor[] = [
     name: 'W Print',
     level: 'Sonic',
     dateJoined: 'Fall 2019',
-    collaboration: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies ut ut proin enim a. Ut facilisis blandit neque purus mollis purus eu. Arcu semper netus ut cursus egestas est. Lacus mauris consectetur ut phasellus feugiat laoreet dignissim maecenas. In amet a, ut quis mi. Tortor neque vitae, gravida magna eget. Eros, vitae auctor venenatis, in ac posuere morbi. Nam est nec pharetra commodo ut.
-    Phasellus ipsum egestas ullamcorper sem commodo. Convallis fermentum nullam augue eget mattis. Pharetra ultrices quam dignissim massa in eleifend cras ut euismod. Convallis mauris, interdum dictumst cursus tortor quis quis urna. Pharetra sit ut quis nam nam adipiscing purus elementum.
-    `,
+    collaboration: 'W print has provided us with brochure printing services',
   },
   {
     image: { src: Wera, alt: 'sponsor' },
@@ -198,7 +185,7 @@ const sponsors: ISponsor[] = [
     name: 'L3 Harris',
     level: 'Sonic',
     dateJoined: 'Fall 2019',
-    collaboration: `Thanks L3Harris for your donation of the three HP workstations! We’ve gotten great use out of accessing them remotely during the lockdown period. These systems have also been very useful as file and license servers for our CAD software.`,
+    collaboration: `L3Harris has equiped us with three HP workstations! We’ve gotten great use out of accessing them remotely during the lockdown period. These systems have also been very useful as file and license servers for our CAD software.`,
   },
   {
     image: { src: Mitutoyo, alt: 'sponsor' },
@@ -207,37 +194,41 @@ const sponsors: ISponsor[] = [
     level: 'Sonic',
     dateJoined: 'Fall 2019',
     collaboration: `
-    Thanks Mitutoyo for your donation of three state-of-the-art calipers. These tools are used all the time in our workbay and we heavily rely on them for precise measurements.
+    Mitutoyo has donated to us three state-of-the-art calipers. These tools are used all the time in our workbay and we heavily rely on them for precise measurements.
     `,
   },
   {
     image: { src: StickerMule, alt: 'sponsor'},
     link: 'https://www.stickermule.com/ca',
-    name: 'Stickermule',
+    name: 'Sticker Mule',
     dateJoined: 'Winter 2020',
-    collaboration: ,
+    collaboration: 'Sticker Mule has donated the to the team some awesome stickers!',
     level: 'Sonic',
   },
   {
     name: 'Keysight',
-    collaboration: 'Thank you Keysight for your donation of the LCR meter and handheld digital multimeter. These tools have proven indispensable when testing our linear induction motor prototypes, and have helped us validate simulations and detect faults.',
+    dateJoined: 'Winter 2020',
+    image: { src: Keysight, alt: 'sponsor'},
+    level: 'Sonic',
+    link: 'https://www.keysight.com/ca/en/home.html',
+    collaboration: 'Keysight has provided us with an LCR meter and handheld digital multimeter. These tools have proven indispensable when testing our linear induction motor prototypes, and have helped us validate simulations and detect faults.',
   },
-  {
-    name: 'Dassult Systems',
-    collaboration: 'Thank you for providing our team with 90 Solidworks 2020/2021 licenses. The mechanical team relies heavily on Solidworks (and Solidworks PDM) to design and simulate each and every component in the pod. This also provides an opportunity for our members to gain highly industry-relevant experience in CAD, FEA, and GD&T.',
-  },
-  {
-    name: 'Metal Pros',
-    collaboration: 'Thank you MetalPros for providing us with your generous discount. We used this to purchase our aluminum tubing for our current pod’s frame.',
-  },
-  {
-    name: 'Crosslink Technology',
-    collaboration: 'Thank you Crosslink Technology for providing our team with your XRD 1014 and XHD 1015 resin and hardener. For the very first time, our team is manufacturing the pod aeroshell out of carbon fiber, and we could not do it without your generous support. We were very sad to have to delay our shell manufacturing plans due to the pandemic, but small-scale prototyping is under development with plans to continue into the Winter.',
-  },
-  {
-    name: 'OpenBOM',
-    collaboration: 'Thank you OpenBOM for giving us a license!',
-  }
+  // {
+  //   name: 'Dassult Systems',
+  //   collaboration: 'Thank you for providing our team with 90 Solidworks 2020/2021 licenses. The mechanical team relies heavily on Solidworks (and Solidworks PDM) to design and simulate each and every component in the pod. This also provides an opportunity for our members to gain highly industry-relevant experience in CAD, FEA, and GD&T.',
+  // },
+  // {
+  //   name: 'Metal Pros',
+  //   collaboration: 'Thank you MetalPros for providing us with your generous discount. We used this to purchase our aluminum tubing for our current pod’s frame.',
+  // },
+  // {
+  //   name: 'Crosslink Technology',
+  //   collaboration: 'Thank you Crosslink Technology for providing our team with your XRD 1014 and XHD 1015 resin and hardener. For the very first time, our team is manufacturing the pod aeroshell out of carbon fiber, and we could not do it without your generous support. We were very sad to have to delay our shell manufacturing plans due to the pandemic, but small-scale prototyping is under development with plans to continue into the Winter.',
+  // },
+  // {
+  //   name: 'OpenBOM',
+  //   collaboration: 'Thank you OpenBOM for giving us a license!',
+  // }
 ];
 
 const SponsorList: React.FC = () => {
@@ -333,8 +324,7 @@ const SponsorList: React.FC = () => {
           ))}
       </Grid>
       <SponsorModal
-        // remove false when ready to go live
-        open={modalOpen && false}
+        open={modalOpen}
         onClose={() => {
           setModalOpen(false);
         }}
