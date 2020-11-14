@@ -62,9 +62,18 @@ const IFrameHolder = styled.div`
   height: auto;
   width: auto;
 
-  display: flex;
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 35px;
+  height: 0;
+  overflow: hidden;
+
   iframe {
-    flex-shrink: 1;
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 `;
 
