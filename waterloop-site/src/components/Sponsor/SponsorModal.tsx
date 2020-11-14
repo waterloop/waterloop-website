@@ -32,6 +32,11 @@ const SponsorTitle = styled.div`
   font-style: italic;
   color: #010101;
   align-self: center;
+  text-align: center;
+  margin-top: 12px;
+  @media screen and (max-width: 600px) {
+    font-size: 26px;
+  }
 `;
 
 const SponsorLink = styled.a`
@@ -39,11 +44,17 @@ const SponsorLink = styled.a`
   font-style: italic;
   color: #838383;
   align-self: center;
+  @media screen and (max-width: 600px) {
+    font-size: 14px;
+  }
 `;
 
 const SponsorDetail = styled.div`
   margin-top: 32px;
   font: 24px IBM Plex Sans;
+  @media screen and (max-width: 600px) {
+    font-size: 18px;
+  }
 `;
 
 const IconButton = styled(MUIIconButton)``;
