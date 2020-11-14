@@ -18,6 +18,7 @@ const DialogContent = styled(MUIDialogContent)`
   display: flex;
   flex-direction: column;
   margin-bottom: 16px;
+  padding-right: 16px;
 `;
 
 const SponsorImage = styled(UnstyledSponsorImageShadowed)`
@@ -57,6 +58,16 @@ const SponsorDetail = styled.div`
   }
 `;
 
+const IFrameHolder = styled.div`
+  height: auto;
+  width: auto;
+
+  display: flex;
+  iframe {
+    flex-shrink: 1;
+  }
+`;
+
 const IconButton = styled(MUIIconButton)``;
 
 interface Image {
@@ -88,7 +99,7 @@ const SponsorModal: React.FC<Props> = ({
   video,
 }) => {
   return (
-    <Dialog open={open} onClose={onClose}>
+    <Dialog open={open} onClose={onClose} maxWidth="sm" fullWidth>
       <DialogTitle>
         <IconButton
           onClick={
@@ -117,14 +128,16 @@ const SponsorModal: React.FC<Props> = ({
           <p>{collaboration}</p>
         </SponsorDetail>
         {video && (
-          <iframe
-            width="560"
-            height="315"
-            src={video}
-            frameBorder={0}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+          <IFrameHolder>
+            <iframe
+              width="560"
+              height="315"
+              src={video}
+              frameBorder={0}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </IFrameHolder>
         )}
       </DialogContent>
     </Dialog>
