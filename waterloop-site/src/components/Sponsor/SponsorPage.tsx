@@ -116,6 +116,7 @@ const sponsors: ISponsor[] = [
     collaboration: `
     Thank you PSIM for providing our team with licenses! PSIM has given us great insight into the behaviour of our designs, and allowed us to continue developing our electrical system remotely. We look forward to continuing this relationship into the future.
     `,
+    video: 'https://www.youtube.com/embed/Mwy-XgI5-Lw',
   },
   {
     image: { src: Connexion, alt: 'sponsor' },
