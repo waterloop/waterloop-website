@@ -29,7 +29,7 @@ class App extends React.Component<{}, State> {
     this.handleWindowSizeChange = this.handleWindowSizeChange.bind(this);
   }
 
-  componentWillMount(): void {
+  componentDidMount(): void {
     window.addEventListener('resize', this.handleWindowSizeChange);
   }
 
