@@ -241,7 +241,7 @@ const sponsors: ISponsor[] = [
   },
   {
     name: 'Arts Endowment Fund',
-    collaboration: 'The Arts Endowment Fund Has provided us with the funding needed to build a semi-permanent test track.',
+    collaboration: 'The Arts Endowment Fund has provided us with the funding needed to build a semi-permanent test track.',
     level: 'Transonic',
     image: { src: ArtsEndowmentFundLogo, alt: 'sponsor' },
     dateJoined: 'Fall 2020',
