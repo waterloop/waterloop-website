@@ -21,6 +21,8 @@ import L3harris from '../../static/img/official-sponsors/l3harris.png';
 import Mitutoyo from '../../static/img/official-sponsors/mitutoyo.png';
 import StickerMule from '../../static/img/official-sponsors/Stickermule.png';
 import Keysight from '../../static/img/official-sponsors/keysight.png';
+import OpenBomLogo from '../../static/img/official-sponsors/Openbom.png';
+import ArtsEndowmentFundLogo from '../../static/img/official-sponsors/ArtsEndowmentFund.jpg'
 import SponsorModal from './SponsorModal';
 
 interface ISponsor {
@@ -220,16 +222,31 @@ const sponsors: ISponsor[] = [
   // },
   // {
   //   name: 'Metal Pros',
-  //   collaboration: 'Thank you MetalPros for providing us with your generous discount. We used this to purchase our aluminum tubing for our current pod’s frame.',
+  //   collaboration: 'MetalPros provided us with your generous discount. We used this to purchase our aluminum tubing for our current pod’s frame.',
+  //   dateJoined: 'Fall 2020',
+  //   image: ,
+  //   level: 'Supporter' // TODO Add in supporter tier
   // },
   // {
   //   name: 'Crosslink Technology',
   //   collaboration: 'Thank you Crosslink Technology for providing our team with your XRD 1014 and XHD 1015 resin and hardener. For the very first time, our team is manufacturing the pod aeroshell out of carbon fiber, and we could not do it without your generous support. We were very sad to have to delay our shell manufacturing plans due to the pandemic, but small-scale prototyping is under development with plans to continue into the Winter.',
   // },
-  // {
-  //   name: 'OpenBOM',
-  //   collaboration: 'Thank you OpenBOM for giving us a license!',
-  // }
+  {
+    name: 'OpenBOM',
+    collaboration: 'OpenBOM has provided us with a license for their software.',
+    dateJoined: 'Fall 2020',
+    image: { src: OpenBomLogo, alt: 'sponsor' },
+    level: 'Transonic',
+    link: 'https://www.openbom.com/',
+  },
+  {
+    name: 'Arts Endowment Fund',
+    collaboration: 'The Arts Endowment Fund has provided us with the funding needed to build a semi-permanent test track.',
+    level: 'Transonic',
+    image: { src: ArtsEndowmentFundLogo, alt: 'sponsor' },
+    dateJoined: 'Fall 2020',
+    link: 'https://uwaterloo.ca/arts-endowment-fund/',
+  }
 ];
 
 const SponsorList: React.FC = () => {
