@@ -233,7 +233,7 @@ const sponsors: ISponsor[] = [
   // },
   {
     name: 'OpenBOM',
-    collaboration: 'OpenBOM has provided us with a licence for their software.',
+    collaboration: 'OpenBOM has provided us with a license for their software.',
     dateJoined: 'Fall 2020',
     image: { src: OpenBomLogo, alt: 'sponsor' },
     level: 'Transonic',
