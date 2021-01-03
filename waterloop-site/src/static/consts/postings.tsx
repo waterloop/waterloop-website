@@ -230,7 +230,7 @@ export const w21Postings: Posting[] = [
   },
   {
     id: 1,
-    role: 'Photographer/Videographer',
+    role: 'Photographer / Videographer',
     description: 'The business team is responsible for the marketing, sponsorship, and finance side of things at Waterloop. From posting social media campaigns to filling out funding applications and communicating with sponsors, the business team works hard to promote the Waterloop brand and support it financially. The team works to increase the adoption of Hyperloop technology as the future of transportation. We are looking for someone to function as a team photographer and videographer. Preference will be given to individuals who will be available to take photos and videos in-person. We\'re aiming to start consistently creating video content and launch a team YouTube channel.',
     tasks: [
       'Create video and photo content for our social media, sponsorship packages and website',
