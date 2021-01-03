@@ -11,7 +11,7 @@ import JobPostings from "components/Postings/Postings";
 const castData: MyProps[] = Text;
 const imgData: string[] = [JoinUs];
 
-const currentlyRecruiting = false;
+const currentlyRecruiting = true;
 
 const FlexContainer = styled.div`
   display: flex;
