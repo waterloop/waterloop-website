@@ -1,17 +1,13 @@
 import React from 'react';
 import { Button } from 'components/Button';
-
-interface Posting{
-  subteam: string;
-  role: string;
-}
+import { Posting } from '../../static/consts/postings';
 
 interface Props {
   team: string;
   postings: Posting[];
 }
 
-const SubTeam: React.FC<Props> = (props) => (
+const SubTeam: React.FC<Props> = (props) => props.postings.length > 0 ? (
   <div className={'postings'}>
     <h3
       style={{
@@ -23,31 +19,33 @@ const SubTeam: React.FC<Props> = (props) => (
     </h3>
     {props.postings.length > 0 &&
       props.postings.map(
-        (item: Posting, index: number) =>
-          item.subteam === props.team && (
+        (posting: Posting) =>
+          posting.subteam === props.team && (
             <div className={'posting'}>
               <a
-                href={`/posting/${index + 1}`}
+                href={`/posting/${posting.id}`}
                 style={{
                   fontSize: '24px',
                   textDecoration: 'none',
                   color: 'black',
                 }}
               >
-                {item.role}
+                {posting.role}
               </a>
               <Button
                 backgroundColor="yellow"
                 textColor="black"
                 text={'APPLY'}
                 onClick={(): Window | null =>
-                  window.open(`/posting/${index + 1}`, '_self')
+                  window.open(`/posting/${posting.id}`, '_self')
                 }
               />
             </div>
           )
       )}
   </div>
+) : (
+  <></>
 );
 
 export default SubTeam;

@@ -1,6 +1,6 @@
 import React from 'react';
 import JobPosting from './JobPosting';
-import { samplePostingsData } from '../../static/consts/postings';
+import { w21Postings } from '../../static/consts/postings';
 import { useParams } from 'react-router';
 
 interface RouteParams {
@@ -8,20 +8,21 @@ interface RouteParams {
 }
 const JobPostingPage: React.FC = () => {
   const stringId: RouteParams = useParams();
-  const id: number = parseInt(stringId.id, 10) - 1;
+  const id: number = parseInt(stringId.id, 10);
+  const posting = w21Postings.filter((posting) => posting.id === id)[0];
 
   return (
     <div className="pageContainer">
       <JobPosting
-        role={samplePostingsData[id].role}
-        subteam={samplePostingsData[id].subteam}
-        term={samplePostingsData[id].term}
-        applicationForm={samplePostingsData[id].applicationForm}
-        deadline={samplePostingsData[id].deadline}
-        description={samplePostingsData[id].description}
-        tasks={samplePostingsData[id].tasks}
-        requirements={samplePostingsData[id].requirements}
-        additional={samplePostingsData[id].additional}
+        role={posting.role}
+        subteam={posting.subteam}
+        term={posting.term}
+        applicationForm={posting.applicationForm}
+        deadline={posting.deadline}
+        description={posting.description}
+        tasks={posting.tasks}
+        requirements={posting.requirements}
+        additional={posting.additional}
       />
     </div>
   );

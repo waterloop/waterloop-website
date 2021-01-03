@@ -1,5 +1,5 @@
 import React from 'react';
-import { samplePostingsData } from '../../static/consts/postings';
+import { w21Postings } from '../../static/consts/postings';
 import SubTeam from './SubTeam';
 
 const TEAMS = [
@@ -8,12 +8,14 @@ const TEAMS = [
   'Software',
   'LIM',
   'Infrastructure',
+  'Business',
+  'Web'
 ];
 
 const Postings: React.FC = () => (
   <div>
     {TEAMS.map((team: string, index: number) => {
-      return <SubTeam postings={samplePostingsData} team={team} key={index} />;
+      return <SubTeam postings={w21Postings.filter((posting) => team === posting.subteam)} team={team} key={index} />;
     })}
   </div>
 );
