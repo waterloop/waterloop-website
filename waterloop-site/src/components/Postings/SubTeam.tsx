@@ -35,7 +35,7 @@ const SubTeam: React.FC<Props> = (props) => props.postings.length > 0 ? (
               <Button
                 backgroundColor="yellow"
                 textColor="black"
-                text={'APPLY'}
+                text={'MORE\u00A0INFO'}
                 onClick={(): Window | null =>
                   window.open(`/posting/${posting.id}`, '_self')
                 }
