@@ -208,13 +208,13 @@ export interface Posting {
 export const w21Postings: Posting[] = [
   {
     id: 0,
-    role: 'Graphics Designer',
-    description: 'The business team is responsible for the marketing, sponsorship, and finance side of things at Waterloop. From posting social media campaigns to filling out funding applications and communicating with sponsors, the business team works hard to promote the Waterloop brand and support it financially. The team works to increase the adoption of hyperloop technology as the future of transportation. The graphics team helps create a cohesive public presence for the team. Graphics team members establishes the Waterloop brand, and ensures we are represented professionally.',
+    role: 'Graphic Designer',
+    description: 'The business team is responsible for the marketing, sponsorship, and finance side of things at Waterloop. From posting social media campaigns to filling out funding applications and communicating with sponsors, the business team works hard to promote the Waterloop brand and support it financially. The team works to increase the adoption of Hyperloop technology as the future of transportation. The graphics team helps create a cohesive public presence for the team. Graphics team members establish the Waterloop brand, and ensure we are represented professionally.',
     tasks: [
       'Design social media posts (Twitter, Instagram, Facebook, LinkedIn)',
-      'Designing and coordination team merch',
-      'Refining the team sponsorship package',
-      'Helping establish the Waterloop Brand',
+      'Design and coordinate team merch',
+      'Refine the team sponsorship package',
+      'Help establish the Waterloop brand',
     ],
     subteam: 'Business',
     term: 'Winter 2021',
@@ -223,7 +223,7 @@ export const w21Postings: Posting[] = [
     ],
     requirements: [
       'Required: experience with Adobe XD, Illustrator, InVision, Figma, or equivalent',
-      'Recommended: Prior Graphic Design experience',
+      'Recommended: prior graphic design experience',
     ],
     applicationForm: 'https://docs.google.com/forms/d/e/1FAIpQLSeu2iJvT3-FvAYKEK-hbJxpb3f9t-I-8LI_hKUYCBCsgGrjQw/viewform',
     deadline: 'January 13, 11:59pm'
@@ -231,10 +231,10 @@ export const w21Postings: Posting[] = [
   {
     id: 1,
     role: 'Photographer/Videographer',
-    description: 'The business team is responsible for the marketing, sponsorship, and finance side of things at Waterloop. From posting social media campaigns to filling out funding applications and communicating with sponsors, the business team works hard to promote the Waterloop brand and support it financially. The team works to increase the adoption of hyperloop technology as the future of transportation. We are looking for someone to function as a team photographer and videographer. Preference will be given to individuals who will be available to take photos and videos in-person. Additionally looking for someone interested in helping Waterloop create video content and launch a team YouTube channel.',
+    description: 'The business team is responsible for the marketing, sponsorship, and finance side of things at Waterloop. From posting social media campaigns to filling out funding applications and communicating with sponsors, the business team works hard to promote the Waterloop brand and support it financially. The team works to increase the adoption of Hyperloop technology as the future of transportation. We are looking for someone to function as a team photographer and videographer. Preference will be given to individuals who will be available to take photos and videos in-person. We\'re aiming to start consistently creating video content and launch a team YouTube channel.',
     tasks: [
-      'Create video and photo content for our social medias, sponsorship packages and website',
-      'video and photo editing',
+      'Create video and photo content for our social media, sponsorship packages and website',
+      'Video and photo editing',
       'Storyboard creation and planning videos to promote the team',
       'Launching Waterloop\'s YouTube channel',
     ],
@@ -245,12 +245,8 @@ export const w21Postings: Posting[] = [
       'Flexible Schedule to be able to meet with members during testing and work sessions.'
     ],
     requirements: [
-      'Required:',
-      'Final Cut pro or equivalent',
-      'Adobe Lightroom or equivalent',
-      'Recommended:',
-      'Prior experience with content creation for teams/clubs',
-      'Will be living in Waterloo for the Winter term and willing to come to Waterloop Bay to take photos and videos',
+      'Required: Final Cut pro or equivalent, Adobe Lightroom or equivalent',
+      'Recommended: Prior experience with content creation for teams/clubs, in Waterloo for the Winter term & willing to come to Waterloop Bay to take photos and videos',
     ],
     applicationForm: 'https://docs.google.com/forms/d/e/1FAIpQLSeu2iJvT3-FvAYKEK-hbJxpb3f9t-I-8LI_hKUYCBCsgGrjQw/viewform',
     deadline: 'January 13, 11:59pm'
@@ -258,7 +254,7 @@ export const w21Postings: Posting[] = [
   {
     id: 2,
     role: 'Sponsorship Member',
-    description: 'The sponsorship team is in charge of securing funds that will allow our team to complete the build of our pod. We are responsible for getting in touch with potential sponsors, filling out funding applications, and keeping up with sponsor relations. This semester the sponsorship team is excited to continue sending out cold emails and getting in touch with more sponsors.',
+    description: 'The sponsorship team is in charge of securing funds that will allow our team to complete the build of our pod. We are responsible for getting in touch with potential sponsors, filling out funding applications, and keeping up with sponsor relations. This semester the sponsorship team is excited to continue sending out cold emails and getting in touch with more sponsors!',
     tasks: [
       'Send out cold emails',
       'Build relationships with potential sponsors',
@@ -270,7 +266,7 @@ export const w21Postings: Posting[] = [
       'Time Commitment: 6h/week',
     ],
     requirements: [
-      'Ability to work well in a team and make deadlines',
+      'Ability to work well in a team and meet deadlines',
     ],
     applicationForm: 'https://docs.google.com/forms/d/e/1FAIpQLSeu2iJvT3-FvAYKEK-hbJxpb3f9t-I-8LI_hKUYCBCsgGrjQw/viewform',
     deadline: 'January 13, 11:59pm'
@@ -290,10 +286,10 @@ export const w21Postings: Posting[] = [
     ],
     requirements: [
       'Required:',
-      'Must be living in waterloo in the winter term, or willing to come to Waterloo to participate in in-person work',
+      'Must be living in Waterloo in the winter term, or willing to come to Waterloo to participate in in-person work',
       'To be learned:',
       'Design for composite materials',
-      'THe manufacturing process of composite materials',
+      'The manufacturing process of composite materials',
       'Basic aerodynamics',
       'FEA',
       'Use of machine shop tools'
@@ -314,9 +310,9 @@ export const w21Postings: Posting[] = [
     deadline: 'January 13, 11:59pm',
     term: 'Winter 2021',
     tasks: [
-      'Predicting performance of linear motor designs from first principles physics',
+      'Predict performance of linear motor designs from first principles physics',
       'Simulate the effects of changing motor parameters in COMSOL or via various FEA Models',
-      'Researching various possible geometries, materials, and configurations of LIMs',
+      'Research various possible geometries, materials, and configurations of LIMs',
       'Collaborate with Motor Development Engineering team to build hardware and execute tests to validate numerical and simulation models',
     ],
     additional: [
@@ -348,7 +344,7 @@ export const w21Postings: Posting[] = [
     tasks: [
       'Write test plans, manufacturing core and winding, etc.',
       'Perform complex motor testing and gather data from a variety of sensors',
-      'Prototyping motor designs: machining and assembling proof of concept motors, validating form, fit, and function, iterating designs',
+      'Prototype motor designs: machining and assembling proof of concept motors, validating form, fit, and function, iterating designs',
       'Collaborate with other teams on sample builds, preparation, and instrumentation',
       'Design, fabricate, and code test equipment and data acquisition systems to meet instrumentation needs',
     ],
@@ -376,7 +372,7 @@ export const w21Postings: Posting[] = [
   },
   {
     id: 7,
-    role: 'Motor Control Team Member',
+    role: 'Motor Control - Manufacturing',
     tasks: [
       'Preparing test boards to be built and tested',
       'Help out with electrical pod systems assembly and testing',
@@ -405,7 +401,7 @@ export const w21Postings: Posting[] = [
   },
   {
     id: 8,
-    role: 'Motor Control Team Member',
+    role: 'Motor Control - Simulation',
     tasks: [
       'Conducting simulations using PSIM',
       'Designing and revising PCB\'s for motor control functions',
@@ -434,7 +430,7 @@ export const w21Postings: Posting[] = [
     id: 9,
     role: 'Battery Management System (BMS) Team Member',
     tasks: [
-      '- Designing, building and testing boards for individual BMS functions',
+      'Designing, building and testing boards for individual BMS functions',
       'Assembling and testing boards in-person',
     ],
     description: 'The electrical team works on powering and controlling the Hyperloop pod while providing sensor feedback. The team has a strong focus on both HV and LV development in battery management, motor control and embedded sensing. The battery management system team is developing an in-house BMS to monitor properties of individual cells, properties of entire battery pack and provide cell balancing where needed.',
