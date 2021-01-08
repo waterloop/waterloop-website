@@ -6,6 +6,11 @@ const Container = styled.div`
   margin-left: 25%;
   margin-right: 25%;
   min-height: calc(100vh - 100px);
+
+  @media screen and (max-width: 425px) {
+    margin-left: 0;
+    margin-right: 0;
+  }
 `;
 
 const RecruitmentFaq = () => {
