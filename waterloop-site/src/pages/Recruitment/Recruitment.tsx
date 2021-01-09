@@ -4,8 +4,8 @@ import Hero from "components/Hero/General";
 import { TextWithImage } from "components/TextWithImage";
 import { MyProps } from "components/TextWithImage";
 import Text from "static/copy/Recruitment/Recruitment.json";
-import JoinUs from "../static/img/team/joinus.png";
-import "../theme/styles.scss";
+import JoinUs from "../../static/img/team/joinus.png";
+import "../../theme/styles.scss";
 
 import JobPostings from "components/Postings/Postings";
 const castData: MyProps[] = Text;
@@ -17,6 +17,7 @@ const FlexContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
 
 const Recruitment: React.FC = () => (
   <>

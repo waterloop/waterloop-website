@@ -10,7 +10,7 @@ import Home from './pages/Home';
 import Flock from './pages/Flock';
 import Team from './pages/Team';
 import Sponsors from './pages/Sponsors';
-import Recruitment from './pages/Recruitment';
+import RecruitmentRouter from 'pages/Recruitment/RecruitmentRouter';
 
 import 'typeface-ibm-plex-sans';
 
@@ -73,7 +73,7 @@ class App extends React.Component<{}, State> {
               <Contact />
             </Route>
             <Route path="/recruitment">
-              <Recruitment />
+              <RecruitmentRouter />
             </Route>
             <Route path="/posting/:id">
               <JobPostingPage />
