@@ -11,7 +11,7 @@ import JobPostings from "components/Postings/Postings";
 const castData: MyProps[] = Text;
 const imgData: string[] = [JoinUs];
 
-const currentlyRecruiting = true;
+const currentlyRecruiting = false;
 
 const FlexContainer = styled.div`
   display: flex;
@@ -41,9 +41,9 @@ const Recruitment: React.FC = () => (
         </>
       ) : (
         <FlexContainer>
-          <h3>Our new member recruitment is now <b>closed</b> for the Fall term.</h3>
+          <h3>Our new member recruitment is now <b>closed</b> for the Winter term.</h3>
           <p>
-          Our new member recruitment for the Winter term is not open yet. Thanks for visiting and be sure to check back in the first week of January to join the team! :) Do you have prior expertise in linear induction motors, high power PCB design, or other relevant technical topics? We'd love to learn from you as an advisor; reach out to us at <a href = "mailto: contact@waterloop.ca">contact@waterloop.ca</a> if you're interested!
+          Our new member recruitment for the Spring term is not open yet. Thanks for visiting and be sure to check back in the first week of May to join the team! :) Do you have prior expertise in linear induction motors, high power PCB design, or other relevant technical topics? We'd love to learn from you as an advisor; reach out to us at <a href = "mailto: contact@waterloop.ca">contact@waterloop.ca</a> if you're interested!
           </p>
         </FlexContainer>
       )}
