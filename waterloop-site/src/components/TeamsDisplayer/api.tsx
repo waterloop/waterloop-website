@@ -5,15 +5,6 @@ const teamHubHeader = {
     'Bearer d9c6bf2221a7c4475bab79e058701ae18bfecd4b33f1af75c42bc47dade26f580fde63bbea07b774a176d4252872dc32959b45ddf84fa2e7625acb0d1608c12e',
 };
 
-// Generate query params for fetch requests
-const generateFiltersQuery = (): [string, object] => [
-    `${teamHubApiEndpoint}/filters`,
-    {
-      method: 'GET',
-      headers: teamHubHeader,
-    },
-  ];
-
 const generateMembersQuery = (): [string, object] => [
   `${teamHubApiEndpoint}/members`,
   {
@@ -22,4 +13,4 @@ const generateMembersQuery = (): [string, object] => [
   },
 ];
 
-export { generateMembersQuery, generateFiltersQuery };
+export { generateMembersQuery };

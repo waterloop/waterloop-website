@@ -17,9 +17,9 @@ const isProfileComplete = (member: QueryData): boolean => {
 };
 
 // Create a profile from member data
-const buildProfile = (member: QueryData, teamType: Map<string, string>): ProfileType => {
+const buildProfile = (member: QueryData): ProfileType => {
   const links = member.links.length > 0 ? member.links : testData[0].contacts;
-  const teams = member.subteams.map((team: string) => teamType.get(team));
+  const teams = member.subteams.map((team: { _id: string, name: string }) => team.name);
 
   // Generate program description with missing fields in mind
   let program = member.program || "Student";
@@ -67,7 +67,6 @@ const insertProfileToMap = (
 // Group an array of profiles into their respective categories
 const sortProfiles = (
   members: QueryData[],
-  teamType: Map<string, string>
 ): Map<string, ProfileType[]> => {
   const teams = new Map() as Map<string, ProfileType[]>;
   teams.set("Team Leads", []);
@@ -77,12 +76,10 @@ const sortProfiles = (
     // Ignore incomplete profiles
     if (isProfileComplete(member)) {
       // create a profile
-      const profile = buildProfile(member, teamType);
-
+      const profile = buildProfile(member);
       // Group Members by their subteams
-      member.subteams.forEach((team: string) => {
-        const teamName = teamType.get(team) as string;
-        insertProfileToMap(teams, teamName, profile);
+      member.subteams.forEach((team: {_id: string, name: string}) => {
+        insertProfileToMap(teams, team.name, profile);
       });
     }
   });
