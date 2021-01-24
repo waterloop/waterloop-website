@@ -87,7 +87,7 @@ export default class TeamsDisplayer extends React.Component<
     fetch(query, options)
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
+        // console.log(res);
 
         const groupedProfiles = sortProfiles(
           res.body
@@ -148,8 +148,6 @@ export default class TeamsDisplayer extends React.Component<
       });
     }
 
-    console.log(`subteams: ${subteams}`)
-
     return (
       <Page>
         <TeamFilter
@@ -165,8 +163,6 @@ export default class TeamsDisplayer extends React.Component<
               team: { title: string; members: ProfileType[] },
               i: number
             ) => {
-              console.log(team.members)
-              console.log(team.title)
               return (
                 <ProfileSection
                   key={i}

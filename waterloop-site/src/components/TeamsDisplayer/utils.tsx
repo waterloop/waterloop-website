@@ -77,7 +77,6 @@ const sortProfiles = (
     if (isProfileComplete(member)) {
       // create a profile
       const profile = buildProfile(member);
-      console.log(profile)
       // Group Members by their subteams
       member.subteams.forEach((team: {_id: string, name: string}) => {
         insertProfileToMap(teams, team.name, profile);
