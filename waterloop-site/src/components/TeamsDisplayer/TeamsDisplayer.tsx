@@ -4,7 +4,6 @@ import { Button } from "components";
 // Types and interfaces
 import {
   ProfileType,
-  QueryData,
   SubteamProps,
   TeamsDisplayerProps,
   TeamsDisplayerState,
@@ -15,7 +14,7 @@ import { ProfileSection, TeamFilter } from "./components";
 
 // Utility
 import { sortProfiles, applyTeamFilters } from "./utils";
-import { generateMembersQuery, generateFiltersQuery } from "./api";
+import { generateMembersQuery } from "./api";
 import { Preloader } from "components/Preloader";
 
 // Styled components for ProfileSection
@@ -78,27 +77,8 @@ export default class TeamsDisplayer extends React.Component<
 
   // Initialization
   componentDidMount(): void {
-    this.fetchSubteams();
+    this.fetchProfiles()
     this.updateFilters(this.props.initFilterSetting);
-  }
-
-  // fetch subteams
-  fetchSubteams(): void {
-    const [query, options] = generateFiltersQuery();
-    fetch(query as string, options as object)
-      .then((res) => res.json())
-      .then((res) => {
-        const newMap = this.state.subteamIdMap;
-        res.body.subteams.forEach((team: QueryData) =>
-          // eslint-disable-next-line no-underscore-dangle
-          newMap.set(team._id, team.name)
-        );
-        this.setState({ subteamIdMap: newMap });
-        this.fetchProfiles();
-      })
-      .catch((err) => {
-        console.log(err);
-      });
   }
 
   // fetch data from teamhub
@@ -107,11 +87,10 @@ export default class TeamsDisplayer extends React.Component<
     fetch(query, options)
       .then((res) => res.json())
       .then((res) => {
-        // console.log(res);
+        console.log(res);
 
         const groupedProfiles = sortProfiles(
-          res.body,
-          this.state.subteamIdMap
+          res.body
         ) as Map<string, ProfileType[]>;
         this.setState({ memberData: groupedProfiles });
         this.setState({ loading: false });
@@ -169,6 +148,8 @@ export default class TeamsDisplayer extends React.Component<
       });
     }
 
+    console.log(`subteams: ${subteams}`)
+
     return (
       <Page>
         <TeamFilter
@@ -184,6 +165,8 @@ export default class TeamsDisplayer extends React.Component<
               team: { title: string; members: ProfileType[] },
               i: number
             ) => {
+              console.log(team.members)
+              console.log(team.title)
               return (
                 <ProfileSection
                   key={i}
