@@ -23,6 +23,7 @@ import StickerMule from '../../static/img/official-sponsors/Stickermule.png';
 import Keysight from '../../static/img/official-sponsors/keysight.png';
 import OpenBomLogo from '../../static/img/official-sponsors/Openbom.png';
 import ArtsEndowmentFundLogo from '../../static/img/official-sponsors/ArtsEndowmentFund.jpg'
+import Crosslink from '../../static/img/official-sponsors/Crosslink.png'
 import SponsorModal from './SponsorModal';
 
 interface ISponsor {
@@ -227,10 +228,14 @@ const sponsors: ISponsor[] = [
   //   image: ,
   //   level: 'Supporter' // TODO Add in supporter tier
   // },
-  // {
-  //   name: 'Crosslink Technology',
-  //   collaboration: 'Thank you Crosslink Technology for providing our team with your XRD 1014 and XHD 1015 resin and hardener. For the very first time, our team is manufacturing the pod aeroshell out of carbon fiber, and we could not do it without your generous support. We were very sad to have to delay our shell manufacturing plans due to the pandemic, but small-scale prototyping is under development with plans to continue into the Winter.',
-  // },
+  {
+    name: 'Crosslink Technology',
+    dateJoined: 'Winter 2020',
+    image: { src: Crosslink, alt: 'sponsor'},
+    level: 'Sonic',
+    link: 'https://www.crosslinktech.com/',
+    collaboration: 'Thank you Crosslink Technology for providing our team with your XRD 1014 and XHD 1015 resin and hardener. For our Goose V pod, our team is manufacturing the shell out of carbon fiber, and we could not do it without your generous support. We were very sad to have to delay our shell manufacturing plans due to the pandemic, but we\'re glad to announce that small-scale prototyping is completed, with plans to complete our full-scale shell by Spring.',
+  },
   {
     name: 'OpenBOM',
     collaboration: 'OpenBOM has provided us with a license for their software.',
