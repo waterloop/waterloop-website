@@ -26,6 +26,21 @@ import ArtsEndowmentFundLogo from '../../static/img/official-sponsors/ArtsEndowm
 import Crosslink from '../../static/img/official-sponsors/Crosslink.png'
 import SponsorModal from './SponsorModal';
 
+//Mock data for Supporters
+const MockSupportersData = [
+  "Supporter with a very long name",
+  "Supporter with a very long name",
+  "Supporter with a very long name",
+  "Supporter with a very long name",
+  "Supporter #1",
+  "Supporter #1",
+  "Supporter with a very long name",
+  "Supporter with a very long name",
+  "Supporter with a very long name",
+  "Supporter #1",
+  "Supporter with a very long name",
+  "Supporter #1",
+];
 interface ISponsor {
   image: {
     src: string;
@@ -345,6 +360,20 @@ const SponsorList: React.FC = () => {
               />
             </Grid>
           ))}
+      </Grid>
+      <h2>Supporters</h2>
+      <Grid
+        className="TierWrapper"
+        spacing={4}
+        container
+        alignItems="center"
+        justify="center"
+      >
+        {MockSupportersData.map((supporter, i) => (
+          <Grid key={i} container item md={3} xs={3} justify="center">
+            <h3>{supporter}</h3>
+          </Grid>
+        ))}
       </Grid>
       <SponsorModal
         open={modalOpen}
