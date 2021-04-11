@@ -22,8 +22,9 @@ import Mitutoyo from '../../static/img/official-sponsors/mitutoyo.png';
 import StickerMule from '../../static/img/official-sponsors/Stickermule.png';
 import Keysight from '../../static/img/official-sponsors/keysight.png';
 import OpenBomLogo from '../../static/img/official-sponsors/Openbom.png';
-import ArtsEndowmentFundLogo from '../../static/img/official-sponsors/ArtsEndowmentFund.jpg'
-import Crosslink from '../../static/img/official-sponsors/Crosslink.png'
+import ArtsEndowmentFundLogo from '../../static/img/official-sponsors/ArtsEndowmentFund.jpg';
+import Crosslink from '../../static/img/official-sponsors/Crosslink.png';
+import AdvantageEngineering from '../../static/img/official-sponsors/AdvantageEngineering-Logo.png';
 import SponsorModal from './SponsorModal';
 
 interface ISponsor {
@@ -251,6 +252,14 @@ const sponsors: ISponsor[] = [
     image: { src: ArtsEndowmentFundLogo, alt: 'sponsor' },
     dateJoined: 'Fall 2020',
     link: 'https://uwaterloo.ca/arts-endowment-fund/',
+  },
+  {
+    name: 'Advantage Engineering Inc',
+    collaboration: 'Advantage Engineering Inc. was a huge supporter in the manufacturing process of our carbon fiber aeroshell. Advantage machined the exact shape of our aeroshell into an 8ft long styrofoam mould using their precision 5-axis CNC mill. We then laid up our carbon fiber sheets into the mould and cured them to obtain the finished part.',
+    dateJoined: 'Winter 2021',
+    image: { src: AdvantageEngineering, alt: 'sponsor logo'},
+    level: 'Transonic',
+    link: 'http://www.tryadvantage.com/',
   }
 ];
 
