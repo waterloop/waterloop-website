@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import Grid from '@material-ui/core/Grid';
 import Sponsor from './Sponsor';
 import Brent from '../../static/img/official-sponsors/BrentsWeldingAndFab.png';
@@ -22,9 +23,16 @@ import Mitutoyo from '../../static/img/official-sponsors/mitutoyo.png';
 import StickerMule from '../../static/img/official-sponsors/Stickermule.png';
 import Keysight from '../../static/img/official-sponsors/keysight.png';
 import OpenBomLogo from '../../static/img/official-sponsors/Openbom.png';
-import ArtsEndowmentFundLogo from '../../static/img/official-sponsors/ArtsEndowmentFund.jpg'
-import Crosslink from '../../static/img/official-sponsors/Crosslink.png'
+import ArtsEndowmentFundLogo from '../../static/img/official-sponsors/ArtsEndowmentFund.jpg';
+import Crosslink from '../../static/img/official-sponsors/Crosslink.png';
+import AdvantageEngineering from '../../static/img/official-sponsors/AdvantageEngineering-Logo.png';
 import SponsorModal from './SponsorModal';
+
+const TransonicSponsor = styled(Sponsor)`
+  img {
+    height: calc(min(15vh, 84px));
+  }
+`;
 
 interface ISponsor {
   image: {
@@ -62,7 +70,7 @@ const sponsors: ISponsor[] = [
     link: 'https://uwaterloo.ca/engineering-endowment-foundation/',
     name: 'Waterloo Engineering Endowment Fund',
     level: 'Hypersonic',
-    dateJoined: 'Fall 2019',
+  dateJoined: 'Fall 2019',
     collaboration: 'Thank you WEEF for the continued support for our project over the past several years! Because of your support, we’ve been able to fund many parts of our latest pod, including batteries, power electronics, brakes, the linear induction motor, and many other components.',
   },
   {
@@ -251,6 +259,14 @@ const sponsors: ISponsor[] = [
     image: { src: ArtsEndowmentFundLogo, alt: 'sponsor' },
     dateJoined: 'Fall 2020',
     link: 'https://uwaterloo.ca/arts-endowment-fund/',
+  },
+  {
+    name: 'Advantage Engineering Inc',
+    collaboration: 'Advantage Engineering Inc. was a huge supporter in the manufacturing process of our carbon fiber aeroshell. Advantage machined the exact shape of our aeroshell into an 8ft long styrofoam mould using their precision 5-axis CNC mill. We then laid up our carbon fiber sheets into the mould and cured them to obtain the finished part.',
+    dateJoined: 'Winter 2021',
+    image: { src: AdvantageEngineering, alt: 'sponsor logo'},
+    level: 'Transonic',
+    link: 'http://www.tryadvantage.com/',
   }
 ];
 
@@ -318,7 +334,7 @@ const SponsorList: React.FC = () => {
           .filter(sponsor => sponsor.level === 'Transonic')
           .map(sponsor => (
             <Grid key={sponsor.name} container item md={3} xs={4} justify="center">
-              <Sponsor
+              <TransonicSponsor
                 {...sponsor.image}
                 tier={sponsor.level}
                 onClick={() => handelSponsorClick(sponsor)}

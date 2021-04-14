@@ -934,6 +934,9 @@ textarea {
 .SponsorPage {
   margin: 100px auto;
   text-align: center;
+  @media screen and (min-width: 1040px) {
+    width: 1040px;
+  }
 }
 
 .TierWrapper {

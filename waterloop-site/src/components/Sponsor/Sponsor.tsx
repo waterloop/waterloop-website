@@ -5,6 +5,7 @@ import UnstyledShadowImage from './SponsorImageShadowed';
 const ShadowImage = styled(UnstyledShadowImage)`
   width: 100%;
   height: auto;
+  object-fit:contain;
 `;
 
 const Container = styled.div`
@@ -21,10 +22,11 @@ interface Props {
   src?: string;
   alt?: string;
   onClick?: () => void;
+  className?: string;
 };
 
 const Sponsor: React.FC<Props> = (props) => (
-  <Container onClick={props.onClick}>
+  <Container className={props.className} onClick={props.onClick}>
     <ShadowImage src={props.src} alt={props.alt} />
   </Container >
 );
