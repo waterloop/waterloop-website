@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import Grid from '@material-ui/core/Grid';
 import Sponsor from './Sponsor';
 import Brent from '../../static/img/official-sponsors/BrentsWeldingAndFab.png';
@@ -26,6 +27,12 @@ import ArtsEndowmentFundLogo from '../../static/img/official-sponsors/ArtsEndowm
 import Crosslink from '../../static/img/official-sponsors/Crosslink.png';
 import AdvantageEngineering from '../../static/img/official-sponsors/AdvantageEngineering-Logo.png';
 import SponsorModal from './SponsorModal';
+
+const TransonicSponsor = styled(Sponsor)`
+  img {
+    height: calc(min(15vh, 84px));
+  }
+`;
 
 interface ISponsor {
   image: {
@@ -63,7 +70,7 @@ const sponsors: ISponsor[] = [
     link: 'https://uwaterloo.ca/engineering-endowment-foundation/',
     name: 'Waterloo Engineering Endowment Fund',
     level: 'Hypersonic',
-    dateJoined: 'Fall 2019',
+  dateJoined: 'Fall 2019',
     collaboration: 'Thank you WEEF for the continued support for our project over the past several years! Because of your support, we’ve been able to fund many parts of our latest pod, including batteries, power electronics, brakes, the linear induction motor, and many other components.',
   },
   {
@@ -327,7 +334,7 @@ const SponsorList: React.FC = () => {
           .filter(sponsor => sponsor.level === 'Transonic')
           .map(sponsor => (
             <Grid key={sponsor.name} container item md={3} xs={4} justify="center">
-              <Sponsor
+              <TransonicSponsor
                 {...sponsor.image}
                 tier={sponsor.level}
                 onClick={() => handelSponsorClick(sponsor)}
