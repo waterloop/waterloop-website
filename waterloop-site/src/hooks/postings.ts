@@ -25,7 +25,7 @@ const usePostings = () => {
             .data
             .map((item) => ({ ...item, team: teams.data.find((team) => team.id === item.teamId)?.teamName ?? 'Unable to get team' }))
             .map(dateStringsToDate)
-            .filter((posting) => !posting.closed);
+            .filter((posting) => !posting.closed && posting.deadline.getTime() > Date.now());
         }
       } catch (err) {
         if (process.env.NODE_ENV === 'development') {
