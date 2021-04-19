@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseUrl = 'https://waterloop-cms.herokuapp.com';
+const baseUrl = process.env.REACT_APP_BASE_URL;
 
 export const server = axios.create({
   baseURL: baseUrl,

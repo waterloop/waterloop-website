@@ -7,7 +7,6 @@ import usePostingPostingById from 'hooks/posting-by-id';
 interface RouteParams {
   id: string;
 }
-const applicationForm: string = '';
 
 const JobPostingPage: React.FC = () => {
   const history = useHistory();
@@ -15,7 +14,7 @@ const JobPostingPage: React.FC = () => {
   const id: number = parseInt(stringId.id, 10);
   const onError = useCallback(() => {
     history.push('/postings');
-  }, [])
+  }, [history])
   const { posting } = usePostingPostingById(id, onError);
 
   return (
@@ -25,8 +24,7 @@ const JobPostingPage: React.FC = () => {
           role={posting.title}
           subteam={posting.team}
           term={`${posting.termSeason} ${posting.termYear}`}
-          applicationForm={applicationForm}
-          deadline={moment(posting.deadline).format('MMMM D, h:mmA')}
+          deadline={moment.utc(posting.deadline).local().format('MMMM D, h:mmA')}
           description={posting.description}
           tasks={posting.tasks.map((task) => task.task)}
           requirements={posting.requirements.map((r) => r.requirement)}

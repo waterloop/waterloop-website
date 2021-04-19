@@ -24,6 +24,7 @@
     "@types/uuid": "^8.3.0",
     "axios": "^0.21.1",
     "cross-env": "^7.0.2",
+    "dotenv": "^8.2.0",
     "google-map-react": "^2.0.4",
     "google-maps-react": "^2.0.6",
     "moment": "^2.29.1",

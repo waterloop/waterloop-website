@@ -1,3 +1,4 @@
+import { config } from 'dotenv';
 import React from "react";
 import { Provider } from 'react-redux';
 import ReactDOM from "react-dom";
@@ -5,6 +6,7 @@ import "./theme/styles.scss";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import state from './state'
+config();
 
 ReactDOM.render(
   <Provider store={state}>
