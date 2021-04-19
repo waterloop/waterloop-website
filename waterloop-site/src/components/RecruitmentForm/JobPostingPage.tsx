@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import JobPosting from './JobPosting';
 import moment from 'moment';
-import { useParams, useHistory } from 'react-router';
+import { useParams, useHistory, Redirect } from 'react-router';
 import usePostingPostingById from 'hooks/posting-by-id';
 
 interface RouteParams {
@@ -16,6 +16,10 @@ const JobPostingPage: React.FC = () => {
     history.push('/postings');
   }, [history])
   const { posting } = usePostingPostingById(id, onError);
+
+  if (posting && (posting.closed || posting.deadline.getTime() <= Date.now())) {
+    return (<Redirect to='/recruitment' />);
+  }
 
   return (
     <div className="pageContainer">
