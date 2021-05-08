@@ -90,7 +90,7 @@ interface Props {
   image?: Image;
   name?: string;
   link?: string;
-  level?: 'Hypersonic' | 'Transonic' | 'Supersonic' | 'Sonic';
+  level?: string;
   dateJoined?: string;
   collaboration?: string;
   video?: string;

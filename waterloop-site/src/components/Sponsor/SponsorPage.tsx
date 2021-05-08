@@ -5,6 +5,7 @@ import SponsorComponent from './Sponsor';
 import SponsorModal from './SponsorModal';
 import useSponsors from 'hooks/sponsors';
 import { Sponsor } from 'sponsors';
+import { timestampMillisecToTermSeasonYear } from 'utils/sponsors/sponsor-utils'
 
 const TransonicSponsor = styled(SponsorComponent)`
   img {
@@ -45,7 +46,7 @@ const TransonicSponsor = styled(SponsorComponent)`
 
 const SponsorList: React.FC = () => {
   const { sponsors, sponsorTiers } = useSponsors();
-  const [sponsor, setSponsor] = React.useState<Sponsor | {}>({});
+  const [sponsor, setSponsor] = React.useState<Sponsor>();
   const [modalOpen, setModalOpen] = React.useState(false);
   const handelSponsorClick = React.useCallback(
     (s: Sponsor) => {
@@ -145,7 +146,16 @@ const SponsorList: React.FC = () => {
         onClose={() => {
           setModalOpen(false);
         }}
-        {...sponsor}
+        collaboration={sponsor?.contributions}
+        dateJoined={timestampMillisecToTermSeasonYear(sponsor?.joinDate ?? 0).termSeason + `${timestampMillisecToTermSeasonYear(sponsor?.joinDate ?? 0).termYear}`}
+        image={{
+          alt: "sponsor",
+          src: sponsor?.logoDir
+        }}
+        level={sponsorTiers.find(({id}) => id === sponsor?.typeId)?.type ?? ''}
+        link={sponsor?.website ?? ''}
+        name={sponsor?.name}
+        video={sponsor?.youtube}
       />
     </div>
   );
