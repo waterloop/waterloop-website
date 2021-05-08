@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from 'components/Button';
-import { PostingShortConverted } from 'state/postings/reducer';
+import { PostingShortConverted } from 'postings';
 
 interface Props {
   team: string;

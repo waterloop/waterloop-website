@@ -3,8 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import api from '../api';
 import * as postingActions from '../state/postings/actions';
 import * as postingSelectors from '../state/postings/selectors';
-import { PostingShortConverted } from 'state/postings/reducer';
-import { PostingShort } from 'api/postings';
+import { PostingShort, PostingShortConverted } from 'postings';
 
 const dateStringsToDate = (data: Omit<PostingShort, 'teamId'> & { team: string; }): PostingShortConverted => ({
   ...data,

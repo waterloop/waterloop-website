@@ -1,5 +1,5 @@
 import {AxiosResponse } from 'axios';
-import { Server } from './server';
+import { Server } from 'server';
 
 export interface Team {
   id:          number;
