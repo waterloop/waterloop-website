@@ -1,5 +1,5 @@
 import * as actionTypes from '../action-types';
-import { PostingLongConverted, PostingShortConverted } from './reducer';
+import { PostingLongConverted, PostingShortConverted } from 'postings';
 
 export const setPostings = (postings: PostingShortConverted[]) => ({
   type: actionTypes.POSTINGS_SET_POSTINGS,

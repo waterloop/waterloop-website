@@ -1,10 +1,6 @@
-import { PostingLong, PostingShort } from 'api/postings';
+import { PostingLongConverted, PostingShortConverted } from 'postings';
 import * as actionTypes from '../action-types';
 
-type Converted<T> = Omit<T, "teamId" | "deadline" | "lastUpdated"> & { team: string; deadline: Date; lastUpdated: Date; }
-
-export type PostingShortConverted = Converted<PostingShort>
-export type PostingLongConverted = Converted<PostingLong>
 
 interface PostingState {
   all: PostingShortConverted[];

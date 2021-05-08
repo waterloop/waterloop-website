@@ -1,7 +1,7 @@
-import { PostingLong } from 'api/postings';
+import { PostingLong } from 'postings';
 import { useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { PostingLongConverted } from 'state/postings/reducer';
+import { PostingLongConverted } from 'postings';
 import api from '../api';
 import * as postingActions from '../state/postings/actions';
 import * as postingSelectors from '../state/postings/selectors';
