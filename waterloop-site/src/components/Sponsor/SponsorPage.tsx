@@ -153,7 +153,7 @@ const SponsorList: React.FC = () => {
           .filter(sponsor => sponsorTiers.find(({id}) => id === sponsor.typeId)?.type  === 'Supporter')
           .map((supporter, i) => (
           <Grid key={i} container item md={3} xs={3} justify="center">
-            <h3>{supporter}</h3>
+            <h3>{supporter.name}</h3>
           </Grid>
         ))}
       </Grid>
