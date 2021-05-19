@@ -5,7 +5,7 @@ import SponsorComponent from './Sponsor';
 import SponsorModal from './SponsorModal';
 import useSponsors from 'hooks/sponsors';
 import { Sponsor } from 'sponsors';
-import { timestampMillisecToTermSeasonYear } from 'utils/sponsors/sponsor-utils'
+import { timestampMillisecToTermSeasonYear } from 'utils/sponsors/sponsor-utils';
 
 const TransonicSponsor = styled(SponsorComponent)`
   img {
@@ -140,6 +140,22 @@ const SponsorList: React.FC = () => {
               />
             </Grid>
           ))}
+      </Grid>
+      <h2>Supporters</h2>
+      <Grid
+        className="TierWrapper"
+        spacing={4}
+        container
+        alignItems="center"
+        justify="center"
+      >
+        {sponsors
+          .filter(sponsor => sponsorTiers.find(({id}) => id === sponsor.typeId)?.type  === 'Supporter')
+          .map((supporter, i) => (
+          <Grid key={i} container item md={3} xs={3} justify="center">
+            <h3>{supporter.name}</h3>
+          </Grid>
+        ))}
       </Grid>
       <SponsorModal
         open={modalOpen}
