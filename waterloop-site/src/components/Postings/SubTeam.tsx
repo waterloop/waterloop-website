@@ -1,10 +1,10 @@
 import React from 'react';
 import { Button } from 'components/Button';
-import { Posting } from '../../static/consts/postings';
+import { PostingShortConverted } from 'postings';
 
 interface Props {
   team: string;
-  postings: Posting[];
+  postings: PostingShortConverted[];
 }
 
 const SubTeam: React.FC<Props> = (props) => props.postings.length > 0 ? (
@@ -19,8 +19,8 @@ const SubTeam: React.FC<Props> = (props) => props.postings.length > 0 ? (
     </h3>
     {props.postings.length > 0 &&
       props.postings.map(
-        (posting: Posting) =>
-          posting.subteam === props.team && (
+        (posting) =>
+          posting.team === props.team && (
             <div className={'posting'}>
               <a
                 href={`/posting/${posting.id}`}
@@ -30,7 +30,7 @@ const SubTeam: React.FC<Props> = (props) => props.postings.length > 0 ? (
                   color: 'black',
                 }}
               >
-                {posting.role}
+                {posting.title}
               </a>
               <Button
                 backgroundColor="yellow"

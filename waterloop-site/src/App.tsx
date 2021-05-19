@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
+import { Route, Switch, BrowserRouter as Router, Redirect } from 'react-router-dom';
 
 import { NavBar, SideBar } from './components';
 import JobPostingPage from './components/RecruitmentForm/JobPostingPage';
@@ -74,6 +74,9 @@ class App extends React.Component<{}, State> {
             </Route>
             <Route path="/recruitment">
               <RecruitmentRouter />
+            </Route>
+            <Route path="/posting" exact>
+              <Redirect to='/recruitment'/>
             </Route>
             <Route path="/posting/:id">
               <JobPostingPage />

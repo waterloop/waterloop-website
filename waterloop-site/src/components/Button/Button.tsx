@@ -29,7 +29,7 @@ interface VariantProps {
   textColor?: null;
 }
 
-type Props = VariantProps | NonVariantProps;
+type Props = (VariantProps | NonVariantProps) & { className?: string };
 
 interface Variant {
   backgroundColor: BackgroundColor;
@@ -94,7 +94,7 @@ const Button: React.FC<Props> = (props) => {
   `;
 
   return (
-    <ButtonDiv className="ButtonDiv" onClick={props.onClick}>
+    <ButtonDiv className={`ButtonDiv ${props.className}`} onClick={props.onClick}>
       <Text className="ButtonText">{props.text}</Text>
     </ButtonDiv>
   );
