@@ -18,14 +18,25 @@ const usePostings = () => {
     async () => {
       try {
         const response = await api.postings.getPostings();
-        const teams = await api.teams.getTeams();
+        if (response.data[0].hasOwnProperty('team')) { 
+          return response
+            .data
+            .map(dateStringsToDate)
+            .filter((posting) => !posting.closed && posting.deadline.getTime() > Date.now());
+
+        }
+        
+        else { 
+          const teams = await api.teams.getTeams();
         if (teams?.data) {
           return response
             .data
             .map((item) => ({ ...item, team: teams.data.find((team) => team.id === item.teamId)?.teamName ?? 'Unable to get team' }))
             .map(dateStringsToDate)
             .filter((posting) => !posting.closed && posting.deadline.getTime() > Date.now());
+          }
         }
+        
       } catch (err) {
         if (process.env.NODE_ENV === 'development') {
           console.log(err);
