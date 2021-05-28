@@ -4,7 +4,15 @@ declare module "postings" {
     deadline: number;
     closed: number;
     teamId: number;
-    team?: string;
+    lastUpdated: number;
+    id: number;
+  }
+
+  export interface PostingShortWithTeamName  {
+    team: string;
+    title: string;
+    deadline: number;
+    closed: number;
     lastUpdated: number;
     id: number;
   }
@@ -25,7 +33,7 @@ declare module "postings" {
     tasks: Task[];
     info: Info[];
   }
-  
+
   export type PostingLongConverted = Converted<PostingLong>
 
   export interface Info {
