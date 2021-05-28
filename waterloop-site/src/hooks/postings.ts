@@ -18,10 +18,11 @@ const usePostings = () => {
     async () => {
       try {
         const response = await api.postings.getPostings();
-        if (response.data[0].hasOwnProperty('team')) { 
+        if (response.data[0].hasOwnProperty('team')) { //finds team property, however, need to do something about type 
           return response
             .data
-            .map(dateStringsToDate)
+            .map((item) => ({ ...item, team: item.team}))
+            .map(dateStringsToDate) //it's expecting data: Omit<PostingShort, 'teamId'> & { team: string; }): PostingShortConverted
             .filter((posting) => !posting.closed && posting.deadline.getTime() > Date.now());
 
         }

@@ -2,8 +2,8 @@ import { PostingLong, PostingShort } from 'postings';
 import { AxiosResponse } from 'axios';
 import { Server } from 'server';
 
-const getPostings = (server: Server) => (joinTeamName: boolean = false): Promise<AxiosResponse<PostingShort[]>> => server.get('/api/postings');
-const getPostingById = (server: Server) => (id: number, joinTeamName: boolean = false): Promise<AxiosResponse<PostingLong>> => server.get(`/api/postings/${id}`).then((res: AxiosResponse<PostingLong>) => {
+const getPostings = (server: Server) => (joinTeamName: boolean = false): Promise<AxiosResponse<PostingShort[]>> => server.get(`/api/postings${joinTeamName ? '?joinTeamName=true' : ''}`);
+const getPostingById = (server: Server) => (id: number, joinTeamName: boolean = false): Promise<AxiosResponse<PostingLong>> => server.get(`/api/postings/${id}${joinTeamName ? '?joinTeamName=true' : ''}`).then((res: AxiosResponse<PostingLong>) => {
   console.log(res);
   return res;
 });

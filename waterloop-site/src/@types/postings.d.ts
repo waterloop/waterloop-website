@@ -4,9 +4,11 @@ declare module "postings" {
     deadline: number;
     closed: number;
     teamId: number;
+    team?: string;
     lastUpdated: number;
     id: number;
   }
+
   type Converted<T> = Omit<T, "teamId" | "deadline" | "lastUpdated"> & { team: string; deadline: Date; lastUpdated: Date; }
 
   export type PostingShortConverted = Converted<PostingShort>
@@ -23,6 +25,7 @@ declare module "postings" {
     tasks: Task[];
     info: Info[];
   }
+  
   export type PostingLongConverted = Converted<PostingLong>
 
   export interface Info {
