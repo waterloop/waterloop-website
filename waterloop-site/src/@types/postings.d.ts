@@ -4,11 +4,19 @@ declare module "postings" {
     deadline: number;
     closed: number;
     teamId: number;
-    team?: string;
     lastUpdated: number;
     id: number;
   }
 
+  export interface PostingShortWithTeamName  {
+    teamName: string;
+    title: string;
+    deadline: number;
+    closed: number;
+    lastUpdated: number;
+    id: number;
+  }
+  
   type Converted<T> = Omit<T, "teamId" | "deadline" | "lastUpdated"> & { team: string; deadline: Date; lastUpdated: Date; }
 
   export type PostingShortConverted = Converted<PostingShort>
