@@ -4,6 +4,7 @@ import { Sponsors } from "components/SponsorsLanding";
 import { ImgJSON } from "components/SponsorsLanding";
 import { TextWithImage, MyProps } from "components/TextWithImage";
 import { ColumnBlock, Props } from "components/ColumnBlock";
+import { Blog } from "components/BlogLanding";
 import Text from "static/copy/Landing/TextWithImage.json";
 import ColText from "static/copy/Landing/ColumnBlock.json";
 import "../theme/styles.scss";
@@ -49,6 +50,10 @@ const Home: React.FC = () => (
     <div className="pageContainer">
       <div className="break"></div>
       <Sponsors data={imgJSON} />
+    </div>
+    <div className="pageContainer">
+      <div className="break"></div>
+      <Blog posts={{}}/>
     </div>
   </div>
 );

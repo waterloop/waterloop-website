@@ -1,4 +1,5 @@
 $mobile: 425px;
+$tablet: 800px;
 $yellow: #fed138;
 $navy: #232636;
 $white: #fefefe;
@@ -1194,6 +1195,7 @@ textarea {
   justify-content: center;
 }
 
+<<<<<<< HEAD
 .responsive-iframe {
   position: absolute;
   top: 0;
@@ -1202,4 +1204,66 @@ textarea {
   right: 0;
   width: 100%;
   height: 100%;
+=======
+.Block-Blog {
+  h2 a {
+    font-size: 18px;
+    font-weight: normal;
+    margin-left: 2rem;
+  }
+  .PostsBlock-Blog {
+    width: 100%;
+    display: inline-block;
+    .PostBlock-Blog {
+      display: inline-block;
+      margin-bottom: 25px;
+      transition: transform 250ms linear;
+      cursor: pointer;
+      .ContentBlock-Blog{
+        max-width: 300px;
+        margin: 0 auto;
+        border-radius: 10pt;
+        box-shadow: 0px 0px 8px 0px #ada8a8;
+        img {
+          height: 250px;
+          width: 100%;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+        }
+        .PostContent-Blog {
+          padding: 10px;
+          .PostTitle-Blog {
+            font-size: 18px;
+            font-weight: bold;
+            font-style: italic;
+            margin-bottom: 5px;
+          }
+          .PostText-Blog {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        }
+      }
+    }
+    .PostBlock-Blog:hover {
+      transform: translateY(-10px);
+    }
+  }
+  @media (min-width: $tablet + 1) {
+      .PostBlock-Blog {
+        width: 30%;
+      }
+  }
+  @media (min-width: $mobile + 1) and (max-width: $tablet) {
+    .PostBlock-Blog {
+      width: 50%;
+    }
+}
+@media (max-width: $mobile) {
+    .PostBlock-Blog {
+      width: 100%;
+    }
+}
+>>>>>>> 23f6b7c (Blog Styling for Main page)
 }
