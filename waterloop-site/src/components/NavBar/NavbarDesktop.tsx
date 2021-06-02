@@ -65,6 +65,9 @@ const NavBar: React.FC = () => (
       <Link to="/contact" title="Contact" text="Contact">
         <Contact />
       </Link>
+      <Link to="/blog" title="Blog" text="Blog">
+        <Contact />
+      </Link>
     </ListContainer>
   </NavbarContainer>
 );

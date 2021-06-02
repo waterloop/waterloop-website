@@ -13,6 +13,7 @@ import Sponsors from './pages/Sponsors';
 import RecruitmentRouter from 'pages/Recruitment/RecruitmentRouter';
 
 import 'typeface-ibm-plex-sans';
+import Blog from 'pages/Blog';
 
 interface State {
   width: number;
@@ -99,6 +100,9 @@ class App extends React.Component<{}, State> {
             </Route>
             <Route path="/posting/:id">
               <JobPostingPage />
+            </Route>
+            <Route path="/blog">
+              <Blog />
             </Route>
           </Switch>
           <Footer />

@@ -1211,12 +1211,15 @@ textarea {
     font-weight: normal;
     margin-left: 2rem;
   }
+}
+
+.Block-BlogPosts {
   .PostsBlock-Blog {
     width: 100%;
     display: inline-block;
     .PostBlock-Blog {
       display: inline-block;
-      margin-bottom: 25px;
+      margin-bottom: 50px;
       transition: transform 250ms linear;
       cursor: pointer;
       .ContentBlock-Blog{
@@ -1252,7 +1255,7 @@ textarea {
   }
   @media (min-width: $tablet + 1) {
       .PostBlock-Blog {
-        width: 30%;
+        width: 33%;
       }
   }
   @media (min-width: $mobile + 1) and (max-width: $tablet) {
