@@ -126,10 +126,9 @@ type MyProps = {
 class Sidebar extends React.Component<MyProps> {
   render(): ReactElement {
     return (
-      <div onTouchMove={(): void => {
-        this.props.handleClickSidebar(!this.props.sidebarOpen);
-      }}>
-        <SidebarContainer>
+        <SidebarContainer  onTouchMove={(): void => {
+          this.props.handleClickSidebar(!this.props.sidebarOpen);
+        }}>
           <IconYellow src={BlackLogoImg}></IconYellow>
           <StyledToggle
             className={this.props.sidebarOpen ? "open" : ""}
@@ -195,7 +194,6 @@ class Sidebar extends React.Component<MyProps> {
             </div>
           </ListContainer>
         </SidebarContainer>
-      </div>
     );
   }
 }
