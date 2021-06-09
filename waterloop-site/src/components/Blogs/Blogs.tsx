@@ -1,5 +1,6 @@
 import BlogPost from "components/BlogLanding/BlogList"
 import { Button } from "components/Button"
+import usePosts from "hooks/blogs"
 import React from "react"
 import styled from "styled-components"
 
@@ -61,41 +62,44 @@ const RecentPostText = styled.div`
     }
 `
 
-const Blogs: React.FC = () => (
-    <BlogPage>
-
-        <RecentPostsWrapper>
-            {
-                [0, 1].map(() => (
-                    <RecentPostDiv>
-                        <RecentImageDiv>
-                            <img className="img" src="https://picsum.photos/200/300" />
-                        </RecentImageDiv>
-                        <RecentPostText>
-                            <div className="PostTitle-Blog">The Competition</div>
-                            <div className="PostAuthor-Blog">Written by: John Doe</div>
-                            <div className="PostDescription-Blog">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas accusantium dolorem, beatae possimus nesciunt ab? Illum atque doloremque fugit ipsam quibusdam eveniet magnam quod, amet id obcaecati et odio praesentium.</div>
-                            <div className="PostReadButton-Blog"><Button
-                                backgroundColor="yellow"
-                                textColor="black"
-                                text="READ"
-                                onClick={(): Window | null => window.open('blog', '_self')}
-                            /></div>
-                        </RecentPostText>
-                    </RecentPostDiv>
-                ))}
-        </RecentPostsWrapper>
-
-        <div className="Block-BlogPosts">
-            <div className="PostsBlock-Blog">
+const Blogs: React.FC = () => {
+    const posts = usePosts();
+    console.log(posts)
+    return (
+        <BlogPage>
+            <RecentPostsWrapper>
                 {
-                    [0, 1, 2, 3, 4, 5, 6].map(d => (
-                        <BlogPost postId={1} />
-                    ))
-                }
+                    [0, 1].map(() => (
+                        <RecentPostDiv>
+                            <RecentImageDiv>
+                                <img className="img" src="https://picsum.photos/200/300" />
+                            </RecentImageDiv>
+                            <RecentPostText>
+                                <div className="PostTitle-Blog">The Competition</div>
+                                <div className="PostAuthor-Blog">Written by: John Doe</div>
+                                <div className="PostDescription-Blog">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas accusantium dolorem, beatae possimus nesciunt ab? Illum atque doloremque fugit ipsam quibusdam eveniet magnam quod, amet id obcaecati et odio praesentium.</div>
+                                <div className="PostReadButton-Blog"><Button
+                                    backgroundColor="yellow"
+                                    textColor="black"
+                                    text="READ"
+                                    onClick={(): Window | null => window.open('blog', '_self')}
+                                /></div>
+                            </RecentPostText>
+                        </RecentPostDiv>
+                    ))}
+            </RecentPostsWrapper>
+
+            <div className="Block-BlogPosts">
+                <div className="PostsBlock-Blog">
+                    {
+                        [0, 1, 2, 3, 4, 5, 6].map(d => (
+                            <BlogPost postId={1} />
+                        ))
+                    }
+                </div>
             </div>
-        </div>
-    </BlogPage>
-)
+        </BlogPage>
+    )
+}
 
 export default Blogs
