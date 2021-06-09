@@ -16,25 +16,31 @@ import 'typeface-ibm-plex-sans';
 
 interface State {
   width: number;
-  lock: boolean;
-};
+  sidebarOpen: boolean;
+}
 
 class App extends React.Component<{}, State> {
+  private sidebar = React.createRef<HTMLDivElement>();
+
   constructor(props = {}) {
     super(props);
     this.state = {
       width: window.innerWidth,
-      lock: false,
+      sidebarOpen: false,
     };
     this.handleWindowSizeChange = this.handleWindowSizeChange.bind(this);
+    this.handleClickSidebar = this.handleClickSidebar.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount(): void {
     window.addEventListener('resize', this.handleWindowSizeChange);
+    document.addEventListener('mousedown', this.handleClick);
   }
 
   componentWillUnmount(): void {
     window.removeEventListener('resize', this.handleWindowSizeChange);
+    document.removeEventListener('mousedown', this.handleClick);
   }
 
   handleWindowSizeChange(): void {
@@ -43,19 +49,32 @@ class App extends React.Component<{}, State> {
     });
   }
 
-  handleClick(closed: boolean): void {
-    this.setState({ lock: !closed });
+  // Open/close the sidebar when the toggle/X button or a link is clicked.
+  handleClickSidebar(open: boolean): void {
+    this.setState({ sidebarOpen: open });
+  }
+
+  // If an element besides the sidebar is clicked, close the sidebar.
+  handleClick(event: MouseEvent): void {
+    if (this.sidebar.current && !this.sidebar.current.contains(event.target as Node)) {
+      this.setState({ sidebarOpen: false });
+    }
   }
 
   render(): React.ReactElement {
     return (
-      <div className={this.state.lock ? 'app-lock' : ''}>
+      <div className={this.state.sidebarOpen ? 'app-lock' : ''}>
         <Router>
           {this.state.width > 425 ? (
             <NavBar />
           ) : (
-              <SideBar handleClick={this.handleClick.bind(this)} />
-            )}
+            <div ref={this.sidebar}>
+              <SideBar
+                sidebarOpen={this.state.sidebarOpen}
+                handleClickSidebar={this.handleClickSidebar}
+              />
+            </div>
+          )}
           <Switch>
             <Route exact path="/">
               <Home />

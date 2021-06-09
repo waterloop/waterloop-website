@@ -118,46 +118,35 @@ const ToggleLine = styled.div`
   }
 `;
 
-type MyState = {
-  toggleOpen: boolean;
-};
-
 type MyProps = {
-  handleClick: (arg1: boolean) => void;
+  sidebarOpen: boolean;
+  handleClickSidebar: (open: boolean) => void;
 };
 
-class Sidebar extends React.Component<MyProps, MyState> {
-  constructor(props: MyProps) {
-    super(props);
-    this.state = {
-      toggleOpen: false,
-    };
-  }
-
+class Sidebar extends React.Component<MyProps> {
   render(): ReactElement {
     return (
-      <div>
-        <SidebarContainer>
+        <SidebarContainer  onTouchMove={(): void => {
+          this.props.handleClickSidebar(!this.props.sidebarOpen);
+        }}>
           <IconYellow src={BlackLogoImg}></IconYellow>
           <StyledToggle
-            className={this.state.toggleOpen ? "open" : ""}
+            className={this.props.sidebarOpen ? "open" : ""}
             onClick={(): void => {
-              this.setState({ toggleOpen: !this.state.toggleOpen })
-              this.props.handleClick(this.state.toggleOpen);
+              this.props.handleClickSidebar(!this.props.sidebarOpen);
             }}
           >
-            <ToggleLine className={this.state.toggleOpen ? "open1" : ""} />
-            <ToggleLine className={this.state.toggleOpen ? "open2" : ""} />
-            <ToggleLine className={this.state.toggleOpen ? "open3" : ""} />
+            <ToggleLine className={this.props.sidebarOpen ? "open1" : ""} />
+            <ToggleLine className={this.props.sidebarOpen ? "open2" : ""} />
+            <ToggleLine className={this.props.sidebarOpen ? "open3" : ""} />
           </StyledToggle>
-          <ListContainer className={this.state.toggleOpen ? "" : "closed"}>
+          <ListContainer className={this.props.sidebarOpen ? "" : "closed"}>
             <div>
               <IconBlack src={Waterlooplogo}></IconBlack>
               <Link
                 to="/"
                 onClick={(): void => {
-                  this.setState({ toggleOpen: false });
-                  this.props.handleClick(this.state.toggleOpen);
+                  this.props.handleClickSidebar(false);
                 }}
               >
                 Home
@@ -167,8 +156,7 @@ class Sidebar extends React.Component<MyProps, MyState> {
               <Link
                 to="/the-flock"
                 onClick={(): void => {
-                  this.setState({ toggleOpen: false });
-                  this.props.handleClick(this.state.toggleOpen);
+                  this.props.handleClickSidebar(false);
                 }}
               >
                 Flock
@@ -178,8 +166,7 @@ class Sidebar extends React.Component<MyProps, MyState> {
               <Link
                 to="/team"
                 onClick={(): void => {
-                  this.setState({ toggleOpen: false });
-                  this.props.handleClick(this.state.toggleOpen);
+                  this.props.handleClickSidebar(false);
                 }}
               >
                 Team
@@ -189,8 +176,7 @@ class Sidebar extends React.Component<MyProps, MyState> {
               <Link
                 to="/sponsors"
                 onClick={(): void => {
-                  this.setState({ toggleOpen: false });
-                  this.props.handleClick(this.state.toggleOpen);
+                  this.props.handleClickSidebar(false);
                 }}
               >
                 Sponsors
@@ -200,8 +186,7 @@ class Sidebar extends React.Component<MyProps, MyState> {
               <Link
                 to="/recruitment"
                 onClick={(): void => {
-                  this.setState({ toggleOpen: false });
-                  this.props.handleClick(this.state.toggleOpen);
+                  this.props.handleClickSidebar(false);
                 }}
               >
                 Join Us
@@ -209,7 +194,6 @@ class Sidebar extends React.Component<MyProps, MyState> {
             </div>
           </ListContainer>
         </SidebarContainer>
-      </div>
     );
   }
 }
