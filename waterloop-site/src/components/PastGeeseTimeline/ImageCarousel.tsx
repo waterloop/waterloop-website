@@ -1,13 +1,14 @@
 import React from "react";
 import { useSwipeable } from "react-swipeable";
 import styled from "styled-components";
-import useGeeseImages from "./hooks/geese-images";
+import { useGeeseImages, imgs } from "./hooks/geese-images";
 import "../../theme/styles.scss";
 
 const Name = styled.div`
   text-align: center;
+  font-size: 24px;
   color: #c4c4c4;
-  padding-bottom: 10px;
+  padding: 10px 0;
   @media only screen and (min-width: 900px) {
     display: flex;
   }
@@ -17,8 +18,8 @@ const Description = styled.div`
   display: flex;
   align-items: center;
   text-align: left;
-  width: 80%;
-
+  max-width: 1250px;
+  height: 100px;
   color: #010101;
 
   @media only screen and (max-width: 425px) {
@@ -59,14 +60,14 @@ const Container = styled.div`
   display: flex;
   padding: 10px;
   width: 100%;
-  justifyContent: center;
-  alignItems: center;
+  justify-content: center;
+  align-items: center;
 `;
 
 const DescriptionWrapper = styled.div`
   display: flex;
-  alignItems: center;
-  flexDirection: column;
+  align-items: center;
+  flex-direction: column;
 `;
 
 const MobileContainer = styled.div`
@@ -78,8 +79,44 @@ const MobileContainer = styled.div`
   }
 `;
 
+const Timeline = styled.div`
+  align-items: center;
+  width: 100%;
+  margin-top: 48px;
+`;
+
+const Increments = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  z-index: 99;
+`;
+
+const HorizontalLine = styled.hr`
+  width: 100%;
+  background-color: black;
+  height: 1px;
+`;
+
+const IncrementText = styled.button`
+  font-size: 16px;
+  margin: 0;
+  border: none;
+  background-color: white;
+  :hover {
+    cursor: pointer;
+  }
+`
+
+// const IncrementTextChosen = styled.p`
+//   font-size: 16px;
+//   margin: 0;
+//   font-weight: 500;
+//   color: #fed138; 
+// `
+
 const ImageCarousel: React.FC = () => {
-  const { image, name, desc, cycleLeft, cycleRight } = useGeeseImages();
+  const { image, name, desc, cycleLeft, cycleRight, selectGoose } = useGeeseImages();
 
   const swipeHandlers = useSwipeable({
     onSwipedLeft: cycleLeft,
@@ -111,6 +148,14 @@ const ImageCarousel: React.FC = () => {
           </ArrowMobile>
         </MobileContainer>
       </DescriptionWrapper>
+      <Timeline>
+      <HorizontalLine />
+        <Increments>
+          {imgs.map((goose, i) => { 
+            return <IncrementText onClick={() => selectGoose(i)}>{goose.name.replace('Goose ','')}</IncrementText>;
+          })} 
+        </Increments>
+      </Timeline>
     </div>
   );
 };

@@ -308,7 +308,8 @@ textarea {
 
 .featComp {
   display: flex;
-  width: 100%;
+  max-width: 1250px;
+  // width: 100%;
   height: auto;
   padding-bottom: 40px;
   flex-direction: row-reverse;
@@ -794,7 +795,7 @@ textarea {
 }
 
 .GooseRoster-Img {
-  width: 77vw;
+  width: 70vw; //changed b/c why is it so big in comparison to margins?
 
   @media screen and (max-width: $mobile) {
     display: block;
