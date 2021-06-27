@@ -15,14 +15,16 @@ interface GooseImage {
   image: string;
   name: string;
   desc: string;
+  imgs: Image[];
+  currentGoose: number;
   cycleRight: React.EffectCallback;
   cycleLeft: React.EffectCallback;
-  selectGoose: any;
+  selectGoose: (index: number) => () => void;
 }
 
 type GooseImagesHook = () => GooseImage;
 
-export const imgs: Image[] = [
+const imgs: Image[] = [
   {
     imgFile: goose1,
     name: 'Goose I',
@@ -49,7 +51,7 @@ export const imgs: Image[] = [
   },
 ];
 
-export const useGeeseImages: 
+const useGeeseImages: 
   GooseImagesHook = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0); 
 
@@ -59,7 +61,7 @@ export const useGeeseImages:
   );
 
   const cycleLeft = useCallback(
-    () =>
+    () => 
       setCurrentIndex(
         currentIndex - 1 >= 0 ? currentIndex - 1 : imgs.length - 1
       ),
@@ -67,18 +69,25 @@ export const useGeeseImages:
   );
 
         
-  const selectGoose = (index: number) => 
-    setCurrentIndex(index)
+  const selectGoose = useCallback(
+    (index: number) => () => 
+    setCurrentIndex(
+      index
+    ),
+  [setCurrentIndex]
+  );
     
   return {
     image: imgs[currentIndex].imgFile,
     name: imgs[currentIndex].name,
     desc: imgs[currentIndex].desc,
+    imgs: imgs,
+    currentGoose: currentIndex,
     cycleRight,
     cycleLeft,
     selectGoose,
   };
 };
 
-
+export default useGeeseImages;
 
