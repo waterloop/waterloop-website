@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 
 import goose1 from '../../../static/img/pgimgs/goose1.png';
 import goose2 from '../../../static/img/pgimgs/goose2.png';
@@ -15,8 +15,11 @@ interface GooseImage {
   image: string;
   name: string;
   desc: string;
+  imgs: Image[];
+  currentGoose: number;
   cycleRight: React.EffectCallback;
   cycleLeft: React.EffectCallback;
+  selectGoose: (index: number) => () => void;
 }
 
 type GooseImagesHook = () => GooseImage;
@@ -48,8 +51,9 @@ const imgs: Image[] = [
   },
 ];
 
-const useGeeseImages: GooseImagesHook = () => {
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
+const useGeeseImages: 
+  GooseImagesHook = () => {
+  const [currentIndex, setCurrentIndex] = useState<number>(0); 
 
   const cycleRight = useCallback(
     () => setCurrentIndex((currentIndex + 1) % imgs.length),
@@ -57,20 +61,33 @@ const useGeeseImages: GooseImagesHook = () => {
   );
 
   const cycleLeft = useCallback(
-    () =>
+    () => 
       setCurrentIndex(
         currentIndex - 1 >= 0 ? currentIndex - 1 : imgs.length - 1
       ),
     [setCurrentIndex, currentIndex]
   );
 
+        
+  const selectGoose = useCallback(
+    (index: number) => () => 
+    setCurrentIndex(
+      index
+    ),
+  [setCurrentIndex]
+  );
+    
   return {
     image: imgs[currentIndex].imgFile,
     name: imgs[currentIndex].name,
     desc: imgs[currentIndex].desc,
+    imgs: imgs,
+    currentGoose: currentIndex,
     cycleRight,
     cycleLeft,
+    selectGoose,
   };
 };
 
 export default useGeeseImages;
+

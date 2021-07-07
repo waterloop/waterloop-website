@@ -10,10 +10,12 @@ import "../theme/styles.scss";
 
 const PastGeeseTimeline = styled(UnstyledPastGeeseTimeline)``;
 
-const Goose5 = [
-  Goose1,
-  Goose2,
-];
+const Container = styled.div`
+  max-width: 1080px;
+  margin: 0 auto;
+`;
+
+const Goose5 = [Goose1, Goose2];
 
 const Flock: React.FC = () => (
   <div>
@@ -24,17 +26,18 @@ const Flock: React.FC = () => (
     ></Hero>
     <div id={"#flock"}></div>
     <div className="pageContainer">
-      <GooseRoster
-        heading="Goose V"
-        description="Our 'flock' of Hyperloop pods has developed in sophistication over 5 iterations of research and development. Take a look at the major features of our latest pod and the history of its development!"
-        imgUrls={Goose5}
-      >
-      </GooseRoster>
-      <div className="break"></div>
-      <h2> Features </h2>
-      <SimpleFeatures />
-      <div className="break"></div>
-      <PastGeeseTimeline />
+      <Container>
+        <GooseRoster
+          heading="Goose V"
+          description="Our 'flock' of Hyperloop pods has developed in sophistication over 5 iterations of research and development. Take a look at the major features of our latest pod and the history of its development!"
+          imgUrls={Goose5}
+        ></GooseRoster>
+        <div className="break"></div>
+        <h2> Features </h2>
+        <SimpleFeatures />
+        <div className="break"></div>
+        <PastGeeseTimeline />
+      </Container>
     </div>
   </div>
 );
