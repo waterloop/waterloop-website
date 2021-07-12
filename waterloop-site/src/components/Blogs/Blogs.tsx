@@ -64,20 +64,24 @@ const RecentPostText = styled.div`
 
 const Blogs: React.FC = () => {
     const posts = usePosts();
-    console.log(posts)
+    posts.posts.sort((a,b) => {
+        return new Date(b.date).valueOf() - new Date(a.date).valueOf();
+    });
+    const recent = posts.posts.length > 2 ? posts.posts.slice(0,2) : posts.posts
+    const rest = posts.posts.length > 2 ? posts.posts.slice(2,) : []
     return (
         <BlogPage>
             <RecentPostsWrapper>
                 {
-                    [0, 1].map(() => (
+                    recent.map((post) => (
                         <RecentPostDiv>
                             <RecentImageDiv>
-                                <img className="img" src="https://picsum.photos/200/300" />
+                                <img className="img" src={post.image} />
                             </RecentImageDiv>
                             <RecentPostText>
-                                <div className="PostTitle-Blog">The Competition</div>
-                                <div className="PostAuthor-Blog">Written by: John Doe</div>
-                                <div className="PostDescription-Blog">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas accusantium dolorem, beatae possimus nesciunt ab? Illum atque doloremque fugit ipsam quibusdam eveniet magnam quod, amet id obcaecati et odio praesentium.</div>
+                                <div className="PostTitle-Blog">{post.title}</div>
+                                <div className="PostAuthor-Blog">Written by: {post.author}</div>
+                                <div className="PostDescription-Blog">{post.summary}</div>
                                 <div className="PostReadButton-Blog"><Button
                                     backgroundColor="yellow"
                                     textColor="black"
@@ -92,8 +96,8 @@ const Blogs: React.FC = () => {
             <div className="Block-BlogPosts">
                 <div className="PostsBlock-Blog">
                     {
-                        [0, 1, 2, 3, 4, 5, 6].map(d => (
-                            <BlogPost postId={1} />
+                        rest.map(d => (
+                            <BlogPost postId={d.id} />
                         ))
                     }
                 </div>
