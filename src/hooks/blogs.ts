@@ -7,7 +7,7 @@ import * as blogActions from "../state/blog/actions";
 const getBlogPosts = async () => {
     try {
         const response = await api.blogs.getBlogPosts()
-        return response.data;
+        return response.data.posts;
     } catch(error) {
         if (process.env.NODE_ENV === 'development') {
             console.log(error)
