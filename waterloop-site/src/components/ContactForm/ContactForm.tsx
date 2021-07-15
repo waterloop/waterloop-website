@@ -1,8 +1,42 @@
 import React from 'react';
+import styled from  'styled-components';
 import { Button } from 'components/Button';
 import '../../theme/styles.scss';
 import { ReactComponent as CheckSVG} from '../../static/img/assets/mdi_check_circle.svg';
 import hasKey from '../../utils/hasKey';
+
+
+const Label = styled.label`
+  font-family: IBM Plex Sans;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 42px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #010101;
+
+
+`;
+
+const Input = styled.input`
+  background: #F4F4F4;
+  width: calc(100% - 15px);
+  height: 30px;
+  border: none;
+`;
+
+const Header = styled.h1`
+  font-family: IBM Plex Sans;
+  font-size: 36px;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 47px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #010101;
+
+`;
 
 interface ContactFormProps {
   title: string;
@@ -193,7 +227,7 @@ class ContactUsForm extends React.Component<
           style={this.formStyle}
           onSubmit={this.onFormSubmit}
         >
-          <h3>{this.props.title}</h3>
+          <Header>{this.props.title}</Header>
           <div>
             <p>{this.props.desc}</p>
           </div>
@@ -201,8 +235,8 @@ class ContactUsForm extends React.Component<
           {this.renderServerError()}
           <div className="contact-form-row">
             <div className="contactForm-InputBlockLeft">
-              <label htmlFor="name">Name</label>
-              <input
+              <Label htmlFor="name">Name</Label>
+              <Input
                 name="name"
                 id="name"
                 value={this.state.formKey.name}
@@ -210,8 +244,8 @@ class ContactUsForm extends React.Component<
               />
             </div>
             <div className="contactForm-InputBlockRight">
-              <label htmlFor="email">Email</label>
-              <input
+              <Label htmlFor="email">Email</Label>
+              <Input
                 id="email"
                 name="email"
                 value={this.state.formKey.email}
@@ -220,7 +254,7 @@ class ContactUsForm extends React.Component<
             </div>
           </div>
           <div className="contact-form-message">
-            <label htmlFor="message">Message</label>
+            <Label htmlFor="message">Message</Label>
             <textarea
               id="message"
               name="message"
