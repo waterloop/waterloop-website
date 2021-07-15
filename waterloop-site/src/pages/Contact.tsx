@@ -4,6 +4,7 @@ import { ContactForm } from "components/ContactForm";
 import Hero from "components/Hero/General";
 // import { MAP } from "../config/map";
 import "../theme/styles.scss";
+import NewsletterSignUpForm from "components/NewsletterSignUpForm";
 
 const Contact: React.FC = () => (
   <div>
@@ -22,19 +23,18 @@ const Contact: React.FC = () => (
           desc="Want to get in touch? Submit this form or drop us a message at contact@waterloop.ca"
         ></ContactForm>
 
-        <ContactForm
-          title = "Sign Up for our Newsletter"
-          desc = "Want to sign up for our newsletter? Sign up for the form below"
-          ></ContactForm>
+        <NewsletterSignUpForm/>
 
         <div className="locationContainer">
           <h3>Visit Us</h3>
-          <p>
-            Engineering 5                     Mon - Fri: 9 am - 5 pm
-            200 University Ave W.             Sat - Sun: Closed
-            Waterloo, ON
-            N2L 3G5
-          </p>
+          <table>
+            <tbody>
+              <tr><td>Engineering 5</td>                     <td>Mon - Fri: 9 am - 5 pm</td></tr>
+              <tr><td>200 University Ave W.</td>             <td>Sat - Sun: Closed</td></tr>
+              <tr>Waterloo, ON</tr>
+              <tr>N2L 3G5</tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

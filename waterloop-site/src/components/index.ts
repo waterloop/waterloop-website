@@ -15,3 +15,4 @@ export * from './TeamsDisplayer';
 export * from './TextWithImage';
 export * from './ColumnBlock';
 export * from './Postings';
+export * from './NewsletterSignUpForm';

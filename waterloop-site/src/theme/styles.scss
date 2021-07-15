@@ -819,11 +819,6 @@ textarea {
   align-self: center;
   width: 80%;
   margin-bottom: 4vh;
-  label {
-    margin: 10px 0 0 0;
-    color: #474747;
-    font-size: 12px;
-  }
 
   > form {
     width: 100%;
@@ -832,17 +827,6 @@ textarea {
   > form > p {
     font-size: 18px;
     margin: 0 auto 15px;
-  }
-  input {
-    margin-top: 5px;
-    width: calc(98% - 10px);
-    height: 30px;
-    background-color: $light-gray;
-    font-size: 15px;
-    border: none;
-    border-radius: 5px;
-    padding: 0 10px;
-    color: $navy;
   }
 
   @media (max-width: $mobile) {
