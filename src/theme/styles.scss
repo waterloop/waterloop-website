@@ -1302,10 +1302,10 @@ p {
 .Block-BlogPosts {
   .PostsBlock-Blog {
     width: 100%;
-    display: inline-block;
+    // display: inline-block;
     .PostBlock-Blog {
-      display: inline-block;
-      margin-bottom: 50px;
+      display: inline-grid;
+      margin: 20px 0px;
       transition: transform 250ms linear;
       cursor: pointer;
       .ContentBlock-Blog{
@@ -1321,6 +1321,7 @@ p {
         }
         .PostContent-Blog {
           padding: 10px;
+          height: 200px;
           .PostTitle-Blog {
             font-size: 18px;
             font-weight: bold;
@@ -1329,7 +1330,6 @@ p {
           }
           .PostText-Blog {
             font-size: 14px;
-            margin-bottom: 10px;
         }
 
         }
@@ -1342,11 +1342,17 @@ p {
   @media (min-width: ($tablet + 1)) {
       .PostBlock-Blog {
         width: 33%;
+        .ContentBlock-Blog {
+          width: 95%;
+        }
       }
   }
   @media (min-width: ($mobile + 1)) and (max-width: $tablet) {
     .PostBlock-Blog {
       width: 50%;
+      .ContentBlock-Blog {
+        width: 95%;
+      }
     }
 }
 @media (max-width: $mobile) {

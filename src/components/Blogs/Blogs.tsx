@@ -67,8 +67,15 @@ const Blogs: React.FC = () => {
     posts.posts.sort((a,b) => {
         return new Date(b.date).valueOf() - new Date(a.date).valueOf();
     });
-    const recent = posts.posts.length > 2 ? posts.posts.slice(0,2) : posts.posts
-    const rest = posts.posts.length > 2 ? posts.posts.slice(2,) : []
+    let rest: any[] = []
+    let recent: any[] = []
+    if (window.screen.width > 760){
+        recent = posts.posts.length > 2 ? posts.posts.slice(0,2) : posts.posts
+        rest = posts.posts.length > 2 ? posts.posts.slice(2,) : []
+    } else {
+        rest = posts.posts
+    }
+    
     return (
         <BlogPage>
             <RecentPostsWrapper>
@@ -86,7 +93,7 @@ const Blogs: React.FC = () => {
                                     backgroundColor="yellow"
                                     textColor="black"
                                     text="READ"
-                                    onClick={(): Window | null => window.open('blog', '_self')}
+                                    onClick={(): Window | null => window.open(post.link, '_blank')}
                                 /></div>
                             </RecentPostText>
                         </RecentPostDiv>
@@ -97,7 +104,7 @@ const Blogs: React.FC = () => {
                 <div className="PostsBlock-Blog">
                     {
                         rest.map(d => (
-                            <BlogPost postId={d.id} />
+                            <BlogPost post={d} />
                         ))
                     }
                 </div>
