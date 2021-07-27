@@ -17,7 +17,7 @@ const BlogLanding: React.FC<Props> = props => {
             <div className="PostsBlock-Blog">
                 {
                     recent.map(d => (
-                        <BlogPost postId={d.id} />
+                        <BlogPost post={d} key={d.id}/>
                     ))
                 }
             </div>
