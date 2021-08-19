@@ -25,7 +25,6 @@ const SignUpButton = styled(Button)`
 
 const Recruitment: React.FC = () =>{
   const { postings } = usePostings();
-  console.log(postings);
   return (
     <>
       <Hero
