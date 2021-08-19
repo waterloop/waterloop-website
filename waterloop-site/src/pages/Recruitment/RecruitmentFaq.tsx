@@ -23,9 +23,7 @@ const RecruitmentFaq = () => {
         <li><strong>Unparalleled mentorship:</strong>from the moment you submit your application, subteam leads will know your name and ensure you have a good experience. We will prepare a term-long project according to your skills and experience, give you feedback, and mentor you directly to ensure your success on the team. </li>
         <li><strong>Opportunity to make a real impact in a rapidly developing field:</strong>from being the first team to implement levitation, to building the very first Hyperloop test track in North America, innovation runs deep in our team culture. Other teams follow competition rulebooks, we are literally writing our own rulebook.</li>
         <li><strong>Close-knit community:</strong>when you spend hours upon hours working together towards a singular goal, you will easily become friends with your teammates. We have built a fantastic community of talented and hard-working students.</li>
-
       </ul>
-
       <h3>Why isn’t Waterloop doing open recruitment like the other design teams at UW?</h3>
       <ul>
         <li>We run a slightly different recruitment structure to many other teams. Ahead of each term, Waterloop team leads spend time planning out all the work that will be done by each subteam. We divide everything into assignable projects and small groups, and members take strong ownership of their work. By pre-assigning each member and new recruit to a project, everyone is matched according to their time commitment, skills and interests.</li>
