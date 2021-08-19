@@ -18,6 +18,13 @@ const FlexContainer = styled.div`
   flex-direction: column;
 `;
 
+const VideoContainer = styled.div`
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+`;
+
 const SignUpButton = styled(Button)`
   width: 128px;
 `;
@@ -39,6 +46,10 @@ const Recruitment: React.FC = () =>{
           textPos={"alternate"}
           imgData={imgData}
         ></TextWithImage>
+        <div className="break"></div>
+        <VideoContainer>
+          <iframe className="responsive-iframe" title="waterloop recruiting ad" src="https://drive.google.com/file/d/1E_-dDqZU5V1IR0R6A3Rmxq6SZwOIfOga/preview" allow="autoplay"></iframe>
+        </VideoContainer>
         <div className="break"></div>
         {postings.length > 0 ? (
           <>
