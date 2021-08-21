@@ -46,6 +46,8 @@ const JobPostingPage: React.FC = () => {
           tasks={posting.tasks.map((task) => task.task)}
           requirements={posting.requirements.map((r) => r.requirement)}
           additional={posting.info.map((i) => i.info)}
+          recommendedSkills={posting.recommendedSkills.map((i) => i.recommendedSkill)}
+          skillsToBeLearned={posting.skillsToBeLearned.map((i) => i.skillToBeLearned)}
         />
       )}
     </div>

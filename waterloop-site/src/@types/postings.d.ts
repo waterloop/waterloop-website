@@ -16,7 +16,7 @@ declare module "postings" {
     lastUpdated: number;
     id: number;
   }
-  
+
   type Converted<T> = Omit<T, "teamId" | "deadline" | "lastUpdated"> & { team: string; deadline: Date; lastUpdated: Date; }
 
   export type PostingShortConverted = Converted<PostingShort>
@@ -32,8 +32,10 @@ declare module "postings" {
     requirements: Requirement[];
     tasks: Task[];
     info: Info[];
+    skillsToBeLearned: SkillToBeLearned[];
+    recommendedSkills: RecommendedSkills[];
   }
-  
+
   export type PostingLongConverted = Converted<PostingLong>
 
   export interface Info {
@@ -49,5 +51,15 @@ declare module "postings" {
   export interface Task {
     task: string;
     id: number;
+  }
+
+  export interface SkillToBeLearned {
+    id: number;
+    skillToBeLearned: string;
+  }
+
+  export interface RecommendedSkill {
+    id: number;
+    recommendedSkill: string;
   }
 }
