@@ -12,6 +12,8 @@ type JobPostingProps = {
   tasks: string[];
   requirements: string[];
   additional: string[];
+  recommendedSkills: string[];
+  skillsToBeLearned: string[];
   // termList: [string, string, string, string, string];
 };
 
@@ -71,8 +73,28 @@ const JobPosting: React.FC<JobPostingProps> = (props) => (
       <>
         <h3>Additional info:</h3>
         <ul>
-          {props.additional.map((task: string) => (
-            <li>{task}</li>
+          {props.additional.map((info: string) => (
+            <li>{info}</li>
+          ))}
+        </ul>
+      </>
+    )}
+    {props.skillsToBeLearned.length > 0 && (
+      <>
+        <h3>Skills to be Learned:</h3>
+        <ul>
+          {props.skillsToBeLearned.map((skillToBeLearned: string) => (
+            <li>{skillToBeLearned}</li>
+          ))}
+        </ul>
+      </>
+    )}
+    {props.recommendedSkills.length > 0 && (
+      <>
+        <h3>Recommended Skills:</h3>
+        <ul>
+          {props.recommendedSkills.map((recommendedSkill: string) => (
+            <li>{recommendedSkill}</li>
           ))}
         </ul>
       </>
