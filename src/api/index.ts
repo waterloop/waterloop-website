@@ -10,5 +10,5 @@ export default {
   teams: teams(server),
   sponsors: sponsors(server),
   newsletter: newsletter(server),
-  blogs:  blogs(server)
+  blogs: blogs(server)
 };

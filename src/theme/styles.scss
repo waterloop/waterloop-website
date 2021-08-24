@@ -5,7 +5,10 @@ $navy: #232636;
 $white: #fefefe;
 $light-gray: #f4f4f4;
 $black: #010101;
+<<<<<<< HEAD:src/theme/styles.scss
 $black2: #333333;
+=======
+>>>>>>> a9f818ff0 (rebased, fixed missing typing):waterloop-site/src/theme/styles.scss
 $font-family-primary: 'IBM Plex Sans';
 
 /*-----------------------------
@@ -98,7 +101,12 @@ h6 {
 }
 
 code {
+<<<<<<< HEAD:src/theme/styles.scss
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+=======
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+>>>>>>> a9f818ff0 (rebased, fixed missing typing):waterloop-site/src/theme/styles.scss
 }
 
 .white-text {
@@ -1295,20 +1303,16 @@ p {
     font-size: 18px;
     font-weight: normal;
     margin-left: 2rem;
-    cursor: pointer;
   }
-}
-
-.Block-BlogPosts {
   .PostsBlock-Blog {
     width: 100%;
-    // display: inline-block;
+    display: inline-block;
     .PostBlock-Blog {
-      display: inline-grid;
-      margin: 20px 0px;
+      display: inline-block;
+      margin-bottom: 25px;
       transition: transform 250ms linear;
       cursor: pointer;
-      .ContentBlock-Blog{
+      .ContentBlock-Blog {
         max-width: 300px;
         margin: 0 auto;
         border-radius: 10pt;
@@ -1321,7 +1325,6 @@ p {
         }
         .PostContent-Blog {
           padding: 10px;
-          height: 200px;
           .PostTitle-Blog {
             font-size: 18px;
             font-weight: bold;
@@ -1330,8 +1333,8 @@ p {
           }
           .PostText-Blog {
             font-size: 14px;
-        }
-
+            margin-bottom: 10px;
+          }
         }
       }
     }
@@ -1350,9 +1353,6 @@ p {
   @media (min-width: ($mobile + 1)) and (max-width: $tablet) {
     .PostBlock-Blog {
       width: 50%;
-      .ContentBlock-Blog {
-        width: 95%;
-      }
     }
   }
   @media (max-width: $mobile) {
