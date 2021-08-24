@@ -1,9 +1,9 @@
+import { Posts } from "blogs"
 import BlogPost from "components/BlogLanding/BlogList"
 import { Button } from "components/Button"
 import usePosts from "hooks/blogs"
 import React from "react"
 import styled from "styled-components"
-
 
 const BlogPage = styled.div`
 `
@@ -64,7 +64,7 @@ const RecentPostText = styled.div`
 
 const Blogs: React.FC = () => {
     const posts = usePosts();
-    posts.posts.sort((a,b) => {
+    posts.posts.sort((a:Posts,b:Posts) => {
         return new Date(b.date).valueOf() - new Date(a.date).valueOf();
     });
     let rest: any[] = []

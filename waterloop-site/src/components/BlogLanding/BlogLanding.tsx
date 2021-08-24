@@ -1,6 +1,7 @@
 import React from 'react';
 import BlogPost from './BlogList';
 import usePosts from "hooks/blogs"
+import { Posts } from 'blogs';
 
 interface Props {
     posts: {}
@@ -16,7 +17,7 @@ const BlogLanding: React.FC<Props> = props => {
             <h2>Our Blogs<a onClick={(): Window | null => window.open('blog', '_self')}><u>Read All &gt;</u></a></h2>
             <div className="PostsBlock-Blog">
                 {
-                    recent.map(d => (
+                    recent.map((d:Posts) => (
                         <BlogPost post={d} key={d.id}/>
                     ))
                 }

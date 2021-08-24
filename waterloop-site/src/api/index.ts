@@ -9,9 +9,6 @@ export default {
   postings: postings(server),
   teams: teams(server),
   sponsors: sponsors(server),
-<<<<<<< HEAD
-  newsletter: newsletter(server)
-=======
-  blogs:  blogs(server)
->>>>>>> 6b75daf (Hooks Integrated)
+  newsletter: newsletter(server),
+  blogs: blogs(server)
 };
