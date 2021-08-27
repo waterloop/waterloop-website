@@ -9,7 +9,7 @@ const Postings: React.FC = () => {
   const { postings } = usePostings();
   const { teams } = useTeams();
   // Move the "Executive" subteam to the front of the array
-  const executiveIdx = teams.findIndex((teams) => teams.teamName == 'Executive');
+  const executiveIdx = teams.findIndex((teams) => teams.teamName === 'Executive');
   teams.push(...teams.splice(0, executiveIdx));
 
   return (
