@@ -1,8 +1,8 @@
-import React from "react";
-import { useSwipeable } from "react-swipeable";
-import styled from "styled-components";
-import useGeeseImages from "./hooks/geese-images";
-import "../../theme/styles.scss";
+import React from 'react';
+import { useSwipeable } from 'react-swipeable';
+import styled from 'styled-components';
+import useGeeseImages from './hooks/geese-images';
+import '../../theme/styles.scss';
 
 const Name = styled.div`
   text-align: center;
@@ -12,7 +12,7 @@ const Name = styled.div`
   // @media only screen and (min-width: 900px) {
   //   display: flex;
   // }
-`;  
+`;
 
 const Description = styled.div`
   display: flex;
@@ -24,7 +24,7 @@ const Description = styled.div`
 
   @media only screen and (max-width: 425px) {
     width: 100%;
-    height:100%;
+    height: 100%;
     padding-bottom: 20px;
   }
 `;
@@ -82,7 +82,6 @@ const MobileContainer = styled.div`
   }
 `;
 
-
 const Timeline = styled.div`
   align-items: center;
   width: 100%;
@@ -110,7 +109,7 @@ const IncrementText = styled.button`
   :hover {
     cursor: pointer;
   }
-`
+`;
 
 const IncrementTextChosen = styled.button`
   font-size: 20px;
@@ -120,10 +119,9 @@ const IncrementTextChosen = styled.button`
   :hover {
     cursor: pointer;
   }
-    font-weight: 800;
-    color: #fed138; 
-`
-
+  font-weight: 800;
+  color: #fed138;
+`;
 
 const ImageCarousel: React.FC = () => {
   const { image, name, desc, imgs, currentGoose, cycleLeft, cycleRight, selectGoose } = useGeeseImages();
@@ -145,13 +143,13 @@ const ImageCarousel: React.FC = () => {
         </Arrow>
       </Container>
       <MobileContainer>
-          <ArrowMobile className="material-icons" onClick={cycleLeft}>
-            keyboard_arrow_left
-          </ArrowMobile>
-          <ArrowMobile className="material-icons" onClick={cycleRight}>
-            keyboard_arrow_right
-          </ArrowMobile>
-        </MobileContainer>
+        <ArrowMobile className="material-icons" onClick={cycleLeft}>
+          keyboard_arrow_left
+        </ArrowMobile>
+        <ArrowMobile className="material-icons" onClick={cycleRight}>
+          keyboard_arrow_right
+        </ArrowMobile>
+      </MobileContainer>
       <DescriptionWrapper>
         <Name>{name}</Name>
         <Description>
@@ -159,15 +157,15 @@ const ImageCarousel: React.FC = () => {
         </Description>
       </DescriptionWrapper>
       <Timeline>
-      <HorizontalLine />
+        <HorizontalLine />
         <Increments>
-          {imgs.map((goose, i:number) => { 
-            if (i == currentGoose) {
-              return <IncrementTextChosen onClick={selectGoose(i)}>{goose.name.replace('Goose ','')}</IncrementTextChosen>;
+          {imgs.map((goose, i: number) => {
+            if (i === currentGoose) {
+              return <IncrementTextChosen onClick={selectGoose(i)}>{goose.name.replace('Goose ', '')}</IncrementTextChosen>;
             } else {
-              return <IncrementText onClick={selectGoose(i)}>{goose.name.replace('Goose ','')}</IncrementText>;
+              return <IncrementText onClick={selectGoose(i)}>{goose.name.replace('Goose ', '')}</IncrementText>;
             }
-          })} 
+          })}
         </Increments>
       </Timeline>
     </div>

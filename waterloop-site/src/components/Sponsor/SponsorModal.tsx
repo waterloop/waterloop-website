@@ -70,7 +70,7 @@ const IFrameHolder = styled.div`
 
   iframe {
     position: absolute;
-    top:0;
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
@@ -96,34 +96,20 @@ interface Props {
   video?: string;
 }
 
-const SponsorModal: React.FC<Props> = ({
-  open,
-  onClose,
-  image,
-  name,
-  link,
-  level,
-  dateJoined,
-  collaboration,
-  video,
-}) => {
+const SponsorModal: React.FC<Props> = ({ open, onClose, image, name, link, level, dateJoined, collaboration, video }) => {
   return (
     <Dialog open={open} onClose={onClose} maxWidth="sm" fullWidth>
       <DialogTitle>
-        <IconButton
-          onClick={
-            onClose as (
-              event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-            ) => void
-          }
-        >
+        <IconButton onClick={onClose as (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void}>
           <CloseIcon fontSize="large" color="action" />
         </IconButton>
       </DialogTitle>
       <DialogContent>
         <SponsorImage {...image} />
         <SponsorTitle>{name}</SponsorTitle>
-        <SponsorLink href={link} target="_blank">{link}</SponsorLink>
+        <SponsorLink href={link} target="_blank">
+          {link}
+        </SponsorLink>
         <SponsorDetail>
           <b>Sponsor Level: </b>
           {level}
@@ -139,6 +125,7 @@ const SponsorModal: React.FC<Props> = ({
         {video && (
           <IFrameHolder>
             <iframe
+              title="Sponsor Highlight"
               width="560"
               height="315"
               src={video}
