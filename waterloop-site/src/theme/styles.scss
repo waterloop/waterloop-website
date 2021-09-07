@@ -4,7 +4,7 @@ $navy: #232636;
 $white: #fefefe;
 $light-gray: #f4f4f4;
 $black: #010101;
-$font-family-primary: "IBM Plex Sans";
+$font-family-primary: 'IBM Plex Sans';
 
 /*-----------------------------
 
@@ -96,8 +96,7 @@ h6 {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 .white-text {
@@ -201,7 +200,7 @@ textarea {
   border: 2px solid $yellow;
   background-color: $navy;
   color: $yellow;
-  font-family: "IBM Plex Sans";
+  font-family: 'IBM Plex Sans';
   font-weight: 400;
   font-size: 24px;
   border-radius: 15px;
@@ -537,7 +536,7 @@ textarea {
   }
   input {
     margin: 5px 10px;
-    font-family: "IBM Plex Sans";
+    font-family: 'IBM Plex Sans';
   }
 
   @media screen and (max-width: $mobile) {
@@ -912,7 +911,7 @@ textarea {
 .ButtonText {
   font-size: 14px;
   font-weight: 600;
-  font-family: "IBM Plex Sans";
+  font-family: 'IBM Plex Sans';
   margin: 0;
 }
 
@@ -941,7 +940,10 @@ textarea {
   }
 }
 
-.hypersonic, .supersonic, .transonic, .sonic {
+.hypersonic,
+.supersonic,
+.transonic,
+.sonic {
   display: inline-block;
 }
 
@@ -1006,7 +1008,7 @@ textarea {
 }
 
 .sponsorLink {
-  font-family: "IBM Plex Sans";
+  font-family: 'IBM Plex Sans';
   font-size: 24px;
   font-style: italic, underline;
   color: #010101;
@@ -1134,6 +1136,10 @@ textarea {
     @media (max-width: $mobile) {
       margin: 20px 0;
     }
+  }
+  a {
+    text-decoration: none;
+    color: $black;
   }
   @media (max-width: $mobile) {
     flex-wrap: wrap;
