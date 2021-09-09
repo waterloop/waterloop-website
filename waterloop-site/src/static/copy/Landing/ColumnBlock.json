@@ -1,13 +1,20 @@
 [
   {
     "title": "WHAT WE DO",
-    "body": {
-      "heading1": "SpaceX Hyperloop Competition",
-      "text1": "The Hyperloop Competition is an annual event hosted by SpaceX at their headquarters to showcase the best student Hyperloop pods from around the world and promote development and adoption of Hyperloop technology. We’ve placed in the top 50 worldwide every year since the competition’s inception, were the first to demonstrate pneumatic levitation, and have been invited twice to the on-site finals.",
-      "heading2": "Cutting Edge Engineering",
-      "text2": "Contactless propulsion is critical for durability and reliability at the high speed of a full-scale Hyperloop, so for two years we’ve been developing a custom linear induction motor. With ANSYS electromagnetic sims, manufacturing from steel core and copper coils, design of a custom multi-kW controller board, and carefully optimizing real-time control systems, we’re constantly inventing solutions to incredibly difficult problems.",
-      "heading3": "Building Our Track",
-      "text3": "We’re looking beyond just the Hyperloop Competition, and aiming far higher. To promote the innovation necessary for a Hyperloop-enabled future, we’re constructing Canada’s first Hyperloop track right here in Waterloo with the intent to host a competition to promote further innovation, create real-world testing opportunities for transportation researchers, and scale up to a full-scale demonstration by 2025."
-    }
+    "body": [
+      {
+        "heading": "Working Towards the Future",
+        "text": "The ultimate goal of Waterloop and Hyperloop in general is to change the landscape of transporation within Canada and the world over. To promote the innovation necessary for a Hyperloop-enabled future, we’re constructing Canada’s first Hyperloop track right here in Waterloo with the intent to host a competition to promote further innovation, create real-world testing opportunities for transportation researchers, and scale up to a full-scale demonstration by 2025."
+      },
+      {
+        "heading": "Cutting Edge Engineering",
+        "text": "Contactless propulsion is critical for durability and reliability at the high speed of a full-scale Hyperloop, so for two years we’ve been developing a custom linear induction motor. With ANSYS electromagnetic sims, manufacturing from steel core and copper coils, design of a custom multi-kW controller board, and carefully optimizing real-time control systems, we’re constantly inventing solutions to incredibly difficult problems."
+      },
+      {
+        "heading": "Canadian Hyperloop Conference",
+        "text": "The Canadian Hyperloop Conference (CHC) is an idea formed by 6 universities during late 2019 - early 2020 who were interested in organizing their own track race after the SpaceX Hyperloop competition was discontinued. The Canadian Hyperloop Conference aims to host its own track race under the supervision of Waterloop who will be hosting and competing in the event at their track located at the Waterloo International Airport, which is also Canada’s first Hyperloop track.",
+        "link": "https://www.cahyperloop.ca/"
+      }
+    ]
   }
 ]

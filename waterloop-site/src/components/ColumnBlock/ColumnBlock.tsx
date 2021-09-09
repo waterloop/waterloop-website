@@ -1,19 +1,16 @@
-import React from "react";
-import "theme/styles.scss";
+import React from 'react';
+import 'theme/styles.scss';
 
+type bodyItem = {
+  heading: string;
+  text: string;
+  link?: string;
+};
 export type Props = {
   title: string;
-  body: {
-    heading1: string;
-    text1: string;
-    heading2: string;
-    text2: string;
-    heading3: string;
-    text3: string;
-  };
-  link?: string;
-  linkText?: string;
+  body: bodyItem[];
 };
+
 export class ColumnBlock extends React.Component<{
   data: Props[];
   imgData: string[];
@@ -26,18 +23,18 @@ export class ColumnBlock extends React.Component<{
         </div>
         <div className="pageContainer">
           <div className="col-block">
-            <div>
-              <h3>{this.props.data[0].body.heading1}</h3>
-              <p> {this.props.data[0].body.text1}</p>
-            </div>
-            <div>
-              <h3>{this.props.data[0].body.heading2}</h3>
-              <p> {this.props.data[0].body.text2}</p>
-            </div>
-            <div>
-              <h3>{this.props.data[0].body.heading3}</h3>
-              <p> {this.props.data[0].body.text3}</p>
-            </div>
+            {this.props.data[0].body.map((item) => {
+              return (
+                <div>
+                  <h3>
+                    <a href={item.link} target="_blank" rel="noopener noreferrer">
+                      {item.heading}
+                    </a>
+                  </h3>
+                  <p>{item.text}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </>
