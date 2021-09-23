@@ -58,9 +58,12 @@ const Recruitment: React.FC = () =>{
           </>
         ) : (
           <FlexContainer>
-            <h3>Our new member recruitment for Spring 2021 has closed. </h3>
+            <h3>Our new member recruitment for Fall 2021 has closed. </h3>
             <p>
-              We will be recruiting again at the start of September 2021. Sign up below to be notified when postings go live!
+              We will be recruiting again at the start of January 2022. Sign up below to be notified when postings go live!
+            </p>
+            <p>
+              Missed recruitment but still want to join our team? Reach out to us at <a href = "mailto: contact@waterloop.ca">contact@waterloop.ca</a>!
             </p>
             <p>
               Do you have prior expertise in linear induction motors, high power PCB design, or other relevant technical topics? We'd love to learn from you as an advisor; reach out to us at <a href = "mailto: contact@waterloop.ca">contact@waterloop.ca</a> if you're interested!
