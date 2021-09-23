@@ -100,7 +100,7 @@ class App extends React.Component<{}, State> {
             <Route path="/posting/:id">
               <JobPostingPage />
             </Route>
-            <Route component={} />
+            {/* <Route component={} /> */}
           </Switch>
           <Footer />
         </Router>
