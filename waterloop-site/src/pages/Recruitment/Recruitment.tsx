@@ -33,7 +33,7 @@ const SignUpButton = styled(Button)`
 const Recruitment: React.FC = () =>{
   const { postings } = usePostings();
   const date: Date = new Date();
-  const currentMonth: number = date.getMonth();
+  const currentMonth: number = date.getMonth() + 1;
   let currentCycle: string = "";
   let nextCycle: string = "";
   const currentYear: number = date.getFullYear();
@@ -48,7 +48,7 @@ const Recruitment: React.FC = () =>{
     currentCycle = "Fall";
     nextCycle = "January";
   }
-  nextYear = (currentCycle == "Fall") ? currentYear+1: currentYear;
+  nextYear = (currentCycle === "Fall") ? currentYear+1: currentYear;
   return (
     <>
       <Hero
