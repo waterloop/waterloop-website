@@ -100,6 +100,7 @@ class App extends React.Component<{}, State> {
             <Route path="/posting/:id">
               <JobPostingPage />
             </Route>
+            <Route component={} />
           </Switch>
           <Footer />
         </Router>
@@ -107,5 +108,4 @@ class App extends React.Component<{}, State> {
     );
   }
 }
-
 export default App;
