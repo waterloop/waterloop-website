@@ -10,9 +10,7 @@ const ErrorPage: React.FC = () => (
         <h1>404</h1>
         <p>Oops! The page you are looking for was not found.</p>
         </div>
-        <div className="errorpageimage">
         <img className="errorgoose" src={Goose}></img>
-        </div>
     </div>
 ); 
 
