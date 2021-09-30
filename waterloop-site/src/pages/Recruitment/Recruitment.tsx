@@ -37,7 +37,7 @@ const Recruitment: React.FC = () =>{
   let currentCycle: string = "";
   let nextCycle: string = "";
   const currentYear: number = date.getFullYear();
-  let nextYear: number = 0;
+  let nextYear: number = -1;
   if ([1,2,3,4].includes(currentMonth)) {
     currentCycle = "Winter";
     nextCycle = "May";
