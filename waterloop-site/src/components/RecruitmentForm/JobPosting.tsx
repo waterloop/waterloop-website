@@ -54,20 +54,28 @@ const JobPosting: React.FC<JobPostingProps> = (props) => (
       Deadline: {props.deadline}
     </h6>
     <p>{props.description}</p>
-    <div className="break" />
-    <h3>What you'll do:</h3>
-    <ul>
-      {props.tasks.map((task: string) => (
-        <li>{task}</li>
-      ))}
-    </ul>
-    <div className="break" />
-    <h3>Requirements:</h3>
-    <ul>
-      {props.requirements.map((task: string) => (
-        <li>{task}</li>
-      ))}
-    </ul>
+    {props.tasks.length > 0 && (
+      <>
+        <div className="break" />
+        <h3>What you'll do:</h3>
+        <ul>
+          {props.tasks.map((task: string) => (
+            <li>{task}</li>
+          ))}
+        </ul>
+      </>
+    )}
+    {props.requirements.length > 0 && (
+      <>
+        <div className="break" />
+        <h3>Requirements:</h3>
+        <ul>
+          {props.requirements.map((task: string) => (
+            <li>{task}</li>
+          ))}
+        </ul>
+      </>
+    )}
     <div className="break" />
     {props.additional.length > 0 && (
       <>
