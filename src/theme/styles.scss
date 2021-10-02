@@ -1,0 +1,1262 @@
+$mobile: 425px;
+$yellow: #fed138;
+$navy: #232636;
+$white: #fefefe;
+$light-gray: #f4f4f4;
+$black: #010101;
+$font-family-primary: "IBM Plex Sans";
+
+/*-----------------------------
+
+              APP
+
+ -----------------------------*/
+
+body {
+  margin: 0;
+  font-family: $font-family-primary;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*-----------------------------
+
+              TYPE
+
+ -----------------------------*/
+
+p {
+  font-family: $font-family-primary;
+  font-size: 18px;
+}
+
+ul {
+  font-size: 18px;
+  font-family: $font-family-primary;
+}
+
+h1 {
+  font-family: $font-family-primary;
+  font-size: 64pt;
+  font-weight: 600;
+  color: $white;
+  text-align: center;
+  margin-bottom: 0;
+  @media screen and (max-width: $mobile) {
+    font-size: 32pt;
+  }
+}
+
+h2 {
+  font-family: $font-family-primary;
+  font-style: italic;
+  font-size: 36pt;
+  margin: 12pt 0;
+  color: $navy;
+  @media screen and (max-width: $mobile) {
+    font-size: 24pt;
+  }
+}
+
+h3 {
+  font-family: $font-family-primary;
+  font-size: 28px;
+  color: $navy;
+  margin: 0pt;
+  font-weight: 400;
+}
+
+h4 {
+  font-family: $font-family-primary;
+  font-size: 16px;
+  color: $navy;
+  font-style: italic;
+  font-weight: bold;
+
+  @media screen and (max-width: $mobile) {
+    font-size: 18;
+    margin-left: 0;
+  }
+}
+
+h5 {
+  font-family: $font-family-primary;
+  color: $black;
+}
+
+h6 {
+  font-family: $font-family-primary;
+  font-size: 16px;
+  color: $black;
+
+  @media screen and (max-width: $mobile) {
+    font-size: 16px;
+    margin-left: 0;
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.white-text {
+  color: $white;
+}
+.center-text {
+  text-align: center;
+  hyphens: auto;
+}
+
+.footer-text {
+  h3 {
+    font-size: 36pt;
+    color: $white;
+    margin: 0;
+    font-weight: 300;
+
+    @media screen and (max-width: $mobile) {
+      font-size: 32pt;
+    }
+  }
+  p {
+    font-size: 18px;
+    color: $white;
+  }
+}
+
+/*-----------------------------
+
+        CUSTOM CLASSES
+
+ -----------------------------*/
+
+.submit-again {
+  border: none;
+  background-color: none;
+  font-style: italic;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.pageContainer {
+  margin: 80px 140px 80px 140px;
+
+  @media screen and (max-width: $mobile) {
+    margin: 32px 25px 32px 25px;
+  }
+}
+
+.justify-center {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.break {
+  padding-bottom: 60px;
+  @media screen and (max-width: $mobile) {
+    padding-bottom: 32px;
+  }
+}
+
+.app-lock {
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+textarea {
+  resize: none;
+  padding: 10px;
+}
+
+.FooterWrapper {
+  display: flex;
+  // box-sizing: border-box;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 40vh;
+  bottom: 0;
+  background: $navy;
+  padding: 15vh 15vw 20vh;
+  transition: all 0.3s;
+  @media screen and (max-width: $mobile) {
+    padding: 8vh 15vw;
+    min-height: 70vh;
+    overflow: hidden;
+  }
+}
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  @media screen and (max-width: $mobile) {
+    flex-wrap: wrap;
+    a {
+      font-size: 14px;
+    }
+  }
+}
+.button-yellow {
+  border: 2px solid $yellow;
+  background-color: $navy;
+  color: $yellow;
+  font-family: "IBM Plex Sans";
+  font-weight: 400;
+  font-size: 24px;
+  border-radius: 15px;
+  height: 50px;
+  width: 150px;
+  margin: 0 100px 0 0;
+  transition: all 0.3s;
+  &:hover {
+    background-color: $yellow;
+    color: $navy;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: $mobile) {
+    margin: 30px 0;
+    font-size: 18px;
+    width: 130px;
+    height: 40px;
+  }
+}
+
+.LogoWrapper {
+  align-self: center;
+  height: 91.11px;
+  width: 154.32px;
+
+  @media screen and (max-width: $mobile) {
+    box-sizing: border-box;
+    align-self: center;
+    > img {
+      width: 90px;
+      margin: 0 0 20px 0;
+    }
+  }
+}
+
+.LinksWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 250px;
+  > div > a {
+    margin: 6px 0 0 0;
+  }
+
+  @media screen and (max-width: $mobile) {
+    justify-content: flex-start;
+    > div {
+      margin-right: 50px;
+    }
+  }
+}
+
+.postings {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0 48px;
+  > div {
+    display: flex;
+    text-decoration: none;
+    justify-content: space-between;
+    align-items: center;
+  }
+  > h3 {
+    margin: 32px 0 0 0;
+  }
+
+  @media screen and (max-width: $mobile) {
+    margin: 0;
+  }
+}
+
+.posting {
+  display: flex;
+  padding: 20px 0;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+  button {
+    margin: 0 50px;
+    @media screen and (max-width: $mobile) {
+      margin: 0 0 0 30px;
+    }
+  }
+}
+
+.SocialMediaWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: 18px;
+  height: 124px;
+}
+
+.RoutingWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 124px;
+  font-size: 18px;
+}
+
+.featComp {
+  display: flex;
+  max-width: 1250px;
+  // width: 100%;
+  height: auto;
+  padding-bottom: 40px;
+  flex-direction: row-reverse;
+  align-content: center;
+
+  @media screen and (max-width: $mobile) {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 25px;
+  }
+}
+
+.FeatImage {
+  border: 10px;
+  max-width: 340px;
+  /*200 IQ bug fix (the first image doesn't load in correct size if only using width ;) */
+  height: 10em;
+  padding-right: 30px;
+
+  @media screen and (max-width: $mobile) {
+    display: flex;
+    width: 90%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.FeatCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.TextBlock-TextWithImage {
+  text-align: left;
+  color: $black;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  flex-direction: column;
+
+  @media (max-width: $mobile) {
+    width: 100%;
+  }
+}
+
+.Img-TextWithImage {
+  /* type img */
+  flex: 0 0 auto;
+  max-width: 400px;
+  max-height: 320px;
+  width: 40vw;
+  height: 32vw;
+  border-radius: 10pt;
+
+  @media (max-width: $mobile) {
+    width: 90vw;
+    height: auto;
+  }
+}
+
+.Block-TextWithImage {
+  // !NOTE: Workaround until the parent scss selector introduces the padding automatically to align each of its direct children:
+
+  display: flex;
+  padding-bottom: 60px;
+  // Alternate between 2 layouts:
+  // NOTE: I dunno if this can be optimized in any way.
+  &.left-right-variant {
+    flex-direction: row;
+    & > *:nth-child(1) {
+      margin-right: 5vw;
+    }
+  }
+
+  &.right-left-variant {
+    flex-direction: row-reverse;
+    & > *:nth-child(2) {
+      margin-right: 5vw;
+    }
+  }
+
+  align-items: center;
+  justify-content: center;
+}
+
+.ButtonBlock-TextWithImage {
+  display: inline-flex;
+  justify-content: flex-start;
+  margin-top: 2em;
+
+  @media (max-width: $mobile) {
+    display: none;
+  }
+}
+
+.text-w-image-btn-mobile {
+  display: none;
+  justify-content: flex-start;
+  padding: 20px;
+  @media (max-width: $mobile) {
+    display: inline-flex;
+  }
+}
+
+// TODO: the screen's width should be declared as a SASS variable and then used to maintain consistency.
+@media (max-width: 500px) {
+  .Block-TextWithImage {
+    &.left-right-variant,
+    &.right-left-variant {
+      flex-direction: column;
+      & > *:nth-child(1),
+      & > *:nth-child(2) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.TextBlock-Teams {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  padding-left: 3%;
+
+  @media (max-width: $mobile) {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    padding: 0px 30px;
+  }
+}
+
+.Img-Teams {
+  /* type img */
+  display: flex;
+  flex-direction: column;
+  width: 315px;
+  height: 227px;
+
+  @media (max-width: $mobile) {
+    display: none;
+  }
+}
+
+.Block-Teams {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2%;
+  padding-bottom: 25px;
+}
+
+/*Landing Sponsor's component styles: */
+.Img-Box-Sponsors {
+  margin: 30px 20px;
+  width: calc(6vw + 200px);
+  height: calc(5vw + 100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: $mobile) {
+    margin: 40px 0;
+    width: 100%;
+  }
+}
+
+.Img-Sponsors {
+  /* type img */
+  width: 100%;
+  @media (max-width: $mobile) {
+    width: 90%;
+  }
+}
+
+.SponsorsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.Button-Sponsors {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.Block-Sponsors {
+  width: 100%;
+}
+
+@media (max-width: 500px) {
+  .Img-Box-Sponsors {
+    margin: 40px 0;
+    width: 100%;
+  }
+}
+
+.Block-RecruitmentForm {
+  padding: 1%;
+  height: 100%;
+  width: 90%;
+  border-style: solid;
+  display: inline-block;
+  margin-bottom: 2%;
+}
+
+.recruitment-modal {
+  text-align: center;
+  background-color: white;
+  padding: 30px;
+  border: 1px solid gray;
+  width: 60%;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  textarea {
+    min-height: 20px;
+  }
+  input {
+    margin: 5px 10px;
+    font-family: "IBM Plex Sans";
+  }
+
+  @media screen and (max-width: $mobile) {
+    width: 100%;
+    height: 100vh;
+  }
+}
+
+.ShortInput {
+  /* type input */
+  text-align: left;
+  display: inline-block;
+  margin: 3%;
+  width: 42%;
+}
+
+.LongInput {
+  /* type textarea */
+  text-align: left;
+  display: inline-block;
+  margin: 3%;
+  width: 90.7%;
+  overflow: scroll;
+}
+
+.sidebar-open {
+  overflow: hidden;
+}
+
+.NavbarContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #232635;
+}
+
+.ListContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 0 50px;
+}
+
+.StyledLink {
+  /* type StyledLink */
+  color: white;
+  margin: 0 10pt;
+  text-decoration: none;
+}
+
+.LogoContainer {
+  align-items: left;
+  padding: 3px 50px;
+}
+
+.IconYellow {
+  /* type img*/
+  width: 50px;
+  height: 50px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.RoundedBorder {
+  border-radius: 25px;
+  border-style: solid;
+  border-color: white;
+  border-width: 1px;
+  padding: 3px 5px;
+  margin: 0 0 0 10px;
+}
+
+.generalContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 10px;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #232635;
+  @media screen and (max-width: $mobile) {
+    align-items: center;
+  }
+}
+
+.generalTitleContainer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 23px;
+
+  @media screen and (max-width: $mobile) {
+    width: 100%;
+  }
+}
+
+.generalDescriptionContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+  text-align: center;
+
+  @media screen and (max-width: $mobile) {
+  }
+}
+
+.generalArrowContainer {
+  position: absolute;
+  bottom: 75px;
+
+  @media screen and (max-width: $mobile) {
+    align-content: flex-end;
+    bottom: 50px;
+  }
+}
+
+.generalDownArrow {
+  /* type img */
+  width: 40px;
+  height: 17px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: $mobile) {
+    width: 27px;
+    height: 11px;
+  }
+}
+
+.landingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #232635;
+  margin-bottom: 2em;
+}
+
+.landingDescriptionContainer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: $white;
+
+  @media screen and (max-width: $mobile) {
+    margin-bottom: 28px;
+  }
+}
+
+.landingArrowContainer {
+  position: absolute;
+  bottom: 75px;
+  z-index: 99;
+
+  @media screen and (max-width: $mobile) {
+    position: absolute;
+    bottom: 50px;
+  }
+}
+
+.landingBuildingContainer {
+  width: 100%;
+  z-index: 2;
+
+  @media screen and (max-width: $mobile) {
+    display: none;
+  }
+}
+
+.landingBuildings {
+  /* type img */
+  width: 100%;
+  height: auto;
+  position: absolute;
+  bottom: 0px;
+  padding-top: 3em;
+
+  @media screen and (max-width: $mobile) {
+    display: none;
+  }
+}
+
+.landingDownArrow {
+  /* type img */
+  width: 40px;
+  height: 17px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+
+  @media screen and (max-width: $mobile) {
+    width: 27px;
+    height: 11px;
+  }
+}
+
+.landingContent {
+  margin-bottom: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 999;
+
+  @media screen and (max-width: $mobile) {
+    padding: 17px 0;
+    margin-bottom: 15vh;
+  }
+}
+
+.landingWaterloopContainer {
+  padding: 60px 0 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.landingWaterloop {
+  /* type img */
+  width: 80%;
+  height: auto;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+
+  @media screen and (max-width: $mobile) {
+    width: 80%;
+  }
+}
+
+.GooseRoster-RosterWrapper {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 100%;
+}
+
+.GooseRoster-ImageThumbnail {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: center;
+  height: 40vw;
+  overflow: hidden;
+  padding: 5px;
+  margin: 20px 0;
+}
+
+.GooseRoster-Img {
+  width: 70vw;
+
+  @media screen and (max-width: $mobile) {
+    display: block;
+    object-fit: cover;
+    border: 10px;
+    width: 90vw;
+    max-width: 355px;
+    height: 10em;
+  }
+}
+
+.GooseRoster-Arrow {
+  /* type button */
+  all: unset;
+  cursor: pointer;
+  margin: 4px;
+}
+
+.contactForm-Container {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  width: 80%;
+  margin-bottom: 4vh;
+
+  > form {
+    width: 100%;
+  }
+
+  > form > p {
+    font-size: 18px;
+    margin: 0 auto 15px;
+  }
+
+  @media (max-width: $mobile) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.contactForm-InputBlockLeft {
+  width: 48%;
+  float: left;
+  @media (max-width: $mobile) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.contactForm-InputBlockRight {
+  width: 48%;
+  float: right;
+  @media (max-width: $mobile) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.contact-form-row {
+  @media (max-width: $mobile) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.contact-form-message {
+  margin: 10px 0 15px 0;
+  textarea {
+    margin-top: 5px;
+    width: calc(100% - 15px);
+    height: 300px;
+    background-color: $light-gray;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+    resize: none;
+    padding: 5px 10px;
+    font-family: IBM Plex Sans;
+    color: $navy;
+  }
+  label {
+    margin: 20px 0;
+  }
+}
+
+.landing-btn {
+  margin: 20px;
+  color: $navy !important;
+  transition: all 0.3s;
+  background-color: $yellow !important;
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+  }
+}
+
+.ButtonDiv {
+  border: 0;
+  border-radius: 50px;
+  max-width: 350px;
+  max-height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 25px;
+  @media screen and (max-width: $mobile) {
+    max-height: 38px;
+  }
+}
+
+.ButtonText {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "IBM Plex Sans";
+  margin: 0;
+}
+
+.SponsorPage {
+  margin: 100px auto;
+  text-align: center;
+  @media screen and (min-width: 1040px) {
+    width: 1040px;
+  }
+}
+
+.TierWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: auto auto;
+  margin-bottom: 1vh;
+
+  @media screen and (max-width: $mobile) {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.hypersonic,
+.supersonic,
+.transonic,
+.sonic {
+  display: inline-block;
+}
+
+.hypersonic {
+  width: 60%;
+  height: auto;
+  img {
+    width: 80%;
+  }
+  @media screen and (max-width: $mobile) {
+    width: 80%;
+    height: auto;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.supersonic {
+  width: 50%;
+  height: auto;
+  img {
+    width: 80%;
+  }
+  @media screen and (max-width: $mobile) {
+    width: 40%;
+    height: auto;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.transonic {
+  width: 50%;
+  height: auto;
+  img {
+    width: 80%;
+  }
+  @media screen and (max-width: $mobile) {
+    width: 30%;
+    height: auto;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.sonic {
+  width: 30%;
+  height: auto;
+  img {
+    width: 80%;
+  }
+  @media screen and (max-width: $mobile) {
+    width: 30%;
+    height: auto;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.sponsorLink {
+  font-family: "IBM Plex Sans";
+  font-size: 24px;
+  font-style: italic, underline;
+  color: #010101;
+
+  @media screen and (max-width: $mobile) {
+    font-size: 24px;
+  }
+}
+
+.contactFormContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: IBM Plex Sans !important;
+  width: 100%;
+  margin: 50px 0;
+  @media (max-width: $mobile) {
+    margin: 2em 0;
+    min-height: 100vh;
+  }
+}
+
+.locationContainer {
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  align-self: center;
+  text-align: left;
+
+  > div {
+    margin: 5vh 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  @media (max-width: $mobile) {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.mapContainer {
+  display: flex;
+  height: 50vh;
+  width: 64vw;
+
+  @media (max-width: $mobile) {
+    display: flex;
+    width: 100%;
+  }
+}
+
+.sponsorsButton {
+  display: flex;
+  margin-left: 3.5em;
+  margin-top: -4em;
+
+  @media screen and (max-width: $mobile) {
+    margin-left: 0;
+    margin-top: 0;
+    justify-content: center;
+  }
+}
+
+.success-message {
+  height: 60vh;
+  min-height: 500px;
+  box-sizing: border-box;
+  width: 80%;
+  padding: 10vh 10vw;
+  margin: 0 0 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  background-color: $light-gray;
+
+  > a {
+    border: none;
+    background-color: none;
+    font-style: italic;
+    text-decoration: underline;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  @media screen and (max-width: $mobile) {
+    width: 100%;
+    height: 70vh;
+  }
+}
+
+.success-modal-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.banner {
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $navy;
+}
+.col-block {
+  color: $black;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  div {
+    width: 30%;
+    @media (max-width: $mobile) {
+      width: 100%;
+    }
+  }
+  div:nth-child(2) {
+    margin: 0 80px;
+    @media (max-width: $mobile) {
+      margin: 20px 0;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: $black;
+  }
+  @media (max-width: $mobile) {
+    flex-wrap: wrap;
+  }
+}
+
+.contactFormDesc {
+  display: flex;
+  color: $black;
+  font-size: 18px;
+  text-align: left;
+  align-self: flex-start !important;
+
+  @media (max-width: $mobile) {
+    font-size: 16px;
+  }
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.subprofile {
+  @media (max-width: $mobile) {
+    font-size: 14px;
+  }
+}
+
+.centerDiv {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.HeaderButtonWrapper {
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: $mobile) {
+    flex-direction: column;
+    padding-bottom: 30px;
+    align-content: left;
+  }
+}
+
+.ButtonWrap {
+  display: flex;
+  max-width: 100px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.errorpage {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 15vh 0;
+}
+
+.errorpage h3 {
+  letter-spacing: 0.2em;
+  text-align: center;
+  font-size: 3em;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.errorpage h1 {
+  text-align: center;
+  color: black;
+  font-size: 10em;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 3vh;
+}
+
+.errorpage p {
+  text-align: center;
+  font-size: 1.5em;
+  width: 45%;
+  margin: auto;
+}
+
+.errorgoose {
+  width: 50%;
+  height: 80%;
+  max-height: 400px;
+  max-width: 450px;
+  margin-right: 10vw;
+}
+
+.errorpageimage {
+  display: inline-block;
+}
+
+@media only screen and (max-width: 775px) {
+  .errorgoose {
+    display: none;
+  }
+  // testing
+}
