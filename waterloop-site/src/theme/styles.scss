@@ -1209,3 +1209,52 @@ textarea {
   width: 100%;
   height: 100%;
 }
+
+.errorpage {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 15vh 0;
+}
+
+.errorpage h3 {
+  letter-spacing: 0.2em;
+  text-align: center;
+  font-size: 3em;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.errorpage h1 {
+  text-align: center;
+  color: black;
+  font-size: 10em;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 3vh;
+}
+
+.errorpage p {
+  text-align: center;
+  font-size: 1.5em;
+  width: 45%;
+  margin: auto;
+}
+
+.errorgoose {
+  width: 50%;
+  height: 80%;
+  max-height: 400px;
+  max-width: 450px;
+  margin-right: 10vw;
+}
+
+.errorpageimage {
+  display: inline-block;
+}
+
+@media only screen and (max-width: 775px) {
+  .errorgoose {
+    display: none;
+  }
+}

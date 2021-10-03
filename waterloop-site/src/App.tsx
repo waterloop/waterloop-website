@@ -13,6 +13,7 @@ import Sponsors from './pages/Sponsors';
 import RecruitmentRouter from 'pages/Recruitment/RecruitmentRouter';
 
 import 'typeface-ibm-plex-sans';
+import ErrorPage from 'pages/404';
 
 interface State {
   width: number;
@@ -100,6 +101,7 @@ class App extends React.Component<{}, State> {
             <Route path="/posting/:id">
               <JobPostingPage />
             </Route>
+            <Route component={ErrorPage} />
           </Switch>
           <Footer />
         </Router>
