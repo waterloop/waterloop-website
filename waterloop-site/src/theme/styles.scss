@@ -1215,30 +1215,27 @@ textarea {
   flex-direction: row;
   justify-content: space-evenly;
   margin: 15vh 0;
-}
-
-.errorpage h3 {
-  letter-spacing: 0.2em;
-  text-align: center;
-  font-size: 3em;
-  font-weight: 500;
-  margin-bottom: 0;
-}
-
-.errorpage h1 {
-  text-align: center;
-  color: black;
-  font-size: 10em;
-  font-weight: bold;
-  margin-top: 0;
-  margin-bottom: 3vh;
-}
-
-.errorpage p {
-  text-align: center;
-  font-size: 1.5em;
-  width: 45%;
-  margin: auto;
+  h3 {
+    letter-spacing: 0.2em;
+    text-align: center;
+    font-size: 3em;
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+  h1 {
+    text-align: center;
+    color: black;
+    font-size: 10em;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 3vh;
+    }
+p {
+    text-align: center;
+    font-size: 1.5em;
+    width: 45%;
+    margin: auto;
+  }
 }
 
 .errorgoose {

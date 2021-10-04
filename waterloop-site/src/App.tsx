@@ -1,19 +1,24 @@
-import React from 'react';
-import { Route, Switch, BrowserRouter as Router, Redirect } from 'react-router-dom';
+import React from "react";
+import {
+  Route,
+  Switch,
+  BrowserRouter as Router,
+  Redirect,
+} from "react-router-dom";
 
-import { NavBar, SideBar } from './components';
-import JobPostingPage from './components/RecruitmentForm/JobPostingPage';
+import { NavBar, SideBar } from "./components";
+import JobPostingPage from "./components/RecruitmentForm/JobPostingPage";
 
-import { Footer } from './sections/Footer';
-import Contact from './pages/Contact';
-import Home from './pages/Home';
-import Flock from './pages/Flock';
-import Team from './pages/Team';
-import Sponsors from './pages/Sponsors';
-import RecruitmentRouter from 'pages/Recruitment/RecruitmentRouter';
+import { Footer } from "./sections/Footer";
+import Contact from "./pages/Contact";
+import Home from "./pages/Home";
+import Flock from "./pages/Flock";
+import Team from "./pages/Team";
+import Sponsors from "./pages/Sponsors";
+import RecruitmentRouter from "pages/Recruitment/RecruitmentRouter";
 
-import 'typeface-ibm-plex-sans';
-import ErrorPage from 'pages/404';
+import "typeface-ibm-plex-sans";
+import ErrorPage from "pages/404";
 
 interface State {
   width: number;
@@ -35,13 +40,13 @@ class App extends React.Component<{}, State> {
   }
 
   componentDidMount(): void {
-    window.addEventListener('resize', this.handleWindowSizeChange);
-    document.addEventListener('mousedown', this.handleClick);
+    window.addEventListener("resize", this.handleWindowSizeChange);
+    document.addEventListener("mousedown", this.handleClick);
   }
 
   componentWillUnmount(): void {
-    window.removeEventListener('resize', this.handleWindowSizeChange);
-    document.removeEventListener('mousedown', this.handleClick);
+    window.removeEventListener("resize", this.handleWindowSizeChange);
+    document.removeEventListener("mousedown", this.handleClick);
   }
 
   handleWindowSizeChange(): void {
@@ -57,14 +62,17 @@ class App extends React.Component<{}, State> {
 
   // If an element besides the sidebar is clicked, close the sidebar.
   handleClick(event: MouseEvent): void {
-    if (this.sidebar.current && !this.sidebar.current.contains(event.target as Node)) {
+    if (
+      this.sidebar.current &&
+      !this.sidebar.current.contains(event.target as Node)
+    ) {
       this.setState({ sidebarOpen: false });
     }
   }
 
   render(): React.ReactElement {
     return (
-      <div className={this.state.sidebarOpen ? 'app-lock' : ''}>
+      <div className={this.state.sidebarOpen ? "app-lock" : ""}>
         <Router>
           {this.state.width > 425 ? (
             <NavBar />
@@ -96,12 +104,17 @@ class App extends React.Component<{}, State> {
               <RecruitmentRouter />
             </Route>
             <Route path="/posting" exact>
-              <Redirect to='/recruitment'/>
+              <Redirect to="/recruitment" />
             </Route>
             <Route path="/posting/:id">
               <JobPostingPage />
             </Route>
-            <Route component={ErrorPage} />
+            <Route path="/404" exact>
+              <ErrorPage />
+            </Route>
+            <Route path="/*">
+              <Redirect to="/404" />
+            </Route>
           </Switch>
           <Footer />
         </Router>
