@@ -32,6 +32,23 @@ const SignUpButton = styled(Button)`
 
 const Recruitment: React.FC = () =>{
   const { postings } = usePostings();
+  const date: Date = new Date();
+  const currentMonth: number = date.getMonth() + 1;
+  let currentCycle: string = "";
+  let nextCycle: string = "";
+  const currentYear: number = date.getFullYear();
+  let nextYear: number = -1;
+  if ([1,2,3,4].includes(currentMonth)) {
+    currentCycle = "Winter";
+    nextCycle = "May";
+  } else if ([5,6,7,8].includes(currentMonth)) {
+    currentCycle = "Spring";
+    nextCycle = "September";
+  } else {
+    currentCycle = "Fall";
+    nextCycle = "January";
+  }
+  nextYear = (currentCycle === "Fall") ? currentYear+1: currentYear;
   return (
     <>
       <Hero
@@ -58,9 +75,9 @@ const Recruitment: React.FC = () =>{
           </>
         ) : (
           <FlexContainer>
-            <h3>Our new member recruitment for Fall 2021 has closed. </h3>
+            <h3>Our new member recruitment for {currentCycle} {currentYear} has closed. </h3>
             <p>
-              We will be recruiting again at the start of January 2022. Sign up below to be notified when postings go live!
+              We will be recruiting again at the start of {nextCycle} {nextYear}. Sign up below to be notified when postings go live!
             </p>
             <p>
               Missed recruitment but still want to join our team? Reach out to us at <a href = "mailto: contact@waterloop.ca">contact@waterloop.ca</a>!
