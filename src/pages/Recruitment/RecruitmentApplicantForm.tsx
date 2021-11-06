@@ -1,147 +1,44 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-// import TextInput from "../../components/TextInput";
-// import RadioButton from "components/RecruitmentForm/RadioButton";
-// import FileUpload from "components/FileUpload";
-//import DropDownList from "../../components/DropDownList";
-// import { Button } from "../../components/Button";
-// //import useRecruitmentForm from '../../hooks/recruitment-form';
-//import { useRouteMatch } from 'react-router-dom';
-import { RecruitmentForm } from '../../components/RecruitmentForm';
+import { useRouteMatch } from 'react-router-dom';
+import useRecruitmentForm from '../../hooks/recruitment-form';
+import { Button } from '../../components/Button';
+//import DropDownList from '../../../components/DropDownList';
+//import TextInput from '../../../components/TextInput';
 
-// const FormWrapper = styled.div`
-//   margin: 3em 5em;
-// `;
+//import * as R from 'ramda';
 
-// const SectionHeader = styled.h3`
-//   text-align: left;
-//   font-family: IBM Plex Sans;
-//   font-style: normal;
-//   font-weight: 600;
-//   font-size: 36px;
-//   line-height: 47px;
-//   color: #000000;
-// `;
-
-// const QuestionHeader = styled.h4`
-//   text-align: left;
-//   font-family: IBM Plex Sans;
-//   font-style: normal;
-//   font-weight: 600;
-//   font-size: 24px;
-//   color: #000000;
-// `;
-
-// const RadioText = styled.h4`
-//   margin: auto;
-//   text-align: left;
-//   font-family: IBM Plex Sans;
-//   font-style: normal;
-//   font-weight: 600;
-//   font-size: 24px;
-//   color: #000000;
-// `;
-
-// const RightAlignedContainer = styled.div`
-//   display: flex
-//   align-items: flex-end;
-// `;
-
-// const SubmitButton = styled(Button)`
-//   width: 100px;
-//   margin-top: 3em;
-// `;
-
-const BackButton = styled.p`
-  cursor: pointer;
+const Wrapper = styled.div`
+  margin: 3em 4em 3em 4em;
 `;
 
-const FormContainer = styled.div`
-  display: flex;
-  justify-content: center;
+const SubmitButton = styled(Button)`
+  width: 100px;
 `;
 
 const RecruitmentApplicantForm: React.FC = () => {
-  // const [firstName, setFirstName] = useState("");
-  // const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   setFirstName(e.target.value);
-  // };
-  /*const {
-   params: { positionId },
-  } = useRouteMatch();
-  const {
+  //const { params: { recruitmentFormId } } = useRouteMatch();
+  //const {
 
-  } = useRecruitmentForm(positionId); */
+  //} = useRecruitmentForm(recruitmentFormId)
   return (
-    <div className="pageContainer">
-      <BackButton onClick={() => {}}>&lt; Back</BackButton>
-      <FormContainer>
-        <RecruitmentForm role="Test role" onSuccess={() => console.log('hi')} />
-      </FormContainer>
+    <div>
+      <p>&lt; Back</p>
+      <Wrapper>
+        <h3>Contact Info</h3>
+        <h4>Full name</h4>
+        <input id="firstname" type="text" placeholder="First name"></input>
+        <input id="lastname" type="text" placeholder="Last name"></input>
+        <h4>Email</h4>
+        <input id="email" type="email" placeholder="Email address"></input>
+      </Wrapper>
+      <SubmitButton
+        onClick={() => window.open('http://wloop.ca/subscribe')}
+        text="Submit"
+        backgroundColor="yellow"
+        textColor="black"
+      />
     </div>
-    // <FormWrapper>
-    //   <p onClick={() => {}}>&lt; Back</p>
-    //   <FormWrapper>
-    //     <SectionHeader>Contact Info</SectionHeader>
-    //     <QuestionHeader>Full name</QuestionHeader>
-    //     <TextInput
-    //       className="first-name"
-    //       multiLine={false}
-    //       value={firstName}
-    //       rows={10}
-    //       onChange={onChange /* CHANGE THIS TO HOOK STUFF */}
-    //       placeholder="First Name"
-    //       required={true}
-    //       requiredText="This is a required field"
-    //       isError={false /* CHANGE THIS TO HOOK STUFF */}
-    //     />
-
-    //     <QuestionHeader>
-    //       Are you living in Waterloo and willing to participate in in-person
-    //       work?
-    //     </QuestionHeader>
-    //     <RadioText>
-    //       <RadioButton
-    //         checked={false}
-    //         onChange={() => {}}
-    //         name="Yes"
-    //         question="inPerson"
-    //       ></RadioButton>
-    //     </RadioText>
-    //     <RadioText>
-    //       <RadioButton
-    //         checked={false}
-    //         onChange={() => {}}
-    //         name="No"
-    //         question="inPerson"
-    //       ></RadioButton>
-    //     </RadioText>
-
-    //     <QuestionHeader>
-    //       Please attach your Resume and other Documents
-    //     </QuestionHeader>
-    //     <FileUpload
-    //       name="resume-docs"
-    //       onChange={() => {
-    //         console.log("file change");
-    //       }}
-    //       multiple={false}
-    //     />
-    //     <RightAlignedContainer>
-    //       <SubmitButton
-    //         onClick={
-    //           () =>
-    //             window.open(
-    //               "http://wloop.ca/subscribe"
-    //             ) /*function from hook that posts to api after validating input*/
-    //         }
-    //         text="Submit"
-    //         backgroundColor="yellow"
-    //         textColor="black"
-    //       />
-    //     </RightAlignedContainer>
-    //   </FormWrapper>
-    // </FormWrapper>
   );
 };
 
