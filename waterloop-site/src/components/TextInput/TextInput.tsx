@@ -1,18 +1,25 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { FC } from "react";
+import styled from "styled-components";
 
-const Container = styled.div`
-  width: 500px;
+import {
+  ContainerProps,
+  TextInputContainerProps,
+  TextInputProps,
+  TextAreaContainerProps,
+} from "./interfaces";
+
+const Container = styled.div<ContainerProps>`
+  width: ${({ width }) => (width ? width : "500px")};
 `;
 
 // TODO: Only change to red when user clicks away from the text box.
-const TextInputContainer = styled.input`
-  border: ${({ theme, error }) => error ? theme.borders.solidRed : theme.borders.solidGrey1};
+const TextInputContainer = styled.input<TextInputContainerProps>`
+  border: ${({ error }) => (error ? "1px solid #FF0000" : "1px solid #c4c4c4")};
   border-radius: 10px;
   height: 47px;
   width: 100%;
-  background-color: ${({ theme }) => theme.colours.white};
-  font: ${({ theme }) => theme.fonts.medium14};
+  background-color: #ffffff;
+  font: "500 14px IBM Plex Sans";
 
   display: flex;
   align-items: center;
@@ -22,20 +29,20 @@ const TextInputContainer = styled.input`
 
   ::placeholder,
   ::-webkit-input-placeholder {
-    font: ${({ theme }) => theme.fonts.medium18};
+    font: "500 18px IBM Plex Sans";
     line-height: 47px;
-    color: ${({ theme }) => theme.colours.greys.grey2};
+    color: "#c4c4c4";
   }
 `;
 
-const TextAreaContainer = styled.textarea`
-  border: ${({ theme, error }) => error ? theme.borders.solidRed : theme.borders.solidGrey1};
+const TextAreaContainer = styled.textarea<TextAreaContainerProps>`
+  border: ${({ error }) => (error ? "1px solid #FF0000" : "1px solid #c4c4c4")};
   border-radius: 10px;
   width: 100%;
   min-width: 500px;
   max-width: 1200px;
-  background-color: ${({ theme }) => theme.colours.white};
-  font: ${({ theme }) => theme.fonts.medium14};
+  background-color: "#FFFFFF";
+  font: "500 14px IBM Plex Sans";
 
   display: flex;
   align-items: center;
@@ -46,8 +53,8 @@ const TextAreaContainer = styled.textarea`
 
   ::placeholder,
   ::-webkit-input-placeholder {
-    font: ${({ theme }) => theme.fonts.medium18};
-    color: ${({ theme }) => theme.colours.greys.grey2};
+    font: "500 18px IBM Plex Sans";
+    color: "#c4c4c4";
   }
 `;
 
@@ -61,7 +68,6 @@ const TextAreaContainer = styled.textarea`
 //     display: flex;
 //     flex-direction: column;
 //     justify-content: space-between;
-
 
 //     ::placeholder,
 //     ::-webkit-input-placeholder {
@@ -94,7 +100,6 @@ const TextAreaContainer = styled.textarea`
 //     color: #000;
 //   }
 
-
 // `
 
 /* 
@@ -105,47 +110,49 @@ https://docs.google.com/document/d/1_C9twf66rjGkE7HPAsEid-_ZddWcbDoLNw9e2EEkAA8/
 */
 
 const RequiredText = styled.p`
-  color: ${({ theme }) => theme.colours.reds.red1};
-  font: ${({ theme }) => theme.fonts.medium14};
+  color: "#FF0000";
+  font: "500 14px IBM Plex Sans";
 `;
 
-const TextInput = ({
+const TextInput: FC<TextInputProps> = ({
   className /* Allows for external styles to be applied to the component
                 using the styled components library
                 className prop needs to be passed to the parent JSX element */,
   multiLine,
-//   richText, 
+  //   richText,
   value /* The current value of the input */,
-  rows=10,
+  rows = 10,
   onChange /* Callback to be called each time that the user changes the input */,
-  placeholder = 'Place Holder Text',
+  placeholder = "Place Holder Text",
   width,
-  required = false,  /* Marks the input as required from the user. */
+  required /* Marks the input as required from the user. */,
   requiredText = "This field cannot be blank.",
-  isError = false, /* Marks an error state for the component. Also marks the input 
-                      as required from the user. */
+  isError = false /* Marks an error state for the component. Also marks the input 
+                      as required from the user. */,
 }) => {
   return (
     <Container width={width} className={className}>
-      {multiLine ?
-          <TextAreaContainer
-            error={isError}
-            rows={rows}
-            cols="60"
-            placeholder={placeholder}
-            value={value}
-            onChange={(e) => onChange(e.target.value)}
-          />
-          : (
-          <TextInputContainer
-            error={isError}
-            placeholder={placeholder}
-            value={value}
-            onChange={(e) => onChange(e.target.value)}
-          />
+      {multiLine ? (
+        <TextAreaContainer
+          error={isError}
+          rows={rows}
+          cols={60}
+          placeholder={placeholder}
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          required={required}
+        />
+      ) : (
+        <TextInputContainer
+          error={isError}
+          placeholder={placeholder}
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+        />
       )}
+      {isError && <RequiredText>{requiredText}</RequiredText>}
     </Container>
-  )
+  );
 };
 
 export default TextInput;
