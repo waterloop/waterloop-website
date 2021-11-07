@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { useRouteMatch } from 'react-router-dom';
-import useRecruitmentForm from '../../hooks/recruitment-form';
+//import { useRouteMatch } from 'react-router-dom';
+import { TextInput } from "../../components/TextInput"
+//import useRecruitmentForm from '../../hooks/recruitment-form';
 import { Button } from '../../components/Button';
 //import DropDownList from '../../../components/DropDownList';
 //import TextInput from '../../../components/TextInput';
-
-//import * as R from 'ramda';
 
 const Wrapper = styled.div`
   margin: 3em 4em 3em 4em;
@@ -17,10 +16,10 @@ const SubmitButton = styled(Button)`
 `;
 
 const RecruitmentApplicantForm: React.FC = () => {
-  //const { params: { recruitmentFormId } } = useRouteMatch();
+  const { params: { positionId } } = useRouteMatch();
   //const {
 
-  //} = useRecruitmentForm(recruitmentFormId)
+  //} = useRecruitmentForm(positionId);
   return (
     <div>
       <p>&lt; Back</p>
