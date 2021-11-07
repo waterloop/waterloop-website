@@ -14,7 +14,7 @@ const RecruitmentRouter = () => {
       <Route exact path={`${path}/faq`}>
         <RecruitmentFaq />
       </Route>
-      <Route exact path={`${path}/:recruitmentFormId`}>
+      <Route exact path={`${path}/:positionId`}>
         <ApplicantForm />
       </Route>
     </Switch>

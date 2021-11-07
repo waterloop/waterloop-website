@@ -29,20 +29,20 @@ const TextInputContainer = styled.input<TextInputContainerProps>`
 
   ::placeholder,
   ::-webkit-input-placeholder {
-    font: "500 18px IBM Plex Sans";
+    font: ${({ theme }) => theme.fonts.medium18};
     line-height: 47px;
-    color: "#c4c4c4";
+    color: ${({ theme }) => theme.colours.greys.grey2};
   }
 `;
 
-const TextAreaContainer = styled.textarea<TextAreaContainerProps>`
-  border: ${({ error }) => (error ? "1px solid #FF0000" : "1px solid #c4c4c4")};
+const TextAreaContainer = styled.textarea`
+  border: ${({ theme, error }) => error ? theme.borders.solidRed : theme.borders.solidGrey1};
   border-radius: 10px;
   width: 100%;
   min-width: 500px;
   max-width: 1200px;
-  background-color: "#FFFFFF";
-  font: "500 14px IBM Plex Sans";
+  background-color: ${({ theme }) => theme.colours.white};
+  font: ${({ theme }) => theme.fonts.medium14};
 
   display: flex;
   align-items: center;
@@ -53,8 +53,8 @@ const TextAreaContainer = styled.textarea<TextAreaContainerProps>`
 
   ::placeholder,
   ::-webkit-input-placeholder {
-    font: "500 18px IBM Plex Sans";
-    color: "#c4c4c4";
+    font: ${({ theme }) => theme.fonts.medium18};
+    color: ${({ theme }) => theme.colours.greys.grey2};
   }
 `;
 
@@ -110,49 +110,47 @@ https://docs.google.com/document/d/1_C9twf66rjGkE7HPAsEid-_ZddWcbDoLNw9e2EEkAA8/
 */
 
 const RequiredText = styled.p`
-  color: "#FF0000";
-  font: "500 14px IBM Plex Sans";
+  color: ${({ theme }) => theme.colours.reds.red1};
+  font: ${({ theme }) => theme.fonts.medium14};
 `;
 
-const TextInput: FC<TextInputProps> = ({
+const TextInput = ({
   className /* Allows for external styles to be applied to the component
                 using the styled components library
                 className prop needs to be passed to the parent JSX element */,
   multiLine,
-  //   richText,
+//   richText, 
   value /* The current value of the input */,
-  rows = 10,
+  rows=10,
   onChange /* Callback to be called each time that the user changes the input */,
-  placeholder = "Place Holder Text",
+  placeholder = 'Place Holder Text',
   width,
-  required /* Marks the input as required from the user. */,
+  required = false,  /* Marks the input as required from the user. */
   requiredText = "This field cannot be blank.",
-  isError = false /* Marks an error state for the component. Also marks the input 
-                      as required from the user. */,
+  isError = false, /* Marks an error state for the component. Also marks the input 
+                      as required from the user. */
 }) => {
   return (
     <Container width={width} className={className}>
-      {multiLine ? (
-        <TextAreaContainer
-          error={isError}
-          rows={rows}
-          cols={60}
-          placeholder={placeholder}
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
-          required={required}
-        />
-      ) : (
-        <TextInputContainer
-          error={isError}
-          placeholder={placeholder}
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
-        />
+      {multiLine ?
+          <TextAreaContainer
+            error={isError}
+            rows={rows}
+            cols="60"
+            placeholder={placeholder}
+            value={value}
+            onChange={(e) => onChange(e.target.value)}
+          />
+          : (
+          <TextInputContainer
+            error={isError}
+            placeholder={placeholder}
+            value={value}
+            onChange={(e) => onChange(e.target.value)}
+          />
       )}
-      {isError && <RequiredText>{requiredText}</RequiredText>}
     </Container>
-  );
+  )
 };
 
 export default TextInput;
