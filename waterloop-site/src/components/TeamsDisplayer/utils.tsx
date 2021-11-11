@@ -4,7 +4,7 @@ import { ProfileType, QueryData } from "./interfaces";
 // Test data
 import testData from "./testProfileData";
 
-// Check if member has crucial missing fields
+// Check if member has crucial missing fields or active param is false
 const isProfileComplete = (member: QueryData): boolean => {
   return !(
     !member.memberType ||
@@ -12,7 +12,7 @@ const isProfileComplete = (member: QueryData): boolean => {
     !member.subteams ||
     member.subteams.length === 0 ||
     !member.name ||
-    !member.name.display
+    !member.name.display || !member.active || member.active === false
   );
 };
 
@@ -78,7 +78,7 @@ const sortProfiles = (
       // create a profile
       const profile = buildProfile(member);
       // Group Members by their subteams
-      member.subteams.forEach((team: {_id: string, name: string}) => {
+      member.subteams.forEach((team: { _id: string, name: string }) => {
         insertProfileToMap(teams, team.name, profile);
       });
     }
