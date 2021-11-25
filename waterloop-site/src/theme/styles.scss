@@ -96,7 +96,8 @@ h6 {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
 
 .white-text {
@@ -521,18 +522,19 @@ textarea {
 }
 
 .recruitment-modal {
-  text-align: center;
+  // text-align: center;
   background-color: white;
   padding: 30px;
-  border: 1px solid gray;
+  // border: 1px solid gray;
   width: 60%;
-  max-height: 80vh;
+  // max-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   textarea {
     min-height: 20px;
+    font-family: 'IBM Plex Sans';
   }
   input {
     margin: 5px 10px;
@@ -1229,8 +1231,8 @@ textarea {
     font-weight: bold;
     margin-top: 0;
     margin-bottom: 3vh;
-    }
-p {
+  }
+  p {
     text-align: center;
     font-size: 1.5em;
     width: 45%;
