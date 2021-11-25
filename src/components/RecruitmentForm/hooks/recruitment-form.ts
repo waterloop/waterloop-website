@@ -26,6 +26,12 @@ interface FormValue {
 // |                         |
 // 0-------------------------0
 
+const termTypes = [
+  'Not in Waterloo',
+  'School Term',
+  'Work/Off Term in Waterloo',
+];
+
 const userInfoFields: UserInfoField[] = [
   {
     id: 'entry.1105765972',
@@ -35,9 +41,9 @@ const userInfoFields: UserInfoField[] = [
     valid: null,
   },
   {
-    id: 'entry.<change>',
+    id: 'entry.1105765972',
     placeholder: 'Last Name',
-    name: 'last-name',
+    name: 'first-name',
     value: '',
     valid: null,
   },
