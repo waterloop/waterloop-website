@@ -1,10 +1,10 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 interface RadioButtonProps {
   checked: boolean;
   onChange: () => void;
   name: string;
-  question: string;
+  question?: string;
   flexDir?: string;
 }
 
