@@ -25,11 +25,19 @@ const termTypes = [
   'School Term',
   'Work/Off Term in Waterloo',
 ];
+
 const userInfoFields: UserInfoField[] = [
   {
     id: 'entry.1105765972',
-    placeholder: 'Full Name',
-    name: 'full-name',
+    placeholder: 'First Name',
+    name: 'first-name',
+    value: '',
+    valid: null,
+  },
+  {
+    id: 'entry.1105765972',
+    placeholder: 'Last Name',
+    name: 'first-name',
     value: '',
     valid: null,
   },
@@ -40,20 +48,20 @@ const userInfoFields: UserInfoField[] = [
     value: '',
     valid: null,
   },
-  {
-    id: 'entry.1369449321',
-    name: 'program',
-    placeholder: 'Program',
-    value: '',
-    valid: null,
-  },
-  {
-    id: 'entry.1488954434',
-    name: 'term',
-    placeholder: 'Your Current Term (ex. 2A)',
-    value: '',
-    valid: null,
-  },
+  // {
+  //   id: 'entry.1369449321',
+  //   name: 'program',
+  //   placeholder: 'Program',
+  //   value: '',
+  //   valid: null,
+  // },
+  // {
+  //   id: 'entry.1488954434',
+  //   name: 'term',
+  //   placeholder: 'Your Current Term (ex. 2A)',
+  //   value: '',
+  //   valid: null,
+  // },
 ];
 
 const applicationFields: Record<string, FormValue> = {
