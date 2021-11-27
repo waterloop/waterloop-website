@@ -31,6 +31,8 @@ const Container = styled(({ valid, required, ...props }) => <div {...props} />)`
   ${'' /** Hides the top of the list under the List name container */}
   background-color: #fff;
   width: 443px;
+  margin: 5px 10px;
+  border: 1px solid #c4c4c4;
   border-radius: 5px;
   border: 1px solid
     ${({ valid, required }): string =>
