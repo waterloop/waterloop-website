@@ -21,25 +21,33 @@ const RadioWrapper = styled.form`
 const Input = styled(({ valid, ...props }) => <input {...props} />)`
   text-align: left;
   display: inline-block;
-  margin: 3%;
   width: 42%;
-  height: 24px;
-  padding: 5px;
-  border: 0.5 px solid
-    ${({ valid }): string => (valid === false ? 'red' : 'black')};
+  height: 20px;
+  margin: 5px 10px;
+  padding: 16px;
+  border: 1.2px solid #c4c4c4;
+  border-radius: 6px;
+  ${({ valid }): string => (valid === false ? 'red' : 'black')};
 `;
 
 const TextArea = styled(({ valid, ...props }) => <textarea {...props} />)`
   text-align: left;
+  font-family: IBM Plex Sans;
   display: inline-block;
-  margin: 3%;
-  width: 75%;
-  overflow: scroll;
-  border-color: ${({ valid }): string => (valid === false ? 'red' : 'black')};
+  margin: 5px 10px;
+  padding: 16px;
+  width: 90%;
+  border: 1.2px solid;
+  border-radius: 6px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  border-color: ${({ valid }): string => (valid === false ? 'red' : '#c4c4c4')};
 `;
 
 const SectionContainer = styled.div`
-  padding: 3em 5em 3em 5em;
+  padding: 1em 2em;
+  width: 90%;
 `;
 
 const SectionHeader = styled.h3`
@@ -49,6 +57,10 @@ const SectionHeader = styled.h3`
   font-style: normal;
   font-weight: 600;
   font-size: 36px;
+`;
+
+const FileUploadContainer = styled.div`
+  margin: 5px 10px;
 `;
 
 interface MyProps {
@@ -112,7 +124,7 @@ const Form: React.FC<MyProps> = ({ role, technicalQ, onSuccess }) => {
   );
 
   return (
-    <div className="recruitment-modal">
+    <div className="recruitment-modals">
       <h2>Applying for {role.toUpperCase()}</h2>
 
       <SectionHeader>Contact Info</SectionHeader>
@@ -188,13 +200,14 @@ const Form: React.FC<MyProps> = ({ role, technicalQ, onSuccess }) => {
           value={applicationFields.technicalAns.value}
           valid={applicationFields.technicalAns.valid}
         />
-        <FileUpload
-          name="resume-docs"
-          onChange={() => {
-            console.log('file change');
-          }}
-          multiple={false}
-        />
+        <FileUploadContainer>
+          <FileUpload
+            name="resume-docs"
+            onChange={() => {}}
+            multiple={false}
+            value={'test'}
+          />
+        </FileUploadContainer>
       </SectionContainer>
 
       <button className="button-yellow" onClick={handleSubmit}>
