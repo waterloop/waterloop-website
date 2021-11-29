@@ -4,7 +4,7 @@ import styled from 'styled-components';
 interface ListItemProps {
   className?: string;
   text: string;
-  onClick?: () => void;
+  onClick: (value: string) => void;
 }
 
 const Container = styled.li`
@@ -26,7 +26,7 @@ const Text = styled.div`
 `;
 
 const ListItem: FC<ListItemProps> = ({ className, text, onClick }) => (
-  <Container className={className} onClick={onClick}>
+  <Container className={className} onClick={() => onClick(text)}>
     <Text>{text}</Text>
   </Container>
 );
