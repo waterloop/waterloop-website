@@ -9,7 +9,10 @@ interface DropDownListProps {
   className?: string;
   items: string[];
   title: string;
-  handleClickItem?: () => void;
+  handleClickItem: (value: string) => void;
+  value: string;
+  valid: boolean | null;
+  required: boolean;
 }
 
 const ListItem = styled(UnstyledListItem)``;
@@ -22,14 +25,16 @@ const ListClosedIcon = styled.img.attrs({
   src: ListClosedSvg,
 })``;
 
-const Container = styled.div`
+const Container = styled(({ valid, required, ...props }) => <div {...props} />)`
   overflow: visible;
   z-index: 10;
   ${'' /** Hides the top of the list under the List name container */}
   background-color: #fff;
   width: 443px;
-  border: 1px solid #c4c4c4;
   border-radius: 5px;
+  border: 1px solid
+    ${({ valid, required }): string =>
+      valid === false && required === true ? 'red' : '#c4c4c4'};
 `;
 
 const ListNameContainer = styled.div`
@@ -91,6 +96,8 @@ const DropDownList: FC<DropDownListProps> = ({
   items /* an Array of items to be displayed in the selector dropdown */,
   title /* Name of the drop down list */,
   handleClickItem,
+  value,
+  valid,
 }) => {
   const [open, setOpen] = useState(false);
 
@@ -98,17 +105,25 @@ const DropDownList: FC<DropDownListProps> = ({
     setOpen(!open);
   }, [open, setOpen]);
 
+  const handleClickItem2 = useCallback(
+    (value: string) => {
+      handleClickItem(value);
+      setOpen(!open);
+    },
+    [handleClickItem, open, setOpen],
+  );
+
   const ListStateIcon = useMemo(() => (open ? ListOpenIcon : ListClosedIcon), [
     open,
   ]);
   const listItems = items.map((item) => (
-    <ListItem text={item} key={item} onClick={handleClickItem} />
+    <ListItem text={item} key={item} onClick={handleClickItem2} />
   ));
 
   return (
     <Container>
       <ListNameContainer onClick={handleOpenToggle} className={className}>
-        <TitleText>{title}</TitleText>
+        <TitleText>{value !== '' ? value : title}</TitleText>
         <ListStateIcon />
       </ListNameContainer>
       <List open={open}>{listItems}</List>
