@@ -24,7 +24,7 @@ const Input = styled(({ valid, required, ...props }) => <input {...props} />)`
   width: 42%;
   height: 20px;
   margin: 5px 10px;
-  padding: 5px;
+  padding: 16px;
   border-radius: 6px;
   border: 1.2px solid
     ${({ valid, required }): string =>
@@ -35,6 +35,7 @@ const TextArea = styled(({ valid, required, ...props }) => (
   <textarea {...props} />
 ))`
   text-align: left;
+  font-family: IBM Plex Sans;
   display: inline-block;
   margin: 5px 10px;
   padding: 16px;
@@ -49,7 +50,8 @@ const TextArea = styled(({ valid, required, ...props }) => (
 `;
 
 const SectionContainer = styled.div`
-  padding: 3em 5em 3em 5em;
+  padding: 1em 2em;
+  width: 90%;
 `;
 
 const SectionHeader = styled.h3`
@@ -59,6 +61,10 @@ const SectionHeader = styled.h3`
   font-style: normal;
   font-weight: 600;
   font-size: 36px;
+`;
+
+const FileUploadContainer = styled.div`
+  margin: 5px 10px;
 `;
 
 interface MyProps {
@@ -101,7 +107,7 @@ const Form: React.FC<MyProps> = ({ role, technicalQ, onSuccess }) => {
   ));
 
   return (
-    <div className="recruitment-modal">
+    <div className="recruitment-modals">
       <h2>Applying for {role.toUpperCase()}</h2>
 
       <SectionHeader>Contact Info</SectionHeader>
@@ -205,14 +211,14 @@ const Form: React.FC<MyProps> = ({ role, technicalQ, onSuccess }) => {
           valid={applicationFields.additionalInfo.valid}
           required={false}
         />
-
-        <FileUpload
-          name="resume-docs"
-          onChange={() => {
-            console.log('file change');
-          }}
-          multiple={false}
-        />
+        <FileUploadContainer>
+          <FileUpload
+            name="resume-docs"
+            onChange={() => {}}
+            multiple={false}
+            value={'test'}
+          />
+        </FileUploadContainer>
       </SectionContainer>
 
       <button className="button-yellow" onClick={handleSubmit}>
