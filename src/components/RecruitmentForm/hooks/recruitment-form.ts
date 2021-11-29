@@ -1,4 +1,18 @@
-import { useReducer, useCallback, useState } from 'react';
+import { useReducer, useCallback, useState, useEffect } from 'react';
+
+interface UserInfoField {
+  id: string;
+  placeholder: string;
+  name: string;
+  value: string;
+  valid: boolean | null;
+}
+
+interface InPersonValue {
+  id: string;
+  value: boolean | null;
+  valid: boolean | null;
+}
 
 interface FormValue {
   value: string;
@@ -6,25 +20,11 @@ interface FormValue {
   valid: boolean | null;
 }
 
-interface UserInfoField {
-  value: string;
-  id: string;
-  valid: boolean | null;
-  placeholder: string;
-  name: string;
-}
-
 // 0-------------------------0
 // |                         |
 // |         UPDATE ME       |
 // |                         |
 // 0-------------------------0
-
-const termTypes = [
-  'Not in Waterloo',
-  'School Term',
-  'Work/Off Term in Waterloo',
-];
 
 const userInfoFields: UserInfoField[] = [
   {
@@ -35,37 +35,31 @@ const userInfoFields: UserInfoField[] = [
     valid: null,
   },
   {
-    id: 'entry.1105765972',
+    id: 'entry.<change>',
     placeholder: 'Last Name',
-    name: 'first-name',
+    name: 'last-name',
     value: '',
     valid: null,
   },
   {
     id: 'entry.204636100',
+    placeholder: 'Email address',
     name: 'email',
-    placeholder: 'Email',
     value: '',
     valid: null,
   },
-  // {
-  //   id: 'entry.1369449321',
-  //   name: 'program',
-  //   placeholder: 'Program',
-  //   value: '',
-  //   valid: null,
-  // },
-  // {
-  //   id: 'entry.1488954434',
-  //   name: 'term',
-  //   placeholder: 'Your Current Term (ex. 2A)',
-  //   value: '',
-  //   valid: null,
-  // },
 ];
 
+const inPersonField: Record<string, InPersonValue> = {
+  inperson: {
+    id: 'entry.<change>',
+    value: null,
+    valid: null,
+  },
+};
+
 const applicationFields: Record<string, FormValue> = {
-  applicationTerm: {
+  term: {
     value: '',
     id: 'entry.2092532677',
     valid: null,
@@ -73,6 +67,11 @@ const applicationFields: Record<string, FormValue> = {
   termType: {
     value: '',
     id: 'entry.1337056366',
+    valid: null,
+  },
+  program: {
+    value: '',
+    id: 'entry.<change>',
     valid: null,
   },
   whyJoin: {
@@ -85,9 +84,14 @@ const applicationFields: Record<string, FormValue> = {
     id: 'entry.1372043873',
     valid: null,
   },
+  additionalInfo: {
+    value: '',
+    id: 'entry.<change>',
+    valid: null,
+  },
 };
 
-const formSubmissionUrl = '/forms/u/0/d/e/1FAIpQLSdmZSfD1Hs0D3MLBjAfdUkaCb3GJJxIvKUEVJCBf5hVxZTt4g/formResponse';
+// Need to add something for the resume as well
 
 // 0-------------------------0
 // |                         |
@@ -101,16 +105,20 @@ const formSubmissionUrl = '/forms/u/0/d/e/1FAIpQLSdmZSfD1Hs0D3MLBjAfdUkaCb3GJJxI
 
 const initialState = {
   userInfoFields,
+  inPersonField,
   applicationFields,
   isValid: false,
 };
 
 // Reducer Action Types
 const UPDATE_USER_INFO_FIELD = 'UPDATE_USER_INFO_FIELD';
-const UPDATE_APPLICATION_TERM = 'UPDATE_APPLICATION_TERM';
+const UPDATE_TERM = 'UPDATE_TERM';
 const UPDATE_TERM_TYPE = 'UPDATE_TERM_TYPE';
+const UPDATE_PROGRAM = 'UPDATE_PROGRAM';
+const UPDATE_INPERSON = 'UPDATE_INPERSON';
 const UPDATE_WHY = 'UPDATE_WHY';
 const UPDATE_TECHNICAL_ANSWER = 'UPDATE_TECHNICAL_ANSWER';
+const UPDATE_ADDITIONAL_INFO = 'UPDATE_ADDITIONAL_INFO';
 const VERIFY_FORM = 'VERIFY_FORM';
 
 // Action Interfaces
@@ -122,8 +130,8 @@ interface UpdateUserInfoFieldAction {
   };
 }
 
-interface UpdateApplicationTermAction {
-  type: typeof UPDATE_APPLICATION_TERM;
+interface UpdateTermAction {
+  type: typeof UPDATE_TERM;
   payload: {
     term: string;
   };
@@ -133,6 +141,20 @@ interface UpdateTermTypeAction {
   type: typeof UPDATE_TERM_TYPE;
   payload: {
     type: string;
+  };
+}
+
+interface UpdateProgramAction {
+  type: typeof UPDATE_PROGRAM;
+  payload: {
+    value: string;
+  };
+}
+
+interface UpdateInPersonAction {
+  type: typeof UPDATE_INPERSON;
+  payload: {
+    inperson: boolean;
   };
 }
 
@@ -150,6 +172,13 @@ interface UpdateTechnicalAnswerAction {
   };
 }
 
+interface UpdateAdditionalInfoAction {
+  type: typeof UPDATE_ADDITIONAL_INFO;
+  payload: {
+    value: string;
+  };
+}
+
 interface VerifyFormAction {
   type: typeof VERIFY_FORM;
 }
@@ -157,10 +186,13 @@ interface VerifyFormAction {
 // Combines All action Interfaces into a single type
 type MyAction =
   | UpdateUserInfoFieldAction
-  | UpdateApplicationTermAction
+  | UpdateTermAction
   | UpdateTermTypeAction
+  | UpdateProgramAction
+  | UpdateInPersonAction
   | UpdateWhyAction
   | UpdateTechnicalAnswerAction
+  | UpdateAdditionalInfoAction
   | VerifyFormAction;
 
 /**
@@ -183,21 +215,25 @@ const reducer: React.Reducer<MyState, MyAction> = (state, action) => {
       const { payload } = action;
       return {
         ...state,
-        userInfoFields: state.userInfoFields.map((field) => (field.id === payload.id
-          ? { ...field, value: payload.value, valid: payload.value !== '' }
-          : field)),
+        userInfoFields: state.userInfoFields.map((field) =>
+          field.id === payload.id
+            ? { ...field, value: payload.value, valid: payload.value !== '' }
+            : field,
+        ),
       };
     }
-    case UPDATE_APPLICATION_TERM: {
-      const { payload } = action;
+    case UPDATE_TERM: {
+      const {
+        payload: { term },
+      } = action;
       return {
         ...state,
         applicationFields: {
           ...state.applicationFields,
-          applicationTerm: {
-            ...state.applicationFields.applicationTerm,
-            value: payload.term,
-            valid: payload.term !== '',
+          term: {
+            ...state.applicationFields.term,
+            value: term,
+            valid: term !== '',
           },
         },
       };
@@ -214,6 +250,37 @@ const reducer: React.Reducer<MyState, MyAction> = (state, action) => {
             ...state.applicationFields.termType,
             value: type,
             valid: type !== '',
+          },
+        },
+      };
+    }
+    case UPDATE_PROGRAM: {
+      const {
+        payload: { value },
+      } = action;
+      return {
+        ...state,
+        applicationFields: {
+          ...state.applicationFields,
+          program: {
+            ...state.applicationFields.program,
+            value,
+            valid: value !== '',
+          },
+        },
+      };
+    }
+    case UPDATE_INPERSON: {
+      const {
+        payload: { inperson },
+      } = action;
+      return {
+        ...state,
+        inPersonField: {
+          inperson: {
+            ...state.inPersonField.inperson,
+            value: inperson,
+            valid: inperson !== null,
           },
         },
       };
@@ -244,6 +311,22 @@ const reducer: React.Reducer<MyState, MyAction> = (state, action) => {
           ...state.applicationFields,
           technicalAns: {
             ...state.applicationFields.technicalAns,
+            value,
+            valid: value !== '',
+          },
+        },
+      };
+    }
+    case UPDATE_ADDITIONAL_INFO: {
+      const {
+        payload: { value },
+      } = action;
+      return {
+        ...state,
+        applicationFields: {
+          ...state.applicationFields,
+          additionalInfo: {
+            ...state.applicationFields.additionalInfo,
             value,
             valid: value !== '',
           },
@@ -281,50 +364,94 @@ const reducer: React.Reducer<MyState, MyAction> = (state, action) => {
 
 interface RecruitmentForm {
   userInfoFields: UserInfoField[];
+  inPersonField: typeof inPersonField;
   applicationFields: typeof applicationFields;
-  termTypes: string[];
   updateUserInfo: (id: string, value: string) => void;
-  handleApplicationTermChange: (term: string) => () => void;
-  handleSubmit: React.EffectCallback;
-  handleTermTypeChange: (type: string) => () => void;
+  handleProgramChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  updateTerm: (value: string) => () => void;
+  updateTermType: (value: string) => () => void;
+  updateInPerson: (value: boolean) => () => void;
   handleWhyChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
-  handleTechnicalAnswerChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
-};
+  handleTechnicalAnswerChange: (
+    event: React.ChangeEvent<HTMLTextAreaElement>,
+  ) => void;
+  handleAdditionalInfoChange: (
+    event: React.ChangeEvent<HTMLTextAreaElement>,
+  ) => void;
+  handleSubmit: React.EffectCallback;
+}
 
-type RecruitmentFormHook = (role: string, onSuccess: () => void) => RecruitmentForm;
+type RecruitmentFormHook = (
+  role: string,
+  onSuccess: () => void,
+) => RecruitmentForm;
 
 const useRecruitmentForm: RecruitmentFormHook = (role, onSuccess) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  useEffect(() => {
+    console.log(state);
+  }, [state]);
+
   const updateUserInfo = useCallback(
-    (id: string, value: string) => !isSubmitting
-      && dispatch({ type: UPDATE_USER_INFO_FIELD, payload: { id, value } }),
+    (id: string, value: string) =>
+      !isSubmitting &&
+      dispatch({ type: UPDATE_USER_INFO_FIELD, payload: { id, value } }),
     [dispatch, isSubmitting],
   );
 
-  const updateApplicationTerm = useCallback(
-    (term: string) => () => !isSubmitting
-      && dispatch({ type: UPDATE_APPLICATION_TERM, payload: { term } }),
+  const updateProgram = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) =>
+      !isSubmitting &&
+      dispatch({
+        type: UPDATE_PROGRAM,
+        payload: { value: event.target.value },
+      }),
+    [dispatch, isSubmitting],
+  );
+
+  const updateTerm = useCallback(
+    (term: string) => () =>
+      !isSubmitting && dispatch({ type: UPDATE_TERM, payload: { term } }),
     [dispatch, isSubmitting],
   );
 
   const updateTermType = useCallback(
-    (type: string) => () => !isSubmitting
-      && dispatch({ type: UPDATE_TERM_TYPE, payload: { type } }),
+    (type: string) => () =>
+      !isSubmitting && dispatch({ type: UPDATE_TERM_TYPE, payload: { type } }),
+    [dispatch, isSubmitting],
+  );
+
+  const updateInPerson = useCallback(
+    (inperson: boolean) => () =>
+      !isSubmitting &&
+      dispatch({ type: UPDATE_INPERSON, payload: { inperson } }),
     [dispatch, isSubmitting],
   );
 
   const updateWhy = useCallback(
-    (event: React.ChangeEvent<HTMLTextAreaElement>) => !isSubmitting
-      && dispatch({ type: UPDATE_WHY, payload: { value: event.target.value } }),
+    (event: React.ChangeEvent<HTMLTextAreaElement>) =>
+      !isSubmitting &&
+      dispatch({ type: UPDATE_WHY, payload: { value: event.target.value } }),
     [dispatch, isSubmitting],
   );
 
   const updateTechnicalAnswer = useCallback(
-    (event: React.ChangeEvent<HTMLTextAreaElement>) => !isSubmitting
-      && dispatch({
+    (event: React.ChangeEvent<HTMLTextAreaElement>) =>
+      !isSubmitting &&
+      dispatch({
         type: UPDATE_TECHNICAL_ANSWER,
+        payload: { value: event.target.value },
+      }),
+    [dispatch, isSubmitting],
+  );
+
+  const updateAdditionalInfo = useCallback(
+    (event: React.ChangeEvent<HTMLTextAreaElement>) =>
+      !isSubmitting &&
+      dispatch({
+        type: UPDATE_ADDITIONAL_INFO,
         payload: { value: event.target.value },
       }),
     [dispatch, isSubmitting],
@@ -363,26 +490,29 @@ const useRecruitmentForm: RecruitmentFormHook = (role, onSuccess) => {
     }
 
     // Submit Form
-    fetch(formSubmissionUrl, {
-      method: 'POST',
-      body: JSON.stringify(body),
-    })
-      .then(() => {
-        onSuccess();
-      })
-      .catch(() => setIsSubmitting(false));
+    // fetch(formSubmissionUrl, {
+    //   method: 'POST',
+    //   body: JSON.stringify(body),
+    // })
+    //   .then(() => {
+    //     onSuccess();
+    //   })
+    //   .catch(() => setIsSubmitting(false));
   }, [role, state, dispatch, setIsSubmitting, isSubmitting, onSuccess]);
 
   return {
     userInfoFields: state.userInfoFields,
+    inPersonField: state.inPersonField,
     applicationFields: state.applicationFields,
-    termTypes,
     updateUserInfo,
-    handleApplicationTermChange: updateApplicationTerm,
-    handleSubmit,
-    handleTermTypeChange: updateTermType,
+    handleProgramChange: updateProgram,
+    updateTerm,
+    updateTermType,
+    updateInPerson,
     handleWhyChange: updateWhy,
     handleTechnicalAnswerChange: updateTechnicalAnswer,
+    handleAdditionalInfoChange: updateAdditionalInfo,
+    handleSubmit,
   };
 };
 

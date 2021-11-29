@@ -32,7 +32,7 @@ const RadioButton: React.FC<RadioButtonProps> = ({
       id={`radiobutton-${name}`}
       type="radio"
       checked={checked}
-      name={question}
+      name={name}
       required
       onChange={onChange}
     />

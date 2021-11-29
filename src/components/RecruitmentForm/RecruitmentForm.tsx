@@ -18,24 +18,34 @@ const RadioWrapper = styled.form`
   justify-content: center;
 `;
 
-const Input = styled(({ valid, ...props }) => <input {...props} />)`
+const Input = styled(({ valid, required, ...props }) => <input {...props} />)`
   text-align: left;
-  display: inline-block;
-  margin: 3%;
+  diplay: inline-block;
   width: 42%;
-  height: 24px;
+  height: 20px;
+  margin: 5px 10px;
   padding: 5px;
-  border: 0.5 px solid
-    ${({ valid }): string => (valid === false ? 'red' : 'black')};
+  border-radius: 6px;
+  border: 1.2px solid
+    ${({ valid, required }): string =>
+      valid === false && required === true ? 'red' : '#c4c4c4'};
 `;
 
-const TextArea = styled(({ valid, ...props }) => <textarea {...props} />)`
+const TextArea = styled(({ valid, required, ...props }) => (
+  <textarea {...props} />
+))`
   text-align: left;
   display: inline-block;
-  margin: 3%;
-  width: 75%;
-  overflow: scroll;
-  border-color: ${({ valid }): string => (valid === false ? 'red' : 'black')};
+  margin: 5px 10px;
+  padding: 16px;
+  width: 90%;
+  border: 1.2px solid;
+  border-radius: 6px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  border-color: ${({ valid, required }): string =>
+    valid === false && required === true ? 'red' : '#c4c4c4'};
 `;
 
 const SectionContainer = styled.div`
@@ -60,14 +70,17 @@ interface MyProps {
 const Form: React.FC<MyProps> = ({ role, technicalQ, onSuccess }) => {
   const {
     userInfoFields,
+    inPersonField,
     applicationFields,
-    // handleApplicationTermChange,
     updateUserInfo,
-    handleSubmit,
-    handleTechnicalAnswerChange,
-    // handleTermTypeChange,
+    handleProgramChange,
+    updateTerm,
+    updateTermType,
+    updateInPerson,
     handleWhyChange,
-    // termTypes,
+    handleTechnicalAnswerChange,
+    handleAdditionalInfoChange,
+    handleSubmit,
   } = useRecruitmentForm(role, onSuccess);
 
   const handleUserInfoChange = (id: string) => (
@@ -83,33 +96,9 @@ const Form: React.FC<MyProps> = ({ role, technicalQ, onSuccess }) => {
       value={field.value}
       onChange={handleUserInfoChange(field.id)}
       valid={field.valid}
+      required={true}
     />
   ));
-
-  // const applicationTermRadioButtons = termList.map((term) => (
-  //   <RadioButton
-  //     checked={applicationFields.applicationTerm.value === term}
-  //     onChange={handleApplicationTermChange(term)}
-  //     name={term}
-  //     key={term}
-  //   />
-  // ));
-
-  // const termTypeRadioButtons = termTypes.map((type) => (
-  //   <RadioButton
-  //     checked={applicationFields.termType.value === type}
-  //     onChange={handleTermTypeChange(type)}
-  //     name={type}
-  //     key={type}
-  //   />
-  // ));
-
-  const inPersonRadioButtons = () => (
-    <div>
-      <RadioButton checked={true} onChange={() => {}} name="Yes" />
-      <RadioButton checked={true} onChange={() => {}} name="No" />
-    </div>
-  );
 
   return (
     <div className="recruitment-modal">
@@ -137,28 +126,53 @@ const Form: React.FC<MyProps> = ({ role, technicalQ, onSuccess }) => {
             'Other',
           ]}
           title="Select..."
+          handleClickItem={updateTerm}
+          value={applicationFields.term.value}
+          valid={applicationFields.term.valid}
+          required={true}
         />
 
         <Label>
           Will you be on school or on co-op during the term you're applying for?
         </Label>
-        <DropDownList items={['School', 'Co-op', 'Other']} title="Select..." />
+        <DropDownList
+          items={['School', 'Co-op', 'Other']}
+          title="Select..."
+          handleClickItem={updateTermType}
+          value={applicationFields.termType.value}
+          valid={applicationFields.termType.valid}
+          required={true}
+        />
 
         <Label>What program are you in?</Label>
         <Input
           placeholder="e.g. Computer Science"
-          id={0}
-          name={'name'}
-          value={'hello'}
-          onChange={() => {}}
-          valid={true}
+          id={applicationFields.program.id}
+          name={applicationFields.program.id}
+          onChange={handleProgramChange}
+          value={applicationFields.program.value}
+          valid={applicationFields.program.valid}
+          required={true}
         />
 
         <Label>
-          Will you be living in Waterloo and willing to particiape in in-person
+          Will you be living in Waterloo and willing to participate in in-person
           work?
         </Label>
-        <RadioWrapper>{inPersonRadioButtons}</RadioWrapper>
+        <RadioWrapper>
+          <RadioButton
+            checked={inPersonField.inperson.value === true}
+            onChange={updateInPerson(true)}
+            name="Yes"
+            key="Yes"
+          />
+          <RadioButton
+            checked={inPersonField.inperson.value === false}
+            onChange={updateInPerson(false)}
+            name="No"
+            key="No"
+          />
+        </RadioWrapper>
 
         <Label>Why do you want to join the team?</Label>
         <TextArea
@@ -166,6 +180,7 @@ const Form: React.FC<MyProps> = ({ role, technicalQ, onSuccess }) => {
           onChange={handleWhyChange}
           value={applicationFields.whyJoin.value}
           valid={applicationFields.whyJoin.valid}
+          required={true}
         />
         {technicalQ && (
           <>
@@ -175,6 +190,7 @@ const Form: React.FC<MyProps> = ({ role, technicalQ, onSuccess }) => {
               onChange={handleTechnicalAnswerChange}
               value={applicationFields.technicalAns.value}
               valid={applicationFields.technicalAns.valid}
+              required={true}
             />
           </>
         )}
@@ -183,11 +199,13 @@ const Form: React.FC<MyProps> = ({ role, technicalQ, onSuccess }) => {
           <span>*Optional</span>
         </Label>
         <TextArea
-          placeholder={technicalQ}
-          onChange={handleTechnicalAnswerChange}
-          value={applicationFields.technicalAns.value}
-          valid={applicationFields.technicalAns.valid}
+          placeholder="Anything else you want to share with us!"
+          onChange={handleAdditionalInfoChange}
+          value={applicationFields.additionalInfo.value}
+          valid={applicationFields.additionalInfo.valid}
+          required={false}
         />
+
         <FileUpload
           name="resume-docs"
           onChange={() => {

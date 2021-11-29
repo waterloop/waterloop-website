@@ -103,11 +103,12 @@ const PositionPosting: FunctionComponent<MyProps> = ({
       </ButtonBlock>
       {isJoinClicked && (
         <Background>
-          <CloseBtn onClick={(): void => setJoinClicked(!isJoinClicked)}>X</CloseBtn>
+          <CloseBtn onClick={(): void => setJoinClicked(!isJoinClicked)}>
+            X
+          </CloseBtn>
           <Form
             role={role}
             technicalQ={technicalQ}
-            termList={termList}
             onSuccess={(): void => setJoinClicked(false)}
           />
         </Background>
