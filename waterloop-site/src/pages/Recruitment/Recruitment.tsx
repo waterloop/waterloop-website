@@ -75,7 +75,8 @@ const Recruitment: React.FC = () =>{
           </>
         ) : (
           <FlexContainer>
-            <h3>Our new member recruitment for {currentCycle} {currentYear} has closed. </h3>
+            <h3>Our new member recruitment for {currentCycle} {currentYear} has closed (Read caution below)</h3>
+            <p>CAUTION: Some users have had difficulties viewing recruitment postings during our recruitment cycle. Please refresh the page if you get this message before Jan. 8 2022. If you're still unable to view the postings, please contact Waterloop.</p>
             <p>
               We will be recruiting again at the start of {nextCycle} {nextYear}. Sign up below to be notified when postings go live!
             </p>
