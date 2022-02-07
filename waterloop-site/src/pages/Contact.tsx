@@ -9,7 +9,7 @@ import NewsletterSignUpForm from "components/NewsletterSignUpForm";
 const Contact: React.FC = () => (
   <div>
     <Hero
-      title="CONTACT"
+      title="CONTACT TEST"
       description="We'd love to get in touch!"
       anchor="#contact-form"
     ></Hero>
@@ -17,20 +17,23 @@ const Contact: React.FC = () => (
     <div id={"#contact-form"}></div>
     <div className="pageContainer">
       <div className="contactFormContainer">
-
         <ContactForm
           title="Send Us a Message"
           desc="Want to get in touch? Submit this form or drop us a message at contact@waterloop.ca"
         ></ContactForm>
 
-        <NewsletterSignUpForm/>
+        <NewsletterSignUpForm />
 
         <div className="locationContainer">
           <h3>Visit Us</h3>
           <table>
             <tbody>
-              <tr><td>Engineering 5</td>                     <td>Mon - Fri: 9 am - 5 pm</td></tr>
-              <tr><td>200 University Ave W.</td>             <td>Sat - Sun: Closed</td></tr>
+              <tr>
+                <td>Engineering 5</td> <td>Mon - Fri: 9 am - 5 pm</td>
+              </tr>
+              <tr>
+                <td>200 University Ave W.</td> <td>Sat - Sun: Closed</td>
+              </tr>
               <tr>Waterloo, ON</tr>
               <tr>N2L 3G5</tr>
             </tbody>
@@ -38,7 +41,7 @@ const Contact: React.FC = () => (
         </div>
       </div>
     </div>
-  </div >
+  </div>
 );
 
 export default Contact;
