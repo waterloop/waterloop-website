@@ -1,25 +1,26 @@
-import React from "react";
+import React from 'react';
 import {
   Route,
   Switch,
   BrowserRouter as Router,
   Redirect,
-} from "react-router-dom";
+} from 'react-router-dom';
 
-import { NavBar, SideBar } from "./components";
-import JobPostingPage from "./components/RecruitmentForm/JobPostingPage";
+import { NavBar, SideBar } from './components';
+import JobPostingPage from './components/RecruitmentForm/JobPostingPage';
 
-import { Footer } from "./sections/Footer";
-import Contact from "./pages/Contact";
-import Home from "./pages/Home";
-import Flock from "./pages/Flock";
-import Team from "./pages/Team";
-import Sponsors from "./pages/Sponsors";
-import SustainableTechEvent from "pages/SustainableTechEvent";
-import RecruitmentRouter from "pages/Recruitment/RecruitmentRouter";
+import { Footer } from './sections/Footer';
+import Contact from './pages/Contact';
+import Home from './pages/Home';
+import Flock from './pages/Flock';
+import Team from './pages/Team';
+import Sponsors from './pages/Sponsors';
+import SustainableTechEvent from 'pages/SustainableTechEvent';
+import RecruitmentRouter from 'pages/Recruitment/RecruitmentRouter';
+import { STEFooter } from './components/SustainableTech/Footer';
 
-import "typeface-ibm-plex-sans";
-import ErrorPage from "pages/404";
+import 'typeface-ibm-plex-sans';
+import ErrorPage from 'pages/404';
 
 interface State {
   width: number;
@@ -41,13 +42,13 @@ class App extends React.Component<{}, State> {
   }
 
   componentDidMount(): void {
-    window.addEventListener("resize", this.handleWindowSizeChange);
-    document.addEventListener("mousedown", this.handleClick);
+    window.addEventListener('resize', this.handleWindowSizeChange);
+    document.addEventListener('mousedown', this.handleClick);
   }
 
   componentWillUnmount(): void {
-    window.removeEventListener("resize", this.handleWindowSizeChange);
-    document.removeEventListener("mousedown", this.handleClick);
+    window.removeEventListener('resize', this.handleWindowSizeChange);
+    document.removeEventListener('mousedown', this.handleClick);
   }
 
   handleWindowSizeChange(): void {
@@ -73,7 +74,7 @@ class App extends React.Component<{}, State> {
 
   render(): React.ReactElement {
     return (
-      <div className={this.state.sidebarOpen ? "app-lock" : ""}>
+      <div className={this.state.sidebarOpen ? 'app-lock' : ''}>
         <Router>
           {this.state.width > 425 ? (
             <NavBar />
@@ -88,39 +89,50 @@ class App extends React.Component<{}, State> {
           <Switch>
             <Route exact path="/">
               <Home />
+              <Footer />
             </Route>
             <Route path="/the-flock">
               <Flock />
+              <Footer />
             </Route>
             <Route path="/team">
               <Team />
+              <Footer />
             </Route>
             <Route path="/sponsors">
               <Sponsors />
+              <Footer />
             </Route>
             <Route path="/sustainable-tech">
               <SustainableTechEvent />
+              <STEFooter />
             </Route>
             <Route path="/contact">
               <Contact />
+              <Footer />
             </Route>
             <Route path="/recruitment">
               <RecruitmentRouter />
+              <Footer />
             </Route>
             <Route path="/posting" exact>
               <Redirect to="/recruitment" />
+              <Footer />
             </Route>
             <Route path="/posting/:id">
               <JobPostingPage />
+              <Footer />
             </Route>
             <Route path="/404" exact>
               <ErrorPage />
+              <Footer />
             </Route>
             <Route path="/*">
               <Redirect to="/404" />
+              <Footer />
             </Route>
           </Switch>
-          <Footer />
+          {/* <Footer /> */}
         </Router>
       </div>
     );
