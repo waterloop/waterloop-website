@@ -7,6 +7,7 @@ import Home from '../../pages/Home';
 import Flock from '../../pages/Flock';
 import Team from '../../pages/Team';
 import Sponsors from '../../pages/Sponsors';
+import SustainableTechEvent from '../../pages/SustainableTechEvent';
 
 import Link from './Link';
 
@@ -61,7 +62,10 @@ const NavBar: React.FC = () => (
       <Link to="/sponsors" title="Sponsors" text="Sponsors">
         <Sponsors />
       </Link>
-      <Link to="/recruitment" title="Join Us" text="Join Us"/>
+      <Link to="/sustainable-tech" title="STE" text="STE">
+        <SustainableTechEvent />
+      </Link>
+      <Link to="/recruitment" title="Join Us" text="Join Us" />
       <Link to="/contact" title="Contact" text="Contact">
         <Contact />
       </Link>

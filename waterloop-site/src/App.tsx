@@ -15,6 +15,7 @@ import Home from "./pages/Home";
 import Flock from "./pages/Flock";
 import Team from "./pages/Team";
 import Sponsors from "./pages/Sponsors";
+import SustainableTechEvent from "pages/SustainableTechEvent";
 import RecruitmentRouter from "pages/Recruitment/RecruitmentRouter";
 
 import "typeface-ibm-plex-sans";
@@ -96,6 +97,9 @@ class App extends React.Component<{}, State> {
             </Route>
             <Route path="/sponsors">
               <Sponsors />
+            </Route>
+            <Route path="/sustainable-tech">
+              <SustainableTechEvent />
             </Route>
             <Route path="/contact">
               <Contact />
