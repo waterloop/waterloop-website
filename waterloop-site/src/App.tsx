@@ -5,26 +5,35 @@ import {
   BrowserRouter as Router,
   Redirect,
 } from 'react-router-dom';
-
-import { NavBar, SideBar } from './components';
-import JobPostingPage from './components/RecruitmentForm/JobPostingPage';
+import 'typeface-ibm-plex-sans';
 
 import { Footer } from './sections/Footer';
+import JobPostingPage from './components/RecruitmentForm/JobPostingPage';
+import { NavBar, SideBar } from './components';
+import { STEFooter } from './components/SustainableTech/Footer';
+import { STENavBar, STESideBar } from './components/SustainableTech/NavBar';
+
 import Contact from './pages/Contact';
-import Home from './pages/Home';
+import ErrorPage from 'pages/404';
 import Flock from './pages/Flock';
-import Team from './pages/Team';
+import Home from './pages/Home';
+import RecruitmentRouter from 'pages/Recruitment/RecruitmentRouter';
 import Sponsors from './pages/Sponsors';
 import SustainableTechEvent from 'pages/SustainableTechEvent';
-import RecruitmentRouter from 'pages/Recruitment/RecruitmentRouter';
-import { STEFooter } from './components/SustainableTech/Footer';
-
-import 'typeface-ibm-plex-sans';
-import ErrorPage from 'pages/404';
+import Team from './pages/Team';
 
 interface State {
   width: number;
   sidebarOpen: boolean;
+}
+
+interface PageMap {
+  path: string;
+  exact: boolean;
+  NavBarComponent: React.ReactElement;
+  SideBarComponent: React.ReactElement;
+  MainComponent: React.ReactElement;
+  FooterComponent: React.ReactElement;
 }
 
 class App extends React.Component<{}, State> {
@@ -73,64 +82,169 @@ class App extends React.Component<{}, State> {
   }
 
   render(): React.ReactElement {
+    const pageMappings: PageMap[] = [
+      {
+        path: '/',
+        exact: true,
+        NavBarComponent: <NavBar />,
+        SideBarComponent: (
+          <SideBar
+            sidebarOpen={this.state.sidebarOpen}
+            handleClickSidebar={this.handleClickSidebar}
+          />
+        ),
+        MainComponent: <Home />,
+        FooterComponent: <Footer />,
+      },
+      {
+        path: '/the-flock',
+        exact: false,
+        NavBarComponent: <NavBar />,
+        SideBarComponent: (
+          <SideBar
+            sidebarOpen={this.state.sidebarOpen}
+            handleClickSidebar={this.handleClickSidebar}
+          />
+        ),
+        MainComponent: <Flock />,
+        FooterComponent: <Footer />,
+      },
+      {
+        path: '/team',
+        exact: false,
+        NavBarComponent: <NavBar />,
+        SideBarComponent: (
+          <SideBar
+            sidebarOpen={this.state.sidebarOpen}
+            handleClickSidebar={this.handleClickSidebar}
+          />
+        ),
+        MainComponent: <Team />,
+        FooterComponent: <Footer />,
+      },
+      {
+        path: '/sponsors',
+        exact: false,
+        NavBarComponent: <NavBar />,
+        SideBarComponent: (
+          <SideBar
+            sidebarOpen={this.state.sidebarOpen}
+            handleClickSidebar={this.handleClickSidebar}
+          />
+        ),
+        MainComponent: <Sponsors />,
+        FooterComponent: <Footer />,
+      },
+      {
+        path: '/sustainable-tech',
+        exact: false,
+        NavBarComponent: <STENavBar />,
+        SideBarComponent: (
+          <STESideBar
+            sidebarOpen={this.state.sidebarOpen}
+            handleClickSidebar={this.handleClickSidebar}
+          />
+        ),
+        MainComponent: <SustainableTechEvent />,
+        FooterComponent: <STEFooter />,
+      },
+      {
+        path: '/contact',
+        exact: false,
+        NavBarComponent: <NavBar />,
+        SideBarComponent: (
+          <SideBar
+            sidebarOpen={this.state.sidebarOpen}
+            handleClickSidebar={this.handleClickSidebar}
+          />
+        ),
+        MainComponent: <Contact />,
+        FooterComponent: <Footer />,
+      },
+      {
+        path: '/recruitment',
+        exact: false,
+        NavBarComponent: <NavBar />,
+        SideBarComponent: (
+          <SideBar
+            sidebarOpen={this.state.sidebarOpen}
+            handleClickSidebar={this.handleClickSidebar}
+          />
+        ),
+        MainComponent: <RecruitmentRouter />,
+        FooterComponent: <Footer />,
+      },
+      {
+        path: '/posting',
+        exact: true,
+        NavBarComponent: <NavBar />,
+        SideBarComponent: (
+          <SideBar
+            sidebarOpen={this.state.sidebarOpen}
+            handleClickSidebar={this.handleClickSidebar}
+          />
+        ),
+        MainComponent: <Redirect to="/recruitment" />,
+        FooterComponent: <Footer />,
+      },
+      {
+        path: '/posting/:id',
+        exact: false,
+        NavBarComponent: <NavBar />,
+        SideBarComponent: (
+          <SideBar
+            sidebarOpen={this.state.sidebarOpen}
+            handleClickSidebar={this.handleClickSidebar}
+          />
+        ),
+        MainComponent: <JobPostingPage />,
+        FooterComponent: <Footer />,
+      },
+      {
+        path: '/404',
+        exact: true,
+        NavBarComponent: <NavBar />,
+        SideBarComponent: (
+          <SideBar
+            sidebarOpen={this.state.sidebarOpen}
+            handleClickSidebar={this.handleClickSidebar}
+          />
+        ),
+        MainComponent: <ErrorPage />,
+        FooterComponent: <Footer />,
+      },
+      {
+        path: '/*',
+        exact: false,
+        NavBarComponent: <NavBar />,
+        SideBarComponent: (
+          <SideBar
+            sidebarOpen={this.state.sidebarOpen}
+            handleClickSidebar={this.handleClickSidebar}
+          />
+        ),
+        MainComponent: <Redirect to="/404" />,
+        FooterComponent: <Footer />,
+      },
+    ];
+
     return (
       <div className={this.state.sidebarOpen ? 'app-lock' : ''}>
         <Router>
-          {this.state.width > 425 ? (
-            <NavBar />
-          ) : (
-            <div ref={this.sidebar}>
-              <SideBar
-                sidebarOpen={this.state.sidebarOpen}
-                handleClickSidebar={this.handleClickSidebar}
-              />
-            </div>
-          )}
           <Switch>
-            <Route exact path="/">
-              <Home />
-              <Footer />
-            </Route>
-            <Route path="/the-flock">
-              <Flock />
-              <Footer />
-            </Route>
-            <Route path="/team">
-              <Team />
-              <Footer />
-            </Route>
-            <Route path="/sponsors">
-              <Sponsors />
-              <Footer />
-            </Route>
-            <Route path="/sustainable-tech">
-              <SustainableTechEvent />
-              <STEFooter />
-            </Route>
-            <Route path="/contact">
-              <Contact />
-              <Footer />
-            </Route>
-            <Route path="/recruitment">
-              <RecruitmentRouter />
-              <Footer />
-            </Route>
-            <Route path="/posting" exact>
-              <Redirect to="/recruitment" />
-              <Footer />
-            </Route>
-            <Route path="/posting/:id">
-              <JobPostingPage />
-              <Footer />
-            </Route>
-            <Route path="/404" exact>
-              <ErrorPage />
-              <Footer />
-            </Route>
-            <Route path="/*">
-              <Redirect to="/404" />
-              <Footer />
-            </Route>
+            {pageMappings.map((item) => {
+              return (
+                <Route exact={item.exact} path={item.path}>
+                  {this.state.width > 425 ? (
+                    item.NavBarComponent
+                  ) : (
+                    <div ref={this.sidebar}>{item.SideBarComponent}</div>
+                  )}
+                  {item.MainComponent}
+                  {item.FooterComponent}
+                </Route>
+              );
+            })}
           </Switch>
         </Router>
       </div>
