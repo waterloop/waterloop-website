@@ -35,7 +35,7 @@ const AboutContentWrapper = styled.div`
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
-  margin: 10px 0;
+  margin: 30px 0;
   /* background-color: lightblue; */
 `;
 
@@ -45,8 +45,7 @@ const DetailsContainer = styled.div`
   gap: 40px;
   justify-content: center;
   align-items: center;
-  /* margin-top: 10px; */
-  padding: 20px;
+  margin: 40px 0;
 
   @media screen and (max-width: 425px) {
     flex-direction: column;
@@ -85,8 +84,8 @@ const DetailsText = styled.p`
 `;
 
 const TeamsContentWrapper = styled.div`
-  max-width: 1000px;
-  margin: 10px 0;
+  max-width: 800px;
+  margin: 50px 0;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -135,7 +134,7 @@ const TeamInfoText = styled.p`
 
 const TeamsPickerContainer = styled.div`
   width: 100%;
-  margin: 30px auto;
+  margin-top: 75px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -148,7 +147,8 @@ const TeamsPickerCard = styled.div`
   max-width: 150px;
   min-width: 100px;
   border-radius: 8px;
-  background-color: lightgray;
+  background-color: #d1cecd;
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.1);
 `;
 
 const TeamsPickerImage = styled.p`
