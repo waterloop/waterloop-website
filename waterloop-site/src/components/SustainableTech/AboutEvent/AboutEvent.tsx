@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import Waterloop from '../../../static/img/logos/Icon_Yellow.png';
-import TeamPic from '../../../static/img/team/team.png';
 import TeamsCarousel from './TeamsCarousel';
+import LaptopIcon from './img/laptop.svg';
+import EarthIcon from './img/earth.svg';
+import PlantIcon from './img/plant.svg';
 
 const AboutContainer = styled.section`
   padding: 40px;
@@ -59,7 +60,9 @@ const IconCircleType1 = styled.div`
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #3c6130;
 `;
 
@@ -67,7 +70,9 @@ const IconCircleType2 = styled.div`
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #80c169;
 `;
 
@@ -75,8 +80,14 @@ const IconCircleType3 = styled.div`
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #d8eaba;
+`;
+
+const Icon = styled.img`
+  width: 45%;
 `;
 
 const DetailsText = styled.p`
@@ -92,10 +103,6 @@ const AboutEvent: React.FC = () => (
 
     <AboutContentWrapper>
       <DetailsContainer>
-        <IconCircleContainer>
-          <IconCircleType1></IconCircleType1>
-        </IconCircleContainer>
-
         <DetailsText>
           Overtime, technological innovation has become a basic component of
           life. We adore and rely on the many benefits that are offered by
@@ -104,9 +111,19 @@ const AboutEvent: React.FC = () => (
           importantly, the harm that is being done to the environment and how it
           is changing at every moment of our lives.
         </DetailsText>
+        <IconCircleContainer>
+          <IconCircleType1>
+            <Icon src={PlantIcon} alt="Earth" />
+          </IconCircleType1>
+        </IconCircleContainer>
       </DetailsContainer>
 
       <DetailsContainer>
+        <IconCircleContainer>
+          <IconCircleType2>
+            <Icon src={EarthIcon} alt="Earth" />
+          </IconCircleType2>
+        </IconCircleContainer>
         <DetailsText>
           The sustainable technology industry exists for this very reason: to
           help reduce and reverse the damage done to our planet. We want to
@@ -115,15 +132,9 @@ const AboutEvent: React.FC = () => (
           You'll get to hear from us (Waterloop), Midnight Sun, UWAFT (not
           confirmed, may have to add)!
         </DetailsText>
-        <IconCircleContainer>
-          <IconCircleType2></IconCircleType2>
-        </IconCircleContainer>
       </DetailsContainer>
 
       <DetailsContainer>
-        <IconCircleContainer>
-          <IconCircleType3></IconCircleType3>
-        </IconCircleContainer>
         <DetailsText>
           If you’re interested in learning more about how green technology is
           doing its part in creating a better future or how to be a part of the
@@ -131,6 +142,11 @@ const AboutEvent: React.FC = () => (
           25th from 6pm to 8pm EST. Jump start your journey to living more
           ethically and sustainably!
         </DetailsText>
+        <IconCircleContainer>
+          <IconCircleType3>
+            <Icon src={LaptopIcon} alt="Earth" />
+          </IconCircleType3>
+        </IconCircleContainer>
       </DetailsContainer>
     </AboutContentWrapper>
 
