@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Waterloop from '../../../static/img/logos/Icon_Yellow.png';
 import TeamPic from '../../../static/img/team/team.png';
+import TeamsCarousel from './TeamsCarousel';
 
 const AboutContainer = styled.section`
   padding: 40px;
@@ -83,79 +84,6 @@ const DetailsText = styled.p`
   color: #737b7d;
 `;
 
-const TeamsContentWrapper = styled.div`
-  max-width: 800px;
-  margin: 50px 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: column;
-  /* background-color: lightblue; */
-`;
-
-const TeamCardContainer = styled.div`
-  max-width: 800px;
-  display: flex;
-  gap: 40px;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
-  background-color: #80c169;
-  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.15);
-  border-radius: 8px;
-
-  @media screen and (max-width: 768px) {
-    gap: 10px;
-    flex-direction: column;
-  }
-`;
-
-const TeamImageWrapper = styled.div`
-  max-width: 300px;
-`;
-
-const TeamImage = styled.img`
-  width: 100%;
-  border-radius: 8px;
-`;
-
-const TeamInfoWrapper = styled.div``;
-
-const TeamInfoHeading = styled.h2`
-  font-weight: bold;
-  font-size: 16px;
-  color: #ffffff;
-`;
-
-const TeamInfoText = styled.p`
-  font-size: 12px;
-  color: #ffffff;
-`;
-
-const TeamsPickerContainer = styled.div`
-  width: 100%;
-  margin-top: 75px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 40px;
-  flex-wrap: wrap;
-  /* background-color: lightblue; */
-`;
-
-const TeamsPickerCard = styled.div`
-  max-width: 150px;
-  min-width: 100px;
-  border-radius: 8px;
-  background-color: #d1cecd;
-  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.1);
-`;
-
-const TeamsPickerImage = styled.p`
-  width: 100%;
-  text-align: center;
-`;
-
 const AboutEvent: React.FC = () => (
   <AboutContainer id="about">
     <HeadingContainer>
@@ -209,41 +137,7 @@ const AboutEvent: React.FC = () => (
     <HeadingContainer>
       <Heading>TEAMS</Heading>
     </HeadingContainer>
-
-    <TeamsContentWrapper>
-      <TeamCardContainer>
-        <TeamImageWrapper>
-          <TeamImage src={TeamPic}></TeamImage>
-        </TeamImageWrapper>
-
-        <TeamInfoWrapper>
-          <TeamInfoHeading>Lorem ipsum</TeamInfoHeading>
-          <TeamInfoText>
-            Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam
-            no suscipit quaerendum. At nam minimum ponderum. Est audiam animal
-            molestiae te. Ex duo eripuit mentitum. Et has minim elitr
-            intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit
-            quaerendum. At nam minimum ponderum. Est audiam animal molestiae te.
-            Ex duo eripuit mentitum.
-          </TeamInfoText>
-        </TeamInfoWrapper>
-      </TeamCardContainer>
-
-      <TeamsPickerContainer>
-        <TeamsPickerCard>
-          <TeamsPickerImage>Team 1</TeamsPickerImage>
-        </TeamsPickerCard>
-        <TeamsPickerCard>
-          <TeamsPickerImage>Team 2</TeamsPickerImage>
-        </TeamsPickerCard>
-        <TeamsPickerCard>
-          <TeamsPickerImage>Team 3</TeamsPickerImage>
-        </TeamsPickerCard>
-        <TeamsPickerCard>
-          <TeamsPickerImage>Team 4</TeamsPickerImage>
-        </TeamsPickerCard>
-      </TeamsPickerContainer>
-    </TeamsContentWrapper>
+    <TeamsCarousel />
   </AboutContainer>
 );
 
