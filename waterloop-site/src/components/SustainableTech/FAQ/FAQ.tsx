@@ -1,7 +1,7 @@
 import React from "react";
-import content from './content';
 import Collapsible from "./collapsible";
 import styled from 'styled-components'
+import Content from "static/copy/SustainableTech/FAQ.json";
 
 const Title = styled.h1`
   font-size: 44px;
@@ -19,12 +19,12 @@ const Block = styled.div`
 const FAQ: React.FC = () => (
     <Block>
     <Title>FAQ</Title>
-    {content.map(bullet => (
+    {Content.map(text => (
         <Collapsible
             open={false}
-            title={bullet.question}
+            title={text.question}
         >
-            {bullet.answer}
+            {text.answer}
         </Collapsible>
     ))}
     </Block>
