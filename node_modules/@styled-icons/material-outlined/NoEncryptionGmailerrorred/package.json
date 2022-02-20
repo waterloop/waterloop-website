@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./NoEncryptionGmailerrorred.js",
+  "module": "./NoEncryptionGmailerrorred.esm.js",
+  "types": "./NoEncryptionGmailerrorred.d.ts"
+}

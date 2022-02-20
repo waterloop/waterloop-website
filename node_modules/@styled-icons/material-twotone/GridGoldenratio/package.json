@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./GridGoldenratio.js",
+  "module": "./GridGoldenratio.esm.js",
+  "types": "./GridGoldenratio.d.ts"
+}

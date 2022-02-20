@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./PieChartOutline.js",
+  "module": "./PieChartOutline.esm.js",
+  "types": "./PieChartOutline.d.ts"
+}

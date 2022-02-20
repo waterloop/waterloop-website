@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./FlutterDash.js",
+  "module": "./FlutterDash.esm.js",
+  "types": "./FlutterDash.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SmartDisplay.js",
+  "module": "./SmartDisplay.esm.js",
+  "types": "./SmartDisplay.d.ts"
+}

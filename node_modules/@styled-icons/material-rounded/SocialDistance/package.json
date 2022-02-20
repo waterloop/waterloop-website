@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SocialDistance.js",
+  "module": "./SocialDistance.esm.js",
+  "types": "./SocialDistance.d.ts"
+}

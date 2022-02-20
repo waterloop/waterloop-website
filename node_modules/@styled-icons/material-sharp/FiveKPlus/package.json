@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./FiveKPlus.js",
+  "module": "./FiveKPlus.esm.js",
+  "types": "./FiveKPlus.d.ts"
+}

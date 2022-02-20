@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./NightlightRound.js",
+  "module": "./NightlightRound.esm.js",
+  "types": "./NightlightRound.d.ts"
+}

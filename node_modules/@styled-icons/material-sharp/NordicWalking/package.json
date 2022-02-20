@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./NordicWalking.js",
+  "module": "./NordicWalking.esm.js",
+  "types": "./NordicWalking.d.ts"
+}

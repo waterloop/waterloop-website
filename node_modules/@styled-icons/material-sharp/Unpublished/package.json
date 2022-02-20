@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Unpublished.js",
+  "module": "./Unpublished.esm.js",
+  "types": "./Unpublished.d.ts"
+}

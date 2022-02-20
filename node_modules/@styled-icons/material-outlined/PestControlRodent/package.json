@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./PestControlRodent.js",
+  "module": "./PestControlRodent.esm.js",
+  "types": "./PestControlRodent.d.ts"
+}

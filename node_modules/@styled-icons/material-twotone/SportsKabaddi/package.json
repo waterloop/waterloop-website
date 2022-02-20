@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SportsKabaddi.js",
+  "module": "./SportsKabaddi.esm.js",
+  "types": "./SportsKabaddi.d.ts"
+}

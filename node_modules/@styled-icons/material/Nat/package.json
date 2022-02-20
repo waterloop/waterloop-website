@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Nat.js",
+  "module": "./Nat.esm.js",
+  "types": "./Nat.d.ts"
+}

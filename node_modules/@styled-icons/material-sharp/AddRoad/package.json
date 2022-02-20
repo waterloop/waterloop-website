@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./AddRoad.js",
+  "module": "./AddRoad.esm.js",
+  "types": "./AddRoad.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./MarkEmailRead.js",
+  "module": "./MarkEmailRead.esm.js",
+  "types": "./MarkEmailRead.d.ts"
+}

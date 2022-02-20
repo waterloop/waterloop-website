@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./AirplaneTicket.js",
+  "module": "./AirplaneTicket.esm.js",
+  "types": "./AirplaneTicket.d.ts"
+}

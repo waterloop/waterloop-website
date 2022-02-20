@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SendAndArchive.js",
+  "module": "./SendAndArchive.esm.js",
+  "types": "./SendAndArchive.d.ts"
+}

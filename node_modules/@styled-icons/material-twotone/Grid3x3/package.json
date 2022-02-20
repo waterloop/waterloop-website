@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Grid3x3.js",
+  "module": "./Grid3x3.esm.js",
+  "types": "./Grid3x3.d.ts"
+}

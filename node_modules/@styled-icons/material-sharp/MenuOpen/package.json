@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./MenuOpen.js",
+  "module": "./MenuOpen.esm.js",
+  "types": "./MenuOpen.d.ts"
+}

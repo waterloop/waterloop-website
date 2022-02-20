@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SmartButton.js",
+  "module": "./SmartButton.esm.js",
+  "types": "./SmartButton.d.ts"
+}

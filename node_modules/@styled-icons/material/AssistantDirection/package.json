@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./AssistantDirection.js",
+  "module": "./AssistantDirection.esm.js",
+  "types": "./AssistantDirection.d.ts"
+}

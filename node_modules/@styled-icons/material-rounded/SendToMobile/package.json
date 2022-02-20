@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SendToMobile.js",
+  "module": "./SendToMobile.esm.js",
+  "types": "./SendToMobile.d.ts"
+}

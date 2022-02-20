@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./AdminPanelSettings.js",
+  "module": "./AdminPanelSettings.esm.js",
+  "types": "./AdminPanelSettings.d.ts"
+}

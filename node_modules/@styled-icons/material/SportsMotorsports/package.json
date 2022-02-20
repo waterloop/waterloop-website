@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SportsMotorsports.js",
+  "module": "./SportsMotorsports.esm.js",
+  "types": "./SportsMotorsports.d.ts"
+}

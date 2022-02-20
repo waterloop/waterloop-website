@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./MediaBluetoothOff.js",
+  "module": "./MediaBluetoothOff.esm.js",
+  "types": "./MediaBluetoothOff.d.ts"
+}

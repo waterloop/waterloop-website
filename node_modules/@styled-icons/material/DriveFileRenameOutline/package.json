@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./DriveFileRenameOutline.js",
+  "module": "./DriveFileRenameOutline.esm.js",
+  "types": "./DriveFileRenameOutline.d.ts"
+}

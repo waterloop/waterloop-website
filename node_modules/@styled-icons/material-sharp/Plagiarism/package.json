@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Plagiarism.js",
+  "module": "./Plagiarism.esm.js",
+  "types": "./Plagiarism.d.ts"
+}

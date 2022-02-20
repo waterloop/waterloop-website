@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./DynamicFeed.js",
+  "module": "./DynamicFeed.esm.js",
+  "types": "./DynamicFeed.d.ts"
+}

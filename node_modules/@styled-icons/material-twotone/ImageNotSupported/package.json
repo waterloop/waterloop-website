@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ImageNotSupported.js",
+  "module": "./ImageNotSupported.esm.js",
+  "types": "./ImageNotSupported.d.ts"
+}

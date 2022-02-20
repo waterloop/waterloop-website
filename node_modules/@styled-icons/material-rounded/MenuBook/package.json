@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./MenuBook.js",
+  "module": "./MenuBook.esm.js",
+  "types": "./MenuBook.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ModeEdit.js",
+  "module": "./ModeEdit.esm.js",
+  "types": "./ModeEdit.d.ts"
+}

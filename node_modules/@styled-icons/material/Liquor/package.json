@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Liquor.js",
+  "module": "./Liquor.esm.js",
+  "types": "./Liquor.d.ts"
+}

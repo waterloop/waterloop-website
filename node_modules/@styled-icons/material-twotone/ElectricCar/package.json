@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ElectricCar.js",
+  "module": "./ElectricCar.esm.js",
+  "types": "./ElectricCar.d.ts"
+}

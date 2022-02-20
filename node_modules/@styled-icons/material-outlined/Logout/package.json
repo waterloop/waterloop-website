@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Logout.js",
+  "module": "./Logout.esm.js",
+  "types": "./Logout.d.ts"
+}

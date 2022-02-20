@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SixtyFps.js",
+  "module": "./SixtyFps.esm.js",
+  "types": "./SixtyFps.d.ts"
+}

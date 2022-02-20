@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./PublicOff.js",
+  "module": "./PublicOff.esm.js",
+  "types": "./PublicOff.d.ts"
+}

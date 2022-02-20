@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./UsbOff.js",
+  "module": "./UsbOff.esm.js",
+  "types": "./UsbOff.d.ts"
+}

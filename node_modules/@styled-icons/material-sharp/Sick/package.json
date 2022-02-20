@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Sick.js",
+  "module": "./Sick.esm.js",
+  "types": "./Sick.d.ts"
+}

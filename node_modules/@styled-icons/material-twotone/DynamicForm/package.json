@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./DynamicForm.js",
+  "module": "./DynamicForm.esm.js",
+  "types": "./DynamicForm.d.ts"
+}

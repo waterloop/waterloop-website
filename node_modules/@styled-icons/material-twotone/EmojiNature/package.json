@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./EmojiNature.js",
+  "module": "./EmojiNature.esm.js",
+  "types": "./EmojiNature.d.ts"
+}

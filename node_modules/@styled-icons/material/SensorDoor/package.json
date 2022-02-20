@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SensorDoor.js",
+  "module": "./SensorDoor.esm.js",
+  "types": "./SensorDoor.d.ts"
+}

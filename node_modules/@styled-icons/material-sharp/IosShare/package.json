@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./IosShare.js",
+  "module": "./IosShare.esm.js",
+  "types": "./IosShare.d.ts"
+}

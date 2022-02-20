@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Policy.js",
+  "module": "./Policy.esm.js",
+  "types": "./Policy.d.ts"
+}

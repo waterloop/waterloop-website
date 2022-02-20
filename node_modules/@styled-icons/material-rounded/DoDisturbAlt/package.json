@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./DoDisturbAlt.js",
+  "module": "./DoDisturbAlt.esm.js",
+  "types": "./DoDisturbAlt.d.ts"
+}

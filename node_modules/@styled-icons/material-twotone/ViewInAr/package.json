@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ViewInAr.js",
+  "module": "./ViewInAr.esm.js",
+  "types": "./ViewInAr.d.ts"
+}

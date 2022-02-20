@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ManageAccounts.js",
+  "module": "./ManageAccounts.esm.js",
+  "types": "./ManageAccounts.d.ts"
+}

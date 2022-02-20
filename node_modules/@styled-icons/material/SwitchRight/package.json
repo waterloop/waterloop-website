@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SwitchRight.js",
+  "module": "./SwitchRight.esm.js",
+  "types": "./SwitchRight.d.ts"
+}

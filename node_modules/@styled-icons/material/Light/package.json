@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Light.js",
+  "module": "./Light.esm.js",
+  "types": "./Light.d.ts"
+}

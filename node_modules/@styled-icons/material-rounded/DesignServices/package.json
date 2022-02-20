@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./DesignServices.js",
+  "module": "./DesignServices.esm.js",
+  "types": "./DesignServices.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ContentPaste.js",
+  "module": "./ContentPaste.esm.js",
+  "types": "./ContentPaste.d.ts"
+}

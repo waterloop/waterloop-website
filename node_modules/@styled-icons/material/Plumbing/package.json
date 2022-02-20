@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Plumbing.js",
+  "module": "./Plumbing.esm.js",
+  "types": "./Plumbing.d.ts"
+}

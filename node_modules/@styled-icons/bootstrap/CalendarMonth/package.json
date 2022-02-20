@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./CalendarMonth.js",
+  "module": "./CalendarMonth.esm.js",
+  "types": "./CalendarMonth.d.ts"
+}

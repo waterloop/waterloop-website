@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./WbShade.js",
+  "module": "./WbShade.esm.js",
+  "types": "./WbShade.d.ts"
+}

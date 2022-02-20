@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Paragliding.js",
+  "module": "./Paragliding.esm.js",
+  "types": "./Paragliding.d.ts"
+}

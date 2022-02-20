@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Kitesurfing.js",
+  "module": "./Kitesurfing.esm.js",
+  "types": "./Kitesurfing.d.ts"
+}

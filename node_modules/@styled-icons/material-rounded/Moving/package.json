@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Moving.js",
+  "module": "./Moving.esm.js",
+  "types": "./Moving.d.ts"
+}

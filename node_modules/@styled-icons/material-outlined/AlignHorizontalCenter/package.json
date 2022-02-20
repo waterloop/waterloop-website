@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./AlignHorizontalCenter.js",
+  "module": "./AlignHorizontalCenter.esm.js",
+  "types": "./AlignHorizontalCenter.d.ts"
+}

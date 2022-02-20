@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Shortcut.js",
+  "module": "./Shortcut.esm.js",
+  "types": "./Shortcut.d.ts"
+}

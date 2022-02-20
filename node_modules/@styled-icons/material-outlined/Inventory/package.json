@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Inventory.js",
+  "module": "./Inventory.esm.js",
+  "types": "./Inventory.d.ts"
+}

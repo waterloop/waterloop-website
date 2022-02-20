@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./OneXMobiledata.js",
+  "module": "./OneXMobiledata.esm.js",
+  "types": "./OneXMobiledata.d.ts"
+}

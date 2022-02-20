@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./GppGood.js",
+  "module": "./GppGood.esm.js",
+  "types": "./GppGood.d.ts"
+}

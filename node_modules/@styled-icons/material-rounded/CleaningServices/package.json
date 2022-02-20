@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./CleaningServices.js",
+  "module": "./CleaningServices.esm.js",
+  "types": "./CleaningServices.d.ts"
+}

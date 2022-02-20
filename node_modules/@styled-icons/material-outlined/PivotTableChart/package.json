@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./PivotTableChart.js",
+  "module": "./PivotTableChart.esm.js",
+  "types": "./PivotTableChart.d.ts"
+}

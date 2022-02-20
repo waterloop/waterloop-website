@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./MotionPhotosOn.js",
+  "module": "./MotionPhotosOn.esm.js",
+  "types": "./MotionPhotosOn.d.ts"
+}

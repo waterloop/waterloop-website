@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./TextSnippet.js",
+  "module": "./TextSnippet.esm.js",
+  "types": "./TextSnippet.d.ts"
+}

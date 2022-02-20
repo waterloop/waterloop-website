@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./NotAccessible.js",
+  "module": "./NotAccessible.esm.js",
+  "types": "./NotAccessible.d.ts"
+}

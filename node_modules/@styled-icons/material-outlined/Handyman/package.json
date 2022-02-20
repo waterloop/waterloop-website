@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Handyman.js",
+  "module": "./Handyman.esm.js",
+  "types": "./Handyman.d.ts"
+}

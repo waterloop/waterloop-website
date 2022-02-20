@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Museum.js",
+  "module": "./Museum.esm.js",
+  "types": "./Museum.d.ts"
+}

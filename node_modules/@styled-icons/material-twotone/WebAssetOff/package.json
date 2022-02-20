@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./WebAssetOff.js",
+  "module": "./WebAssetOff.esm.js",
+  "types": "./WebAssetOff.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./TaskAlt.js",
+  "module": "./TaskAlt.esm.js",
+  "types": "./TaskAlt.d.ts"
+}

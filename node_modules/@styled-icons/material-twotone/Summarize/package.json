@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Summarize.js",
+  "module": "./Summarize.esm.js",
+  "types": "./Summarize.d.ts"
+}

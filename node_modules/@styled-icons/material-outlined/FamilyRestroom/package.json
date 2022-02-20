@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./FamilyRestroom.js",
+  "module": "./FamilyRestroom.esm.js",
+  "types": "./FamilyRestroom.d.ts"
+}

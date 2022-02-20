@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Margin.js",
+  "module": "./Margin.esm.js",
+  "types": "./Margin.d.ts"
+}

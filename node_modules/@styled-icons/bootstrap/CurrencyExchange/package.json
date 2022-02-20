@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./CurrencyExchange.js",
+  "module": "./CurrencyExchange.esm.js",
+  "types": "./CurrencyExchange.d.ts"
+}

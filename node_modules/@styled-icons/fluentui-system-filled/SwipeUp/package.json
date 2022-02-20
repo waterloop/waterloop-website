@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SwipeUp.js",
+  "module": "./SwipeUp.esm.js",
+  "types": "./SwipeUp.d.ts"
+}

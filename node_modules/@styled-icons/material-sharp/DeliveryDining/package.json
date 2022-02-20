@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./DeliveryDining.js",
+  "module": "./DeliveryDining.esm.js",
+  "types": "./DeliveryDining.d.ts"
+}

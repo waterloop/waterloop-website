@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./OpenInNewOff.js",
+  "module": "./OpenInNewOff.esm.js",
+  "types": "./OpenInNewOff.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Grading.js",
+  "module": "./Grading.esm.js",
+  "types": "./Grading.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./IntegrationInstructions.js",
+  "module": "./IntegrationInstructions.esm.js",
+  "types": "./IntegrationInstructions.d.ts"
+}

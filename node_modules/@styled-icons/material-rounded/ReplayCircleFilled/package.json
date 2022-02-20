@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ReplayCircleFilled.js",
+  "module": "./ReplayCircleFilled.esm.js",
+  "types": "./ReplayCircleFilled.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./TheaterComedy.js",
+  "module": "./TheaterComedy.esm.js",
+  "types": "./TheaterComedy.d.ts"
+}

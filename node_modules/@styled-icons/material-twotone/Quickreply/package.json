@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Quickreply.js",
+  "module": "./Quickreply.esm.js",
+  "types": "./Quickreply.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SecurityUpdateWarning.js",
+  "module": "./SecurityUpdateWarning.esm.js",
+  "types": "./SecurityUpdateWarning.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Wysiwyg.js",
+  "module": "./Wysiwyg.esm.js",
+  "types": "./Wysiwyg.d.ts"
+}

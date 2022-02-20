@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./NoTransfer.js",
+  "module": "./NoTransfer.esm.js",
+  "types": "./NoTransfer.d.ts"
+}

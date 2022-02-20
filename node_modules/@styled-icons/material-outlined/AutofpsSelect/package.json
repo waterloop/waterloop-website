@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./AutofpsSelect.js",
+  "module": "./AutofpsSelect.esm.js",
+  "types": "./AutofpsSelect.d.ts"
+}

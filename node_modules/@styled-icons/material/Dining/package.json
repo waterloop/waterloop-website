@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Dining.js",
+  "module": "./Dining.esm.js",
+  "types": "./Dining.d.ts"
+}

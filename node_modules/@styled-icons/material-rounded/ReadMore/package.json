@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ReadMore.js",
+  "module": "./ReadMore.esm.js",
+  "types": "./ReadMore.d.ts"
+}

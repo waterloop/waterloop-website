@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ElevenMp.js",
+  "module": "./ElevenMp.esm.js",
+  "types": "./ElevenMp.d.ts"
+}

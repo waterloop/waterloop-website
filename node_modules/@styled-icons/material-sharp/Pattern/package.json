@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Pattern.js",
+  "module": "./Pattern.esm.js",
+  "types": "./Pattern.d.ts"
+}

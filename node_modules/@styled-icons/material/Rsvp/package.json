@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Rsvp.js",
+  "module": "./Rsvp.esm.js",
+  "types": "./Rsvp.d.ts"
+}

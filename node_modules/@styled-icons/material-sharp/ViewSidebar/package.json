@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ViewSidebar.js",
+  "module": "./ViewSidebar.esm.js",
+  "types": "./ViewSidebar.d.ts"
+}

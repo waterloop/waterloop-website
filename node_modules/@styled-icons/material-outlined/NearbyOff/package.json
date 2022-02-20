@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./NearbyOff.js",
+  "module": "./NearbyOff.esm.js",
+  "types": "./NearbyOff.d.ts"
+}

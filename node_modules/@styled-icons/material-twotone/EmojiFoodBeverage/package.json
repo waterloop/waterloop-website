@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./EmojiFoodBeverage.js",
+  "module": "./EmojiFoodBeverage.esm.js",
+  "types": "./EmojiFoodBeverage.d.ts"
+}

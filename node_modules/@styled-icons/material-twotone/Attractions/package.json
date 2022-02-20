@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Attractions.js",
+  "module": "./Attractions.esm.js",
+  "types": "./Attractions.d.ts"
+}

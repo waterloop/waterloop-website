@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./KingBed.js",
+  "module": "./KingBed.esm.js",
+  "types": "./KingBed.d.ts"
+}

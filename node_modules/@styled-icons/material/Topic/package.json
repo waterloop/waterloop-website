@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Topic.js",
+  "module": "./Topic.esm.js",
+  "types": "./Topic.d.ts"
+}

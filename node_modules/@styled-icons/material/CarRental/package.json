@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./CarRental.js",
+  "module": "./CarRental.esm.js",
+  "types": "./CarRental.d.ts"
+}

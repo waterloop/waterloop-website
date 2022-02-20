@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SafetyDivider.js",
+  "module": "./SafetyDivider.esm.js",
+  "types": "./SafetyDivider.d.ts"
+}

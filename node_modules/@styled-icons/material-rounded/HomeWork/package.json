@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./HomeWork.js",
+  "module": "./HomeWork.esm.js",
+  "types": "./HomeWork.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ThermostatAuto.js",
+  "module": "./ThermostatAuto.esm.js",
+  "types": "./ThermostatAuto.d.ts"
+}

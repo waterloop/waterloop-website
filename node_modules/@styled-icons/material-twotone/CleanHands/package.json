@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./CleanHands.js",
+  "module": "./CleanHands.esm.js",
+  "types": "./CleanHands.d.ts"
+}

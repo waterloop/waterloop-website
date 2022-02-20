@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Doorbell.js",
+  "module": "./Doorbell.esm.js",
+  "types": "./Doorbell.d.ts"
+}

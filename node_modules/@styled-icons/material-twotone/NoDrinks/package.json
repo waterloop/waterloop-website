@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./NoDrinks.js",
+  "module": "./NoDrinks.esm.js",
+  "types": "./NoDrinks.d.ts"
+}

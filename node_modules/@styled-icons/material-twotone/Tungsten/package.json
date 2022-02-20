@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Tungsten.js",
+  "module": "./Tungsten.esm.js",
+  "types": "./Tungsten.d.ts"
+}

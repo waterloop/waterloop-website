@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ShareLocation.js",
+  "module": "./ShareLocation.esm.js",
+  "types": "./ShareLocation.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./AlignHorizontalRight.js",
+  "module": "./AlignHorizontalRight.esm.js",
+  "types": "./AlignHorizontalRight.d.ts"
+}

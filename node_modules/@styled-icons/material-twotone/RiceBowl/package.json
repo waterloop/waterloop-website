@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./RiceBowl.js",
+  "module": "./RiceBowl.esm.js",
+  "types": "./RiceBowl.d.ts"
+}

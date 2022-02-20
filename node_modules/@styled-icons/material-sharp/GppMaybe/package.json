@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./GppMaybe.js",
+  "module": "./GppMaybe.esm.js",
+  "types": "./GppMaybe.d.ts"
+}

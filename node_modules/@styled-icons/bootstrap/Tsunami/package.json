@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Tsunami.js",
+  "module": "./Tsunami.esm.js",
+  "types": "./Tsunami.d.ts"
+}

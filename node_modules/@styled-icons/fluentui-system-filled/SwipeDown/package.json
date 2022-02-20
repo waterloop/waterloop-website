@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SwipeDown.js",
+  "module": "./SwipeDown.esm.js",
+  "types": "./SwipeDown.d.ts"
+}

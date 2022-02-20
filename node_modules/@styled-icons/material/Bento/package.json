@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Bento.js",
+  "module": "./Bento.esm.js",
+  "types": "./Bento.d.ts"
+}

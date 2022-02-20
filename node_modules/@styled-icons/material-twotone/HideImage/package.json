@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./HideImage.js",
+  "module": "./HideImage.esm.js",
+  "types": "./HideImage.d.ts"
+}

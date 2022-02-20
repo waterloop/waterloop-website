@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./PanoramaVerticalSelect.js",
+  "module": "./PanoramaVerticalSelect.esm.js",
+  "types": "./PanoramaVerticalSelect.d.ts"
+}

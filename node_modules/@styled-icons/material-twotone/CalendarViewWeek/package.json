@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./CalendarViewWeek.js",
+  "module": "./CalendarViewWeek.esm.js",
+  "types": "./CalendarViewWeek.d.ts"
+}

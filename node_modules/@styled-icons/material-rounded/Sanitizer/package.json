@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Sanitizer.js",
+  "module": "./Sanitizer.esm.js",
+  "types": "./Sanitizer.d.ts"
+}

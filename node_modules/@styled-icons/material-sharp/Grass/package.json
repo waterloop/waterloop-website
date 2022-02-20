@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Grass.js",
+  "module": "./Grass.esm.js",
+  "types": "./Grass.d.ts"
+}

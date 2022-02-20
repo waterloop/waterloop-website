@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Surfing.js",
+  "module": "./Surfing.esm.js",
+  "types": "./Surfing.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./CarRepair.js",
+  "module": "./CarRepair.esm.js",
+  "types": "./CarRepair.d.ts"
+}

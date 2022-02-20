@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./MarkChatRead.js",
+  "module": "./MarkChatRead.esm.js",
+  "types": "./MarkChatRead.d.ts"
+}

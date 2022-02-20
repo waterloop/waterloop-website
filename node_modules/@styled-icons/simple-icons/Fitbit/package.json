@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Fitbit.js",
+  "module": "./Fitbit.esm.js",
+  "types": "./Fitbit.d.ts"
+}

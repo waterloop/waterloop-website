@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Sledding.js",
+  "module": "./Sledding.esm.js",
+  "types": "./Sledding.d.ts"
+}

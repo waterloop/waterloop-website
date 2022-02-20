@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./FlashlightOff.js",
+  "module": "./FlashlightOff.esm.js",
+  "types": "./FlashlightOff.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ShuffleOn.js",
+  "module": "./ShuffleOn.esm.js",
+  "types": "./ShuffleOn.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Bloodtype.js",
+  "module": "./Bloodtype.esm.js",
+  "types": "./Bloodtype.d.ts"
+}

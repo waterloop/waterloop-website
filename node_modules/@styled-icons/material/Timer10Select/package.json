@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Timer10Select.js",
+  "module": "./Timer10Select.esm.js",
+  "types": "./Timer10Select.d.ts"
+}

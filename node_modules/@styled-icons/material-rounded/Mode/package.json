@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Mode.js",
+  "module": "./Mode.esm.js",
+  "types": "./Mode.d.ts"
+}

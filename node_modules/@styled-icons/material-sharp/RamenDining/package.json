@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./RamenDining.js",
+  "module": "./RamenDining.esm.js",
+  "types": "./RamenDining.d.ts"
+}

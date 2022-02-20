@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ContentCopy.js",
+  "module": "./ContentCopy.esm.js",
+  "types": "./ContentCopy.d.ts"
+}

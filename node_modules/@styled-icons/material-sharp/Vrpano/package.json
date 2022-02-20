@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Vrpano.js",
+  "module": "./Vrpano.esm.js",
+  "types": "./Vrpano.d.ts"
+}

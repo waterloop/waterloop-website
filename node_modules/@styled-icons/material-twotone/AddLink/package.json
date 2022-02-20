@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./AddLink.js",
+  "module": "./AddLink.esm.js",
+  "types": "./AddLink.d.ts"
+}

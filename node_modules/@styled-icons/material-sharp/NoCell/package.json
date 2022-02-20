@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./NoCell.js",
+  "module": "./NoCell.esm.js",
+  "types": "./NoCell.d.ts"
+}

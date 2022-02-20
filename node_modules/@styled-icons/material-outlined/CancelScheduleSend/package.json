@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./CancelScheduleSend.js",
+  "module": "./CancelScheduleSend.esm.js",
+  "types": "./CancelScheduleSend.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Quiz.js",
+  "module": "./Quiz.esm.js",
+  "types": "./Quiz.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./BakeryDining.js",
+  "module": "./BakeryDining.esm.js",
+  "types": "./BakeryDining.d.ts"
+}

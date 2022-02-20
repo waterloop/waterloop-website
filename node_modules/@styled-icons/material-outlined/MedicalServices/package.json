@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./MedicalServices.js",
+  "module": "./MedicalServices.esm.js",
+  "types": "./MedicalServices.d.ts"
+}

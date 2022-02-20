@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./EscalatorWarning.js",
+  "module": "./EscalatorWarning.esm.js",
+  "types": "./EscalatorWarning.d.ts"
+}

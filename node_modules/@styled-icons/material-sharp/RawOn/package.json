@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./RawOn.js",
+  "module": "./RawOn.esm.js",
+  "types": "./RawOn.d.ts"
+}

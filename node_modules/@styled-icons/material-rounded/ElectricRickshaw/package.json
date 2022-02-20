@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ElectricRickshaw.js",
+  "module": "./ElectricRickshaw.esm.js",
+  "types": "./ElectricRickshaw.d.ts"
+}

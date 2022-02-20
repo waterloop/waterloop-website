@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./HdrPlus.js",
+  "module": "./HdrPlus.esm.js",
+  "types": "./HdrPlus.d.ts"
+}

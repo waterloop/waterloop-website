@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./FlipCameraAndroid.js",
+  "module": "./FlipCameraAndroid.esm.js",
+  "types": "./FlipCameraAndroid.d.ts"
+}

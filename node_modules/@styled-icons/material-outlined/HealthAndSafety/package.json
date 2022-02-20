@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./HealthAndSafety.js",
+  "module": "./HealthAndSafety.esm.js",
+  "types": "./HealthAndSafety.d.ts"
+}

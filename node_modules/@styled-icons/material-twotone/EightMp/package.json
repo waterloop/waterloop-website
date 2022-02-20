@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./EightMp.js",
+  "module": "./EightMp.esm.js",
+  "types": "./EightMp.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ConnectWithoutContact.js",
+  "module": "./ConnectWithoutContact.esm.js",
+  "types": "./ConnectWithoutContact.d.ts"
+}

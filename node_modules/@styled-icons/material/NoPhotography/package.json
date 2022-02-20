@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./NoPhotography.js",
+  "module": "./NoPhotography.esm.js",
+  "types": "./NoPhotography.d.ts"
+}

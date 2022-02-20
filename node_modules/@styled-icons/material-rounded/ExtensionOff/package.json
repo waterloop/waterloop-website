@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ExtensionOff.js",
+  "module": "./ExtensionOff.esm.js",
+  "types": "./ExtensionOff.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Kayaking.js",
+  "module": "./Kayaking.esm.js",
+  "types": "./Kayaking.d.ts"
+}

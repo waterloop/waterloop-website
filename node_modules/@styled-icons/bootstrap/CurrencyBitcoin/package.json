@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./CurrencyBitcoin.js",
+  "module": "./CurrencyBitcoin.esm.js",
+  "types": "./CurrencyBitcoin.d.ts"
+}

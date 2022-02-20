@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Stroller.js",
+  "module": "./Stroller.esm.js",
+  "types": "./Stroller.d.ts"
+}

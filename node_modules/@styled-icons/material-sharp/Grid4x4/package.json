@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Grid4x4.js",
+  "module": "./Grid4x4.esm.js",
+  "types": "./Grid4x4.d.ts"
+}

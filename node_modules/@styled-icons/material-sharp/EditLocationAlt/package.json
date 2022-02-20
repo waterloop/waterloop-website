@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./EditLocationAlt.js",
+  "module": "./EditLocationAlt.esm.js",
+  "types": "./EditLocationAlt.d.ts"
+}

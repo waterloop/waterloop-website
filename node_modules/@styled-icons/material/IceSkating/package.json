@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./IceSkating.js",
+  "module": "./IceSkating.esm.js",
+  "types": "./IceSkating.d.ts"
+}

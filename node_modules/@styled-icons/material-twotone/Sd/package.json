@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Sd.js",
+  "module": "./Sd.esm.js",
+  "types": "./Sd.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Fence.js",
+  "module": "./Fence.esm.js",
+  "types": "./Fence.d.ts"
+}

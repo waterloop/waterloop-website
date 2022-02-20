@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SimCardAlert.js",
+  "module": "./SimCardAlert.esm.js",
+  "types": "./SimCardAlert.d.ts"
+}

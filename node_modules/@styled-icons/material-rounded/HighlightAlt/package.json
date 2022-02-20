@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./HighlightAlt.js",
+  "module": "./HighlightAlt.esm.js",
+  "types": "./HighlightAlt.d.ts"
+}

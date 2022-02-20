@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./DirectionsBoatFilled.js",
+  "module": "./DirectionsBoatFilled.esm.js",
+  "types": "./DirectionsBoatFilled.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./PersonRemove.js",
+  "module": "./PersonRemove.esm.js",
+  "types": "./PersonRemove.d.ts"
+}

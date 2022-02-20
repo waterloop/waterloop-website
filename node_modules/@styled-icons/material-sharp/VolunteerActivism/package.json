@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./VolunteerActivism.js",
+  "module": "./VolunteerActivism.esm.js",
+  "types": "./VolunteerActivism.d.ts"
+}

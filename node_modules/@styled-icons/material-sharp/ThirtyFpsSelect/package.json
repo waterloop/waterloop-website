@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ThirtyFpsSelect.js",
+  "module": "./ThirtyFpsSelect.esm.js",
+  "types": "./ThirtyFpsSelect.d.ts"
+}

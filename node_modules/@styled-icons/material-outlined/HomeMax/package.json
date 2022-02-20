@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./HomeMax.js",
+  "module": "./HomeMax.esm.js",
+  "types": "./HomeMax.d.ts"
+}

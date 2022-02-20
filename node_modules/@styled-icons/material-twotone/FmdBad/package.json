@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./FmdBad.js",
+  "module": "./FmdBad.esm.js",
+  "types": "./FmdBad.d.ts"
+}

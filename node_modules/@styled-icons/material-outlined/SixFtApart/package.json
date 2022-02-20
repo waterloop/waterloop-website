@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SixFtApart.js",
+  "module": "./SixFtApart.esm.js",
+  "types": "./SixFtApart.d.ts"
+}

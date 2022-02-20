@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./LegendToggle.js",
+  "module": "./LegendToggle.esm.js",
+  "types": "./LegendToggle.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./UpdateDisabled.js",
+  "module": "./UpdateDisabled.esm.js",
+  "types": "./UpdateDisabled.d.ts"
+}

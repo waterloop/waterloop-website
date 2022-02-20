@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./MoreTime.js",
+  "module": "./MoreTime.esm.js",
+  "types": "./MoreTime.d.ts"
+}

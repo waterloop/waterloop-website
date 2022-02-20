@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ModelTraining.js",
+  "module": "./ModelTraining.esm.js",
+  "types": "./ModelTraining.d.ts"
+}

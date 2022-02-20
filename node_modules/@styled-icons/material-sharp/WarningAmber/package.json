@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./WarningAmber.js",
+  "module": "./WarningAmber.esm.js",
+  "types": "./WarningAmber.d.ts"
+}

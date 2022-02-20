@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Timer3Select.js",
+  "module": "./Timer3Select.esm.js",
+  "types": "./Timer3Select.d.ts"
+}

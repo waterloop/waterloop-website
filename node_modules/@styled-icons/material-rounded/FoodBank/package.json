@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./FoodBank.js",
+  "module": "./FoodBank.esm.js",
+  "types": "./FoodBank.d.ts"
+}

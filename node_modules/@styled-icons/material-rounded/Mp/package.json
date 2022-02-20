@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Mp.js",
+  "module": "./Mp.esm.js",
+  "types": "./Mp.d.ts"
+}

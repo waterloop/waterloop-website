@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./DashboardCustomize.js",
+  "module": "./DashboardCustomize.esm.js",
+  "types": "./DashboardCustomize.d.ts"
+}

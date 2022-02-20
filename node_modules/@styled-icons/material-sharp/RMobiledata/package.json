@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./RMobiledata.js",
+  "module": "./RMobiledata.esm.js",
+  "types": "./RMobiledata.d.ts"
+}

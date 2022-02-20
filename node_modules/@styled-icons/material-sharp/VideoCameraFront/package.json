@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./VideoCameraFront.js",
+  "module": "./VideoCameraFront.esm.js",
+  "types": "./VideoCameraFront.d.ts"
+}

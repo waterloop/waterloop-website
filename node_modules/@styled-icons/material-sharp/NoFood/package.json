@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./NoFood.js",
+  "module": "./NoFood.esm.js",
+  "types": "./NoFood.d.ts"
+}

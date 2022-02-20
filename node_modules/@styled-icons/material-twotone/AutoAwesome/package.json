@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./AutoAwesome.js",
+  "module": "./AutoAwesome.esm.js",
+  "types": "./AutoAwesome.d.ts"
+}

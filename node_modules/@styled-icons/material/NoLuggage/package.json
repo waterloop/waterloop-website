@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./NoLuggage.js",
+  "module": "./NoLuggage.esm.js",
+  "types": "./NoLuggage.d.ts"
+}

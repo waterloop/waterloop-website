@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./NotificationAdd.js",
+  "module": "./NotificationAdd.esm.js",
+  "types": "./NotificationAdd.d.ts"
+}

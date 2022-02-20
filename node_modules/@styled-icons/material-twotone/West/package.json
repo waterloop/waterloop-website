@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./West.js",
+  "module": "./West.esm.js",
+  "types": "./West.d.ts"
+}

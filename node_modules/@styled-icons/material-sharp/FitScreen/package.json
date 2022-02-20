@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./FitScreen.js",
+  "module": "./FitScreen.esm.js",
+  "types": "./FitScreen.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./NightShelter.js",
+  "module": "./NightShelter.esm.js",
+  "types": "./NightShelter.d.ts"
+}

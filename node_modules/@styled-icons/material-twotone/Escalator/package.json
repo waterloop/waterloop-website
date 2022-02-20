@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Escalator.js",
+  "module": "./Escalator.esm.js",
+  "types": "./Escalator.d.ts"
+}

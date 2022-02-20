@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SwitchAccount.js",
+  "module": "./SwitchAccount.esm.js",
+  "types": "./SwitchAccount.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./BrunchDining.js",
+  "module": "./BrunchDining.esm.js",
+  "types": "./BrunchDining.d.ts"
+}

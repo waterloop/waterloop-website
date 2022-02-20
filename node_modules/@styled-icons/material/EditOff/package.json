@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./EditOff.js",
+  "module": "./EditOff.esm.js",
+  "types": "./EditOff.d.ts"
+}

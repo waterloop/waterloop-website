@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./MapsHomeWork.js",
+  "module": "./MapsHomeWork.esm.js",
+  "types": "./MapsHomeWork.d.ts"
+}

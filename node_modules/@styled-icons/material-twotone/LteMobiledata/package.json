@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./LteMobiledata.js",
+  "module": "./LteMobiledata.esm.js",
+  "types": "./LteMobiledata.d.ts"
+}

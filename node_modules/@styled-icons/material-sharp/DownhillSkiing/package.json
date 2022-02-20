@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./DownhillSkiing.js",
+  "module": "./DownhillSkiing.esm.js",
+  "types": "./DownhillSkiing.d.ts"
+}

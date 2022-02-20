@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Storefront.js",
+  "module": "./Storefront.esm.js",
+  "types": "./Storefront.d.ts"
+}

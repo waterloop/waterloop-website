@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./FaceRetouchingNatural.js",
+  "module": "./FaceRetouchingNatural.esm.js",
+  "types": "./FaceRetouchingNatural.d.ts"
+}

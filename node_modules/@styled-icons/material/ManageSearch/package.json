@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ManageSearch.js",
+  "module": "./ManageSearch.esm.js",
+  "types": "./ManageSearch.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./RoomPreferences.js",
+  "module": "./RoomPreferences.esm.js",
+  "types": "./RoomPreferences.d.ts"
+}

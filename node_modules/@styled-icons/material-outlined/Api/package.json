@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Api.js",
+  "module": "./Api.esm.js",
+  "types": "./Api.d.ts"
+}

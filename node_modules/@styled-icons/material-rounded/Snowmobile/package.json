@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Snowmobile.js",
+  "module": "./Snowmobile.esm.js",
+  "types": "./Snowmobile.d.ts"
+}

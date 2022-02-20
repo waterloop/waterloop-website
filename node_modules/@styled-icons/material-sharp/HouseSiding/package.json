@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./HouseSiding.js",
+  "module": "./HouseSiding.esm.js",
+  "types": "./HouseSiding.d.ts"
+}

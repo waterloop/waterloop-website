@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./PublishedWithChanges.js",
+  "module": "./PublishedWithChanges.esm.js",
+  "types": "./PublishedWithChanges.d.ts"
+}

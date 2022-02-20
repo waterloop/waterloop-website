@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SensorWindow.js",
+  "module": "./SensorWindow.esm.js",
+  "types": "./SensorWindow.d.ts"
+}

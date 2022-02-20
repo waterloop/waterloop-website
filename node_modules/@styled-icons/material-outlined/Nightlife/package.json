@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Nightlife.js",
+  "module": "./Nightlife.esm.js",
+  "types": "./Nightlife.d.ts"
+}

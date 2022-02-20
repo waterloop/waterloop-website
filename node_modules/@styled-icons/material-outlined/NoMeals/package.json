@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./NoMeals.js",
+  "module": "./NoMeals.esm.js",
+  "types": "./NoMeals.d.ts"
+}

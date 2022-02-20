@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./RunCircle.js",
+  "module": "./RunCircle.esm.js",
+  "types": "./RunCircle.d.ts"
+}

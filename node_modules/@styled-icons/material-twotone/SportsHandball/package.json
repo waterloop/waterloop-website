@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SportsHandball.js",
+  "module": "./SportsHandball.esm.js",
+  "types": "./SportsHandball.d.ts"
+}

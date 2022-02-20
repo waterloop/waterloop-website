@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SecurityUpdateGood.js",
+  "module": "./SecurityUpdateGood.esm.js",
+  "types": "./SecurityUpdateGood.d.ts"
+}

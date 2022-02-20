@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./WbTwilight.js",
+  "module": "./WbTwilight.esm.js",
+  "types": "./WbTwilight.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Bathtub.js",
+  "module": "./Bathtub.esm.js",
+  "types": "./Bathtub.d.ts"
+}

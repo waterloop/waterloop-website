@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SportsBaseball.js",
+  "module": "./SportsBaseball.esm.js",
+  "types": "./SportsBaseball.d.ts"
+}

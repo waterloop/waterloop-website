@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SdCardAlert.js",
+  "module": "./SdCardAlert.esm.js",
+  "types": "./SdCardAlert.d.ts"
+}

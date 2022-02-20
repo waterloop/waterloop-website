@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Sensors.js",
+  "module": "./Sensors.esm.js",
+  "types": "./Sensors.d.ts"
+}

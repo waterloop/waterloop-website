@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Upgrade.js",
+  "module": "./Upgrade.esm.js",
+  "types": "./Upgrade.d.ts"
+}

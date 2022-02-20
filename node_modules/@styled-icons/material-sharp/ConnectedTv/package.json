@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ConnectedTv.js",
+  "module": "./ConnectedTv.esm.js",
+  "types": "./ConnectedTv.d.ts"
+}

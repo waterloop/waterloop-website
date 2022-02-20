@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./MarkAsUnread.js",
+  "module": "./MarkAsUnread.esm.js",
+  "types": "./MarkAsUnread.d.ts"
+}

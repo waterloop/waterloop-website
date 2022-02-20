@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Dangerous.js",
+  "module": "./Dangerous.esm.js",
+  "types": "./Dangerous.d.ts"
+}

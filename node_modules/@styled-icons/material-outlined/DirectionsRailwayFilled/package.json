@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./DirectionsRailwayFilled.js",
+  "module": "./DirectionsRailwayFilled.esm.js",
+  "types": "./DirectionsRailwayFilled.d.ts"
+}

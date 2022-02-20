@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./MultipleStop.js",
+  "module": "./MultipleStop.esm.js",
+  "types": "./MultipleStop.d.ts"
+}

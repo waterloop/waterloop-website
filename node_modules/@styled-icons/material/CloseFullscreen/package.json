@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./CloseFullscreen.js",
+  "module": "./CloseFullscreen.esm.js",
+  "types": "./CloseFullscreen.d.ts"
+}

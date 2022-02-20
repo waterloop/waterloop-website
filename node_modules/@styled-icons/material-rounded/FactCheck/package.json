@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./FactCheck.js",
+  "module": "./FactCheck.esm.js",
+  "types": "./FactCheck.d.ts"
+}

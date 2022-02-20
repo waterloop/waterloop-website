@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ProductionQuantityLimits.js",
+  "module": "./ProductionQuantityLimits.esm.js",
+  "types": "./ProductionQuantityLimits.d.ts"
+}

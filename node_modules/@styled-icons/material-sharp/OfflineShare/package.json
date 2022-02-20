@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./OfflineShare.js",
+  "module": "./OfflineShare.esm.js",
+  "types": "./OfflineShare.d.ts"
+}

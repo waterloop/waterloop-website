@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./AppSettingsAlt.js",
+  "module": "./AppSettingsAlt.esm.js",
+  "types": "./AppSettingsAlt.d.ts"
+}

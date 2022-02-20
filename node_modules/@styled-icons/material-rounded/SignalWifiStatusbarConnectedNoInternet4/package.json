@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SignalWifiStatusbarConnectedNoInternet4.js",
+  "module": "./SignalWifiStatusbarConnectedNoInternet4.esm.js",
+  "types": "./SignalWifiStatusbarConnectedNoInternet4.d.ts"
+}

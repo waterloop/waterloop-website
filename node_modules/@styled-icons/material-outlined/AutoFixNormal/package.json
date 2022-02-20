@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./AutoFixNormal.js",
+  "module": "./AutoFixNormal.esm.js",
+  "types": "./AutoFixNormal.d.ts"
+}

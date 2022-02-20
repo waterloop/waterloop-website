@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SupportAgent.js",
+  "module": "./SupportAgent.esm.js",
+  "types": "./SupportAgent.d.ts"
+}

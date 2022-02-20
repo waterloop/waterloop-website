@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Rule.js",
+  "module": "./Rule.esm.js",
+  "types": "./Rule.d.ts"
+}

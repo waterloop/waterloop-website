@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ContactPage.js",
+  "module": "./ContactPage.esm.js",
+  "types": "./ContactPage.d.ts"
+}

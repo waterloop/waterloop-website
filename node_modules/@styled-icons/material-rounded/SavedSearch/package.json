@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SavedSearch.js",
+  "module": "./SavedSearch.esm.js",
+  "types": "./SavedSearch.d.ts"
+}

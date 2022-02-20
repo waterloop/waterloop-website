@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./PestControl.js",
+  "module": "./PestControl.esm.js",
+  "types": "./PestControl.d.ts"
+}

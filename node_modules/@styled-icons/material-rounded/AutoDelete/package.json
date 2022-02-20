@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./AutoDelete.js",
+  "module": "./AutoDelete.esm.js",
+  "types": "./AutoDelete.d.ts"
+}

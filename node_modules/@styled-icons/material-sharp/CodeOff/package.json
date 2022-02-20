@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./CodeOff.js",
+  "module": "./CodeOff.esm.js",
+  "types": "./CodeOff.d.ts"
+}

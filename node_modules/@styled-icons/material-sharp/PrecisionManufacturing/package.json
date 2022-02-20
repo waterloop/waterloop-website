@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./PrecisionManufacturing.js",
+  "module": "./PrecisionManufacturing.esm.js",
+  "types": "./PrecisionManufacturing.d.ts"
+}

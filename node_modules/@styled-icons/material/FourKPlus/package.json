@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./FourKPlus.js",
+  "module": "./FourKPlus.esm.js",
+  "types": "./FourKPlus.d.ts"
+}

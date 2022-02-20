@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Hvac.js",
+  "module": "./Hvac.esm.js",
+  "types": "./Hvac.d.ts"
+}

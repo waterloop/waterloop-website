@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./LibraryAddCheck.js",
+  "module": "./LibraryAddCheck.esm.js",
+  "types": "./LibraryAddCheck.d.ts"
+}

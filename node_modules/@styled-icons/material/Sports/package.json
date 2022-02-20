@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Sports.js",
+  "module": "./Sports.esm.js",
+  "types": "./Sports.d.ts"
+}

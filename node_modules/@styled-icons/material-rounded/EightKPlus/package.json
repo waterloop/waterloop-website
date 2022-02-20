@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./EightKPlus.js",
+  "module": "./EightKPlus.esm.js",
+  "types": "./EightKPlus.d.ts"
+}

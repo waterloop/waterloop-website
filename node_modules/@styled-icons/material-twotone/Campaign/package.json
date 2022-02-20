@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Campaign.js",
+  "module": "./Campaign.esm.js",
+  "types": "./Campaign.d.ts"
+}

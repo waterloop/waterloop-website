@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./HourglassDisabled.js",
+  "module": "./HourglassDisabled.esm.js",
+  "types": "./HourglassDisabled.d.ts"
+}

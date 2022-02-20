@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./DoNotDisturbOff.js",
+  "module": "./DoNotDisturbOff.esm.js",
+  "types": "./DoNotDisturbOff.d.ts"
+}

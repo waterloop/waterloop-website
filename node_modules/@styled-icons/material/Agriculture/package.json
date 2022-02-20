@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Agriculture.js",
+  "module": "./Agriculture.esm.js",
+  "types": "./Agriculture.d.ts"
+}

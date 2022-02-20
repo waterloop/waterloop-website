@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Luggage.js",
+  "module": "./Luggage.esm.js",
+  "types": "./Luggage.d.ts"
+}

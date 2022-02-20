@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Flaky.js",
+  "module": "./Flaky.esm.js",
+  "types": "./Flaky.d.ts"
+}

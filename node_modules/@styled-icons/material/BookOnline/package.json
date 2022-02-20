@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./BookOnline.js",
+  "module": "./BookOnline.esm.js",
+  "types": "./BookOnline.d.ts"
+}

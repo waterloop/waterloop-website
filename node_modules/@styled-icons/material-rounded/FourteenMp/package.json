@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./FourteenMp.js",
+  "module": "./FourteenMp.esm.js",
+  "types": "./FourteenMp.d.ts"
+}

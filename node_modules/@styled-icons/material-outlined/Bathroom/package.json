@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Bathroom.js",
+  "module": "./Bathroom.esm.js",
+  "types": "./Bathroom.d.ts"
+}

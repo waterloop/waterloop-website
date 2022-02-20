@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./HomeRepairService.js",
+  "module": "./HomeRepairService.esm.js",
+  "types": "./HomeRepairService.d.ts"
+}

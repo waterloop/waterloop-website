@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./AppRegistration.js",
+  "module": "./AppRegistration.esm.js",
+  "types": "./AppRegistration.d.ts"
+}

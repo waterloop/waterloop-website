@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Hevc.js",
+  "module": "./Hevc.esm.js",
+  "types": "./Hevc.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./WifiCalling3.js",
+  "module": "./WifiCalling3.esm.js",
+  "types": "./WifiCalling3.d.ts"
+}

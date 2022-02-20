@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./CircleNotifications.js",
+  "module": "./CircleNotifications.esm.js",
+  "types": "./CircleNotifications.d.ts"
+}

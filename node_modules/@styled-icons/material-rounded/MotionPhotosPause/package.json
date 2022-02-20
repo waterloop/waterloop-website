@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./MotionPhotosPause.js",
+  "module": "./MotionPhotosPause.esm.js",
+  "types": "./MotionPhotosPause.d.ts"
+}

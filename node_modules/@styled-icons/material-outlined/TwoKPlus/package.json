@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./TwoKPlus.js",
+  "module": "./TwoKPlus.esm.js",
+  "types": "./TwoKPlus.d.ts"
+}

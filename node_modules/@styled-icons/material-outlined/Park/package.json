@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Park.js",
+  "module": "./Park.esm.js",
+  "types": "./Park.d.ts"
+}

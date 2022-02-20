@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Contactless.js",
+  "module": "./Contactless.esm.js",
+  "types": "./Contactless.d.ts"
+}

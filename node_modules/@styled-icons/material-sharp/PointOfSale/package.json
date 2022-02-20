@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./PointOfSale.js",
+  "module": "./PointOfSale.esm.js",
+  "types": "./PointOfSale.d.ts"
+}

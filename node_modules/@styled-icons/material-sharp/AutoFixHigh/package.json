@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./AutoFixHigh.js",
+  "module": "./AutoFixHigh.esm.js",
+  "types": "./AutoFixHigh.d.ts"
+}

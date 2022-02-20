@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./RailwayAlert.js",
+  "module": "./RailwayAlert.esm.js",
+  "types": "./RailwayAlert.d.ts"
+}

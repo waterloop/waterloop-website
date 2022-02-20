@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./EmojiObjects.js",
+  "module": "./EmojiObjects.esm.js",
+  "types": "./EmojiObjects.d.ts"
+}

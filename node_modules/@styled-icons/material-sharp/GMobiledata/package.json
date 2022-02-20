@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./GMobiledata.js",
+  "module": "./GMobiledata.esm.js",
+  "types": "./GMobiledata.d.ts"
+}

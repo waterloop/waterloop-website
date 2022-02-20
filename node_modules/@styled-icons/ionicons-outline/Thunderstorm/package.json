@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Thunderstorm.js",
+  "module": "./Thunderstorm.esm.js",
+  "types": "./Thunderstorm.d.ts"
+}

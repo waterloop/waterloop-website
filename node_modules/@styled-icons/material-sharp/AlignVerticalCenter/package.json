@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./AlignVerticalCenter.js",
+  "module": "./AlignVerticalCenter.esm.js",
+  "types": "./AlignVerticalCenter.d.ts"
+}

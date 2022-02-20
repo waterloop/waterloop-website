@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Icecream.js",
+  "module": "./Icecream.esm.js",
+  "types": "./Icecream.d.ts"
+}

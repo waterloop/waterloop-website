@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./DoNotStep.js",
+  "module": "./DoNotStep.esm.js",
+  "types": "./DoNotStep.d.ts"
+}

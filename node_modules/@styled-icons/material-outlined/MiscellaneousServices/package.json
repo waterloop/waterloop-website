@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./MiscellaneousServices.js",
+  "module": "./MiscellaneousServices.esm.js",
+  "types": "./MiscellaneousServices.d.ts"
+}

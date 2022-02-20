@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./LockClock.js",
+  "module": "./LockClock.esm.js",
+  "types": "./LockClock.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./PeopleAlt.js",
+  "module": "./PeopleAlt.esm.js",
+  "types": "./PeopleAlt.d.ts"
+}

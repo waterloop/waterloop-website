@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SignalCellularNodata.js",
+  "module": "./SignalCellularNodata.esm.js",
+  "types": "./SignalCellularNodata.d.ts"
+}

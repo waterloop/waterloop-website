@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./BookmarkAdd.js",
+  "module": "./BookmarkAdd.esm.js",
+  "types": "./BookmarkAdd.d.ts"
+}

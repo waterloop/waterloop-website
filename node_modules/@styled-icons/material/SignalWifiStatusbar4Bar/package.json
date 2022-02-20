@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SignalWifiStatusbar4Bar.js",
+  "module": "./SignalWifiStatusbar4Bar.esm.js",
+  "types": "./SignalWifiStatusbar4Bar.d.ts"
+}

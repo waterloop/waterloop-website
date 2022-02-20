@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./NearbyError.js",
+  "module": "./NearbyError.esm.js",
+  "types": "./NearbyError.d.ts"
+}

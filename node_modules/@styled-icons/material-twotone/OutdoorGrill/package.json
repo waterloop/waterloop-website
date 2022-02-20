@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./OutdoorGrill.js",
+  "module": "./OutdoorGrill.esm.js",
+  "types": "./OutdoorGrill.d.ts"
+}

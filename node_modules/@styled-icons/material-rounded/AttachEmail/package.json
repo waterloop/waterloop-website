@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./AttachEmail.js",
+  "module": "./AttachEmail.esm.js",
+  "types": "./AttachEmail.d.ts"
+}

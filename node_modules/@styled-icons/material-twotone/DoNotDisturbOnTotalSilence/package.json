@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./DoNotDisturbOnTotalSilence.js",
+  "module": "./DoNotDisturbOnTotalSilence.esm.js",
+  "types": "./DoNotDisturbOnTotalSilence.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./TravelExplore.js",
+  "module": "./TravelExplore.esm.js",
+  "types": "./TravelExplore.d.ts"
+}

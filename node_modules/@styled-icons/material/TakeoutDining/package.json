@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./TakeoutDining.js",
+  "module": "./TakeoutDining.esm.js",
+  "types": "./TakeoutDining.d.ts"
+}

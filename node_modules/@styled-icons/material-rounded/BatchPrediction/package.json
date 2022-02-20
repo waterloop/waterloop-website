@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./BatchPrediction.js",
+  "module": "./BatchPrediction.esm.js",
+  "types": "./BatchPrediction.d.ts"
+}

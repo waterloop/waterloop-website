@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./CoffeeMaker.js",
+  "module": "./CoffeeMaker.esm.js",
+  "types": "./CoffeeMaker.d.ts"
+}

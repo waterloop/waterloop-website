@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./PianoOff.js",
+  "module": "./PianoOff.esm.js",
+  "types": "./PianoOff.d.ts"
+}

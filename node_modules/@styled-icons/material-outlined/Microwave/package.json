@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Microwave.js",
+  "module": "./Microwave.esm.js",
+  "types": "./Microwave.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SignalWifiConnectedNoInternet4.js",
+  "module": "./SignalWifiConnectedNoInternet4.esm.js",
+  "types": "./SignalWifiConnectedNoInternet4.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Leaderboard.js",
+  "module": "./Leaderboard.esm.js",
+  "types": "./Leaderboard.d.ts"
+}

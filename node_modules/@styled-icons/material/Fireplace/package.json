@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Fireplace.js",
+  "module": "./Fireplace.esm.js",
+  "types": "./Fireplace.d.ts"
+}

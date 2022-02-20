@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./AutoAwesomeMosaic.js",
+  "module": "./AutoAwesomeMosaic.esm.js",
+  "types": "./AutoAwesomeMosaic.d.ts"
+}

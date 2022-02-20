@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Apartment.js",
+  "module": "./Apartment.esm.js",
+  "types": "./Apartment.d.ts"
+}

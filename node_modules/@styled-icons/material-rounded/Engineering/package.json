@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Engineering.js",
+  "module": "./Engineering.esm.js",
+  "types": "./Engineering.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./NightsStay.js",
+  "module": "./NightsStay.esm.js",
+  "types": "./NightsStay.d.ts"
+}

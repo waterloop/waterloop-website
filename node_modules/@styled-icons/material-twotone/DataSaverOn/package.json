@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./DataSaverOn.js",
+  "module": "./DataSaverOn.esm.js",
+  "types": "./DataSaverOn.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./LightMode.js",
+  "module": "./LightMode.esm.js",
+  "types": "./LightMode.d.ts"
+}

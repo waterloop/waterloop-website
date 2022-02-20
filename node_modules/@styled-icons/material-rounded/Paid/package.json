@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Paid.js",
+  "module": "./Paid.esm.js",
+  "types": "./Paid.d.ts"
+}

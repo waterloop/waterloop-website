@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./FileDownloadOff.js",
+  "module": "./FileDownloadOff.esm.js",
+  "types": "./FileDownloadOff.d.ts"
+}

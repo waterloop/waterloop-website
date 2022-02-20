@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ScreenSearchDesktop.js",
+  "module": "./ScreenSearchDesktop.esm.js",
+  "types": "./ScreenSearchDesktop.d.ts"
+}

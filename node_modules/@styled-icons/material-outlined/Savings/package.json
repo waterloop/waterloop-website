@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Savings.js",
+  "module": "./Savings.esm.js",
+  "types": "./Savings.d.ts"
+}

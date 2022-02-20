@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ElectricalServices.js",
+  "module": "./ElectricalServices.esm.js",
+  "types": "./ElectricalServices.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./OneKPlus.js",
+  "module": "./OneKPlus.esm.js",
+  "types": "./OneKPlus.d.ts"
+}

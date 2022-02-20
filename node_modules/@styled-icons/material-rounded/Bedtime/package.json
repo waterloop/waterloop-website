@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Bedtime.js",
+  "module": "./Bedtime.esm.js",
+  "types": "./Bedtime.d.ts"
+}

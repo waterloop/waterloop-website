@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Hardware.js",
+  "module": "./Hardware.esm.js",
+  "types": "./Hardware.d.ts"
+}

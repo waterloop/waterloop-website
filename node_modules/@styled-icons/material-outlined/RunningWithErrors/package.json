@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./RunningWithErrors.js",
+  "module": "./RunningWithErrors.esm.js",
+  "types": "./RunningWithErrors.d.ts"
+}

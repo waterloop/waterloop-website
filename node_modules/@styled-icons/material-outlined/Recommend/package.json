@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Recommend.js",
+  "module": "./Recommend.esm.js",
+  "types": "./Recommend.d.ts"
+}

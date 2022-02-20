@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./BusAlert.js",
+  "module": "./BusAlert.esm.js",
+  "types": "./BusAlert.d.ts"
+}

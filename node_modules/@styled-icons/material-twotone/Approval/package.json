@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Approval.js",
+  "module": "./Approval.esm.js",
+  "types": "./Approval.d.ts"
+}

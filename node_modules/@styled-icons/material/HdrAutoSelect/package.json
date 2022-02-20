@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./HdrAutoSelect.js",
+  "module": "./HdrAutoSelect.esm.js",
+  "types": "./HdrAutoSelect.d.ts"
+}

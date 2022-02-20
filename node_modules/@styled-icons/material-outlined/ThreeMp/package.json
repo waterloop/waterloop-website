@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ThreeMp.js",
+  "module": "./ThreeMp.esm.js",
+  "types": "./ThreeMp.d.ts"
+}

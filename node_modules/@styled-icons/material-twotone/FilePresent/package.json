@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./FilePresent.js",
+  "module": "./FilePresent.esm.js",
+  "types": "./FilePresent.d.ts"
+}

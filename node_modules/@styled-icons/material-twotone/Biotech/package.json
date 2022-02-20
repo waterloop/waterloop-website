@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Biotech.js",
+  "module": "./Biotech.esm.js",
+  "types": "./Biotech.d.ts"
+}

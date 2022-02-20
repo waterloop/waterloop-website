@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SwitchLeft.js",
+  "module": "./SwitchLeft.esm.js",
+  "types": "./SwitchLeft.d.ts"
+}

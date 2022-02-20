@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Height.js",
+  "module": "./Height.esm.js",
+  "types": "./Height.d.ts"
+}

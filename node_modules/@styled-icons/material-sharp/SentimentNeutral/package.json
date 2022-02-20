@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SentimentNeutral.js",
+  "module": "./SentimentNeutral.esm.js",
+  "types": "./SentimentNeutral.d.ts"
+}

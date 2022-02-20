@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./TwoMp.js",
+  "module": "./TwoMp.esm.js",
+  "types": "./TwoMp.d.ts"
+}

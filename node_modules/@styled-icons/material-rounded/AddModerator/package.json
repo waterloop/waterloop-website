@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./AddModerator.js",
+  "module": "./AddModerator.esm.js",
+  "types": "./AddModerator.d.ts"
+}

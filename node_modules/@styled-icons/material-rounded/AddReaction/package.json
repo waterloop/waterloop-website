@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./AddReaction.js",
+  "module": "./AddReaction.esm.js",
+  "types": "./AddReaction.d.ts"
+}

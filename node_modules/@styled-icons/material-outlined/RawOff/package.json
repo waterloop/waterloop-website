@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./RawOff.js",
+  "module": "./RawOff.esm.js",
+  "types": "./RawOff.d.ts"
+}

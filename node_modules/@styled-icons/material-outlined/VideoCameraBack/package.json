@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./VideoCameraBack.js",
+  "module": "./VideoCameraBack.esm.js",
+  "types": "./VideoCameraBack.d.ts"
+}

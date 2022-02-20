@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SportsGolf.js",
+  "module": "./SportsGolf.esm.js",
+  "types": "./SportsGolf.d.ts"
+}

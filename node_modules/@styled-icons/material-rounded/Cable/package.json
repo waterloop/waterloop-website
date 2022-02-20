@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Cable.js",
+  "module": "./Cable.esm.js",
+  "types": "./Cable.d.ts"
+}

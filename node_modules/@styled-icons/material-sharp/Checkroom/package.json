@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Checkroom.js",
+  "module": "./Checkroom.esm.js",
+  "types": "./Checkroom.d.ts"
+}

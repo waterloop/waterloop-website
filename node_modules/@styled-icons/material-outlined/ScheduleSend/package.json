@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ScheduleSend.js",
+  "module": "./ScheduleSend.esm.js",
+  "types": "./ScheduleSend.d.ts"
+}

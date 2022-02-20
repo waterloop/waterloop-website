@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Mediation.js",
+  "module": "./Mediation.esm.js",
+  "types": "./Mediation.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Commit.js",
+  "module": "./Commit.esm.js",
+  "types": "./Commit.d.ts"
+}

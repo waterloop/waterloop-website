@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SeventeenMp.js",
+  "module": "./SeventeenMp.esm.js",
+  "types": "./SeventeenMp.d.ts"
+}

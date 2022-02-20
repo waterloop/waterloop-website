@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./AutoGraph.js",
+  "module": "./AutoGraph.esm.js",
+  "types": "./AutoGraph.d.ts"
+}

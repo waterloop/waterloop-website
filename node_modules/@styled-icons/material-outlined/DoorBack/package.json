@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./DoorBack.js",
+  "module": "./DoorBack.esm.js",
+  "types": "./DoorBack.d.ts"
+}

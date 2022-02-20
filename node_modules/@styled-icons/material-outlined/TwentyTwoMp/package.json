@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./TwentyTwoMp.js",
+  "module": "./TwentyTwoMp.esm.js",
+  "types": "./TwentyTwoMp.d.ts"
+}

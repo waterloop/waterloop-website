@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./HdrAuto.js",
+  "module": "./HdrAuto.esm.js",
+  "types": "./HdrAuto.d.ts"
+}

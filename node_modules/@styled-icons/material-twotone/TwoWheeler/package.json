@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./TwoWheeler.js",
+  "module": "./TwoWheeler.esm.js",
+  "types": "./TwoWheeler.d.ts"
+}

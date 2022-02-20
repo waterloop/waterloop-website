@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Cameraswitch.js",
+  "module": "./Cameraswitch.esm.js",
+  "types": "./Cameraswitch.d.ts"
+}

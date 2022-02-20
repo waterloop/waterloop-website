@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SettingsAccessibility.js",
+  "module": "./SettingsAccessibility.esm.js",
+  "types": "./SettingsAccessibility.d.ts"
+}

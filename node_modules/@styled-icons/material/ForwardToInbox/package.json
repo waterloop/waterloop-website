@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ForwardToInbox.js",
+  "module": "./ForwardToInbox.esm.js",
+  "types": "./ForwardToInbox.d.ts"
+}

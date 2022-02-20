@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./WaterfallChart.js",
+  "module": "./WaterfallChart.esm.js",
+  "types": "./WaterfallChart.d.ts"
+}

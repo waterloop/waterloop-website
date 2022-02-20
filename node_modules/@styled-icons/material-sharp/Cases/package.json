@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Cases.js",
+  "module": "./Cases.esm.js",
+  "types": "./Cases.d.ts"
+}

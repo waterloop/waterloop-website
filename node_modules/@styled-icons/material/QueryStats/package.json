@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./QueryStats.js",
+  "module": "./QueryStats.esm.js",
+  "types": "./QueryStats.d.ts"
+}

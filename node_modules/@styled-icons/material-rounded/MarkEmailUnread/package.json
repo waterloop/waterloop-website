@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./MarkEmailUnread.js",
+  "module": "./MarkEmailUnread.esm.js",
+  "types": "./MarkEmailUnread.d.ts"
+}

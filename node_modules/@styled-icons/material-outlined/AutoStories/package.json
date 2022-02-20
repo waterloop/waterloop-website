@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./AutoStories.js",
+  "module": "./AutoStories.esm.js",
+  "types": "./AutoStories.d.ts"
+}

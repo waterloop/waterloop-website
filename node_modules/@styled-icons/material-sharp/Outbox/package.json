@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Outbox.js",
+  "module": "./Outbox.esm.js",
+  "types": "./Outbox.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SelfImprovement.js",
+  "module": "./SelfImprovement.esm.js",
+  "types": "./SelfImprovement.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./TwoK.js",
+  "module": "./TwoK.esm.js",
+  "types": "./TwoK.d.ts"
+}

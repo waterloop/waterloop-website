@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./MotionPhotosOff.js",
+  "module": "./MotionPhotosOff.esm.js",
+  "types": "./MotionPhotosOff.d.ts"
+}

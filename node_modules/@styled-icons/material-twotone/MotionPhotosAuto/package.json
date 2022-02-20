@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./MotionPhotosAuto.js",
+  "module": "./MotionPhotosAuto.esm.js",
+  "types": "./MotionPhotosAuto.d.ts"
+}

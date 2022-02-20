@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./CatchingPokemon.js",
+  "module": "./CatchingPokemon.esm.js",
+  "types": "./CatchingPokemon.d.ts"
+}

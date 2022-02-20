@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./AutoFixOff.js",
+  "module": "./AutoFixOff.esm.js",
+  "types": "./AutoFixOff.d.ts"
+}

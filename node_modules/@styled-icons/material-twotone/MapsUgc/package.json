@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./MapsUgc.js",
+  "module": "./MapsUgc.esm.js",
+  "types": "./MapsUgc.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./CorporateFare.js",
+  "module": "./CorporateFare.esm.js",
+  "types": "./CorporateFare.d.ts"
+}

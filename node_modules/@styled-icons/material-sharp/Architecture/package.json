@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Architecture.js",
+  "module": "./Architecture.esm.js",
+  "types": "./Architecture.d.ts"
+}

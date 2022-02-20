@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Splitscreen.js",
+  "module": "./Splitscreen.esm.js",
+  "types": "./Splitscreen.d.ts"
+}

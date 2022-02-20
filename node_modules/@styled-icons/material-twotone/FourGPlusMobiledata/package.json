@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./FourGPlusMobiledata.js",
+  "module": "./FourGPlusMobiledata.esm.js",
+  "types": "./FourGPlusMobiledata.d.ts"
+}

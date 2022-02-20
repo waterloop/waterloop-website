@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Padding.js",
+  "module": "./Padding.esm.js",
+  "types": "./Padding.d.ts"
+}

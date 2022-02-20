@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ContentPasteOff.js",
+  "module": "./ContentPasteOff.esm.js",
+  "types": "./ContentPasteOff.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./BabyChangingStation.js",
+  "module": "./BabyChangingStation.esm.js",
+  "types": "./BabyChangingStation.d.ts"
+}

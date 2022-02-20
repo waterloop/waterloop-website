@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Calculate.js",
+  "module": "./Calculate.esm.js",
+  "types": "./Calculate.d.ts"
+}

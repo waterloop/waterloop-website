@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./BedroomBaby.js",
+  "module": "./BedroomBaby.esm.js",
+  "types": "./BedroomBaby.d.ts"
+}

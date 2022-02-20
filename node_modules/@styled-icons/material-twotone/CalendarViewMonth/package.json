@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./CalendarViewMonth.js",
+  "module": "./CalendarViewMonth.esm.js",
+  "types": "./CalendarViewMonth.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Living.js",
+  "module": "./Living.esm.js",
+  "types": "./Living.d.ts"
+}

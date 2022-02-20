@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Animation.js",
+  "module": "./Animation.esm.js",
+  "types": "./Animation.d.ts"
+}

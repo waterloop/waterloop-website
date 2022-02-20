@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ThreeK.js",
+  "module": "./ThreeK.esm.js",
+  "types": "./ThreeK.d.ts"
+}

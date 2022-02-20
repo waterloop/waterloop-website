@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Analytics.js",
+  "module": "./Analytics.esm.js",
+  "types": "./Analytics.d.ts"
+}

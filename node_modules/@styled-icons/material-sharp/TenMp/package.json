@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./TenMp.js",
+  "module": "./TenMp.esm.js",
+  "types": "./TenMp.d.ts"
+}

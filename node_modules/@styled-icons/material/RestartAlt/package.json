@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./RestartAlt.js",
+  "module": "./RestartAlt.esm.js",
+  "types": "./RestartAlt.d.ts"
+}

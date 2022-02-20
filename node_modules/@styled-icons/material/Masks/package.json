@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Masks.js",
+  "module": "./Masks.esm.js",
+  "types": "./Masks.d.ts"
+}

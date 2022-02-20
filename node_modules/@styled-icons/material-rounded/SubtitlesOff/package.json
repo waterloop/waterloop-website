@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SubtitlesOff.js",
+  "module": "./SubtitlesOff.esm.js",
+  "types": "./SubtitlesOff.d.ts"
+}

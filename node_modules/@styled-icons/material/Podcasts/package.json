@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Podcasts.js",
+  "module": "./Podcasts.esm.js",
+  "types": "./Podcasts.d.ts"
+}

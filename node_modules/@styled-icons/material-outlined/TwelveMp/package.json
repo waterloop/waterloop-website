@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./TwelveMp.js",
+  "module": "./TwelveMp.esm.js",
+  "types": "./TwelveMp.d.ts"
+}

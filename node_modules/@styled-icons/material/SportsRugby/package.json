@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SportsRugby.js",
+  "module": "./SportsRugby.esm.js",
+  "types": "./SportsRugby.d.ts"
+}

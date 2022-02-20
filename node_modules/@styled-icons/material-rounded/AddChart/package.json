@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./AddChart.js",
+  "module": "./AddChart.esm.js",
+  "types": "./AddChart.d.ts"
+}

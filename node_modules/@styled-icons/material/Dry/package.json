@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Dry.js",
+  "module": "./Dry.esm.js",
+  "types": "./Dry.d.ts"
+}

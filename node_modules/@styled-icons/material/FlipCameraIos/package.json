@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./FlipCameraIos.js",
+  "module": "./FlipCameraIos.esm.js",
+  "types": "./FlipCameraIos.d.ts"
+}

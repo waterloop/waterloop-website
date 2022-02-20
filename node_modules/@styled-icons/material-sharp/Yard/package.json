@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Yard.js",
+  "module": "./Yard.esm.js",
+  "types": "./Yard.d.ts"
+}

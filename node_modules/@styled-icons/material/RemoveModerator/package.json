@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./RemoveModerator.js",
+  "module": "./RemoveModerator.esm.js",
+  "types": "./RemoveModerator.d.ts"
+}

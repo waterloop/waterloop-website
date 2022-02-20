@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./RequestPage.js",
+  "module": "./RequestPage.esm.js",
+  "types": "./RequestPage.d.ts"
+}

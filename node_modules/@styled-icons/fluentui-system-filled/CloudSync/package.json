@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./CloudSync.js",
+  "module": "./CloudSync.esm.js",
+  "types": "./CloudSync.d.ts"
+}

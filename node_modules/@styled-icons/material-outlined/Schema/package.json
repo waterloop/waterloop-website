@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Schema.js",
+  "module": "./Schema.esm.js",
+  "types": "./Schema.d.ts"
+}

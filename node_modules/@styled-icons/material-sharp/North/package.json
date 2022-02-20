@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./North.js",
+  "module": "./North.esm.js",
+  "types": "./North.d.ts"
+}

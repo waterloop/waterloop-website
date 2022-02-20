@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./TextRotationAngledown.js",
+  "module": "./TextRotationAngledown.esm.js",
+  "types": "./TextRotationAngledown.d.ts"
+}

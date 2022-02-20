@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ReportGmailerrorred.js",
+  "module": "./ReportGmailerrorred.esm.js",
+  "types": "./ReportGmailerrorred.d.ts"
+}

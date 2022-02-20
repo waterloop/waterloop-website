@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./HideSource.js",
+  "module": "./HideSource.esm.js",
+  "types": "./HideSource.d.ts"
+}

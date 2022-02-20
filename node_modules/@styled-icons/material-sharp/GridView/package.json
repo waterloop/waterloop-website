@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./GridView.js",
+  "module": "./GridView.esm.js",
+  "types": "./GridView.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./LocalPolice.js",
+  "module": "./LocalPolice.esm.js",
+  "types": "./LocalPolice.d.ts"
+}

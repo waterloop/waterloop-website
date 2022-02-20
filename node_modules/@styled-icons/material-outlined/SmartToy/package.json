@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SmartToy.js",
+  "module": "./SmartToy.esm.js",
+  "types": "./SmartToy.d.ts"
+}

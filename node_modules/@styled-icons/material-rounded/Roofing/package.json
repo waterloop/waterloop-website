@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Roofing.js",
+  "module": "./Roofing.esm.js",
+  "types": "./Roofing.d.ts"
+}

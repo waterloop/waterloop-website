@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ElectricMoped.js",
+  "module": "./ElectricMoped.esm.js",
+  "types": "./ElectricMoped.d.ts"
+}

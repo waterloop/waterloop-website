@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SearchOff.js",
+  "module": "./SearchOff.esm.js",
+  "types": "./SearchOff.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./NoteAlt.js",
+  "module": "./NoteAlt.esm.js",
+  "types": "./NoteAlt.d.ts"
+}

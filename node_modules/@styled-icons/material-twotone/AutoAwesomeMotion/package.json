@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./AutoAwesomeMotion.js",
+  "module": "./AutoAwesomeMotion.esm.js",
+  "types": "./AutoAwesomeMotion.d.ts"
+}

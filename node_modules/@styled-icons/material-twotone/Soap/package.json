@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Soap.js",
+  "module": "./Soap.esm.js",
+  "types": "./Soap.d.ts"
+}

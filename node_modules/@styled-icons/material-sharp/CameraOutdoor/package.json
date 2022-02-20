@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./CameraOutdoor.js",
+  "module": "./CameraOutdoor.esm.js",
+  "types": "./CameraOutdoor.d.ts"
+}

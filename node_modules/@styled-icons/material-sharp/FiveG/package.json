@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./FiveG.js",
+  "module": "./FiveG.esm.js",
+  "types": "./FiveG.d.ts"
+}

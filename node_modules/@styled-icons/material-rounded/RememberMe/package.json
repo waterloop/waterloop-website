@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./RememberMe.js",
+  "module": "./RememberMe.esm.js",
+  "types": "./RememberMe.d.ts"
+}

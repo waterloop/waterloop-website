@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./EdgesensorLow.js",
+  "module": "./EdgesensorLow.esm.js",
+  "types": "./EdgesensorLow.d.ts"
+}

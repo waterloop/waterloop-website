@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./East.js",
+  "module": "./East.esm.js",
+  "types": "./East.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./PersonRemoveAlt1.js",
+  "module": "./PersonRemoveAlt1.esm.js",
+  "types": "./PersonRemoveAlt1.d.ts"
+}

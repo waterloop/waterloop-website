@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./RuleFolder.js",
+  "module": "./RuleFolder.esm.js",
+  "types": "./RuleFolder.d.ts"
+}

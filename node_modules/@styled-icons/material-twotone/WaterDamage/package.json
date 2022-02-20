@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./WaterDamage.js",
+  "module": "./WaterDamage.esm.js",
+  "types": "./WaterDamage.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SimCardDownload.js",
+  "module": "./SimCardDownload.esm.js",
+  "types": "./SimCardDownload.d.ts"
+}

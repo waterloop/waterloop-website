@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./DirtyLens.js",
+  "module": "./DirtyLens.esm.js",
+  "types": "./DirtyLens.d.ts"
+}

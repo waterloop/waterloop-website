@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Flatware.js",
+  "module": "./Flatware.esm.js",
+  "types": "./Flatware.d.ts"
+}

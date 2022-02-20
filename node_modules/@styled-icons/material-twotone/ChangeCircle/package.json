@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ChangeCircle.js",
+  "module": "./ChangeCircle.esm.js",
+  "types": "./ChangeCircle.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SportsVolleyball.js",
+  "module": "./SportsVolleyball.esm.js",
+  "types": "./SportsVolleyball.d.ts"
+}

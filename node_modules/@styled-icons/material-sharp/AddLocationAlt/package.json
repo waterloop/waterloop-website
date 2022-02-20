@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./AddLocationAlt.js",
+  "module": "./AddLocationAlt.esm.js",
+  "types": "./AddLocationAlt.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./NotStarted.js",
+  "module": "./NotStarted.esm.js",
+  "types": "./NotStarted.d.ts"
+}

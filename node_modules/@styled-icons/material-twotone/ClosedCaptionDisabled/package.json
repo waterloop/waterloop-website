@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ClosedCaptionDisabled.js",
+  "module": "./ClosedCaptionDisabled.esm.js",
+  "types": "./ClosedCaptionDisabled.d.ts"
+}

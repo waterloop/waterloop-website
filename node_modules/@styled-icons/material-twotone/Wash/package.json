@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Wash.js",
+  "module": "./Wash.esm.js",
+  "types": "./Wash.d.ts"
+}

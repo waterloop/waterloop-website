@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./DoorSliding.js",
+  "module": "./DoorSliding.esm.js",
+  "types": "./DoorSliding.d.ts"
+}

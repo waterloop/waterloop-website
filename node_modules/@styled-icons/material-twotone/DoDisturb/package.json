@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./DoDisturb.js",
+  "module": "./DoDisturb.esm.js",
+  "types": "./DoDisturb.d.ts"
+}

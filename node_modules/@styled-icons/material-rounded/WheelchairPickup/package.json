@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./WheelchairPickup.js",
+  "module": "./WheelchairPickup.esm.js",
+  "types": "./WheelchairPickup.d.ts"
+}

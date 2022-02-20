@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./TenK.js",
+  "module": "./TenK.esm.js",
+  "types": "./TenK.d.ts"
+}

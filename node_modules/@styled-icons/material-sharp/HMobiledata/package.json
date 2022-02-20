@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./HMobiledata.js",
+  "module": "./HMobiledata.esm.js",
+  "types": "./HMobiledata.d.ts"
+}

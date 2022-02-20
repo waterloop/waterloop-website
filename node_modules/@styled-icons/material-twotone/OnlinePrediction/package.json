@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./OnlinePrediction.js",
+  "module": "./OnlinePrediction.esm.js",
+  "types": "./OnlinePrediction.d.ts"
+}

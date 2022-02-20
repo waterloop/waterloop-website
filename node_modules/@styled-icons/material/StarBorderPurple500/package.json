@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./StarBorderPurple500.js",
+  "module": "./StarBorderPurple500.esm.js",
+  "types": "./StarBorderPurple500.d.ts"
+}

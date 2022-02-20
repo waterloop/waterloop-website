@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./PanoramaPhotosphere.js",
+  "module": "./PanoramaPhotosphere.esm.js",
+  "types": "./PanoramaPhotosphere.d.ts"
+}

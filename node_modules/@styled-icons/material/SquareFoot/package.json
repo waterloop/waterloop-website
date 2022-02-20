@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SquareFoot.js",
+  "module": "./SquareFoot.esm.js",
+  "types": "./SquareFoot.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Outbound.js",
+  "module": "./Outbound.esm.js",
+  "types": "./Outbound.d.ts"
+}

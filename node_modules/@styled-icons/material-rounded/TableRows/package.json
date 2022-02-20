@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./TableRows.js",
+  "module": "./TableRows.esm.js",
+  "types": "./TableRows.d.ts"
+}

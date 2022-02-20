@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./QrCodeScanner.js",
+  "module": "./QrCodeScanner.esm.js",
+  "types": "./QrCodeScanner.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./CreditScore.js",
+  "module": "./CreditScore.esm.js",
+  "types": "./CreditScore.d.ts"
+}

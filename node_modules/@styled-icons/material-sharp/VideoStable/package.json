@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./VideoStable.js",
+  "module": "./VideoStable.esm.js",
+  "types": "./VideoStable.d.ts"
+}

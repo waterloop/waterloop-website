@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SignalWifiBad.js",
+  "module": "./SignalWifiBad.esm.js",
+  "types": "./SignalWifiBad.d.ts"
+}

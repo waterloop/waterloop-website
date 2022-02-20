@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./PlayDisabled.js",
+  "module": "./PlayDisabled.esm.js",
+  "types": "./PlayDisabled.d.ts"
+}

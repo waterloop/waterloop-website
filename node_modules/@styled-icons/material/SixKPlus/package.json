@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SixKPlus.js",
+  "module": "./SixKPlus.esm.js",
+  "types": "./SixKPlus.d.ts"
+}

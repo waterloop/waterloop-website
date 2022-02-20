@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./AddIcCall.js",
+  "module": "./AddIcCall.esm.js",
+  "types": "./AddIcCall.d.ts"
+}

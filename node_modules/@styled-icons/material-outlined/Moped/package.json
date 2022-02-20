@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Moped.js",
+  "module": "./Moped.esm.js",
+  "types": "./Moped.d.ts"
+}

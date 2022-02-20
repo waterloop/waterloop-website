@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ImagesearchRoller.js",
+  "module": "./ImagesearchRoller.esm.js",
+  "types": "./ImagesearchRoller.d.ts"
+}

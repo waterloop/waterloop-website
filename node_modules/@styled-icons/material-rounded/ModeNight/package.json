@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ModeNight.js",
+  "module": "./ModeNight.esm.js",
+  "types": "./ModeNight.d.ts"
+}

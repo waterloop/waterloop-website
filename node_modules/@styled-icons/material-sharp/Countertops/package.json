@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Countertops.js",
+  "module": "./Countertops.esm.js",
+  "types": "./Countertops.d.ts"
+}

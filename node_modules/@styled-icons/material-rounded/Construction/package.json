@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Construction.js",
+  "module": "./Construction.esm.js",
+  "types": "./Construction.d.ts"
+}

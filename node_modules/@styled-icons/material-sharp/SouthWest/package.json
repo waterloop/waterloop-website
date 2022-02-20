@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SouthWest.js",
+  "module": "./SouthWest.esm.js",
+  "types": "./SouthWest.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./PlayLesson.js",
+  "module": "./PlayLesson.esm.js",
+  "types": "./PlayLesson.d.ts"
+}

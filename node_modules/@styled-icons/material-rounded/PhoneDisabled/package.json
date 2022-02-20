@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./PhoneDisabled.js",
+  "module": "./PhoneDisabled.esm.js",
+  "types": "./PhoneDisabled.d.ts"
+}

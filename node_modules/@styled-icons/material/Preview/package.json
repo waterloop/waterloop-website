@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Preview.js",
+  "module": "./Preview.esm.js",
+  "types": "./Preview.d.ts"
+}

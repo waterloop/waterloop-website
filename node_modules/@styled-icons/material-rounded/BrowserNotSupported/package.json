@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./BrowserNotSupported.js",
+  "module": "./BrowserNotSupported.esm.js",
+  "types": "./BrowserNotSupported.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./AltRoute.js",
+  "module": "./AltRoute.esm.js",
+  "types": "./AltRoute.d.ts"
+}

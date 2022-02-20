@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./PostAdd.js",
+  "module": "./PostAdd.esm.js",
+  "types": "./PostAdd.d.ts"
+}

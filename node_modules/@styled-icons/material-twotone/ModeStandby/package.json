@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ModeStandby.js",
+  "module": "./ModeStandby.esm.js",
+  "types": "./ModeStandby.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./DryCleaning.js",
+  "module": "./DryCleaning.esm.js",
+  "types": "./DryCleaning.d.ts"
+}

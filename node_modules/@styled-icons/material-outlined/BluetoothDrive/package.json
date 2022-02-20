@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./BluetoothDrive.js",
+  "module": "./BluetoothDrive.esm.js",
+  "types": "./BluetoothDrive.d.ts"
+}

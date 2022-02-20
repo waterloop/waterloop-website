@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./WineBar.js",
+  "module": "./WineBar.esm.js",
+  "types": "./WineBar.d.ts"
+}

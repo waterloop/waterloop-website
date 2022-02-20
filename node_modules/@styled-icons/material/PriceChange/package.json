@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./PriceChange.js",
+  "module": "./PriceChange.esm.js",
+  "types": "./PriceChange.d.ts"
+}

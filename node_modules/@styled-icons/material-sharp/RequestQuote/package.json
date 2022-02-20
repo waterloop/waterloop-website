@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./RequestQuote.js",
+  "module": "./RequestQuote.esm.js",
+  "types": "./RequestQuote.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Carpenter.js",
+  "module": "./Carpenter.esm.js",
+  "types": "./Carpenter.d.ts"
+}

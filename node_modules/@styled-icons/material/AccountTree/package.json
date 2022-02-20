@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./AccountTree.js",
+  "module": "./AccountTree.esm.js",
+  "types": "./AccountTree.d.ts"
+}

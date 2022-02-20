@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./AppBlocking.js",
+  "module": "./AppBlocking.esm.js",
+  "types": "./AppBlocking.d.ts"
+}

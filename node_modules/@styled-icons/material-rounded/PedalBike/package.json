@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./PedalBike.js",
+  "module": "./PedalBike.esm.js",
+  "types": "./PedalBike.d.ts"
+}

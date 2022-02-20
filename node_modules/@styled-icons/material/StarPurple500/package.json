@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./StarPurple500.js",
+  "module": "./StarPurple500.esm.js",
+  "types": "./StarPurple500.d.ts"
+}

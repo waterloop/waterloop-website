@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SnippetFolder.js",
+  "module": "./SnippetFolder.esm.js",
+  "types": "./SnippetFolder.d.ts"
+}

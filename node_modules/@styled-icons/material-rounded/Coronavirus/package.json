@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Coronavirus.js",
+  "module": "./Coronavirus.esm.js",
+  "types": "./Coronavirus.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./DomainVerification.js",
+  "module": "./DomainVerification.esm.js",
+  "types": "./DomainVerification.d.ts"
+}

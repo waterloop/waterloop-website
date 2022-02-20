@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SevenKPlus.js",
+  "module": "./SevenKPlus.esm.js",
+  "types": "./SevenKPlus.d.ts"
+}

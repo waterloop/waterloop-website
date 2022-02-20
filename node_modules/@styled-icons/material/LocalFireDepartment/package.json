@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./LocalFireDepartment.js",
+  "module": "./LocalFireDepartment.esm.js",
+  "types": "./LocalFireDepartment.d.ts"
+}

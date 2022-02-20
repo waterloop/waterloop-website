@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./DoNotTouch.js",
+  "module": "./DoNotTouch.esm.js",
+  "types": "./DoNotTouch.d.ts"
+}

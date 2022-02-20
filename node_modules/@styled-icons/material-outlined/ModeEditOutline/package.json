@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ModeEditOutline.js",
+  "module": "./ModeEditOutline.esm.js",
+  "types": "./ModeEditOutline.d.ts"
+}

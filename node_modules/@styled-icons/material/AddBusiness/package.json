@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./AddBusiness.js",
+  "module": "./AddBusiness.esm.js",
+  "types": "./AddBusiness.d.ts"
+}

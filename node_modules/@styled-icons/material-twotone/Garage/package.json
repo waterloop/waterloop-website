@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Garage.js",
+  "module": "./Garage.esm.js",
+  "types": "./Garage.d.ts"
+}

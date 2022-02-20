@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./DriveFolderUpload.js",
+  "module": "./DriveFolderUpload.esm.js",
+  "types": "./DriveFolderUpload.d.ts"
+}

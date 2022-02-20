@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SetMeal.js",
+  "module": "./SetMeal.esm.js",
+  "types": "./SetMeal.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./EarbudsBattery.js",
+  "module": "./EarbudsBattery.esm.js",
+  "types": "./EarbudsBattery.d.ts"
+}

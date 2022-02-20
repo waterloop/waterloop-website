@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Pentagon.js",
+  "module": "./Pentagon.esm.js",
+  "types": "./Pentagon.d.ts"
+}

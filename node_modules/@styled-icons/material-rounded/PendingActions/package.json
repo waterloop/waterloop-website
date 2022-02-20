@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./PendingActions.js",
+  "module": "./PendingActions.esm.js",
+  "types": "./PendingActions.d.ts"
+}

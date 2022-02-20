@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./LensBlur.js",
+  "module": "./LensBlur.esm.js",
+  "types": "./LensBlur.d.ts"
+}

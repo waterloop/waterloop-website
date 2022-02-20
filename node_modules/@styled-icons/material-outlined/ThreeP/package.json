@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ThreeP.js",
+  "module": "./ThreeP.esm.js",
+  "types": "./ThreeP.d.ts"
+}

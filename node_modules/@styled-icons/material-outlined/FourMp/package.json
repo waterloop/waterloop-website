@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./FourMp.js",
+  "module": "./FourMp.esm.js",
+  "types": "./FourMp.d.ts"
+}

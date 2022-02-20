@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./DoorFront.js",
+  "module": "./DoorFront.esm.js",
+  "types": "./DoorFront.d.ts"
+}

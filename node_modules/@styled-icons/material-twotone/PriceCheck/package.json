@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./PriceCheck.js",
+  "module": "./PriceCheck.esm.js",
+  "types": "./PriceCheck.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./MobiledataOff.js",
+  "module": "./MobiledataOff.esm.js",
+  "types": "./MobiledataOff.d.ts"
+}

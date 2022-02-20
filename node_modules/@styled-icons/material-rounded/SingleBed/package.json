@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SingleBed.js",
+  "module": "./SingleBed.esm.js",
+  "types": "./SingleBed.d.ts"
+}

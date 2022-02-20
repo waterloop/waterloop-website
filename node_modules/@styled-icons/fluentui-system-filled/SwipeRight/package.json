@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SwipeRight.js",
+  "module": "./SwipeRight.esm.js",
+  "types": "./SwipeRight.d.ts"
+}

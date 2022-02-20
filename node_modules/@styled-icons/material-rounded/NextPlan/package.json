@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./NextPlan.js",
+  "module": "./NextPlan.esm.js",
+  "types": "./NextPlan.d.ts"
+}

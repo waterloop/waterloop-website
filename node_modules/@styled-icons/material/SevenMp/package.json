@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SevenMp.js",
+  "module": "./SevenMp.esm.js",
+  "types": "./SevenMp.d.ts"
+}

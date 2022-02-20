@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ThreeGMobiledata.js",
+  "module": "./ThreeGMobiledata.esm.js",
+  "types": "./ThreeGMobiledata.d.ts"
+}

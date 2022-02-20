@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./VerticalDistribute.js",
+  "module": "./VerticalDistribute.esm.js",
+  "types": "./VerticalDistribute.d.ts"
+}

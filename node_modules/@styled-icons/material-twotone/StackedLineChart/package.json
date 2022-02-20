@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./StackedLineChart.js",
+  "module": "./StackedLineChart.esm.js",
+  "types": "./StackedLineChart.d.ts"
+}

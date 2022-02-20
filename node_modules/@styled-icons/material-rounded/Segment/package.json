@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Segment.js",
+  "module": "./Segment.esm.js",
+  "types": "./Segment.d.ts"
+}

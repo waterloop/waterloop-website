@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./LightbulbCircle.js",
+  "module": "./LightbulbCircle.esm.js",
+  "types": "./LightbulbCircle.d.ts"
+}

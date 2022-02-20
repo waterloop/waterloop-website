@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Thermostat.js",
+  "module": "./Thermostat.esm.js",
+  "types": "./Thermostat.d.ts"
+}

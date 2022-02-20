@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./NoAccounts.js",
+  "module": "./NoAccounts.esm.js",
+  "types": "./NoAccounts.d.ts"
+}

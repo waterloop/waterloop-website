@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./NineKPlus.js",
+  "module": "./NineKPlus.esm.js",
+  "types": "./NineKPlus.d.ts"
+}

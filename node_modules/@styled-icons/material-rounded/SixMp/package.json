@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SixMp.js",
+  "module": "./SixMp.esm.js",
+  "types": "./SixMp.d.ts"
+}

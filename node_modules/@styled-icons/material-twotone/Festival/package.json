@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Festival.js",
+  "module": "./Festival.esm.js",
+  "types": "./Festival.d.ts"
+}

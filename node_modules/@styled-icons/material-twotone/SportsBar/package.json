@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./SportsBar.js",
+  "module": "./SportsBar.esm.js",
+  "types": "./SportsBar.d.ts"
+}

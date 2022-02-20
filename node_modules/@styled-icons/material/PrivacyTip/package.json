@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./PrivacyTip.js",
+  "module": "./PrivacyTip.esm.js",
+  "types": "./PrivacyTip.d.ts"
+}

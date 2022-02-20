@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./HomeMini.js",
+  "module": "./HomeMini.esm.js",
+  "types": "./HomeMini.d.ts"
+}

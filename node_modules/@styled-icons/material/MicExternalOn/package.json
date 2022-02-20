@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./MicExternalOn.js",
+  "module": "./MicExternalOn.esm.js",
+  "types": "./MicExternalOn.d.ts"
+}

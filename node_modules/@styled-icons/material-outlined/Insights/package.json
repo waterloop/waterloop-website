@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Insights.js",
+  "module": "./Insights.esm.js",
+  "types": "./Insights.d.ts"
+}

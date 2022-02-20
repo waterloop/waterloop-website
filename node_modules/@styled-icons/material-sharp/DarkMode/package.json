@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./DarkMode.js",
+  "module": "./DarkMode.esm.js",
+  "types": "./DarkMode.d.ts"
+}

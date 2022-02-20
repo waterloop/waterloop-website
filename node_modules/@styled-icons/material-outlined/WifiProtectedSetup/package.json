@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./WifiProtectedSetup.js",
+  "module": "./WifiProtectedSetup.esm.js",
+  "types": "./WifiProtectedSetup.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./FifteenMp.js",
+  "module": "./FifteenMp.esm.js",
+  "types": "./FifteenMp.d.ts"
+}

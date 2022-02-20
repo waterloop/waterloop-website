@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Tour.js",
+  "module": "./Tour.esm.js",
+  "types": "./Tour.d.ts"
+}

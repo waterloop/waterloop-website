@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./MilitaryTech.js",
+  "module": "./MilitaryTech.esm.js",
+  "types": "./MilitaryTech.d.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./CopyAll.js",
+  "module": "./CopyAll.esm.js",
+  "types": "./CopyAll.d.ts"
+}

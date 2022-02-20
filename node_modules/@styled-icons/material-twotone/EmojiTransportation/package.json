@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./EmojiTransportation.js",
+  "module": "./EmojiTransportation.esm.js",
+  "types": "./EmojiTransportation.d.ts"
+}

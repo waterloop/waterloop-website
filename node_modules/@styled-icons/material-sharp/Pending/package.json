@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./Pending.js",
+  "module": "./Pending.esm.js",
+  "types": "./Pending.d.ts"
+}

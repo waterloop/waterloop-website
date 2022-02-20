@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./ThreeKPlus.js",
+  "module": "./ThreeKPlus.esm.js",
+  "types": "./ThreeKPlus.d.ts"
+}

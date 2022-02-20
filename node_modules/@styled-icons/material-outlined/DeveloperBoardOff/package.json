@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./DeveloperBoardOff.js",
+  "module": "./DeveloperBoardOff.esm.js",
+  "types": "./DeveloperBoardOff.d.ts"
+}

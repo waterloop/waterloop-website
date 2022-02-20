@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./TableView.js",
+  "module": "./TableView.esm.js",
+  "types": "./TableView.d.ts"
+}

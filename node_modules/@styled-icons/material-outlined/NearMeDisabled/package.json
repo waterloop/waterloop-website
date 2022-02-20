@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./NearMeDisabled.js",
+  "module": "./NearMeDisabled.esm.js",
+  "types": "./NearMeDisabled.d.ts"
+}

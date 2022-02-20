@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./HdrOnSelect.js",
+  "module": "./HdrOnSelect.esm.js",
+  "types": "./HdrOnSelect.d.ts"
+}

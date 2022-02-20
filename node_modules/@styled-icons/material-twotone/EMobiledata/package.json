@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "main": "./EMobiledata.js",
+  "module": "./EMobiledata.esm.js",
+  "types": "./EMobiledata.d.ts"
+}
