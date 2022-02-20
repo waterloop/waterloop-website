@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@styled-icons/evil": "^10.34.0",
+    "styled-components": "^5.3.3"
+  }
+}
