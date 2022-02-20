@@ -67,6 +67,8 @@ export const CloseIcon = styled(Close)`
 
 const Button = styled.button`
     margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
     height: 37px;
     font-weight: bold;
@@ -77,7 +79,6 @@ const Button = styled.button`
     border: none;
     border-radius: 100px;
     padding: 8px 16px;
-    margin-left: 30%;
     &:hover {
         background: #3E6232;
         transition: background-color 0.2s ease-in;
