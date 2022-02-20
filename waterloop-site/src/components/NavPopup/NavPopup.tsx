@@ -15,37 +15,13 @@ const Card = styled.div`
     font-size: 15px;
     opacity: 0;
 
-    animation: fadeIn 5s;
-    -webkit-animation: fadeIn 2s;
-    -moz-animation: fadeIn 2s;
-    -o-animation: fadeIn 2s;
-    -ms-animation: fadeIn 2s;
-    animation-delay: 0.5s;
+    animation: fadeIn 2.5s;
+    animation-delay: 0.3s;
     animation-fill-mode: forwards;
     @keyframes fadeIn {
-        0% {opacity:0;}
-        100% {opacity:1;}
-      }
-      
-      @-moz-keyframes fadeIn {
-        0% {opacity:0;}
-        100% {opacity:1;}
-      }
-      
-      @-webkit-keyframes fadeIn {
-        0% {opacity:0;}
-        100% {opacity:1;}
-      }
-      
-      @-o-keyframes fadeIn {
-        0% {opacity:0;}
-        100% {opacity:1;}
-      }
-      
-      @-ms-keyframes fadeIn {
-        0% {opacity:0;}
-        100% {opacity:1;}
-      }
+      0% {opacity:0;}
+      100% {opacity:1;}
+    }
 `;
 
 const Title = styled.div`
