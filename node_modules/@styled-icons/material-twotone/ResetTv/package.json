@@ -1,7 +1,0 @@
-{
-  "private": true,
-  "sideEffects": false,
-  "main": "./ResetTv.js",
-  "module": "./ResetTv.esm.js",
-  "types": "./ResetTv.d.ts"
-}

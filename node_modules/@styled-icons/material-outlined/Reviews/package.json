@@ -1,7 +1,0 @@
-{
-  "private": true,
-  "sideEffects": false,
-  "main": "./Reviews.js",
-  "module": "./Reviews.esm.js",
-  "types": "./Reviews.d.ts"
-}

@@ -1,7 +1,0 @@
-{
-  "private": true,
-  "sideEffects": false,
-  "main": "./TwentyFourMp.js",
-  "module": "./TwentyFourMp.esm.js",
-  "types": "./TwentyFourMp.d.ts"
-}

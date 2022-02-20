@@ -1,7 +1,0 @@
-{
-  "private": true,
-  "sideEffects": false,
-  "main": "./Tapas.js",
-  "module": "./Tapas.esm.js",
-  "types": "./Tapas.d.ts"
-}

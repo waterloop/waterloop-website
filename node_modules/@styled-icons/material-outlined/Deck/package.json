@@ -1,7 +1,0 @@
-{
-  "private": true,
-  "sideEffects": false,
-  "main": "./Deck.js",
-  "module": "./Deck.esm.js",
-  "types": "./Deck.d.ts"
-}

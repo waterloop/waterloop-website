@@ -1,7 +1,0 @@
-{
-  "private": true,
-  "sideEffects": false,
-  "main": "./Attribution.js",
-  "module": "./Attribution.esm.js",
-  "types": "./Attribution.d.ts"
-}

@@ -1,7 +1,0 @@
-{
-  "private": true,
-  "sideEffects": false,
-  "main": "./Sell.js",
-  "module": "./Sell.esm.js",
-  "types": "./Sell.d.ts"
-}

@@ -1,7 +1,0 @@
-{
-  "private": true,
-  "sideEffects": false,
-  "main": "./SettingsSuggest.js",
-  "module": "./SettingsSuggest.esm.js",
-  "types": "./SettingsSuggest.d.ts"
-}

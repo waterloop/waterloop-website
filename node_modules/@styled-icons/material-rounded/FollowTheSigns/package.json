@@ -1,7 +1,0 @@
-{
-  "private": true,
-  "sideEffects": false,
-  "main": "./FollowTheSigns.js",
-  "module": "./FollowTheSigns.esm.js",
-  "types": "./FollowTheSigns.d.ts"
-}

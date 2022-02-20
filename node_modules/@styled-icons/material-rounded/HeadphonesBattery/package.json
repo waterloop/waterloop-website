@@ -1,7 +1,0 @@
-{
-  "private": true,
-  "sideEffects": false,
-  "main": "./HeadphonesBattery.js",
-  "module": "./HeadphonesBattery.esm.js",
-  "types": "./HeadphonesBattery.d.ts"
-}

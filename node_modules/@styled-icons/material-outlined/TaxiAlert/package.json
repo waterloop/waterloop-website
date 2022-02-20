@@ -1,7 +1,0 @@
-{
-  "private": true,
-  "sideEffects": false,
-  "main": "./TaxiAlert.js",
-  "module": "./TaxiAlert.esm.js",
-  "types": "./TaxiAlert.d.ts"
-}

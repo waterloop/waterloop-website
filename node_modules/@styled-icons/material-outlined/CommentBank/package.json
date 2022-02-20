@@ -1,7 +1,0 @@
-{
-  "private": true,
-  "sideEffects": false,
-  "main": "./CommentBank.js",
-  "module": "./CommentBank.esm.js",
-  "types": "./CommentBank.d.ts"
-}
