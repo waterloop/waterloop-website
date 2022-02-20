@@ -7,12 +7,11 @@ const Title = styled.h1`
   font-size: 44px;
   text-align: center;
   color: black;
-  display: block;
+  width: 100%;
   margin-bottom: 50px;
 `;
 
 const Block = styled.div`
-  justify-content: center;
   padding-left: 10%;
   padding-right: 10%; 
 `;

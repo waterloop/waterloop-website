@@ -10,10 +10,9 @@ interface IProps {
 const Question = styled.div`
     font-size: 20px;
     color: white;
-    width: 100%;
     background: #3E6232;
     border-radius: 8px;
-    padding: 20px;
+    padding: 20px 65px 20px 20px;
     margin-top: 15px;
     position: relative;
 `;
@@ -23,7 +22,7 @@ export const OpenArrow = styled(ArrowIosDownwardOutline)`
   width: 40px;
   position: absolute;
   right: 20px;
-  top: 12px;
+  top: 20%;
 `;
 
 export const CloseArrow = styled(ArrowIosUpwardOutline)`
@@ -31,12 +30,11 @@ export const CloseArrow = styled(ArrowIosUpwardOutline)`
   width: 40px;
   position: absolute;
   right: 20px;
-  top: 12px;
+  top: 20%;
 `;
 
 const Answer = styled.div`
     font-size: 18px;
-    width: 100%;
     background: #DAF4D1;
     padding: 30px 20px 20px 20px;
     margin-top: -10px;
