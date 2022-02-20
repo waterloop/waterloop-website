@@ -7,13 +7,14 @@ const Card = styled.div`
     right: 20px;
     padding: 20px;
     background: #F4F4F4;
-    width: 330px;
+    width: 300px;
     height: 165px;    
     border-radius: 6px;
     z-index: 100000;
     align-items: center;
     font-size: 15px;
     opacity: 0;
+
     animation: fadeIn 5s;
     -webkit-animation: fadeIn 2s;
     -moz-animation: fadeIn 2s;
@@ -21,7 +22,6 @@ const Card = styled.div`
     -ms-animation: fadeIn 2s;
     animation-delay: 0.5s;
     animation-fill-mode: forwards;
-
     @keyframes fadeIn {
         0% {opacity:0;}
         100% {opacity:1;}
