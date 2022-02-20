@@ -22,7 +22,7 @@ const FAQ: React.FC = () => (
     <Title>FAQ</Title>
     {content.map(bullet => (
         <Collapsible
-            open
+            open={false}
             title={bullet.question}
         >
             {bullet.answer}

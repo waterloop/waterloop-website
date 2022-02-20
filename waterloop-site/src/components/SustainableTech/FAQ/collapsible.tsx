@@ -18,7 +18,6 @@ const Question = styled.div`
     position: relative;
 `;
 
-/*TODO: A way to shorten this? */
 export const OpenArrow = styled(ArrowIosDownwardOutline)`
   color: white;
   width: 40px;
@@ -54,9 +53,9 @@ const Collapsible: React.FC<IProps> = ({ open, children, title }) => {
   return (
       <div>
         <Question onClick={openDropdown}>{title}
-            {isOpen ? <OpenArrow/> : <CloseArrow/> }
+            {isOpen ? <CloseArrow/> : <OpenArrow/> }
         </Question>
-        {!isOpen && <Answer>{children}</Answer>}
+        {isOpen && <Answer>{children}</Answer>}
       </div>
   );
 };
