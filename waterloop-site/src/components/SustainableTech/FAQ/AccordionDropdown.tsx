@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-// import RotatingIcon from './RotatingIcon';
 
 interface IProps {
   open?: boolean;
@@ -50,12 +49,12 @@ const AccordionDropdown: React.FC<IProps> = ({ open, children, title }) => {
     <div>
       <Question onClick={openDropdown}>
         {title}
-        <ExpandArrow 
-          fontSize="large" 
+        <ExpandArrow
+          fontSize="large"
           style={{
-            transition: "transform .5s",
-            transform: `rotate(${isOpen ? 0 : -180}deg)`
-          }} 
+            transition: 'transform .5s',
+            transform: `rotate(${isOpen ? 0 : -180}deg)`,
+          }}
         />
       </Question>
       {isOpen && <Answer>{children}</Answer>}

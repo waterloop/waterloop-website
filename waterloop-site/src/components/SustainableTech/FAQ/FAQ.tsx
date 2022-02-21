@@ -1,6 +1,7 @@
 import React from 'react';
-import AccordionDropdown from './AccordionDropdown';
 import styled from 'styled-components';
+
+import AccordionDropdown from './AccordionDropdown';
 import Content from 'static/copy/SustainableTech/FAQ.json';
 
 const Title = styled.h1`
