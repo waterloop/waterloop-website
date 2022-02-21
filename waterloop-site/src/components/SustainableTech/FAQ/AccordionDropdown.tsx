@@ -3,8 +3,8 @@ import styled, { keyframes } from 'styled-components';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 
 interface Props {
-  open?: boolean;
-  title: string;
+  open: boolean;
+  title?: string;
 }
 
 const rotateIcon = keyframes`
@@ -63,7 +63,7 @@ const AccordionDropdown: React.FC<Props> = ({ open, children, title }) => {
           }}
         />
       </Question>
-      <Answer open={isOpen} title="">
+      <Answer open={isOpen}>
         <AnswerText>{children}</AnswerText>
       </Answer>
     </div>
