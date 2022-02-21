@@ -35,7 +35,7 @@ const imgJSON: ImgJSON[] = [
 
 const Home: React.FC = () => (
   <div>
-    <NavPopup></NavPopup>
+    <NavPopup/>
     <Hero description="A faster look on the future." anchor="#home"></Hero>
 
     <div className="pageContainer">
