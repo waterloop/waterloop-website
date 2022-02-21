@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
@@ -9,13 +9,13 @@ interface IProps {
 }
 
 const Question = styled.div`
-    font-size: 20px;
-    color: white;
-    background: #3E6232;
-    border-radius: 8px;
-    padding: 20px 65px 20px 20px;
-    margin-top: 15px;
-    position: relative;
+  font-size: 20px;
+  color: white;
+  background: #3e6232;
+  border-radius: 8px;
+  padding: 20px 65px 20px 20px;
+  margin-top: 15px;
+  position: relative;
 `;
 
 export const OpenArrow = styled(ExpandMoreIcon)`
@@ -33,11 +33,11 @@ export const CloseArrow = styled(ExpandLessIcon)`
 `;
 
 const Answer = styled.div`
-    font-size: 18px;
-    background: #DAF4D1;
-    padding: 30px 20px 20px 20px;
-    margin-top: -10px;
-    border-radius: 0px 0px 8px 8px;
+  font-size: 18px;
+  background: #daf4d1;
+  padding: 30px 20px 20px 20px;
+  margin-top: -10px;
+  border-radius: 0px 0px 8px 8px;
 `;
 
 const AccordionDropdown: React.FC<IProps> = ({ open, children, title }) => {
@@ -48,12 +48,17 @@ const AccordionDropdown: React.FC<IProps> = ({ open, children, title }) => {
   };
 
   return (
-      <div>
-        <Question onClick={openDropdown}>{title}
-            {isOpen ? <CloseArrow fontSize="large"/> : <OpenArrow fontSize="large"/> }
-        </Question>
-        {isOpen && <Answer>{children}</Answer>}
-      </div>
+    <div>
+      <Question onClick={openDropdown}>
+        {title}
+        {isOpen ? (
+          <CloseArrow fontSize="large" />
+        ) : (
+          <OpenArrow fontSize="large" />
+        )}
+      </Question>
+      {isOpen && <Answer>{children}</Answer>}
+    </div>
   );
 };
 
