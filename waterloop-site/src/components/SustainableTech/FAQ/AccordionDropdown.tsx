@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
-interface IProps {
+interface Props {
   open?: boolean;
   title: string;
 }
@@ -38,7 +38,7 @@ const Answer = styled.div`
   border-radius: 0px 0px 8px 8px;
 `;
 
-const AccordionDropdown: React.FC<IProps> = ({ open, children, title }) => {
+const AccordionDropdown: React.FC<Props> = ({ open, children, title }) => {
   const [isOpen, setIsOpen] = useState(open);
 
   const openDropdown = () => {
