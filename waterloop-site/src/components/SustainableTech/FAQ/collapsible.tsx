@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from 'styled-components';
-import {ArrowIosDownwardOutline, ArrowIosUpwardOutline} from '@styled-icons/evaicons-outline';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 
 interface IProps {
   open?: boolean;
@@ -17,17 +18,15 @@ const Question = styled.div`
     position: relative;
 `;
 
-export const OpenArrow = styled(ArrowIosDownwardOutline)`
+export const OpenArrow = styled(ExpandMoreIcon)`
   color: white;
-  width: 40px;
   position: absolute;
   right: 20px;
   top: 20%;
 `;
 
-export const CloseArrow = styled(ArrowIosUpwardOutline)`
+export const CloseArrow = styled(ExpandLessIcon)`
   color: white;
-  width: 40px;
   position: absolute;
   right: 20px;
   top: 20%;
@@ -51,7 +50,7 @@ const Collapsible: React.FC<IProps> = ({ open, children, title }) => {
   return (
       <div>
         <Question onClick={openDropdown}>{title}
-            {isOpen ? <CloseArrow/> : <OpenArrow/> }
+            {isOpen ? <CloseArrow fontSize="large"/> : <OpenArrow fontSize="large"/> }
         </Question>
         {isOpen && <Answer>{children}</Answer>}
       </div>
