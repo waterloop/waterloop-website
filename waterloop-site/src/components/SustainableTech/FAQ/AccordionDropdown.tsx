@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import ExpandLessIcon from '@material-ui/icons/ExpandLess';
+// import RotatingIcon from './RotatingIcon';
 
 interface IProps {
   open?: boolean;
   title: string;
 }
+
+const rotateIcon = keyframes`
+  50% {transform: rotate(-180deg);}
+`;
 
 const Question = styled.div`
   font-size: 20px;
@@ -18,18 +22,13 @@ const Question = styled.div`
   position: relative;
 `;
 
-export const OpenArrow = styled(ExpandMoreIcon)`
+export const ExpandArrow = styled(ExpandMoreIcon)`
   color: white;
   position: absolute;
   right: 20px;
   top: 20%;
-`;
-
-export const CloseArrow = styled(ExpandLessIcon)`
-  color: white;
-  position: absolute;
-  right: 20px;
-  top: 20%;
+  animation-fill-mode: forwards;
+  animation: ${rotateIcon} linear;
 `;
 
 const Answer = styled.div`
@@ -51,11 +50,13 @@ const AccordionDropdown: React.FC<IProps> = ({ open, children, title }) => {
     <div>
       <Question onClick={openDropdown}>
         {title}
-        {isOpen ? (
-          <CloseArrow fontSize="large" />
-        ) : (
-          <OpenArrow fontSize="large" />
-        )}
+        <ExpandArrow 
+          fontSize="large" 
+          style={{
+            transition: "transform .5s",
+            transform: `rotate(${isOpen ? 0 : -180}deg)`
+          }} 
+        />
       </Question>
       {isOpen && <Answer>{children}</Answer>}
     </div>
