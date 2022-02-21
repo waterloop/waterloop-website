@@ -1,5 +1,5 @@
 import React from "react";
-import Collapsible from "./collapsible";
+import AccordionDropdown from "./AccordionDropdown";
 import styled from 'styled-components'
 import Content from "static/copy/SustainableTech/FAQ.json";
 
@@ -20,12 +20,12 @@ const FAQ: React.FC = () => (
     <Block>
     <Title>FAQ</Title>
     {Content.map(text => (
-        <Collapsible
+        <AccordionDropdown
             open={false}
             title={text.question}
         >
             {text.answer}
-        </Collapsible>
+        </AccordionDropdown>
     ))}
     </Block>
 );

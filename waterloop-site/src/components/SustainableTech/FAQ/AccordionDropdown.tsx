@@ -40,7 +40,7 @@ const Answer = styled.div`
     border-radius: 0px 0px 8px 8px;
 `;
 
-const Collapsible: React.FC<IProps> = ({ open, children, title }) => {
+const AccordionDropdown: React.FC<IProps> = ({ open, children, title }) => {
   const [isOpen, setIsOpen] = useState(open);
 
   const openDropdown = () => {
@@ -57,4 +57,4 @@ const Collapsible: React.FC<IProps> = ({ open, children, title }) => {
   );
 };
 
-export default Collapsible;
+export default AccordionDropdown;
