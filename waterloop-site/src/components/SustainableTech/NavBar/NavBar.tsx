@@ -28,12 +28,12 @@ const IconBlack = styled.img`
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
 
-  @media screen and (max-width: 920px) {
+  @media screen and (max-width: 900px) {
     width: 40px;
     height: 40px;
   }
 
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 720px) {
     width: 30px;
     height: 30px;
   }
@@ -45,12 +45,12 @@ const LogoContainer = styled.div`
   top: 6px;
   align-items: left;
   padding-left: 4%;
-  @media screen and (max-width: 920px) {
+  @media screen and (max-width: 900px) {
     top: 13px;
     padding-left: 3%;
   }
 
-  @media screen and (max-width: 710px) {
+  @media screen and (max-width: 720px) {
     top: 17px;
   }
 `;
@@ -103,8 +103,8 @@ const ScrollLink = styled.button`
     font-size: 16px;
   }
 
-  @media screen and (max-width: 710px) {
-    font-size: 12px;
+  @media screen and (max-width: 720px) {
+    font-size: 13px;
   }
 
   @media screen and (max-width: 600px) {
