@@ -19,6 +19,7 @@ const Question = styled.div`
   padding: 20px 65px 20px 20px;
   margin-top: 20px;
   position: relative;
+  cursor: pointer;
 `;
 
 export const ExpandArrow = styled(ExpandLessIcon)`
