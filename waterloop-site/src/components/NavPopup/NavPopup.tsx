@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import CloseIcon from '@material-ui/icons/Close';
 
@@ -66,6 +67,10 @@ const Button = styled.button`
   }
 `;
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+`;
+
 const NavPopup: React.FC = () => {
   const [isOpen, setIsOpen] = useState(true);
 
@@ -82,11 +87,7 @@ const NavPopup: React.FC = () => {
       <ClosePopupIcon fontSize="large" onClick={closePopup} />
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor
       sit amet, consectetur adipiscing elit.
-      <Button
-        onClick={(): Window | null => window.open('/sustainable-tech', '_self')}
-      >
-        Check it out!
-      </Button>
+      <StyledLink to="/sustainable-tech"><Button>Check it out!</Button></StyledLink>
     </Card>
   );
 };
