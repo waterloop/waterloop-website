@@ -1,0 +1,20 @@
+[
+    {
+        "title": "Keynote Speaker: Name",
+        "subtitle": "Title, Company",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris cursus eros nec eros tempus, ac euismod eros elementum. Nullam eu vehicula enim, at sollicitudin urna. Ut sed augue non nisi tincidunt pulvinar. Nulla facilisi. Nulla facilisi. Morbi fringilla elit non ligula hendrerit, sed congue ante semper. Suspendisse laoreet, diam sit amet auctor dictum, tellus quam consequat metus, at volutpat lorem quam id nulla. Phasellus rutrum mollis felis, vel aliquam orci mollis eget.",
+        "time": "6:00 PM ET"
+    },
+    {
+        "title": "A Word from Our Sponsors",
+        "subtitle": "Sponsor Company Name(s) or Names of Representatives",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris cursus eros nec eros tempus, ac euismod eros elementum. Nullam eu vehicula enim, at sollicitudin urna. Ut sed augue non nisi tincidunt pulvinar. Nulla facilisi. Nulla facilisi. Morbi fringilla elit non ligula hendrerit, sed congue ante semper. Suspendisse laoreet, diam sit amet auctor dictum, tellus quam consequat metus, at volutpat lorem quam id nulla. Phasellus rutrum mollis felis, vel aliquam orci mollis eget.",
+        "time": "6:15 PM ET"
+    },
+    {
+        "title": "Design Team Presentations",
+        "subtitle": "Midnight sun, UWAFT, Waterloop",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris cursus eros nec eros tempus, ac euismod eros elementum. Nullam eu vehicula enim, at sollicitudin urna. Ut sed augue non nisi tincidunt pulvinar. Nulla facilisi. Nulla facilisi. Morbi fringilla elit non ligula hendrerit, sed congue ante semper. Suspendisse laoreet, diam sit amet auctor dictum, tellus quam consequat metus, at volutpat lorem quam id nulla. Phasellus rutrum mollis felis, vel aliquam orci mollis eget.",
+        "time": "6:20 PM ET"
+    }
+]
