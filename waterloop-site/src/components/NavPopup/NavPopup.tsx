@@ -87,7 +87,9 @@ const NavPopup: React.FC = () => {
       <ClosePopupIcon fontSize="large" onClick={closePopup} />
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor
       sit amet, consectetur adipiscing elit.
-      <StyledLink to="/sustainable-tech"><Button>Check it out!</Button></StyledLink>
+      <StyledLink to="/sustainable-tech">
+        <Button>Check it out!</Button>
+      </StyledLink>
     </Card>
   );
 };
