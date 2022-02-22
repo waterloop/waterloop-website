@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import BlackLogoImg from '../../../static/img/logos/Icon_Yellow.png';
-import Waterlooplogo from '../../../static/img/logos/Waterloop.svg';
-import { NavLink } from 'react-router-dom';
+import BlackLogoImg from '../../../static/img/logos/Icon_Black.svg';
 import { ReactElement } from 'react';
+import scrollDown from './LinkScroll';
 
 const SidebarContainer = styled.div`
   display: flex;
@@ -13,7 +12,7 @@ const SidebarContainer = styled.div`
   padding-top: 0%;
   width: 100%;
   height: 100%;
-  background-color: #232635;
+  background-color: #E5F6FA;
 `;
 
 const ListContainer = styled.div`
@@ -23,12 +22,14 @@ const ListContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-content: center;
-  background-color: #ffffff;
+  justify-content: center;
+  align-items: center;
+  background-color: #E5F6FA;
   height: 100vh;
-  width: 70vw;
+  width: 100vw;
   right: 0;
   top: 0;
-  line-height: 300%;
+  line-height: 500%;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   &.closed {
@@ -38,12 +39,14 @@ const ListContainer = styled.div`
   }
 `;
 
-const Link = styled(NavLink)`
+const ScrollLink = styled.button`
   color: #010101;
   font-family: 'IBM Plex Sans';
-  margin: 1rem;
+  padding-top: 40px;
   font-size: 28px;
-  font-weight: 600;
+  font-weight: 400;
+  background-color: #E5F6FA;
+  border: none;
 
   text-decoration: none;
   &:visited,
@@ -52,8 +55,7 @@ const Link = styled(NavLink)`
   }
 `;
 
-const IconYellow = styled.img`
-  margin-top: 20px;
+const IconBlack = styled.img`
   margin-left: 10px;
   width: 50px;
   height: 50px;
@@ -61,25 +63,18 @@ const IconYellow = styled.img`
   transition: 0.2s ease-in-out;
 `;
 
-const IconBlack = styled.img`
-  height: 20px;
-  margin: 1rem;
-  display: flex;
-`;
-
 // mobile toggle button
 const StyledToggle = styled.button`
   display: flex;
   z-index: 3000;
-  overflow: hidden;
   flex-direction: column;
   justify-content: center;
   align-content: center;
   width: 52px;
   height: 40px;
-  margin-top: 20px;
+  margin-top: 15px;
   margin-right: 0px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   background: transparent;
   border: none;
   outline: none;
@@ -91,11 +86,11 @@ const StyledToggle = styled.button`
 // lines of the mobile toggle button
 const ToggleLine = styled.div`
   width: 30px;
-  height: 4px;
+  height: 3px;
   margin-top: 3px;
   margin-bottom: 3px;
   margin-right: 10px;
-  background-color: #ffffff;
+  background-color: black;
   border-radius: 10px;
   -webkit-transition: transform 0.4s ease-in-out,
     background-color 0.2s ease-in-out, height 0.2s ease-in-out;
@@ -123,7 +118,6 @@ type MyProps = {
   handleClickSidebar: (open: boolean) => void;
 };
 
-/* NOTE: This component will have to be completely re-done. This is kept here as a placeholder for now. */
 class Sidebar extends React.Component<MyProps> {
   render(): ReactElement {
     return (
@@ -132,7 +126,7 @@ class Sidebar extends React.Component<MyProps> {
           this.props.handleClickSidebar(!this.props.sidebarOpen);
         }}
       >
-        <IconYellow src={BlackLogoImg}></IconYellow>
+        <IconBlack src={BlackLogoImg}></IconBlack>
         <StyledToggle
           className={this.props.sidebarOpen ? 'open' : ''}
           onClick={(): void => {
@@ -145,55 +139,73 @@ class Sidebar extends React.Component<MyProps> {
         </StyledToggle>
         <ListContainer className={this.props.sidebarOpen ? '' : 'closed'}>
           <div>
-            <IconBlack src={Waterlooplogo}></IconBlack>
-            <Link
-              to="/"
+            <ScrollLink
               onClick={(): void => {
                 this.props.handleClickSidebar(false);
+                setTimeout(function(){
+                  scrollDown('IDlocation1');
+                },400);
               }}
             >
               Home
-            </Link>
+            </ScrollLink>
           </div>
           <div>
-            <Link
-              to="/the-flock"
+            <ScrollLink
+              onClick={(): void => {
+                this.props.handleClickSidebar(false);
+                setTimeout(function(){
+                  scrollDown('IDlocation2');
+                },400);
+              }}
+            >
+              Meet The Teams
+            </ScrollLink>
+          </div>
+          <div>
+           <ScrollLink
+              onClick={(): void => {
+                this.props.handleClickSidebar(false);
+                setTimeout(function(){
+                  scrollDown('IDlocation3');
+                },400);
+              }}
+            >
+              Our Sponsors
+            </ScrollLink>
+          </div>
+          <div>
+            <ScrollLink
               onClick={(): void => {
                 this.props.handleClickSidebar(false);
               }}
             >
-              Flock
-            </Link>
+              About The Event
+            </ScrollLink>
           </div>
           <div>
-            <Link
-              to="/team"
+           <ScrollLink
               onClick={(): void => {
                 this.props.handleClickSidebar(false);
+                setTimeout(function(){
+                  scrollDown('IDlocation4');
+                },400);
               }}
             >
-              Team
-            </Link>
+              FAQ
+            </ScrollLink>
           </div>
           <div>
-            <Link
-              to="/sponsors"
+           <ScrollLink
               onClick={(): void => {
                 this.props.handleClickSidebar(false);
+                setTimeout(function(){
+                  scrollDown('IDlocation5');
+                },400);
               }}
             >
-              Sponsors
-            </Link>
-          </div>
-          <div>
-            <Link
-              to="/recruitment"
-              onClick={(): void => {
-                this.props.handleClickSidebar(false);
-              }}
-            >
-              Join Us
-            </Link>
+              Contact Us
+            </ScrollLink>
           </div>
         </ListContainer>
       </SidebarContainer>
