@@ -11,8 +11,10 @@ const SidebarContainer = styled.div`
   justify-content: space-between;
   padding-top: 0%;
   width: 100%;
-  height: 100%;
+  height: 70px;
   background-color: #E5F6FA;
+  position: absolute;
+  top: 0;
 `;
 
 const ListContainer = styled.div`
