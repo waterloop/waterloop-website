@@ -48,6 +48,7 @@ class App extends React.Component<{}, State> {
     this.handleWindowSizeChange = this.handleWindowSizeChange.bind(this);
     this.handleClickSidebar = this.handleClickSidebar.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.generatePageMap = this.generatePageMap.bind(this);
   }
 
   componentDidMount(): void {
@@ -81,63 +82,44 @@ class App extends React.Component<{}, State> {
     }
   }
 
+  generatePageMap(override: Partial<PageMap>) {
+    return {
+      path: '/',
+      exact: false,
+      NavBarComponent: <NavBar />,
+      SideBarComponent: (
+        <SideBar
+          sidebarOpen={this.state.sidebarOpen}
+          handleClickSidebar={this.handleClickSidebar}
+        />
+      ),
+      MainComponent: <Home />,
+      FooterComponent: <Footer />,
+      ...override,
+    };
+  }
+
   render(): React.ReactElement {
     const pageMappings: PageMap[] = [
-      {
+      this.generatePageMap({
         path: '/',
         exact: true,
-        NavBarComponent: <NavBar />,
-        SideBarComponent: (
-          <SideBar
-            sidebarOpen={this.state.sidebarOpen}
-            handleClickSidebar={this.handleClickSidebar}
-          />
-        ),
         MainComponent: <Home />,
-        FooterComponent: <Footer />,
-      },
-      {
+      }),
+      this.generatePageMap({
         path: '/the-flock',
-        exact: false,
-        NavBarComponent: <NavBar />,
-        SideBarComponent: (
-          <SideBar
-            sidebarOpen={this.state.sidebarOpen}
-            handleClickSidebar={this.handleClickSidebar}
-          />
-        ),
         MainComponent: <Flock />,
-        FooterComponent: <Footer />,
-      },
-      {
+      }),
+      this.generatePageMap({
         path: '/team',
-        exact: false,
-        NavBarComponent: <NavBar />,
-        SideBarComponent: (
-          <SideBar
-            sidebarOpen={this.state.sidebarOpen}
-            handleClickSidebar={this.handleClickSidebar}
-          />
-        ),
         MainComponent: <Team />,
-        FooterComponent: <Footer />,
-      },
-      {
+      }),
+      this.generatePageMap({
         path: '/sponsors',
-        exact: false,
-        NavBarComponent: <NavBar />,
-        SideBarComponent: (
-          <SideBar
-            sidebarOpen={this.state.sidebarOpen}
-            handleClickSidebar={this.handleClickSidebar}
-          />
-        ),
         MainComponent: <Sponsors />,
-        FooterComponent: <Footer />,
-      },
-      {
+      }),
+      this.generatePageMap({
         path: '/sustainable-tech',
-        exact: false,
         NavBarComponent: <STENavBar />,
         SideBarComponent: (
           <STESideBar
@@ -147,85 +129,33 @@ class App extends React.Component<{}, State> {
         ),
         MainComponent: <SustainableTechEvent />,
         FooterComponent: <STEFooter />,
-      },
-      {
+      }),
+      this.generatePageMap({
         path: '/contact',
-        exact: false,
-        NavBarComponent: <NavBar />,
-        SideBarComponent: (
-          <SideBar
-            sidebarOpen={this.state.sidebarOpen}
-            handleClickSidebar={this.handleClickSidebar}
-          />
-        ),
         MainComponent: <Contact />,
-        FooterComponent: <Footer />,
-      },
-      {
+      }),
+      this.generatePageMap({
         path: '/recruitment',
-        exact: false,
-        NavBarComponent: <NavBar />,
-        SideBarComponent: (
-          <SideBar
-            sidebarOpen={this.state.sidebarOpen}
-            handleClickSidebar={this.handleClickSidebar}
-          />
-        ),
         MainComponent: <RecruitmentRouter />,
-        FooterComponent: <Footer />,
-      },
-      {
+      }),
+      this.generatePageMap({
         path: '/posting',
         exact: true,
-        NavBarComponent: <NavBar />,
-        SideBarComponent: (
-          <SideBar
-            sidebarOpen={this.state.sidebarOpen}
-            handleClickSidebar={this.handleClickSidebar}
-          />
-        ),
         MainComponent: <Redirect to="/recruitment" />,
-        FooterComponent: <Footer />,
-      },
-      {
+      }),
+      this.generatePageMap({
         path: '/posting/:id',
-        exact: false,
-        NavBarComponent: <NavBar />,
-        SideBarComponent: (
-          <SideBar
-            sidebarOpen={this.state.sidebarOpen}
-            handleClickSidebar={this.handleClickSidebar}
-          />
-        ),
         MainComponent: <JobPostingPage />,
-        FooterComponent: <Footer />,
-      },
-      {
+      }),
+      this.generatePageMap({
         path: '/404',
         exact: true,
-        NavBarComponent: <NavBar />,
-        SideBarComponent: (
-          <SideBar
-            sidebarOpen={this.state.sidebarOpen}
-            handleClickSidebar={this.handleClickSidebar}
-          />
-        ),
         MainComponent: <ErrorPage />,
-        FooterComponent: <Footer />,
-      },
-      {
+      }),
+      this.generatePageMap({
         path: '/*',
-        exact: false,
-        NavBarComponent: <NavBar />,
-        SideBarComponent: (
-          <SideBar
-            sidebarOpen={this.state.sidebarOpen}
-            handleClickSidebar={this.handleClickSidebar}
-          />
-        ),
         MainComponent: <Redirect to="/404" />,
-        FooterComponent: <Footer />,
-      },
+      }),
     ];
 
     return (
