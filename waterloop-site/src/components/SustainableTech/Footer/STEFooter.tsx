@@ -9,12 +9,11 @@ import FacebookSVG from '../../../static/img/logos/logo-facebook.svg';
 
 const fill = '#203D7A';
 
-// To stay consistent with the previous website's footer, used same scss with changed background photo
 const FooterBackground = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: start;
-  height: 15vh;
+  height: 8rem;
   bottom: 0;
   background: #e5f6fa;
   padding: 5vh 10vw 15vh;
@@ -81,6 +80,7 @@ const Divider = styled.hr`
   width: 100%;
   border-color: ${fill};
   margin: 10px 0;
+  border-width: 1px;
 `;
 
 const PageTagsAndSocialsWrapper = styled.div`
@@ -102,9 +102,23 @@ const Tag = styled.p`
   padding-right: 50px;
 `;
 
-const Tags = ['Home', 'About', 'Schedule', 'Team', 'Sponsors', 'FAQ']; //potentially make this an array of JSONs for tags
+// const Tags = ['Home', 'About', 'Schedule', 'Team', 'Sponsors', 'FAQ'];
 
-const Socials = [TwitterSVG, InstagramSVG, FacebookSVG, LinkedInSVG];
+const Tags = [
+  { text: 'Home', tag: 'dummy' },
+  { text: 'About', tag: 'dummy' },
+  { text: 'Schedule', tag: 'dummy' },
+  { text: 'Team', tag: 'dummy' },
+  { text: 'Sponsors', tag: 'dummy' },
+  { text: 'FAQ', tag: 'dummy' },
+];
+
+const Socials = [
+  { SVG: TwitterSVG, link: 'https://twitter.com/team_waterloop' },
+  { SVG: InstagramSVG, link: 'https://www.instagram.com/team_waterloop/' },
+  { SVG: FacebookSVG, link: 'https://www.facebook.com/teamwaterloop' },
+  { SVG: LinkedInSVG, link: 'https://www.linkedin.com/company/wloop' },
+];
 
 const SocialsWrapper = styled.div`
   display: flex;
@@ -121,9 +135,15 @@ const SocialBubble = styled.div`
   margin-left: 25px;
 `;
 
-const SocialImg = (img: string) => styled.img.attrs({
-  src: `${img}`,
-})`
+interface SocialProps {
+  SVG: string;
+}
+
+const SocialImg = styled.img.attrs((props: SocialProps) => {
+  return {
+    src: `${props.SVG}`,
+  };
+})<SocialProps>`
   width: 14px;
   height: 14px;
 `;
@@ -143,15 +163,16 @@ const STEFooter: React.FC = () => (
     <PageTagsAndSocialsWrapper>
       <PageTagsWrapper>
         {Tags.map((tag) => (
-          <Tag>{tag}</Tag>
+          <Tag>{tag.text}</Tag>
         ))}
       </PageTagsWrapper>
       <SocialsWrapper>
         {Socials.map((social) => {
-          const Img = SocialImg(social);
           return (
             <SocialBubble>
-                <Img />
+              <a href={social.link} target="_blank">
+                <SocialImg SVG={social.SVG} />
+              </a>
             </SocialBubble>
           );
         })}
