@@ -1,15 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import TeamsCarousel from './TeamsCarousel';
-import LaptopIcon from './img/laptop.svg';
-import EarthIcon from './img/earth.svg';
-import PlantIcon from './img/plant.svg';
+import DetailsCard from './DetailsCard';
 
 const AboutContainer = styled.section`
   padding: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: linear-gradient(180deg, #a3c7e1 0%, #d9eaf7 35.73%, #ffffff 100%);
   /* background-color: lightgreen; */
 `;
 
@@ -23,76 +22,43 @@ const HeadingContainer = styled.div`
 `;
 
 const Heading = styled.h1`
-  font-size: 30px;
+  font-size: 35px;
   font-weight: bold;
   text-align: center;
   margin: 0;
-  color: #3c6130;
+  color: #203d7a;
   /* background-color: lightblue; */
+
+  @media screen and (max-width: 768px) {
+    font-size: 30px;
+  }
 `;
 
 const AboutContentWrapper = styled.div`
   max-width: 1000px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: column;
   margin: 30px 0;
   /* background-color: lightblue; */
 `;
 
-const DetailsContainer = styled.div`
-  max-width: 800px;
-  display: flex;
-  gap: 40px;
-  justify-content: center;
-  align-items: center;
+const AboutText = styled.p`
+  font-size: 20px;
+  color: #000000;
+  text-align: center;
   margin: 40px 0;
+  line-height: 1.5;
 
-  @media screen and (max-width: 425px) {
-    flex-direction: column;
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
   }
 `;
 
-const IconCircleContainer = styled.div``;
-
-const IconCircleType1 = styled.div`
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
+const DetailsContainer = styled.div`
+  margin: 30px auto;
+  max-width: 1200px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  background-color: #3c6130;
-`;
-
-const IconCircleType2 = styled.div`
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #80c169;
-`;
-
-const IconCircleType3 = styled.div`
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #d8eaba;
-`;
-
-const Icon = styled.img`
-  width: 45%;
-`;
-
-const DetailsText = styled.p`
-  font-size: 14px;
-  color: #737b7d;
+  align-items: flex-start;
+  flex-wrap: wrap;
 `;
 
 const AboutEvent: React.FC = () => (
@@ -102,58 +68,28 @@ const AboutEvent: React.FC = () => (
     </HeadingContainer>
 
     <AboutContentWrapper>
-      <DetailsContainer>
-        <DetailsText>
-          Overtime, technological innovation has become a basic component of
-          life. We adore and rely on the many benefits that are offered by
-          computers and automation. But, we often forget to consider the
-          negative impacts that arise when such technology is created/used. More
-          importantly, the harm that is being done to the environment and how it
-          is changing at every moment of our lives.
-        </DetailsText>
-        <IconCircleContainer>
-          <IconCircleType1>
-            <Icon src={PlantIcon} alt="Earth" />
-          </IconCircleType1>
-        </IconCircleContainer>
-      </DetailsContainer>
-
-      <DetailsContainer>
-        <IconCircleContainer>
-          <IconCircleType2>
-            <Icon src={EarthIcon} alt="Earth" />
-          </IconCircleType2>
-        </IconCircleContainer>
-        <DetailsText>
-          The sustainable technology industry exists for this very reason: to
-          help reduce and reverse the damage done to our planet. We want to
-          showcase how UWaterloo is a part of the sustainable technology
-          industry by sharing with you some of it's sustainable tech teams.
-          You'll get to hear from us (Waterloop), Midnight Sun, UWAFT (not
-          confirmed, may have to add)!
-        </DetailsText>
-      </DetailsContainer>
-
-      <DetailsContainer>
-        <DetailsText>
-          If you’re interested in learning more about how green technology is
-          doing its part in creating a better future or how to be a part of the
-          change at UWaterloo, join us at the Sustainable Tech Event on March
-          25th from 6pm to 8pm EST. Jump start your journey to living more
-          ethically and sustainably!
-        </DetailsText>
-        <IconCircleContainer>
-          <IconCircleType3>
-            <Icon src={LaptopIcon} alt="Earth" />
-          </IconCircleType3>
-        </IconCircleContainer>
-      </DetailsContainer>
+      <AboutText>
+        Overtime, technological innovation has become a basic component of life.
+        We adore and rely on the many benefits that are offered by computers and
+        automation. But, we often forget to consider the negative impacts that
+        arise when such technology is created/used. The sustainable technology
+        industry exists for this very reason: to help reduce and reverse the
+        damage done to our planet. We want to showcase how UWaterloo is a part
+        of the sustainable technology industry by sharing with you some of it's
+        sustainable tech teams.
+      </AboutText>
     </AboutContentWrapper>
 
+    <DetailsContainer>
+      <DetailsCard icon={0} title="Date" detail="March 25th, 2022" />
+      <DetailsCard icon={1} title="Time" detail="6pm to 8pm EST" />
+      <DetailsCard icon={2} title="Place" detail="Virtually" />
+    </DetailsContainer>
+    {/* 
     <HeadingContainer>
       <Heading>TEAMS</Heading>
     </HeadingContainer>
-    <TeamsCarousel />
+    <TeamsCarousel /> */}
   </AboutContainer>
 );
 
