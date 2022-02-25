@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { AboutEvent } from '../components/SustainableTech/AboutEvent';
+import { Teams } from '../components/SustainableTech/Teams';
 import { Contact } from '../components/SustainableTech/Contact';
 import { FAQ } from '../components/SustainableTech/FAQ';
 import { Hero } from '../components/SustainableTech/Hero';
@@ -12,6 +13,7 @@ const SustainableTechEvent: React.FC = () => (
     <Hero />
     <Schedule />
     <AboutEvent />
+    <Teams />
     <Sponsors />
     <FAQ />
     <Contact />

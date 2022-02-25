@@ -18,7 +18,7 @@ const TeamCardContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding: 40px;
-  background-color: #80c169;
+  background-color: #618A4D;
   box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.15);
   border-radius: 8px;
 
@@ -66,7 +66,7 @@ const TeamsPickerCard = styled.div`
   max-width: 150px;
   min-width: 100px;
   border-radius: 8px;
-  background-color: #d8eaba;
+  background-color: #FFFFFF;
   box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.15);
 
   &:hover ${TeamsPickerImage} {

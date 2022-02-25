@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import TeamsCarousel from './TeamsCarousel';
 import DetailsCard from './DetailsCard';
+import WaterDesign from './img/water_section_divider.svg'
 
 const AboutContainer = styled.section`
-  padding: 40px;
+  /* padding: 40px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,12 +12,17 @@ const AboutContainer = styled.section`
   /* background-color: lightgreen; */
 `;
 
+const SectionDivider = styled.img`
+  width: 100%;
+  margin: 0;
+`
+
 const HeadingContainer = styled.div`
   max-width: 1000px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10px 0;
+  margin: 40px 0;
   /* background-color: lightcoral; */
 `;
 
@@ -36,7 +41,7 @@ const Heading = styled.h1`
 
 const AboutContentWrapper = styled.div`
   max-width: 1000px;
-  margin: 30px 0;
+  margin: 30px 30px;
   /* background-color: lightblue; */
 `;
 
@@ -53,7 +58,7 @@ const AboutText = styled.p`
 `;
 
 const DetailsContainer = styled.div`
-  margin: 30px auto;
+  margin: 30px 30px;
   max-width: 1200px;
   display: flex;
   justify-content: center;
@@ -63,6 +68,9 @@ const DetailsContainer = styled.div`
 
 const AboutEvent: React.FC = () => (
   <AboutContainer id="about">
+    
+    <SectionDivider src={WaterDesign}/>
+
     <HeadingContainer>
       <Heading>ABOUT THE EVENT</Heading>
     </HeadingContainer>
@@ -85,11 +93,6 @@ const AboutEvent: React.FC = () => (
       <DetailsCard icon={1} title="Time" detail="6pm to 8pm EST" />
       <DetailsCard icon={2} title="Place" detail="Virtually" />
     </DetailsContainer>
-    {/* 
-    <HeadingContainer>
-      <Heading>TEAMS</Heading>
-    </HeadingContainer>
-    <TeamsCarousel /> */}
   </AboutContainer>
 );
 
