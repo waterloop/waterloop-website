@@ -40,9 +40,7 @@ const Teams: React.FC = () => {
         <Heading>TEAMS</Heading>
       </HeadingContainer>
 
-      <div>
-        <TeamsCarousel />
-      </div>
+      <TeamsCarousel />
     </AboutContainer>
   );
 };

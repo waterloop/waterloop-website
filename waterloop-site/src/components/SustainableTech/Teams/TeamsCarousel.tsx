@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { useSwipeable } from 'react-swipeable';
 import styled from 'styled-components';
 import useTeamImages from './hooks/team-images';
 
 const TeamsContentWrapper = styled.div`
-  max-width: 800px;
+  max-width: 1000px;
   margin: 50px 0;
   display: flex;
   align-items: center;
@@ -12,11 +13,11 @@ const TeamsContentWrapper = styled.div`
 `;
 
 const TeamCardContainer = styled.div`
-  max-width: 800px;
   display: flex;
   gap: 40px;
   justify-content: center;
   align-items: center;
+  margin: 0 30px;
   padding: 40px;
   background-color: #618A4D;
   box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.15);
@@ -50,24 +51,27 @@ const TeamInfoText = styled.p`
 
 const TeamsPickerContainer = styled.div`
   width: 100%;
-  margin-top: 75px;
+  margin: 30px 30px 0 30px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 40px;
+  gap: 15px;
   flex-wrap: wrap;
+  /* background-color: lightblue; */
 `;
 
 const TeamsPickerImage = styled.img`
   width: 100%;
+  border-radius: 15px;
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.15);
 `;
 
 const TeamsPickerCard = styled.div`
+  /* width is set to 18.8% to space 5 images equally
+  inside a box of width = 1000px and gap = 15px */
+  width: 18.8%; 
   max-width: 150px;
   min-width: 100px;
-  border-radius: 8px;
-  background-color: #FFFFFF;
-  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.15);
 
   &:hover ${TeamsPickerImage} {
     cursor: pointer;
@@ -75,7 +79,12 @@ const TeamsPickerCard = styled.div`
 `;
 
 const TeamsCarousel: React.FC = () => {
-  const { image, name, desc, imgs, currentTeam, selectTeam } = useTeamImages();
+  const { image, name, desc, imgs, currentTeam, cycleLeft, cycleRight, selectTeam } = useTeamImages();
+
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: cycleLeft,
+    onSwipedRight: cycleRight,
+  });
 
   return (
     <TeamsContentWrapper>
@@ -92,15 +101,11 @@ const TeamsCarousel: React.FC = () => {
 
       <TeamsPickerContainer>
         {imgs.map((team, i: number) => {
-          if (i === 0) {
-            return <></>;
-          } else {
             return (
               <TeamsPickerCard onClick={selectTeam(i)}>
                 <TeamsPickerImage src={team.imgFile} />
               </TeamsPickerCard>
             );
-          }
         })}
       </TeamsPickerContainer>
     </TeamsContentWrapper>

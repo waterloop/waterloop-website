@@ -41,7 +41,7 @@ const Heading = styled.h1`
 
 const AboutContentWrapper = styled.div`
   max-width: 1000px;
-  margin: 30px 30px;
+  margin: 30px;
   /* background-color: lightblue; */
 `;
 
