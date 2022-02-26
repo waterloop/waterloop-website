@@ -1,29 +1,32 @@
 import React from 'react';
 import styled from 'styled-components';
-import LogoSVG from '../../../static/img/logos/sustechlogo.svg';
-import EmailSVG from '../../../static/img/assets/email_black.svg';
-import TwitterSVG from '../../../static/img/logos/logo-twitter.svg';
-import InstagramSVG from '../../../static/img/logos/logo-instagram.svg';
-import LinkedInSVG from '../../../static/img/logos/logo-linkedin.svg';
-import FacebookSVG from '../../../static/img/logos/logo-facebook.svg';
+import LogoSVG from '../../../static/ste/ste-logo.svg';
+import EmailSVG from '../../../static/ste/icons/email.svg';
+import TwitterSVG from '../../../static/ste/icons/logo-twitter.svg';
+import InstagramSVG from '../../../static/ste/icons/logo-instagram.svg';
+import LinkedInSVG from '../../../static/ste/icons/logo-linkedin.svg';
+import FacebookSVG from '../../../static/ste/icons/logo-facebook.svg';
+import STEFooterImg from '../../../static/ste/background/footer-bg.svg';
 
-const fill = '#203D7A';
+const fill = '#fff'; // Fill for text
 
 const FooterBackground = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: start;
-  height: 8rem;
+  height: 9rem;
   bottom: 0;
-  background: #e5f6fa;
-  padding: 5vh 10vw 15vh;
+  background: #3c8c4a;
+  padding: 2.5rem 6rem 7.5rem;
   transition: all 0.3s;
+  border: none !important;
   @media screen and (max-width: 425px) {
-    padding: 8vh 15vw;
+    padding: 1rem;
     min-height: 70vh;
     overflow: hidden;
   }
 `;
+
 const LogoAndContactWrapper = styled.div`
   display: flex;
   flex-direction: row;
@@ -88,6 +91,9 @@ const PageTagsAndSocialsWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  @media screen and (max-width: 990px) {
+    flex-direction: column;
+  }
 `;
 
 const PageTagsWrapper = styled.div`
@@ -99,12 +105,12 @@ const PageTagsWrapper = styled.div`
 const Tag = styled.p`
   font-size: 16px;
   color: ${fill};
-  padding-right: 50px;
+  margin-right: 50px;
+  cursor: pointer;
 `;
 
-// const Tags = ['Home', 'About', 'Schedule', 'Team', 'Sponsors', 'FAQ'];
-
 const Tags = [
+  // tags are dummy for now as I'm not aware of what tags we'll be using for each section.
   { text: 'Home', tag: 'dummy' },
   { text: 'About', tag: 'dummy' },
   { text: 'Schedule', tag: 'dummy' },
@@ -148,37 +154,49 @@ const SocialImg = styled.img.attrs((props: SocialProps) => {
   height: 14px;
 `;
 
+const FooterImg = styled.img.attrs({
+  src: STEFooterImg,
+})`
+  width: 100%;
+  height: 100%;
+  margin-bottom: -0.5rem;
+  background-color: #d1e6f5;
+`;
+
 const STEFooter: React.FC = () => (
-  <FooterBackground>
-    <LogoAndContactWrapper>
-      <Logo />
-      <ContactDiv>
-        <ContactUs>Contact Us</ContactUs>
-        <ContactInfo>
-          <EmailIcon /> <ContactEmail>contact@waterloop.ca</ContactEmail>
-        </ContactInfo>
-      </ContactDiv>
-    </LogoAndContactWrapper>
-    <Divider />
-    <PageTagsAndSocialsWrapper>
-      <PageTagsWrapper>
-        {Tags.map((tag) => (
-          <Tag>{tag.text}</Tag>
-        ))}
-      </PageTagsWrapper>
-      <SocialsWrapper>
-        {Socials.map((social) => {
-          return (
-            <SocialBubble>
-              <a href={social.link} target="_blank">
-                <SocialImg SVG={social.SVG} />
-              </a>
-            </SocialBubble>
-          );
-        })}
-      </SocialsWrapper>
-    </PageTagsAndSocialsWrapper>
-  </FooterBackground>
+  <>
+    <FooterImg />
+    <FooterBackground>
+      <LogoAndContactWrapper>
+        <Logo />
+        <ContactDiv>
+          <ContactUs>Contact Us</ContactUs>
+          <ContactInfo>
+            <EmailIcon /> <ContactEmail>contact@waterloop.ca</ContactEmail>
+          </ContactInfo>
+        </ContactDiv>
+      </LogoAndContactWrapper>
+      <Divider />
+      <PageTagsAndSocialsWrapper>
+        <PageTagsWrapper>
+          {Tags.map((tag) => (
+            <Tag onClick={() => console.log('use hook to go to place in page')}>{tag.text}</Tag> // Hook in which it will scroll to particular portion on website is not done yet
+          ))}
+        </PageTagsWrapper>
+        <SocialsWrapper>
+          {Socials.map((social) => {
+            return (
+              <SocialBubble>
+                <a href={social.link} target="_blank">
+                  <SocialImg SVG={social.SVG} />
+                </a>
+              </SocialBubble>
+            );
+          })}
+        </SocialsWrapper>
+      </PageTagsAndSocialsWrapper>
+    </FooterBackground>
+  </>
 );
 
 export default STEFooter;
