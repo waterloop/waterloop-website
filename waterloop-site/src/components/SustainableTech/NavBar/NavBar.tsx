@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import IconBlackImg from '../../../static/img/logos/Icon_Black.svg';
 import { NavLink } from 'react-router-dom';
-import scrollTo from '../Utilities/LinkScroll';
+import scrollTo from '../utils/LinkScroll';
 
 const NavbarContainer = styled.div`
   display: flex;

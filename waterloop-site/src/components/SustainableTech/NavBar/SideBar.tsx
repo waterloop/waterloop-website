@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import BlackLogoImg from '../../../static/img/logos/Icon_Black.svg';
 import { ReactElement } from 'react';
-import scrollTo from '../Utilities/LinkScroll';
+import scrollTo from '../utils/LinkScroll';
 
 const SidebarContainer = styled.div`
   display: flex;
