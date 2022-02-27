@@ -1,20 +1,25 @@
 [
     {
-        "title": "Keynote Speaker: Name",
-        "subtitle": "Title, Company",
-        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris cursus eros nec eros tempus, ac euismod eros elementum. Nullam eu vehicula enim, at sollicitudin urna. Ut sed augue non nisi tincidunt pulvinar. Nulla facilisi. Nulla facilisi. Morbi fringilla elit non ligula hendrerit, sed congue ante semper. Suspendisse laoreet, diam sit amet auctor dictum, tellus quam consequat metus, at volutpat lorem quam id nulla. Phasellus rutrum mollis felis, vel aliquam orci mollis eget.",
+        "title": "Introduction",
+        "text": "The team from Waterloop introduces... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis massa donec natoque turpis id amet ut integer adipiscing. Nibh curabitur ac in adipiscing ut quis eu.",
         "time": "6:00 PM ET"
     },
     {
-        "title": "A Word from Our Sponsors",
-        "subtitle": "Sponsor Company Name(s) or Names of Representatives",
-        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris cursus eros nec eros tempus, ac euismod eros elementum. Nullam eu vehicula enim, at sollicitudin urna. Ut sed augue non nisi tincidunt pulvinar. Nulla facilisi. Nulla facilisi. Morbi fringilla elit non ligula hendrerit, sed congue ante semper. Suspendisse laoreet, diam sit amet auctor dictum, tellus quam consequat metus, at volutpat lorem quam id nulla. Phasellus rutrum mollis felis, vel aliquam orci mollis eget.",
-        "time": "6:15 PM ET"
+        "title": "A Word from our Keynote Speaker",
+        "subtitle": "John Smith, [Title], [Company]",
+        "imagePath": "static/media/default-headshot1.d07b5f69.png",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis massa donec natoque turpis id amet ut integer adipiscing. Nibh curabitur ac in adipiscing ut quis eu. Pulvinar fames risus aliquet faucibus vel molestie. Quam lorem montes lorem in egestas dictumst et urna a tortor ultrices ut.",
+        "time": "6:05 - 6:20 PM ET"
     },
     {
         "title": "Design Team Presentations",
-        "subtitle": "Midnight sun, UWAFT, Waterloop",
-        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris cursus eros nec eros tempus, ac euismod eros elementum. Nullam eu vehicula enim, at sollicitudin urna. Ut sed augue non nisi tincidunt pulvinar. Nulla facilisi. Nulla facilisi. Morbi fringilla elit non ligula hendrerit, sed congue ante semper. Suspendisse laoreet, diam sit amet auctor dictum, tellus quam consequat metus, at volutpat lorem quam id nulla. Phasellus rutrum mollis felis, vel aliquam orci mollis eget.",
-        "time": "6:20 PM ET"
+        "text": "Midnight Sun, Sustainable Development Solutions Network, Waterloo Formula Electric, and Warrior Home will be presenting what it is like to be a part of their team! They will also be talking about their team’s sustainable practices, and how they are helping shape a greener and cleaner future.",
+        "time": "6:20 - 7:50 PM ET"
+    },
+    {
+        "title": "Waterloop's Presentation",
+        "subtitle": "...followed by Event Conclusion",
+        "text": "Waterloop presents... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis massa donec natoque turpis id amet ut integer adipiscing. Nibh curabitur ac in adipiscing ut quis eu.",
+        "time": "7:50 - 8:00 PM ET"
     }
 ]
