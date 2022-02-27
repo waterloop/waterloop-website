@@ -12,7 +12,6 @@ const Container = styled.div`
 `;
 
 const Node = styled.div`
-  display: flex;
   height: ${nodeHeight}px;
   width: ${nodeHeight}px;
   border-radius: 50%;
