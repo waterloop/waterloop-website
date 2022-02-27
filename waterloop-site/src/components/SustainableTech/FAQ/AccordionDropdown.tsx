@@ -12,12 +12,14 @@ const rotateIcon = keyframes`
 `;
 
 const Question = styled.div`
+  padding: 20px 65px 20px 20px;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 20px;
   font-size: 20px;
   color: white;
-  background: #3e6232;
+  background: #203d7a;
   border-radius: 8px;
-  padding: 20px 65px 20px 20px;
-  margin-top: 20px;
   position: relative;
   cursor: pointer;
 `;
@@ -32,13 +34,15 @@ export const ExpandArrow = styled(ExpandLessIcon)`
 `;
 
 const Answer = styled.div<Props>`
+  margin-left: 10%;
+  margin-right: 10%;
   font-size: 18px;
-  background: #daf4d1;
+  background: white;
   border-radius: 0px 0px 8px 8px;
   margin-top: -10px;
   overflow: hidden;
-  max-height: ${props => props.open ? "1000px" : "0"};
-  transition: max-height 0.8s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+  max-height: ${(props) => (props.open ? '1000px' : '0')};
+  transition: max-height 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
 `;
 
 const AnswerText = styled.p`
