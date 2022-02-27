@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const nodeHeight = 52;
 const nodeBorderWidth = 4;
+const edgeBorderWidth = 3;
 
 const Container = styled.div`
   display: flex;
@@ -15,16 +16,25 @@ const Node = styled.div`
   height: ${nodeHeight}px;
   width: ${nodeHeight}px;
   border-radius: 50%;
-  background-color: #a3c7e1;
-  border: ${nodeBorderWidth}px solid #203d7a;
+  background-color: #ffffff;
+  border: ${nodeBorderWidth}px solid #80a773;
 `;
 
-const Edge = styled.div<{ height: number; sectionBottomMargin: number }>`
-  border-left: 6px dotted #6e9dbe;
+const Edge = styled.div<{
+  height: number;
+  sectionBottomMargin: number;
+  last: boolean;
+}>`
+  border-width: ${edgeBorderWidth}px;
+  border-style: solid;
+  border-image: ${(props) =>
+    props.last ? 'linear-gradient(to bottom, #80a773, #e7f1e4) 1 100%' : ''};
+  border-color: ${(props) => (props.last ? '' : '#80a773')};
   height: ${(props) =>
     props.height +
     props.sectionBottomMargin -
-    (nodeHeight + nodeBorderWidth * 2) / 2}px;
+    (nodeHeight + nodeBorderWidth * 2) -
+    edgeBorderWidth * 2}px;
 `;
 
 const Nodes: React.FC<{
@@ -32,10 +42,14 @@ const Nodes: React.FC<{
   sectionBottomMargin: number;
 }> = ({ sectionHeights, sectionBottomMargin }) => (
   <Container>
-    {sectionHeights.map((height) => (
+    {sectionHeights.map((height, idx) => (
       <>
         <Node />
-        <Edge height={height} sectionBottomMargin={sectionBottomMargin} />
+        <Edge
+          height={height}
+          sectionBottomMargin={sectionBottomMargin}
+          last={idx === sectionHeights.length - 1}
+        />
       </>
     ))}
   </Container>
