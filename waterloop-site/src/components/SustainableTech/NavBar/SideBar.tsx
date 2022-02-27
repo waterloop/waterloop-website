@@ -145,7 +145,7 @@ class Sidebar extends React.Component<MyProps> {
               onClick={(): void => {
                 this.props.handleClickSidebar(false);
                 setTimeout(function () {
-                  scrollTo('IDlocation1');
+                  scrollTo('home-scroll');
                 }, 400);
               }}
             >
