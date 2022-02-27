@@ -2,25 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 import IconBlackImg from '../../../static/img/logos/Icon_Black.svg';
 import { NavLink } from 'react-router-dom';
-import scrollDown from './LinkScroll';
+import scrollTo from '../Utilities/LinkScroll';
 
 const NavbarContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   width: 100%;
   height: 64px;
-  background-color: #E5F6FA;
+  background-color: #e5f6fa;
   position: fixed;
   top: 0;
   scroll-behavior: smooth;
-
-  @media screen and (max-width: 900px) {
-    justify-content: flex-end;
-  }
 `;
-
 
 const IconBlack = styled.img`
   width: 50px;
@@ -33,26 +28,14 @@ const IconBlack = styled.img`
     height: 40px;
   }
 
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 600px) {
     width: 30px;
     height: 30px;
   }
 `;
 
 const LogoContainer = styled.div`
-  position: absolute;
-  left: 0;
-  top: 6px;
-  align-items: left;
-  padding-left: 4%;
-  @media screen and (max-width: 900px) {
-    top: 13px;
-    padding-left: 3%;
-  }
-
-  @media screen and (max-width: 720px) {
-    top: 17px;
-  }
+  padding-left: 4vw;
 `;
 
 const ListContainer = styled.div`
@@ -70,7 +53,7 @@ const ScrollLink = styled.button`
   font-size: 18px;
   text-transform: uppercase;
   font-weight: 500;
-  background-color: #E5F6FA;
+  background-color: #e5f6fa;
   border: none;
   cursor: pointer;
 
@@ -84,20 +67,15 @@ const ScrollLink = styled.button`
   &:hover,
   &:active {
     text-decoration: none;
-    color: #203D7A;
-    ;
+    color: #3c8c4a;
   }
 
-  @media screen and (max-width: 1150px) {
+  @media screen and (max-width: 1250px) {
     margin: 0 6pt;
     font-size: 16px;
   }
 
-  @media screen and (max-width: 1060px) {
-    margin: 0 6pt;
-  }
-
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 1000px) {
     margin: 0 8px;
     padding: 0;
     font-size: 16px;
@@ -108,40 +86,56 @@ const ScrollLink = styled.button`
   }
 
   @media screen and (max-width: 600px) {
-    width: 80%;
-    margin: 0;
-    font-size: 11px;
+    margin: 3px;
+    font-size: 12px;
   }
-`; 
+`;
 
-const NavBar: React.FC = () => 
-<NavbarContainer>
-  <LogoContainer>
-    <NavLink to="/">
-            <IconBlack src={IconBlackImg}></IconBlack>
+const ButtonContainer = styled.button`
+  border-radius: 25px;
+  background-color: #203d7a;
+  text-decoration: none;
+  color: white;
+  font-family: 'IBM Plex Sans';
+  font-size: 17px;
+  font-weight: 500;
+  padding: 10px 3%;
+  margin-right: 4vw;
+  border: #203d7a;
+  transition: color 0.3s ease;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: white;
+    color: #203d7a;
+    border: white;
+  }
+
+  @media screen and (max-width: 1250px) {
+    font-size: 16px;
+  }
+
+  @media screen and (max-width: 720px) {
+    font-size: 10px;
+  }
+`;
+
+const NavBar: React.FC = () => (
+  <NavbarContainer>
+    <LogoContainer>
+      <NavLink to="/">
+        <IconBlack src={IconBlackImg}></IconBlack>
       </NavLink>
-  </LogoContainer>
-  <ListContainer>
-      <ScrollLink onClick={(): void => scrollDown('IDlocation1')}>
-        Home
-      </ScrollLink>
-      <ScrollLink onClick={(): void => scrollDown('IDlocation2')}>
-        Meet The Teams
-      </ScrollLink>
-      <ScrollLink onClick={(): void => scrollDown('IDlocation3')}>
-        Our Sponsors
-      </ScrollLink>
-      <ScrollLink onClick={(): void => scrollDown('IDlocation4')}>
-        About the Event
-      </ScrollLink>
-      <ScrollLink onClick={() => scrollDown('IDlocation5')}>
-        FAQ
-      </ScrollLink>
-      <ScrollLink onClick={() => scrollDown('IDlocation6')}>
-        Contact Us
-      </ScrollLink>
+    </LogoContainer>
+    <ListContainer>
+      <ScrollLink onClick={(): void => scrollTo('IDlocation1')}>Home</ScrollLink>
+      <ScrollLink onClick={(): void => scrollTo('IDlocation2')}>About</ScrollLink>
+      <ScrollLink onClick={(): void => scrollTo('IDlocation3')}>Team</ScrollLink>
+      <ScrollLink onClick={(): void => scrollTo('IDlocation4')}>Schedule</ScrollLink>
+      <ScrollLink onClick={(): void => scrollTo('IDlocation5')}>Sponsors</ScrollLink>
+      <ScrollLink onClick={(): void => scrollTo('IDlocation6')}>FAQ</ScrollLink>
     </ListContainer>
-</NavbarContainer>
-;
-
+    <ButtonContainer as="a" href="http://Google_Form_Here">Sign Up</ButtonContainer>
+  </NavbarContainer>
+);
 export default NavBar;

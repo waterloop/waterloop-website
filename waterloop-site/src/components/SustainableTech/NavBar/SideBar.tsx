@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import BlackLogoImg from '../../../static/img/logos/Icon_Black.svg';
 import { ReactElement } from 'react';
-import scrollDown from './LinkScroll';
+import scrollTo from '../Utilities/LinkScroll';
 
 const SidebarContainer = styled.div`
   display: flex;
@@ -12,7 +12,7 @@ const SidebarContainer = styled.div`
   padding-top: 0%;
   width: 100%;
   height: 70px;
-  background-color: #E5F6FA;
+  background-color: #e5f6fa;
   position: absolute;
   top: 0;
 `;
@@ -26,7 +26,7 @@ const ListContainer = styled.div`
   align-content: center;
   justify-content: center;
   align-items: center;
-  background-color: #E5F6FA;
+  background-color: #e5f6fa;
   height: 100vh;
   width: 100vw;
   right: 0;
@@ -47,7 +47,7 @@ const ScrollLink = styled.button`
   padding-top: 40px;
   font-size: 28px;
   font-weight: 400;
-  background-color: #E5F6FA;
+  background-color: #e5f6fa;
   border: none;
 
   text-decoration: none;
@@ -144,9 +144,9 @@ class Sidebar extends React.Component<MyProps> {
             <ScrollLink
               onClick={(): void => {
                 this.props.handleClickSidebar(false);
-                setTimeout(function(){
-                  scrollDown('IDlocation1');
-                },400);
+                setTimeout(function () {
+                  scrollTo('IDlocation1');
+                }, 400);
               }}
             >
               Home
@@ -156,24 +156,24 @@ class Sidebar extends React.Component<MyProps> {
             <ScrollLink
               onClick={(): void => {
                 this.props.handleClickSidebar(false);
-                setTimeout(function(){
-                  scrollDown('IDlocation2');
-                },400);
+                setTimeout(function () {
+                  scrollTo('IDlocation2');
+                }, 400);
               }}
             >
-              Meet The Teams
+              About
             </ScrollLink>
           </div>
           <div>
-           <ScrollLink
+            <ScrollLink
               onClick={(): void => {
                 this.props.handleClickSidebar(false);
-                setTimeout(function(){
-                  scrollDown('IDlocation3');
-                },400);
+                setTimeout(function () {
+                  scrollTo('IDlocation3');
+                }, 400);
               }}
             >
-              Our Sponsors
+              Team
             </ScrollLink>
           </div>
           <div>
@@ -182,31 +182,31 @@ class Sidebar extends React.Component<MyProps> {
                 this.props.handleClickSidebar(false);
               }}
             >
-              About The Event
+              Schedule
             </ScrollLink>
           </div>
           <div>
-           <ScrollLink
+            <ScrollLink
               onClick={(): void => {
                 this.props.handleClickSidebar(false);
-                setTimeout(function(){
-                  scrollDown('IDlocation4');
-                },400);
+                setTimeout(function () {
+                  scrollTo('IDlocation4');
+                }, 400);
+              }}
+            >
+              Sponsors
+            </ScrollLink>
+          </div>
+          <div>
+            <ScrollLink
+              onClick={(): void => {
+                this.props.handleClickSidebar(false);
+                setTimeout(function () {
+                  scrollTo('IDlocation5');
+                }, 400);
               }}
             >
               FAQ
-            </ScrollLink>
-          </div>
-          <div>
-           <ScrollLink
-              onClick={(): void => {
-                this.props.handleClickSidebar(false);
-                setTimeout(function(){
-                  scrollDown('IDlocation5');
-                },400);
-              }}
-            >
-              Contact Us
             </ScrollLink>
           </div>
         </ListContainer>
