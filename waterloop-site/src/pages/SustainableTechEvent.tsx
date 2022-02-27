@@ -11,10 +11,10 @@ import { Sponsors } from '../components/SustainableTech/Sponsors';
 const SustainableTechEvent: React.FC = () => (
   <div>
     <Hero />
-    <Schedule />
     <AboutEvent />
-    <Teams />
+    <Schedule />
     <Sponsors />
+    <Teams />
     <FAQ />
     <Contact />
   </div>

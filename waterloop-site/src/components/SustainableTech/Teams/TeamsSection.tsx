@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import TeamsCarousel from './TeamsCarousel';
 
-const AboutContainer = styled.section`
+const TeamsContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,8 +14,7 @@ const HeadingContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 40px 0;
-  /* background-color: lightcoral; */
+  margin-top: 60px;
 `;
 
 const Heading = styled.h1`
@@ -24,8 +23,6 @@ const Heading = styled.h1`
   text-align: center;
   margin: 0;
   color: #000000;
-  /* background-color: lightblue; */
-
   @media screen and (max-width: 768px) {
     font-size: 30px;
   }
@@ -34,14 +31,13 @@ const Heading = styled.h1`
 const Teams: React.FC = () => {
 
   return (
-    <AboutContainer id="teams">
-      
+    <TeamsContainer id="team">    
       <HeadingContainer>
         <Heading>TEAMS</Heading>
       </HeadingContainer>
 
       <TeamsCarousel />
-    </AboutContainer>
+    </TeamsContainer>
   );
 };
 
