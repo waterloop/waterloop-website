@@ -25,7 +25,7 @@ const LandingImageContainer = styled.img`
 
 const MainContent = styled.div`
   position: absolute;
-  top: 45%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -40,9 +40,11 @@ const GreenTech = styled.img`
   width: auto;
 
   @media (max-width: 550px) {
-    height: 190px;
+    height: 400px;
   }
 `;
+
+/* IBM plex sans */
 
 const ButtonContainer = styled.button`
   border-radius: 30px;
@@ -52,9 +54,8 @@ const ButtonContainer = styled.button`
   font-family: 'IBM Plex Sans';
   font-size: 24px;
   font-weight: 500;
-  padding: 15px 20%;
+  padding: 15px 10%;
   border: #203d7a;
-  margin: 50px 0;
   transition: color 0.1s ease;
   transition: background-color 0.1s ease;
 
