@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import IconBlackImg from '../../../static/img/logos/Icon_Black.svg';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
+import IconBlackImg from '../../../static/img/sustainable-tech/Icon_Black.svg';
 import scrollTo from '../utils/LinkScroll';
 
 const NavbarContainer = styled.div`
@@ -18,19 +19,20 @@ const NavbarContainer = styled.div`
 `;
 
 const IconBlack = styled.img`
-  width: 50px;
-  height: 50px;
+  padding-top: 4px;
+  width: 55px;
+  height: 35px;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
 
   @media screen and (max-width: 900px) {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 32px;
   }
 
   @media screen and (max-width: 600px) {
-    width: 30px;
-    height: 30px;
+    width: 43px;
+    height: 25px;
   }
 `;
 
@@ -48,7 +50,7 @@ const ListContainer = styled.div`
 
 const ScrollLink = styled.button`
   color: black;
-  margin: 0 15pt;
+  margin: 0 14px;
   font-family: 'IBM Plex Sans';
   font-size: 18px;
   text-transform: uppercase;
@@ -71,7 +73,7 @@ const ScrollLink = styled.button`
   }
 
   @media screen and (max-width: 1250px) {
-    margin: 0 6pt;
+    margin: 0 2%;
     font-size: 16px;
   }
 
@@ -123,9 +125,9 @@ const ButtonContainer = styled.button`
 const NavBar: React.FC = () => (
   <NavbarContainer>
     <LogoContainer>
-      <NavLink to="/">
-        <IconBlack src={IconBlackImg}></IconBlack>
-      </NavLink>
+      <Link to="/">
+        <IconBlack src={IconBlackImg} />
+      </Link>
     </LogoContainer>
     <ListContainer>
       <ScrollLink onClick={(): void => scrollTo('home-scroll')}>Home</ScrollLink>
@@ -135,7 +137,7 @@ const NavBar: React.FC = () => (
       <ScrollLink onClick={(): void => scrollTo('IDlocation5')}>Sponsors</ScrollLink>
       <ScrollLink onClick={(): void => scrollTo('IDlocation6')}>FAQ</ScrollLink>
     </ListContainer>
-    <ButtonContainer as="a" href="http://Google_Form_Here">Sign Up</ButtonContainer>
+    <ButtonContainer as="a" href="https://tinyurl.com/uwgreentech">Sign Up</ButtonContainer>
   </NavbarContainer>
 );
 export default NavBar;

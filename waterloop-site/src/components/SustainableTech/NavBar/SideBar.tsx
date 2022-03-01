@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import BlackLogoImg from '../../../static/img/logos/Icon_Black.svg';
-import { ReactElement } from 'react';
+
+import BlackLogoImg from '../../../static/img/sustainable-tech/Icon_Black.svg';
 import scrollTo from '../utils/LinkScroll';
 
 const SidebarContainer = styled.div`
@@ -13,7 +13,7 @@ const SidebarContainer = styled.div`
   width: 100%;
   height: 70px;
   background-color: #e5f6fa;
-  position: absolute;
+  position: fixed;
   top: 0;
 `;
 
@@ -58,9 +58,9 @@ const ScrollLink = styled.button`
 `;
 
 const IconBlack = styled.img`
-  margin-left: 10px;
+  margin-left: 25px;
   width: 50px;
-  height: 50px;
+  height: 30px;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
 `;
@@ -75,7 +75,7 @@ const StyledToggle = styled.button`
   width: 52px;
   height: 40px;
   margin-top: 15px;
-  margin-right: 0px;
+  margin-right: 20px;
   margin-bottom: 15px;
   background: transparent;
   border: none;
@@ -105,7 +105,7 @@ const ToggleLine = styled.div`
   }
   &.open2 {
     height: 3px !important;
-    transform: translate(200%, 0px);
+    transform: translate(300%, 0px);
     background-color: #010101;
   }
   &.open3 {
@@ -115,103 +115,53 @@ const ToggleLine = styled.div`
   }
 `;
 
-type MyProps = {
-  sidebarOpen: boolean;
-  handleClickSidebar: (open: boolean) => void;
-};
+const Sidebar: React.FC = () => {
+  const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
 
-class Sidebar extends React.Component<MyProps> {
-  render(): ReactElement {
-    return (
-      <SidebarContainer
-        onTouchMove={(): void => {
-          this.props.handleClickSidebar(!this.props.sidebarOpen);
+  const navLinks = [
+    { id: 'IDlocation1', name: 'Home' },
+    { id: 'IDlocation2', name: 'About' },
+    { id: 'IDlocation3', name: 'Team' },
+    { id: 'IDlocation4', name: 'Schedule' },
+    { id: 'IDlocation5', name: 'Sponsors' },
+    { id: 'IDlocation6', name: 'FAQ' },
+  ];
+
+  return (
+    <SidebarContainer
+      onTouchMove={(): void => {
+        setSidebarOpen(!sidebarOpen);
+      }}
+    >
+      <IconBlack src={BlackLogoImg}></IconBlack>
+      <StyledToggle
+        className={sidebarOpen ? 'open' : ''}
+        onClick={(): void => {
+          setSidebarOpen(!sidebarOpen);
         }}
       >
-        <IconBlack src={BlackLogoImg}></IconBlack>
-        <StyledToggle
-          className={this.props.sidebarOpen ? 'open' : ''}
-          onClick={(): void => {
-            this.props.handleClickSidebar(!this.props.sidebarOpen);
-          }}
-        >
-          <ToggleLine className={this.props.sidebarOpen ? 'open1' : ''} />
-          <ToggleLine className={this.props.sidebarOpen ? 'open2' : ''} />
-          <ToggleLine className={this.props.sidebarOpen ? 'open3' : ''} />
-        </StyledToggle>
-        <ListContainer className={this.props.sidebarOpen ? '' : 'closed'}>
-          <div>
+        <ToggleLine className={sidebarOpen ? 'open1' : ''} />
+        <ToggleLine className={sidebarOpen ? 'open2' : ''} />
+        <ToggleLine className={sidebarOpen ? 'open3' : ''} />
+      </StyledToggle>
+      <ListContainer className={sidebarOpen ? '' : 'closed'}>
+        {navLinks.map((link, idx) => (
+          <div key={`ste-sidebar-link-${idx}`}>
             <ScrollLink
+              key={`ste-sidebar-link-${idx}`}
               onClick={(): void => {
-                this.props.handleClickSidebar(false);
-                setTimeout(function () {
-                  scrollTo('home-scroll');
+                setSidebarOpen(false);
+                setTimeout(() => {
+                  scrollTo(link.id);
                 }, 400);
               }}
             >
-              Home
+              {link.name}
             </ScrollLink>
           </div>
-          <div>
-            <ScrollLink
-              onClick={(): void => {
-                this.props.handleClickSidebar(false);
-                setTimeout(function () {
-                  scrollTo('IDlocation2');
-                }, 400);
-              }}
-            >
-              About
-            </ScrollLink>
-          </div>
-          <div>
-            <ScrollLink
-              onClick={(): void => {
-                this.props.handleClickSidebar(false);
-                setTimeout(function () {
-                  scrollTo('IDlocation3');
-                }, 400);
-              }}
-            >
-              Team
-            </ScrollLink>
-          </div>
-          <div>
-            <ScrollLink
-              onClick={(): void => {
-                this.props.handleClickSidebar(false);
-              }}
-            >
-              Schedule
-            </ScrollLink>
-          </div>
-          <div>
-            <ScrollLink
-              onClick={(): void => {
-                this.props.handleClickSidebar(false);
-                setTimeout(function () {
-                  scrollTo('IDlocation4');
-                }, 400);
-              }}
-            >
-              Sponsors
-            </ScrollLink>
-          </div>
-          <div>
-            <ScrollLink
-              onClick={(): void => {
-                this.props.handleClickSidebar(false);
-                setTimeout(function () {
-                  scrollTo('IDlocation5');
-                }, 400);
-              }}
-            >
-              FAQ
-            </ScrollLink>
-          </div>
-        </ListContainer>
-      </SidebarContainer>
-    );
-  }
-}
+        ))}
+      </ListContainer>
+    </SidebarContainer>
+  );
+};
 export default Sidebar;
