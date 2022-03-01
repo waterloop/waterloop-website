@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 import AccordionDropdown from './AccordionDropdown';
 import Content from 'static/copy/SustainableTech/FAQ.json';
-import CloudImg from 'static/ste/icons/cloud.svg';
-import CloudGroupImg from 'static/ste/icons/cloud-group.svg';
-import GeeseImg from 'static/ste/icons/geese.svg';
+import CloudImg from 'static/img/sustainable-tech/cloud.svg';
+import CloudGroupImg from 'static/img/sustainable-tech/cloud-group.svg';
+import GeeseImg from 'static/img/sustainable-tech/geese.svg';
 
 const Title = styled.h1`
   font-size: 44px;
