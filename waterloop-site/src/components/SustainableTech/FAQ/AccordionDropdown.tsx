@@ -42,7 +42,7 @@ const Answer = styled.div<Props>`
   margin-top: -10px;
   overflow: hidden;
   max-height: ${(props) => (props.open ? '1000px' : '0')};
-  transition: max-height 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: max-height 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
 `;
 
 const AnswerText = styled.p`
@@ -63,7 +63,7 @@ const AccordionDropdown: React.FC<Props> = ({ open, children, title }) => {
         <ExpandArrow
           fontSize="large"
           style={{
-            transition: 'transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1.0)',
+            transition: 'transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1.0)',
             transform: `rotate(${isOpen ? 0 : 180}deg)`,
           }}
         />
