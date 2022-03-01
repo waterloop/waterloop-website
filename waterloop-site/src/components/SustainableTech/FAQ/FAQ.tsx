@@ -39,7 +39,7 @@ const CloudGroup1 = styled.img`
 const CloudGroup2 = styled.img`
   width: 25%;
   position: absolute;
-  right:5%;
+  right: 5%;
   bottom: 5%;
 `;
 
