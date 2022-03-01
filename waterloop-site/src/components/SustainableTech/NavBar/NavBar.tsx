@@ -130,7 +130,7 @@ const NavBar: React.FC = () => (
       </Link>
     </LogoContainer>
     <ListContainer>
-      <ScrollLink onClick={(): void => scrollTo('home-scroll')}>Home</ScrollLink>
+      <ScrollLink onClick={(): void => scrollTo('IDlocation1')}>Home</ScrollLink>
       <ScrollLink onClick={(): void => scrollTo('IDlocation2')}>About</ScrollLink>
       <ScrollLink onClick={(): void => scrollTo('IDlocation3')}>Team</ScrollLink>
       <ScrollLink onClick={(): void => scrollTo('IDlocation4')}>Schedule</ScrollLink>
