@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import LandingImage from '../../../static/img/sustainable-tech/HeroLandingImage.svg';
 import GreenTechLogo from '../../../static/img/sustainable-tech/GreenTechLogo.svg';
 
@@ -7,7 +8,8 @@ const LandingContainer = styled.div`
   padding: 60px 0 30px;
   display: flex;
   justify-content: center;
-  background-color: #E5F6FA;
+  background-color: #e5f6fa;
+  overflow: hidden;
 `;
 
 const LandingContent = styled.div`
@@ -20,7 +22,7 @@ const LandingContent = styled.div`
 const LandingImageContainer = styled.img`
   height: 100vh;
   overflow: hidden;
-  background-color: #E5F6FA;
+  background-color: #e5f6fa;
 `;
 
 const MainContent = styled.div`
@@ -35,16 +37,17 @@ const MainContent = styled.div`
   height: fit-content;
 `;
 
+/*  transform: scale(8); makes the logo
+bigger but doesnt solve the problem */
+
 const GreenTech = styled.img`
-  height: 300px;
+  height: 500px;
   width: auto;
 
   @media (max-width: 550px) {
     height: 400px;
   }
 `;
-
-/* IBM plex sans */
 
 const ButtonContainer = styled.button`
   border-radius: 30px;
@@ -71,16 +74,20 @@ const ButtonContainer = styled.button`
   }
 `;
 
-const Hero: React.FC = () => 
-<LandingContainer>
-  <LandingContent>
+const Hero: React.FC = () => (
+  <LandingContainer>
+    <LandingContent>
       <MainContent id="home-scroll">
         <GreenTech alt={'Green Tech Logo'} src={GreenTechLogo}></GreenTech>
-        <ButtonContainer as="a" href="http://Google_Form_Here">Sign Up</ButtonContainer>
+        <ButtonContainer as="a" href="http://Google_Form_Here">
+          Sign Up
+        </ButtonContainer>
       </MainContent>
-     <LandingImageContainer alt={'Green Tech Landing Image'} src={LandingImage} />
-  </LandingContent>
-</LandingContainer>
-;
-
+      <LandingImageContainer
+        alt={'Green Tech Landing Image'}
+        src={LandingImage}
+      />
+    </LandingContent>
+  </LandingContainer>
+);
 export default Hero;
