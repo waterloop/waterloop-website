@@ -137,7 +137,7 @@ const NavBar: React.FC = () => (
       <ScrollLink onClick={(): void => scrollTo('IDlocation5')}>Sponsors</ScrollLink>
       <ScrollLink onClick={(): void => scrollTo('IDlocation6')}>FAQ</ScrollLink>
     </ListContainer>
-    <ButtonContainer as="a" href="https://tinyurl.com/uwgreentech">Sign Up</ButtonContainer>
+    <ButtonContainer as="a" href="https://tinyurl.com/uwgreentech">SIGN UP</ButtonContainer>
   </NavbarContainer>
 );
 export default NavBar;
