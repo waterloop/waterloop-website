@@ -1,8 +1,9 @@
 import React from 'react';
+
 import styled from 'styled-components';
-import CalendarIcon from './img/calendar.svg';
-import ClockIcon from './img/clock.svg';
-import LocationIcon from './img/location.svg';
+import CalendarIcon from '../../../static/img/sustainable-tech/calendar.svg';
+import ClockIcon from '../../../static/img/sustainable-tech/clock.svg';
+import LocationIcon from '../../../static/img/sustainable-tech/location.svg';
 
 const CardContainer = styled.div`
   margin: 20px;
@@ -79,7 +80,7 @@ const DetailsCard: React.FC<Props> = (props) => {
     <CardContainer>
       <div>
         <IconCircle>
-          <Icon src={iconList[props.icon ?? 0]} alt="Earth" />
+          <Icon src={iconList[props.icon ?? 0]} alt="Icon" />
         </IconCircle>
       </div>
 

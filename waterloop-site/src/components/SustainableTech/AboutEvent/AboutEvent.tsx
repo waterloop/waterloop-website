@@ -1,7 +1,8 @@
 import React from 'react';
+
 import styled from 'styled-components';
 import DetailsCard from './DetailsCard';
-import WaterDesign from './img/water_section_divider.svg'
+import WaterDesign from '../../../static/img/sustainable-tech/water_section_divider.svg';
 
 const AboutContainer = styled.section`
   /* padding: 40px; */
@@ -14,7 +15,7 @@ const AboutContainer = styled.section`
 const SectionDivider = styled.img`
   width: 100%;
   margin: 0;
-`
+`;
 
 const HeadingContainer = styled.div`
   max-width: 1000px;
@@ -64,8 +65,8 @@ const DetailsContainer = styled.div`
 
 const AboutEvent: React.FC = () => (
   <AboutContainer id="about">
-    <SectionDivider src={WaterDesign}/>
-    
+    <SectionDivider src={WaterDesign} />
+
     <HeadingContainer>
       <Heading>ABOUT THE EVENT</Heading>
     </HeadingContainer>

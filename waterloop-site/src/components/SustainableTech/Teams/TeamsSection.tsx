@@ -1,4 +1,5 @@
 import React from 'react';
+
 import styled from 'styled-components';
 import TeamsCarousel from './TeamsCarousel';
 
@@ -6,7 +7,7 @@ const TeamsContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(180deg, #8DBD7D 0%, #FFFFFF 100%);
+  background: linear-gradient(180deg, #8dbd7d 0%, #ffffff 100%);
 `;
 
 const HeadingContainer = styled.div`
@@ -29,9 +30,8 @@ const Heading = styled.h1`
 `;
 
 const Teams: React.FC = () => {
-
   return (
-    <TeamsContainer id="team">    
+    <TeamsContainer id="teams">
       <HeadingContainer>
         <Heading>TEAMS</Heading>
       </HeadingContainer>
