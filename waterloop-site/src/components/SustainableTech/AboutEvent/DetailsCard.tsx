@@ -1,9 +1,6 @@
 import React from 'react';
 
 import styled from 'styled-components';
-import CalendarIcon from '../../../static/img/sustainable-tech/calendar.svg';
-import ClockIcon from '../../../static/img/sustainable-tech/clock.svg';
-import LocationIcon from '../../../static/img/sustainable-tech/location.svg';
 
 const CardContainer = styled.div`
   margin: 20px;
@@ -68,19 +65,17 @@ const Icon = styled.img`
 `;
 
 interface Props {
-  icon?: number;
+  icon?: string;
   title?: string;
   detail?: string;
 }
 
 const DetailsCard: React.FC<Props> = (props) => {
-  const iconList = [CalendarIcon, ClockIcon, LocationIcon];
-
   return (
     <CardContainer>
       <div>
         <IconCircle>
-          <Icon src={iconList[props.icon ?? 0]} alt="Icon" />
+          <Icon src={props.icon} alt="Icon" />
         </IconCircle>
       </div>
 

@@ -20,7 +20,7 @@ const TeamCardContainer = styled.div`
   max-height: 380px;
   min-height: 380px;
   margin: 0 30px;
-  padding: 40px 20px;
+  padding: 20px;
   background-color: #618a4d;
   box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.15);
   border-radius: 20px;
@@ -66,12 +66,12 @@ const TeamInfoWrapper = styled.div`
 const TeamInfoHeading = styled.h2`
   font-weight: bold;
   font-style: normal;
-  font-size: 20px;
+  font-size: 24px;
   color: #ffffff;
 `;
 
 const TeamInfoText = styled.p`
-  font-size: 14px;
+  font-size: 16px;
   color: #ffffff;
 `;
 
@@ -107,27 +107,28 @@ const MobileContainer = styled.div`
 `;
 
 const TeamsPickerContainer = styled.div`
-  width: 100%;
+  width: 95%;
   margin: 30px 30px 0 30px;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: space-evenly;
   gap: 15px;
   flex-wrap: wrap;
+  @media only screen and (max-width: 425px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const TeamsPickerImage = styled.img`
   width: 100%;
+  height: 100%;
   border-radius: 15px;
   box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.15);
 `;
 
 const TeamsPickerCard = styled.div`
-  /* width is set to 19% to space 5 images equally
-  inside a box of width = 1200px and gap = 15px */
-  width: 19%;
-  max-width: 150px;
-  min-width: 100px;
+  width: 216px;
+  height: 124px;
 
   &:hover ${TeamsPickerImage} {
     cursor: pointer;

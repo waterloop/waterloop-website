@@ -2,10 +2,12 @@ import React from 'react';
 
 import styled from 'styled-components';
 import DetailsCard from './DetailsCard';
+import CalendarIcon from '../../../static/img/sustainable-tech/calendar.svg';
+import ClockIcon from '../../../static/img/sustainable-tech/clock.svg';
+import LocationIcon from '../../../static/img/sustainable-tech/location.svg';
 import WaterDesign from '../../../static/img/sustainable-tech/water_section_divider.svg';
 
 const AboutContainer = styled.section`
-  /* padding: 40px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,8 +31,7 @@ const Heading = styled.h1`
   font-size: 35px;
   font-weight: bold;
   text-align: center;
-  /* margin: 0; */
-  color: #203d7a;
+  color: #000000;
 
   @media screen and (max-width: 768px) {
     font-size: 30px;
@@ -85,9 +86,9 @@ const AboutEvent: React.FC = () => (
     </AboutContentWrapper>
 
     <DetailsContainer>
-      <DetailsCard icon={0} title="Date" detail="March 25th, 2022" />
-      <DetailsCard icon={1} title="Time" detail="6pm to 8pm EST" />
-      <DetailsCard icon={2} title="Place" detail="Virtually" />
+      <DetailsCard icon={CalendarIcon} title="Date" detail="March 25th, 2022" />
+      <DetailsCard icon={ClockIcon} title="Time" detail="6pm to 8pm EST" />
+      <DetailsCard icon={LocationIcon} title="Place" detail="Virtually" />
     </DetailsContainer>
   </AboutContainer>
 );
