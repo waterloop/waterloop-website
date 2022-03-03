@@ -12,8 +12,8 @@ const Title = styled.h1`
   text-align: center;
   color: black;
   width: 100%;
-  margin-top: 20%;
-  margin-bottom: 50px;
+  margin-top: 200px;
+  margin-bottom: 100px;
 `;
 
 const Block = styled.div`
@@ -26,14 +26,14 @@ const CloudSingle = styled.img`
   width: 15%;
   position: absolute;
   right: 5%;
-  top: -15%;
+  top: -10px;
 `;
 
 const CloudGroup1 = styled.img`
   width: 25%;
   position: absolute;
   left: 5%;
-  top: -20%;
+  top: -150px;
 `;
 
 const CloudGroup2 = styled.img`
@@ -46,14 +46,13 @@ const CloudGroup2 = styled.img`
 const Geese1 = styled.img`
   width: 7%;
   position: absolute;
-  left: 10%;
+  left: 15%;
 `;
 
 const Geese2 = styled.img`
   width: 10%;
   position: absolute;
   right: 15%;
-  top: -15%;
 `;
 
 const FAQ: React.FC = () => (
