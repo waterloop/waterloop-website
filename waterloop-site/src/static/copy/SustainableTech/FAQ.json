@@ -1,14 +1,23 @@
 [
     {
         "question": "Where will the event take place?",
-        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum posuere vel quam fusce tincidunt ipsum sit ut. Iaculis diam rutrum molestie purus lectus. Sit sit blandit lacus lectus libero orci, nulla amet phasellus. Quam proin ornare proin lobortis fermentum. Dignissim cursus mi sapien, mi elementum morbi ac. Aenean aliquet rutrum adipiscing nisl, ultrices quis. Aliquet aenean facilisis diam augue et. Ut phasellus ut ut id libero, vel commodo viverra. Non vulputate in risus nunc."
+        "answer": "The Green Tech event will be fully online. Sign-up through this ",
+        "link": true,
+        "url": "https://tinyurl.com/uwgreentech"
     },
     {
         "question": "What will the event entail?",
-        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum posuere vel quam fusce tincidunt ipsum sit ut. Iaculis diam rutrum molestie purus lectus. Sit sit blandit lacus lectus libero orci, nulla amet phasellus. Quam proin ornare proin lobortis fermentum. Dignissim cursus mi sapien, mi elementum morbi ac. Aenean aliquet rutrum adipiscing nisl, ultrices quis. Aliquet aenean facilisis diam augue et. Ut phasellus ut ut id libero, vel commodo viverra. Non vulputate in risus nunc."
+        "answer": "The event will kickoff with a short introduction and a quick word from *INSERT KEYNOTE SPEAKER*. Then, UWaterloo’s very own green tech teams will take the stage to talk a bit about their work in the UW community. Finally, the Waterloop team will take a few minutes to present and conclude the event.",
+        "link": false
     },
     {
         "question": "Who is going to be at the event?",
-        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum posuere vel quam fusce tincidunt ipsum sit ut. Iaculis diam rutrum molestie purus lectus. Sit sit blandit lacus lectus libero orci, nulla amet phasellus. Quam proin ornare proin lobortis fermentum. Dignissim cursus mi sapien, mi elementum morbi ac. Aenean aliquet rutrum adipiscing nisl, ultrices quis. Aliquet aenean facilisis diam augue et. Ut phasellus ut ut id libero, vel commodo viverra. Non vulputate in risus nunc."
+        "answer": "We are excited to have our keynote speaker *INSERT KEYNOTE SPEAKER*, several sustainable tech teams at UWaterloo (Midnight Sun, Waterloo Formula Electric, Warrior Home, and Sustainable Development Solutions Network), and Waterloop speak at our event!",
+        "link": false
+    },
+    {
+        "question": "Why should I come to this event?",
+        "answer": "This event is a great opportunity to learn more about what is going on at the University and also a way to find out about how you can get involved. Each of the teams featured recruit members a couple times a year. This is a great chance for you to get involved, learn new skills and make new friends!",
+        "link": false
     }
 ]

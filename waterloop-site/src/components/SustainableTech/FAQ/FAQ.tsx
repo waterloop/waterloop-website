@@ -65,7 +65,17 @@ const FAQ: React.FC = () => (
     <Title>FAQ</Title>
     {Content.map((text) => (
       <AccordionDropdown open={false} title={text.question}>
-        {text.answer}
+        {text.link ? (
+          <div>
+            {text.answer}
+            <a href={text.url} target="_blank">
+              link
+            </a>
+            !
+          </div>
+        ) : (
+          text.answer
+        )}
       </AccordionDropdown>
     ))}
     <CloudGroup2 src={CloudGroupImg} />

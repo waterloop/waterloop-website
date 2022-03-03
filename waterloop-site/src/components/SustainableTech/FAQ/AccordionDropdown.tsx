@@ -5,6 +5,7 @@ import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 interface Props {
   open: boolean;
   title?: string;
+  url?: string;
 }
 
 const rotateIcon = keyframes`
