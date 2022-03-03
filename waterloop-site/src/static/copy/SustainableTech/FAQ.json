@@ -2,6 +2,7 @@
     {
         "question": "Where will the event take place?",
         "answer": "The Green Tech event will be fully online. Sign-up through this ",
+        "answerPart2": "!",
         "link": true,
         "url": "https://tinyurl.com/uwgreentech"
     },

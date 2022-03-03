@@ -71,7 +71,7 @@ const FAQ: React.FC = () => (
             <a href={text.url} target="_blank">
               link
             </a>
-            !
+            {text.answerPart2}
           </div>
         ) : (
           text.answer
