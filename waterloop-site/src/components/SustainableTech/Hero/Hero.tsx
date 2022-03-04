@@ -5,47 +5,41 @@ import LandingImage from '../../../static/img/sustainable-tech/HeroLandingImage.
 import GreenTechLogo from '../../../static/img/sustainable-tech/GreenTechLogo.svg';
 
 const LandingContainer = styled.div`
-  padding: 60px 0 30px;
-  display: flex;
-  justify-content: center;
+  background-image: url(${LandingImage});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   background-color: #e5f6fa;
-  overflow: hidden;
-`;
-
-const LandingContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden;
-`;
-
-const LandingImageContainer = styled.img`
+  width: 100%;
   height: 100vh;
-  overflow: hidden;
-  background-color: #e5f6fa;
 `;
 
 const MainContent = styled.div`
   position: absolute;
-  top: 50%;
+  top: 38%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: fit-content;
+  height: 100%;
 `;
 
-/*  transform: scale(8); makes the logo
-bigger but doesnt solve the problem */
-
 const GreenTech = styled.img`
-  height: 500px;
+  height: 300px;
   width: auto;
 
-  @media (max-width: 550px) {
-    height: 400px;
+  @media (max-width: 1200px) {
+    height: 250px;
+  }
+
+  @media (max-width: 430px) {
+    height: 190px;
+  }
+
+  @media (max-width: 300px) {
+    height: 150px;
   }
 `;
 
@@ -55,12 +49,12 @@ const ButtonContainer = styled.button`
   text-decoration: none;
   color: white;
   font-family: 'IBM Plex Sans';
-  font-size: 24px;
+  font-size: 19px;
   font-weight: 500;
-  padding: 15px 10%;
+  padding: 15px 15%;
   border: #203d7a;
-  transition: color 0.1s ease;
-  transition: background-color 0.1s ease;
+  margin: 10% 0;
+  font-weight: 600;
 
   &:hover {
     cursor: pointer;
@@ -68,26 +62,20 @@ const ButtonContainer = styled.button`
     background-color: white;
   }
 
-  @media (max-width: 550px) {
+  @media (max-width: 650px) {
     font-size: 17px;
     padding: 10px 15%;
   }
 `;
 
 const Hero: React.FC = () => (
-  <LandingContainer>
-    <LandingContent>
-      <MainContent id="home-scroll">
-        <GreenTech alt={'Green Tech Logo'} src={GreenTechLogo}></GreenTech>
-        <ButtonContainer as="a" href="http://Google_Form_Here">
-          Sign Up
-        </ButtonContainer>
-      </MainContent>
-      <LandingImageContainer
-        alt={'Green Tech Landing Image'}
-        src={LandingImage}
-      />
-    </LandingContent>
+  <LandingContainer id="outer">
+    <MainContent id="home-scroll">
+      <GreenTech alt="Green Tech Logo" src={GreenTechLogo} />
+      <ButtonContainer as="a" href="https://tinyurl.com/uwgreentech">
+        SIGN UP
+      </ButtonContainer>
+    </MainContent>
   </LandingContainer>
 );
 export default Hero;
