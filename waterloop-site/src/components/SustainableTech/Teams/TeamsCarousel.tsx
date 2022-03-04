@@ -38,6 +38,8 @@ const SlideContainer = styled.div`
   gap: 50px;
   justify-content: center;
   align-items: center;
+  /* Wanted to use this transition to occur when the content changes */
+  transition: all 1s ease-in-out;
   @media screen and (max-width: 768px) {
     gap: 10px;
     flex-direction: column;
@@ -113,10 +115,6 @@ const TeamsPickerContainer = styled.div`
   justify-content: space-evenly;
   gap: 15px;
   flex-wrap: wrap;
-  @media only screen and (max-width: 425px) {
-    flex-direction: column;
-    align-items: center;
-  }
 `;
 
 const TeamsPickerImage = styled.img`
@@ -131,6 +129,8 @@ const TeamsPickerCard = styled.div`
   height: 124px;
 
   &:hover ${TeamsPickerImage} {
+    transition: transform 0.2s;
+    transform: scale(1.05);
     cursor: pointer;
   }
 `;
@@ -187,7 +187,7 @@ const TeamsCarousel: React.FC = () => {
         {imgs.map((team, i: number) => {
           return (
             <TeamsPickerCard onClick={selectTeam(i)}>
-              <TeamsPickerImage src={team.imgFile} />
+              <TeamsPickerImage src={team.imgPath} />
             </TeamsPickerCard>
           );
         })}
