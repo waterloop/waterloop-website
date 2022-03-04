@@ -56,7 +56,7 @@ const Geese2 = styled.img`
 `;
 
 const FAQ: React.FC = () => (
-  <Block>
+  <Block id="faq-scroll">
     <CloudGroup1 src={CloudGroupImg} />
     <Geese1 src={GeeseImg} />
     <CloudSingle src={CloudImg} />
