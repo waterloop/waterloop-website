@@ -123,7 +123,6 @@ const Sidebar: React.FC = () => {
     { id: 'IDlocation2', name: 'About' },
     { id: 'IDlocation3', name: 'Team' },
     { id: 'IDlocation4', name: 'Schedule' },
-    { id: 'IDlocation5', name: 'Sponsors' },
     { id: 'IDlocation6', name: 'FAQ' },
   ];
 

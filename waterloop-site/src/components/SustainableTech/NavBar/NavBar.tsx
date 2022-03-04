@@ -86,11 +86,6 @@ const ScrollLink = styled.button`
   @media screen and (max-width: 720px) {
     font-size: 13px;
   }
-
-  @media screen and (max-width: 600px) {
-    margin: 3px;
-    font-size: 12px;
-  }
 `;
 
 const ButtonContainer = styled.button`
@@ -104,8 +99,6 @@ const ButtonContainer = styled.button`
   padding: 10px 3%;
   margin-right: 4vw;
   border: #203d7a;
-  transition: color 0.3s ease;
-  transition: background-color 0.3s ease;
 
   &:hover {
     background-color: white;
@@ -130,12 +123,11 @@ const NavBar: React.FC = () => (
       </Link>
     </LogoContainer>
     <ListContainer>
-      <ScrollLink onClick={(): void => scrollTo('IDlocation1')}>Home</ScrollLink>
-      <ScrollLink onClick={(): void => scrollTo('IDlocation2')}>About</ScrollLink>
-      <ScrollLink onClick={(): void => scrollTo('IDlocation3')}>Team</ScrollLink>
-      <ScrollLink onClick={(): void => scrollTo('IDlocation4')}>Schedule</ScrollLink>
-      <ScrollLink onClick={(): void => scrollTo('IDlocation5')}>Sponsors</ScrollLink>
-      <ScrollLink onClick={(): void => scrollTo('IDlocation6')}>FAQ</ScrollLink>
+      <ScrollLink onClick={(): void => scrollTo('homep-scroll')}>Home</ScrollLink>
+      <ScrollLink onClick={(): void => scrollTo('about-scroll')}>About</ScrollLink>
+      <ScrollLink onClick={(): void => scrollTo('team-scroll')}>Team</ScrollLink>
+      <ScrollLink onClick={(): void => scrollTo('schedule-scroll')}>Schedule</ScrollLink>
+      <ScrollLink onClick={(): void => scrollTo('faq-scroll')}>FAQ</ScrollLink>
     </ListContainer>
     <ButtonContainer as="a" href="https://tinyurl.com/uwgreentech">SIGN UP</ButtonContainer>
   </NavbarContainer>
