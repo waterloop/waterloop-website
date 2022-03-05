@@ -46,9 +46,7 @@ const TextContainer = styled.div`
   align-items: center;
 `;
 
-const SectionImage = styled.img.attrs((props) => ({
-  src: props.src,
-}))`
+const SectionImage = styled.img`
   width: 150px;
   height: 150px;
   border-radius: 50%;

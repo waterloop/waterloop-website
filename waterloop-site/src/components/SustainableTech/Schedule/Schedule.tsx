@@ -11,9 +11,7 @@ const Container = styled.div`
   position: relative;
 `;
 
-const BackgroundImg = styled.img.attrs({
-  src: `${BackgroundSVG}`,
-})`
+const BackgroundImg = styled.img`
   width: 100%;
   position: absolute;
   bottom: 0%;
@@ -31,7 +29,7 @@ const Schedule: React.FC = () => (
   <Container id="sponsors-scroll">
     <Title>SCHEDULE</Title>
     <Agenda />
-    <BackgroundImg />
+    <BackgroundImg src={BackgroundSVG} />
   </Container>
 );
 
