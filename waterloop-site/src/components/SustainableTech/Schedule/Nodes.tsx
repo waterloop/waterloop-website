@@ -42,14 +42,14 @@ const Nodes: React.FC<{
 }> = ({ sectionHeights, sectionBottomMargin }) => (
   <Container>
     {sectionHeights.map((height, idx) => (
-      <>
+      <React.Fragment key={`ste-node-edge-${idx}`}>
         <Node />
         <Edge
           height={height}
           sectionBottomMargin={sectionBottomMargin}
           last={idx === sectionHeights.length - 1}
         />
-      </>
+      </React.Fragment>
     ))}
   </Container>
 );
