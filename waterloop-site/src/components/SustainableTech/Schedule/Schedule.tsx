@@ -28,7 +28,7 @@ const Title = styled.h1`
 `;
 
 const Schedule: React.FC = () => (
-  <Container>
+  <Container id="sponsors-scroll">
     <Title>SCHEDULE</Title>
     <Agenda />
     <BackgroundImg />
