@@ -7,7 +7,7 @@ import Nodes from './Nodes';
 interface AgendaSection {
   title: string;
   subtitle?: string;
-  imagePath?: string;
+  imageSrc?: string;
   text: string;
   time: string;
 }
@@ -49,13 +49,13 @@ const TextContainer = styled.div`
 const SectionImage = styled.img.attrs((props) => ({
   src: props.src,
 }))`
-  width: 75px;
-  height: 75px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
-  margin-right: 25px;
+  margin-right: 30px;
+  object-fit: cover;
+  object-position: 70%; // This value was determined through trial-and-error
 `;
-
-const Text = styled.p``;
 
 const Agenda: React.FC = () => {
   const [sectionRefs, setSectionRefs] = useState<any[]>([]);
@@ -63,10 +63,10 @@ const Agenda: React.FC = () => {
 
   // Create refs for each schedule section, so that heights can be extracted
   const getSectionRefs = () => {
-    setSectionRefs(
+    setSectionRefs((prevRefs) =>
       Array(castData.length)
         .fill(null)
-        .map((_, i) => createRef()),
+        .map((_, i) => prevRefs[i] || createRef()),
     );
   };
 
@@ -94,15 +94,14 @@ const Agenda: React.FC = () => {
         {castData.map((item, idx) => (
           <SectionContainer
             key={`ste-schedule-section-${idx}`}
-            id={`ste-schedule-section-${idx}`}
             ref={sectionRefs[idx]}
           >
             <Subtitle>{item.time}</Subtitle>
             <Title>{item.title}</Title>
             <Subtitle>{item.subtitle}</Subtitle>
             <TextContainer>
-              {item.imagePath && <SectionImage src={item.imagePath} />}
-              <Text>{item.text}</Text>
+              {item.imageSrc && <SectionImage src={item.imageSrc} />}
+              <p>{item.text}</p>
             </TextContainer>
           </SectionContainer>
         ))}
