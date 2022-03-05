@@ -164,7 +164,7 @@ class App extends React.Component<{}, State> {
           <Switch>
             {pageMappings.map((item) => {
               return (
-                <Route exact={item.exact} path={item.path}>
+                <Route key={item.path} exact={item.exact} path={item.path}>
                   {this.state.width > 425 ? (
                     item.NavBarComponent
                   ) : (
