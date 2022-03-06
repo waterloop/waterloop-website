@@ -5,7 +5,7 @@ import Waterloop from '../../../../static/img/sustainable-tech/waterloop.jpg';
 import FormulaLogo from '../../../../static/img/sustainable-tech/waterloo-formula-logo.png';
 import Formula from '../../../../static/img/sustainable-tech/waterloo-formula.jpg';
 import UwaftLogo from '../../../../static/img/sustainable-tech/uwaft-logo.png';
-import Uwaft from '../../../../static/img/sustainable-tech/uwaft.png';
+import Uwaft from '../../../../static/img/sustainable-tech/uwaft.jpg';
 import WarriorLogo from '../../../../static/img/sustainable-tech/warrior-home-logo.png';
 import Warrior from '../../../../static/img/sustainable-tech/warrior-home.png';
 import MidnightSun from '../../../../static/img/sustainable-tech/midnight-sun.jpg';
