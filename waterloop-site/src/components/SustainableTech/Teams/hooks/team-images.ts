@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
 
-import WaterloopLogo from '../../../../static/img/logos/Logo.svg';
+import WaterloopLogo from '../../../../static/img/logos/Icon_Yellow.png';
 import Waterloop from '../../../../static/img/sustainable-tech/waterloop.jpg';
 import FormulaLogo from '../../../../static/img/sustainable-tech/waterloo-formula-logo.png';
 import Formula from '../../../../static/img/sustainable-tech/waterloo-formula.jpg';

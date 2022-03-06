@@ -65,7 +65,7 @@ const DetailsContainer = styled.div`
 `;
 
 const AboutEvent: React.FC = () => (
-  <AboutContainer id="about">
+  <AboutContainer id="about-scroll">
     <SectionDivider src={WaterDesign} />
 
     <HeadingContainer>

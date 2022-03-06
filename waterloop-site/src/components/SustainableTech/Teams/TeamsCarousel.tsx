@@ -76,29 +76,29 @@ const TeamInfoText = styled.p`
 `;
 
 const Arrow = styled.i`
-  font-size: 48px;
+  font-size: 50px;
   cursor: pointer;
   display: none;
   color: #ffffff;
+  transition: all 0.3s ease;
   @media only screen and (min-width: 768px) {
     display: flex;
   }
   &:hover {
-    transition: transform 0.2s;
     transform: scale(1.15);
   }
 `;
 
 const ArrowMobile = styled.i`
-  font-size: 48px;
+  font-size: 50px;
   cursor: pointer;
   display: flex;
   color: #ffffff;
+  transition: all 0.3s ease;
   @media only screen and (min-width: 768px) {
     display: none;
   }
   &:hover {
-    transition: transform 0.2s;
     transform: scale(1.15);
   }
 `;
@@ -133,8 +133,8 @@ const TeamsUWFormulaImage = styled.img`
 `;
 
 const TeamsPickerCard = styled.div`
-  width: 216px;
-  height: 124px;
+  width: 177.5px;
+  height: 99.76px;
   background-color: #ffffff;
   border-radius: 15px;
   box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.15);
@@ -142,8 +142,8 @@ const TeamsPickerCard = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.3s ease;
   &:hover {
-    transition: transform 0.3s;
     transform: scale(1.05);
   }
 `;
@@ -198,17 +198,15 @@ const TeamsCarousel: React.FC = () => {
 
       <TeamsPickerContainer>
         {imgs.map((team, i: number) => {
-          if (i !== 0) {
-            return (
-              <TeamsPickerCard onClick={selectTeam(i)}>
-                {i !== 1 ? (
-                  <TeamsPickerImage src={team.logoPath} alt="logo" />
-                ) : (
-                  <TeamsUWFormulaImage src={team.logoPath} alt="logo" />
-                )}
-              </TeamsPickerCard>
-            );
-          }
+          return (
+            <TeamsPickerCard onClick={selectTeam(i)}>
+              {i !== 1 ? (
+                <TeamsPickerImage src={team.logoPath} alt="logo" />
+              ) : (
+                <TeamsUWFormulaImage src={team.logoPath} alt="logo" />
+              )}
+            </TeamsPickerCard>
+          );
         })}
       </TeamsPickerContainer>
     </TeamsContentWrapper>

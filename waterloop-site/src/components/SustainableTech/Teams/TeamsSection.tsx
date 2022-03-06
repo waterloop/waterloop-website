@@ -31,7 +31,7 @@ const Heading = styled.h1`
 
 const Teams: React.FC = () => {
   return (
-    <TeamsContainer id="teams">
+    <TeamsContainer id="teams-scroll">
       <HeadingContainer>
         <Heading>TEAMS</Heading>
       </HeadingContainer>
