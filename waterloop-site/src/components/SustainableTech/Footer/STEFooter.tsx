@@ -1,12 +1,13 @@
 import React from 'react';
+
 import styled from 'styled-components';
-import LogoSVG from '../../../static/ste/ste-logo.svg';
-import EmailSVG from '../../../static/ste/icons/email.svg';
-import TwitterSVG from '../../../static/ste/icons/logo-twitter.svg';
-import InstagramSVG from '../../../static/ste/icons/logo-instagram.svg';
-import LinkedInSVG from '../../../static/ste/icons/logo-linkedin.svg';
-import FacebookSVG from '../../../static/ste/icons/logo-facebook.svg';
-import STEFooterImg from '../../../static/ste/background/footer-bg.svg';
+import LogoSVG from '../../../static/img/sustainable-tech/ste-logo.svg';
+import EmailSVG from '../../../static/img/sustainable-tech/email.svg';
+import TwitterSVG from '../../../static/img/sustainable-tech/logo-twitter.svg';
+import InstagramSVG from '../../../static/img/sustainable-tech/logo-instagram.svg';
+import LinkedInSVG from '../../../static/img/sustainable-tech/logo-linkedin.svg';
+import FacebookSVG from '../../../static/img/sustainable-tech/logo-facebook.svg';
+import STEFooterImg from '../../../static/img/sustainable-tech/footer-bg.svg';
 
 const fill = '#fff'; // Fill for text
 
@@ -73,10 +74,14 @@ const EmailIcon = styled.img.attrs({
   height: 24px;
 `;
 
-const ContactEmail = styled.p`
+const ContactEmail = styled.a.attrs({
+  href: "mailto:contact@waterloop.ca"
+})`
   font-size: 14px;
-  margin: 0 5px;
+  margin: 0 15px;
   color: ${fill};
+  text-decoration: none;
+  margin-top: 1.5px;
 `;
 
 const Divider = styled.hr`
@@ -97,7 +102,6 @@ const PageTagsAndSocialsWrapper = styled.div`
 `;
 
 const PageTagsWrapper = styled.div`
-  //   width: 30vw;
   display: flex;
   flex-direction: row;
 `;
@@ -180,7 +184,9 @@ const STEFooter: React.FC = () => (
       <PageTagsAndSocialsWrapper>
         <PageTagsWrapper>
           {Tags.map((tag) => (
-            <Tag onClick={() => console.log('use hook to go to place in page')}>{tag.text}</Tag> // Hook in which it will scroll to particular portion on website is not done yet
+            <Tag onClick={() => console.log('use hook to go to place in page')}>
+              {tag.text}
+            </Tag> // Hook in which it will scroll to particular portion on website is not done yet
           ))}
         </PageTagsWrapper>
         <SocialsWrapper>
