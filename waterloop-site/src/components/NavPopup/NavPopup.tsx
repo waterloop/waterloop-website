@@ -69,6 +69,7 @@ const Button = styled.button`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
+  color: white;
 `;
 
 const NavPopup: React.FC = () => {
@@ -87,9 +88,9 @@ const NavPopup: React.FC = () => {
       <ClosePopupIcon fontSize="large" onClick={closePopup} />
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor
       sit amet, consectetur adipiscing elit.
-      <StyledLink to="/sustainable-tech">
-        <Button>Check it out!</Button>
-      </StyledLink>
+      <Button>
+        <StyledLink to="/sustainable-tech">Check it out!</StyledLink>
+      </Button>
     </Card>
   );
 };
