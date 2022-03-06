@@ -38,8 +38,6 @@ const SlideContainer = styled.div`
   gap: 50px;
   justify-content: center;
   align-items: center;
-  /* Wanted to use this transition to occur when the content changes */
-  transition: all 1s ease-in-out;
   @media screen and (max-width: 768px) {
     gap: 10px;
     flex-direction: column;
@@ -55,7 +53,7 @@ const TeamImageWrapper = styled.div`
 
 const TeamImage = styled.img`
   width: 100%;
-  border-radius: 8px;
+  border-radius: 15px;
 `;
 
 const TeamInfoWrapper = styled.div`
@@ -85,6 +83,10 @@ const Arrow = styled.i`
   @media only screen and (min-width: 768px) {
     display: flex;
   }
+  &:hover {
+    transition: transform 0.2s;
+    transform: scale(1.15);
+  }
 `;
 
 const ArrowMobile = styled.i`
@@ -94,6 +96,10 @@ const ArrowMobile = styled.i`
   color: #ffffff;
   @media only screen and (min-width: 768px) {
     display: none;
+  }
+  &:hover {
+    transition: transform 0.2s;
+    transform: scale(1.15);
   }
 `;
 
@@ -118,20 +124,27 @@ const TeamsPickerContainer = styled.div`
 `;
 
 const TeamsPickerImage = styled.img`
-  width: 100%;
-  height: 100%;
+  height: 90%;
   border-radius: 15px;
-  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.15);
+`;
+
+const TeamsUWFormulaImage = styled.img`
+  width: 80%;
 `;
 
 const TeamsPickerCard = styled.div`
   width: 216px;
   height: 124px;
-
-  &:hover ${TeamsPickerImage} {
-    transition: transform 0.2s;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    transition: transform 0.3s;
     transform: scale(1.05);
-    cursor: pointer;
   }
 `;
 
@@ -160,7 +173,7 @@ const TeamsCarousel: React.FC = () => {
 
         <SlideContainer {...swipeHandlers}>
           <TeamImageWrapper>
-            <TeamImage src={image}></TeamImage>
+            <TeamImage src={image} alt="team-image"></TeamImage>
           </TeamImageWrapper>
 
           <TeamInfoWrapper>
@@ -185,11 +198,17 @@ const TeamsCarousel: React.FC = () => {
 
       <TeamsPickerContainer>
         {imgs.map((team, i: number) => {
-          return (
-            <TeamsPickerCard onClick={selectTeam(i)}>
-              <TeamsPickerImage src={team.imgPath} />
-            </TeamsPickerCard>
-          );
+          if (i !== 0) {
+            return (
+              <TeamsPickerCard onClick={selectTeam(i)}>
+                {i !== 1 ? (
+                  <TeamsPickerImage src={team.logoPath} alt="logo" />
+                ) : (
+                  <TeamsUWFormulaImage src={team.logoPath} alt="logo" />
+                )}
+              </TeamsPickerCard>
+            );
+          }
         })}
       </TeamsPickerContainer>
     </TeamsContentWrapper>

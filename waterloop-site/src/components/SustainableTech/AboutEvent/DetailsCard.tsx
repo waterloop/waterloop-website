@@ -61,7 +61,7 @@ const IconCircle = styled.div`
 `;
 
 const Icon = styled.img`
-  width: 45%;
+  width: 40%;
 `;
 
 interface Props {

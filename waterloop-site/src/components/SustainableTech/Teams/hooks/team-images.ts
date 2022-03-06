@@ -1,8 +1,25 @@
 import React, { useCallback, useState } from 'react';
 
+import WaterloopLogo from '../../../../static/img/logos/Logo.svg';
+import Waterloop from '../../../../static/img/sustainable-tech/waterloop.jpg';
+import FormulaLogo from '../../../../static/img/sustainable-tech/waterloo-formula-logo.png';
+import Formula from '../../../../static/img/sustainable-tech/waterloo-formula.jpg';
+import UwaftLogo from '../../../../static/img/sustainable-tech/uwaft-logo.png';
+import Uwaft from '../../../../static/img/sustainable-tech/uwaft.png';
+import WarriorLogo from '../../../../static/img/sustainable-tech/warrior-home-logo.png';
+import Warrior from '../../../../static/img/sustainable-tech/warrior-home.png';
+import MidnightSun from '../../../../static/img/sustainable-tech/midnight-sun.jpg';
+import MidnightSunLogo from '../../../../static/img/sustainable-tech/midnight-sun-logo.png';
+import SdsnLogo from '../../../../static/img/sustainable-tech/sdsn-logo.jpg';
+import Sdsn from '../../../../static/img/sustainable-tech/sdsn.png';
 import TeamContent from '../../../../static/copy/SustainableTech/Teams.json';
+
 interface Image {
+  logoPath: string;
   imgPath: string;
+}
+
+interface Description {
   name: string;
   desc: string;
 }
@@ -20,7 +37,34 @@ interface TeamImage {
 
 type TeamImagesHook = () => TeamImage;
 
-const imgs: Image[] = TeamContent;
+const descriptions: Description[] = TeamContent;
+
+const imgs: Image[] = [
+  {
+    logoPath: WaterloopLogo,
+    imgPath: Waterloop,
+  },
+  {
+    logoPath: FormulaLogo,
+    imgPath: Formula,
+  },
+  {
+    logoPath: UwaftLogo,
+    imgPath: Uwaft,
+  },
+  {
+    logoPath: MidnightSunLogo,
+    imgPath: MidnightSun,
+  },
+  {
+    logoPath: WarriorLogo,
+    imgPath: Warrior,
+  },
+  {
+    logoPath: SdsnLogo,
+    imgPath: Sdsn,
+  },
+];
 
 const useTeamImages: TeamImagesHook = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
@@ -45,8 +89,8 @@ const useTeamImages: TeamImagesHook = () => {
 
   return {
     image: imgs[currentIndex].imgPath,
-    name: imgs[currentIndex].name,
-    desc: imgs[currentIndex].desc,
+    name: descriptions[currentIndex].name,
+    desc: descriptions[currentIndex].desc,
     imgs: imgs,
     currentTeam: currentIndex,
     cycleRight,

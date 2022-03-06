@@ -80,7 +80,7 @@ const AboutEvent: React.FC = () => (
         arise when such technology is created/used. The sustainable technology
         industry exists for this very reason: to help reduce and reverse the
         damage done to our planet. We want to showcase how UWaterloo is a part
-        of the sustainable technology industry by sharing with you some of it's
+        of the sustainable technology industry by sharing with you some of its
         sustainable tech teams.
       </AboutText>
     </AboutContentWrapper>
