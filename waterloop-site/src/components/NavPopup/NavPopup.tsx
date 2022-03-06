@@ -9,7 +9,7 @@ const Card = styled.div`
   padding: 20px;
   background: #f4f4f4;
   width: 300px;
-  height: 165px;
+  height: auto;
   border-radius: 6px;
   z-index: 100000;
   align-items: center;
@@ -27,6 +27,10 @@ const Card = styled.div`
       opacity: 1;
     }
   }
+
+  @media only screen and (max-width: 400px) {
+    width: 70vw;
+  }
 `;
 
 const Title = styled.div`
@@ -35,13 +39,13 @@ const Title = styled.div`
 `;
 
 export const ClosePopupIcon = styled(CloseIcon)`
-  color: black;
+  color: grey;
   width: 30px;
   position: absolute;
   right: 18px;
   top: 18px;
   &:hover {
-    color: grey;
+    color: black;
     cursor: pointer;
   }
 `;
@@ -84,10 +88,11 @@ const NavPopup: React.FC = () => {
   }
   return (
     <Card>
-      <Title>Sustainable Tech Event</Title>
+      <Title>GreenTech</Title>
       <ClosePopupIcon fontSize="large" onClick={closePopup} />
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor
-      sit amet, consectetur adipiscing elit.
+      On March 25, Waterloop will be hosting an event in collaboration with
+      other sustainable tech teams from Waterloo to showcase how UWaterloo is
+      aims to grow the sustainable technology industry.
       <Button>
         <StyledLink to="/sustainable-tech">Check it out!</StyledLink>
       </Button>
