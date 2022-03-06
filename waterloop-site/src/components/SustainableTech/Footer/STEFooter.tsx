@@ -1,6 +1,7 @@
 import React from 'react';
-
 import styled from 'styled-components';
+
+// import scrollTo from '../utils/LinkScroll'; 
 import LogoSVG from '../../../static/img/sustainable-tech/ste-logo.svg';
 import EmailSVG from '../../../static/img/sustainable-tech/email.svg';
 import TwitterSVG from '../../../static/img/sustainable-tech/logo-twitter.svg';
@@ -71,7 +72,7 @@ const EmailIcon = styled.img.attrs({
   alt: 'email',
 })`
   width: 28px;
-  height: 24px;
+  height: 20px;
 `;
 
 const ContactEmail = styled.a.attrs({
@@ -114,13 +115,11 @@ const Tag = styled.p`
 `;
 
 const Tags = [
-  // tags are dummy for now as I'm not aware of what tags we'll be using for each section.
-  { text: 'Home', tag: 'dummy' },
-  { text: 'About', tag: 'dummy' },
-  { text: 'Schedule', tag: 'dummy' },
-  { text: 'Team', tag: 'dummy' },
-  { text: 'Sponsors', tag: 'dummy' },
-  { text: 'FAQ', tag: 'dummy' },
+  { text: 'Home', scrollTo: 'home-scroll' },
+  { text: 'About', scrollTo: 'about-scroll' },
+  { text: 'Schedule', scrollTo: 'team-scroll' },
+  { text: 'Team', scrollTo: 'schedule-scroll' },
+  { text: 'FAQ', scrollTo: 'faq-scroll' },
 ];
 
 const Socials = [
@@ -184,9 +183,9 @@ const STEFooter: React.FC = () => (
       <PageTagsAndSocialsWrapper>
         <PageTagsWrapper>
           {Tags.map((tag) => (
-            <Tag onClick={() => console.log('use hook to go to place in page')}>
+            <Tag onClick={() => console.log('use hook to go to place in page')}> {/* replace with "(): void => scrollTo(tag.scrollTo)" */}
               {tag.text}
-            </Tag> // Hook in which it will scroll to particular portion on website is not done yet
+            </Tag>
           ))}
         </PageTagsWrapper>
         <SocialsWrapper>
