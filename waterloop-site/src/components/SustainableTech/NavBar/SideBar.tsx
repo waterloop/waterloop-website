@@ -119,11 +119,11 @@ const Sidebar: React.FC = () => {
   const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
 
   const navLinks = [
-    { id: 'IDlocation1', name: 'Home' },
-    { id: 'IDlocation2', name: 'About' },
-    { id: 'IDlocation3', name: 'Team' },
-    { id: 'IDlocation4', name: 'Schedule' },
-    { id: 'IDlocation6', name: 'FAQ' },
+    { id: 'home-scroll', name: 'HOME' },
+    { id: 'about-scroll', name: 'ABOUT' },
+    { id: 'schedule-scroll', name: 'SCHEDULE' },
+    { id: 'team-scroll', name: 'TEAM' },
+    { id: 'faq-scroll', name: 'FAQ' },
   ];
 
   return (
