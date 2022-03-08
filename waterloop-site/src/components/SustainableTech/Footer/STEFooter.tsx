@@ -133,7 +133,7 @@ const SocialsWrapper = styled.div`
   display: flex;
 `;
 
-const SocialBubble = styled.div`
+const SocialBubble = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -197,10 +197,13 @@ const STEFooter: React.FC = () => (
         <SocialsWrapper>
           {Socials.map((social, idx) => {
             return (
-              <SocialBubble key={`ste-footer-social-link-${idx}`}>
-                <a href={social.link} target="_blank" rel="noopener noreferrer">
-                  <SocialImg SVG={social.SVG} />
-                </a>
+              <SocialBubble
+                href={social.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                key={`ste-footer-social-link-${idx}`}
+              >
+                <SocialImg SVG={social.SVG} />
               </SocialBubble>
             );
           })}

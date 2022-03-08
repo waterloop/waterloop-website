@@ -10,7 +10,6 @@ const LandingContainer = styled.div`
   background-size: cover;
   background-position: center;
   background-color: #e5f6fa;
-  width: 100vw;
   height: 100vh;
 `;
 
