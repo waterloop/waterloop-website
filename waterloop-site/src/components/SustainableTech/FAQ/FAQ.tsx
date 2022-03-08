@@ -7,17 +7,8 @@ import CloudImg from 'static/img/sustainable-tech/cloud.svg';
 import CloudGroupImg from 'static/img/sustainable-tech/cloud-group.svg';
 import GeeseImg from 'static/img/sustainable-tech/geese.svg';
 
-const Title = styled.h1`
-  font-size: 44px;
-  text-align: center;
-  color: black;
-  width: 100%;
-  margin-top: 200px;
-  margin-bottom: 100px;
-`;
-
 const Block = styled.div`
-  padding-bottom: 20%;
+  padding: 50px 0;
   background: linear-gradient(180deg, rgba(209, 230, 245, 0) 0%, #d1e6f5 100%);
   position: relative;
 `;
@@ -26,21 +17,19 @@ const CloudSingle = styled.img`
   width: 15%;
   position: absolute;
   right: 5%;
-  top: -10px;
 `;
 
 const CloudGroup1 = styled.img`
   width: 25%;
   position: absolute;
   left: 5%;
-  top: -150px;
 `;
 
 const CloudGroup2 = styled.img`
   width: 25%;
   position: absolute;
   right: 5%;
-  bottom: 5%;
+  bottom: -20%;
 `;
 
 const Geese1 = styled.img`
@@ -55,6 +44,15 @@ const Geese2 = styled.img`
   right: 15%;
 `;
 
+const Title = styled.h1`
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  color: #000000;
+  width: 100%;
+  margin-bottom: 100px;
+`;
+
 const FAQ: React.FC = () => (
   <Block id="faq-scroll">
     <CloudGroup1 src={CloudGroupImg} />
@@ -62,20 +60,8 @@ const FAQ: React.FC = () => (
     <CloudSingle src={CloudImg} />
     <Geese2 src={GeeseImg} />
     <Title>FAQ</Title>
-    {Content.map((text) => (
-      <AccordionDropdown open={false} title={text.question}>
-        {text.link ? (
-          <div>
-            {text.answer}
-            <a href={text.url} target="_blank">
-              link
-            </a>
-            {text.answerPart2}
-          </div>
-        ) : (
-          text.answer
-        )}
-      </AccordionDropdown>
+    {Content.map((text, idx) => (
+      <AccordionDropdown key={`ste-faq-${idx}`} open={false} text={text} />
     ))}
     <CloudGroup2 src={CloudGroupImg} />
   </Block>

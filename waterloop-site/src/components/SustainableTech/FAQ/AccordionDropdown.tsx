@@ -2,10 +2,17 @@ import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 
+interface FAQSection {
+  question: string;
+  answer: string;
+  answerPart2?: string;
+  link: boolean;
+  url?: string;
+}
+
 interface Props {
   open: boolean;
-  title?: string;
-  url?: string;
+  text: FAQSection;
 }
 
 const rotateIcon = keyframes`
@@ -34,7 +41,7 @@ export const ExpandArrow = styled(ExpandLessIcon)`
   animation: ${rotateIcon} linear;
 `;
 
-const Answer = styled.div<Props>`
+const Answer = styled.div<{ open: boolean }>`
   margin-left: 10%;
   margin-right: 10%;
   font-size: 18px;
@@ -50,7 +57,7 @@ const AnswerText = styled.p`
   padding: 20px 20px 10px 20px;
 `;
 
-const AccordionDropdown: React.FC<Props> = ({ open, children, title }) => {
+const AccordionDropdown: React.FC<Props> = ({ open, text }) => {
   const [isOpen, setIsOpen] = useState(open);
 
   const openDropdown = () => {
@@ -60,7 +67,7 @@ const AccordionDropdown: React.FC<Props> = ({ open, children, title }) => {
   return (
     <div>
       <Question onClick={openDropdown}>
-        {title}
+        {text.question}
         <ExpandArrow
           fontSize="large"
           style={{
@@ -70,7 +77,17 @@ const AccordionDropdown: React.FC<Props> = ({ open, children, title }) => {
         />
       </Question>
       <Answer open={isOpen}>
-        <AnswerText>{children}</AnswerText>
+        {text.link ? (
+          <AnswerText>
+            {text.answer}
+            <a href={text.url} target="_blank" rel="noopener noreferrer">
+              link
+            </a>
+            {text.answerPart2}
+          </AnswerText>
+        ) : (
+          <AnswerText>{text.answer}</AnswerText>
+        )}
       </Answer>
     </div>
   );
