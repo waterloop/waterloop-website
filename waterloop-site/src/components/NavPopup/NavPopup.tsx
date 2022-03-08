@@ -91,8 +91,8 @@ const NavPopup: React.FC = () => {
       <Title>GreenTech</Title>
       <ClosePopupIcon fontSize="large" onClick={closePopup} />
       On March 25, Waterloop will be hosting an event in collaboration with
-      other sustainable tech teams from Waterloo to showcase how UWaterloo is
-      aims to grow the sustainable technology industry.
+      other sustainable tech teams from Waterloo to showcase how UWaterloo aims
+      to grow the sustainable technology industry.
       <Button>
         <StyledLink to="/sustainable-tech">Check it out!</StyledLink>
       </Button>
