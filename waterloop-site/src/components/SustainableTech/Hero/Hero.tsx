@@ -10,7 +10,7 @@ const LandingContainer = styled.div`
   background-size: cover;
   background-position: center;
   background-color: #e5f6fa;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
 `;
 
@@ -72,7 +72,12 @@ const Hero: React.FC = () => (
   <LandingContainer id="outer">
     <MainContent id="home-scroll">
       <GreenTech alt="Green Tech Logo" src={GreenTechLogo} />
-      <ButtonContainer as="a" href="https://tinyurl.com/uwgreentech" target="_blank" rel="noopener noreferrer">
+      <ButtonContainer
+        as="a"
+        href="https://tinyurl.com/uwgreentech"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         SIGN UP
       </ButtonContainer>
     </MainContent>
