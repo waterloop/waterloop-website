@@ -199,7 +199,7 @@ const TeamsCarousel: React.FC = () => {
       <TeamsPickerContainer>
         {imgs.map((team, i: number) => {
           return (
-            <TeamsPickerCard onClick={selectTeam(i)}>
+            <TeamsPickerCard key={`ste-teams-${i}`} onClick={selectTeam(i)}>
               {i !== 1 ? (
                 <TeamsPickerImage src={team.logoPath} alt="logo" />
               ) : (
