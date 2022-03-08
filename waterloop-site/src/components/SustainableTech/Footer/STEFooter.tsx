@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// import scrollTo from '../utils/LinkScroll'; 
+import scrollTo from '../utils/LinkScroll';
 import LogoSVG from '../../../static/img/sustainable-tech/ste-logo.svg';
 import EmailSVG from '../../../static/img/sustainable-tech/email.svg';
 import TwitterSVG from '../../../static/img/sustainable-tech/logo-twitter.svg';
@@ -76,7 +76,7 @@ const EmailIcon = styled.img.attrs({
 `;
 
 const ContactEmail = styled.a.attrs({
-  href: "mailto:contact@waterloop.ca"
+  href: 'mailto:contact@waterloop.ca',
 })`
   font-size: 14px;
   margin: 0 15px;
@@ -117,8 +117,8 @@ const Tag = styled.p`
 const Tags = [
   { text: 'Home', scrollTo: 'home-scroll' },
   { text: 'About', scrollTo: 'about-scroll' },
-  { text: 'Schedule', scrollTo: 'team-scroll' },
-  { text: 'Team', scrollTo: 'schedule-scroll' },
+  { text: 'Schedule', scrollTo: 'schedule-scroll' },
+  { text: 'Teams', scrollTo: 'teams-scroll' },
   { text: 'FAQ', scrollTo: 'faq-scroll' },
 ];
 
@@ -175,7 +175,10 @@ const STEFooter: React.FC = () => (
         <ContactDiv>
           <ContactUs>Contact Us</ContactUs>
           <ContactInfo>
-            <EmailIcon /> <ContactEmail>contact@waterloop.ca</ContactEmail>
+            <EmailIcon />{' '}
+            <ContactEmail target="_blank" rel="noopener noreferrer">
+              contact@waterloop.ca
+            </ContactEmail>
           </ContactInfo>
         </ContactDiv>
       </LogoAndContactWrapper>
@@ -183,16 +186,19 @@ const STEFooter: React.FC = () => (
       <PageTagsAndSocialsWrapper>
         <PageTagsWrapper>
           {Tags.map((tag) => (
-            <Tag onClick={() => console.log('use hook to go to place in page')}> {/* replace with "(): void => scrollTo(tag.scrollTo)" */}
+            <Tag
+              key={`ste-footer-${tag.text}-link`}
+              onClick={(): void => scrollTo(tag.scrollTo)}
+            >
               {tag.text}
             </Tag>
           ))}
         </PageTagsWrapper>
         <SocialsWrapper>
-          {Socials.map((social) => {
+          {Socials.map((social, idx) => {
             return (
-              <SocialBubble>
-                <a href={social.link} target="_blank">
+              <SocialBubble key={`ste-footer-social-link-${idx}`}>
+                <a href={social.link} target="_blank" rel="noopener noreferrer">
                   <SocialImg SVG={social.SVG} />
                 </a>
               </SocialBubble>
