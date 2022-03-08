@@ -1,5 +1,84 @@
 import React from 'react';
+import styled from 'styled-components';
 
-const FAQ: React.FC = () => <div>Frequently Asked Questions</div>;
+import AccordionDropdown from './AccordionDropdown';
+import Content from 'static/copy/SustainableTech/FAQ.json';
+import CloudImg from 'static/img/sustainable-tech/cloud.svg';
+import CloudGroupImg from 'static/img/sustainable-tech/cloud-group.svg';
+import GeeseImg from 'static/img/sustainable-tech/geese.svg';
+
+const Title = styled.h1`
+  font-size: 44px;
+  text-align: center;
+  color: black;
+  width: 100%;
+  margin-top: 200px;
+  margin-bottom: 100px;
+`;
+
+const Block = styled.div`
+  padding-bottom: 20%;
+  background: linear-gradient(180deg, rgba(209, 230, 245, 0) 0%, #d1e6f5 100%);
+  position: relative;
+`;
+
+const CloudSingle = styled.img`
+  width: 15%;
+  position: absolute;
+  right: 5%;
+  top: -10px;
+`;
+
+const CloudGroup1 = styled.img`
+  width: 25%;
+  position: absolute;
+  left: 5%;
+  top: -150px;
+`;
+
+const CloudGroup2 = styled.img`
+  width: 25%;
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+`;
+
+const Geese1 = styled.img`
+  width: 7%;
+  position: absolute;
+  left: 15%;
+`;
+
+const Geese2 = styled.img`
+  width: 10%;
+  position: absolute;
+  right: 15%;
+`;
+
+const FAQ: React.FC = () => (
+  <Block id="faq-scroll">
+    <CloudGroup1 src={CloudGroupImg} />
+    <Geese1 src={GeeseImg} />
+    <CloudSingle src={CloudImg} />
+    <Geese2 src={GeeseImg} />
+    <Title>FAQ</Title>
+    {Content.map((text) => (
+      <AccordionDropdown open={false} title={text.question}>
+        {text.link ? (
+          <div>
+            {text.answer}
+            <a href={text.url} target="_blank">
+              link
+            </a>
+            {text.answerPart2}
+          </div>
+        ) : (
+          text.answer
+        )}
+      </AccordionDropdown>
+    ))}
+    <CloudGroup2 src={CloudGroupImg} />
+  </Block>
+);
 
 export default FAQ;
