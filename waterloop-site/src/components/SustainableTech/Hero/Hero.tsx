@@ -72,7 +72,7 @@ const Hero: React.FC = () => (
   <LandingContainer id="outer">
     <MainContent id="home-scroll">
       <GreenTech alt="Green Tech Logo" src={GreenTechLogo} />
-      <ButtonContainer as="a" href="https://tinyurl.com/uwgreentech">
+      <ButtonContainer as="a" href="https://tinyurl.com/uwgreentech" target="_blank" rel="noopener noreferrer">
         SIGN UP
       </ButtonContainer>
     </MainContent>
