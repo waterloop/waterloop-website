@@ -122,7 +122,7 @@ const Sidebar: React.FC = () => {
     { id: 'home-scroll', name: 'HOME' },
     { id: 'about-scroll', name: 'ABOUT' },
     { id: 'schedule-scroll', name: 'SCHEDULE' },
-    { id: 'team-scroll', name: 'TEAM' },
+    { id: 'teams-scroll', name: 'TEAMS' },
     { id: 'faq-scroll', name: 'FAQ' },
   ];
 

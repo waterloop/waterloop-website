@@ -16,6 +16,7 @@ const NavbarContainer = styled.div`
   position: fixed;
   top: 0;
   scroll-behavior: smooth;
+  z-index: 1;
 `;
 
 const IconBlack = styled.img`
@@ -123,13 +124,28 @@ const NavBar: React.FC = () => (
       </Link>
     </LogoContainer>
     <ListContainer>
-      <ScrollLink onClick={(): void => scrollTo('home-scroll')}>HOME</ScrollLink>
-      <ScrollLink onClick={(): void => scrollTo('about-scroll')}>ABOUT</ScrollLink>
-      <ScrollLink onClick={(): void => scrollTo('schedule-scroll')}>SCHEDULE</ScrollLink>
-      <ScrollLink onClick={(): void => scrollTo('team-scroll')}>TEAM</ScrollLink>
+      <ScrollLink onClick={(): void => scrollTo('home-scroll')}>
+        HOME
+      </ScrollLink>
+      <ScrollLink onClick={(): void => scrollTo('about-scroll')}>
+        ABOUT
+      </ScrollLink>
+      <ScrollLink onClick={(): void => scrollTo('schedule-scroll')}>
+        SCHEDULE
+      </ScrollLink>
+      <ScrollLink onClick={(): void => scrollTo('teams-scroll')}>
+        TEAMS
+      </ScrollLink>
       <ScrollLink onClick={(): void => scrollTo('faq-scroll')}>FAQ</ScrollLink>
     </ListContainer>
-    <ButtonContainer as="a" href="https://tinyurl.com/uwgreentech" target="_blank" rel="noopener noreferrer">SIGN UP</ButtonContainer>
+    <ButtonContainer
+      as="a"
+      href="https://tinyurl.com/uwgreentech"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      SIGN UP
+    </ButtonContainer>
   </NavbarContainer>
 );
 export default NavBar;
