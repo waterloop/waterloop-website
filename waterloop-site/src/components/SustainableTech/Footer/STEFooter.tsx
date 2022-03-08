@@ -153,8 +153,8 @@ const SocialImg = styled.img.attrs((props: SocialProps) => {
     src: `${props.SVG}`,
   };
 })<SocialProps>`
-  width: 14px;
   height: 14px;
+  width: auto;
 `;
 
 const FooterImg = styled.img.attrs({
