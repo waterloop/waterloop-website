@@ -1,5 +1,36 @@
 import React from 'react';
+import styled from 'styled-components';
 
-const Schedule: React.FC = () => <div>Schedule</div>;
+import BackgroundSVG from 'static/img/sustainable-tech/schedule-background.svg';
+import Agenda from './Agenda';
+
+const Container = styled.div`
+  background-image: linear-gradient(#ffffff, #e7f1e4);
+  overflow-x: hidden;
+  padding: 100px 0 200px 0;
+  position: relative;
+`;
+
+const BackgroundImg = styled.img`
+  width: 100%;
+  position: absolute;
+  bottom: 0%;
+`;
+
+const Title = styled.h1`
+  font-size: 48px;
+  text-align: center;
+  color: #514c49;
+  width: 100%;
+  margin-bottom: 50px;
+`;
+
+const Schedule: React.FC = () => (
+  <Container id="sponsors-scroll">
+    <Title>SCHEDULE</Title>
+    <Agenda />
+    <BackgroundImg src={BackgroundSVG} />
+  </Container>
+);
 
 export default Schedule;
