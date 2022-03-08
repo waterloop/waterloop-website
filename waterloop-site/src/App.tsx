@@ -121,12 +121,7 @@ class App extends React.Component<{}, State> {
       this.generatePageMap({
         path: '/sustainable-tech',
         NavBarComponent: <STENavBar />,
-        SideBarComponent: (
-          <STESideBar
-            sidebarOpen={this.state.sidebarOpen}
-            handleClickSidebar={this.handleClickSidebar}
-          />
-        ),
+        SideBarComponent: <STESideBar/>,
         MainComponent: <SustainableTechEvent />,
         FooterComponent: <STEFooter />,
       }),

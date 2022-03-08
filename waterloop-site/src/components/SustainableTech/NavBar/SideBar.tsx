@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import BlackLogoImg from '../../../static/img/logos/Icon_Yellow.png';
-import Waterlooplogo from '../../../static/img/logos/Waterloop.svg';
-import { NavLink } from 'react-router-dom';
-import { ReactElement } from 'react';
+
+import BlackLogoImg from '../../../static/img/sustainable-tech/Icon_Black.svg';
+import scrollTo from '../utils/LinkScroll';
 
 const SidebarContainer = styled.div`
   display: flex;
@@ -12,8 +11,10 @@ const SidebarContainer = styled.div`
   justify-content: space-between;
   padding-top: 0%;
   width: 100%;
-  height: 100%;
-  background-color: #232635;
+  height: 70px;
+  background-color: #e5f6fa;
+  position: fixed;
+  top: 0;
 `;
 
 const ListContainer = styled.div`
@@ -23,12 +24,14 @@ const ListContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-content: center;
-  background-color: #ffffff;
+  justify-content: center;
+  align-items: center;
+  background-color: #e5f6fa;
   height: 100vh;
-  width: 70vw;
+  width: 100vw;
   right: 0;
   top: 0;
-  line-height: 300%;
+  line-height: 500%;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   &.closed {
@@ -38,12 +41,14 @@ const ListContainer = styled.div`
   }
 `;
 
-const Link = styled(NavLink)`
+const ScrollLink = styled.button`
   color: #010101;
   font-family: 'IBM Plex Sans';
-  margin: 1rem;
+  padding-top: 40px;
   font-size: 28px;
-  font-weight: 600;
+  font-weight: 400;
+  background-color: #e5f6fa;
+  border: none;
 
   text-decoration: none;
   &:visited,
@@ -52,34 +57,26 @@ const Link = styled(NavLink)`
   }
 `;
 
-const IconYellow = styled.img`
-  margin-top: 20px;
-  margin-left: 10px;
+const IconBlack = styled.img`
+  margin-left: 25px;
   width: 50px;
-  height: 50px;
+  height: 30px;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
-`;
-
-const IconBlack = styled.img`
-  height: 20px;
-  margin: 1rem;
-  display: flex;
 `;
 
 // mobile toggle button
 const StyledToggle = styled.button`
   display: flex;
   z-index: 3000;
-  overflow: hidden;
   flex-direction: column;
   justify-content: center;
   align-content: center;
   width: 52px;
   height: 40px;
-  margin-top: 20px;
-  margin-right: 0px;
-  margin-bottom: 10px;
+  margin-top: 15px;
+  margin-right: 20px;
+  margin-bottom: 15px;
   background: transparent;
   border: none;
   outline: none;
@@ -91,11 +88,11 @@ const StyledToggle = styled.button`
 // lines of the mobile toggle button
 const ToggleLine = styled.div`
   width: 30px;
-  height: 4px;
+  height: 3px;
   margin-top: 3px;
   margin-bottom: 3px;
   margin-right: 10px;
-  background-color: #ffffff;
+  background-color: black;
   border-radius: 10px;
   -webkit-transition: transform 0.4s ease-in-out,
     background-color 0.2s ease-in-out, height 0.2s ease-in-out;
@@ -108,7 +105,7 @@ const ToggleLine = styled.div`
   }
   &.open2 {
     height: 3px !important;
-    transform: translate(200%, 0px);
+    transform: translate(300%, 0px);
     background-color: #010101;
   }
   &.open3 {
@@ -118,86 +115,52 @@ const ToggleLine = styled.div`
   }
 `;
 
-type MyProps = {
-  sidebarOpen: boolean;
-  handleClickSidebar: (open: boolean) => void;
-};
+const Sidebar: React.FC = () => {
+  const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
 
-/* NOTE: This component will have to be completely re-done. This is kept here as a placeholder for now. */
-class Sidebar extends React.Component<MyProps> {
-  render(): ReactElement {
-    return (
-      <SidebarContainer
-        onTouchMove={(): void => {
-          this.props.handleClickSidebar(!this.props.sidebarOpen);
+  const navLinks = [
+    { id: 'home-scroll', name: 'HOME' },
+    { id: 'about-scroll', name: 'ABOUT' },
+    { id: 'schedule-scroll', name: 'SCHEDULE' },
+    { id: 'team-scroll', name: 'TEAM' },
+    { id: 'faq-scroll', name: 'FAQ' },
+  ];
+
+  return (
+    <SidebarContainer
+      onTouchMove={(): void => {
+        setSidebarOpen(!sidebarOpen);
+      }}
+    >
+      <IconBlack src={BlackLogoImg}></IconBlack>
+      <StyledToggle
+        className={sidebarOpen ? 'open' : ''}
+        onClick={(): void => {
+          setSidebarOpen(!sidebarOpen);
         }}
       >
-        <IconYellow src={BlackLogoImg}></IconYellow>
-        <StyledToggle
-          className={this.props.sidebarOpen ? 'open' : ''}
-          onClick={(): void => {
-            this.props.handleClickSidebar(!this.props.sidebarOpen);
-          }}
-        >
-          <ToggleLine className={this.props.sidebarOpen ? 'open1' : ''} />
-          <ToggleLine className={this.props.sidebarOpen ? 'open2' : ''} />
-          <ToggleLine className={this.props.sidebarOpen ? 'open3' : ''} />
-        </StyledToggle>
-        <ListContainer className={this.props.sidebarOpen ? '' : 'closed'}>
-          <div>
-            <IconBlack src={Waterlooplogo}></IconBlack>
-            <Link
-              to="/"
+        <ToggleLine className={sidebarOpen ? 'open1' : ''} />
+        <ToggleLine className={sidebarOpen ? 'open2' : ''} />
+        <ToggleLine className={sidebarOpen ? 'open3' : ''} />
+      </StyledToggle>
+      <ListContainer className={sidebarOpen ? '' : 'closed'}>
+        {navLinks.map((link, idx) => (
+          <div key={`ste-sidebar-link-${idx}`}>
+            <ScrollLink
+              key={`ste-sidebar-link-${idx}`}
               onClick={(): void => {
-                this.props.handleClickSidebar(false);
+                setSidebarOpen(false);
+                setTimeout(() => {
+                  scrollTo(link.id);
+                }, 400);
               }}
             >
-              Home
-            </Link>
+              {link.name}
+            </ScrollLink>
           </div>
-          <div>
-            <Link
-              to="/the-flock"
-              onClick={(): void => {
-                this.props.handleClickSidebar(false);
-              }}
-            >
-              Flock
-            </Link>
-          </div>
-          <div>
-            <Link
-              to="/team"
-              onClick={(): void => {
-                this.props.handleClickSidebar(false);
-              }}
-            >
-              Team
-            </Link>
-          </div>
-          <div>
-            <Link
-              to="/sponsors"
-              onClick={(): void => {
-                this.props.handleClickSidebar(false);
-              }}
-            >
-              Sponsors
-            </Link>
-          </div>
-          <div>
-            <Link
-              to="/recruitment"
-              onClick={(): void => {
-                this.props.handleClickSidebar(false);
-              }}
-            >
-              Join Us
-            </Link>
-          </div>
-        </ListContainer>
-      </SidebarContainer>
-    );
-  }
-}
+        ))}
+      </ListContainer>
+    </SidebarContainer>
+  );
+};
 export default Sidebar;
