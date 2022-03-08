@@ -36,6 +36,7 @@ const Card = styled.div`
 const Title = styled.div`
   font-size: 24px;
   margin-bottom: 15px;
+  text-align: center;
 `;
 
 export const ClosePopupIcon = styled(CloseIcon)`
@@ -94,7 +95,7 @@ const NavPopup: React.FC = () => {
       other sustainable tech teams from Waterloo to showcase how UWaterloo aims
       to grow the sustainable technology industry.
       <Button>
-        <StyledLink to="/sustainable-tech">Check it out!</StyledLink>
+        <StyledLink to="/green-tech">Check it out!</StyledLink>
       </Button>
     </Card>
   );

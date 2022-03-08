@@ -119,9 +119,9 @@ class App extends React.Component<{}, State> {
         MainComponent: <Sponsors />,
       }),
       this.generatePageMap({
-        path: '/sustainable-tech',
+        path: '/green-tech',
         NavBarComponent: <STENavBar />,
-        SideBarComponent: <STESideBar/>,
+        SideBarComponent: <STESideBar />,
         MainComponent: <SustainableTechEvent />,
         FooterComponent: <STEFooter />,
       }),
