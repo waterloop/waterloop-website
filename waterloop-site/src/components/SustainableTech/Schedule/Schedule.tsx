@@ -7,7 +7,7 @@ import Agenda from './Agenda';
 const Container = styled.div`
   background-image: linear-gradient(#ffffff, #e7f1e4);
   overflow-x: hidden;
-  padding: 100px 0 200px 0;
+  padding: 50px 0 200px 0;
   position: relative;
 `;
 
@@ -18,15 +18,16 @@ const BackgroundImg = styled.img`
 `;
 
 const Title = styled.h1`
-  font-size: 48px;
+  font-size: 36px;
+  font-weight: bold;
   text-align: center;
-  color: #514c49;
+  color: #000000;
   width: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
 `;
 
 const Schedule: React.FC = () => (
-  <Container id="sponsors-scroll">
+  <Container id="schedule-scroll">
     <Title>SCHEDULE</Title>
     <Agenda />
     <BackgroundImg src={BackgroundSVG} />

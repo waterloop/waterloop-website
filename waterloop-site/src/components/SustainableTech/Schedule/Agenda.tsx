@@ -1,8 +1,8 @@
-import React, { createRef, useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import Content from '../../../static/copy/SustainableTech/Schedule.json';
-import Nodes from './Nodes';
+// import Nodes from './Nodes';
 
 interface AgendaSection {
   title: string;
@@ -33,7 +33,7 @@ const SectionContainer = styled.div`
 const Title = styled.h3`
   color: #80a773;
   font-weight: bold;
-  font-size: 36px;
+  font-size: 30px;
 `;
 
 const Subtitle = styled.p`
@@ -55,57 +55,26 @@ const SectionImage = styled.img`
   object-position: 70%; // This value was determined through trial-and-error
 `;
 
-const Agenda: React.FC = () => {
-  const [sectionRefs, setSectionRefs] = useState<any[]>([]);
-  const [sectionHeights, setSectionHeights] = useState<number[]>([]);
-
-  // Create refs for each schedule section, so that heights can be extracted
-  const getSectionRefs = () => {
-    setSectionRefs((prevRefs) =>
-      Array(castData.length)
-        .fill(null)
-        .map((_, i) => prevRefs[i] || createRef()),
-    );
-  };
-
-  // Get the heights of each schedule section
-  const getSectionHeights = () => {
-    const heights = sectionRefs.map((ref) => ref.current?.offsetHeight);
-    setSectionHeights(heights);
-  };
-
-  useEffect(() => {
-    getSectionRefs();
-  }, []);
-
-  useEffect(() => {
-    getSectionHeights();
-  });
-
-  return (
-    <Container>
-      <Nodes
+const Agenda: React.FC = () => (
+  <Container>
+    {/* <Nodes
         sectionHeights={sectionHeights}
         sectionBottomMargin={sectionBottomMargin}
-      />
-      <ContentContainer>
-        {castData.map((item, idx) => (
-          <SectionContainer
-            key={`ste-schedule-section-${idx}`}
-            ref={sectionRefs[idx]}
-          >
-            <Subtitle>{item.time}</Subtitle>
-            <Title>{item.title}</Title>
-            <Subtitle>{item.subtitle}</Subtitle>
-            <TextContainer>
-              {item.imageSrc && <SectionImage src={item.imageSrc} />}
-              <p>{item.text}</p>
-            </TextContainer>
-          </SectionContainer>
-        ))}
-      </ContentContainer>
-    </Container>
-  );
-};
+      /> */}
+    <ContentContainer>
+      {castData.map((item, idx) => (
+        <SectionContainer key={`ste-schedule-section-${idx}`}>
+          <Subtitle>{item.time}</Subtitle>
+          <Title>{item.title}</Title>
+          {item.subtitle && <Subtitle>{item.subtitle}</Subtitle>}
+          <TextContainer>
+            {item.imageSrc && <SectionImage src={item.imageSrc} />}
+            <p>{item.text}</p>
+          </TextContainer>
+        </SectionContainer>
+      ))}
+    </ContentContainer>
+  </Container>
+);
 
 export default Agenda;
