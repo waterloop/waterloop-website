@@ -1,6 +1,6 @@
 import React from 'react';
-
 import styled from 'styled-components';
+
 import DetailsCard from './DetailsCard';
 import CalendarIcon from '../../../static/img/sustainable-tech/calendar.svg';
 import ClockIcon from '../../../static/img/sustainable-tech/clock.svg';

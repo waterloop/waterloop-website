@@ -1,6 +1,6 @@
 import React from 'react';
-
 import styled from 'styled-components';
+
 import TeamsCarousel from './TeamsCarousel';
 
 const TeamsContainer = styled.section`

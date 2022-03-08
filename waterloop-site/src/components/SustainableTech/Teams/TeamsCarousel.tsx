@@ -1,7 +1,7 @@
 import React from 'react';
-
-import { useSwipeable } from 'react-swipeable';
 import styled from 'styled-components';
+import { useSwipeable } from 'react-swipeable';
+
 import useTeamImages from './hooks/team-images';
 
 const TeamsContentWrapper = styled.div`
