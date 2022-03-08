@@ -7,31 +7,26 @@ import ClockIcon from '../../../static/img/sustainable-tech/clock.svg';
 import LocationIcon from '../../../static/img/sustainable-tech/location.svg';
 import WaterDesign from '../../../static/img/sustainable-tech/water_section_divider.svg';
 
-const AboutContainer = styled.section`
+const AboutContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   background: linear-gradient(180deg, #a3c7e1 0%, #d9eaf7 35.73%, #ffffff 100%);
+  padding-bottom: 25px;
 `;
 
 const SectionDivider = styled.img`
   width: 100%;
-  margin: 0;
-`;
-
-const HeadingContainer = styled.div`
-  max-width: 1000px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 40px;
+  position: relative;
+  top: 0%;
 `;
 
 const Heading = styled.h1`
-  font-size: 35px;
+  font-size: 36px;
   font-weight: bold;
   text-align: center;
   color: #000000;
+  margin-top: 50px;
 
   @media screen and (max-width: 768px) {
     font-size: 30px;
@@ -47,7 +42,7 @@ const AboutText = styled.p`
   font-size: 20px;
   color: #000000;
   text-align: center;
-  margin: 40px 0;
+  margin-bottom: 40px;
   line-height: 1.5;
 
   @media screen and (max-width: 768px) {
@@ -56,7 +51,7 @@ const AboutText = styled.p`
 `;
 
 const DetailsContainer = styled.div`
-  margin: 30px 30px;
+  margin-bottom: 100px;
   max-width: 1200px;
   display: flex;
   justify-content: center;
@@ -68,9 +63,7 @@ const AboutEvent: React.FC = () => (
   <AboutContainer id="about-scroll">
     <SectionDivider src={WaterDesign} />
 
-    <HeadingContainer>
-      <Heading>ABOUT THE EVENT</Heading>
-    </HeadingContainer>
+    <Heading>ABOUT THE EVENT</Heading>
 
     <AboutContentWrapper>
       <AboutText>

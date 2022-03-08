@@ -10,7 +10,7 @@ const CardContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-bottom: 20px;
+  padding: 40px 0;
   box-shadow: 0px 3px 20px #d7e7f3;
 
   @media screen and (max-width: 425px) {
@@ -50,7 +50,6 @@ const IconCircle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 40px;
   background-color: #203d7a;
 
   @media screen and (max-width: 768px) {
