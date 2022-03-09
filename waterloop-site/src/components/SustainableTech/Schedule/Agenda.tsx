@@ -13,7 +13,7 @@ interface AgendaSection {
 }
 
 const castData: AgendaSection[] = Content;
-const sectionBottomMargin = 50;
+const sectionBottomMargin = 30;
 
 const Container = styled.div`
   display: flex;
