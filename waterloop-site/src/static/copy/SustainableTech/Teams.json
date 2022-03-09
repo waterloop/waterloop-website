@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Waterloop",
+    "desc": "The University of Waterloo’s Hyperloop team, Waterloop, aims at changing the landscape of transportation across the globe through the development of a fully functional, full-sized, scalable hyperloop pod by 2025. Currently, the team is developing a custom linear induction motor for contactless propulsion and constructing Canada’s first Hyperloop tract to promote competition and further innovation through continual testing. Waterloop will compete in the 2022 Euro Hyperloop Week in Delft, as well as the Canadian Hyperloop Consortium competition this summer."
+  },
+  {
+    "name": "Waterloo Formula Electric",
+    "desc": "Waterloo Formula Electric is the University of Waterloo’s Electric Formula SAE team! Each year the team develops an electric vehicle that they bring to the Formula SAE electric and Formula Hybrid race car competition to compete against student teams around the world. Their car is powered by advanced lithium ion batteries and is propelled forward by state of the art brushless motors and motor controllers, technologies that are critical in advancing the sustainability of the electric car industry. The Waterloo Formula Electric team is made up of engineering and business students who are all passionate and highly motivated to build the best electric formula vehicle possible!"
+  },
+  {
+    "name": "UWAFT",
+    "desc": "UWAFT, which stands for University of Waterloo’s Alternative Fuels Team, is a student design team at UW that focuses on promoting the importance of sustainable innovation through the transformation of vehicles into more efficient models. Along with 10 other universities from across the US and Canada, UWAFT actively competes in the 4-year EcoCar Mobility Challenge. Currently, they are working towards advancing the 2019 Chevrolet Blazer RS into a high-performance, fuel-efficient vehicle."
+  },
+  {
+    "name": "Midnight Sun",
+    "desc": "Midnight Sun is the oldest and largest student design team at the University of Waterloo. The team aims to design and build solar-powered vehicles to compete on the international stage. The team is split into 5 sub-teams - Mechanical, Hardware, Firmware, Business, and Strategy. They are just starting their new design cycle with the goal of building a single-occupant vehicle to compete at the 2024 American Solar Challenge."
+  },
+  {
+    "name": "Warrior Home",
+    "desc": "Warrior home is a multidisciplinary student team that designs and builds high-performing, net-zero energy, affordable, and sustainable homes for community housing organizations. With research and development aimed at implementing green technology at affordable values, students are provided with opportunities to participate in the U.S. Department of Energy Solar Decathlon and gain real-world engineering knowledge."
+  },
+  {
+    "name": "Sustainable Development Solutions Network",
+    "desc": "SDSN Canada is part of a global SDSN movement to build a network of universities, colleges, research centers, and knowledge institutions to promote practical solutions for sustainable development. With over 1,300 participating institutions worldwide, SDSN members work together to support action-oriented research to address some of the world’s most pressing problems, including the implementation of the United Nations Sustainable Development Goals (SDGs) and the Paris Climate Agreement. UWaterloo is the host for SDSN Canada."
+  }
+]
