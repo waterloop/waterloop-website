@@ -33,6 +33,14 @@ const GreenTech = styled.img`
     height: 250px;
   }
 
+  @media (max-height: 670px) {
+    height: 200px;
+  }
+
+  @media (max-height: 580px) {
+    height: 170px;
+  }
+
   @media (max-width: 430px) {
     height: 190px;
   }
