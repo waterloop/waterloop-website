@@ -10,6 +10,9 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   margin-right: 50px;
+  @media screen and (max-width: 768px) {
+    margin-right: 20px;
+  }
 `;
 
 const Node = styled.div`
