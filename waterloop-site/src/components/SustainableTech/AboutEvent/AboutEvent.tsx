@@ -67,14 +67,14 @@ const AboutEvent: React.FC = () => (
 
     <AboutContentWrapper>
       <AboutText>
-        Overtime, technological innovation has become a basic component of life.
-        We adore and rely on the many benefits that are offered by computers and
-        automation. But, we often forget to consider the negative impacts that
-        arise when such technology is created/used. The sustainable technology
-        industry exists for this very reason: to help reduce and reverse the
-        damage done to our planet. We want to showcase how UWaterloo is a part
-        of the sustainable technology industry by sharing with you some of its
-        sustainable tech teams.
+        Over time, technological innovation has become a basic component of
+        life. We adore and rely on the many benefits that are offered by
+        computers and automation, but we often forget to consider the negative
+        impacts that arise when such technology is used. The sustainable
+        technology industry exists for this very reason: to help reduce and
+        reverse the damage done to our planet. We want to showcase how the
+        University of Waterloo (UW) contributes to the sustainable technology
+        industry by sharing some of the UW’s sustainable tech teams with you!
       </AboutText>
     </AboutContentWrapper>
 
