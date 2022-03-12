@@ -3,7 +3,6 @@ import React, { useCallback, useState } from 'react';
 import TeamContent from '../../../../static/copy/SustainableTech/Teams.json';
 import WaterloopLogo from '../../../../static/img/logos/Icon_Yellow.png';
 import Waterloop from '../../../../static/img/sustainable-tech/waterloop.jpg';
-// import FormulaLogo from '../../../../static/img/sustainable-tech/waterloo-formula-logo.png';
 import FormulaLogo from '../../../../static/img/sustainable-tech/uw-formula-logo.png';
 import Formula from '../../../../static/img/sustainable-tech/waterloo-formula.jpg';
 import UwaftLogo from '../../../../static/img/sustainable-tech/uwaft-logo.png';
