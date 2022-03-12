@@ -128,10 +128,6 @@ const TeamsPickerImage = styled.img`
   border-radius: 15px;
 `;
 
-const TeamsUWFormulaImage = styled.img`
-  width: 80%;
-`;
-
 const TeamsPickerCard = styled.div`
   width: 177.5px;
   height: 99.76px;
@@ -200,11 +196,7 @@ const TeamsCarousel: React.FC = () => {
         {imgs.map((team, i: number) => {
           return (
             <TeamsPickerCard key={`ste-teams-${i}`} onClick={selectTeam(i)}>
-              {i !== 1 ? (
-                <TeamsPickerImage src={team.logoPath} alt="logo" />
-              ) : (
-                <TeamsUWFormulaImage src={team.logoPath} alt="logo" />
-              )}
+              <TeamsPickerImage src={team.logoPath} alt="logo" />
             </TeamsPickerCard>
           );
         })}
