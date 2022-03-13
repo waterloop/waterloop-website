@@ -75,7 +75,7 @@ const StyledToggle = styled.button`
   width: 52px;
   height: 40px;
   margin-top: 15px;
-  margin-right: 20px;
+  padding-right: 20px;
   margin-bottom: 15px;
   background: transparent;
   border: none;

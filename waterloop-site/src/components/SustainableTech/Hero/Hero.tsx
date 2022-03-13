@@ -11,16 +11,13 @@ const LandingContainer = styled.div`
   background-position: center;
   background-color: #e5f6fa;
   height: 100vh;
+  z-index: -6;
 `;
 
 const MainContent = styled.div`
-  position: absolute;
-  top: 38%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   height: 100%;
 `;
@@ -28,25 +25,43 @@ const MainContent = styled.div`
 const GreenTech = styled.img`
   height: 300px;
   width: auto;
+  padding-top: 8%;
 
   @media (max-width: 1200px) {
     height: 250px;
+    padding-top: 120px;
+  }
+
+  @media (max-height: 800px) {
+    height: 300px;
+    padding-top: 120px;
   }
 
   @media (max-height: 670px) {
     height: 200px;
+    padding-top: 80px;
   }
 
   @media (max-height: 580px) {
     height: 170px;
   }
 
-  @media (max-width: 430px) {
+  @media (max-width: 550px) {
     height: 190px;
   }
 
-  @media (max-width: 300px) {
+  @media (max-width: 450px) {
+    padding-top: 150px;
+    height: 190px;
+  }
+
+  @media (max-width: 330px) {
     height: 150px;
+  }
+
+  @media (max-width: 250px) {
+    padding-top: 120px;
+    height: 130px;
   }
 `;
 
@@ -58,9 +73,9 @@ const ButtonContainer = styled.button`
   font-family: 'IBM Plex Sans';
   font-size: 19px;
   font-weight: 500;
-  padding: 15px 15%;
+  padding: 16px 5%;
   border: #203d7a;
-  margin: 10% 0;
+  margin: 3% 0;
   font-weight: 600;
 
   &:hover {
@@ -69,10 +84,24 @@ const ButtonContainer = styled.button`
     background-color: white;
   }
 
+  @media (max-width: 1300px) {
+    padding: 10px 9%;
+  }
+
+  @media (max-height: 670px) {
+    padding: 10px 40px;
+  }
+
   @media (max-width: 650px) {
     font-size: 17px;
     padding: 10px 15%;
+    margin-top: 50px;
   }
+
+  @media (max-width: 380px) {
+    margin-top: 60px;
+  }
+  
 `;
 
 const Hero: React.FC = () => (
