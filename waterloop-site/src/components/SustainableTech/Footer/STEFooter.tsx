@@ -168,11 +168,6 @@ const SocialsWrapper = styled.div`
     justify-content: space-evenly;
     width: 100vw;
   }
-  @media screen and (max-width: 425px) {
-    align-self: center;
-    justify-content: space-evenly;
-    width: 100vw;
-  }
 `;
 
 const SocialBubble = styled.a`
@@ -185,9 +180,6 @@ const SocialBubble = styled.a`
   border-radius: 50%;
   margin-left: 25px;
   @media screen and (max-width: 1024px) {
-    margin-left: 0px;
-  }
-  @media screen and (max-width: 425px) {
     margin-left: 0px;
   }
 `;
