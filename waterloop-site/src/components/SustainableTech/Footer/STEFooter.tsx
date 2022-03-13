@@ -22,10 +22,16 @@ const FooterBackground = styled.div`
   padding: 2.5rem 6rem 7.5rem;
   transition: all 0.3s;
   border: none !important;
+  @media screen and (max-width: 1024px) {
+    min-height: 15vh;
+  }
   @media screen and (max-width: 425px) {
     padding: 1rem;
-    min-height: 70vh;
+    min-height: 30vh;
     overflow: hidden;
+  }
+  @media screen and (max-width: 375px) {
+    min-height: 35vh;
   }
 `;
 
@@ -33,6 +39,10 @@ const LogoAndContactWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: start;
+  @media screen and (max-width: 425px) {
+    padding-top: 3vh;
+    padding-bottom: 2vh;
+  }
 `;
 
 const Logo = styled.img.attrs({
@@ -42,6 +52,10 @@ const Logo = styled.img.attrs({
   width: 260px;
   height: 150px;
   margin-bottom: -15px; // required to make up for slight gap in the svg
+  @media screen and (max-width: 425px) {
+    width: 132px;
+    height: 71px;
+  }
 `;
 
 const ContactDiv = styled.div`
@@ -97,7 +111,7 @@ const PageTagsAndSocialsWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  @media screen and (max-width: 990px) {
+  @media screen and (max-width: 1024px) {
     flex-direction: column;
   }
 `;
@@ -105,6 +119,17 @@ const PageTagsAndSocialsWrapper = styled.div`
 const PageTagsWrapper = styled.div`
   display: flex;
   flex-direction: row;
+  @media screen and (max-width: 1024px) {
+    align-self: center
+    width: 100vw;
+    justify-content: space-evenly;
+  }
+  @media screen and (max-width: 425px) {
+    align-self: center;
+    width: 100vw;
+    justify-content: space-evenly;
+    padding-bottom: 1vh;
+  }
 `;
 
 const Tag = styled.p`
@@ -112,6 +137,13 @@ const Tag = styled.p`
   color: ${fill};
   margin-right: 50px;
   cursor: pointer;
+  @media screen and (max-width: 1024px) {
+    margin-right: 0px;
+  }
+  @media screen and (max-width: 425px) {
+    font-size: 12px;
+    margin-right: 0px;
+  }
 `;
 
 const Tags = [
@@ -131,6 +163,16 @@ const Socials = [
 
 const SocialsWrapper = styled.div`
   display: flex;
+  @media screen and (max-width: 1024px) {
+    align-self: center;
+    justify-content: space-evenly;
+    width: 100vw;
+  }
+  @media screen and (max-width: 425px) {
+    align-self: center;
+    justify-content: space-evenly;
+    width: 100vw;
+  }
 `;
 
 const SocialBubble = styled.a`
@@ -142,6 +184,12 @@ const SocialBubble = styled.a`
   background-color: #fff;
   border-radius: 50%;
   margin-left: 25px;
+  @media screen and (max-width: 1024px) {
+    margin-left: 0px;
+  }
+  @media screen and (max-width: 425px) {
+    margin-left: 0px;
+  }
 `;
 
 interface SocialProps {
