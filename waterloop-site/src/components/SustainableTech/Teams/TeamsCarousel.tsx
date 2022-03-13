@@ -124,13 +124,13 @@ const TeamsPickerContainer = styled.div`
 `;
 
 const TeamsPickerImage = styled.img`
-  height: 90%;
+  height: 85%;
   border-radius: 15px;
 `;
 
 const TeamsPickerCard = styled.div`
-  width: 177.5px;
-  height: 99.76px;
+  width: 150px;
+  height: 95px;
   background-color: #ffffff;
   border-radius: 15px;
   box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.15);
