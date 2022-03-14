@@ -124,17 +124,13 @@ const TeamsPickerContainer = styled.div`
 `;
 
 const TeamsPickerImage = styled.img`
-  height: 90%;
+  height: 85%;
   border-radius: 15px;
 `;
 
-const TeamsUWFormulaImage = styled.img`
-  width: 80%;
-`;
-
 const TeamsPickerCard = styled.div`
-  width: 177.5px;
-  height: 99.76px;
+  width: 150px;
+  height: 95px;
   background-color: #ffffff;
   border-radius: 15px;
   box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.15);
@@ -200,11 +196,7 @@ const TeamsCarousel: React.FC = () => {
         {imgs.map((team, i: number) => {
           return (
             <TeamsPickerCard key={`ste-teams-${i}`} onClick={selectTeam(i)}>
-              {i !== 1 ? (
-                <TeamsPickerImage src={team.logoPath} alt="logo" />
-              ) : (
-                <TeamsUWFormulaImage src={team.logoPath} alt="logo" />
-              )}
+              <TeamsPickerImage src={team.logoPath} alt="logo" />
             </TeamsPickerCard>
           );
         })}

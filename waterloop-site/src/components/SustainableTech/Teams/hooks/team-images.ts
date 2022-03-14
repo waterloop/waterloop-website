@@ -1,8 +1,9 @@
 import React, { useCallback, useState } from 'react';
 
+import TeamContent from '../../../../static/copy/SustainableTech/Teams.json';
 import WaterloopLogo from '../../../../static/img/logos/Icon_Yellow.png';
 import Waterloop from '../../../../static/img/sustainable-tech/waterloop.jpg';
-import FormulaLogo from '../../../../static/img/sustainable-tech/waterloo-formula-logo.png';
+import FormulaLogo from '../../../../static/img/sustainable-tech/uw-formula-logo.png';
 import Formula from '../../../../static/img/sustainable-tech/waterloo-formula.jpg';
 import UwaftLogo from '../../../../static/img/sustainable-tech/uwaft-logo.png';
 import Uwaft from '../../../../static/img/sustainable-tech/uwaft.jpg';
@@ -12,7 +13,8 @@ import MidnightSun from '../../../../static/img/sustainable-tech/midnight-sun.jp
 import MidnightSunLogo from '../../../../static/img/sustainable-tech/midnight-sun-logo.png';
 import SdsnLogo from '../../../../static/img/sustainable-tech/sdsn-logo.jpg';
 import Sdsn from '../../../../static/img/sustainable-tech/sdsn.png';
-import TeamContent from '../../../../static/copy/SustainableTech/Teams.json';
+import EnergyNetLogo from '../../../../static/img/sustainable-tech/uw-energy-net-logo.png';
+import EnergyNet from '../../../../static/img/sustainable-tech/uw-energy-net.jpg';
 
 interface Image {
   logoPath: string;
@@ -63,6 +65,10 @@ const imgs: Image[] = [
   {
     logoPath: SdsnLogo,
     imgPath: Sdsn,
+  },
+  {
+    logoPath: EnergyNetLogo,
+    imgPath: EnergyNet,
   },
 ];
 
