@@ -16,9 +16,6 @@ const Heading = styled.h1`
   font-weight: bold;
   text-align: center;
   color: #000000;
-  @media screen and (max-width: 768px) {
-    font-size: 30px;
-  }
 `;
 
 const Teams: React.FC = () => {

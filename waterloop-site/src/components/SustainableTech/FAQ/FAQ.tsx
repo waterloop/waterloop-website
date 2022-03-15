@@ -50,7 +50,7 @@ const Title = styled.h1`
   text-align: center;
   color: #000000;
   width: 100%;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
 `;
 
 const FAQ: React.FC = () => (
