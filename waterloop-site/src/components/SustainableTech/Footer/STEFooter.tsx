@@ -139,6 +139,7 @@ const Tag = styled.p`
   cursor: pointer;
   @media screen and (max-width: 1024px) {
     margin-right: 0px;
+    justify-content: center;
   }
   @media screen and (max-width: 425px) {
     font-size: 12px;
@@ -165,8 +166,12 @@ const SocialsWrapper = styled.div`
   display: flex;
   @media screen and (max-width: 1024px) {
     align-self: center;
-    justify-content: space-evenly;
-    width: 100vw;
+    justify-content: space-between;
+    width: 35vw;
+  }
+  @media screen and (max-width: 425px) {
+    transform: scale(0.8);
+    width: 70vw;
   }
 `;
 
