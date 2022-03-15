@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import BlackLogoImg from '../../../static/img/sustainable-tech/Icon_Black.svg';
 import scrollTo from '../utils/LinkScroll';
@@ -15,10 +16,10 @@ const SidebarContainer = styled.div`
   background-color: #e5f6fa;
   position: fixed;
   top: 0;
+  z-index: 999;
 `;
 
 const ListContainer = styled.div`
-  z-index: 2000;
   padding: 2%;
   position: absolute;
   display: flex;
@@ -132,7 +133,9 @@ const Sidebar: React.FC = () => {
         setSidebarOpen(!sidebarOpen);
       }}
     >
-      <IconBlack src={BlackLogoImg}></IconBlack>
+      <Link to="/">
+        <IconBlack src={BlackLogoImg} />
+      </Link>
       <StyledToggle
         className={sidebarOpen ? 'open' : ''}
         onClick={(): void => {
@@ -147,7 +150,6 @@ const Sidebar: React.FC = () => {
         {navLinks.map((link, idx) => (
           <div key={`ste-sidebar-link-${idx}`}>
             <ScrollLink
-              key={`ste-sidebar-link-${idx}`}
               onClick={(): void => {
                 setSidebarOpen(false);
                 setTimeout(() => {
