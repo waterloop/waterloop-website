@@ -9,7 +9,7 @@ const NavbarContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
   height: 64px;
   background-color: #e5f6fa;
@@ -20,11 +20,13 @@ const NavbarContainer = styled.div`
 `;
 
 const IconBlack = styled.img`
-  padding-top: 4px;
   width: 55px;
   height: 35px;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
+  position: absolute;
+  left: 40px;
+  top: 13px;
 
   @media screen and (max-width: 900px) {
     width: 50px;
@@ -32,13 +34,11 @@ const IconBlack = styled.img`
   }
 
   @media screen and (max-width: 600px) {
-    width: 43px;
-    height: 25px;
+    width: 40px;
+    height: 27px;
+    left: 20px;
+    top: 15px;
   }
-`;
-
-const LogoContainer = styled.div`
-  padding-left: 4vw;
 `;
 
 const ListContainer = styled.div`
@@ -98,8 +98,10 @@ const ButtonContainer = styled.button`
   font-size: 17px;
   font-weight: 500;
   padding: 10px 3%;
-  margin-right: 4vw;
   border: #203d7a;
+  position: absolute;
+  right: 40px;
+  top: 10px;
 
   &:hover {
     background-color: white;
@@ -112,17 +114,21 @@ const ButtonContainer = styled.button`
   }
 
   @media screen and (max-width: 720px) {
-    font-size: 10px;
+    font-size: 13px;
+  }
+
+  @media screen and (max-width: 600px) {
+    right: 11px;
+    top: 16px;
+    font-size: 8px;
   }
 `;
 
 const NavBar: React.FC = () => (
   <NavbarContainer>
-    <LogoContainer>
       <Link to="/">
         <IconBlack src={IconBlackImg} />
       </Link>
-    </LogoContainer>
     <ListContainer>
       <ScrollLink onClick={(): void => scrollTo('home-scroll')}>
         HOME
