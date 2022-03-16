@@ -24,6 +24,7 @@ const FooterBackground = styled.div`
   border: none !important;
   @media screen and (max-width: 1024px) {
     min-height: 15vh;
+    align-items: center;
   }
   @media screen and (max-width: 425px) {
     padding: 1rem;
@@ -40,8 +41,7 @@ const LogoAndContactWrapper = styled.div`
   flex-direction: row;
   justify-content: start;
   @media screen and (max-width: 425px) {
-    padding-top: 3vh;
-    padding-bottom: 2vh;
+    margin: 2vh 0;
   }
 `;
 
@@ -51,10 +51,12 @@ const Logo = styled.img.attrs({
 })`
   width: 260px;
   height: 150px;
+  margin-right: 20px;
   margin-bottom: -15px; // required to make up for slight gap in the svg
   @media screen and (max-width: 425px) {
     width: 132px;
     height: 71px;
+    margin-top: 1vh; //this is to manually center the logo vertically
   }
 `;
 
@@ -125,9 +127,6 @@ const PageTagsWrapper = styled.div`
     justify-content: space-evenly;
   }
   @media screen and (max-width: 425px) {
-    align-self: center;
-    width: 100vw;
-    justify-content: space-evenly;
     padding-bottom: 1vh;
   }
 `;
@@ -143,7 +142,6 @@ const Tag = styled.p`
   }
   @media screen and (max-width: 425px) {
     font-size: 12px;
-    margin-right: 0px;
   }
 `;
 
