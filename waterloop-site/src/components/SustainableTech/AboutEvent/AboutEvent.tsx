@@ -80,7 +80,7 @@ const AboutEvent: React.FC = () => (
 
     <DetailsContainer>
       <DetailsCard icon={CalendarIcon} title="Date" detail="March 25th, 2022" />
-      <DetailsCard icon={ClockIcon} title="Time" detail="6pm to 8pm EST" />
+      <DetailsCard icon={ClockIcon} title="Time" detail="6pm to 8:15pm EST" />
       <DetailsCard icon={LocationIcon} title="Place" detail="Virtually" />
     </DetailsContainer>
   </AboutContainer>
