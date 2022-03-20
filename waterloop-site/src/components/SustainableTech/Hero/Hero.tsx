@@ -21,7 +21,7 @@ const LandingContainer = styled.div`
     margin: 8vh 0 -8vh 0;
   }
   @media screen and (max-width: 375px) {
-    margin: 10vh 0 -20vh 0;
+    margin: 9.4vh 0 -20vh 0;
     height: 880px;
   }
 `;
