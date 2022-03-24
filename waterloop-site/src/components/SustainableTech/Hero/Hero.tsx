@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import LandingImage from '../../../static/img/sustainable-tech/HeroLandingImage.svg';
+import LandingImage from '../../../static/img/sustainable-tech/LandingImage.svg';
 import GreenTechLogo from '../../../static/img/sustainable-tech/GreenTechLogo.svg';
 
 const LandingContainer = styled.div`
