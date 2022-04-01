@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { NavPopup } from 'components/NavPopup';
 import Hero from 'components/Hero/Landing';
 import { Sponsors } from 'components/SponsorsLanding';
 import { ImgJSON } from 'components/SponsorsLanding';
@@ -36,7 +35,6 @@ const imgJSON: ImgJSON[] = [
 
 const Home: React.FC = () => (
   <div>
-    <NavPopup />
     <Hero description="A faster look on the future." anchor="#home"></Hero>
 
     <div className="pageContainer">
