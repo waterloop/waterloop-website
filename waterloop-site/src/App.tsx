@@ -10,8 +10,6 @@ import 'typeface-ibm-plex-sans';
 import { Footer } from './sections/Footer';
 import JobPostingPage from './components/RecruitmentForm/JobPostingPage';
 import { NavBar, SideBar } from './components';
-import { STEFooter } from './components/SustainableTech/Footer';
-import { STENavBar, STESideBar } from './components/SustainableTech/NavBar';
 
 import Contact from './pages/Contact';
 import ErrorPage from 'pages/404';
@@ -19,7 +17,6 @@ import Flock from './pages/Flock';
 import Home from './pages/Home';
 import RecruitmentRouter from 'pages/Recruitment/RecruitmentRouter';
 import Sponsors from './pages/Sponsors';
-import SustainableTechEvent from 'pages/SustainableTechEvent';
 import Team from './pages/Team';
 
 interface State {
@@ -117,13 +114,6 @@ class App extends React.Component<{}, State> {
       this.generatePageMap({
         path: '/sponsors',
         MainComponent: <Sponsors />,
-      }),
-      this.generatePageMap({
-        path: '/green-tech',
-        NavBarComponent: <STENavBar />,
-        SideBarComponent: <STESideBar />,
-        MainComponent: <SustainableTechEvent />,
-        FooterComponent: <STEFooter />,
       }),
       this.generatePageMap({
         path: '/contact',
