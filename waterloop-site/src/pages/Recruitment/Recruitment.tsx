@@ -33,15 +33,15 @@ const SignUpButton = styled(Button)`
 const Recruitment: React.FC = () =>{
   const { postings } = usePostings();
   const date: Date = new Date();
-  const currentMonth: number = date.getMonth() + 1;
+  const currentMonth: number = date.getMonth() + 1; // NOTE: Recruitment is not consistent, this logic will not work, it would be better to have a controllable toggle on the CMS to open and close recruitment
   let currentCycle: string = "";
   let nextCycle: string = "";
   const currentYear: number = date.getFullYear();
   let nextYear: number = -1;
-  if ([1,2,3,4].includes(currentMonth)) {
+  if ([1,2,3].includes(currentMonth)) {
     currentCycle = "Winter";
     nextCycle = "May";
-  } else if ([5,6,7,8].includes(currentMonth)) {
+  } else if ([4,5,6,7,8].includes(currentMonth)) {
     currentCycle = "Spring";
     nextCycle = "September";
   } else {
@@ -75,8 +75,8 @@ const Recruitment: React.FC = () =>{
           </>
         ) : (
           <FlexContainer>
-            <h3>Our new member recruitment for {currentCycle} {currentYear} has closed (Read caution below)</h3>
-            <p>CAUTION: Some users have had difficulties viewing recruitment postings during our recruitment cycle. Please refresh the page if you get this message before Jan. 8 2022. If you're still unable to view the postings, please contact Waterloop.</p>
+            <h3>Our new member recruitment for {currentCycle} {currentYear} has closed</h3>
+            {/* <p>CAUTION: Some users have had difficulties viewing recruitment postings during our recruitment cycles. Please refresh the page if you get this message before Apr. 30 2022. If you're still unable to view the postings, please contact Waterloop.</p> */}
             <p>
               We will be recruiting again at the start of {nextCycle} {nextYear}. Sign up below to be notified when postings go live!
             </p>

@@ -76,17 +76,6 @@ const JobPosting: React.FC<JobPostingProps> = (props) => (
         </ul>
       </>
     )}
-    <div className="break" />
-    {props.additional.length > 0 && (
-      <>
-        <h3>Additional info:</h3>
-        <ul>
-          {props.additional.map((info: string) => (
-            <li>{info}</li>
-          ))}
-        </ul>
-      </>
-    )}
     {props.skillsToBeLearned.length > 0 && (
       <>
         <h3>Skills to be Learned:</h3>
@@ -103,6 +92,16 @@ const JobPosting: React.FC<JobPostingProps> = (props) => (
         <ul>
           {props.recommendedSkills.map((recommendedSkill: string) => (
             <li>{recommendedSkill}</li>
+          ))}
+        </ul>
+      </>
+    )}
+    {props.additional.length > 0 && (
+      <>
+        <h3>Additional info:</h3>
+        <ul>
+          {props.additional.map((info: string) => (
+            <li>{info}</li>
           ))}
         </ul>
       </>
