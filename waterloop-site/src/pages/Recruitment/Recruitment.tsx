@@ -72,6 +72,14 @@ const Recruitment: React.FC = () =>{
           <>
             <h2 className={"center-text"}>Current Postings</h2>
             <JobPostings />
+            <br />
+            <hr />
+            <p>
+              <b>Note:</b> With the Canadian Hyperloop Conference coming up on
+              May 27-29th, we have fewer positions available for the Spring 2022
+              term. We will have more positions available in the Fall 2022 term,
+              so we look forward to your applications then. Thanks!
+            </p>
           </>
         ) : (
           <FlexContainer>
