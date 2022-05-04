@@ -60,7 +60,10 @@ export class TextWithImage extends React.Component<Props> {
     });
   };
 
-  renderButton = (link: string | undefined, linkText: string | undefined): React.ReactElement => {
+  renderButton = (
+    link: string | undefined,
+    linkText: string | undefined,
+  ): React.ReactElement => {
     if (link !== undefined && linkText !== undefined) {
       return (
         <Button
@@ -71,10 +74,10 @@ export class TextWithImage extends React.Component<Props> {
         />
       );
     }
-    return <></>
+    return <></>;
   };
 
-  render(): React.ReactElement {
+  render() {
     return <div>{this.renderChildren(this.props.data)}</div>;
   }
 }

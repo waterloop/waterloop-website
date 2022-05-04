@@ -150,13 +150,15 @@ class App extends React.Component<{}, State> {
             {pageMappings.map((item) => {
               return (
                 <Route key={item.path} exact={item.exact} path={item.path}>
-                  {this.state.width > 425 ? (
-                    item.NavBarComponent
-                  ) : (
-                    <div ref={this.sidebar}>{item.SideBarComponent}</div>
-                  )}
-                  {item.MainComponent}
-                  {item.FooterComponent}
+                  <>
+                    {this.state.width > 425 ? (
+                      item.NavBarComponent
+                    ) : (
+                      <div ref={this.sidebar}>{item.SideBarComponent}</div>
+                    )}
+                    {item.MainComponent}
+                    {item.FooterComponent}
+                  </>
                 </Route>
               );
             })}

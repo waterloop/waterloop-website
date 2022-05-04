@@ -1,11 +1,7 @@
 {
   "root": true,
   "parser": "@typescript-eslint/parser",
-  "plugins": [
-    "@typescript-eslint",
-    "jsx-a11y",
-    "prettier"
-  ],
+  "plugins": ["@typescript-eslint", "jsx-a11y", "prettier"],
   "extends": [
     "react-app",
     "./node_modules/eslint-config-airbnb-base/rules/best-practices.js",
@@ -20,17 +16,17 @@
     "prettier/react"
   ],
   "rules": {
-    "no-console": 1, // Warning
-    "no-duplicate-case": 2, // Error
-    "no-extra-semi": 0, // NO error
-    "@typescript-eslint/no-extra-semi": 0,
-    "eqeqeq": 2, // Error
-    "default-case": 2, // Error
+    "no-console": "warn",
+    "no-duplicate-case": "error", // Error
+    "no-extra-semi": "off", // NO error
+    "@typescript-eslint/no-extra-semi": "off",
+    "eqeqeq": "error", // Error
+    "default-case": "error", // Error
     "comma-dangle": ["error", "always-multiline"],
-    "no-shadow": 0,
-    "no-plusplus": 2,
-    "no-nested-ternary": 0,
-    "no-tabs": 2,
-    "no-unneeded-ternary": 2
+    "no-shadow": "off",
+    "no-plusplus": "error",
+    "no-nested-ternary": "off",
+    "no-tabs": "error",
+    "no-unneeded-ternary": "error"
   }
 }

@@ -1,21 +1,21 @@
-import React from "react";
-import styled from "styled-components";
-import { Button } from "components";
+import React from 'react';
+import styled from 'styled-components';
+import { Button } from 'components';
 // Types and interfaces
 import {
   ProfileType,
   SubteamProps,
   TeamsDisplayerProps,
   TeamsDisplayerState,
-} from "./interfaces";
+} from './interfaces';
 
 // Components
-import { ProfileSection, TeamFilter } from "./components";
+import { ProfileSection, TeamFilter } from './components';
 
 // Utility
-import { sortProfiles, applyTeamFilters } from "./utils";
-import { generateMembersQuery } from "./api";
-import { Preloader } from "components/Preloader";
+import { sortProfiles, applyTeamFilters } from './utils';
+import { generateMembersQuery } from './api';
+import { Preloader } from 'components/Preloader';
 
 // Styled components for ProfileSection
 const Page = styled.div`
@@ -32,25 +32,25 @@ const sortSubteams = (subteams: SubteamProps[]): SubteamProps[] => {
   const newTeams = [] as SubteamProps[];
   subteams.forEach(
     (team: { title: string; members: ProfileType[] }, i: number) => {
-      if (team.title === "Exec") {
+      if (team.title === 'Exec') {
         newTeams[0] = team;
-      } else if (team.title === "Mechanical") {
+      } else if (team.title === 'Mechanical') {
         newTeams[1] = team;
-      } else if (team.title === "Electrical") {
+      } else if (team.title === 'Electrical') {
         newTeams[2] = team;
-      } else if (team.title === "Software") {
+      } else if (team.title === 'Software') {
         newTeams[3] = team;
-      } else if (team.title === "Web") {
+      } else if (team.title === 'Web') {
         newTeams[4] = team;
-      } else if (team.title === "Infrastructure") {
+      } else if (team.title === 'Infrastructure') {
         newTeams[5] = team;
-      } else if (team.title === "Admin") {
+      } else if (team.title === 'Admin') {
         newTeams[6] = team;
       }
-    }
+    },
   );
   return newTeams;
-}
+};
 
 export default class TeamsDisplayer extends React.Component<
   TeamsDisplayerProps,
@@ -62,13 +62,13 @@ export default class TeamsDisplayer extends React.Component<
       loading: true,
       teamFilters: Array(7).fill(false),
       teamFilterLabels: [
-        "All Teams",
-        "Exec",
-        "Software",
-        "Mechanical",
-        "Electrical",
-        "Web",
-        "Business",
+        'All Teams',
+        'Exec',
+        'Software',
+        'Mechanical',
+        'Electrical',
+        'Web',
+        'Business',
       ],
       memberData: new Map(),
       subteamIdMap: new Map(),
@@ -77,7 +77,7 @@ export default class TeamsDisplayer extends React.Component<
 
   // Initialization
   componentDidMount(): void {
-    this.fetchProfiles()
+    this.fetchProfiles();
     this.updateFilters(this.props.initFilterSetting);
   }
 
@@ -89,9 +89,10 @@ export default class TeamsDisplayer extends React.Component<
       .then((res) => {
         // console.log(res);
 
-        const groupedProfiles = sortProfiles(
-          res.body
-        ) as Map<string, ProfileType[]>;
+        const groupedProfiles = sortProfiles(res.body) as Map<
+          string,
+          ProfileType[]
+        >;
         this.setState({ memberData: groupedProfiles });
         this.setState({ loading: false });
       })
@@ -109,7 +110,7 @@ export default class TeamsDisplayer extends React.Component<
     if (id === 0) {
       if (newFilterStates[id]) {
         newFilterStates = newFilterStates.map(
-          (value: boolean, i: number) => i === 0
+          (value: boolean, i: number) => i === 0,
         );
       }
       // All Teams can only be deactivated by activating another filter
@@ -133,7 +134,7 @@ export default class TeamsDisplayer extends React.Component<
     this.setState({ teamFilters: newFilterStates });
   }
 
-  render(): React.ReactElement {
+  render() {
     const teams = this.state.memberData;
     let subteams = [] as SubteamProps[];
 
@@ -159,26 +160,23 @@ export default class TeamsDisplayer extends React.Component<
 
         {subteams.length > 0 &&
           subteams.map(
-            (
-              team: { title: string; members: ProfileType[] },
-              i: number
-            ) => {
+            (team: { title: string; members: ProfileType[] }, i: number) => {
               return (
                 <ProfileSection
                   key={i}
                   title={team.title}
                   profiles={team.members}
-                  profileType={"subteam"}
+                  profileType={'subteam'}
                 />
               );
-            }
+            },
           )}
         <div className="justify-center">
           <Button
             backgroundColor="yellow"
             textColor="black"
-            text={"JOIN THE TEAM"}
-            onClick={(): Window | null => window.open("/recruitment", "_self")}
+            text={'JOIN THE TEAM'}
+            onClick={(): Window | null => window.open('/recruitment', '_self')}
           />
         </div>
       </Page>

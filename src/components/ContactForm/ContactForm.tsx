@@ -1,10 +1,9 @@
 import React from 'react';
-import styled from  'styled-components';
+import styled from 'styled-components';
 import { Button } from 'components/Button';
 import '../../theme/styles.scss';
-import { ReactComponent as CheckSVG} from '../../static/img/assets/mdi_check_circle.svg';
+import { ReactComponent as CheckSVG } from '../../static/img/assets/mdi_check_circle.svg';
 import hasKey from '../../utils/hasKey';
-
 
 const Label = styled.label`
   font-family: IBM Plex Sans;
@@ -15,12 +14,10 @@ const Label = styled.label`
   letter-spacing: 0em;
   text-align: left;
   color: #010101;
-
-
 `;
 
 const Input = styled.input`
-  background: #F4F4F4;
+  background: #f4f4f4;
   width: calc(100% - 15px);
   height: 30px;
   border: none;
@@ -35,7 +32,6 @@ const Header = styled.h1`
   letter-spacing: 0em;
   text-align: left;
   color: #010101;
-
 `;
 
 interface ContactFormProps {
@@ -101,12 +97,14 @@ class ContactUsForm extends React.Component<
   private regex = new RegExp(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
 
   private validationRules = {
-    name: (nameValue: string): boolean => (nameValue.length > 0),
+    name: (nameValue: string): boolean => nameValue.length > 0,
     email: (emailValue: string): boolean => this.regex.test(emailValue),
     message: (messageValue: string): boolean => messageValue.length > 0,
   };
 
-  public handleChange(event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void {
+  public handleChange(
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ): void {
     event.preventDefault();
     this.setState({
       formKey: {
@@ -145,14 +143,17 @@ class ContactUsForm extends React.Component<
     if (this.state.serverResponse && this.state.serverResponse.error) {
       return <p style={this.errorStyle}>{this.state.serverResponse.msg}</p>;
     }
-    return<></>;
+    return <></>;
   }
 
   private validate(): boolean {
     const stateValue = this.state.formKey;
     let valid = true;
     Object.keys(stateValue).forEach((key) => {
-      if (hasKey(this.validationRules, key) && !this.validationRules[key](stateValue[key])) {
+      if (
+        hasKey(this.validationRules, key) &&
+        !this.validationRules[key](stateValue[key])
+      ) {
         this.setState({ formResponseError: true });
         valid = false;
       }
@@ -169,8 +170,8 @@ class ContactUsForm extends React.Component<
       return;
     }
     fetch(
-      process.env.NODE_ENV === 'development' ?
-        "https://formspree.io/xzbjqraz" // Dev form
+      process.env.NODE_ENV === 'development'
+        ? 'https://formspree.io/xzbjqraz' // Dev form
         : 'https://formspree.io/xpzyedjr', // Prod form
       {
         method: 'POST',
@@ -178,12 +179,12 @@ class ContactUsForm extends React.Component<
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(this.state.formKey),
-      }
+      },
     )
-      .then(response => {
+      .then((response) => {
         return response.json();
       })
-      .then(response => {
+      .then((response) => {
         if (response.error) {
           this.handleServerResponse(true, response.error);
         } else {
@@ -200,7 +201,7 @@ class ContactUsForm extends React.Component<
       });
   }
 
-  render(): React.ReactElement {
+  render() {
     if (this.state.submitted) {
       return (
         <div className="success-modal-container">

@@ -1,13 +1,12 @@
-import React from "react";
-import DownArrowImg from "../../static/img/background/downArrow.svg";
-import "../../theme/styles.scss";
-import { Link } from "react-scroll";
-import { ReactElement } from "react";
+import React from 'react';
+import DownArrowImg from '../../static/img/background/downArrow.svg';
+import '../../theme/styles.scss';
+import { Link } from 'react-scroll';
 
 type MyProps = { description: string; title: string; anchor: string };
 
 class General extends React.Component<MyProps> {
-  render(): ReactElement {
+  render() {
     return (
       <div className="generalContainer">
         <div className="generalTitleContainer">

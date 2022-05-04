@@ -1,13 +1,13 @@
-import React from "react";
-import BuildingsImg from "static/img/background/buildings.svg";
-import WaterloopImg from "static/img/background/waterloop.svg";
-import "../../theme/styles.scss";
-import { Link } from "react-scroll";
+import React from 'react';
+import BuildingsImg from 'static/img/background/buildings.svg';
+import WaterloopImg from 'static/img/background/waterloop.svg';
+import '../../theme/styles.scss';
+import { Link } from 'react-scroll';
 
 type MyProps = { description: string; anchor: string };
 
 class Landing extends React.Component<MyProps> {
-  render(): React.ReactElement {
+  render() {
     return (
       <div className="landingContainer">
         <div className="landingContent">
@@ -23,10 +23,10 @@ class Landing extends React.Component<MyProps> {
           </div>
           {/* COMMENT BELOW ONCE POSTINGS ARE UP */}
           <button
-            onClick={(): Window | null => window.open("/recruitment", "_self")}
-            className={"ButtonDiv landing-btn"}
+            onClick={(): Window | null => window.open('/recruitment', '_self')}
+            className={'ButtonDiv landing-btn'}
           >
-            <div className={"ButtonText"}>JOIN US</div>
+            <div className={'ButtonText'}>JOIN US</div>
           </button>
           <Link
             to={this.props.anchor}

@@ -1,9 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import BlackLogoImg from "../../static/img/logos/Icon_Yellow.png";
-import Waterlooplogo from "../../static/img/logos/Waterloop.svg";
-import { NavLink } from "react-router-dom";
-import { ReactElement } from "react";
+import React from 'react';
+import styled from 'styled-components';
+import BlackLogoImg from '../../static/img/logos/Icon_Yellow.png';
+import Waterlooplogo from '../../static/img/logos/Waterloop.svg';
+import { NavLink } from 'react-router-dom';
 
 const SidebarContainer = styled.div`
   display: flex;
@@ -40,7 +39,7 @@ const ListContainer = styled.div`
 
 const Link = styled(NavLink)`
   color: #010101;
-  font-family: "IBM Plex Sans";
+  font-family: 'IBM Plex Sans';
   margin: 1rem;
   font-size: 28px;
   font-weight: 600;
@@ -124,76 +123,78 @@ type MyProps = {
 };
 
 class Sidebar extends React.Component<MyProps> {
-  render(): ReactElement {
+  render() {
     return (
-        <SidebarContainer  onTouchMove={(): void => {
+      <SidebarContainer
+        onTouchMove={(): void => {
           this.props.handleClickSidebar(!this.props.sidebarOpen);
-        }}>
-          <IconYellow src={BlackLogoImg}></IconYellow>
-          <StyledToggle
-            className={this.props.sidebarOpen ? "open" : ""}
-            onClick={(): void => {
-              this.props.handleClickSidebar(!this.props.sidebarOpen);
-            }}
-          >
-            <ToggleLine className={this.props.sidebarOpen ? "open1" : ""} />
-            <ToggleLine className={this.props.sidebarOpen ? "open2" : ""} />
-            <ToggleLine className={this.props.sidebarOpen ? "open3" : ""} />
-          </StyledToggle>
-          <ListContainer className={this.props.sidebarOpen ? "" : "closed"}>
-            <div>
-              <IconBlack src={Waterlooplogo}></IconBlack>
-              <Link
-                to="/"
-                onClick={(): void => {
-                  this.props.handleClickSidebar(false);
-                }}
-              >
-                Home
-              </Link>
-            </div>
-            <div>
-              <Link
-                to="/the-flock"
-                onClick={(): void => {
-                  this.props.handleClickSidebar(false);
-                }}
-              >
-                Flock
-              </Link>
-            </div>
-            <div>
-              <Link
-                to="/team"
-                onClick={(): void => {
-                  this.props.handleClickSidebar(false);
-                }}
-              >
-                Team
-              </Link>
-            </div>
-            <div>
-              <Link
-                to="/sponsors"
-                onClick={(): void => {
-                  this.props.handleClickSidebar(false);
-                }}
-              >
-                Sponsors
-              </Link>
-            </div>
-            <div>
-              <Link
-                to="/recruitment"
-                onClick={(): void => {
-                  this.props.handleClickSidebar(false);
-                }}
-              >
-                Join Us
-              </Link>
-            </div>
-          </ListContainer>
-        </SidebarContainer>
+        }}
+      >
+        <IconYellow src={BlackLogoImg}></IconYellow>
+        <StyledToggle
+          className={this.props.sidebarOpen ? 'open' : ''}
+          onClick={(): void => {
+            this.props.handleClickSidebar(!this.props.sidebarOpen);
+          }}
+        >
+          <ToggleLine className={this.props.sidebarOpen ? 'open1' : ''} />
+          <ToggleLine className={this.props.sidebarOpen ? 'open2' : ''} />
+          <ToggleLine className={this.props.sidebarOpen ? 'open3' : ''} />
+        </StyledToggle>
+        <ListContainer className={this.props.sidebarOpen ? '' : 'closed'}>
+          <div>
+            <IconBlack src={Waterlooplogo}></IconBlack>
+            <Link
+              to="/"
+              onClick={(): void => {
+                this.props.handleClickSidebar(false);
+              }}
+            >
+              Home
+            </Link>
+          </div>
+          <div>
+            <Link
+              to="/the-flock"
+              onClick={(): void => {
+                this.props.handleClickSidebar(false);
+              }}
+            >
+              Flock
+            </Link>
+          </div>
+          <div>
+            <Link
+              to="/team"
+              onClick={(): void => {
+                this.props.handleClickSidebar(false);
+              }}
+            >
+              Team
+            </Link>
+          </div>
+          <div>
+            <Link
+              to="/sponsors"
+              onClick={(): void => {
+                this.props.handleClickSidebar(false);
+              }}
+            >
+              Sponsors
+            </Link>
+          </div>
+          <div>
+            <Link
+              to="/recruitment"
+              onClick={(): void => {
+                this.props.handleClickSidebar(false);
+              }}
+            >
+              Join Us
+            </Link>
+          </div>
+        </ListContainer>
+      </SidebarContainer>
     );
   }
 }
