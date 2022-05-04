@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import LandingImage from '../../../static/img/sustainable-tech/LandingImage.svg';
 import GreenTechLogo from '../../../static/img/sustainable-tech/GreenTechLogo.svg';
+import MobileLandingImage from '../../../static/img/sustainable-tech/MobileLandingImage.svg';
 
 const LandingContainer = styled.div`
   background-image: url(${LandingImage});
@@ -12,6 +13,17 @@ const LandingContainer = styled.div`
   background-color: #e5f6fa;
   height: 100vh;
   z-index: -6;
+  @media screen and (max-width: 414px) {
+    background-image: url(${MobileLandingImage});
+    margin: 7vh 0 -6vh 0;
+  }
+  @media screen and (max-width: 390px) {
+    margin: 8vh 0 -8vh 0;
+  }
+  @media screen and (max-width: 375px) {
+    margin: 9.4vh 0 -20vh 0;
+    height: 880px;
+  }
 `;
 
 const MainContent = styled.div`
@@ -51,7 +63,7 @@ const GreenTech = styled.img`
   }
 
   @media (max-width: 450px) {
-    padding-top: 150px;
+    padding-top: 130px;
     height: 190px;
   }
 

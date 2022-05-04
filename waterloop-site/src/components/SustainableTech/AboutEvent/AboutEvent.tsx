@@ -19,6 +19,9 @@ const SectionDivider = styled.img`
   width: 100%;
   position: relative;
   top: 0%;
+  @media screen and (max-width: 424px){
+    display: none;
+  }
 `;
 
 const Heading = styled.h1`
