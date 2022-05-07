@@ -1,0 +1,32 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "jsx-a11y", "prettier"],
+  "extends": [
+    "react-app",
+    "./node_modules/eslint-config-airbnb-base/rules/best-practices.js",
+    "./node_modules/eslint-config-airbnb-base/rules/errors.js",
+    "./node_modules/eslint-config-airbnb-base/rules/node.js",
+    "./node_modules/eslint-config-airbnb-base/rules/style.js",
+    "./node_modules/eslint-config-airbnb-base/rules/variables.js",
+    "./node_modules/eslint-config-airbnb-base/rules/es6.js",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:jsx-a11y/recommended",
+    "prettier",
+    "prettier/react"
+  ],
+  "rules": {
+    "no-console": "warn",
+    "no-duplicate-case": "error", // Error
+    "no-extra-semi": "off", // NO error
+    "@typescript-eslint/no-extra-semi": "off",
+    "eqeqeq": "error", // Error
+    "default-case": "error", // Error
+    "comma-dangle": ["error", "always-multiline"],
+    "no-shadow": "off",
+    "no-plusplus": "error",
+    "no-nested-ternary": "off",
+    "no-tabs": "error",
+    "no-unneeded-ternary": "error"
+  }
+}
