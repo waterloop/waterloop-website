@@ -23,15 +23,27 @@ const StyledLink = styled(NavLink)`
   }
 `;
 
-
 interface LinkProps {
- to: string;
- title: string;
- text: string;
-};
+  to: string;
+  title: string;
+  text: string;
+}
 
 const Link: React.FC<LinkProps> = (props) => (
-  <StyledLink to={props.to} title={props.title}>
+  <StyledLink
+    activeStyle={{
+      color: '#fed138',
+      textDecoration: "none"
+    }}
+    isActive={(match) => {
+      if (!match || (match && !match.isExact)) {
+        return false;
+      }
+      return true;
+    }}
+    to={props.to}
+    title={props.title}
+  >
     {props.text}
   </StyledLink>
 );
