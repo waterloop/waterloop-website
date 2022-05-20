@@ -14,7 +14,10 @@ const StyledLink = styled(NavLink)`
   &:link {
     text-decoration: none;
   }
-
+  &.${(props) => props.activeClassName} {
+    text-decoration: none;
+    color: #fed138;
+  }
   &:focus,
   &:hover,
   &:active {
@@ -31,10 +34,7 @@ interface LinkProps {
 
 const Link: React.FC<LinkProps> = (props) => (
   <StyledLink
-    activeStyle={{
-      color: '#fed138',
-      textDecoration: "none"
-    }}
+    activeClassName="any"
     isActive={(match) => {
       if (!match || (match && !match.isExact)) {
         return false;
