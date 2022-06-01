@@ -36,10 +36,7 @@ const Link: React.FC<LinkProps> = (props) => (
   <StyledLink
     activeClassName="any"
     isActive={(match) => {
-      if (!match || (match && !match.isExact)) {
-        return false;
-      }
-      return true;
+      return !(!match || (match && !match.isExact));
     }}
     to={props.to}
     title={props.title}
