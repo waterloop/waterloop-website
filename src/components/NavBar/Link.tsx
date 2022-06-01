@@ -14,7 +14,10 @@ const StyledLink = styled(NavLink)`
   &:link {
     text-decoration: none;
   }
-
+  &.${(props) => props.activeClassName} {
+    text-decoration: none;
+    color: #fed138;
+  }
   &:focus,
   &:hover,
   &:active {
@@ -23,15 +26,21 @@ const StyledLink = styled(NavLink)`
   }
 `;
 
-
 interface LinkProps {
- to: string;
- title: string;
- text: string;
-};
+  to: string;
+  title: string;
+  text: string;
+}
 
 const Link: React.FC<LinkProps> = (props) => (
-  <StyledLink to={props.to} title={props.title}>
+  <StyledLink
+    activeClassName="any"
+    isActive={(match) => {
+      return !(!match || (match && !match.isExact));
+    }}
+    to={props.to}
+    title={props.title}
+  >
     {props.text}
   </StyledLink>
 );
