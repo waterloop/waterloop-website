@@ -9,7 +9,7 @@ const FileUpload = ({
 }: {
   name: string;
   value: string;
-  onChange: Function;
+  onChange: (value: string) => void;
   multiple: boolean;
 }) => {
   const FileInput = styled.input`
