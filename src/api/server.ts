@@ -1,6 +1,8 @@
 import axios from 'axios';
 
 const baseUrl = process.env.REACT_APP_BASE_URL;
+//^^ in case there's an api error, try changing this line to: const baseUrl = 'http://localhost:9000';
+// tip from Gordon
 
 export const server = axios.create({
   baseURL: baseUrl,
