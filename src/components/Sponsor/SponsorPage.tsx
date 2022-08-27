@@ -157,6 +157,27 @@ const SponsorList: React.FC = () => {
           </Grid>
         ))}
       </Grid>
+      <h2>Old Sponsors</h2>
+      <Grid
+        className="TierWrapper"
+        spacing={4}
+        container
+        alignItems="center"
+        justify="center"
+      >
+        {sponsors
+          .filter(sponsor => sponsorTiers.find(({id}) => id === sponsor.typeId)?.type === 'Old Sponsor')
+          .map(sponsor => (
+            <Grid key={sponsor.name} container item md={2} xs={4} justify="center">
+              <SponsorComponent
+                alt="SponsorImage"
+                src={sponsor.logoDir}
+                tier="Old Sponsor"
+                onClick={() => handelSponsorClick(sponsor)}
+              />
+            </Grid>
+          ))}
+      </Grid>
       <SponsorModal
         open={modalOpen}
         onClose={() => {
