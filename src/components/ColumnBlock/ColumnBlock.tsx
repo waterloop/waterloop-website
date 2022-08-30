@@ -23,9 +23,9 @@ export class ColumnBlock extends React.Component<{
         </div>
         <div className="pageContainer">
           <div className="col-block">
-            {this.props.data[0].body.map((item) => {
+            {this.props.data[0].body.map((item, i) => {
               return (
-                <div>
+                <div key={i}>
                   <h3>
                     <a href={item.link} target="_blank" rel="noopener noreferrer">
                       {item.heading}
