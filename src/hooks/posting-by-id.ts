@@ -5,11 +5,12 @@ import { PostingLongConverted } from 'postings';
 import api from '../api';
 import * as postingActions from '../state/postings/actions';
 import * as postingSelectors from '../state/postings/selectors';
+import { dateToLocalTime } from 'utils/datetime';
 
 const dateStringsToDate = (data: Omit<PostingLong, 'teamId'> & { team: string; }): PostingLongConverted => ({
   ...data,
-  deadline: new Date(data.deadline),
-  lastUpdated: new Date(data.lastUpdated),
+  deadline: dateToLocalTime(new Date(data.deadline)),    // Convert UTC to local time
+  lastUpdated: dateToLocalTime(new Date(data.lastUpdated)),
 });
 
 const usePostingPostingById = (postingId: number, onError: () => void) => {

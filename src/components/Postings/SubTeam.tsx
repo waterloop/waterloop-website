@@ -36,6 +36,7 @@ const SubTeam: React.FC<Props> = (props) => props.postings.length > 0 ? (
                 backgroundColor="yellow"
                 textColor="black"
                 text={'MORE\u00A0INFO'}
+                // TODO: Fix mobile bug when more info clicked.
                 onClick={(): Window | null =>
                   window.open(`/posting/${posting.id}`, '_self')
                 }
