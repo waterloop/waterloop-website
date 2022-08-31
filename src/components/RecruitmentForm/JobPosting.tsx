@@ -26,6 +26,10 @@ const LightHeader = styled.h6`
 `;
 const applicationForm = process.env.REACT_APP_APPLICATION_FORM_URL;
 
+const FormattedP = styled.p`
+  white-space: pre-line; // ensures spaces and line breaks get displayed
+`;
+
 const JobPosting: React.FC<JobPostingProps> = (props) => (
   <div>
     <a
@@ -54,7 +58,7 @@ const JobPosting: React.FC<JobPostingProps> = (props) => (
     <h6 style={{ color: '#010101', fontWeight: 'normal' }}>
       Deadline: {props.deadline}
     </h6>
-    <p>{props.description}</p>
+    <FormattedP>{props.description}</FormattedP>
     {props.tasks.length > 0 && (
       <>
         <div className="break" />
