@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import JobPosting from './JobPosting';
 import { useParams, useHistory, Redirect } from 'react-router';
 import usePostingPostingById from 'hooks/posting-by-id';
@@ -15,6 +15,9 @@ const JobPostingPage: React.FC = () => {
     history.push('/postings');
   }, [history])
   const { posting } = usePostingPostingById(id, onError);
+  useEffect(() => {
+    posting && console.log(posting)}
+  )
 
   if (posting && (posting.closed || posting.deadline <= new Date())) {
     return (<Redirect to='/recruitment' />);
