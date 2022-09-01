@@ -1,6 +1,5 @@
 import React, { useCallback } from 'react';
 import JobPosting from './JobPosting';
-import moment from 'moment';
 import { useParams, useHistory, Redirect } from 'react-router';
 import usePostingPostingById from 'hooks/posting-by-id';
 
@@ -17,16 +16,11 @@ const JobPostingPage: React.FC = () => {
   }, [history])
   const { posting } = usePostingPostingById(id, onError);
 
-  if (posting && (posting.closed || moment
-    .utc(posting.deadline)
-    .local()
-    .hour(23)
-    .minute(59)
-    .second(0)
-    .toDate().getTime() <= Date.now())) {
+  if (posting && (posting.closed || posting.deadline <= new Date())) {
     return (<Redirect to='/recruitment' />);
   }
-
+ 
+  
   return (
     <div className="pageContainer">
       {posting && (
@@ -34,14 +28,7 @@ const JobPostingPage: React.FC = () => {
           role={posting.title}
           subteam={posting.team}
           term={`${posting.termSeason} ${posting.termYear}`}
-          deadline={
-            moment
-              .utc(posting.deadline)
-              .local()
-              .hour(23)
-              .minute(59)
-              .second(0)
-              .format('MMMM D, h:mmA')}
+          deadline={posting.deadline.toDateString()}
           description={posting.description}
           tasks={posting.tasks.map((task) => task.task)}
           requirements={posting.requirements.map((r) => r.requirement)}

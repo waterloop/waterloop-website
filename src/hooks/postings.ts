@@ -4,11 +4,13 @@ import api from '../api';
 import * as postingActions from '../state/postings/actions';
 import * as postingSelectors from '../state/postings/selectors';
 import { PostingShort, PostingShortWithTeamName,PostingShortConverted } from 'postings';
+import { dateToLocalTime } from '../utils/datetime'
+
 
 const dateStringsToDate = (data: Omit<PostingShort, 'teamId'> & { team: string; }): PostingShortConverted => ({
   ...data,
-  deadline: new Date(data.deadline),
-  lastUpdated: new Date(data.lastUpdated),
+  deadline: dateToLocalTime(new Date(data.deadline)),    // Convert UTC to local time
+  lastUpdated: dateToLocalTime(new Date(data.lastUpdated)),
 });
 
 const isPostingWithTeamName = (postings: PostingShort[] | PostingShortWithTeamName[]): postings is PostingShortWithTeamName[] => {
@@ -29,7 +31,6 @@ const usePostings = () => {
             .map((item) => ({ ...item, team: item.teamName}))
             .map(dateStringsToDate) //it's expecting data: Omit<PostingShort, 'teamId'> & { team: string; }): PostingShortConverted
             .filter((posting) => !posting.closed && posting.deadline.getTime() > Date.now());
-
         }
         
         else { 
