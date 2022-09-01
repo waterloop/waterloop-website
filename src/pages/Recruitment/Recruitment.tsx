@@ -88,10 +88,7 @@ const Recruitment: React.FC = () =>{
             <p>
               Do you have prior expertise in linear induction motors, high power PCB design, or other relevant technical topics? We'd love to learn from you as an advisor; reach out to us at <a href = "mailto: contact@waterloop.ca">contact@waterloop.ca</a> if you're interested!
             </p>
-            <SignUpButton onClick={() => {
-                console.log("Signup")
-                window.open('http://wloop.ca/subscribe')
-              }} text="Sign up" backgroundColor="yellow" textColor="black"  />
+            <SignUpButton onClick={() => window.open('http://wloop.ca/subscribe')} text="Sign up" backgroundColor="yellow" textColor="black"  />
           </FlexContainer>
         )}
       </div>
