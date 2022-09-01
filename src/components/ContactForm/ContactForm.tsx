@@ -247,6 +247,7 @@ class ContactUsForm extends React.Component<
             <div className="contactForm-InputBlockRight">
               <Label htmlFor="email">Email</Label>
               <Input
+                type="email"
                 id="email"
                 name="email"
                 value={this.state.formKey.email}

@@ -117,6 +117,7 @@ const NewsletterSignUpForm = () => {
         />
         <Label htmlFor="email">Email</Label>
         <Input
+          type="email"
           id="email"
           name="email"
           value={state.email}

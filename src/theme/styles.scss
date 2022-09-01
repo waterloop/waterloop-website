@@ -4,6 +4,7 @@ $navy: #232636;
 $white: #fefefe;
 $light-gray: #f4f4f4;
 $black: #010101;
+$black2: #333333;
 $font-family-primary: 'IBM Plex Sans';
 
 /*-----------------------------
@@ -895,8 +896,30 @@ textarea {
 }
 
 .ButtonDiv {
+
+  // Changes depending on the preset string supplied in the Button.tsx component
+  &.yellow {
+    background-color: $yellow;
+    border-color: $yellow;
+  
+    &:hover {
+      background-color: $black2;
+      border-color:  $black2;
+    }
+
+    &:active {
+      border-color: $yellow;
+    }
+  }
   border: 0;
   border-radius: 50px;
+  transition: all 0.3s;
+
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+  }
+
   max-width: 350px;
   max-height: 38px;
   display: flex;
@@ -909,6 +932,16 @@ textarea {
 }
 
 .ButtonText {
+  &.black {
+    color: $black2;
+    .ButtonDiv:hover & {
+      color: $yellow;
+    }
+    .ButtonDiv:active & {
+      border-color: $yellow;
+    }
+  }
+  
   font-size: 14px;
   font-weight: 600;
   font-family: 'IBM Plex Sans';
