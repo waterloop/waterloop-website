@@ -56,7 +56,6 @@ const Recruitment: React.FC = () =>{
         description="Join our team."
         anchor="#recruitment"
       />
-      <p>{JSON.stringify(postings)}</p>
       <div id={"#recruitment"}></div>
       <div className={"pageContainer"}>
         <TextWithImage
