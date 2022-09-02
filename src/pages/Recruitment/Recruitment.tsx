@@ -49,7 +49,6 @@ const Recruitment: React.FC = () =>{
     nextCycle = "January";
   }
   nextYear = (currentCycle === "Fall") ? currentYear+1: currentYear;
-  console.error(`postings: ${postings}`)
   return (
     <>
       <Hero
