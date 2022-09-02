@@ -1,6 +1,13 @@
 import React from "react";
-import styled from "styled-components";
 import "../../theme/styles.scss";
+
+/**NOTE: Currently background color YELLOW and text color BLACK are the only options supported.
+ * Please manually add other color configurations in styles.scss when needed.
+ * 
+ * Please thank the styled-components library for this inconvenience. 
+ * The library works poorly with onClick events on mobile.
+ */
+
 
 type BackgroundColor = "yellow" | "black";
 type TextColor = "yellow" | "white" | "black";
@@ -38,10 +45,11 @@ interface Variant {
 
 type VariantNumber = 1;
 
+
 const ColorMap = {
-  yellow: "#FED138",
-  black: "#333333",
-  white: "#FFFFFF",
+  yellow: "yellow",
+  black: "black",
+  white: "white",
 };
 
 const VariantMap: Record<VariantNumber, Variant> = {
@@ -67,36 +75,10 @@ const Button: React.FC<Props> = (props) => {
       : props.backgroundColor,
   };
 
-  const ButtonDiv = styled.button`
-    background-color: ${ColorMap[backgroundColor]};
-    border-color:  ${ColorMap[backgroundColor]};
-    transition: all 0.3s;
-    &:hover {
-      cursor: pointer;
-      background-color: ${ColorMap[textColor]};
-      border-color:  ${ColorMap[textColor]};
-      transform: translateY(-5px);
-    }
-    &:active {
-      border-color: ${ColorMap.yellow};
-    }
-
-  }`;
-
-  const Text = styled.p`
-    color: ${ColorMap[textColor]};
-    ${ButtonDiv}:hover & {
-      color: ${ColorMap[backgroundColor]};
-    }
-    ${ButtonDiv}:active & {
-      border-color: ${ColorMap.yellow};
-    }
-  `;
-
   return (
-    <ButtonDiv className={`ButtonDiv ${props.className}`} onClick={props.onClick}>
-      <Text className="ButtonText">{props.text}</Text>
-    </ButtonDiv>
+    <button className={`ButtonDiv ${ColorMap[backgroundColor ?? 'yellow']} ${props.className}`} onClick={props.onClick}>
+      <p className={`ButtonText ${ColorMap[textColor ?? 'black']}`}>{props.text}</p>
+    </button>
   );
 };
 

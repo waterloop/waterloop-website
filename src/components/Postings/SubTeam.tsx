@@ -19,9 +19,9 @@ const SubTeam: React.FC<Props> = (props) => props.postings.length > 0 ? (
     </h3>
     {props.postings.length > 0 &&
       props.postings.map(
-        (posting) =>
+        (posting, idx) =>
           posting.team === props.team && (
-            <div className={'posting'}>
+            <div className={'posting'} key={idx}>
               <a
                 href={`/posting/${posting.id}`}
                 style={{
@@ -36,7 +36,6 @@ const SubTeam: React.FC<Props> = (props) => props.postings.length > 0 ? (
                 backgroundColor="yellow"
                 textColor="black"
                 text={'MORE\u00A0INFO'}
-                // TODO: Fix mobile bug when more info clicked.
                 onClick={(): Window | null =>
                   window.open(`/posting/${posting.id}`, '_self')
                 }

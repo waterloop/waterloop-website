@@ -56,6 +56,7 @@ const Recruitment: React.FC = () =>{
         description="Join our team."
         anchor="#recruitment"
       />
+      <p>{JSON.stringify(postings)}</p>
       <div id={"#recruitment"}></div>
       <div className={"pageContainer"}>
         <TextWithImage
@@ -77,7 +78,6 @@ const Recruitment: React.FC = () =>{
         ) : (
           <FlexContainer>
             <h3>Our new member recruitment for {currentCycle} {currentYear} has closed</h3>
-            {/* <p>CAUTION: Some users have had difficulties viewing recruitment postings during our recruitment cycles. Please refresh the page if you get this message before Apr. 30 2022. If you're still unable to view the postings, please contact Waterloop.</p> */}
             <p>
               We will be recruiting again at the start of {nextCycle} {nextYear}. Sign up below to be notified when postings go live!
             </p>

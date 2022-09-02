@@ -64,8 +64,8 @@ const JobPosting: React.FC<JobPostingProps> = (props) => (
         <div className="break" />
         <h3>What you'll do:</h3>
         <ul>
-          {props.tasks.map((task: string) => (
-            <li>{task}</li>
+          {props.tasks.map((task: string, idx: number) => (
+            <li key={idx}>{task}</li>
           ))}
         </ul>
       </>
@@ -75,8 +75,8 @@ const JobPosting: React.FC<JobPostingProps> = (props) => (
         <div className="break" />
         <h3>Requirements:</h3>
         <ul>
-          {props.requirements.map((task: string) => (
-            <li>{task}</li>
+          {props.requirements.map((task: string, idx: number) => (
+            <li key={idx}>{task}</li>
           ))}
           <li>Time commitment of {props.timeCommitment}</li>
         </ul>
@@ -86,8 +86,8 @@ const JobPosting: React.FC<JobPostingProps> = (props) => (
       <>
         <h3>Skills to be Learned:</h3>
         <ul>
-          {props.skillsToBeLearned.map((skillToBeLearned: string) => (
-            <li>{skillToBeLearned}</li>
+          {props.skillsToBeLearned.map((skillToBeLearned: string, idx: number) => (
+            <li key={idx}>{skillToBeLearned}</li>
           ))}
         </ul>
       </>
@@ -96,8 +96,8 @@ const JobPosting: React.FC<JobPostingProps> = (props) => (
       <>
         <h3>Recommended Skills:</h3>
         <ul>
-          {props.recommendedSkills.map((recommendedSkill: string) => (
-            <li>{recommendedSkill}</li>
+          {props.recommendedSkills.map((recommendedSkill: string, idx: number) => (
+            <li key={idx}>{recommendedSkill}</li>
           ))}
         </ul>
       </>
@@ -106,8 +106,8 @@ const JobPosting: React.FC<JobPostingProps> = (props) => (
       <>
         <h3>Additional info:</h3>
         <ul>
-          {props.additional.map((info: string) => (
-            <li>{info}</li>
+          {props.additional.map((info: string, idx: number) => (
+            <li key={idx}>{info}</li>
           ))}
         </ul>
       </>
