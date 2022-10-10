@@ -5,10 +5,7 @@ $navy: #232636;
 $white: #fefefe;
 $light-gray: #f4f4f4;
 $black: #010101;
-<<<<<<< HEAD:src/theme/styles.scss
 $black2: #333333;
-=======
->>>>>>> a9f818ff09f5136e7ff6a49d776a96ab5bf89598:waterloop-site/src/theme/styles.scss
 $font-family-primary: 'IBM Plex Sans';
 
 /*-----------------------------
@@ -1248,7 +1245,6 @@ textarea {
   height: 100%;
 }
 
-<<<<<<< HEAD:src/theme/styles.scss
 .errorpage {
   display: flex;
   flex-direction: row;
@@ -1295,8 +1291,6 @@ p {
   }
 }
 
-=======
->>>>>>> a9f818ff09f5136e7ff6a49d776a96ab5bf89598:waterloop-site/src/theme/styles.scss
 .Block-Blog {
   h2 a {
     font-size: 18px;
@@ -1341,7 +1335,6 @@ p {
       transform: translateY(-10px);
     }
   }
-<<<<<<< HEAD:src/theme/styles.scss
   @media (min-width: ($tablet + 1)) {
       .PostBlock-Blog {
         width: 33%;
@@ -1351,14 +1344,6 @@ p {
       }
   }
   @media (min-width: ($mobile + 1)) and (max-width: $tablet) {
-=======
-  @media (min-width: $tablet + 1) {
-    .PostBlock-Blog {
-      width: 30%;
-    }
-  }
-  @media (min-width: $mobile + 1) and (max-width: $tablet) {
->>>>>>> a9f818ff09f5136e7ff6a49d776a96ab5bf89598:waterloop-site/src/theme/styles.scss
     .PostBlock-Blog {
       width: 50%;
     }
