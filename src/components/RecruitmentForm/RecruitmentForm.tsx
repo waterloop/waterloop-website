@@ -208,6 +208,7 @@ const Form: React.FC<MyProps> = ({ role, technicalQ, onSuccess }) => {
 
         <FileUpload
           name="resume-docs"
+          value='test'
           onChange={() => {
             console.log('file change');
           }}
