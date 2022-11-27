@@ -30,7 +30,12 @@ const usePostings = () => {
           return postings
             .map((item) => ({ ...item, team: item.teamName}))
             .map(dateStringsToDate) //it's expecting data: Omit<PostingShort, 'teamId'> & { team: string; }): PostingShortConverted
+<<<<<<< HEAD
             .filter((posting) => !posting.closed && posting.deadline.getTime() > Date.now());
+=======
+            // .filter((posting) => !posting.closed && posting.deadline.getTime() > Date.now());
+
+>>>>>>> 750fff018ad24d0a80ffc48fc0b894ad7c1cbc84
         }
         
         else { 
