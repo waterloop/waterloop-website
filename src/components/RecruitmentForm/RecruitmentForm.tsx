@@ -6,6 +6,7 @@ import useRecruitmentForm from './hooks/recruitment-form';
 import RadioButton from './RadioButton';
 import DropDownList from '../../components/DropDownList';
 import FileUpload from '../../components/FileUpload';
+import { PostingLongConverted } from 'postings';
 
 const Label = styled.label`
   display: block;
@@ -61,13 +62,13 @@ const SectionHeader = styled.h3`
   font-size: 36px;
 `;
 
-interface MyProps {
-  role: string;
+interface FormProps {
+  info: PostingLongConverted;
   technicalQ?: string;
   onSuccess: () => void;
 }
 
-const Form: React.FC<MyProps> = ({ role, technicalQ, onSuccess }) => {
+const Form: React.FC<FormProps> = ({ info, technicalQ, onSuccess }) => {
   const {
     userInfoFields,
     inPersonField,
@@ -81,7 +82,7 @@ const Form: React.FC<MyProps> = ({ role, technicalQ, onSuccess }) => {
     handleTechnicalAnswerChange,
     handleAdditionalInfoChange,
     handleSubmit,
-  } = useRecruitmentForm(role, onSuccess);
+  } = useRecruitmentForm(info.title, onSuccess);
 
   const handleUserInfoChange = (id: string) => (
     event: React.ChangeEvent<HTMLInputElement>,
@@ -99,10 +100,11 @@ const Form: React.FC<MyProps> = ({ role, technicalQ, onSuccess }) => {
       required={true}
     />
   ));
-
+    //console.log(Object.keys(info))
+    if(info == undefined) console.log("hello")
   return (
     <div className="recruitment-modal">
-      <h2>Applying for {role.toUpperCase()}</h2>
+      <h2>Applying for {info.title.toUpperCase()}</h2>
 
       <SectionHeader>Contact Info</SectionHeader>
       <SectionContainer>

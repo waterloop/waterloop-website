@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import styled from 'styled-components';
 // import TextInput from "../../components/TextInput";
 // import RadioButton from "components/RecruitmentForm/RadioButton";
@@ -7,7 +7,9 @@ import styled from 'styled-components';
 // import { Button } from "../../components/Button";
 // //import useRecruitmentForm from '../../hooks/recruitment-form';
 //import { useRouteMatch } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router';
 import { RecruitmentForm } from '../../components/RecruitmentForm';
+import usePostingPostingById from 'hooks/posting-by-id';
 
 // const FormWrapper = styled.div`
 //   margin: 3em 5em;
@@ -61,6 +63,10 @@ const FormContainer = styled.div`
   justify-content: center;
 `;
 
+interface RouteParams {
+  positionId: string;
+}
+
 const RecruitmentApplicantForm: React.FC = () => {
   // const [firstName, setFirstName] = useState("");
   // const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -72,76 +78,25 @@ const RecruitmentApplicantForm: React.FC = () => {
   const {
 
   } = useRecruitmentForm(positionId); */
+  const history = useHistory();
+  const stringId: RouteParams = useParams();
+  const id: number = parseInt(stringId.positionId, 10);
+  const onError = useCallback(() => {
+    history.push(`/postings/${id}`);
+  }, [history])
+  const { posting } = usePostingPostingById(id, onError);
   return (
     <div className="pageContainer">
       <BackButton onClick={() => {}}>&lt; Back</BackButton>
       <FormContainer>
-        <RecruitmentForm role="Test role" onSuccess={() => console.log('hi')} />
+        {posting &&
+          <RecruitmentForm 
+            info={posting}
+            onSuccess={() => console.log('hi')} 
+          />
+        }
       </FormContainer>
     </div>
-    // <FormWrapper>
-    //   <p onClick={() => {}}>&lt; Back</p>
-    //   <FormWrapper>
-    //     <SectionHeader>Contact Info</SectionHeader>
-    //     <QuestionHeader>Full name</QuestionHeader>
-    //     <TextInput
-    //       className="first-name"
-    //       multiLine={false}
-    //       value={firstName}
-    //       rows={10}
-    //       onChange={onChange /* CHANGE THIS TO HOOK STUFF */}
-    //       placeholder="First Name"
-    //       required={true}
-    //       requiredText="This is a required field"
-    //       isError={false /* CHANGE THIS TO HOOK STUFF */}
-    //     />
-
-    //     <QuestionHeader>
-    //       Are you living in Waterloo and willing to participate in in-person
-    //       work?
-    //     </QuestionHeader>
-    //     <RadioText>
-    //       <RadioButton
-    //         checked={false}
-    //         onChange={() => {}}
-    //         name="Yes"
-    //         question="inPerson"
-    //       ></RadioButton>
-    //     </RadioText>
-    //     <RadioText>
-    //       <RadioButton
-    //         checked={false}
-    //         onChange={() => {}}
-    //         name="No"
-    //         question="inPerson"
-    //       ></RadioButton>
-    //     </RadioText>
-
-    //     <QuestionHeader>
-    //       Please attach your Resume and other Documents
-    //     </QuestionHeader>
-    //     <FileUpload
-    //       name="resume-docs"
-    //       onChange={() => {
-    //         console.log("file change");
-    //       }}
-    //       multiple={false}
-    //     />
-    //     <RightAlignedContainer>
-    //       <SubmitButton
-    //         onClick={
-    //           () =>
-    //             window.open(
-    //               "http://wloop.ca/subscribe"
-    //             ) /*function from hook that posts to api after validating input*/
-    //         }
-    //         text="Submit"
-    //         backgroundColor="yellow"
-    //         textColor="black"
-    //       />
-    //     </RightAlignedContainer>
-    //   </FormWrapper>
-    // </FormWrapper>
   );
 };
 

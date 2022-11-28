@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import '../../theme/styles.scss';
 
 type JobPostingProps = {
+  id: number;
   role: string;
   deadline: string;
   subteam: string;
@@ -24,7 +25,6 @@ const LightHeader = styled.h6`
   color: #c4c4c4;
   margin-top: 0;
 `;
-const applicationForm = process.env.REACT_APP_APPLICATION_FORM_URL;
 
 const FormattedP = styled.p`
   white-space: pre-line; // ensures spaces and line breaks get displayed
@@ -48,7 +48,7 @@ const JobPosting: React.FC<JobPostingProps> = (props) => (
           backgroundColor="yellow"
           textColor="black"
           text="APPLY"
-          onClick={(): Window | null => window.open(`${applicationForm}`)}
+          onClick={(): Window | null => window.open(`/recruitment/${props.id}`, '_self')}
         />
       </div>
     </div>
@@ -118,7 +118,7 @@ const JobPosting: React.FC<JobPostingProps> = (props) => (
         backgroundColor="yellow"
         textColor="black"
         text="APPLY"
-        onClick={(): Window | null => window.open(`${applicationForm}`)}
+        onClick={(): Window | null => window.open(`/recruitment/${props.id}`, '_self')}
       />
     </div>
   </div>

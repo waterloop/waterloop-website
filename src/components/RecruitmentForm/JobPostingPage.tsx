@@ -27,11 +27,11 @@ const JobPostingPage: React.FC = () => {
   }
   
   
-  
   return (
     <div className="pageContainer">
       {posting && (
         <JobPosting
+          id={id}
           role={posting.title}
           subteam={posting.team}
           term={`${posting.termSeason} ${posting.termYear}`}
