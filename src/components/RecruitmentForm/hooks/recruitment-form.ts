@@ -1,3 +1,4 @@
+import api from 'api';
 import { useReducer, useCallback, useState, useEffect } from 'react';
 
 interface UserInfoField {
@@ -482,7 +483,8 @@ const useRecruitmentForm: RecruitmentFormHook = (role, onSuccess) => {
     const invalidFields = Object.values(body).filter(
       (fieldValue) => fieldValue === '',
     );
-    if (invalidFields.length > 0) {
+    console.log(invalidFields)
+    if (invalidFields.length > 1) {
       dispatch({ type: VERIFY_FORM });
       setIsSubmitting(false);
       // TODO implement a better alert system
@@ -500,6 +502,11 @@ const useRecruitmentForm: RecruitmentFormHook = (role, onSuccess) => {
     //     onSuccess();
     //   })
     //   .catch(() => setIsSubmitting(false));
+
+    // upload resume via
+    // await api.resume.upload()
+    
+    onSuccess()
   }, [role, state, dispatch, setIsSubmitting, isSubmitting, onSuccess]);
 
   return {

@@ -6,6 +6,8 @@ const devHostName = window.location.hostname; // Retrieves the current device's 
 
 const baseUrl = process.env.NODE_ENV === 'development' ? `http://${devHostName}:9000` : process.env.REACT_APP_BASE_URL
 
+const baseUrlDashboard = process.env.NODE_ENV === 'production' ? '' : 'http://localhost:9001' 
+
 export const server = axios.create({
   baseURL: baseUrl,
   timeout: 10000,
@@ -15,5 +17,14 @@ export const server = axios.create({
   },
 });
 
-export default server;
+export const serverDashboard = axios.create({
+  baseURL: baseUrlDashboard,
+  timeout:10000,
+  withCredentials:false,
+})
+
+export default {
+  server,
+  serverDashboard
+}
 export type Server = typeof server;

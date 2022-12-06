@@ -68,16 +68,6 @@ interface RouteParams {
 }
 
 const RecruitmentApplicantForm: React.FC = () => {
-  // const [firstName, setFirstName] = useState("");
-  // const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   setFirstName(e.target.value);
-  // };
-  /*const {
-   params: { positionId },
-  } = useRouteMatch();
-  const {
-
-  } = useRecruitmentForm(positionId); */
   const history = useHistory();
   const stringId: RouteParams = useParams();
   const id: number = parseInt(stringId.positionId, 10);
@@ -92,7 +82,13 @@ const RecruitmentApplicantForm: React.FC = () => {
         {posting &&
           <RecruitmentForm 
             info={posting}
-            onSuccess={() => console.log('hi')} 
+            onSuccess={(): Window | null => {
+              // ideally => pass info to recruitment page to show a banner
+              //  of 'successfull completion'
+              // eslint-disable-next-line no-alert
+              alert('Application Successful. Good Luck!');
+              return window.open(`/recruitment`, '_self')}} 
+
           />
         }
       </FormContainer>
