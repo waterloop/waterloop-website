@@ -1,15 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const FileUpload = ({
   name,
-  value,
-  onChange,
   multiple,
 }: {
   name: string;
-  value: string;
-  onChange: Function;
   multiple: boolean;
 }) => {
   const FileInput = styled.input`
@@ -34,6 +30,7 @@ const FileUpload = ({
     border-radius: 6px;
     background: #ffffff;
   `;
+  let [fileName, setFileName] = useState("")
 
   return (
     <div>
@@ -76,10 +73,18 @@ const FileUpload = ({
         id="file"
         type="file"
         name={name}
-        onChange={(e) => onChange(e.target.value)}
+        // uncomment when done testing
+        //accept={'application/pdf'}
+        onChange={(e) => {
+            if(e.target.files != null){
+              setFileName(e.target.files[0].name)
+            }
+          }
+        }
+
         multiple={multiple}
       />
-      {value && <p>{value}</p>}
+      {fileName && <p>{fileName}</p>}
     </div>
   );
 };

@@ -207,13 +207,9 @@ const Form: React.FC<FormProps> = ({ info, technicalQ, onSuccess }) => {
           valid={applicationFields.additionalInfo.valid}
           required={false}
         />
-
+        <Label>Please submit a PDF of your resume</Label>
         <FileUpload
           name="resume-docs"
-          value='test'
-          onChange={() => {
-            console.log('file change');
-          }}
           multiple={false}
         />
       </SectionContainer>
