@@ -102,6 +102,7 @@ const DropDownList: FC<DropDownListProps> = ({
   valid,
 }) => {
   const [open, setOpen] = useState(false);
+  const [selected, setSelected] = useState('')
 
   const handleOpenToggle = useCallback(() => {
     setOpen(!open);
@@ -109,6 +110,7 @@ const DropDownList: FC<DropDownListProps> = ({
 
   const handleClickItem2 = useCallback(
     (value: string) => {
+      setSelected(value)
       handleClickItem(value);
       setOpen(!open);
     },
@@ -125,7 +127,7 @@ const DropDownList: FC<DropDownListProps> = ({
   return (
     <Container>
       <ListNameContainer onClick={handleOpenToggle} className={className}>
-        <TitleText>{value !== '' ? value : title}</TitleText>
+        <TitleText>{selected!== '' ? selected : title}</TitleText>
         <ListStateIcon />
       </ListNameContainer>
       <List open={open}>{listItems}</List>
