@@ -226,6 +226,8 @@ const reducer: React.Reducer<MyState, MyAction> = (state, action) => {
       const {
         payload: { term },
       } = action;
+      console.log('term is')
+      console.log(term)
       return {
         ...state,
         applicationFields: {
@@ -368,8 +370,8 @@ interface RecruitmentForm {
   applicationFields: typeof applicationFields;
   updateUserInfo: (id: string, value: string) => void;
   handleProgramChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  updateTerm: (value: string) => () => void;
-  updateTermType: (value: string) => () => void;
+  updateTerm: (value: string) => void;
+  updateTermType: (value: string) => void;
   updateInPerson: (value: boolean) => () => void;
   handleWhyChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
   handleTechnicalAnswerChange: (
@@ -412,13 +414,13 @@ const useRecruitmentForm: RecruitmentFormHook = (role, onSuccess) => {
   );
 
   const updateTerm = useCallback(
-    (term: string) => () =>
+    (term: string) => 
       !isSubmitting && dispatch({ type: UPDATE_TERM, payload: { term } }),
     [dispatch, isSubmitting],
   );
 
   const updateTermType = useCallback(
-    (type: string) => () =>
+    (type: string) => 
       !isSubmitting && dispatch({ type: UPDATE_TERM_TYPE, payload: { type } }),
     [dispatch, isSubmitting],
   );
