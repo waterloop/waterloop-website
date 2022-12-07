@@ -82,6 +82,7 @@ const Form: React.FC<FormProps> = ({ info, technicalQ, onSuccess }) => {
     handleTechnicalAnswerChange,
     handleAdditionalInfoChange,
     handleSubmit,
+    handleFileUpload,
   } = useRecruitmentForm(info.title, onSuccess);
 
   const handleUserInfoChange = (id: string) => (
@@ -211,6 +212,7 @@ const Form: React.FC<FormProps> = ({ info, technicalQ, onSuccess }) => {
         <FileUpload
           name="resume-docs"
           multiple={false}
+          handleFileUpload={handleFileUpload}
         />
       </SectionContainer>
 

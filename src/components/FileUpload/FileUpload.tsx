@@ -1,12 +1,20 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
+/*
+interface FileUploadProps{
+  handleFileUpload: (value: string) => void;
+}
+*/
+
 const FileUpload = ({
   name,
   multiple,
+  handleFileUpload,
 }: {
   name: string;
   multiple: boolean;
+  handleFileUpload: (value:File) => void;
 }) => {
   const FileInput = styled.input`
     opacity: 0;
@@ -77,6 +85,8 @@ const FileUpload = ({
         //accept={'application/pdf'}
         onChange={(e) => {
             if(e.target.files != null){
+              // update file in state
+              handleFileUpload(e.target.files[0])
               setFileName(e.target.files[0].name)
             }
           }

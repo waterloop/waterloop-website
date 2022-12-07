@@ -23,8 +23,5 @@ export const serverDashboard = axios.create({
   withCredentials:false,
 })
 
-export default {
-  server,
-  serverDashboard
-}
+export default server 
 export type Server = typeof server;

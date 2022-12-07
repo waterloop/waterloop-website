@@ -1,4 +1,5 @@
-import api from 'api';
+//import api from 'api';
+//import api from 'api';
 import { useReducer, useCallback, useState, useEffect } from 'react';
 
 interface UserInfoField {
@@ -19,6 +20,15 @@ interface FormValue {
   value: string;
   id: string;
   valid: boolean | null;
+}
+
+interface PostingMetaData {
+  value: string;
+  id: string;
+}
+
+interface Resume{
+  value: Blob;
 }
 
 // 0-------------------------0
@@ -92,6 +102,27 @@ const applicationFields: Record<string, FormValue> = {
   },
 };
 
+const postingMetaData: Record<string, PostingMetaData> = {
+  termYear: {
+    value: '',
+    id: 'entry.termYear',
+  },
+  subTeam: {
+    value: '',
+    id: 'entry.subTeam',
+  },
+  position: {
+    value: '',
+    id: 'entry.position',
+  }
+}
+
+const resumeWrapper: Record<string, Resume> = {
+  resume: {
+    value: new Blob()
+  }
+}
+
 // Need to add something for the resume as well
 
 // 0-------------------------0
@@ -108,6 +139,9 @@ const initialState = {
   userInfoFields,
   inPersonField,
   applicationFields,
+  // new fields
+  postingMetaData,
+  resumeWrapper,
   isValid: false,
 };
 
@@ -121,6 +155,9 @@ const UPDATE_WHY = 'UPDATE_WHY';
 const UPDATE_TECHNICAL_ANSWER = 'UPDATE_TECHNICAL_ANSWER';
 const UPDATE_ADDITIONAL_INFO = 'UPDATE_ADDITIONAL_INFO';
 const VERIFY_FORM = 'VERIFY_FORM';
+// new actions
+//const SET_METADATA = 'SET_METADATA';
+const UPDATE_RESUME = 'UPDATE_RESUME';
 
 // Action Interfaces
 interface UpdateUserInfoFieldAction {
@@ -180,6 +217,13 @@ interface UpdateAdditionalInfoAction {
   };
 }
 
+interface UpdateResumeAction{
+  type: typeof UPDATE_RESUME;
+  payload: {
+    value: File;
+  };
+}
+
 interface VerifyFormAction {
   type: typeof VERIFY_FORM;
 }
@@ -194,6 +238,7 @@ type MyAction =
   | UpdateWhyAction
   | UpdateTechnicalAnswerAction
   | UpdateAdditionalInfoAction
+  | UpdateResumeAction
   | VerifyFormAction;
 
 /**
@@ -336,6 +381,22 @@ const reducer: React.Reducer<MyState, MyAction> = (state, action) => {
         },
       };
     }
+    case UPDATE_RESUME: {
+      const {
+        payload: { value },
+      } = action;
+      console.log(' in update resume')
+      return {
+        ...state,
+        resumeWrapper: {
+          ...state.resumeWrapper,
+          resume: {
+            ...state.resumeWrapper.resume,
+            value,
+          },
+        },
+      };
+    }
     case VERIFY_FORM:
       return {
         ...state,
@@ -382,6 +443,7 @@ interface RecruitmentForm {
     event: React.ChangeEvent<HTMLTextAreaElement>,
   ) => void;
   handleSubmit: React.EffectCallback;
+  handleFileUpload: (value:File) => void;
 }
 
 type RecruitmentFormHook = (
@@ -460,6 +522,12 @@ const useRecruitmentForm: RecruitmentFormHook = (role, onSuccess) => {
     [dispatch, isSubmitting],
   );
 
+  const handleFileUpload = useCallback(
+    (value: File) => 
+      !isSubmitting && dispatch({ type: UPDATE_RESUME, payload: { value } }),
+    [dispatch, isSubmitting],
+  );
+
   const handleSubmit = useCallback(() => {
     if (isSubmitting) return;
     setIsSubmitting(true);
@@ -504,9 +572,20 @@ const useRecruitmentForm: RecruitmentFormHook = (role, onSuccess) => {
     //   .catch(() => setIsSubmitting(false));
 
     // upload resume via
-    // await api.resume.upload()
+    //api.application.upload(applicationFields.)
+    /*
+    const reqWrapper = async () => {
+      await api.application.upload(
+        userInfoFields.find((el)=>el.name = 'first-name'),
+        userInfoFields.find((el)=>el.name = 'last-name'),
+
+        )
+    }
+    reqWrapper()
+    */
     
     onSuccess()
+        
   }, [role, state, dispatch, setIsSubmitting, isSubmitting, onSuccess]);
 
   return {
@@ -521,6 +600,7 @@ const useRecruitmentForm: RecruitmentFormHook = (role, onSuccess) => {
     handleWhyChange: updateWhy,
     handleTechnicalAnswerChange: updateTechnicalAnswer,
     handleAdditionalInfoChange: updateAdditionalInfo,
+    handleFileUpload,
     handleSubmit,
   };
 };

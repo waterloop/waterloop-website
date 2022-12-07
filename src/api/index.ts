@@ -3,12 +3,12 @@ import postings from './postings';
 import server, { serverDashboard } from './server';
 import sponsors from './sponsors';
 import teams from './teams';
-import resume from './resume'
+import application from './application'
 
 export default {
   postings: postings(server),
   teams: teams(server),
   sponsors: sponsors(server),
   newsletter: newsletter(server),
-  resume: resume(serverDashboard)
+  application: application(serverDashboard)
 };
