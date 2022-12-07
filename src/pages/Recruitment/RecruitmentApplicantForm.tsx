@@ -82,6 +82,7 @@ const RecruitmentApplicantForm: React.FC = () => {
         {posting &&
           <RecruitmentForm 
             info={posting}
+            id={id}
             onSuccess={(): Window | null => {
               // ideally => pass info to recruitment page to show a banner
               //  of 'successfull completion'

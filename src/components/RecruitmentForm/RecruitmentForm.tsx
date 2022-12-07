@@ -64,11 +64,12 @@ const SectionHeader = styled.h3`
 
 interface FormProps {
   info: PostingLongConverted;
+  id:number;
   technicalQ?: string;
   onSuccess: () => void;
 }
 
-const Form: React.FC<FormProps> = ({ info, technicalQ, onSuccess }) => {
+const Form: React.FC<FormProps> = ({ info,id, technicalQ, onSuccess }) => {
   const {
     userInfoFields,
     inPersonField,
@@ -83,7 +84,11 @@ const Form: React.FC<FormProps> = ({ info, technicalQ, onSuccess }) => {
     handleAdditionalInfoChange,
     handleSubmit,
     handleFileUpload,
-  } = useRecruitmentForm(info.title, onSuccess);
+  } = useRecruitmentForm(info.title,
+    // logic to turn "FALL" and "2022" to "F22"
+    //info.termSeason.charAt(0).concat(info.termYear.toString().slice(-2)),
+    info.termYear.toString(), info.termSeason,
+    info.team,id, onSuccess);
 
   const handleUserInfoChange = (id: string) => (
     event: React.ChangeEvent<HTMLInputElement>,
@@ -101,8 +106,9 @@ const Form: React.FC<FormProps> = ({ info, technicalQ, onSuccess }) => {
       required={true}
     />
   ));
-    //console.log(Object.keys(info))
-    if(info == undefined) console.log("hello")
+
+  // set metadata on load (or on submit?)
+
   return (
     <div className="recruitment-modal">
       <h2>Applying for {info.title.toUpperCase()}</h2>

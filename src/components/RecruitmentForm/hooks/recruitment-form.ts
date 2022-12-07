@@ -1,5 +1,4 @@
-//import api from 'api';
-//import api from 'api';
+import api from 'api';
 import { useReducer, useCallback, useState, useEffect } from 'react';
 
 interface UserInfoField {
@@ -20,11 +19,6 @@ interface FormValue {
   value: string;
   id: string;
   valid: boolean | null;
-}
-
-interface PostingMetaData {
-  value: string;
-  id: string;
 }
 
 interface Resume{
@@ -102,20 +96,6 @@ const applicationFields: Record<string, FormValue> = {
   },
 };
 
-const postingMetaData: Record<string, PostingMetaData> = {
-  termYear: {
-    value: '',
-    id: 'entry.termYear',
-  },
-  subTeam: {
-    value: '',
-    id: 'entry.subTeam',
-  },
-  position: {
-    value: '',
-    id: 'entry.position',
-  }
-}
 
 const resumeWrapper: Record<string, Resume> = {
   resume: {
@@ -140,7 +120,6 @@ const initialState = {
   inPersonField,
   applicationFields,
   // new fields
-  postingMetaData,
   resumeWrapper,
   isValid: false,
 };
@@ -156,7 +135,6 @@ const UPDATE_TECHNICAL_ANSWER = 'UPDATE_TECHNICAL_ANSWER';
 const UPDATE_ADDITIONAL_INFO = 'UPDATE_ADDITIONAL_INFO';
 const VERIFY_FORM = 'VERIFY_FORM';
 // new actions
-//const SET_METADATA = 'SET_METADATA';
 const UPDATE_RESUME = 'UPDATE_RESUME';
 
 // Action Interfaces
@@ -385,7 +363,6 @@ const reducer: React.Reducer<MyState, MyAction> = (state, action) => {
       const {
         payload: { value },
       } = action;
-      console.log(' in update resume')
       return {
         ...state,
         resumeWrapper: {
@@ -448,10 +425,14 @@ interface RecruitmentForm {
 
 type RecruitmentFormHook = (
   role: string,
+  termYear:string,
+  termSeason:string,
+  subTeam:string,
+  id: number,
   onSuccess: () => void,
 ) => RecruitmentForm;
 
-const useRecruitmentForm: RecruitmentFormHook = (role, onSuccess) => {
+const useRecruitmentForm: RecruitmentFormHook = (role,termYear, termSeason,subTeam,id, onSuccess) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -533,7 +514,8 @@ const useRecruitmentForm: RecruitmentFormHook = (role, onSuccess) => {
     setIsSubmitting(true);
 
     // Build Body
-    const { applicationFields, userInfoFields } = state;
+    //const { applicationFields, userInfoFields, resumeWrapper, inPersonField } = state;
+    const { applicationFields, userInfoFields, resumeWrapper} = state;
     const presetBody = { 'entry.1805132656': role };
     const userInfoFieldsBody = userInfoFields.reduce(
       (acc, field) => ({ ...acc, [field.id]: field.value }),
@@ -572,19 +554,56 @@ const useRecruitmentForm: RecruitmentFormHook = (role, onSuccess) => {
     //   .catch(() => setIsSubmitting(false));
 
     // upload resume via
-    //api.application.upload(applicationFields.)
-    /*
-    const reqWrapper = async () => {
-      await api.application.upload(
-        userInfoFields.find((el)=>el.name = 'first-name'),
-        userInfoFields.find((el)=>el.name = 'last-name'),
+    let fnFind = userInfoFields.find((el)=>el.name = 'first-name')
+    let lnFind = userInfoFields.find((el)=>el.name = 'last-name')
+    let emailFind = userInfoFields.find((el)=>el.name = 'email')
+    if(fnFind === undefined || lnFind === undefined || emailFind === undefined) return // should never
+    let fn = fnFind.value;
+    let ln = lnFind.value;
+    let email = emailFind.value;
 
-        )
+    const reqWrapper = async () => {
+      try{
+        // build request to upload resume
+        let formData = new FormData()
+        formData.append('firstname', fn)
+        formData.append('lastname', ln)
+        formData.append('term_year', termSeason.charAt(0).concat(termYear.slice(-2)))
+        formData.append('subteam', subTeam)
+        formData.append('position', role)
+        formData.append('file', resumeWrapper.resume.value)
+        console.log('uploading...')
+        let res = await api.application.upload(formData)
+        if(res.status != 200) throw 'unable to upload'
+        const resumeLink = res.data
+        // build request to apply
+        const data = {
+          first_name: fn,
+          last_name: ln,
+          email_address: email,
+          current_year: applicationFields.term.value,
+          program: applicationFields.program.value,
+          application_term: termSeason.concat('-').concat(termYear),
+          in_school: (applicationFields.termType.value == 'School').toString(),
+          in_person_available: inPersonField.inperson.value ? inPersonField.inperson.value.toString() : 'false',
+          posting_id: id.toString(),
+          reason_to_join: applicationFields.whyJoin.value,
+          resume_link: resumeLink,
+          additional_information: applicationFields.additionalInfo.value,
+        }
+        console.log(data)
+        //await api.application.apply(JSON.stringify(body))
+        // TODO fix failing verification
+        await api.application.apply(JSON.stringify(data))
+        // finally, display success message
+        onSuccess()
+      } catch(error){
+        console.log(error)
+        setIsSubmitting(false)
+      }
     }
     reqWrapper()
-    */
     
-    onSuccess()
         
   }, [role, state, dispatch, setIsSubmitting, isSubmitting, onSuccess]);
 
