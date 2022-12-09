@@ -73,7 +73,7 @@ const RecruitmentApplicantForm: React.FC = () => {
   const id: number = parseInt(stringId.positionId, 10);
   const onError = useCallback(() => {
     history.push(`/postings/${id}`);
-  }, [history])
+  }, [id, history])
   const { posting } = usePostingPostingById(id, onError);
   return (
     <div className="pageContainer">

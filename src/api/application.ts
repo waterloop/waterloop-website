@@ -12,9 +12,8 @@ server.post('/api/upload/resume',
 )
 
 const apply = (server: Server) =>
-(body: string) => {
+(body: Object):Promise<AxiosResponse<string>> => 
     server.post('/api/applications', body)
-}
 
 export default (server:Server) => ({
     upload: upload(server),

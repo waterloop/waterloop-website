@@ -65,11 +65,10 @@ const SectionHeader = styled.h3`
 interface FormProps {
   info: PostingLongConverted;
   id:number;
-  technicalQ?: string;
   onSuccess: () => void;
 }
 
-const Form: React.FC<FormProps> = ({ info,id, technicalQ, onSuccess }) => {
+const Form: React.FC<FormProps> = ({ info, id, onSuccess }) => {
   const {
     userInfoFields,
     inPersonField,
@@ -80,14 +79,14 @@ const Form: React.FC<FormProps> = ({ info,id, technicalQ, onSuccess }) => {
     updateTermType,
     updateInPerson,
     handleWhyChange,
-    handleTechnicalAnswerChange,
     handleAdditionalInfoChange,
     handleSubmit,
     handleFileUpload,
-  } = useRecruitmentForm(info.title,
-    // logic to turn "FALL" and "2022" to "F22"
-    //info.termSeason.charAt(0).concat(info.termYear.toString().slice(-2)),
-    info.termYear.toString(), info.termSeason,
+  } = useRecruitmentForm(
+    // metadata about the job posting
+    info.title,
+    info.termYear.toString(), 
+    info.termSeason,
     info.team,id, onSuccess);
 
   const handleUserInfoChange = (id: string) => (
@@ -106,8 +105,6 @@ const Form: React.FC<FormProps> = ({ info,id, technicalQ, onSuccess }) => {
       required={true}
     />
   ));
-
-  // set metadata on load (or on submit?)
 
   return (
     <div className="recruitment-modal">
@@ -191,21 +188,8 @@ const Form: React.FC<FormProps> = ({ info,id, technicalQ, onSuccess }) => {
           valid={applicationFields.whyJoin.valid}
           required={true}
         />
-        {technicalQ && (
-          <>
-            <Label>Technical Question: {technicalQ}</Label>
-            <TextArea
-              placeholder={technicalQ}
-              onChange={handleTechnicalAnswerChange}
-              value={applicationFields.technicalAns.value}
-              valid={applicationFields.technicalAns.valid}
-              required={true}
-            />
-          </>
-        )}
         <Label>
           Is there any additional information that you would like to share?{' '}
-          <span>*Optional</span>
         </Label>
         <TextArea
           placeholder="Anything else you want to share with us!"

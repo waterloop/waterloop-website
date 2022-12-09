@@ -22,7 +22,9 @@ interface FormValue {
 }
 
 interface Resume{
+  id: string;
   value: Blob;
+  valid: boolean | null;
 }
 
 // 0-------------------------0
@@ -84,11 +86,6 @@ const applicationFields: Record<string, FormValue> = {
     value: '',
     valid: null,
   },
-  technicalAns: {
-    value: '',
-    id: 'entry.1372043873',
-    valid: null,
-  },
   additionalInfo: {
     value: '',
     id: 'entry.<change>',
@@ -99,7 +96,9 @@ const applicationFields: Record<string, FormValue> = {
 
 const resumeWrapper: Record<string, Resume> = {
   resume: {
-    value: new Blob()
+    id: 'entry.resume',
+    value: new Blob(),
+    valid: null,
   }
 }
 
@@ -131,7 +130,6 @@ const UPDATE_TERM_TYPE = 'UPDATE_TERM_TYPE';
 const UPDATE_PROGRAM = 'UPDATE_PROGRAM';
 const UPDATE_INPERSON = 'UPDATE_INPERSON';
 const UPDATE_WHY = 'UPDATE_WHY';
-const UPDATE_TECHNICAL_ANSWER = 'UPDATE_TECHNICAL_ANSWER';
 const UPDATE_ADDITIONAL_INFO = 'UPDATE_ADDITIONAL_INFO';
 const VERIFY_FORM = 'VERIFY_FORM';
 // new actions
@@ -181,12 +179,6 @@ interface UpdateWhyAction {
   };
 }
 
-interface UpdateTechnicalAnswerAction {
-  type: typeof UPDATE_TECHNICAL_ANSWER;
-  payload: {
-    value: string;
-  };
-}
 
 interface UpdateAdditionalInfoAction {
   type: typeof UPDATE_ADDITIONAL_INFO;
@@ -214,7 +206,6 @@ type MyAction =
   | UpdateProgramAction
   | UpdateInPersonAction
   | UpdateWhyAction
-  | UpdateTechnicalAnswerAction
   | UpdateAdditionalInfoAction
   | UpdateResumeAction
   | VerifyFormAction;
@@ -327,22 +318,6 @@ const reducer: React.Reducer<MyState, MyAction> = (state, action) => {
         },
       };
     }
-    case UPDATE_TECHNICAL_ANSWER: {
-      const {
-        payload: { value },
-      } = action;
-      return {
-        ...state,
-        applicationFields: {
-          ...state.applicationFields,
-          technicalAns: {
-            ...state.applicationFields.technicalAns,
-            value,
-            valid: value !== '',
-          },
-        },
-      };
-    }
     case UPDATE_ADDITIONAL_INFO: {
       const {
         payload: { value },
@@ -370,6 +345,7 @@ const reducer: React.Reducer<MyState, MyAction> = (state, action) => {
           resume: {
             ...state.resumeWrapper.resume,
             value,
+            valid: value !== new Blob(),
           },
         },
       };
@@ -413,9 +389,6 @@ interface RecruitmentForm {
   updateTermType: (value: string) => void;
   updateInPerson: (value: boolean) => () => void;
   handleWhyChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
-  handleTechnicalAnswerChange: (
-    event: React.ChangeEvent<HTMLTextAreaElement>,
-  ) => void;
   handleAdditionalInfoChange: (
     event: React.ChangeEvent<HTMLTextAreaElement>,
   ) => void;
@@ -483,16 +456,6 @@ const useRecruitmentForm: RecruitmentFormHook = (role,termYear, termSeason,subTe
     [dispatch, isSubmitting],
   );
 
-  const updateTechnicalAnswer = useCallback(
-    (event: React.ChangeEvent<HTMLTextAreaElement>) =>
-      !isSubmitting &&
-      dispatch({
-        type: UPDATE_TECHNICAL_ANSWER,
-        payload: { value: event.target.value },
-      }),
-    [dispatch, isSubmitting],
-  );
-
   const updateAdditionalInfo = useCallback(
     (event: React.ChangeEvent<HTMLTextAreaElement>) =>
       !isSubmitting &&
@@ -514,11 +477,10 @@ const useRecruitmentForm: RecruitmentFormHook = (role,termYear, termSeason,subTe
     setIsSubmitting(true);
 
     // Build Body
-    //const { applicationFields, userInfoFields, resumeWrapper, inPersonField } = state;
-    const { applicationFields, userInfoFields, resumeWrapper} = state;
+    const { applicationFields, userInfoFields, resumeWrapper, inPersonField} = state;
     const presetBody = { 'entry.1805132656': role };
     const userInfoFieldsBody = userInfoFields.reduce(
-      (acc, field) => ({ ...acc, [field.id]: field.value }),
+      (acc, field) => ({ ...acc, [field.id]: field.value}),
       presetBody,
     );
     const body = Object.keys(applicationFields).reduce(
@@ -528,13 +490,15 @@ const useRecruitmentForm: RecruitmentFormHook = (role,termYear, termSeason,subTe
       }),
       userInfoFieldsBody,
     );
-
     // Validate form and Stop if inValid
     const invalidFields = Object.values(body).filter(
       (fieldValue) => fieldValue === '',
     );
-    console.log(invalidFields)
-    if (invalidFields.length > 1) {
+    if(resumeWrapper.resume.value.size === 0)
+      invalidFields.push("")
+    if(inPersonField.inperson.value === null)
+      invalidFields.push("")
+    if (invalidFields.length > 0) {
       dispatch({ type: VERIFY_FORM });
       setIsSubmitting(false);
       // TODO implement a better alert system
@@ -543,20 +507,10 @@ const useRecruitmentForm: RecruitmentFormHook = (role,termYear, termSeason,subTe
       return;
     }
 
-    // Submit Form
-    // fetch(formSubmissionUrl, {
-    //   method: 'POST',
-    //   body: JSON.stringify(body),
-    // })
-    //   .then(() => {
-    //     onSuccess();
-    //   })
-    //   .catch(() => setIsSubmitting(false));
-
     // upload resume via
-    let fnFind = userInfoFields.find((el)=>el.name = 'first-name')
-    let lnFind = userInfoFields.find((el)=>el.name = 'last-name')
-    let emailFind = userInfoFields.find((el)=>el.name = 'email')
+    let fnFind = userInfoFields.find((el)=>el.name === 'first-name')
+    let lnFind = userInfoFields.find((el)=>el.name === 'last-name')
+    let emailFind = userInfoFields.find((el)=>el.name === 'email')
     if(fnFind === undefined || lnFind === undefined || emailFind === undefined) return // should never
     let fn = fnFind.value;
     let ln = lnFind.value;
@@ -572,9 +526,8 @@ const useRecruitmentForm: RecruitmentFormHook = (role,termYear, termSeason,subTe
         formData.append('subteam', subTeam)
         formData.append('position', role)
         formData.append('file', resumeWrapper.resume.value)
-        console.log('uploading...')
         let res = await api.application.upload(formData)
-        if(res.status != 200) throw 'unable to upload'
+        if(res.status !== 200) throw Error('unable to upload')
         const resumeLink = res.data
         // build request to apply
         const data = {
@@ -584,28 +537,28 @@ const useRecruitmentForm: RecruitmentFormHook = (role,termYear, termSeason,subTe
           current_year: applicationFields.term.value,
           program: applicationFields.program.value,
           application_term: termSeason.concat('-').concat(termYear),
-          in_school: (applicationFields.termType.value == 'School').toString(),
+          in_school: (applicationFields.termType.value === 'School').toString(),
           in_person_available: inPersonField.inperson.value ? inPersonField.inperson.value.toString() : 'false',
           posting_id: id.toString(),
           reason_to_join: applicationFields.whyJoin.value,
           resume_link: resumeLink,
           additional_information: applicationFields.additionalInfo.value,
         }
-        console.log(data)
-        //await api.application.apply(JSON.stringify(body))
-        // TODO fix failing verification
-        await api.application.apply(JSON.stringify(data))
+        res = await api.application.apply(data)
+        if(res.status !== 200) throw Error('application failed')
         // finally, display success message
+        setIsSubmitting(false);
         onSuccess()
       } catch(error){
         console.log(error)
+        alert("Error submitting application. Did you provide a valid email address and resume PDF?")
         setIsSubmitting(false)
       }
     }
     reqWrapper()
     
         
-  }, [role, state, dispatch, setIsSubmitting, isSubmitting, onSuccess]);
+  }, [role, state,id, subTeam, termSeason, termYear, dispatch, setIsSubmitting, isSubmitting, onSuccess]);
 
   return {
     userInfoFields: state.userInfoFields,
@@ -617,7 +570,6 @@ const useRecruitmentForm: RecruitmentFormHook = (role,termYear, termSeason,subTe
     updateTermType,
     updateInPerson,
     handleWhyChange: updateWhy,
-    handleTechnicalAnswerChange: updateTechnicalAnswer,
     handleAdditionalInfoChange: updateAdditionalInfo,
     handleFileUpload,
     handleSubmit,
