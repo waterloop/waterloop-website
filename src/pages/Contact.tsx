@@ -1,8 +1,7 @@
 import React from "react";
-// import GoogleMapReact from "google-map-react";
 import { ContactForm } from "components/ContactForm";
 import Hero from "components/Hero/General";
-// import { MAP } from "../config/map";
+
 import "../theme/styles.scss";
 import NewsletterSignUpForm from "components/NewsletterSignUpForm";
 

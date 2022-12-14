@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
-import ExpandLessIcon from '@material-ui/icons/ExpandLess';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 
 interface FAQSection {
   question: string;

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Grid from '@material-ui/core/Grid';
+import Grid from '@mui/material/Grid';
 import SponsorComponent from './Sponsor';
 import SponsorModal from './SponsorModal';
 import useSponsors from 'hooks/sponsors';
@@ -63,12 +63,12 @@ const SponsorList: React.FC = () => {
         spacing={4}
         container
         alignItems="center"
-        justify="center"
+        justifyContent="center"
       >
         {sponsors
           .filter(sponsor => sponsorTiers.find(({id}) => id === sponsor.typeId)?.type  === 'Hypersonic')
           .map(sponsor => (
-            <Grid key={sponsor.name} container item md={6} justify="center">
+            <Grid key={sponsor.name} container item md={6} justifyContent="center">
               <SponsorComponent
                 alt="SponsorImage"
                 src={sponsor.logoDir}
@@ -84,12 +84,12 @@ const SponsorList: React.FC = () => {
         spacing={4}
         container
         alignItems="center"
-        justify="center"
+        justifyContent="center"
       >
         {sponsors
           .filter(sponsor => sponsorTiers.find(({id}) => id === sponsor.typeId)?.type === 'Supersonic')
           .map(sponsor => (
-            <Grid key={sponsor.name} container item md={4} xs={6} justify="center">
+            <Grid key={sponsor.name} container item md={4} xs={6} justifyContent="center">
               <SponsorComponent
                 alt="SponsorImage"
                 src={sponsor.logoDir}
@@ -105,12 +105,12 @@ const SponsorList: React.FC = () => {
         spacing={4}
         container
         alignItems="center"
-        justify="center"
+        justifyContent="center"
       >
         {sponsors
           .filter(sponsor => sponsorTiers.find(({id}) => id === sponsor.typeId)?.type === 'Transonic')
           .map(sponsor => (
-            <Grid key={sponsor.name} container item md={3} xs={4} justify="center">
+            <Grid key={sponsor.name} container item md={3} xs={4} justifyContent="center">
               <TransonicSponsor
                 alt="SponsorImage"
                 src={sponsor.logoDir}
@@ -126,12 +126,12 @@ const SponsorList: React.FC = () => {
         spacing={4}
         container
         alignItems="center"
-        justify="center"
+        justifyContent="center"
       >
         {sponsors
           .filter(sponsor => sponsorTiers.find(({id}) => id === sponsor.typeId)?.type === 'Sonic')
           .map(sponsor => (
-            <Grid key={sponsor.name} container item md={2} xs={4} justify="center">
+            <Grid key={sponsor.name} container item md={2} xs={4} justifyContent="center">
               <SponsorComponent
                 alt="SponsorImage"
                 src={sponsor.logoDir}
@@ -147,12 +147,12 @@ const SponsorList: React.FC = () => {
         spacing={4}
         container
         alignItems="center"
-        justify="center"
+        justifyContent="center"
       >
         {sponsors
           .filter(sponsor => sponsorTiers.find(({id}) => id === sponsor.typeId)?.type  === 'Supporter')
           .map((supporter, i) => (
-          <Grid key={i} container item md={3} xs={3} justify="center">
+          <Grid key={i} container item md={3} xs={3} justifyContent="center">
             <h3>{supporter.name}</h3>
           </Grid>
         ))}
@@ -163,12 +163,12 @@ const SponsorList: React.FC = () => {
         spacing={4}
         container
         alignItems="center"
-        justify="center"
+        justifyContent="center"
       >
         {sponsors
           .filter(sponsor => sponsorTiers.find(({id}) => id === sponsor.typeId)?.type === 'Old Sponsor')
           .map(sponsor => (
-            <Grid key={sponsor.name} container item md={2} xs={4} justify="center">
+            <Grid key={sponsor.name} container item md={2} xs={4} justifyContent="center">
               <SponsorComponent
                 alt="SponsorImage"
                 src={sponsor.logoDir}

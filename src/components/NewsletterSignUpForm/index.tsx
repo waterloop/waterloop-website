@@ -4,8 +4,8 @@ import { NewsLetterSignUpRequest } from 'newsletter';
 import React, { useReducer, useState } from 'react';
 import styled from 'styled-components';
 import '../../theme/styles.scss';
-import Snackbar from '@material-ui/core/Snackbar';
-import Alert, { AlertProps } from  '@material-ui/lab/Alert';
+import Snackbar from '@mui/material/Snackbar';
+import Alert, { AlertProps } from  '@mui/lab/Alert';
 
 
 const Header = styled.h1`

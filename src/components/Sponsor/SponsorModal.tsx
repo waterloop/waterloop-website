@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import MUIDialog from '@material-ui/core/Dialog';
-import MUIDialogTitle from '@material-ui/core/DialogTitle';
-import MUIDialogContent from '@material-ui/core/DialogContent';
-import MUIIconButton from '@material-ui/core/IconButton';
-import CloseIcon from '@material-ui/icons/Close';
+import MUIDialog from '@mui/material/Dialog';
+import MUIDialogTitle from '@mui/material/DialogTitle';
+import MUIDialogContent from '@mui/material/DialogContent';
+import MUIIconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
 import UnstyledSponsorImageShadowed from './SponsorImageShadowed';
 
 const Dialog = styled(MUIDialog)``;
