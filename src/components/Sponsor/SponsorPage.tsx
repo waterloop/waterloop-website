@@ -13,37 +13,6 @@ const TransonicSponsor = styled(SponsorComponent)`
   }
 `;
 
-// interface ISponsor {
-//   image: {
-//     src: string;
-//     alt: string;
-//   };
-//   name: string;
-//   link: string;
-//   level: 'Hypersonic' | 'Transonic' | 'Supersonic' | 'Sonic';
-//   dateJoined: string;
-//   collaboration: string;
-//   video?: string;
-// }
-//#region
-// /* Move this to the CMS Eventually */
-// const sponsors: ISponsor[] = [
-//   {
-//   // {
-//   //   name: 'Dassult Systems',
-//   //   collaboration: 'Thank you for providing our team with 90 Solidworks 2020/2021 licenses. The mechanical team relies heavily on Solidworks (and Solidworks PDM) to design and simulate each and every component in the pod. This also provides an opportunity for our members to gain highly industry-relevant experience in CAD, FEA, and GD&T.',
-//   // },
-//   // {
-//   //   name: 'Metal Pros',
-//   //   collaboration: 'MetalPros provided us with your generous discount. We used this to purchase our aluminum tubing for our current pod’s frame.',
-//   //   dateJoined: 'Fall 2020',
-//   //   image: ,
-//   //   level: 'Supporter' // TODO Add in supporter tier
-//   // },
-// ];
-//#endregion
-
-
 const SponsorList: React.FC = () => {
   const { sponsors, sponsorTiers } = useSponsors();
   const [sponsor, setSponsor] = React.useState<Sponsor>();
@@ -141,7 +110,8 @@ const SponsorList: React.FC = () => {
             </Grid>
           ))}
       </Grid>
-      <h2>Supporters</h2>
+      {/* TODO: uncomment me once cms-side Supporters and Old Sponsor tiers work! */}
+      {/* <h2>Supporters</h2>
       <Grid
         className="TierWrapper"
         spacing={4}
@@ -177,7 +147,7 @@ const SponsorList: React.FC = () => {
               />
             </Grid>
           ))}
-      </Grid>
+      </Grid> */}
       <SponsorModal
         open={modalOpen}
         onClose={() => {
