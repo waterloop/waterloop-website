@@ -73,7 +73,7 @@ const RecruitmentFaq = () => {
       <h3>Where can I apply?</h3>
       <ul>
         <li>Find all of our openings <a href="/recruitment">here</a></li>
-        <li>We typically open recruitment after exams in August, December, or April. If there are no openings available you can sign up to be notified <a href="http://wloop.ca/subscribe">here.</a></li>
+        <li>We typically open recruitment after exams in August, December, or April. If there are no openings available you can sign up to be notified <a href="http://wloop.fly.dev/subscribe">here.</a></li>
       </ul>
     </Container>
   );
