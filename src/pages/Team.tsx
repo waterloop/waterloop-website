@@ -21,7 +21,7 @@ const Teams: React.FC = () => (
     <div className="pageContainer">
       <ContentContainer>
         <OurTeam />
-        {/* <TeamsDisplayer initFilterSetting={0} /> */}  // TODO: uncomment me when teamhub roster has been updated properly.
+        {/* <TeamsDisplayer initFilterSetting={0} /> // TODO: uncomment me when teamhub roster has been updated properly. */}
       </ContentContainer>
     </div>
   </div>
