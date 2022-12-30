@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { Posts } from "blogs"
 import BlogPost from "components/BlogLanding/BlogList"
 import { Button } from "components/Button"
@@ -63,7 +65,17 @@ const RecentPostText = styled.div`
 `
 
 const Blogs: React.FC = () => {
-    const posts = usePosts();
+    const posts = usePosts()
+    const hasPosts = posts?.posts?.length > 0
+
+    if (!hasPosts) {
+        return (
+            <BlogPage>
+                <div>Stay tuned for upcoming blogs!</div>
+            </BlogPage>
+        )
+    }
+
     posts.posts.sort((a:Posts,b:Posts) => {
         return new Date(b.date).valueOf() - new Date(a.date).valueOf();
     });
