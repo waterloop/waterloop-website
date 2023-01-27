@@ -1,5 +1,5 @@
 import api from 'api';
-import { useReducer, useCallback, useState, useEffect } from 'react';
+import { useReducer, useCallback, useEffect } from 'react';
 
 interface UserInfoField {
   id: string;
@@ -102,8 +102,6 @@ const resumeWrapper: Record<string, Resume> = {
   }
 }
 
-// Need to add something for the resume as well
-
 // 0-------------------------0
 // |                         |
 // |     End of UPDATE ME    |
@@ -121,6 +119,7 @@ const initialState = {
   // new fields
   resumeWrapper,
   isValid: false,
+  isSubmitting: false,
 };
 
 // Reducer Action Types
@@ -134,6 +133,8 @@ const UPDATE_ADDITIONAL_INFO = 'UPDATE_ADDITIONAL_INFO';
 const VERIFY_FORM = 'VERIFY_FORM';
 // new actions
 const UPDATE_RESUME = 'UPDATE_RESUME';
+const SUBMIT_FORM = 'SUBMIT_FORM';
+const SUBMIT_FORM_COMPLETE= 'SUBMIT_FORM_COMPLETE';
 
 // Action Interfaces
 interface UpdateUserInfoFieldAction {
@@ -198,6 +199,14 @@ interface VerifyFormAction {
   type: typeof VERIFY_FORM;
 }
 
+interface SubmitFormAction {
+  type: typeof SUBMIT_FORM;
+}
+
+interface SubmitFormCompleteAction {
+  type: typeof SUBMIT_FORM_COMPLETE;
+}
+
 // Combines All action Interfaces into a single type
 type MyAction =
   | UpdateUserInfoFieldAction
@@ -208,6 +217,8 @@ type MyAction =
   | UpdateWhyAction
   | UpdateAdditionalInfoAction
   | UpdateResumeAction
+  | SubmitFormAction
+  | SubmitFormCompleteAction
   | VerifyFormAction;
 
 /**
@@ -350,6 +361,19 @@ const reducer: React.Reducer<MyState, MyAction> = (state, action) => {
         },
       };
     }
+    case SUBMIT_FORM: {
+      return {
+        ...state,
+        isSubmitting: true
+      }
+    }
+    case SUBMIT_FORM_COMPLETE: {
+      console.log("complete")
+      return {
+        ...state,
+        isSubmitting: false 
+      }
+    }
     case VERIFY_FORM:
       return {
         ...state,
@@ -394,6 +418,7 @@ interface RecruitmentForm {
   ) => void;
   handleSubmit: React.EffectCallback;
   handleFileUpload: (value:File) => void;
+  isSubmitting: boolean; 
 }
 
 type RecruitmentFormHook = (
@@ -407,7 +432,6 @@ type RecruitmentFormHook = (
 
 const useRecruitmentForm: RecruitmentFormHook = (role,termYear, termSeason,subTeam,id, onSuccess) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     console.log(state);
@@ -415,66 +439,66 @@ const useRecruitmentForm: RecruitmentFormHook = (role,termYear, termSeason,subTe
 
   const updateUserInfo = useCallback(
     (id: string, value: string) =>
-      !isSubmitting &&
+      !state.isSubmitting &&
       dispatch({ type: UPDATE_USER_INFO_FIELD, payload: { id, value } }),
-    [dispatch, isSubmitting],
+    [dispatch, state.isSubmitting],
   );
 
   const updateProgram = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) =>
-      !isSubmitting &&
+      !state.isSubmitting &&
       dispatch({
         type: UPDATE_PROGRAM,
         payload: { value: event.target.value },
       }),
-    [dispatch, isSubmitting],
+    [dispatch, state.isSubmitting],
   );
 
   const updateTerm = useCallback(
     (term: string) => 
-      !isSubmitting && dispatch({ type: UPDATE_TERM, payload: { term } }),
-    [dispatch, isSubmitting],
+      !state.isSubmitting && dispatch({ type: UPDATE_TERM, payload: { term } }),
+    [dispatch, state.isSubmitting],
   );
 
   const updateTermType = useCallback(
     (type: string) => 
-      !isSubmitting && dispatch({ type: UPDATE_TERM_TYPE, payload: { type } }),
-    [dispatch, isSubmitting],
+      !state.isSubmitting && dispatch({ type: UPDATE_TERM_TYPE, payload: { type } }),
+    [dispatch, state.isSubmitting],
   );
 
   const updateInPerson = useCallback(
     (inperson: boolean) => () =>
-      !isSubmitting &&
+      !state.isSubmitting &&
       dispatch({ type: UPDATE_INPERSON, payload: { inperson } }),
-    [dispatch, isSubmitting],
+    [dispatch, state.isSubmitting],
   );
 
   const updateWhy = useCallback(
     (event: React.ChangeEvent<HTMLTextAreaElement>) =>
-      !isSubmitting &&
+      !state.isSubmitting &&
       dispatch({ type: UPDATE_WHY, payload: { value: event.target.value } }),
-    [dispatch, isSubmitting],
+    [dispatch, state.isSubmitting],
   );
 
   const updateAdditionalInfo = useCallback(
     (event: React.ChangeEvent<HTMLTextAreaElement>) =>
-      !isSubmitting &&
+      !state.isSubmitting &&
       dispatch({
         type: UPDATE_ADDITIONAL_INFO,
         payload: { value: event.target.value },
       }),
-    [dispatch, isSubmitting],
+    [dispatch, state.isSubmitting],
   );
 
   const handleFileUpload = useCallback(
     (value: File) => 
-      !isSubmitting && dispatch({ type: UPDATE_RESUME, payload: { value } }),
-    [dispatch, isSubmitting],
+      !state.isSubmitting && dispatch({ type: UPDATE_RESUME, payload: { value } }),
+    [dispatch, state.isSubmitting],
   );
 
   const handleSubmit = useCallback(() => {
-    if (isSubmitting) return;
-    setIsSubmitting(true);
+    if (state.isSubmitting) return;
+    dispatch({ type: SUBMIT_FORM });
 
     // Build Body
     const { applicationFields, userInfoFields, resumeWrapper, inPersonField} = state;
@@ -500,10 +524,10 @@ const useRecruitmentForm: RecruitmentFormHook = (role,termYear, termSeason,subTe
       invalidFields.push("")
     if (invalidFields.length > 0) {
       dispatch({ type: VERIFY_FORM });
-      setIsSubmitting(false);
       // TODO implement a better alert system
       // eslint-disable-next-line no-alert
       alert('Could not submit: Please fill out all highlighted fields.');
+      dispatch({type: SUBMIT_FORM_COMPLETE})
       return;
     }
 
@@ -547,18 +571,18 @@ const useRecruitmentForm: RecruitmentFormHook = (role,termYear, termSeason,subTe
         res = await api.application.apply(data)
         if(res.status !== 200) throw Error('application failed')
         // finally, display success message
-        setIsSubmitting(false);
+        dispatch({ type: SUBMIT_FORM_COMPLETE });
         onSuccess()
       } catch(error){
         console.log(error)
         alert("Error submitting application. Did you provide a valid email address and resume PDF?")
-        setIsSubmitting(false)
+        dispatch({ type: SUBMIT_FORM_COMPLETE });
       }
     }
     reqWrapper()
     
         
-  }, [role, state,id, subTeam, termSeason, termYear, dispatch, setIsSubmitting, isSubmitting, onSuccess]);
+  }, [role, state,id, subTeam, termSeason, termYear, dispatch, onSuccess]);
 
   return {
     userInfoFields: state.userInfoFields,
@@ -573,6 +597,7 @@ const useRecruitmentForm: RecruitmentFormHook = (role,termYear, termSeason,subTe
     handleAdditionalInfoChange: updateAdditionalInfo,
     handleFileUpload,
     handleSubmit,
+    isSubmitting: state.isSubmitting,
   };
 };
 

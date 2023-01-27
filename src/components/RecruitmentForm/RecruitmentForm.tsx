@@ -84,6 +84,7 @@ const Form: React.FC<FormProps> = ({ info, id, onSuccess }) => {
     handleAdditionalInfoChange,
     handleSubmit,
     handleFileUpload,
+    isSubmitting,
   } = useRecruitmentForm(
     // metadata about the job posting
     info.title,
@@ -112,106 +113,116 @@ const Form: React.FC<FormProps> = ({ info, id, onSuccess }) => {
     <div className="recruitment-modal">
       <h2>Applying for {info.title.toUpperCase()}</h2>
 
-      <SectionHeader>Contact Info</SectionHeader>
-      <SectionContainer>
-        <div>{userInfoInputs}</div>
-      </SectionContainer>
+      {!isSubmitting && 
+        <>      
+          <SectionHeader>Contact Info</SectionHeader>
+          <SectionContainer>
+            <div>{userInfoInputs}</div>
+          </SectionContainer>
 
-      <SectionHeader>About You</SectionHeader>
-      <SectionContainer>
-        <Label>Which term will you be going into?</Label>
-        <DropDownList
-          items={[
-            '1A',
-            '1B',
-            '2A',
-            '2B',
-            '3A',
-            '3B',
-            '4A',
-            '4B',
-            'Graduate Studies',
-            'Other',
-          ]}
-          title="Select..."
-          handleClickItem={updateTerm}
-          value={applicationFields.term.value}
-          valid={applicationFields.term.valid}
-          required={true}
-        />
+          <SectionHeader>About You</SectionHeader>
+          <SectionContainer>
+            <Label>Which term will you be going into?</Label>
+            <DropDownList
+              items={[
+                '1A',
+                '1B',
+                '2A',
+                '2B',
+                '3A',
+                '3B',
+                '4A',
+                '4B',
+                'Graduate Studies',
+                'Other',
+              ]}
+              title="Select..."
+              handleClickItem={updateTerm}
+              value={applicationFields.term.value}
+              valid={applicationFields.term.valid}
+              required={true}
+            />
 
-        <Label>
-          Will you be on school or on co-op during the term you're applying for?
-        </Label>
-        <DropDownList
-          items={['School', 'Co-op', 'Other']}
-          title="Select..."
-          handleClickItem={updateTermType}
-          value={applicationFields.termType.value}
-          valid={applicationFields.termType.valid}
-          required={true}
-        />
+            <Label>
+              Will you be on school or on co-op during the term you're applying for?
+            </Label>
+            <DropDownList
+              items={['School', 'Co-op', 'Other']}
+              title="Select..."
+              handleClickItem={updateTermType}
+              value={applicationFields.termType.value}
+              valid={applicationFields.termType.valid}
+              required={true}
+            />
 
-        <Label>What program are you in?</Label>
-        <Input
-          placeholder="e.g. Computer Science"
-          id={applicationFields.program.id}
-          name={applicationFields.program.id}
-          onChange={handleProgramChange}
-          value={applicationFields.program.value}
-          valid={applicationFields.program.valid}
-          required={true}
-        />
+            <Label>What program are you in?</Label>
+            <Input
+              placeholder="e.g. Computer Science"
+              id={applicationFields.program.id}
+              name={applicationFields.program.id}
+              onChange={handleProgramChange}
+              value={applicationFields.program.value}
+              valid={applicationFields.program.valid}
+              required={true}
+            />
 
-        <Label>
-          Will you be living in Waterloo and willing to participate in in-person
-          work?
-        </Label>
-        <RadioWrapper>
-          <RadioButton
-            checked={inPersonField.inperson.value === true}
-            onChange={updateInPerson(true)}
-            name="Yes"
-            key="Yes"
-          />
-          <RadioButton
-            checked={inPersonField.inperson.value === false}
-            onChange={updateInPerson(false)}
-            name="No"
-            key="No"
-          />
-        </RadioWrapper>
+            <Label>
+              Will you be living in Waterloo and willing to participate in in-person
+              work?
+            </Label>
+            <RadioWrapper>
+              <RadioButton
+                checked={inPersonField.inperson.value === true}
+                onChange={updateInPerson(true)}
+                name="Yes"
+                key="Yes"
+              />
+              <RadioButton
+                checked={inPersonField.inperson.value === false}
+                onChange={updateInPerson(false)}
+                name="No"
+                key="No"
+              />
+            </RadioWrapper>
 
-        <Label>Why do you want to join the team?</Label>
-        <TextArea
-          placeholder=" Why?"
-          onChange={handleWhyChange}
-          value={applicationFields.whyJoin.value}
-          valid={applicationFields.whyJoin.valid}
-          required={true}
-        />
-        <Label>
-          Is there any additional information that you would like to share?{' '}
-        </Label>
-        <TextArea
-          placeholder=" Additional Info?"
-          onChange={handleAdditionalInfoChange}
-          value={applicationFields.additionalInfo.value}
-          valid={applicationFields.additionalInfo.valid}
-          required={false}
-        />
-        <Label>Please submit a PDF of your resume</Label>
-        <FileUpload
-          name="resume-docs"
-          multiple={false}
-          handleFileUpload={handleFileUpload}
-        />
-      </SectionContainer>
+            <Label>Why do you want to join the team?</Label>
+            <TextArea
+              placeholder=" Why?"
+              onChange={handleWhyChange}
+              value={applicationFields.whyJoin.value}
+              valid={applicationFields.whyJoin.valid}
+              required={true}
+            />
+            <Label>
+              Is there any additional information that you would like to share?{' '}
+            </Label>
+            <TextArea
+              placeholder=" Additional Info?"
+              onChange={handleAdditionalInfoChange}
+              value={applicationFields.additionalInfo.value}
+              valid={applicationFields.additionalInfo.valid}
+              required={false}
+            />
+            <Label>Please submit a PDF of your resume</Label>
+            <FileUpload
+              name="resume-docs"
+              multiple={false}
+              handleFileUpload={handleFileUpload}
+            />
+          </SectionContainer>
+        </>
+      }
+      {isSubmitting &&
+        <>
+          <h3>Sit Tight...</h3>
+          <img src={require('../../static/img/assets/Loading_icon.gif')} alt="loading..." />
+        </>
+      }
 
-      <button className="button-yellow" onClick={handleSubmit}>
-        SUBMIT
-      </button>
-    </div>
+          <button className="button-yellow" onClick={handleSubmit} disabled={isSubmitting}>
+            SUBMIT
+          </button>
+   </div>
   );
 };
 
