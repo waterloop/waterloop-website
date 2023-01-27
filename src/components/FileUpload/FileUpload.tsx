@@ -81,8 +81,7 @@ const FileUpload = ({
         id="file"
         type="file"
         name={name}
-        // uncomment when done testing
-        //accept={'application/pdf'}
+        accept={'application/pdf'}
         onChange={(e) => {
             if(e.target.files != null){
               // update file in state

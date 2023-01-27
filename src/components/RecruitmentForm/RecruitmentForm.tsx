@@ -10,7 +10,8 @@ import { PostingLongConverted } from 'postings';
 
 const Label = styled.label`
   display: block;
-  margin: 1%;
+  margin-left: 0%;
+  margin-top: 10px;
   margin-bottom: 7px;
 `;
 
@@ -21,10 +22,11 @@ const RadioWrapper = styled.form`
 
 const Input = styled(({ valid, required, ...props }) => <input {...props} />)`
   text-align: left;
-  diplay: inline-block;
-  width: 42%;
+  display: inline;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
   height: 20px;
-  margin: 5px 10px;
   padding: 5px;
   border-radius: 6px;
   border: 1.2px solid
@@ -37,9 +39,8 @@ const TextArea = styled(({ valid, required, ...props }) => (
 ))`
   text-align: left;
   display: inline-block;
-  margin: 5px 10px;
-  padding: 16px;
-  width: 90%;
+  width: 100%;
+  margin-bottom: 10px;
   border: 1.2px solid;
   border-radius: 6px;
   overflow-y: scroll;
@@ -50,12 +51,13 @@ const TextArea = styled(({ valid, required, ...props }) => (
 `;
 
 const SectionContainer = styled.div`
-  padding: 3em 5em 3em 5em;
+  margin-top:10px;
 `;
 
 const SectionHeader = styled.h3`
-  text-align: left;
+  text-align: center;
   width: 100%;
+  margin-top: 10px;
   font-family: IBM Plex Sans;
   font-style: normal;
   font-weight: 600;
@@ -182,7 +184,7 @@ const Form: React.FC<FormProps> = ({ info, id, onSuccess }) => {
 
         <Label>Why do you want to join the team?</Label>
         <TextArea
-          placeholder="Why do you want to join the team?"
+          placeholder=" Why?"
           onChange={handleWhyChange}
           value={applicationFields.whyJoin.value}
           valid={applicationFields.whyJoin.valid}
@@ -192,7 +194,7 @@ const Form: React.FC<FormProps> = ({ info, id, onSuccess }) => {
           Is there any additional information that you would like to share?{' '}
         </Label>
         <TextArea
-          placeholder="Anything else you want to share with us!"
+          placeholder=" Additional Info?"
           onChange={handleAdditionalInfoChange}
           value={applicationFields.additionalInfo.value}
           valid={applicationFields.additionalInfo.valid}

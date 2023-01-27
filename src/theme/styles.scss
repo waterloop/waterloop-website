@@ -536,10 +536,11 @@ textarea {
   textarea {
     min-height: 20px;
     font-family: 'IBM Plex Sans';
+    padding: 10px 0px 10px 0px;
   }
-  input {
-    margin: 5px 10px;
-    font-family: 'IBM Plex Sans';
+
+  .button-yellow{
+    margin:0;
   }
 
   @media screen and (max-width: $mobile) {
