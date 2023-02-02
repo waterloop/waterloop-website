@@ -252,8 +252,6 @@ const reducer: React.Reducer<MyState, MyAction> = (state, action) => {
       const {
         payload: { term },
       } = action;
-      console.log('term is')
-      console.log(term)
       return {
         ...state,
         applicationFields: {
@@ -368,7 +366,6 @@ const reducer: React.Reducer<MyState, MyAction> = (state, action) => {
       }
     }
     case SUBMIT_FORM_COMPLETE: {
-      console.log("complete")
       return {
         ...state,
         isSubmitting: false 
@@ -432,10 +429,6 @@ type RecruitmentFormHook = (
 
 const useRecruitmentForm: RecruitmentFormHook = (role,termYear, termSeason,subTeam,id, onSuccess) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-
-  useEffect(() => {
-    console.log(state);
-  }, [state]);
 
   const updateUserInfo = useCallback(
     (id: string, value: string) =>
