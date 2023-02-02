@@ -2,7 +2,7 @@ import React from "react";
 import Hero from "components/Hero/General";
 import styled from "styled-components";
 import OurTeam from "components/OurTeam";
-import TeamsDisplayer from "components/TeamsDisplayer";
+// import TeamsDisplayer from "components/TeamsDisplayer";
 
 const ContentContainer = styled.div`
   display: block;
@@ -21,7 +21,7 @@ const Teams: React.FC = () => (
     <div className="pageContainer">
       <ContentContainer>
         <OurTeam />
-        <TeamsDisplayer initFilterSetting={0} />
+        {/* <TeamsDisplayer initFilterSetting={0} /> // TODO: uncomment me when teamhub roster has been updated properly. */}
       </ContentContainer>
     </div>
   </div>

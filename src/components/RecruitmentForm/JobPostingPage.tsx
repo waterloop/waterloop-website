@@ -3,6 +3,7 @@ import JobPosting from './JobPosting';
 import { useParams, useHistory, Redirect } from 'react-router';
 import usePostingPostingById from 'hooks/posting-by-id';
 import moment from 'moment';
+
 interface RouteParams {
   id: string;
 }
@@ -19,14 +20,10 @@ const JobPostingPage: React.FC = () => {
   const deadline = posting && moment
     .utc(posting.deadline)
     .local()
-    // !NOTE: Below line is needed for bnackwards compatibility. Remove when fall recruitment season ends. 
-    .hour(23).minute(59).second(59).millisecond(999)
 
   if (posting && (posting.closed || deadline.toDate().getTime() <= Date.now())) {
     return (<Redirect to='/recruitment' />);
   }
-  
-  
   return (
     <div className="pageContainer">
       {posting && (
@@ -37,11 +34,11 @@ const JobPostingPage: React.FC = () => {
           term={`${posting.termSeason} ${posting.termYear}`}
           deadline={deadline.format('MMMM D, h:mmA')}
           description={posting.description}
-          tasks={posting.tasks.map((task) => task.task)}
-          requirements={posting.requirements.map((r) => r.requirement)}
-          additional={posting.info.map((i) => i.info)}
-          recommendedSkills={posting.recommendedSkills.map((i) => i.recommendedSkill)}
-          skillsToBeLearned={posting.skillsToBeLearned.map((i) => i.skillToBeLearned)}
+          tasks={posting.tasks.map((task) => task.task).filter((str) => str !== '')}
+          requirements={posting.requirements.map((r) => r.requirement).filter((str) => str !== '')}
+          additional={posting.info.map((i) => i.info).filter((str) => str !== '')}
+          recommendedSkills={posting.recommendedSkills.map((i) => i.recommendedSkill).filter((str) => str !== '')}
+          skillsToBeLearned={posting.skillsToBeLearned.map((i) => i.skillToBeLearned).filter((str) => str !== '')}
           timeCommitment={posting.timeCommitment}
         />
       )}
