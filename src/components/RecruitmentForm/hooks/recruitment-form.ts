@@ -1,5 +1,5 @@
 import api from 'api';
-import { useReducer, useCallback, useEffect } from 'react';
+import { useReducer, useCallback } from 'react';
 
 interface UserInfoField {
   id: string;
