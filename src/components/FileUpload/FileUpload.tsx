@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-/*
-interface FileUploadProps{
-  handleFileUpload: (value: string) => void;
-}
-*/
-
 const FileUpload = ({
   name,
   multiple,
