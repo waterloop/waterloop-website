@@ -1,9 +1,10 @@
-## [CLICKUP TICKET LINK](https://app.clickup.com/t/r17re8)
+# [CLICKUP TICKET LINK](https://app.clickup.com/t/r17re8)
 
+## Summary
 Please include a summary of the change and which issue is fixed. Please also include relevant motivation and context. List any dependencies that are required for this change.
 
-> Change 1
-> Change 2
+- Change 1
+- Change 2
 
 ## Type Of Change
 
