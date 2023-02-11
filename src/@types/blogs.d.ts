@@ -5,12 +5,15 @@ declare module "blogs" {
 
     }
     export interface Posts {
-        id: number;
         author: string;
-        summary: string;
+        category: string;
+        closed: string;
         date: string;
-        link: string;
+        id: number;
         image: string;
+        link: string;
+        summary: string;
         title: string;
+        visibility: string;
     }
 }

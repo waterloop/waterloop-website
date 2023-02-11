@@ -93,6 +93,7 @@ const Blogs: React.FC = () => {
             <RecentPostsWrapper>
                 {
                     recent.map((post) => (
+                        post.visibility !== "Hidden" && 
                         <RecentPostDiv>
                             <RecentImageDiv>
                                 <img className="img" src={post.image} />
