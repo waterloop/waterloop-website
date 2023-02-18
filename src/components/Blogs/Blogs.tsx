@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import { Posts } from "blogs"
 import BlogPost from "components/BlogLanding/BlogList"
 import { Button } from "components/Button"
@@ -96,7 +94,7 @@ const Blogs: React.FC = () => {
                         post.visibility !== "Hidden" && 
                         <RecentPostDiv>
                             <RecentImageDiv>
-                                <img className="img" src={post.image} />
+                                <img className="img" src={post.image} alt={post.title} />
                             </RecentImageDiv>
                             <RecentPostText>
                                 <div className="PostTitle-Blog">{post.title}</div>

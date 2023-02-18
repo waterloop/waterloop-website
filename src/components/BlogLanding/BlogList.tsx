@@ -15,7 +15,7 @@ const BlogPost: React.FC<props> = (props) => {
     <>
         {post.visibility !== "Hidden" && <div className="PostBlock-Blog">
             <div className="ContentBlock-Blog" onClick={() => onBlogSelected()}>
-                <img src={post.image} />
+                <img src={post.image} alt={post.title} />
                 <div className="PostContent-Blog">
                     <div className="PostTitle-Blog">{post.title}</div>
                     <div className="PostText-Blog">{post.summary}</div>
