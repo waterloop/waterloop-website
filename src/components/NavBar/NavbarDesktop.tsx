@@ -9,6 +9,7 @@ import Team from '../../pages/Team';
 import Sponsors from '../../pages/Sponsors';
 
 import Link from './Link';
+import Store from 'pages/Store';
 
 const NavbarContainer = styled.div`
   display: flex;
@@ -64,6 +65,9 @@ const NavBar: React.FC = () => (
       <Link to="/recruitment" title="Join Us" text="Join Us" />
       <Link to="/contact" title="Contact" text="Contact">
         <Contact />
+      </Link>
+      <Link to="/store" title="Store" text="Store">
+        <Store />
       </Link>
     </ListContainer>
   </NavbarContainer>
