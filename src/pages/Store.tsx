@@ -4,10 +4,11 @@ import Hero from "components/Hero/General";
 const Store: React.FC = () => (
   <div>
     <Hero
-      title=""
-      description=""
-      anchor=""
+      title="SHOP WATERLOOP"
+      description="Wear official merchandise."
+      anchor="#store"
     ></Hero>
+    <div id="#store"></div>
   </div>
 );
 
