@@ -30,7 +30,7 @@ const usePosts = (fetch='all') => {
         (async () => {
             dispatch(blogActions.setPosts(await getBlogPosts(fetch)))
         })();
-    }, [dispatch])
+    }, [dispatch, fetch])
 
     return {
         posts,
