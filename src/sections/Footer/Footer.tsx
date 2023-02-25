@@ -33,6 +33,11 @@ const FooterComponent: React.FC = () => (
             title="Contact Us"
             external={false}
           />
+          <LinkComponent
+            link="/blog"
+            title="Blog"
+            external={false}
+          />
         </div>
         <div className="SocialMediaWrapper">
           <p>Social</p>
