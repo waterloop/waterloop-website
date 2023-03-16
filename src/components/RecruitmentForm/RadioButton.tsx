@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-
 interface RadioButtonProps {
   checked: boolean;
   onChange: () => void;
   name: string;
+  question?: string;
+  flexDir?: string;
 }
 
 const RadioContainer = styled.div`
@@ -14,10 +15,15 @@ const RadioContainer = styled.div`
   margin-right: 8px;
 `;
 
-const RadioLabel = styled.label`
-`;
+const RadioLabel = styled.label``;
 
-const RadioButton: React.FC<RadioButtonProps> = ({ checked, onChange, name }) => (
+const RadioButton: React.FC<RadioButtonProps> = ({
+  checked,
+  onChange,
+  name,
+  question,
+  flexDir,
+}) => (
   <RadioContainer>
     <RadioLabel htmlFor={`radiobutton-${name}`} onClick={onChange}>
       {name}
@@ -26,7 +32,7 @@ const RadioButton: React.FC<RadioButtonProps> = ({ checked, onChange, name }) =>
       id={`radiobutton-${name}`}
       type="radio"
       checked={checked}
-      name="applicationTerm"
+      name={name}
       required
       onChange={onChange}
     />

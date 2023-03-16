@@ -87,7 +87,6 @@ export default class TeamsDisplayer extends React.Component<
     fetch(query, options)
       .then((res) => res.json())
       .then((res) => {
-        // console.log(res);
 
         const groupedProfiles = sortProfiles(res.body) as Map<
           string,

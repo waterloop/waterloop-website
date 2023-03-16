@@ -24,11 +24,11 @@ const JobPostingPage: React.FC = () => {
   if (posting && (posting.closed || deadline.toDate().getTime() <= Date.now())) {
     return (<Redirect to='/recruitment' />);
   }
-
   return (
     <div className="pageContainer">
       {posting && (
         <JobPosting
+          id={id}
           role={posting.title}
           subteam={posting.team}
           term={`${posting.termSeason} ${posting.termYear}`}
