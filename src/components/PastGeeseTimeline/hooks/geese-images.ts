@@ -5,6 +5,9 @@ import goose2 from '../../../static/img/pgimgs/goose2.png';
 import goose3 from '../../../static/img/pgimgs/goose3.png';
 import goose4 from '../../../static/img/pgimgs/goose4.png';
 
+import api from 'api';
+import { useEffect } from 'react';
+
 interface Image {
   imgFile: string;
   name: string;
@@ -54,6 +57,16 @@ const imgs: Image[] = [
 const useGeeseImages: 
   GooseImagesHook = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0); 
+  const [geeseInfo, setGeeseInfo] = useState<Array<any>>([]);
+
+  useEffect(()=>{
+    const getInfo = async() =>{
+      const res = await api.geeseInfo.getGeeseInfo();
+      //console.log(res);
+      setGeeseInfo(res.data);
+    }
+    getInfo();
+  }, [])
 
   const cycleRight = useCallback(
     () => setCurrentIndex((currentIndex + 1) % imgs.length),
@@ -79,8 +92,8 @@ const useGeeseImages:
     
   return {
     image: imgs[currentIndex].imgFile,
-    name: imgs[currentIndex].name,
-    desc: imgs[currentIndex].desc,
+    name: geeseInfo[currentIndex]?.name,
+    desc: geeseInfo[currentIndex]?.description,
     imgs: imgs,
     currentGoose: currentIndex,
     cycleRight,
