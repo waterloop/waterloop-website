@@ -41,7 +41,7 @@ const RecentPostText = styled.div`
         font-weight: bold;
         font-style: italic;
         margin-bottom: 5px;
-      }
+    }
     > .PostAuthor-Blog{
         font-size: 12px;
         font-weight: bold;
@@ -104,7 +104,7 @@ const Blogs: React.FC = () => {
                                     backgroundColor="yellow"
                                     textColor="black"
                                     text="READ"
-                                    onClick={(): Window | null => window.open(post.link, '_blank')}
+                                    onClick={(): Window | null => window.open(`blog/${post.id}`, '_self')}
                                 /></div>
                             </RecentPostText>
                         </RecentPostDiv>

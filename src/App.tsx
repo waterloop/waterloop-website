@@ -9,6 +9,7 @@ import 'typeface-ibm-plex-sans';
 
 import { Footer } from './sections/Footer';
 import JobPostingPage from './components/RecruitmentForm/JobPostingPage';
+import BlogPage from './components/Blogs/BlogPage';
 import { NavBar, SideBar } from './components';
 
 import Contact from './pages/Contact';
@@ -18,7 +19,7 @@ import Home from './pages/Home';
 import RecruitmentRouter from 'pages/Recruitment/RecruitmentRouter';
 import Sponsors from './pages/Sponsors';
 import Team from './pages/Team';
-import Blog from './pages/Blog';
+import Blog from './pages/Blog/Blog';
 
 interface State {
   width: number;
@@ -135,7 +136,12 @@ class App extends React.Component<{}, State> {
       }),
       this.generatePageMap({
         path: '/blog',
+        exact: true,
         MainComponent: <Blog />,
+      }),
+      this.generatePageMap({
+        path: '/blog/:id',
+        MainComponent: <BlogPage />,
       }),
       this.generatePageMap({
         path: '/404',

@@ -7,7 +7,7 @@ import Home from '../../pages/Home';
 import Flock from '../../pages/Flock';
 import Team from '../../pages/Team';
 import Sponsors from '../../pages/Sponsors';
-import Blog from '../../pages/Blog';
+import Blog from '../../pages/Blog/Blog';
 
 import Link from './Link';
 
@@ -28,6 +28,10 @@ const ListContainer = styled.div`
   flex-wrap: nowrap;
   align-items: center;
   padding: 0 50px;
+
+  @media screen and (max-width: 850px) {
+    padding: 0 0;
+  }
 `;
 
 const LogoContainer = styled.div`

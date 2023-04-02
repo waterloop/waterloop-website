@@ -11,7 +11,7 @@ declare module "blogs" {
         date: string;
         id: number;
         image: string;
-        link: string;
+        content: string;
         summary: string;
         title: string;
         visibility: string;

@@ -7,14 +7,11 @@ interface props {
 
 const BlogPost: React.FC<props> = (props) => {
     const post = props.post
-    const onBlogSelected = () => {
-        window.open(props.post.link, '_blank')
-    }
    
    return (
     <>
         {post.visibility !== "Hidden" && <div className="PostBlock-Blog">
-            <div className="ContentBlock-Blog" onClick={() => onBlogSelected()}>
+            <div className="ContentBlock-Blog" onClick={(): Window | null => window.open(`blog/${post.id}`, '_self')}>
                 <img src={post.image} alt={post.title} />
                 <div className="PostContent-Blog">
                     <div className="PostTitle-Blog">{post.title}</div>
