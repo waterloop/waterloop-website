@@ -2,7 +2,7 @@ import React from 'react';
 
 interface ProductProps {
     id: number;
-    title: string;
+    name: string;
     desc: string;
     price: number;
 }
@@ -18,3 +18,5 @@ export class Product extends React.Component<
     );
   }
 }
+
+export default Product;
