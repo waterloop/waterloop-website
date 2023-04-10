@@ -44,6 +44,14 @@ const BlogImage = styled.img`
   margin: 0 0 20px 0;
 `;
 
+const BodyText = styled.pre`
+  font-family: Consolas, monospace;
+  margin: 0 0 20px 0;
+  padding: 0;
+  width: 70vw;
+  white-space: pre-wrap;
+`;
+
 interface RouteParams {
   id: string;
 }
@@ -82,7 +90,9 @@ const BlogPage: React.FC = () => {
             <Text><b>Published Date:</b> {blogFound.date}</Text>
           </SubInfo>
           <Content>
-            <Text>{blogFound.content}</Text>
+            <BodyText>
+              <Text>{blogFound.content}</Text>
+            </BodyText>
           </Content>
         </>
       }
