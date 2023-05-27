@@ -76,7 +76,7 @@ const BlogPage: React.FC = () => {
       }
       return true;
     })
-  }, [posts])
+  }, [posts, blogId])
 
   return (
     <Container>
