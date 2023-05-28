@@ -18,6 +18,7 @@ import Home from './pages/Home';
 import RecruitmentRouter from 'pages/Recruitment/RecruitmentRouter';
 import Sponsors from './pages/Sponsors';
 import Team from './pages/Team';
+import ShopRouter from 'pages/Shop/Shop.router';
 
 interface State {
   width: number;
@@ -118,6 +119,10 @@ class App extends React.Component<{}, State> {
       this.generatePageMap({
         path: '/contact',
         MainComponent: <Contact />,
+      }),
+      this.generatePageMap({
+        path: '/shop',
+        MainComponent: <ShopRouter />,
       }),
       this.generatePageMap({
         path: '/recruitment',
