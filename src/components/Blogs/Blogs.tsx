@@ -8,11 +8,11 @@ import styled from "styled-components"
 const BlogPage = styled.div`
 `
 
-const RecentPostsWrapper = styled.div`
+const PostsWrapper = styled.div`
     margin-bottom: 40px;
 `
 
-const RecentPostDiv = styled.div`
+const PostDiv = styled.div`
     padding:40px;
     width: 100%;
     margin: 0 auto;
@@ -20,7 +20,7 @@ const RecentPostDiv = styled.div`
 `
 
 
-const RecentImageDiv = styled.div`
+const ImageDiv = styled.div`
     width: 50%;
     height: 300px;
     float: left;
@@ -32,7 +32,7 @@ const RecentImageDiv = styled.div`
     }
 `
 
-const RecentPostText = styled.div`
+const PostText = styled.div`
     padding: 20px;
     float: right;
     width: 40%;
@@ -77,18 +77,18 @@ const Blogs: React.FC = () => {
     posts.posts.sort((a:Posts,b:Posts) => {
         return new Date(b.date).valueOf() - new Date(a.date).valueOf();
     });
-    
+
     return (
         <BlogPage>
-            <RecentPostsWrapper>
+            <PostsWrapper>
                 {
                     posts.posts.map((post) => (
                         post.visibility !== "Hidden" && 
-                        <RecentPostDiv>
-                            <RecentImageDiv>
+                        <PostDiv>
+                            <ImageDiv>
                                 <img className="img" src={post.image} alt={post.title} />
-                            </RecentImageDiv>
-                            <RecentPostText>
+                            </ImageDiv>
+                            <PostText>
                                 <div className="PostTitle-Blog">{post.title}</div>
                                 <div className="PostAuthor-Blog">Written by: {post.author}</div>
                                 <div className="PostDescription-Blog">{post.summary}</div>
@@ -98,10 +98,10 @@ const Blogs: React.FC = () => {
                                     text="READ"
                                     onClick={(): Window | null => window.open(`blog/${post.id}`, '_self')}
                                 /></div>
-                            </RecentPostText>
-                        </RecentPostDiv>
+                            </PostText>
+                        </PostDiv>
                     ))}
-            </RecentPostsWrapper>
+            </PostsWrapper>
         </BlogPage>
     )
 }
