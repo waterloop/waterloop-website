@@ -64,15 +64,18 @@ const PostText = styled.div`
 
 const Blogs: React.FC = () => {
     const posts = usePosts()
-    const hasPosts = posts?.posts?.length > 0
+    
+    if (posts.posts.find(function(post) {
+        return post.visibility == 'Public'
+    }) === undefined) {
 
-    if (!hasPosts) {
         return (
             <BlogPage>
                 <div>Stay tuned for upcoming blogs!</div>
             </BlogPage>
         )
     }
+
 
     posts.posts.sort((a:Posts,b:Posts) => {
         return new Date(b.date).valueOf() - new Date(a.date).valueOf();
