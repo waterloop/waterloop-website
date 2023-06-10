@@ -77,20 +77,12 @@ const Blogs: React.FC = () => {
     posts.posts.sort((a:Posts,b:Posts) => {
         return new Date(b.date).valueOf() - new Date(a.date).valueOf();
     });
-    let rest: any[] = []
-    let recent: any[] = []
-    if (window.screen.width > 760){
-        recent = posts.posts.length > 2 ? posts.posts.slice(0,2) : posts.posts
-        rest = posts.posts.length > 2 ? posts.posts.slice(2,) : []
-    } else {
-        rest = posts.posts
-    }
     
     return (
         <BlogPage>
             <RecentPostsWrapper>
                 {
-                    recent.map((post) => (
+                    posts.posts.map((post) => (
                         post.visibility !== "Hidden" && 
                         <RecentPostDiv>
                             <RecentImageDiv>
@@ -110,16 +102,6 @@ const Blogs: React.FC = () => {
                         </RecentPostDiv>
                     ))}
             </RecentPostsWrapper>
-
-            <div className="Block-BlogPosts">
-                <div className="PostsBlock-Blog">
-                    {
-                        rest.map(d => (
-                            <BlogPost post={d} />
-                        ))
-                    }
-                </div>
-            </div>
         </BlogPage>
     )
 }
