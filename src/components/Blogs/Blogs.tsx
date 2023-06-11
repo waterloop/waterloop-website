@@ -1,5 +1,4 @@
 import { Posts } from "blogs"
-import BlogPost from "components/BlogLanding/BlogList"
 import { Button } from "components/Button"
 import usePosts from "hooks/blogs"
 import React from "react"
