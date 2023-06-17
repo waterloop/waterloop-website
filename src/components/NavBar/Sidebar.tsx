@@ -195,22 +195,22 @@ class Sidebar extends React.Component<MyProps> {
           </div>
           <div>
             <Link
-              to="/contact"
-              onClick={(): void => {
-                this.props.handleClickSidebar(false);
-              }}
-            >
-              Contact
-            </Link>
-          </div>
-          <div>
-            <Link
               to="/blog"
               onClick={(): void => {
                 this.props.handleClickSidebar(false);
               }}
             >
               Blog
+            </Link>
+          </div>
+          <div>
+            <Link
+              to="/contact"
+              onClick={(): void => {
+                this.props.handleClickSidebar(false);
+              }}
+            >
+              Contact
             </Link>
           </div>
         </ListContainer>
