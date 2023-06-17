@@ -76,7 +76,7 @@ const Blogs: React.FC = () => {
     const posts = usePosts()
     
     if (posts.posts.find(function(post) {
-        return post.visibility == 'Public'
+        return post.visibility === 'Public'
     }) === undefined) {
 
         return (
