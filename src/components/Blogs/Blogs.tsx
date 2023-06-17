@@ -16,6 +16,11 @@ const PostDiv = styled.div`
     width: 100%;
     margin: 0 auto;
     display: inline-block;
+    @media (max-width: 900px) {
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+    }
 `
 
 
@@ -28,6 +33,9 @@ const ImageDiv = styled.div`
         height: 100%;
         border-radius: 10px;
         box-shadow: 0px 0px 8px 0px #ada8a8;
+    }
+    @media (max-width: 900px) {
+        width: 100%;
     }
 `
 
@@ -58,6 +66,9 @@ const PostText = styled.div`
                 font-size: 18px;
             }
         }
+    }
+    @media (max-width: 900px) {
+        width: 100%;
     }
 `
 
