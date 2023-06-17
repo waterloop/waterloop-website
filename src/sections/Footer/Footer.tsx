@@ -29,6 +29,11 @@ const FooterComponent: React.FC = () => (
             external={false}
           />
           <LinkComponent
+            link="/blog"
+            title="Blog"
+            external={false}
+          />
+          <LinkComponent
             link="/contact"
             title="Contact Us"
             external={false}
