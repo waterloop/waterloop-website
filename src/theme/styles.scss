@@ -1364,20 +1364,51 @@ p {
 .productDetailsContainer {
   width: 100%;
   .productDetailsTop {
+    display: flex;
+    padding: 124px 68px 90px 108px;
+    box-sizing: border-box;
+
     .leftSection {
-      width: 20%;
-      background-color: #232636;
-      .img {
-        background-color: blue;
+      width: 150px;
+      margin-right: 40px;
+      overflow: hidden;
+
+      img {
+        height: 150px;
+        width: 150px;
+        object-fit: fill;
+        border-radius: 15px;
       }
     }
     .middleSection {
-      width: 50%;
+      width: 572px;
       background-color: #EBEBEB;
+      margin-right: 49px;
     }
     .rightSection {
-      width: 20%;
+      width: auto;
+      display: flex;
       background-color: #fed138;
+      .productTitle {
+
+      }
+      .price {
+
+      }
+      .sizeChart {
+        .sizeChartText {
+
+        }
+        .sizeChartIcon {
+
+        }
+      }
+      .description {
+
+      }
+      .orderButton {
+
+      }
     }
   }
   .relatedProductsContainer {

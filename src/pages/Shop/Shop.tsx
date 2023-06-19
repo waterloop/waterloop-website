@@ -17,6 +17,8 @@ export interface ProductDetailsProperty {
   price: string;
   description: string;
   size_fit_chart?: string;
+  thumbnails?: string[];
+  relatedProducts?: ProductProperty[];
 }
 
 // const mockData: ProductProperty[] = [
