@@ -2,6 +2,7 @@ import React from 'react';
 import '../../theme/styles.scss';
 import { ProductDetailsProperty } from 'pages/Shop/Shop';
 import { useParams } from 'react-router';
+import sizeIcon from '../../static/img/merchStore/size-icon.svg';
 
 interface ProductDetailsProps {
     data?: ProductDetailsProperty;
@@ -30,11 +31,11 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
                     <div className='productTitle'>{data?.name}</div>
                     <div className='price'>{data?.price}</div>
                     <div className='sizeChart'>
-                        <div className='sizeChartText'>How does it fit? </div>
-                        <div className='sizeChartIcon'></div>
+                        <div className='sizeChartText'>How does it fit?  </div>
+                        <img src={sizeIcon} className='sizeChartIcon'></img>
                     </div>
                     <div className='description'>{data?.description}</div>
-                    <div className='orderButton'></div>
+                    <div className='orderButton'>Order with Form</div>
                 </div>
             </div>
             <div className='relatedProductsContainer'></div>
