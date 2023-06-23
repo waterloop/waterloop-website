@@ -81,10 +81,10 @@ const Recruitment: React.FC = () =>{
               We will be recruiting again at the start of {nextCycle} {nextYear}. Sign up below to be notified when postings go live!
             </p>
             <p>
-              Missed recruitment but still want to join our team? Reach out to us at <a href = "mailto: contact@waterloop.ca">contact@waterloop.ca</a>!
+              Missed recruitment but still want to join our team? Reach out to us at <a href = "mailto:join@waterloop.ca">join@waterloop.ca</a>!
             </p>
             <p>
-              Do you have prior expertise in linear induction motors, high power PCB design, or other relevant technical topics? We'd love to learn from you as an advisor; reach out to us at <a href = "mailto: contact@waterloop.ca">contact@waterloop.ca</a> if you're interested!
+              Do you have prior expertise in linear induction motors, high power PCB design, or other relevant technical topics? We'd love to learn from you as an advisor; reach out to us at <a href = "mailto:join@waterloop.ca">join@waterloop.ca</a> if you're interested!
             </p>
             <SignUpButton onClick={() => window.open('http://wloop.fly.dev/subscribe')} text="Sign up" backgroundColor="yellow" textColor="black"  />
           </FlexContainer>

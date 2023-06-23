@@ -61,6 +61,11 @@ const FooterComponent: React.FC = () => (
             title="Linkedin"
             external={true}
           />
+          <LinkComponent
+            link="https://www.tiktok.com/@teamwaterloop"
+            title="TikTok"
+            external={true}
+          />
         </div>
       </div>
     </div>
