@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Hero from "components/Hero/General";
 import "../../theme/styles.scss";
 import { ProductCard } from "components";
 import { useHistory } from "react-router";
+import useProducts from "hooks/products";
+import { Product } from "products";
 
 export interface ProductProperty {
   name: string;
@@ -56,21 +58,23 @@ export interface ProductDetailsProperty {
 
 const Shop: React.FC = () => {
   const history = useHistory();
-  const [productList, setProductList] = useState<ProductProperty[]>([]);
+  const {products} = useProducts();
+  console.log("products: ", products);
+  // const [productList, setProductList] = useState<ProductProperty[]>([]);
   useEffect(() => {
-    const list = [];
-    for (let i=0; i<10; i++) {
-      const curr = 'test' + i;
-      list.push({
-        name: curr,
-        picture: 'https://placeimg.com/640/480/nature',
-        price: '$10',
-        id: i.toString()
-      })
-    }
-    setProductList(list);
+    // const list = [];
+    // for (let i=0; i<10; i++) {
+    //   const curr = 'test' + i;
+    //   list.push({
+    //     name: curr,
+    //     picture: 'https://placeimg.com/640/480/nature',
+    //     price: '$10',
+    //     id: i.toString()
+    //   })
+    // }
+    // setProductList(list);
   }, []);
-  const handleClick = (item: ProductProperty) => {
+  const handleClick = (item: Product) => {
     history.push(`/shop/${item.id}`);
   }
 
@@ -85,7 +89,7 @@ const Shop: React.FC = () => {
       <div className="productListContainer">
         <div className="productCardWrapper">
           {
-            productList.map((product) => {
+            products.map((product) => {
               return (
                 <ProductCard data={product} onClick={() => handleClick(product)}/>
               )
