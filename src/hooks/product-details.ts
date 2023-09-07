@@ -12,6 +12,7 @@ const useProductDetails = (id: number) => {
           try {
             const response = await api.products.getProductDetails(id);
             const productDetails = response.data;
+            console.log('data here: ', response.data);
             return productDetails;
 
         } catch (err) {

@@ -3,7 +3,7 @@ import { Product, ProductDetails } from 'products';
 import { Server } from 'server';
 
 const getProducts = (server: Server) => (): Promise<AxiosResponse<Product[]>> => server.get(`/api/products`);
-const getProductDetails = (server: Server) => (id: number): Promise<AxiosResponse<ProductDetails>> => server.get(`/api/products/${id}`);
+const getProductDetails = (server: Server) => (id: number): Promise<AxiosResponse<ProductDetails>> => server.get(`/api/products/details/${id}`);
 
 export default (server: Server) => ({
     getProducts: getProducts(server),

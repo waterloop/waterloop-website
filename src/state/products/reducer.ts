@@ -36,6 +36,7 @@ export default (state = initialState, action: ProductsAction) => {
           list: action.payload.products,
         };
       case actionTypes.PRODUCTS_SET_PRODUCTDETAILS:
+        console.log('reducer', action.payload?.productDetails)
         return {
           ...state,
           productDetails: action.payload.productDetails,

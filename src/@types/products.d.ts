@@ -8,11 +8,14 @@ declare module "products" {
         picture: string;
     }
     export interface ProductDetails extends Product {
-        variation_name: string;
+        id: number;
         product_id: number;
+        name: string;
+        description: string;
+        category: string;
         price: number;
-        stock: number;
         picture: string;
-        last_updated: string;
+        related_product_ids: string;
+        order_link: string;
     }
 }

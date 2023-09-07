@@ -3,6 +3,7 @@ import '../../theme/styles.scss';
 import { ProductDetailsProperty } from 'pages/Shop/Shop';
 import { useParams } from 'react-router';
 import sizeIcon from '../../static/img/merchStore/size-icon.svg';
+import useProductDetails from 'hooks/product-details';
 
 interface ProductDetailsProps {
     data?: ProductDetailsProperty;
@@ -12,7 +13,9 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
     data
 }) => {
     const { id } = useParams();
-    console.log(id);
+    console.log("id: ", id);
+    const {productDetails} = useProductDetails(id);
+    console.log("product details: ", productDetails);
     return (
         <div className='productDetailsContainer'>
             <div className='productDetailsTop'>
