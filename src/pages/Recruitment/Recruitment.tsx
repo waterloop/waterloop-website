@@ -35,20 +35,20 @@ const Recruitment: React.FC = () =>{
   const date: Date = new Date();
   const currentMonth: number = date.getMonth() + 1; // NOTE: Recruitment is not consistent, this logic will not work, it would be better to have a controllable toggle on the CMS to open and close recruitment
   let currentCycle: string = "";
-  let nextCycle: string = "";
+  // let nextCycle: string = "";
   const currentYear: number = date.getFullYear();
-  let nextYear: number = -1;
+  // let nextYear: number = -1;
   if ([1,2,3].includes(currentMonth)) {
     currentCycle = "Winter";
-    nextCycle = "May";
+    // nextCycle = "May";
   } else if ([4,5,6,7,8].includes(currentMonth)) {
     currentCycle = "Spring";
-    nextCycle = "September";
+    // nextCycle = "September";
   } else {
     currentCycle = "Fall";
-    nextCycle = "January";
+    // nextCycle = "January";
   }
-  nextYear = (currentCycle === "Fall") ? currentYear+1: currentYear;
+  // nextYear = (currentCycle === "Fall") ? currentYear+1: currentYear;
   return (
     <>
       <Hero
@@ -76,15 +76,15 @@ const Recruitment: React.FC = () =>{
           </>
         ) : (
           <FlexContainer>
-            <h3>Our new member recruitment for {currentCycle} {currentYear} has closed</h3>
-            <p>
+            <h3>Our new member recruitment for {currentCycle} {currentYear} is now open</h3>
+            {/* <p>
               We will be recruiting again at the start of {nextCycle} {nextYear}. Sign up below to be notified when postings go live!
             </p>
             <p>
               Missed recruitment but still want to join our team? Reach out to us at <a href = "mailto:join@waterloop.ca">join@waterloop.ca</a>!
-            </p>
+            </p> */}
             <p>
-              Do you have prior expertise in linear induction motors, high power PCB design, or other relevant technical topics? We'd love to learn from you as an advisor; reach out to us at <a href = "mailto:join@waterloop.ca">join@waterloop.ca</a> if you're interested!
+              Want to learn about linear induction motors, high power PCBS, or other technical and business topics? Fill out out our <a href = "https://forms.gle/jfcf6xypJukN9xjf7">Application Form</a> here.<br/>
             </p>
             <SignUpButton onClick={() => window.open('http://wloop.fly.dev/subscribe')} text="Sign up" backgroundColor="yellow" textColor="black"  />
           </FlexContainer>
