@@ -2,8 +2,8 @@ import { Product, ProductDetails } from 'products';
 import * as actionTypes from '../action-types';
 
 interface ProductsState {
-    list: Product[],
-    productDetails: ProductDetails | null,
+    list: Product[];
+    productDetails: ProductDetails | null;
 };
 
 const initialState: ProductsState = {

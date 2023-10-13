@@ -16,6 +16,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
     console.log("id: ", id);
     const {productDetails} = useProductDetails(id);
     console.log("product details: ", productDetails);
+
     return (
         <div className='productDetailsContainer'>
             <div className='productDetailsTop'>
