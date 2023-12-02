@@ -106,20 +106,40 @@ class App extends React.Component<{}, State> {
         MainComponent: <Home />,
       }),
       this.generatePageMap({
+        path: '/the-flock/:id',
+        MainComponent: <ErrorPage />,
+      }),
+      this.generatePageMap({
         path: '/the-flock',
         MainComponent: <Flock />,
+      }),
+      this.generatePageMap({
+        path: '/team/:id',
+        MainComponent: <ErrorPage />,
       }),
       this.generatePageMap({
         path: '/team',
         MainComponent: <Team />,
       }),
       this.generatePageMap({
+        path: '/sponsors/:id',
+        MainComponent: <ErrorPage />,
+      }),
+      this.generatePageMap({
         path: '/sponsors',
         MainComponent: <Sponsors />,
       }),
       this.generatePageMap({
+        path: '/contact/:id',
+        MainComponent: <ErrorPage />,
+      }),
+      this.generatePageMap({
         path: '/contact',
         MainComponent: <Contact />,
+      }),
+      this.generatePageMap({
+        path: '/recruitment/:id',
+        MainComponent: <ErrorPage />,
       }),
       this.generatePageMap({
         path: '/recruitment',
@@ -152,6 +172,7 @@ class App extends React.Component<{}, State> {
         path: '/*',
         MainComponent: <Redirect to="/404" />,
       }),
+      
     ];
 
     return (
