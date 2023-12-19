@@ -20,6 +20,7 @@ import RecruitmentRouter from 'pages/Recruitment/RecruitmentRouter';
 import Sponsors from './pages/Sponsors';
 import Team from './pages/Team';
 import Blog from './pages/Blog/Blog';
+import SponsorForm from './pages/SponsorForm';
 
 interface State {
   width: number;
@@ -112,6 +113,10 @@ class App extends React.Component<{}, State> {
       this.generatePageMap({
         path: '/team',
         MainComponent: <Team />,
+      }),
+      this.generatePageMap({
+        path: '/sponsors/form',
+        MainComponent: <SponsorForm />,
       }),
       this.generatePageMap({
         path: '/sponsors',

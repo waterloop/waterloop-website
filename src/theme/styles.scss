@@ -133,7 +133,14 @@ code {
 
  -----------------------------*/
 
-.submit-again {
+ .footerButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 50px;
+ }
+
+ .submit-again {
   border: none;
   background-color: none;
   font-style: italic;
@@ -217,6 +224,31 @@ textarea {
     cursor: pointer;
   }
 
+  @media screen and (max-width: $mobile) {
+    margin: 30px 0;
+    font-size: 18px;
+    width: 130px;
+    height: 40px;
+  }
+}
+
+.sponsorFormButton {
+  border: 2px solid $yellow;
+  background-color: $yellow;
+  color: $navy;
+  font-family: 'IBM Plex Sans';
+  font-weight: 400;
+  font-size: 15px;
+  border-radius: 15px;
+  height: 50px;
+  width: 150px;
+  margin: 0 100px 0 0;
+  transition: all 0.3s;
+  &:hover {
+    background-color: $navy;
+    color: $yellow;
+    cursor: pointer;
+  }
   @media screen and (max-width: $mobile) {
     margin: 30px 0;
     font-size: 18px;
