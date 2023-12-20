@@ -701,6 +701,61 @@ textarea {
   }
 }
 
+
+.yellowbanner {
+  /* type img */
+  width: 80%;
+  height: auto;
+  position: absolute;
+  bottom: 0px;
+  // padding-top: 3em;
+  padding-bottom: 9%;
+  padding-left: 4%;
+  z-index: 0;
+}
+
+
+.pod {
+  position: absolute;
+  left: 50%;
+  width: 25%;
+  z-index: 9999;
+  bottom: 0px;
+  padding-bottom: 9%;
+  
+  transform: translate(-50%, 0);
+  animation: move 2s ease-in-out;
+  // align-self: center;
+}
+@keyframes move {
+  0% {left: 0%;}
+  50% {left: 80%;}
+  100% {left: 50%}
+}
+
+
+.torontosky {
+  /* type img */
+  width: 46%;
+  // height: auto;
+  position: absolute;
+  z-index: 9999;
+  bottom: 0px;
+  left: 0px;
+  padding-top: 3em;
+}
+
+.montrealsky {
+  /* type img */
+  width: 49%;
+  // height: auto;
+  position: absolute;
+  z-index: 9999;
+  bottom: 0px;
+  right: 0px;
+  padding-top: 3em;
+}
+
 .landingArrowContainer {
   position: absolute;
   bottom: 75px;
