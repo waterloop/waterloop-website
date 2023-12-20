@@ -13,7 +13,6 @@ const Contact: React.FC = () => (
       description="We'd love to get in touch!"
       anchor="#contact-form"
     ></Hero>
-
     <div id={"#contact-form"}></div>
     <div className="pageContainer">
       <div className="contactFormContainer">
