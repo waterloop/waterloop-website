@@ -25,7 +25,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
             <div className='productDetailsTop'>
                 <div className='leftSection'>
                     {/* Make sure to change the data to productDetails once we update the cms database to hold thumbnails */}
-                    {data?.thumbnails?.map((item) => {
+                    {productDetails?.thumbnails?.map((item) => {
                         return (
                             <img src={item}></img>
                         )

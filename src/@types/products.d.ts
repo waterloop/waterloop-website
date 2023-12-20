@@ -17,5 +17,6 @@ declare module "products" {
         picture: string;
         related_product_ids: string;
         order_link: string;
+        thumbnails: string[];
     }
 }
