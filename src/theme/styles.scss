@@ -1455,8 +1455,61 @@ p {
       }
     }
   }
+  
   .relatedProductsContainer {
-    background-color: green;
+    background-color: white;
+    display: flex; 
+    // justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #010101;
+    width: fit-content;
+    padding-top: 30px;
+    position: relative;
+
+    .related-product-text {
+      position: absolute;
+      top: -25px;
+      left: 0;
+      padding-left: 30px;
+      padding-right: 20px;
+      font-size: 32px;
+      font-weight: 400;
+      font-family: 'IBM Plex Sans';
+      line-height: 41.6px;
+      background-color: white;
+    }
+
+    .related-product {
+      padding-right: 15px; 
+      padding-left: 30px;
+      padding-bottom: 20px;
+      .related-product-img {
+        width: 273px;
+        height: 317px;
+        border-radius: 15px;
+        cursor: pointer;
+      }
+      .related-product-labels {
+        background-color: white;
+        display: flex; 
+        align-items: center;
+        width: 273px;
+        justify-content: space-between;
+        .related-product-title {
+          font-size: 18px;
+          font-weight: 400;
+          font-family: 'IBM Plex Sans';
+          line-height: 23.4px;
+        }
+        .related-product-price {
+          font-size: 18px;
+          font-weight: 400;
+          font-family: 'IBM Plex Sans';
+          line-height: 23.4px;
+        }
+      }
+    }
+    
   }
 }
 

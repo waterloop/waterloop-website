@@ -7,6 +7,7 @@ import useProductDetails from 'hooks/product-details';
 import Tippy from '@tippyjs/react';
 // import 'tippy.js/dist/tippy.css';
 import sizeChart from '../../../src/static/img/merchStore/size-chart.svg';
+import { useHistory } from "react-router";
 
 interface ProductDetailsProps {
     data?: ProductDetailsProperty;
@@ -16,15 +17,18 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
     data
 }) => {
     const { id } = useParams();
-    console.log("id: ", id);
+    const history = useHistory();
     const {productDetails} = useProductDetails(id);
     console.log("product details: ", productDetails);
+    const productOnClick = (id: number) => {
+        history.replace(`/shop/${id}`);
+        window.location.reload();
+    }
 
     return (
         <div className='productDetailsContainer'>
             <div className='productDetailsTop'>
                 <div className='leftSection'>
-                    {/* Make sure to change the data to productDetails once we update the cms database to hold thumbnails */}
                     {productDetails?.thumbnails?.map((item) => {
                         return (
                             <img src={item}></img>
@@ -52,7 +56,24 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
                     </div>
                 </div>
             </div>
-            <div className='relatedProductsContainer'></div>
+            {/* <div className='related-products-border'>
+                <div className='related-product-text'>Related Products</div>
+                <div className='border-line'></div>
+            </div> */}
+            <div className='relatedProductsContainer'>
+            <div className='related-product-text'>Related Products</div>
+                {productDetails?.related_products?.map((item) => {
+                    return (
+                        <div className='related-product'>
+                            <img onClick={() => productOnClick(item.id)} src={item.picture} alt='cannot find product image' className='related-product-img'></img>
+                            <div className='related-product-labels'>
+                                <div className='related-product-title'>{item.name}</div>
+                                <div className='related-product-price'>{'$' + item.price}</div>
+                            </div>
+                        </div>
+                    )
+                })}
+            </div>
         </div>
     )
 }
