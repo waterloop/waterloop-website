@@ -59,7 +59,8 @@ export interface ProductDetailsProperty {
 const Shop: React.FC = () => {
   const history = useHistory();
   const {products} = useProducts();
-  console.log("products: ", products);
+  // const products: any[] | null = null;
+  // console.log("products: ", products);
   // const [productList, setProductList] = useState<ProductProperty[]>([]);
   useEffect(() => {
     // const list = [];
@@ -88,13 +89,11 @@ const Shop: React.FC = () => {
 
       <div className="productListContainer">
         <div className="productCardWrapper">
-          {
-            products.map((product) => {
+          {products && Array.isArray(products) && products.map((product) => {
               return (
                 <ProductCard data={product} onClick={() => handleClick(product)}/>
               )
             }
-
             )
           }
         </div>    

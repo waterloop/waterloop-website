@@ -12,8 +12,8 @@ const useProductDetails = (id: number) => {
           try {
             const response = await api.products.getProductDetails(id);
             const productDetails = response.data;
-            console.log('data here: ', response.data);
-            return productDetails;
+            console.log('data here: ', productDetails);
+            return {};
 
         } catch (err) {
             if (process.env.NODE_ENV === 'development') {

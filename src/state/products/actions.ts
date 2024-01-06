@@ -8,7 +8,7 @@ export const setProducts = (products: Product[] ) => ({
     },
   });
 
-export const setProductDetails = (id: number, productDetails: ProductDetails | null) => ({
+export const setProductDetails = (id: number, productDetails: ProductDetails | null | {}) => ({
   type: actionTypes.PRODUCTS_SET_PRODUCTDETAILS,
   payload: {
     id, productDetails,

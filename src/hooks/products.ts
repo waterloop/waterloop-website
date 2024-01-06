@@ -12,7 +12,7 @@ const useProducts = () => {
           try {
             const response = await api.products.getProducts();
             const products = response.data;
-            return products;
+            return products || [];
 
         } catch (err) {
             if (process.env.NODE_ENV === 'development') {
