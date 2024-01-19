@@ -75,6 +75,15 @@ const RecruitmentFaq = () => {
         <li>Find all of our openings <a href="/recruitment">here</a></li>
         <li>We typically open recruitment after exams in August, December, or April. If there are no openings available you can sign up to be notified <a href="http://wloop.fly.dev/subscribe">here.</a></li>
       </ul>
+      <h3>What are the meeting times?</h3>
+      <ul>
+        <li>Mechanical: Mondays at 9PM</li>
+        <li>Propulsion: Saturdays at 1PM</li>
+        <li>Firmware: Thursday at 7PM</li>
+        <li>Infrastructure: Mondays at 9PM</li>
+        <li>Web: Saturdays at 11:30AM</li>
+        <li>Electrical: TBD</li>
+      </ul>
     </Container>
   );
 };
