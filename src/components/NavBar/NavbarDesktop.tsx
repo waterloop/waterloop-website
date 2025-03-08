@@ -67,9 +67,9 @@ const NavBar: React.FC = () => (
         <Sponsors />
       </Link>
       <Link to="/recruitment" title="Join Us" text="Join Us" />
-      <Link to="/blog" title="Blog" text="Blog">
+      {/* <Link to="/blog" title="Blog" text="Blog">
         <Blog />
-      </Link>
+      </Link> */}
       <Link to="/contact" title="Contact" text="Contact">
         <Contact />
       </Link>
