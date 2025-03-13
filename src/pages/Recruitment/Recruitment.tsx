@@ -8,7 +8,7 @@ import JoinUs from "../../static/img/team/joinus.png";
 import "../../theme/styles.scss";
 
 import JobPostings from "components/Postings/Postings";
-import { Button } from "components";
+//import { Button } from "components";
 import usePostings from "hooks/postings";
 const castData: MyProps[] = Text;
 const imgData: string[] = [JoinUs];
@@ -25,9 +25,9 @@ const VideoContainer = styled.div`
   padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
 `;
 
-const SignUpButton = styled(Button)`
-  width: 128px;
-`;
+//const SignUpButton = styled(Button)`
+  //width: 128px;
+//;
 
 
 const Recruitment: React.FC = () =>{
@@ -84,9 +84,12 @@ const Recruitment: React.FC = () =>{
               Missed recruitment but still want to join our team? Reach out to us at <a href = "mailto:join@waterloop.ca">join@waterloop.ca</a>!
             </p> */}
             <p>
-              Want to learn about linear induction motors, high power PCBS, or other technical and business topics? Fill out out our <a href = "https://forms.gle/jfcf6xypJukN9xjf7">Application Form</a> here.<br/>
+              {//Want to learn about linear induction motors, high power PCBS, or other technical and business topics? Fill out out our <a href = "https://teamwaterloop.ca/recruitment/faq">Application Form</a> here.<br/>
+            }  
+              Have questions? Check our <a href = "recruitment/faq">FAQ</a>, or <a href = "/Contact">contact us.</a>
             </p>
-            <SignUpButton onClick={() => window.open('http://wloop.fly.dev/subscribe')} text="Sign up" backgroundColor="yellow" textColor="black"  />
+            {//<SignUpButton onClick={() => window.open('http://wloop.fly.dev/subscribe')} text="Sign up" backgroundColor="yellow" textColor="black"  />
+            }
           </FlexContainer>
         )}
       </div>

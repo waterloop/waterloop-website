@@ -24,7 +24,7 @@ const Contact: React.FC = () => (
         ></ContactForm>
 
         <NewsletterSignUpForm/>
-
+        
         <div className="locationContainer">
           <h3>Visit Us</h3>
           <table>

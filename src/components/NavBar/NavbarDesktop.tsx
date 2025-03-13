@@ -7,7 +7,7 @@ import Home from '../../pages/Home';
 import Flock from '../../pages/Flock';
 import Team from '../../pages/Team';
 import Sponsors from '../../pages/Sponsors';
-import Blog from '../../pages/Blog/Blog';
+//import Blog from '../../pages/Blog/Blog';
 
 import Link from './Link';
 
