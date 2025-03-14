@@ -4,6 +4,7 @@ import goose1 from '../../../static/img/pgimgs/goose1.png';
 import goose2 from '../../../static/img/pgimgs/goose2.png';
 import goose3 from '../../../static/img/pgimgs/goose3.png';
 import goose4 from '../../../static/img/pgimgs/goose4.png';
+import goose5 from '../../../static/img/pgimgs/goose5.png';
 
 interface Image {
   imgFile: string;
@@ -49,6 +50,12 @@ const imgs: Image[] = [
     desc:
       'By the fourth competition, we had realized that, despite wheeled propulsion posting record-breaking speeds in the SpaceX Hyperloop tube, there was no way of scaling those systems to transcontinental scale—wheels spinning at Mach 1 simply cannot last. We pivoted to designing a contactless linear induction motor from scratch, and simplified the rest of the pod to allow us to devote the majority of our time on the most difficult research.',
   },
+  {
+    imgFile: goose5,
+    name: 'Goose V',
+    desc:
+      'Placeholder text'
+  }
 ];
 
 const useGeeseImages: 

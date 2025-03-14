@@ -28,8 +28,8 @@ const Flock: React.FC = () => (
     <div className="pageContainer">
       <Container>
         <GooseRoster
-          heading="Goose V"
-          description="Our 'flock' of Hyperloop pods has developed in sophistication over 5 iterations of research and development. Take a look at the major features of our latest pod and the history of its development!"
+          heading="Goose VI"
+          description="Our 'flock' of Hyperloop pods has developed in sophistication over 6 iterations of research and development. Take a look at the major features of our latest pod and the history of its development!"
           imgUrls={Goose5}
         ></GooseRoster>
         <div className="break"></div>
