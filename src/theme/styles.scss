@@ -408,6 +408,19 @@ textarea {
   }
 }
 
+.Block-TextWithProfileImage {
+  display: flex;
+  align-items: center;
+  gap: 20px; // Space between text and image
+}
+
+.Img-TextWithProfileImage {
+  width: 100px; // Adjust size as needed
+  height: 100px; // Ensure it remains a circle
+  object-fit: cover;
+  border-radius: 50%;
+}
+
 .text-w-image-btn-mobile {
   display: none;
   justify-content: flex-start;

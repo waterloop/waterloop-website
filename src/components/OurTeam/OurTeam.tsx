@@ -39,6 +39,9 @@ const OurTeam: React.FC = () => (
       provide an effective mentorship experience for all new team members.
     </p>
     <TeamPhoto src={Team} alt="some team photo" />
+    <p>
+      Curious how you can help? Here is a list of our teams, what they do, as well as the team leads.
+    </p>
     <div className="centerDiv">
       <Button
         backgroundColor="yellow"

@@ -54,7 +54,7 @@ const imgs: Image[] = [
     imgFile: goose5,
     name: 'Goose V',
     desc:
-      'Placeholder text'
+      'With Goose V, we continued to refine the wheel-less propulsion methods, by implementing a system to convert constant power into three-phase power to maximize thrust and speed.'
   }
 ];
 
