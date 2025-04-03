@@ -9,6 +9,7 @@ import Team from '../../pages/Team';
 import Sponsors from '../../pages/Sponsors';
 // import Blog from '../../pages/Blog/Blog'; // Commented out March 21st 2025
 
+
 import Link from './Link';
 
 const NavbarContainer = styled.div`

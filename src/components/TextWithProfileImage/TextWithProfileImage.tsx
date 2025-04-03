@@ -2,26 +2,24 @@ import React from 'react';
 import { Button } from 'components/Button';
 import 'theme/styles.scss';
 
-export type MyProps = {
+export type MyCircularProps = {
   title?: string;
   text: string;
   link?: string;
   linkText?: string;
-  wideImage?: boolean;
-  largeImage?: boolean;
 };
 
 interface Props {
-  data: MyProps[];
+  data: MyCircularProps[];
   imgData: string[];
   textPos?: string;
 }
 
-export class TextWithImage extends React.Component<Props> {
-  renderChildren = (data: MyProps[]): React.ReactElement[] => {
+export class TextWithProfileImage extends React.Component<Props> {
+  renderChildren = (data: MyCircularProps[]): React.ReactElement[] => {
     let isRightLeft = true; // Alternate between right-left and left-right layout.
     let key = -1;
-    return data.map((entry: MyProps) => {
+    return data.map((entry: MyCircularProps) => {
       isRightLeft = !isRightLeft;
       key += 1;
 
@@ -41,20 +39,20 @@ export class TextWithImage extends React.Component<Props> {
       }
 
       return (
-        <div key={key} className={`Block-TextWithImage ${posClass}`}>
-          <div className="TextBlock-TextWithImage">
+        <div key={key} className={`Block-TextWithProfileImage ${posClass}`}>
+          <div className="TextBlock-TextWithProfileImage">
             {entry.title !== undefined ? <h3>{entry.title}</h3> : <b></b>}
             <p>{entry.text}</p>
-            <div className="ButtonBlock-TextWithImage">
+            <div className="ButtonBlock-TextWithProfileImage">
               {this.renderButton(entry.link, entry.linkText)}
             </div>
           </div>
           <img
-            className={`Img-TextWithImage ${entry.largeImage ? 'Img-TextWithImage--large' : ''} ${entry.wideImage ? 'Img-TextWithImage--wide' : ''}`}
+            className="Img-TextWithProfileImage"
             src={this.props.imgData[key]}
             alt="waterloop"
           ></img>
-          <div className="text-w-image-btn-mobile">
+          <div className="text-w-profile-image-btn-mobile">
             {this.renderButton(entry.link, entry.linkText)}
           </div>
         </div>

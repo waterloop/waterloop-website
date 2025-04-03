@@ -13,6 +13,8 @@ export * from './SimpleFeatures';
 export * from './Hero';
 export * from './TeamsDisplayer';
 export * from './TextWithImage';
+export * from './TextWithProfileImage';
+export * from './TextWithProfileImage';
 export * from './ColumnBlock';
 export * from './Postings';
 export * from './NewsletterSignUpForm';

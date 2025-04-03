@@ -4,8 +4,8 @@ import Hero from "components/Hero/General";
 import { GooseRoster } from "components/GooseRoster";
 import { SimpleFeatures } from "sections/FeaturedComponent";
 import { PastGeeseTimeline as UnstyledPastGeeseTimeline } from "components/PastGeeseTimeline";
-import Goose1 from "../static/img/goose/Goose.png";
-import Goose2 from "../static/img/goose/Goose1.png";
+import Goose1 from "../static/img/goose/goose6_full.png";
+import Goose2 from "../static/img/goose/goose6_better.png";
 import "../theme/styles.scss";
 
 const PastGeeseTimeline = styled(UnstyledPastGeeseTimeline)``;
@@ -28,8 +28,8 @@ const Flock: React.FC = () => (
     <div className="pageContainer">
       <Container>
         <GooseRoster
-          heading="Goose V"
-          description="Our 'flock' of Hyperloop pods has developed in sophistication over 5 iterations of research and development. Take a look at the major features of our latest pod and the history of its development!"
+          heading="Goose VI"
+          description="Our 'flock' of Hyperloop pods has developed in sophistication over 6 iterations of research and development. Take a look at the major features of our latest pod and the history of its development!"
           imgUrls={Goose5}
         ></GooseRoster>
         <div className="break"></div>

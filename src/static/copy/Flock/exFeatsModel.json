@@ -7,17 +7,17 @@
         },
         {
             "imgAlt": "frame.png",
-            "header": "Frame & Shell",
+            "header": "Frame and Shell",
             "desc": "The frame and shell provide structures to support the motor, battery, and everything else onboard the pod. It needs to withstand hundreds of pounds of force in any direction and yet be extremely lightweight, reliable, and expandable."
         },
         {
             "imgAlt": "guidance.png",
-            "header": "Guidance & Braking",
+            "header": "Guiding and Braking",
             "desc": "Guidance and braking are failsafe mechanisms to control the pod's position and speed. Guidance wheels hold the LIM at a distance from the track measured in mere millimeters, and the mechanical brakes automatically actuate in the unlikely scenarios of loss of communications, electrical power, or pneumatic pressure."
         },
         {
             "imgAlt": "battery.png",
-            "header": "Motor Controller & Battery",
+            "header": "Motor Controller and Battery",
             "desc": "Our high voltage power systems convert kilowatts of power from a carefully monitored lithium battery into three-phase power precisely modulated to maximize the linear induction motor's thrust."
         },
         {
