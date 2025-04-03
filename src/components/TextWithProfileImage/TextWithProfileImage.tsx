@@ -39,20 +39,20 @@ export class TextWithProfileImage extends React.Component<Props> {
       }
 
       return (
-        <div key={key} className={`Block-TextWithImage ${posClass}`}>
-          <div className="TextBlock-TextWithImage">
+        <div key={key} className={`Block-TextWithProfileImage ${posClass}`}>
+          <div className="TextBlock-TextWithProfileImage">
             {entry.title !== undefined ? <h3>{entry.title}</h3> : <b></b>}
             <p>{entry.text}</p>
-            <div className="ButtonBlock-TextWithImage">
+            <div className="ButtonBlock-TextWithProfileImage">
               {this.renderButton(entry.link, entry.linkText)}
             </div>
           </div>
           <img
-            className="Img-TextWithImage"
+            className="Img-TextWithProfileImage"
             src={this.props.imgData[key]}
             alt="waterloop"
           ></img>
-          <div className="text-w-image-btn-mobile">
+          <div className="text-w-profile-image-btn-mobile">
             {this.renderButton(entry.link, entry.linkText)}
           </div>
         </div>

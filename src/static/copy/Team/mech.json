@@ -1,6 +1,7 @@
 [
     {
-        "title": "Mechanical, Team Lead:",
-        "text": "The mechanical team is in charge of the design, fabrication, and testing of all physical mechanisms for structures, guidance, and propulsion subsystems on the Hyperloop pod. The team uses skills in CAD, drafting, as well as analysis through simulations. Through manufacturing the pod components, machine shop skills like milling, turning and use of power-tools are learned. Recent projects include frame analysis, motor design, and mathematical modelling of pod motion."
+        "title": "Mechanical, Team Leads: Mark and Surya",
+        "text": "The mechanical team is in charge of the design, fabrication, and testing of all physical mechanisms for structures, guidance, and propulsion subsystems on the Hyperloop pod. The team uses skills in CAD, drafting, as well as analysis through simulations. Through manufacturing the pod components, machine shop skills like milling, turning and use of power-tools are learned. Recent projects include frame analysis, motor design, and mathematical modelling of pod motion.",
+        "wideImage": true
     }
 ]

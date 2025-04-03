@@ -398,6 +398,20 @@ textarea {
   justify-content: center;
 }
 
+.Img-TextWithImage--large {
+  max-width: 400px;
+  max-height: 400px;
+  width: 40vw;
+  height: 40vw;
+}
+
+.Img-TextWithImage--wide {
+  max-width: 500px;
+  max-height: 250px;
+  width: 50vw;
+  height: 25vw;
+}
+
 .ButtonBlock-TextWithImage {
   display: inline-flex;
   justify-content: flex-start;
@@ -415,8 +429,8 @@ textarea {
 }
 
 .Img-TextWithProfileImage {
-  width: 100px; // Adjust size as needed
-  height: 100px; // Ensure it remains a circle
+  width: 150px; // Adjust size as needed
+  height: 150px; // Ensure it remains a circle
   object-fit: cover;
   border-radius: 50%;
 }

@@ -1,1 +1,1 @@
-export { TextWithProfileImage} from './TextWithProfileImage'; // This will take all the named exports
+export * from './TextWithProfileImage'; // This will take all the named exports

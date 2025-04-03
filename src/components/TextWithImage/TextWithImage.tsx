@@ -7,6 +7,8 @@ export type MyProps = {
   text: string;
   link?: string;
   linkText?: string;
+  wideImage?: boolean;
+  largeImage?: boolean;
 };
 
 interface Props {
@@ -48,7 +50,7 @@ export class TextWithImage extends React.Component<Props> {
             </div>
           </div>
           <img
-            className="Img-TextWithImage"
+            className={`Img-TextWithImage ${entry.largeImage ? 'Img-TextWithImage--large' : ''} ${entry.wideImage ? 'Img-TextWithImage--wide' : ''}`}
             src={this.props.imgData[key]}
             alt="waterloop"
           ></img>

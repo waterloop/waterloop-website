@@ -1,6 +1,7 @@
 [
     {
-        "title": "Software, Team Lead:",
-        "text": "The software team is responsible for controlling all the embedded components related to the Hyperloop pod. Our work consists of projects on the desktop application to coding the motor controller for our Linear Induction Motor."
+        "title": "Software, Team Leads: Jessica, Tharun, and Sardor",
+        "text": "The software team is responsible for controlling all the embedded components related to the Hyperloop pod. Our work consists of projects on the desktop application to coding the motor controller for our Linear Induction Motor.",
+        "largeImage": true
     }
 ]
