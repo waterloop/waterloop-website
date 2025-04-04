@@ -1,6 +1,10 @@
 import React from 'react';
-import BuildingsImg from 'static/img/background/buildings.svg';
+// import BuildingsImg from 'static/img/background/buildings.svg';
 import WaterloopImg from 'static/img/background/waterloop.svg';
+import pod from 'static/img/background/pod.svg';
+import torontosky from  'static/img/background/Toronto_Skyline.svg';
+import montrealsky from 'static/img/background/Waterloop_Montreal_Skyline.svg';
+import yellowbanner from 'static/img/background/yellow banner.svg';
 import '../../theme/styles.scss';
 import { Link } from 'react-scroll';
 
@@ -42,13 +46,44 @@ class Landing extends React.Component<MyProps> {
           </Link>
         </div>
 
-        <div className="landingBuildingContainer">
+{/*  <div className="landingBuildingContainer">
           <img
             className="landingBuildings"
             src={BuildingsImg}
             alt="buildings"
           ></img>
+        </div> */}
+        {/* <div className='pod'> */}
+          <img
+            className="pod"
+            src={pod}
+            alt="pods"
+          ></img>
+        {/* </div> */}
+        <div className="yellowbanner">
+          <img
+            className="yellowbanner"
+            src={yellowbanner}
+            alt="yellowbannerimg"
+            ></img>
         </div>
+
+        <div className="torontosky">
+          <img
+            className="torontosky"
+            src={torontosky}
+            alt="torontoskyline"
+            ></img>
+        </div>
+         
+        <div className="montrealsky">
+          <img
+            className="montrealsky"
+            src={montrealsky}
+            alt="montrealskyline"
+            ></img>
+        </div>
+        {/* </div>/ */}
       </div>
     );
   }
