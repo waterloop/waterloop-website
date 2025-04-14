@@ -7,12 +7,20 @@ const FooterComponent: React.FC = () => (
   <div className="FooterWrapper footer-text">
     <div className="footer-row">
       <h3>Let's get in touch.</h3>
-      <button
-        className="button-yellow"
-        onClick={(): Window | null => window.open("/contact", "_self")}
-      >
-        Contact Us
-      </button>
+      <div className = "footer-buttons">
+        <button
+          className="button-yellow"
+          onClick={(): Window | null => window.open("/contact", "_self")}
+        >
+          Contact Us
+        </button>
+        <button 
+          className ="button-yellow"
+          onClick={(): Window | null => window.open("/contact", "_self")}
+        >
+          Support Us
+        </button>
+      </div>
     </div>
     <div className="footer-row">
       <div className="LogoWrapper">
