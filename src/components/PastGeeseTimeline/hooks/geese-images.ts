@@ -54,7 +54,7 @@ const imgs: Image[] = [
     imgFile: goose5,
     name: 'Goose V',
     desc:
-      'With Goose V, we continued to refine the wheel-less propulsion methods, by implementing a system to convert constant power into three-phase power to maximize thrust and speed.'
+      'By our fifth pod, we committed to a scalable, contactless propulsion system. We built a custom linear induction motor for levitation and thrust on a simple metal track, cutting infrastructure costs. Around it, we designed a lightweight frame, failsafe guidance and braking, high-voltage power systems, and real-time embedded control—streamlining everything for high-speed, reliable testing.'
   }
 ];
 

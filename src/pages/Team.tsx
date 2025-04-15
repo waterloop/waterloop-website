@@ -68,15 +68,21 @@ const Teams: React.FC = () => (
       */
       }
       <TextWithImage
-          data={elecText}
+          data={leadText}
           textPos={"left"}
-          imgData={elecImg}
+          imgData={PmsImg}
       ></TextWithImage>
       <TextWithImage
           data={execText}
           textPos={"right"}
           imgData={PmsImg}
       ></TextWithImage>
+      <TextWithImage
+          data={elecText}
+          textPos={"left"}
+          imgData={elecImg}
+      ></TextWithImage>
+
       {/*
       <TextWithImage
           data={infraText}
@@ -87,19 +93,14 @@ const Teams: React.FC = () => (
       }
       <TextWithImage
           data={mechText}
-          textPos={"left"}
+          textPos={"right"}
           imgData={mechImg}
       ></TextWithImage>
       <TextWithImage
           data={softwareText}
-          textPos={"right"}
-          imgData={firmwareImg}
-      ></TextWithImage>
-      <TextWithImage
-          data={leadText}
           textPos={"left"}
-          imgData={PmsImg}
-      ></TextWithImage>
+          imgData={firmwareImg}
+      ></TextWithImage>\
     </div>
   </div>
 );

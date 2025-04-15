@@ -40,7 +40,7 @@ const OurTeam: React.FC = () => (
     </p>
     <TeamPhoto src={Team} alt="some team photo" />
     <p>
-      Curious how you can help? Here is a list of our teams, what they do, as well as the team leads.
+      Curious how you can help? Here is a list of our teams. If you're interested in any of these, reach out to us!
     </p>
     <div className="centerDiv">
       <Button
